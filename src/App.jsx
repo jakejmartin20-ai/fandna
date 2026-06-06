@@ -412,7 +412,7 @@ const teams = {
       "Your chaos tolerance is genuinely low. You want control, and you back it with the preparation to earn it.",
     ],
     note:"Four consecutive league titles. Guardiola built something that made dominance look structural rather than exceptional. That is the hardest thing in sport.",
-    kit:"https://www.mancity.com/shop/kits",
+    kit:"https://www.mancity.com/shop",
   },
   AR: {
     name:"Arsenal",           emoji:"🔴", color:"#EF0107",
@@ -436,7 +436,7 @@ const teams = {
       "Your resilience through long droughts without abandoning hope is not optimism. It's something more stubborn than that.",
     ],
     note:"Nil satis nisi optimum. Nothing but the best is good enough. The motto is older than most of us and it has been tested repeatedly.",
-    kit:"https://evertonfc.com/shop/kits",
+    kit:"https://evertonfc.com/shop",
   },
   NC: {
     name:"Newcastle United",  emoji:"⚫", color:"#241F20",
@@ -448,7 +448,7 @@ const teams = {
       "The Ashley years were two decades of institutional frustration. The joy is real now, but it lands differently because of what came before.",
     ],
     note:"52,000 seats. Routinely not enough. The city's relationship with this club is genuinely unlike anything else in English football.",
-    kit:"https://shop.nufc.co.uk/collections/kits",
+    kit:"https://shop.nufc.co.uk",
   },
   WH: {
     name:"West Ham",          emoji:"⚒️", color:"#7A263A",
@@ -460,7 +460,7 @@ const teams = {
       "Your tolerance for institutional decisions you disagree with is low. But leaving never seriously crossed your mind.",
     ],
     note:"Conference League winners 2023. The Upton Park argument will not be resolved in our lifetimes. Both of these things are true.",
-    kit:"https://www.whufc.com/shop/kits",
+    kit:"https://www.whufc.com/shop",
   },
   CP: {
     name:"Crystal Palace",    emoji:"🦅", color:"#1B458F",
@@ -472,7 +472,7 @@ const teams = {
       "Backs-against-the-wall energy defines you. When things get hard, you don't retreat, you get louder.",
     ],
     note:"Selhurst holds 25,000. The Holmesdale is England's first proper ultras section. For a club without major trophies, the atmosphere is genuinely one of a kind.",
-    kit:"https://shop.cpfc.co.uk/collections/shirts",
+    kit:"https://shop.cpfc.co.uk",
   },
   MU: {
     name:"Manchester United",  emoji:"🔴", color:"#DA291C",
@@ -484,7 +484,7 @@ const teams = {
       "Your global identity score is notable, you belong to something that transcends any one place, for better and for worse.",
     ],
     note:"20 league titles. 3 European Cups. The Fergie era produced something that may not be repeated. Current situation pending.",
-    kit:"https://store.manutd.com/en/c/jerseys",
+    kit:"https://store.manutd.com/en-us/c/jerseys",
   },
   SP: {
     name:"Tottenham Hotspur", emoji:"⚪", color:"#132257",
@@ -496,7 +496,7 @@ const teams = {
       "The longing for one defining moment is more powerful in you than almost anyone in this quiz.",
     ],
     note:"Last title: 1961. The new stadium is genuinely magnificent. One cup. Please. Any cup.",
-    kit:"https://store.tottenhamhotspur.com/collections/kits",
+    kit:"https://store.tottenhamhotspur.com",
   },
   LE: {
     name:"Leicester City",    emoji:"🦊", color:"#003090",
@@ -508,7 +508,7 @@ const teams = {
       "Your chaos tolerance is above average. You've seen chaos produce the best thing that ever happened to you.",
     ],
     note:"2015/16. 5000-to-1. Ranieri, Mahrez, Vardy. Statistically the most improbable title win in Premier League history. The evidence is there.",
-    kit:"https://shop.lcfc.com/collections/kits",
+    kit:"https://shop.lcfc.com",
   },
   NF: {
     name:"Nottingham Forest",  emoji:"🌲", color:"#DD0000",
@@ -520,7 +520,7 @@ const teams = {
       "The story of how it happened matters as much to you as that it happened. Probably more.",
     ],
     note:"Brian Clough. Second division to back-to-back European Cups. 1979 and 1980. One of the most extraordinary achievements in the history of sport.",
-    kit:"https://shop.nottinghamforest.co.uk/collections/kits",
+    kit:"https://shop.nottinghamforest.co.uk",
   },
   BR: {
     name:"Brentford",         emoji:"🐝", color:"#D20000",
@@ -532,7 +532,7 @@ const teams = {
       "The model working is satisfying. But the reason you were there before the model was proven is something else entirely.",
     ],
     note:"Third tier in 2014. Premier League regulars by 2021. Griffin Park's four-corner pubs are gone. The Community Stadium kept the tradition alive. That matters.",
-    kit:"https://shop.brentfordfc.com/collections/kits",
+    kit:"https://shop.brentfordfc.com/kit/2526-home-kit",
   },
   BH: {
     name:"Brighton",          emoji:"🐦", color:"#0057B8",
@@ -544,7 +544,7 @@ const teams = {
       "Progressive, community-rooted, genuinely happy to be where you are. The Amex is exactly that.",
     ],
     note:"Third tier in 2011. European football by 2023. The Amex is one of the better atmospheres in the south of England, which people consistently underestimate.",
-    kit:"https://shop.brightonandhovealbion.com/collections/kits",
+    kit:"https://shop.brightonandhovealbion.com",
   },
   WO: {
     name:"Wolves",            emoji:"🐺", color:"#FDB913",
@@ -556,7 +556,7 @@ const teams = {
       "Quietly competitive, historically proud, comfortable being underestimated by people who haven't looked closely. That's the whole posture.",
     ],
     note:"Founded 1877. Molineux since 1889. Three league titles. One of the first clubs to have organised ethnic supporter groups in English football. The city carries its own history.",
-    kit:"https://shop.wolves.co.uk/collections/kits",
+    kit:"https://shop.wolves.co.uk",
   },
   FU: {
     name:"Fulham",            emoji:"⚫", color:"#CC0000",
@@ -568,7 +568,7 @@ const teams = {
       "Your relationship with place is warm and specific, the cottage, the river, the ritual. Identity through character not through trophies.",
     ],
     note:"Craven Cottage opened in 1896. There is a cottage. On the pitch. In the corner. It has been there longer than almost anything else in this quiz.",
-    kit:"https://shop.fulhamfc.com/collections/kits",
+    kit:"https://shop.fulhamfc.com",
   },
   BO: {
     name:"Bournemouth",       emoji:"🍒", color:"#DA291C",
@@ -580,7 +580,7 @@ const teams = {
       "Your chaos tolerance is genuine, League Two to Premier League multiple times over. You've learned not to take any of it for granted.",
     ],
     note:"League Two 2012. Eddie Howe. Premier League 2015. Relegated. Back again. Nobody really dislikes Bournemouth and that is not an accident.",
-    kit:"https://www.afcb.co.uk/shop/kits",
+    kit:"https://www.afcb.co.uk/shop",
   },
 
   AV: {
@@ -593,7 +593,7 @@ const teams = {
       "You score high on ambition with patience, the rarest combination, and the one that makes this particular rebuild so compelling.",
     ],
     note:"European Cup winners 1982. Villa Park has hosted more England games than any ground outside Wembley. The current project under Emery is the most credible top-four push the club has mounted in a generation.",
-    kit:"https://shop.avfc.co.uk/collections/kits",
+    kit:"https://shop.avfc.co.uk",
   },
   SU: {
     name:"Sunderland",        emoji:"🔴", color:"#EB172B",
@@ -605,7 +605,7 @@ const teams = {
       "The Stadium of Light at 46,000 in League One is one of English football's most striking images. You understand what that crowd was saying.",
     ],
     note:"46,000 in the Stadium of Light. League One. 2017. The docuseries 'Sunderland 'Til I Die' caught it in real time. The comeback to the Premier League under Tony Mowbray and then Regis Le Bris is one of English football's best recent stories.",
-    kit:"https://www.safc.com/shop/kits",
+    kit:"https://www.safc.com/shop",
   },
   LU: {
     name:"Leeds United",      emoji:"⚪", color:"#1D428A",
@@ -617,7 +617,7 @@ const teams = {
       "Your chaos tolerance is real. Leeds' history requires it. What keeps you there is something older and more stubborn than reason.",
     ],
     note:"Don Revie's Leeds won the First Division in 1969 and 1974. Bielsa's side were promoted in 2020 after 16 years away. Elland Road on a big night remains one of English football's most charged atmospheres.",
-    kit:"https://shop.leedsunited.com/collections/kits",
+    kit:"https://shop.leedsunited.com",
   },
   CH: {
     name:"Chelsea",           emoji:"🔵", color:"#034694",
@@ -641,7 +641,7 @@ const teams = {
       "The McKenna story gave the fanbase something the Robson era already taught them: that the right person with genuine care for the place can produce something beyond what the resources should allow.",
     ],
     note:"FA Cup 1978. UEFA Cup 1981. Bobby Robson. Portman Road opened in 1884. League One to Premier League in consecutive seasons under Kieran McKenna. Suffolk's club, genuinely.",
-    kit:"https://shop.itfc.co.uk/collections/kits",
+    kit:"https://shop.itfc.co.uk",
   },
   CV: {
     name:"Coventry City",     emoji:"🩵", color:"#59CBEE",
@@ -653,7 +653,7 @@ const teams = {
       "The payoff of actually being in the Premier League after all of that carries a specific weight. You understand what it means to finally get something that was a long time coming.",
     ],
     note:"FA Cup winners 1987. The Ricoh Arena / CBS Arena saga. Playing at St Andrew's. Almost Northampton. Back in Coventry. Now in the Premier League. The fans made this happen by simply refusing to stop caring.",
-    kit:"https://shop.ccfc.co.uk/collections/kits",
+    kit:"https://shop.ccfc.co.uk",
   },
 };
 
@@ -1618,7 +1618,7 @@ export default function App(){
       const teamName = teams[result]?.name || result;
       fetch("https://api.anthropic.com/v1/messages",{
         method:"POST",
-        headers:{"Content-Type":"application/json","anthropic-version":"2023-06-01"},
+        headers:{"Content-Type":"application/json","anthropic-version":"2023-06-01","x-api-key":import.meta.env.VITE_ANTHROPIC_KEY||""},
         body:JSON.stringify({
           model:"claude-sonnet-4-20250514",
           max_tokens:2000,
@@ -1638,7 +1638,7 @@ export default function App(){
           const toolResults = toolUseBlocks.map(b=>({type:"tool_result",tool_use_id:b.id,content:"Search completed."}));
           const followUp = await fetch("https://api.anthropic.com/v1/messages",{
             method:"POST",
-            headers:{"Content-Type":"application/json","anthropic-version":"2023-06-01"},
+            headers:{"Content-Type":"application/json","anthropic-version":"2023-06-01","x-api-key":import.meta.env.VITE_ANTHROPIC_KEY||""},
             body:JSON.stringify({
               model:"claude-sonnet-4-20250514",
               max_tokens:1000,
