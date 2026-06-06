@@ -584,7 +584,7 @@ const teams = {
   },
 
   AV: {
-    name:"Aston Villa",       emoji:"💜", color:"#670E36",
+    name:"Aston Villa",       emoji:"🦁", color:"#670E36",
     tagline:"You respect where you came from without being imprisoned by it.",
     desc:"You hold two things at once without contradiction: a deep respect for what was built before you, and a genuine impatience for what comes next. The 1982 European Cup sits in Villa Park's history not as nostalgia but as proof, this club has been at the summit and knows what it takes to get back. The Emery rebuild isn't a rebrand or a restart. It's a sleeping giant waking up and remembering what it is. You've lived this feeling, the moment something that had gone quiet in you starts to come back to life.",
     why:[
@@ -596,7 +596,7 @@ const teams = {
     kit:"https://shop.avfc.co.uk",
   },
   SU: {
-    name:"Sunderland",        emoji:"🔴", color:"#EB172B",
+    name:"Sunderland",        emoji:"🐱", color:"#EB172B",
     tagline:"You stayed when staying was the hardest thing to do.",
     desc:"The documentary showed it to the world, but Sunderland fans already knew. Administration. League One. 46,000 people filling the Stadium of Light in the third tier of English football not out of habit but out of something that can't be manufactured: the genuine belief that this was worth staying for. You understand this instinct completely. You've stood by something when it was easier not to, not because you were passive, but because leaving would have meant giving up on something true. The promotion back felt earned in a way that nothing bought can replicate.",
     why:[
@@ -1332,7 +1332,7 @@ const badgeUrls = {
   EV:"https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg",
   NC:"https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg",
   WH:"https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg",
-  CP:"https://upload.wikimedia.org/wikipedia/en/0/0c/Crystal_Palace_FC_logo_%282022%29.svg",
+  CP:"",
   MU:"https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
   SP:"https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg",
   LE:"https://upload.wikimedia.org/wikipedia/en/2/2d/Leicester_City_crest.svg",
@@ -1342,12 +1342,12 @@ const badgeUrls = {
   WO:"https://upload.wikimedia.org/wikipedia/en/f/fc/Wolverhampton_Wanderers.svg",
   FU:"https://upload.wikimedia.org/wikipedia/en/e/eb/Fulham_FC_%28shield%29.svg",
   BO:"https://upload.wikimedia.org/wikipedia/en/e/e5/AFC_Bournemouth_%282013%29.svg",
-  AV:"https://upload.wikimedia.org/wikipedia/en/9/9f/Aston_Villa_FC_crest_%282016%29.svg",
-  SU:"https://upload.wikimedia.org/wikipedia/en/7/77/Sunderland_AFC_logo.svg",
+  AV:"",
+  SU:"",
   LU:"https://upload.wikimedia.org/wikipedia/en/5/54/Leeds_United_F.C._logo.svg",
   CH:"https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg",
   IT:"https://upload.wikimedia.org/wikipedia/en/4/43/Ipswich_Town.svg",
-  CV:"https://upload.wikimedia.org/wikipedia/en/8/8e/Coventry_City_FC_logo.svg",
+  CV:"",
 };
 
 // ─── HELPERS ──────────────────────────────────────────────────────────────────
