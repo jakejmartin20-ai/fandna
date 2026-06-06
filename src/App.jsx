@@ -400,7 +400,7 @@ const teams = {
       "You carry the past forward as fuel. The history isn't a burden, it's the reason this moment means something.",
     ],
     note:"18 league titles. 6 European Cups. You'll Never Walk Alone started as a show tune. It became a religion. That transformation is very Liverpool.",
-    kit:"https://store.liverpoolfc.com/collections/mens-shirts",
+    kit:"https://store.liverpoolfc.com/kit",
   },
   MC: {
     name:"Manchester City",   emoji:"🔵", color:"#6CABDD",
@@ -412,10 +412,10 @@ const teams = {
       "Your chaos tolerance is genuinely low. You want control, and you back it with the preparation to earn it.",
     ],
     note:"Four consecutive league titles. Guardiola built something that made dominance look structural rather than exceptional. That is the hardest thing in sport.",
-    kit:"https://www.mancity.com/shop/mens/shirts",
+    kit:"https://www.mancity.com/shop/kits",
   },
   AR: {
-    name:"Arsenal",           emoji:"⚪🔴", color:"#EF0107",
+    name:"Arsenal",           emoji:"🔴", color:"#EF0107",
     tagline:"Getting it right matters even when the result disagrees.",
     desc:"You have strong opinions about how things should be done, not just whether they work, but whether they're right. There's a method you believe in, an aesthetic you hold to, and you've developed a specific kind of frustration reserved for situations where you're clearly correct and the outcome hasn't caught up yet. Other people find this exhausting. You find their indifference to craft exhausting. Arsenal is a club that plays the way you think things should be done, loses occasionally, and absolutely will not apologise for the approach.",
     why:[
@@ -436,10 +436,10 @@ const teams = {
       "Your resilience through long droughts without abandoning hope is not optimism. It's something more stubborn than that.",
     ],
     note:"Nil satis nisi optimum. Nothing but the best is good enough. The motto is older than most of us and it has been tested repeatedly.",
-    kit:"https://evertonfc.com/club/merchandise/kits",
+    kit:"https://evertonfc.com/shop/kits",
   },
   NC: {
-    name:"Newcastle United",  emoji:"⚫⚪", color:"#241F20",
+    name:"Newcastle United",  emoji:"⚫", color:"#241F20",
     tagline:"You don't want to belong to something global. You want to belong to something real.",
     desc:"There's a difference between a fanbase and a city. Most clubs have the former. Newcastle is the latter, the whole place stops on matchday, every generation has supported them, and the identity of the city and the club are genuinely inseparable in a way that's almost impossible to manufacture. You've lived something like this, a belonging so complete it doesn't need explaining to the people who share it. St James' Park holds 52,000 and it has never once felt big enough to contain what the city brings to it.",
     why:[
@@ -448,7 +448,7 @@ const teams = {
       "The Ashley years were two decades of institutional frustration. The joy is real now, but it lands differently because of what came before.",
     ],
     note:"52,000 seats. Routinely not enough. The city's relationship with this club is genuinely unlike anything else in English football.",
-    kit:"https://www.nufc.co.uk/commercial/nufc-shop/kits/",
+    kit:"https://shop.nufc.co.uk/collections/kits",
   },
   WH: {
     name:"West Ham",          emoji:"⚒️", color:"#7A263A",
@@ -460,7 +460,7 @@ const teams = {
       "Your tolerance for institutional decisions you disagree with is low. But leaving never seriously crossed your mind.",
     ],
     note:"Conference League winners 2023. The Upton Park argument will not be resolved in our lifetimes. Both of these things are true.",
-    kit:"https://www.whufc.com/shop/shirts",
+    kit:"https://www.whufc.com/shop/kits",
   },
   CP: {
     name:"Crystal Palace",    emoji:"🦅", color:"#1B458F",
@@ -472,7 +472,7 @@ const teams = {
       "Backs-against-the-wall energy defines you. When things get hard, you don't retreat, you get louder.",
     ],
     note:"Selhurst holds 25,000. The Holmesdale is England's first proper ultras section. For a club without major trophies, the atmosphere is genuinely one of a kind.",
-    kit:"https://shop.cpfc.co.uk/collections/mens-shirts",
+    kit:"https://shop.cpfc.co.uk/collections/shirts",
   },
   MU: {
     name:"Manchester United",  emoji:"🔴", color:"#DA291C",
@@ -484,7 +484,7 @@ const teams = {
       "Your global identity score is notable, you belong to something that transcends any one place, for better and for worse.",
     ],
     note:"20 league titles. 3 European Cups. The Fergie era produced something that may not be repeated. Current situation pending.",
-    kit:"https://store.manutd.com/en-gb/shirts",
+    kit:"https://store.manutd.com/en/c/jerseys",
   },
   SP: {
     name:"Tottenham Hotspur", emoji:"⚪", color:"#132257",
@@ -496,7 +496,7 @@ const teams = {
       "The longing for one defining moment is more powerful in you than almost anyone in this quiz.",
     ],
     note:"Last title: 1961. The new stadium is genuinely magnificent. One cup. Please. Any cup.",
-    kit:"https://store.tottenhamhotspur.com/collections/mens-shirts",
+    kit:"https://store.tottenhamhotspur.com/collections/kits",
   },
   LE: {
     name:"Leicester City",    emoji:"🦊", color:"#003090",
@@ -508,7 +508,7 @@ const teams = {
       "Your chaos tolerance is above average. You've seen chaos produce the best thing that ever happened to you.",
     ],
     note:"2015/16. 5000-to-1. Ranieri, Mahrez, Vardy. Statistically the most improbable title win in Premier League history. The evidence is there.",
-    kit:"https://shop.lcfc.com/collections/shirts",
+    kit:"https://shop.lcfc.com/collections/kits",
   },
   NF: {
     name:"Nottingham Forest",  emoji:"🌲", color:"#DD0000",
@@ -520,7 +520,7 @@ const teams = {
       "The story of how it happened matters as much to you as that it happened. Probably more.",
     ],
     note:"Brian Clough. Second division to back-to-back European Cups. 1979 and 1980. One of the most extraordinary achievements in the history of sport.",
-    kit:"https://shop.nottinghamforest.co.uk/collections/shirts",
+    kit:"https://shop.nottinghamforest.co.uk/collections/kits",
   },
   BR: {
     name:"Brentford",         emoji:"🐝", color:"#D20000",
@@ -532,7 +532,7 @@ const teams = {
       "The model working is satisfying. But the reason you were there before the model was proven is something else entirely.",
     ],
     note:"Third tier in 2014. Premier League regulars by 2021. Griffin Park's four-corner pubs are gone. The Community Stadium kept the tradition alive. That matters.",
-    kit:"https://shop.brentfordfc.com/collections/shirts",
+    kit:"https://shop.brentfordfc.com/collections/kits",
   },
   BH: {
     name:"Brighton",          emoji:"🐦", color:"#0057B8",
@@ -544,7 +544,7 @@ const teams = {
       "Progressive, community-rooted, genuinely happy to be where you are. The Amex is exactly that.",
     ],
     note:"Third tier in 2011. European football by 2023. The Amex is one of the better atmospheres in the south of England, which people consistently underestimate.",
-    kit:"https://shop.brightonandhovealbion.com/collections/mens-shirts",
+    kit:"https://shop.brightonandhovealbion.com/collections/kits",
   },
   WO: {
     name:"Wolves",            emoji:"🐺", color:"#FDB913",
@@ -556,10 +556,10 @@ const teams = {
       "Quietly competitive, historically proud, comfortable being underestimated by people who haven't looked closely. That's the whole posture.",
     ],
     note:"Founded 1877. Molineux since 1889. Three league titles. One of the first clubs to have organised ethnic supporter groups in English football. The city carries its own history.",
-    kit:"https://shop.wolves.co.uk/collections/shirts",
+    kit:"https://shop.wolves.co.uk/collections/kits",
   },
   FU: {
-    name:"Fulham",            emoji:"⚫⚪", color:"#CC0000",
+    name:"Fulham",            emoji:"⚫", color:"#CC0000",
     tagline:"You've made peace with exactly what you are, and that took more confidence than ambition would.",
     desc:"Craven Cottage is the oldest football ground still in use in England. It has an actual cottage on the pitch. The Thames runs behind the Riverside Stand. On a sunny matchday it is, by some margin, the most pleasant place to watch football in London, possibly in England. Fulham fans know this. They're not crowing about it. They're just there, enjoying the thing for what it is, with no particular need for it to be bigger or louder or more important than it is. This requires a confidence that people mistake for lacking ambition. It's actually the opposite.",
     why:[
@@ -568,7 +568,7 @@ const teams = {
       "Your relationship with place is warm and specific, the cottage, the river, the ritual. Identity through character not through trophies.",
     ],
     note:"Craven Cottage opened in 1896. There is a cottage. On the pitch. In the corner. It has been there longer than almost anything else in this quiz.",
-    kit:"https://shop.fulhamfc.com/collections/shirts",
+    kit:"https://shop.fulhamfc.com/collections/kits",
   },
   BO: {
     name:"Bournemouth",       emoji:"🍒", color:"#DA291C",
@@ -580,7 +580,7 @@ const teams = {
       "Your chaos tolerance is genuine, League Two to Premier League multiple times over. You've learned not to take any of it for granted.",
     ],
     note:"League Two 2012. Eddie Howe. Premier League 2015. Relegated. Back again. Nobody really dislikes Bournemouth and that is not an accident.",
-    kit:"https://www.afcb.co.uk/shirts",
+    kit:"https://www.afcb.co.uk/shop/kits",
   },
 
   AV: {
@@ -593,10 +593,10 @@ const teams = {
       "You score high on ambition with patience, the rarest combination, and the one that makes this particular rebuild so compelling.",
     ],
     note:"European Cup winners 1982. Villa Park has hosted more England games than any ground outside Wembley. The current project under Emery is the most credible top-four push the club has mounted in a generation.",
-    kit:"https://shop.avfc.co.uk/collections/mens-shirts",
+    kit:"https://shop.avfc.co.uk/collections/kits",
   },
   SU: {
-    name:"Sunderland",        emoji:"🔴⚪", color:"#EB172B",
+    name:"Sunderland",        emoji:"🔴", color:"#EB172B",
     tagline:"You stayed when staying was the hardest thing to do.",
     desc:"The documentary showed it to the world, but Sunderland fans already knew. Administration. League One. 46,000 people filling the Stadium of Light in the third tier of English football not out of habit but out of something that can't be manufactured: the genuine belief that this was worth staying for. You understand this instinct completely. You've stood by something when it was easier not to, not because you were passive, but because leaving would have meant giving up on something true. The promotion back felt earned in a way that nothing bought can replicate.",
     why:[
@@ -605,10 +605,10 @@ const teams = {
       "The Stadium of Light at 46,000 in League One is one of English football's most striking images. You understand what that crowd was saying.",
     ],
     note:"46,000 in the Stadium of Light. League One. 2017. The docuseries 'Sunderland 'Til I Die' caught it in real time. The comeback to the Premier League under Tony Mowbray and then Regis Le Bris is one of English football's best recent stories.",
-    kit:"https://www.safc.com/shirts",
+    kit:"https://www.safc.com/shop/kits",
   },
   LU: {
-    name:"Leeds United",      emoji:"⚪🟡", color:"#1D428A",
+    name:"Leeds United",      emoji:"⚪", color:"#1D428A",
     tagline:"You experience everything at full range. The highs, the lows, and the chaos in between.",
     desc:"Revie built something dominant and controversial in the 70s and the fall from it was long and strange. Bielsa arrived and gave the fanbase something rare: a way of playing that made you fall back in love with football itself, not just your club. The promotion in 2020 felt like a religious experience. What followed felt like punishment. Leeds fans exist at maximum intensity because the history demands it, everything at this club happens fully, loudly, with consequence. You recognise this frequency. You don't do half-measures either.",
     why:[
@@ -617,7 +617,7 @@ const teams = {
       "Your chaos tolerance is real. Leeds' history requires it. What keeps you there is something older and more stubborn than reason.",
     ],
     note:"Don Revie's Leeds won the First Division in 1969 and 1974. Bielsa's side were promoted in 2020 after 16 years away. Elland Road on a big night remains one of English football's most charged atmospheres.",
-    kit:"https://shop.leedsunited.com/collections/shirts",
+    kit:"https://shop.leedsunited.com/collections/kits",
   },
   CH: {
     name:"Chelsea",           emoji:"🔵", color:"#034694",
@@ -629,7 +629,7 @@ const teams = {
       "Stamford Bridge is still there. The Thames is behind Fulham Road. The old guard is still in the seats. Some things survive the money and the chaos.",
     ],
     note:"Stamford Bridge since 1905. Founded in a pub opposite the ground. The King's Road: Mary Quant, punk, the Rolling Stones, now boutiques. 6 league titles. 2 Champions Leagues. 19 trophies under Abramovich. The current chapter is unresolved.",
-    kit:"https://store.chelseafc.com/collections/mens-shirts",
+    kit:"https://store.chelseafc.com/en/chelsea-football-kits",
   },
   IT: {
     name:"Ipswich Town",      emoji:"🔵", color:"#0044A9",
@@ -641,10 +641,10 @@ const teams = {
       "The McKenna story gave the fanbase something the Robson era already taught them: that the right person with genuine care for the place can produce something beyond what the resources should allow.",
     ],
     note:"FA Cup 1978. UEFA Cup 1981. Bobby Robson. Portman Road opened in 1884. League One to Premier League in consecutive seasons under Kieran McKenna. Suffolk's club, genuinely.",
-    kit:"https://shop.itfc.co.uk/collections/shirts",
+    kit:"https://shop.itfc.co.uk/collections/kits",
   },
   CV: {
-    name:"Coventry City",     emoji:"🩵⚫", color:"#59CBEE",
+    name:"Coventry City",     emoji:"🩵", color:"#59CBEE",
     tagline:"You keep showing up for something that keeps making it hard to show up.",
     desc:"Coventry City played their home games at Birmingham City's ground. Then almost moved to Northampton. Then came back to a half-built stadium in their own city. The fanbase kept showing up through all of it, not because they were naive about what was happening, not because they approved of the decisions, but because the club was theirs and that fact didn't change regardless of what the ownership did with it. This is a very specific kind of love. It isn't blind. It isn't easy. It's the love that stays when leaving would have been completely understandable. The Premier League is the payoff for years of stubborn, complicated belonging.",
     why:[
@@ -653,7 +653,7 @@ const teams = {
       "The payoff of actually being in the Premier League after all of that carries a specific weight. You understand what it means to finally get something that was a long time coming.",
     ],
     note:"FA Cup winners 1987. The Ricoh Arena / CBS Arena saga. Playing at St Andrew's. Almost Northampton. Back in Coventry. Now in the Premier League. The fans made this happen by simply refusing to stop caring.",
-    kit:"https://shop.ccfc.co.uk/collections/shirts",
+    kit:"https://shop.ccfc.co.uk/collections/kits",
   },
 };
 
@@ -1618,7 +1618,7 @@ export default function App(){
       const teamName = teams[result]?.name || result;
       fetch("https://api.anthropic.com/v1/messages",{
         method:"POST",
-        headers:{"Content-Type":"application/json"},
+        headers:{"Content-Type":"application/json","anthropic-version":"2023-06-01"},
         body:JSON.stringify({
           model:"claude-sonnet-4-20250514",
           max_tokens:2000,
@@ -1638,7 +1638,7 @@ export default function App(){
           const toolResults = toolUseBlocks.map(b=>({type:"tool_result",tool_use_id:b.id,content:"Search completed."}));
           const followUp = await fetch("https://api.anthropic.com/v1/messages",{
             method:"POST",
-            headers:{"Content-Type":"application/json"},
+            headers:{"Content-Type":"application/json","anthropic-version":"2023-06-01"},
             body:JSON.stringify({
               model:"claude-sonnet-4-20250514",
               max_tokens:1000,
@@ -2087,7 +2087,7 @@ export default function App(){
                       style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}12`,border:`1px solid ${team.color}30`,borderRadius:5,padding:"11px 18px",color:(teamTextColors[result]||team.color),fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease"}}
                       onMouseEnter={e=>{e.currentTarget.style.background=`${team.color}20`;e.currentTarget.style.borderColor=`${team.color}55`;}}
                       onMouseLeave={e=>{e.currentTarget.style.background=`${team.color}12`;e.currentTarget.style.borderColor=`${team.color}30`;}}
-                    >↗ See current kits</a>
+                    >↗ Shop official kits</a>
                   </>
                 ):(
                   <p style={{fontSize:13,color:"#aaa",fontStyle:"italic",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>Stats not available for this club yet.</p>
