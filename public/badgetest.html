@@ -2,78 +2,41 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>FanDNA Badge Check</title>
+  <title>Squad Link Test</title>
   <style>
     body { background:#16161e; color:#e8e4de; font-family:monospace; padding:20px; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; }
-    .card { border:1px solid #2e2e45; border-radius:8px; padding:12px; text-align:center; }
-    .card.ok { border-color:#22c55e; }
-    .card.fail { border-color:#ef4444; }
-    .card.emoji-only { border-color:#888; }
-    .badge { width:56px; height:56px; object-fit:contain; display:block; margin:0 auto 6px; }
-    .emoji { font-size:42px; line-height:56px; display:block; margin:0 auto 6px; text-align:center; }
-    .label { font-size:10px; color:#888; }
-    #summary { margin-bottom:16px; font-size:13px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:8px; }
+    a { display:block; border:1px solid #2e2e45; border-radius:6px; padding:10px 12px;
+        color:#b0aca6; text-decoration:none; font-size:12px; transition:all .15s; }
+    a:hover { border-color:#6688dd; color:#e8e4de; background:#1c1c28; }
+    h2 { font-size:14px; margin-bottom:12px; color:#888; }
   </style>
 </head>
 <body>
-  <h2 style="font-size:15px;margin-bottom:8px">FanDNA — Badge Status</h2>
-  <p id="summary">Testing...</p>
-  <div class="grid" id="grid"></div>
-  <script>
-    const clubs = [
-      ["LI","Liverpool","🔴","https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg"],
-      ["MC","Man City","🔵","https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg"],
-      ["AR","Arsenal","🔴","https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg"],
-      ["EV","Everton","🔵","https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg"],
-      ["NC","Newcastle","⚫","https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg"],
-      ["WH","West Ham","⚒️","https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg"],
-      ["CP","Crystal Palace","🦅",""],
-      ["MU","Man Utd","🔴","https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg"],
-      ["SP","Spurs","⚪","https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg"],
-      ["LE","Leicester","🦊","https://upload.wikimedia.org/wikipedia/en/2/2d/Leicester_City_crest.svg"],
-      ["NF","Nottm Forest","🌲","https://upload.wikimedia.org/wikipedia/en/e/e5/Nottingham_Forest_F.C._logo.svg"],
-      ["BR","Brentford","🐝","https://upload.wikimedia.org/wikipedia/en/2/2a/Brentford_FC_crest.svg"],
-      ["BH","Brighton","🐦","https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_%26_Hove_Albion_logo.svg"],
-      ["WO","Wolves","🐺","https://upload.wikimedia.org/wikipedia/en/f/fc/Wolverhampton_Wanderers.svg"],
-      ["FU","Fulham","⚫","https://upload.wikimedia.org/wikipedia/en/e/eb/Fulham_FC_%28shield%29.svg"],
-      ["BO","Bournemouth","🍒","https://upload.wikimedia.org/wikipedia/en/e/e5/AFC_Bournemouth_%282013%29.svg"],
-      ["AV","Aston Villa","🦁",""],
-      ["SU","Sunderland","🐱",""],
-      ["LU","Leeds","⚪","https://upload.wikimedia.org/wikipedia/en/5/54/Leeds_United_F.C._logo.svg"],
-      ["CH","Chelsea","🔵","https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg"],
-      ["IT","Ipswich","🔵","https://upload.wikimedia.org/wikipedia/en/4/43/Ipswich_Town.svg"],
-      ["CV","Coventry","🩵",""],
-    ];
-    const grid = document.getElementById('grid');
-    let loaded=0, failed=0, emojiOnly=0;
-    clubs.forEach(([code,name,emoji,url]) => {
-      const card = document.createElement('div');
-      if(!url) {
-        card.className='card emoji-only';
-        card.innerHTML='<span class="emoji">'+emoji+'</span><div class="label">'+code+' — '+name+'<br><span style="color:#666">emoji only</span></div>';
-        emojiOnly++;
-        update();
-      } else {
-        card.className='card';
-        card.innerHTML='<img class="badge" src="'+url+'"><div class="label">'+code+' — '+name+'</div>';
-        grid.appendChild(card);
-        const img=card.querySelector('img');
-        img.onload=()=>{card.classList.add('ok');loaded++;update();};
-        img.onerror=()=>{
-          card.classList.remove('ok');
-          card.classList.add('fail');
-          card.innerHTML='<span class="emoji">'+emoji+'</span><div class="label">'+code+' — '+name+'<br><span style="color:#ef4444">badge failed</span></div>';
-          failed++;update();
-        };
-      }
-      if(url) grid.appendChild(card);
-    });
-    function update(){
-      const done=loaded+failed+emojiOnly;
-      document.getElementById('summary').textContent=
-        done+'/22 — '+loaded+' badges loaded ✓  '+failed+' failed ✗  '+emojiOnly+' emoji only';
-    }
-  </script>
+  <h2>Squad link test — click each to verify it opens the correct PL squad page</h2>
+  <div class="grid">
+    <a href="https://www.premierleague.com/en/clubs/14/liverpool/squad" target="_blank">LI — Liverpool</a>
+    <a href="https://www.premierleague.com/en/clubs/43/manchester-city/squad" target="_blank">MC — Man City</a>
+    <a href="https://www.premierleague.com/en/clubs/3/arsenal/squad" target="_blank">AR — Arsenal</a>
+    <a href="https://www.premierleague.com/en/clubs/11/everton/squad" target="_blank">EV — Everton</a>
+    <a href="https://www.premierleague.com/en/clubs/4/newcastle-united/squad" target="_blank">NC — Newcastle</a>
+    <a href="https://www.premierleague.com/en/clubs/21/west-ham-united/squad" target="_blank">WH — West Ham</a>
+    <a href="https://www.premierleague.com/en/clubs/31/crystal-palace/squad" target="_blank">CP — Crystal Palace</a>
+    <a href="https://www.premierleague.com/en/clubs/1/manchester-united/squad" target="_blank">MU — Man Utd</a>
+    <a href="https://www.premierleague.com/en/clubs/6/tottenham-hotspur/squad" target="_blank">SP — Spurs</a>
+    <a href="https://www.premierleague.com/en/clubs/13/leicester-city/squad" target="_blank">LE — Leicester</a>
+    <a href="https://www.premierleague.com/en/clubs/17/nottingham-forest/squad" target="_blank">NF — Nottm Forest</a>
+    <a href="https://www.premierleague.com/en/clubs/94/brentford/squad" target="_blank">BR — Brentford</a>
+    <a href="https://www.premierleague.com/en/clubs/36/brighton-and-hove-albion/squad" target="_blank">BH — Brighton</a>
+    <a href="https://www.premierleague.com/en/clubs/39/wolverhampton-wanderers/squad" target="_blank">WO — Wolves</a>
+    <a href="https://www.premierleague.com/en/clubs/54/fulham/squad" target="_blank">FU — Fulham</a>
+    <a href="https://www.premierleague.com/en/clubs/91/bournemouth/squad" target="_blank">BO — Bournemouth</a>
+    <a href="https://www.premierleague.com/en/clubs/7/aston-villa/squad" target="_blank">AV — Aston Villa</a>
+    <a href="https://www.premierleague.com/en/clubs/56/sunderland/squad" target="_blank">SU — Sunderland</a>
+    <a href="https://www.premierleague.com/en/clubs/2/leeds-united/squad" target="_blank">LU — Leeds</a>
+    <a href="https://www.premierleague.com/en/clubs/8/chelsea/squad" target="_blank">CH — Chelsea</a>
+    <a href="https://www.premierleague.com/en/clubs/40/ipswich-town/squad" target="_blank">IT — Ipswich</a>
+    <a href="https://www.premierleague.com/en/clubs/57/coventry-city/squad" target="_blank">CV — Coventry</a>
+  </div>
 </body>
 </html>
