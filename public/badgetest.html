@@ -2,57 +2,78 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Badge Fix Test 2</title>
+  <title>FanDNA Badge Check</title>
   <style>
-    body { background:#0e0e18; color:#e8e4de; font-family:monospace; padding:20px; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:10px; margin-bottom:24px; }
-    .card { border:1px solid #333; border-radius:8px; padding:10px; text-align:center; }
-    .card.ok { border-color:#22c55e; background:#0a1a0a; }
-    .card.fail { border-color:#333; }
-    img { width:60px; height:60px; object-fit:contain; display:block; margin:0 auto 6px; }
-    .label { font-size:9px; color:#666; word-break:break-all; line-height:1.3; }
-    .label.ok { color:#22c55e; }
-    h2 { margin-top:16px; font-size:13px; color:#888; }
+    body { background:#16161e; color:#e8e4de; font-family:monospace; padding:20px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; }
+    .card { border:1px solid #2e2e45; border-radius:8px; padding:12px; text-align:center; }
+    .card.ok { border-color:#22c55e; }
+    .card.fail { border-color:#ef4444; }
+    .card.emoji-only { border-color:#888; }
+    .badge { width:56px; height:56px; object-fit:contain; display:block; margin:0 auto 6px; }
+    .emoji { font-size:42px; line-height:56px; display:block; margin:0 auto 6px; text-align:center; }
+    .label { font-size:10px; color:#888; }
+    #summary { margin-bottom:16px; font-size:13px; }
   </style>
 </head>
 <body>
-  <h1 style="font-size:15px">Badge candidates — round 2</h1>
-  <div id="all"></div>
+  <h2 style="font-size:15px;margin-bottom:8px">FanDNA — Badge Status</h2>
+  <p id="summary">Testing...</p>
+  <div class="grid" id="grid"></div>
   <script>
-    const all = [
-      ["CP1","https://upload.wikimedia.org/wikipedia/en/0/0c/Crystal_Palace_FC_logo_%282022%29.svg"],
-      ["CP2","https://upload.wikimedia.org/wikipedia/commons/0/0c/Crystal_Palace_FC_logo_%282022%29.svg"],
-      ["CP3","https://upload.wikimedia.org/wikipedia/en/a/a7/Crystal_Palace_FC_logo.svg"],
-      ["CP4","https://upload.wikimedia.org/wikipedia/commons/5/5e/Crystal_Palace_FC_%282022%29.svg"],
-      ["CP5","https://upload.wikimedia.org/wikipedia/en/5/5e/Crystal_Palace_FC_crest.svg"],
-      ["AV1","https://upload.wikimedia.org/wikipedia/en/9/9f/Aston_Villa_FC_crest_%282016%29.svg"],
-      ["AV2","https://upload.wikimedia.org/wikipedia/commons/9/9f/Aston_Villa_FC_crest_%282016%29.svg"],
-      ["AV3","https://upload.wikimedia.org/wikipedia/en/f/f9/Aston_Villa_FC_new_crest.svg"],
-      ["AV4","https://upload.wikimedia.org/wikipedia/commons/f/f9/Aston_Villa_FC_new_crest.svg"],
-      ["AV5","https://upload.wikimedia.org/wikipedia/en/1/17/Aston_Villa.svg"],
-      ["SU1","https://upload.wikimedia.org/wikipedia/en/7/77/Sunderland_AFC_logo.svg"],
-      ["SU2","https://upload.wikimedia.org/wikipedia/commons/7/77/Sunderland_AFC_logo.svg"],
-      ["SU3","https://upload.wikimedia.org/wikipedia/en/6/6c/Sunderland_AFC.svg"],
-      ["SU4","https://upload.wikimedia.org/wikipedia/commons/4/4a/Sunderland_AFC_crest.svg"],
-      ["SU5","https://upload.wikimedia.org/wikipedia/en/d/d2/Sunderland_afc.svg"],
-      ["CV1","https://upload.wikimedia.org/wikipedia/en/8/8e/Coventry_City_FC_logo.svg"],
-      ["CV2","https://upload.wikimedia.org/wikipedia/commons/8/8e/Coventry_City_FC_logo.svg"],
-      ["CV3","https://upload.wikimedia.org/wikipedia/en/1/1e/Coventry_City_FC.svg"],
-      ["CV4","https://upload.wikimedia.org/wikipedia/commons/1/1e/Coventry_City_FC.svg"],
-      ["CV5","https://upload.wikimedia.org/wikipedia/en/c/c2/Coventry_City_F.C._logo.svg"],
+    const clubs = [
+      ["LI","Liverpool","🔴","https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg"],
+      ["MC","Man City","🔵","https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg"],
+      ["AR","Arsenal","🔴","https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg"],
+      ["EV","Everton","🔵","https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg"],
+      ["NC","Newcastle","⚫","https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg"],
+      ["WH","West Ham","⚒️","https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg"],
+      ["CP","Crystal Palace","🦅",""],
+      ["MU","Man Utd","🔴","https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg"],
+      ["SP","Spurs","⚪","https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg"],
+      ["LE","Leicester","🦊","https://upload.wikimedia.org/wikipedia/en/2/2d/Leicester_City_crest.svg"],
+      ["NF","Nottm Forest","🌲","https://upload.wikimedia.org/wikipedia/en/e/e5/Nottingham_Forest_F.C._logo.svg"],
+      ["BR","Brentford","🐝","https://upload.wikimedia.org/wikipedia/en/2/2a/Brentford_FC_crest.svg"],
+      ["BH","Brighton","🐦","https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_%26_Hove_Albion_logo.svg"],
+      ["WO","Wolves","🐺","https://upload.wikimedia.org/wikipedia/en/f/fc/Wolverhampton_Wanderers.svg"],
+      ["FU","Fulham","⚫","https://upload.wikimedia.org/wikipedia/en/e/eb/Fulham_FC_%28shield%29.svg"],
+      ["BO","Bournemouth","🍒","https://upload.wikimedia.org/wikipedia/en/e/e5/AFC_Bournemouth_%282013%29.svg"],
+      ["AV","Aston Villa","🦁",""],
+      ["SU","Sunderland","🐱",""],
+      ["LU","Leeds","⚪","https://upload.wikimedia.org/wikipedia/en/5/54/Leeds_United_F.C._logo.svg"],
+      ["CH","Chelsea","🔵","https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg"],
+      ["IT","Ipswich","🔵","https://upload.wikimedia.org/wikipedia/en/4/43/Ipswich_Town.svg"],
+      ["CV","Coventry","🩵",""],
     ];
-    const grid = document.createElement('div');
-    grid.className = 'grid';
-    document.getElementById('all').appendChild(grid);
-    all.forEach(([label, url]) => {
+    const grid = document.getElementById('grid');
+    let loaded=0, failed=0, emojiOnly=0;
+    clubs.forEach(([code,name,emoji,url]) => {
       const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = '<img src="'+url+'"><div class="label" id="lbl-'+label+'">'+label+': '+url.split('/wikipedia/')[1]+'</div>';
-      grid.appendChild(card);
-      const img = card.querySelector('img');
-      img.onload = () => { card.classList.add('ok'); document.getElementById('lbl-'+label).classList.add('ok'); };
-      img.onerror = () => { img.style.opacity='0.05'; };
+      if(!url) {
+        card.className='card emoji-only';
+        card.innerHTML='<span class="emoji">'+emoji+'</span><div class="label">'+code+' — '+name+'<br><span style="color:#666">emoji only</span></div>';
+        emojiOnly++;
+        update();
+      } else {
+        card.className='card';
+        card.innerHTML='<img class="badge" src="'+url+'"><div class="label">'+code+' — '+name+'</div>';
+        grid.appendChild(card);
+        const img=card.querySelector('img');
+        img.onload=()=>{card.classList.add('ok');loaded++;update();};
+        img.onerror=()=>{
+          card.classList.remove('ok');
+          card.classList.add('fail');
+          card.innerHTML='<span class="emoji">'+emoji+'</span><div class="label">'+code+' — '+name+'<br><span style="color:#ef4444">badge failed</span></div>';
+          failed++;update();
+        };
+      }
+      if(url) grid.appendChild(card);
     });
+    function update(){
+      const done=loaded+failed+emojiOnly;
+      document.getElementById('summary').textContent=
+        done+'/22 — '+loaded+' badges loaded ✓  '+failed+' failed ✗  '+emojiOnly+' emoji only';
+    }
   </script>
 </body>
 </html>
