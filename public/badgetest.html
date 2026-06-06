@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Badge Test</title>
+  <style>
+    body { background:#0e0e18; color:#e8e4de; font-family:monospace; padding:20px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:12px; }
+    .card { border:1px solid #333; border-radius:8px; padding:12px; text-align:center; }
+    .card.ok { border-color:#22c55e; }
+    .card.fail { border-color:#ef4444; }
+    img { width:60px; height:60px; object-fit:contain; display:block; margin:0 auto 8px; }
+    .label { font-size:11px; color:#888; }
+    #summary { margin-bottom:20px; font-size:14px; }
+  </style>
+</head>
+<body>
+  <h2>Badge Test — all 22 clubs</h2>
+  <p id="summary">Testing...</p>
+  <div class="grid" id="grid"></div>
+  <script>
+    const badges = {
+      LI:["Liverpool","https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Liverpool_FC.svg/150px-Liverpool_FC.svg.png"],
+      MC:["Man City","https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Manchester_City_FC_badge.svg/150px-Manchester_City_FC_badge.svg.png"],
+      AR:["Arsenal","https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Arsenal_FC.svg/150px-Arsenal_FC.svg.png"],
+      EV:["Everton","https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/Everton_FC_logo.svg/150px-Everton_FC_logo.svg.png"],
+      NC:["Newcastle","https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Newcastle_United_Logo.svg/150px-Newcastle_United_Logo.svg.png"],
+      WH:["West Ham","https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/West_Ham_United_FC_logo.svg/150px-West_Ham_United_FC_logo.svg.png"],
+      CP:["Crystal Palace","https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Crystal_Palace_FC_logo_%282022%29.svg/150px-Crystal_Palace_FC_logo_%282022%29.svg.png"],
+      MU:["Man Utd","https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/150px-Manchester_United_FC_crest.svg.png"],
+      SP:["Spurs","https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Tottenham_Hotspur.svg/150px-Tottenham_Hotspur.svg.png"],
+      LE:["Leicester","https://upload.wikimedia.org/wikipedia/en/thumb/2/2d/Leicester_City_crest.svg/150px-Leicester_City_crest.svg.png"],
+      NF:["Nottm Forest","https://upload.wikimedia.org/wikipedia/en/thumb/e/e5/Nottingham_Forest_F.C._logo.svg/150px-Nottingham_Forest_F.C._logo.svg.png"],
+      BR:["Brentford","https://upload.wikimedia.org/wikipedia/en/thumb/2/2a/Brentford_FC_crest.svg/150px-Brentford_FC_crest.svg.png"],
+      BH:["Brighton","https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Brighton_%26_Hove_Albion_logo.svg/150px-Brighton_%26_Hove_Albion_logo.svg.png"],
+      WO:["Wolves","https://upload.wikimedia.org/wikipedia/en/thumb/f/fc/Wolverhampton_Wanderers.svg/150px-Wolverhampton_Wanderers.svg.png"],
+      FU:["Fulham","https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Fulham_FC_%28shield%29.svg/150px-Fulham_FC_%28shield%29.svg.png"],
+      BO:["Bournemouth","https://upload.wikimedia.org/wikipedia/en/thumb/e/e5/AFC_Bournemouth_%282013%29.svg/150px-AFC_Bournemouth_%282013%29.svg.png"],
+      AV:["Aston Villa","https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Aston_Villa_FC_crest_%282016%29.svg/150px-Aston_Villa_FC_crest_%282016%29.svg.png"],
+      SU:["Sunderland","https://upload.wikimedia.org/wikipedia/en/thumb/7/77/Sunderland_AFC_logo.svg/150px-Sunderland_AFC_logo.svg.png"],
+      LU:["Leeds","https://upload.wikimedia.org/wikipedia/en/thumb/5/54/Leeds_United_F.C._logo.svg/150px-Leeds_United_F.C._logo.svg.png"],
+      CH:["Chelsea","https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/150px-Chelsea_FC.svg.png"],
+      IT:["Ipswich","https://upload.wikimedia.org/wikipedia/en/thumb/4/43/Ipswich_Town.svg/150px-Ipswich_Town.svg.png"],
+      CV:["Coventry","https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Coventry_City_FC_logo.svg/150px-Coventry_City_FC_logo.svg.png"],
+    };
+
+    const grid = document.getElementById('grid');
+    let passed = 0, failed = 0, done = 0;
+    const total = Object.keys(badges).length;
+
+    Object.entries(badges).forEach(([code, [name, url]]) => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `<img id="img-${code}" src="${url}" alt="${name}"><div class="label">${code} — ${name}</div>`;
+      grid.appendChild(card);
+
+      const img = card.querySelector('img');
+      img.onload = () => {
+        card.classList.add('ok');
+        passed++; done++;
+        update();
+      };
+      img.onerror = () => {
+        card.classList.add('fail');
+        img.style.opacity = '0.15';
+        failed++; done++;
+        update();
+      };
+    });
+
+    function update() {
+      document.getElementById('summary').textContent =
+        `${done}/${total} tested — ${passed} ✓ loaded, ${failed} ✗ failed`;
+    }
+  </script>
+</body>
+</html>
