@@ -1350,6 +1350,31 @@ const badgeUrls = {
   CV:"",
 };
 
+const squadUrls = {
+  LI:"https://www.premierleague.com/en/clubs/14/liverpool/squad",
+  MC:"https://www.premierleague.com/en/clubs/43/manchester-city/squad",
+  AR:"https://www.premierleague.com/en/clubs/3/arsenal/squad",
+  EV:"https://www.premierleague.com/en/clubs/11/everton/squad",
+  NC:"https://www.premierleague.com/en/clubs/4/newcastle-united/squad",
+  WH:"https://www.premierleague.com/en/clubs/21/west-ham-united/squad",
+  CP:"https://www.premierleague.com/en/clubs/31/crystal-palace/squad",
+  MU:"https://www.premierleague.com/en/clubs/1/manchester-united/squad",
+  SP:"https://www.premierleague.com/en/clubs/6/tottenham-hotspur/squad",
+  LE:"https://www.premierleague.com/en/clubs/13/leicester-city/squad",
+  NF:"https://www.premierleague.com/en/clubs/17/nottingham-forest/squad",
+  BR:"https://www.premierleague.com/en/clubs/94/brentford/squad",
+  BH:"https://www.premierleague.com/en/clubs/36/brighton-and-hove-albion/squad",
+  WO:"https://www.premierleague.com/en/clubs/39/wolverhampton-wanderers/squad",
+  FU:"https://www.premierleague.com/en/clubs/54/fulham/squad",
+  BO:"https://www.premierleague.com/en/clubs/91/bournemouth/squad",
+  AV:"https://www.premierleague.com/en/clubs/7/aston-villa/squad",
+  SU:"https://www.premierleague.com/en/clubs/56/sunderland/squad",
+  LU:"https://www.premierleague.com/en/clubs/2/leeds-united/squad",
+  CH:"https://www.premierleague.com/en/clubs/8/chelsea/squad",
+  IT:"https://www.premierleague.com/en/clubs/40/ipswich-town/squad",
+  CV:"https://www.premierleague.com/en/clubs/57/coventry-city/squad",
+};
+
 // ─── HELPERS ──────────────────────────────────────────────────────────────────
 function getAllScores(answers) {
   const s = Object.fromEntries(Object.keys(teams).map(k=>[k,0]));
@@ -1604,74 +1629,7 @@ export default function App(){
   const lastContrib = lastQ && lastAns ? (scoring[lastQ.id]?.[lastAns] || {}) : {};
 
   // ── Squad tab state ────────────────────────────────────────────────────────
-  const [squadData, setSquadData] = useState(null);
-  const [squadLoading, setSquadLoading] = useState(false);
-  const [squadError, setSquadError] = useState(null);
-  const [squadFetched, setSquadFetched] = useState(null);
 
-  useEffect(()=>{
-    if(tab==="squad" && result && squadFetched!==result){
-      setSquadLoading(true);
-      setSquadData(null);
-      setSquadError(null);
-      setSquadFetched(result);
-      const teamName = teams[result]?.name || result;
-      fetch("/api/squad",{
-        method:"POST",
-        headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({
-          model:"claude-sonnet-4-20250514",
-          max_tokens:2000,
-          tools:[{"type":"web_search_20250305","name":"web_search"}],
-          system:'You are a football data assistant. Use web search to find the current squad. After searching, return ONLY a valid JSON object as your final text response. No markdown fences, no preamble. Format: {"manager":"Full Name","formation":"4-3-3","players":[{"name":"Full Name","position":"GK","note":"brief role note"}],"source_note":"Verified via web search"} Positions: GK, DEF, MID, FWD only. Return 11-13 players.',
-          messages:[{role:"user",content:`Search for and return the current ${teamName} first team squad for the 2025/26 season. Include the manager, formation, and 11-13 key players with positions.`}]
-        })
-      })
-      .then(r=>r.json())
-      .then(async data=>{
-        if(data.error) throw new Error(data.error.message||"API error");
-        // If model used web search, we need to continue the conversation
-        const stopReason = data.stop_reason;
-        if(stopReason==="tool_use"){
-          // Extract tool use blocks and results, then send follow-up
-          const toolUseBlocks = (data.content||[]).filter(c=>c.type==="tool_use");
-          const toolResults = toolUseBlocks.map(b=>({type:"tool_result",tool_use_id:b.id,content:"Search completed."}));
-          const followUp = await fetch("/api/squad",{
-            method:"POST",
-            headers:{"Content-Type":"application/json"},
-            body:JSON.stringify({
-              model:"claude-sonnet-4-20250514",
-              max_tokens:1000,
-              tools:[{"type":"web_search_20250305","name":"web_search"}],
-              system:'Return ONLY a valid JSON object with this format: {"manager":"Full Name","formation":"4-3-3","players":[{"name":"Full Name","position":"GK","note":"brief role note"}],"source_note":"from web search"} Positions: GK, DEF, MID, FWD. Return 11-13 players. No markdown, no explanation.',
-              messages:[
-                {role:"user",content:`Search for and return the current first team squad for the 2025/26 season. Include the manager, formation, and 11-13 key players with positions.`},
-                {role:"assistant",content:data.content},
-                {role:"user",content:[...toolResults,{type:"text",text:"Now return the JSON object with the squad data you found."}]},
-              ]
-            })
-          }).then(r=>r.json());
-          const text2 = (followUp.content||[]).filter(c=>c.type==="text").map(c=>c.text).join("");
-          const match2 = text2.match(/\{[\s\S]*\}/);
-          if(!match2) throw new Error("No JSON in follow-up");
-          setSquadData(JSON.parse(match2[0]));
-        } else {
-          const blocks = (data.content||[]).filter(c=>c.type==="text");
-          if(!blocks.length) throw new Error("No text response");
-          const raw = blocks.map(c=>c.text).join("");
-          const jsonMatch = raw.match(/\{[\s\S]*\}/);
-          if(!jsonMatch) throw new Error("No JSON in response");
-          setSquadData(JSON.parse(jsonMatch[0]));
-        }
-        setSquadLoading(false);
-      })
-      .catch(err=>{
-        console.error("Squad fetch error:", err);
-        setSquadError("Could not load squad data. Try again later.");
-        setSquadLoading(false);
-      });
-    }
-  },[tab, result]);
 
   // ── Squad pitch data (pre-computed, no IIFE in JSX) ───────────────────────
   const squadPitchData = useMemo(()=>{
@@ -1955,7 +1913,7 @@ export default function App(){
             {/* Tabs — scrollable row */}
             <div style={{position:"relative",marginBottom:22}}>
               <div style={{display:"flex",gap:0,marginBottom:0,borderBottom:"1px solid #0f0f1a",overflowX:"auto",scrollbarWidth:"none",WebkitOverflowScrolling:"touch",msOverflowStyle:"none"}}>
-              {[["result","Match"],["analysis","Why you?"],["stats","Club Vitals"],["squad","Squad"],["nearly","Almost you"]].map(([id,label])=>(
+              {[["result","Match"],["analysis","Why you?"],["stats","Club Vitals"],["nearly","Almost you"]].map(([id,label])=>(
                 <button key={id} onClick={()=>setTab(id)}
                   style={{
                     background:"none",border:"none",
@@ -2024,8 +1982,14 @@ export default function App(){
                 </div>
                 <a href={team.kit} target="_blank" rel="noopener noreferrer"
                   style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
-                  <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> Buy the {team.name} kit
+                  <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> Buy the kit
                 </a>
+                {squadUrls[result]&&(
+                  <a href={squadUrls[result]} target="_blank" rel="noopener noreferrer"
+                    style={{display:"inline-flex",alignItems:"center",gap:10,background:"#1c1c28",border:"1px solid #3a3a52",borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
+                    ↗ View squad
+                  </a>
+                )}
               </div>
             )}
 
@@ -2096,87 +2060,6 @@ export default function App(){
             )}
 
                         
-            {/* ── Tab: Squad ── */}
-            {tab==="squad"&&(
-              <div style={{animation:"fadeIn .3s ease"}}>
-                <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:18}}>Current squad</div>
-                {squadLoading&&(
-                  <div style={{padding:"40px 0",textAlign:"center"}}>
-                    <div style={{fontSize:11,color:"#aaa",fontFamily:"'DM Mono',monospace",letterSpacing:"0.15em"}}>Fetching live squad data...</div>
-                  </div>
-                )}
-                {squadError&&(
-                  <p style={{fontSize:13,color:"#ccc",fontStyle:"italic",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>{squadError}</p>
-                )}
-                {squadData&&squadPitchData&&(
-                  <>
-                    <div style={{display:"flex",gap:12,marginBottom:16,flexWrap:"wrap"}}>
-                      <div style={{background:`${team.color}12`,border:`1px solid ${team.color}25`,borderRadius:5,padding:"8px 14px"}}>
-                        <div style={{fontSize:11,color:"#888",letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:3}}>Manager</div>
-                        <div style={{fontSize:15,color:"#e8e4de",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>{squadData.manager}</div>
-                      </div>
-                      <div style={{background:`${team.color}12`,border:`1px solid ${team.color}25`,borderRadius:5,padding:"8px 14px"}}>
-                        <div style={{fontSize:11,color:"#888",letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:3}}>Formation</div>
-                        <div style={{fontSize:15,color:"#e8e4de",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>{squadData.formation}</div>
-                      </div>
-                    </div>
-                    <div style={{width:"100%",maxWidth:520,margin:"0 auto 20px",borderRadius:8,overflow:"hidden"}}>
-                      <svg viewBox="0 0 520 360" style={{width:"100%",display:"block"}}>
-                        <rect width={520} height={360} fill="#0a1a0a"/>
-                        {[0,1,2,3,4,5,6,7].map(i=>(
-                          <rect key={i} x={0} y={i*45} width={520} height={22} fill="#0d1f0d" opacity={0.6}/>
-                        ))}
-                        <rect x={16} y={10} width={488} height={340} fill="none" stroke="#ffffff18" strokeWidth={1.5}/>
-                        <line x1={260} y1={10} x2={260} y2={350} stroke="#ffffff12" strokeWidth={1}/>
-                        <circle cx={260} cy={180} r={44} fill="none" stroke="#ffffff12" strokeWidth={1}/>
-                        <circle cx={260} cy={180} r={2} fill="#ffffff25"/>
-                        <rect x={200} y={10} width={120} height={50} fill="none" stroke="#ffffff10" strokeWidth={1}/>
-                        <rect x={200} y={300} width={120} height={50} fill="none" stroke="#ffffff10" strokeWidth={1}/>
-                        {squadPitchData.allRows.map((row,rowIdx)=>{
-                          const y=308-(rowIdx*(272/Math.max(squadPitchData.rowCount,1)));
-                          return row.map((player,colIdx)=>{
-                            const x=row.length===1?260:62+colIdx*(396/Math.max(row.length-1,1));
-                            // Smart name: prefer last name, fallback to first 8 chars of full name
-                            const parts=(player.name||"").trim().split(" ");
-                            const displayName = parts.length>1
-                              ? parts[parts.length-1].slice(0,8)
-                              : parts[0].slice(0,8);
-                            return(
-                              <g key={`r${rowIdx}c${colIdx}`}>
-                                <circle cx={x} cy={y} r={18} fill={team.color} opacity={0.9}/>
-                                <circle cx={x} cy={y} r={18} fill="none" stroke="#ffffff30" strokeWidth={1.5}/>
-                                <text x={x} y={y+4} textAnchor="middle" fontSize={9} fill="#ffffff" fontFamily="sans-serif" fontWeight="700">{displayName}</text>
-                                <text x={x} y={y+24} textAnchor="middle" fontSize={7} fill="#ffffffaa" fontFamily="monospace">{player.position}</text>
-                              </g>
-                            );
-                          });
-                        })}
-                      </svg>
-                    </div>
-                    {["GK","DEF","MID","FWD"].map(pos=>{
-                      const group=(squadData.players||[]).filter(p=>p.position===pos);
-                      if(!group.length) return null;
-                      const posLabels={GK:"Goalkeeper",DEF:"Defenders",MID:"Midfielders",FWD:"Forwards"};
-                      return(
-                        <div key={pos} style={{marginBottom:12}}>
-                          <div style={{fontSize:11,color:(teamTextColors[result]||team.color),letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:6,opacity:0.8}}>{posLabels[pos]}</div>
-                          {group.map((p,i)=>(
-                            <div key={i} style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",padding:"6px 0",borderBottom:"1px solid #141422"}}>
-                              <div style={{fontSize:14,color:"#e8e4de",fontFamily:"'Cormorant Garamond',Georgia,serif",minWidth:130}}>{p.name}</div>
-                              <div style={{fontSize:11,color:"#bbb",fontFamily:"'DM Mono',monospace",textAlign:"right",maxWidth:"52%",lineHeight:1.5}}>{p.note}</div>
-                            </div>
-                          ))}
-                        </div>
-                      );
-                    })}
-                    {squadData.source_note&&(
-                      <p style={{fontSize:10,color:"#aaa",fontFamily:"'DM Mono',monospace",marginTop:12,lineHeight:1.5}}>{squadData.source_note}</p>
-                    )}
-                  </>
-                )}
-              </div>
-            )}
-
             {/* ── Tab: Nearly Got ── */}
             {tab==="nearly"&&(
               <div style={{animation:"fadeIn .3s ease"}}>
