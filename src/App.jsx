@@ -2716,20 +2716,6 @@ export default function App(){
                     </a>
                   )}
                 </div>
-              
-</div>
-              {/* ── CTAs ── */}
-              <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:24,paddingTop:20,borderTop:"1px solid #2a2a3a"}}>
-                <a href={team.kit} target="_blank" rel="noopener noreferrer"
-                  style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
-                  <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> Buy the kit
-                </a>
-                {squadUrls[result]&&(
-                  <a href={squadUrls[result]} target="_blank" rel="noopener noreferrer"
-                    style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
-                    <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> View squad
-                  </a>
-                )}
               </div>
             )}
             {/* ── Tab: Analysis ── */}
@@ -2748,21 +2734,20 @@ export default function App(){
                   <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:14}}>Personality dimensions</div>
                   <DimBars teamKey={result} color={team.color}/>
                 </div>
-              
-              {/* ── CTAs ── */}
-              <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:24,paddingTop:20,borderTop:"1px solid #2a2a3a"}}>
-                <a href={team.kit} target="_blank" rel="noopener noreferrer"
-                  style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
-                  <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> Buy the kit
-                </a>
-                {squadUrls[result]&&(
-                  <a href={squadUrls[result]} target="_blank" rel="noopener noreferrer"
+                {/* ── CTAs ── */}
+                <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:24,paddingTop:20,borderTop:"1px solid #2a2a3a"}}>
+                  <a href={team.kit} target="_blank" rel="noopener noreferrer"
                     style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
-                    <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> View squad
+                    <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> Buy the kit
                   </a>
-                )}
+                  {squadUrls[result]&&(
+                    <a href={squadUrls[result]} target="_blank" rel="noopener noreferrer"
+                      style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
+                      <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> View squad
+                    </a>
+                  )}
+                </div>
               </div>
-</div>
             )}
             {/* ── Tab: Club Stats ── */}
             {tab==="stats"&&(
@@ -2799,11 +2784,18 @@ export default function App(){
                         ))}
                       </div>
                     )}
-                    <a href={team.kit} target="_blank" rel="noopener noreferrer"
-                      style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}12`,border:`1px solid ${team.color}30`,borderRadius:5,padding:"11px 18px",color:(teamTextColors[result]||team.color),fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease"}}
-                      onMouseEnter={e=>{e.currentTarget.style.background=`${team.color}20`;e.currentTarget.style.borderColor=`${team.color}55`;}}
-                      onMouseLeave={e=>{e.currentTarget.style.background=`${team.color}12`;e.currentTarget.style.borderColor=`${team.color}30`;}}
-                    >↗ Shop official kits</a>
+                    <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:8}}>
+                      <a href={team.kit} target="_blank" rel="noopener noreferrer"
+                        style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
+                        <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> Buy the kit
+                      </a>
+                      {squadUrls[result]&&(
+                        <a href={squadUrls[result]} target="_blank" rel="noopener noreferrer"
+                          style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
+                          <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> View squad
+                        </a>
+                      )}
+                    </div>
                   </>
                 ):(
                   <p style={{fontSize:13,color:"#aaa",fontStyle:"italic",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>Stats not available for this club yet.</p>
