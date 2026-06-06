@@ -2704,6 +2704,23 @@ export default function App(){
                     onMouseLeave={e=>{e.currentTarget.style.background=`${team.color}15`;}}
                   >↗ Copy result</button>
                 </div>
+                <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:4}}>
+                  <a href={team.kit} target="_blank" rel="noopener noreferrer"
+                    style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
+                    <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> Buy the kit
+                  </a>
+                  {squadUrls[result]&&(
+                    <a href={squadUrls[result]} target="_blank" rel="noopener noreferrer"
+                      style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
+                      <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> View squad
+                    </a>
+                  )}
+                </div>
+              </div>
+            )}
+
+              {/* ── CTAs ── */}
+              <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:24,paddingTop:20,borderTop:"1px solid #2a2a3a"}}>
                 <a href={team.kit} target="_blank" rel="noopener noreferrer"
                   style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
                   <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> Buy the kit
@@ -2715,8 +2732,6 @@ export default function App(){
                   </a>
                 )}
               </div>
-            )}
-
             {/* ── Tab: Analysis ── */}
             {tab==="analysis"&&(
               <div style={{animation:"fadeIn .3s ease"}}>
@@ -2736,6 +2751,19 @@ export default function App(){
               </div>
             )}
 
+              {/* ── CTAs ── */}
+              <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:24,paddingTop:20,borderTop:"1px solid #2a2a3a"}}>
+                <a href={team.kit} target="_blank" rel="noopener noreferrer"
+                  style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
+                  <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> Buy the kit
+                </a>
+                {squadUrls[result]&&(
+                  <a href={squadUrls[result]} target="_blank" rel="noopener noreferrer"
+                    style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
+                    <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> View squad
+                  </a>
+                )}
+              </div>
             {/* ── Tab: Club Stats ── */}
             {tab==="stats"&&(
               <div style={{animation:"fadeIn .3s ease"}}>
