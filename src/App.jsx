@@ -1616,9 +1616,9 @@ export default function App(){
       setSquadError(null);
       setSquadFetched(result);
       const teamName = teams[result]?.name || result;
-      fetch("https://api.anthropic.com/v1/messages",{
+      fetch("/api/squad",{
         method:"POST",
-        headers:{"Content-Type":"application/json","anthropic-version":"2023-06-01","x-api-key":import.meta.env.VITE_ANTHROPIC_KEY||""},
+        headers:{"Content-Type":"application/json"},
         body:JSON.stringify({
           model:"claude-sonnet-4-20250514",
           max_tokens:2000,
@@ -1636,9 +1636,9 @@ export default function App(){
           // Extract tool use blocks and results, then send follow-up
           const toolUseBlocks = (data.content||[]).filter(c=>c.type==="tool_use");
           const toolResults = toolUseBlocks.map(b=>({type:"tool_result",tool_use_id:b.id,content:"Search completed."}));
-          const followUp = await fetch("https://api.anthropic.com/v1/messages",{
+          const followUp = await fetch("/api/squad",{
             method:"POST",
-            headers:{"Content-Type":"application/json","anthropic-version":"2023-06-01","x-api-key":import.meta.env.VITE_ANTHROPIC_KEY||""},
+            headers:{"Content-Type":"application/json"},
             body:JSON.stringify({
               model:"claude-sonnet-4-20250514",
               max_tokens:1000,
