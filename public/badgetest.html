@@ -2,76 +2,74 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Badge Test</title>
+  <title>Badge Fix Test</title>
   <style>
     body { background:#0e0e18; color:#e8e4de; font-family:monospace; padding:20px; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:12px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:12px; margin-bottom:30px; }
     .card { border:1px solid #333; border-radius:8px; padding:12px; text-align:center; }
     .card.ok { border-color:#22c55e; }
     .card.fail { border-color:#ef4444; }
-    img { width:60px; height:60px; object-fit:contain; display:block; margin:0 auto 8px; }
-    .label { font-size:11px; color:#888; }
-    #summary { margin-bottom:20px; font-size:14px; }
+    img { width:60px; height:60px; object-fit:contain; display:block; margin:0 auto 6px; }
+    .label { font-size:10px; color:#888; word-break:break-all; }
+    h2 { margin-top:20px; font-size:14px; }
   </style>
 </head>
 <body>
-  <h2>Badge Test — all 22 clubs</h2>
-  <p id="summary">Testing...</p>
-  <div class="grid" id="grid"></div>
+  <h1 style="font-size:16px">Badge Fix Test — 4 failing clubs, multiple URL candidates</h1>
+  
+  <h2>Crystal Palace candidates:</h2>
+  <div class="grid" id="cp"></div>
+  
+  <h2>Aston Villa candidates:</h2>
+  <div class="grid" id="av"></div>
+  
+  <h2>Sunderland candidates:</h2>
+  <div class="grid" id="su"></div>
+  
+  <h2>Coventry candidates:</h2>
+  <div class="grid" id="cv"></div>
+
   <script>
-    const badges = {
-      LI:["Liverpool","https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg"],
-      MC:["Man City","https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg"],
-      AR:["Arsenal","https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg"],
-      EV:["Everton","https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg"],
-      NC:["Newcastle","https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg"],
-      WH:["West Ham","https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg"],
-      CP:["Crystal Palace","https://upload.wikimedia.org/wikipedia/en/0/0c/Crystal_Palace_FC_logo_%282022%29.svg"],
-      MU:["Man Utd","https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg"],
-      SP:["Spurs","https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg"],
-      LE:["Leicester","https://upload.wikimedia.org/wikipedia/en/2/2d/Leicester_City_crest.svg"],
-      NF:["Nottm Forest","https://upload.wikimedia.org/wikipedia/en/e/e5/Nottingham_Forest_F.C._logo.svg"],
-      BR:["Brentford","https://upload.wikimedia.org/wikipedia/en/2/2a/Brentford_FC_crest.svg"],
-      BH:["Brighton","https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_%26_Hove_Albion_logo.svg"],
-      WO:["Wolves","https://upload.wikimedia.org/wikipedia/en/f/fc/Wolverhampton_Wanderers.svg"],
-      FU:["Fulham","https://upload.wikimedia.org/wikipedia/en/e/eb/Fulham_FC_%28shield%29.svg"],
-      BO:["Bournemouth","https://upload.wikimedia.org/wikipedia/en/e/e5/AFC_Bournemouth_%282013%29.svg"],
-      AV:["Aston Villa","https://upload.wikimedia.org/wikipedia/en/9/9f/Aston_Villa_FC_crest_%282016%29.svg"],
-      SU:["Sunderland","https://upload.wikimedia.org/wikipedia/en/7/77/Sunderland_AFC_logo.svg"],
-      LU:["Leeds","https://upload.wikimedia.org/wikipedia/en/5/54/Leeds_United_F.C._logo.svg"],
-      CH:["Chelsea","https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg"],
-      IT:["Ipswich","https://upload.wikimedia.org/wikipedia/en/4/43/Ipswich_Town.svg"],
-      CV:["Coventry","https://upload.wikimedia.org/wikipedia/en/8/8e/Coventry_City_FC_logo.svg"],
+    const candidates = {
+      cp: [
+        "https://upload.wikimedia.org/wikipedia/en/0/0c/Crystal_Palace_FC_logo_%282022%29.svg",
+        "https://upload.wikimedia.org/wikipedia/en/a/a7/Crystal_Palace_FC_logo.svg",
+        "https://upload.wikimedia.org/wikipedia/en/f/f3/Crystal_Palace_F.C._logo.svg",
+        "https://upload.wikimedia.org/wikipedia/commons/a/a7/Crystal_Palace_FC_logo.svg",
+      ],
+      av: [
+        "https://upload.wikimedia.org/wikipedia/en/9/9f/Aston_Villa_FC_crest_%282016%29.svg",
+        "https://upload.wikimedia.org/wikipedia/en/f/f9/Aston_Villa_FC_new_crest.svg",
+        "https://upload.wikimedia.org/wikipedia/en/9/99/Aston_Villa_FC_crest.svg",
+        "https://upload.wikimedia.org/wikipedia/commons/9/9f/Aston_Villa_FC_crest_%282016%29.svg",
+      ],
+      su: [
+        "https://upload.wikimedia.org/wikipedia/en/7/77/Sunderland_AFC_logo.svg",
+        "https://upload.wikimedia.org/wikipedia/en/a/a1/Sunderland_A.F.C._crest.svg",
+        "https://upload.wikimedia.org/wikipedia/en/6/67/Sunderland_AFC_crest.svg",
+        "https://upload.wikimedia.org/wikipedia/commons/7/77/Sunderland_AFC_logo.svg",
+      ],
+      cv: [
+        "https://upload.wikimedia.org/wikipedia/en/8/8e/Coventry_City_FC_logo.svg",
+        "https://upload.wikimedia.org/wikipedia/en/c/c2/Coventry_City_F.C._logo.svg",
+        "https://upload.wikimedia.org/wikipedia/en/1/1e/Coventry_City_FC.svg",
+        "https://upload.wikimedia.org/wikipedia/commons/8/8e/Coventry_City_FC_logo.svg",
+      ]
     };
 
-    const grid = document.getElementById('grid');
-    let passed = 0, failed = 0, done = 0;
-    const total = Object.keys(badges).length;
-
-    Object.entries(badges).forEach(([code, [name, url]]) => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `<img id="img-${code}" src="${url}" alt="${name}"><div class="label">${code} — ${name}</div>`;
-      grid.appendChild(card);
-
-      const img = card.querySelector('img');
-      img.onload = () => {
-        card.classList.add('ok');
-        passed++; done++;
-        update();
-      };
-      img.onerror = () => {
-        card.classList.add('fail');
-        img.style.opacity = '0.15';
-        failed++; done++;
-        update();
-      };
+    Object.entries(candidates).forEach(([club, urls]) => {
+      const grid = document.getElementById(club);
+      urls.forEach(url => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        const shortUrl = url.split('/wikipedia/')[1];
+        card.innerHTML = '<img src="' + url + '"><div class="label">' + shortUrl + '</div>';
+        grid.appendChild(card);
+        const img = card.querySelector('img');
+        img.onload = () => card.classList.add('ok');
+        img.onerror = () => { card.classList.add('fail'); img.style.opacity='0.1'; };
+      });
     });
-
-    function update() {
-      document.getElementById('summary').textContent =
-        `${done}/${total} tested — ${passed} ✓ loaded, ${failed} ✗ failed`;
-    }
   </script>
 </body>
 </html>
