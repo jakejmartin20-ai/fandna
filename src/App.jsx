@@ -2716,9 +2716,8 @@ export default function App(){
                     </a>
                   )}
                 </div>
-              </div>
-            )}
-
+              
+</div>
               {/* ── CTAs ── */}
               <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:24,paddingTop:20,borderTop:"1px solid #2a2a3a"}}>
                 <a href={team.kit} target="_blank" rel="noopener noreferrer"
@@ -2732,6 +2731,7 @@ export default function App(){
                   </a>
                 )}
               </div>
+            )}
             {/* ── Tab: Analysis ── */}
             {tab==="analysis"&&(
               <div style={{animation:"fadeIn .3s ease"}}>
@@ -2748,9 +2748,7 @@ export default function App(){
                   <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:14}}>Personality dimensions</div>
                   <DimBars teamKey={result} color={team.color}/>
                 </div>
-              </div>
-            )}
-
+              
               {/* ── CTAs ── */}
               <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:24,paddingTop:20,borderTop:"1px solid #2a2a3a"}}>
                 <a href={team.kit} target="_blank" rel="noopener noreferrer"
@@ -2764,6 +2762,8 @@ export default function App(){
                   </a>
                 )}
               </div>
+</div>
+            )}
             {/* ── Tab: Club Stats ── */}
             {tab==="stats"&&(
               <div style={{animation:"fadeIn .3s ease"}}>
