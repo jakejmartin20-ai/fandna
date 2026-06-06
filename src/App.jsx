@@ -1632,19 +1632,7 @@ export default function App(){
 
 
   // ── Squad pitch data (pre-computed, no IIFE in JSX) ───────────────────────
-  const squadPitchData = useMemo(()=>{
-    if(!squadData) return null;
-    const fRows = (squadData.formation||"4-3-3").split("-").map(Number).filter(Boolean);
-    const gk = (squadData.players||[]).filter(p=>p.position==="GK");
-    const outfield = (squadData.players||[]).filter(p=>p.position!=="GK");
-    const rows = [];
-    let pidx = 0;
-    for(let i=0;i<fRows.length;i++){
-      rows.push(outfield.slice(pidx, pidx+fRows[i]));
-      pidx+=fRows[i];
-    }
-    return { allRows:[gk,...rows], rowCount:[gk,...rows].length };
-  },[squadData]);
+
 
     // ── Pre-compute tab data (no logic inside JSX) ───────────────────────────
   const statsData = result && vitalStats[result] ? [
