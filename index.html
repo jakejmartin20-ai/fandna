@@ -1,20 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FanDNA — Find Your Club</title>
-    <meta name="description" content="A personality quiz that matches you to your Premier League club. Find out which fan you really are." />
+
+    <title>FanDNA. Which Premier League club are you, really?</title>
+    <meta name="description" content="38 questions. 22 clubs. One verdict. A personality test that matches who you actually are to the Premier League club you were always meant to support." />
+    <meta name="theme-color" content="#16161e" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://fandna.vercel.app/" />
+
+    <!-- Open Graph (WhatsApp, iMessage, Facebook, LinkedIn, Slack, Discord) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="FanDNA" />
+    <meta property="og:title" content="FanDNA. Which Premier League club are you, really?" />
+    <meta property="og:description" content="38 questions. 22 clubs. One verdict. Find the club that matches who you actually are." />
+    <meta property="og:url" content="https://fandna.vercel.app/" />
+    <meta property="og:image" content="https://fandna.vercel.app/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="FanDNA. Your fandom, sequenced. A DNA helix in the FanDNA house style." />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FanDNA. Which Premier League club are you, really?" />
+    <meta name="twitter:description" content="38 questions. 22 clubs. One verdict. Find the club that matches who you actually are." />
+    <meta name="twitter:image" content="https://fandna.vercel.app/og.png" />
+
+    <!-- Fonts preconnect (App.jsx imports DM Mono + Cormorant Garamond) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
-    <style>
-      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-      html, body, #root { height: 100%; }
-      body { background: #16161e; color: #e8e4de; }
-    </style>
   </head>
-  <body>
+  <body style="margin:0;background:#16161e">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

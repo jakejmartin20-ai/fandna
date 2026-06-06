@@ -2269,8 +2269,6 @@ export default function App(){
   const [result,setResult]=useState(null);
   const [phase,setPhase]=useState("in");
   const [tab,setTab]=useState("result");
-  const [debugOpen,setDebugOpen]=useState(false);
-  const [debugExpanded,setDebugExpanded]=useState(false);
   const containerRef=useRef(null);
 
   const q=questions[cur];
@@ -2355,15 +2353,6 @@ export default function App(){
     "What it comes down to": "The crunch",
   };
 
-  // Live scores for debug panel — computed from current answers
-  const liveScores = getAllScores(answers);
-  const liveMax = Math.max(...Object.values(liveScores), 1);
-  const liveSorted = Object.entries(liveScores).sort((a,b)=>b[1]-a[1]);
-  // What did the last answer contribute?
-  const lastQ = cur > 0 ? questions[cur-1] : questions[cur];
-  const lastAns = answers[lastQ?.id];
-  const lastContrib = lastQ && lastAns ? (scoring[lastQ.id]?.[lastAns] || {}) : {};
-
   // ── Squad tab state ────────────────────────────────────────────────────────
 
 
@@ -2442,17 +2431,6 @@ export default function App(){
                   onMouseEnter={e=>cur>0&&(e.currentTarget.style.color="#ccc")}
                   onMouseLeave={e=>e.currentTarget.style.color=cur===0?"#222232":"#4a4a6a"}
                 >← back</button>
-                <button onClick={()=>setDebugOpen(o=>!o)}
-                  title="Toggle debug scores"
-                  style={{
-                    background:debugOpen?"#1a1a2e":"none",
-                    border:`1px solid ${debugOpen?"#3a3a5a":"#222230"}`,
-                    borderRadius:3,padding:"2px 7px",
-                    color:debugOpen?"#6a6a9a":"#555",
-                    fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",
-                    fontFamily:"'DM Mono',monospace",cursor:"pointer",transition:"all .12s",
-                  }}
-                >debug</button>
               </div>
 
               <div style={{display:"flex",alignItems:"center",gap:8,flexShrink:0,minWidth:0}}>
@@ -2487,126 +2465,6 @@ export default function App(){
             {q.type==="choice"&&<ChoiceQ q={q} onSelect={handleSelect}/>}
             {q.type==="binary"&&<BinaryQ q={q} onSelect={handleSelect}/>}
             {q.type==="slider"&&<SliderQ q={q} onSelect={handleSelect}/>}
-
-
-            {/* ── DEBUG PANEL ── */}
-            {debugOpen&&(
-              <div style={{
-                marginTop:24,background:"#05050e",
-                border:"1px solid #1a1a2e",borderRadius:8,overflow:"hidden",
-                fontFamily:"'DM Mono',monospace",
-              }}>
-                {/* Header */}
-                <div style={{
-                  display:"flex",justifyContent:"space-between",alignItems:"center",
-                  padding:"10px 14px",borderBottom:"1px solid #0f0f1a",
-                  background:"#141420",
-                }}>
-                  <div style={{display:"flex",alignItems:"center",gap:10}}>
-                    <span style={{fontSize:11,color:"#4a4a7a",letterSpacing:"0.2em",textTransform:"uppercase"}}>
-                      live score tracker
-                    </span>
-                    <span style={{fontSize:11,color:"#aaa",letterSpacing:"0.1em"}}>
-                      {cur} of {questions.length} answered
-                    </span>
-                  </div>
-                  <button onClick={()=>setDebugExpanded(e=>!e)}
-                    style={{background:"none",border:"none",color:"#3a3a5a",fontSize:11,cursor:"pointer",
-                      fontFamily:"'DM Mono',monospace",letterSpacing:"0.1em",textTransform:"uppercase"}}
-                  >{debugExpanded?"collapse":"expand all"}</button>
-                </div>
-
-                {/* Last answer contribution */}
-                {Object.keys(lastContrib).length>0&&(
-                  <div style={{padding:"8px 14px",borderBottom:"1px solid #1e1e2e",background:"#060612"}}>
-                    <div style={{fontSize:9,color:"#3a3a5a",letterSpacing:"0.15em",textTransform:"uppercase",marginBottom:5}}>
-                      Q{cur} just gave points to:
-                    </div>
-                    <div style={{display:"flex",flexWrap:"wrap",gap:6}}>
-                      {Object.entries(lastContrib).sort((a,b)=>b[1]-a[1]).map(([club,pts])=>(
-                        <span key={club} style={{
-                          fontSize:10,
-                          color: pts>=3?"#e8e4de": pts===2?"#888":"#555",
-                          background: pts>=3?"#1a1a2e":"#0a0a12",
-                          border:`1px solid ${pts>=3?"#2a2a4a":"#141422"}`,
-                          borderRadius:3,padding:"2px 8px",
-                        }}>
-                          {teams[club]?.name} <span style={{color:pts>=3?"#6a6aaa":"#333"}}>+{pts}</span>
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Running totals */}
-                <div style={{padding:"10px 14px",maxHeight:debugExpanded?"none":"200px",overflow:"hidden"}}>
-                  <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.15em",textTransform:"uppercase",marginBottom:8}}>
-                    running totals
-                  </div>
-                  {liveSorted.map(([key,score],i)=>{
-                    const pct=Math.round((score/liveMax)*100)||0;
-                    const t=teams[key];
-                    const isLeading=i===0&&score>0;
-                    return(
-                      <div key={key} style={{marginBottom:5}}>
-                        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:2}}>
-                          <span style={{
-                            fontSize:10,
-                            color:isLeading?"#e8e4de":score>0?"#555":"#555",
-                            fontWeight:isLeading?"500":"normal",
-                          }}>
-                            {isLeading?"▶ ":""}{t?.name}
-                          </span>
-                          <span style={{fontSize:10,color:isLeading?"#aaa":"#666"}}>
-                            {score} pts {score>0&&`(${pct}%)`}
-                          </span>
-                        </div>
-                        <div style={{height:2,background:"#0a0a12",borderRadius:1,overflow:"hidden"}}>
-                          <div style={{
-                            height:"100%",
-                            width:`${pct}%`,
-                            background:isLeading?t?.color:"#1e1e2e",
-                            borderRadius:1,
-                            transition:"width .3s ease",
-                          }}/>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {/* Answer log */}
-                {debugExpanded&&Object.keys(answers).length>0&&(
-                  <div style={{borderTop:"1px solid #0a0a14",padding:"10px 14px"}}>
-                    <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.15em",textTransform:"uppercase",marginBottom:8}}>answer log</div>
-                    {Object.entries(answers).map(([qId,ans])=>{
-                      const qi=questions.find(q=>q.id===qId);
-                      const contrib=scoring[qId]?.[ans]||{};
-                      const label = qi?.type==="binary"
-                        ? (ans==="left"?qi.left:qi.right)
-                        : qi?.type==="slider"
-                        ? `Scale ${ans}/5`
-                        : qi?.options?.find(o=>o.value===ans)?.label;
-                      return(
-                        <div key={qId} style={{marginBottom:8,paddingBottom:8,borderBottom:"1px solid #1a1a28"}}>
-                          <div style={{fontSize:11,color:"#aaa",marginBottom:2}}>
-                            {qId.toUpperCase()}: <span style={{color:"#aaa"}}>{label?.slice(0,60)}{label?.length>60?"…":""}</span>
-                          </div>
-                          <div style={{display:"flex",flexWrap:"wrap",gap:4}}>
-                            {Object.entries(contrib).sort((a,b)=>b[1]-a[1]).map(([club,pts])=>(
-                              <span key={club} style={{fontSize:9,color:pts>=3?"#8888cc":"#444",
-                                background:"#0a0a14",borderRadius:2,padding:"1px 6px"}}>
-                                {teams[club]?.name}+{pts}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-            )}
           </>
         )}
 
@@ -2863,15 +2721,6 @@ export default function App(){
                 onMouseEnter={e=>{e.currentTarget.style.borderColor="#888";e.currentTarget.style.color="#aaa";}}
                 onMouseLeave={e=>{e.currentTarget.style.borderColor="#252535";e.currentTarget.style.color="#666";}}
               >retake</button>
-              <div style={{marginTop:20,paddingTop:20,borderTop:"1px solid #141422"}}>
-                <a href="https://buymeacoffee.com/yourname" target="_blank" rel="noopener noreferrer"
-                  style={{display:"inline-flex",alignItems:"center",gap:8,color:"#aaa",fontSize:11,fontFamily:"'DM Mono',monospace",textDecoration:"none",letterSpacing:"0.05em",transition:"color .15s"}}
-                  onMouseEnter={e=>e.currentTarget.style.color="#aaa"}
-                  onMouseLeave={e=>e.currentTarget.style.color="#666"}
-                >
-                  <span style={{fontSize:15}}>☕</span> If this nailed your club, buy me a coffee
-                </a>
-              </div>
             </div>
           </div>
         )}
