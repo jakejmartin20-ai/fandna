@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 // ─── QUESTIONS ────────────────────────────────────────────────────────────────
 // 30 questions across 5 phases
@@ -2383,6 +2384,7 @@ export default function App(){
       fontFamily:"'Georgia','Times New Roman',serif",
       position:"relative",
     }}>
+      <Analytics/>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
         @keyframes slideIn  {from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
