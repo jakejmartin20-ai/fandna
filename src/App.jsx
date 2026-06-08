@@ -2819,7 +2819,7 @@ export default function App(){
                 {nearClubs.map((k)=>{
                   const nt=teams[k];
                   if(!nt) return null;
-                  const rawPct=maxScore>0?Math.round(((scores||{})[k]||0)/maxScore*100):0;
+                  const rawPct=maxScore>0?Math.min(99,Math.round(((scores||{})[k]||0)/maxScore*100)):0;
                   return(
                     <div key={k} style={{marginBottom:20,border:"1px solid #1e1e2e",borderRadius:8,overflow:"hidden"}}>
                       <div style={{height:2,background:nt.color}}/>
