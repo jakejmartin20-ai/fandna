@@ -17,7 +17,7 @@ const questions = [
       {label:"They know immediately. I don't hide it.",              value:"A"},
       {label:"I get quieter. The colder the worse.",                 value:"B"},
       {label:"I vent loudly, then it's gone fast.",                  value:"C"},
-      {label:"Nothing — I process alone and come back sorted.",      value:"D"},
+      {label:"Nothing. I process alone and come back sorted.",      value:"D"},
       {label:"Depends entirely on who caused it.",                   value:"E"},
     ]
   },
@@ -34,7 +34,7 @@ const questions = [
     question:"Something you worked hard on gets overlooked. Your move:",
     options:[
       {label:"Say nothing. Let the next thing speak.",               value:"A"},
-      {label:"Bring it up — clearly, calmly, once.",                 value:"B"},
+      {label:"Bring it up, clearly, calmly, once.",                 value:"B"},
       {label:"Stew. For longer than I'd admit.",                     value:"C"},
       {label:"Move on fast. Dwelling is a waste.",                   value:"D"},
       {label:"Take it personally. It stays with me.",                value:"E"},
@@ -44,7 +44,7 @@ const questions = [
     id:"q4", type:"slider",
     phase:"Who are you?",
     question:"When a plan falls apart:",
-    left:"I need a moment — then I rebuild methodically",
+    left:"I need a moment, then I rebuild methodically",
     right:"I adapt in real time. Chaos doesn't slow me down",
   },
   {
@@ -55,7 +55,7 @@ const questions = [
       {label:"Big group, loud, energy feeding energy.",              value:"A"},
       {label:"Four or five people I actually trust.",                value:"B"},
       {label:"One other person, or nobody.",                         value:"C"},
-      {label:"Structured — I like having a plan.",                   value:"D"},
+      {label:"Structured. I like having a plan.",                   value:"D"},
       {label:"Whatever feels right that morning.",                   value:"E"},
     ]
   },
@@ -63,7 +63,7 @@ const questions = [
     id:"q6", type:"binary",
     phase:"Who are you?",
     question:"In a group:",
-    left:"I lead from the front — visibly",
+    left:"I lead from the front, visibly",
     right:"I shape things from behind the scenes",
   },
 
@@ -85,7 +85,7 @@ const questions = [
     id:"q8", type:"slider",
     phase:"Where do you belong?",
     question:"Your relationship with where you're from:",
-    left:"It's one part of me — I'm not defined by it",
+    left:"It's one part of me, I'm not defined by it",
     right:"It's everything. Identity starts with place",
   },
   {
@@ -112,8 +112,8 @@ const questions = [
     phase:"Where do you belong?",
     question:"Your relationship with the past:",
     options:[
-      {label:"It's fuel — I carry it forward.",                      value:"A"},
-      {label:"It's an anchor — hard to fully shake.",                value:"B"},
+      {label:"It's fuel. I carry it forward.",                      value:"A"},
+      {label:"It's an anchor, hard to fully shake.",                value:"B"},
       {label:"I reference it often. Others find this annoying.",     value:"C"},
       {label:"Useful context, not a destination.",                   value:"D"},
       {label:"I'm actively building something new. Past is fine.",   value:"E"},
@@ -123,7 +123,7 @@ const questions = [
     id:"q12", type:"slider",
     phase:"Where do you belong?",
     question:"When you care about something:",
-    left:"My intensity is internal — I feel it but don't broadcast it",
+    left:"My intensity is internal, I feel it but don't broadcast it",
     right:"Everyone around me knows exactly how much I care",
   },
 
@@ -138,13 +138,13 @@ const questions = [
       {label:"It matters, but how you win matters too.",             value:"B"},
       {label:"It would mean everything after everything we've been through.", value:"C"},
       {label:"Proof that the model is right.",                       value:"D"},
-      {label:"A step, not a destination — immediately onto the next.", value:"E"},
+      {label:"A step, not a destination, immediately onto the next.", value:"E"},
     ]
   },
   {
     id:"q14", type:"binary",
     phase:"How do you win?",
-    question:"Pick one — no negotiating:",
+    question:"Pick one, no negotiating:",
     left:"Romantic underdog",
     right:"Ruthless favourite",
   },
@@ -155,7 +155,7 @@ const questions = [
     options:[
       {label:"Zero. Systems and process prevent chaos.",             value:"A"},
       {label:"Low. I prefer order and can usually maintain it.",     value:"B"},
-      {label:"Medium — depends entirely on what's at stake.",        value:"C"},
+      {label:"Medium, depends entirely on what's at stake.",        value:"C"},
       {label:"High. I see pattern where others see chaos.",          value:"D"},
       {label:"I generate it. Controlled chaos is my natural state.", value:"E"},
     ]
@@ -164,8 +164,8 @@ const questions = [
     id:"q16", type:"slider",
     phase:"How do you win?",
     question:"Being the underdog:",
-    left:"Insulting — I expect to compete, not scrape",
-    right:"Comfortable — low expectations are freeing",
+    left:"Insulting, I expect to compete, not scrape",
+    right:"Comfortable, low expectations are freeing",
   },
   {
     id:"q17", type:"choice",
@@ -173,9 +173,9 @@ const questions = [
     question:"What motivates you most?",
     options:[
       {label:"Proving people wrong.",                                value:"A"},
-      {label:"The craft — doing it as well as it can be done.",      value:"B"},
+      {label:"The craft, doing it as well as it can be done.",      value:"B"},
       {label:"The people I'm doing it with.",                        value:"C"},
-      {label:"Legacy — what it means long after.",                   value:"D"},
+      {label:"Legacy, what it means long after.",                   value:"D"},
       {label:"Winning. That's the whole thing.",                     value:"E"},
     ]
   },
@@ -198,7 +198,7 @@ const questions = [
       {label:"Share it with one or two people close to you.",        value:"B"},
       {label:"Sit with it quietly for a while first.",               value:"C"},
       {label:"Feel it for ten minutes then think about what's next.",value:"D"},
-      {label:"Wait for the catch — good news makes you nervous.",    value:"E"},
+      {label:"Wait for the catch, good news makes you nervous.",    value:"E"},
     ]
   },
   {
@@ -224,8 +224,8 @@ const questions = [
     id:"q22", type:"binary",
     phase:"How do you feel it?",
     question:"Your suffering:",
-    left:"Is private — you feel it alone",
-    right:"Is shared — misery loves company and honesty",
+    left:"Is private, you feel it alone",
+    right:"Is shared, misery loves company and honesty",
   },
   {
     id:"q23", type:"choice",
@@ -236,14 +236,14 @@ const questions = [
       {label:"Relieved, more than anything else.",                   value:"B"},
       {label:"Proud of everyone involved.",                          value:"C"},
       {label:"Already onto the next challenge.",                     value:"D"},
-      {label:"Like it doesn't compute yet — need time to absorb.",   value:"E"},
+      {label:"Like it doesn't compute yet, need time to absorb.",   value:"E"},
     ]
   },
   {
     id:"q24", type:"slider",
     phase:"How do you feel it?",
     question:"Hope, for you:",
-    left:"Is rational — based on genuine evidence",
+    left:"Is rational, based on genuine evidence",
     right:"Persists regardless of evidence. You can't kill it",
   },
 
@@ -272,7 +272,7 @@ const questions = [
     id:"q27", type:"slider",
     phase:"The fine print",
     question:"Contentment:",
-    left:"I'm genuinely okay with what I have — peace is underrated",
+    left:"I'm genuinely okay with what I have, peace is underrated",
     right:"Contentment is just ambition that gave up",
   },
   {
@@ -332,8 +332,8 @@ const questions = [
     id:"q33", type:"binary",
     phase:"What it comes down to",
     question:"Belonging feels most real when:",
-    left:"It's tight and local — the same streets, the same faces",
-    right:"It's vast — thousands of people feeling the same thing simultaneously",
+    left:"It's tight and local, the same streets, the same faces",
+    right:"It's vast, thousands of people feeling the same thing simultaneously",
   },
   {
     id:"q34", type:"choice",
@@ -351,7 +351,7 @@ const questions = [
     id:"q35", type:"binary",
     phase:"What it comes down to",
     question:"Something you love:",
-    left:"Doesn't need to mean more than it is — the thing itself is enough",
+    left:"Doesn't need to mean more than it is, the thing itself is enough",
     right:"Needs to feel like it matters, like it's part of a bigger story",
   },
   {
@@ -370,8 +370,8 @@ const questions = [
     id:"q37", type:"binary",
     phase:"What it comes down to",
     question:"Belonging needs:",
-    left:"A place — a ground, a street, a city. Geography is the whole thing",
-    right:"A story — a history, a mythology, something that gives it meaning",
+    left:"A place, a ground, a street, a city. Geography is the whole thing",
+    right:"A story, a history, a mythology, something that gives it meaning",
   },
   {
     id:"q38", type:"choice",
@@ -393,7 +393,7 @@ const questions = [
 const teams = {
   LI: {
     name:"Liverpool",         emoji:"🔴", color:"#C8102E",
-    tagline:"You don't experience things. You inhabit them.",
+    tagline:"You sing You'll Never Walk Alone and mean every single word.",
     desc:"There's a version of caring about something that's polite and measured. That's not you. When you're in, you're all the way in, the joy, the suffering, the mythology, all of it. You don't understand fans who stay quiet at the big moments. What's the point of feeling something if you're not going to let it out? The Kop exists because 50,000 people decided that collective feeling, taken to its absolute maximum, is the whole purpose. You already knew that.",
     why:[
       "Your emotional expression is outward and unreserved, Liverpool fandom is felt at full volume or it isn't real. You're the same.",
@@ -405,7 +405,7 @@ const teams = {
   },
   MC: {
     name:"Manchester City",   emoji:"🔵", color:"#6CABDD",
-    tagline:"You don't find excellence inspiring. You find anything less insulting.",
+    tagline:"You watched a team hit 100 points and asked where the other 14 went.",
     desc:"You don't romanticise struggle. You prepare, you execute, and when it works you move immediately to the next standard. People call this cold, you call it honest. The emotional theatre around sport has never moved you much. What moves you is watching something done as well as it can be done, repeatedly, deliberately. Man City under Guardiola is the closest thing football has to a controlled experiment in sustained excellence. That's what you came for.",
     why:[
       "Your process orientation is at the ceiling, you trust preparation over inspiration, systems over sentiment.",
@@ -417,7 +417,7 @@ const teams = {
   },
   AR: {
     name:"Arsenal",           emoji:"🔴", color:"#EF0107",
-    tagline:"Getting it right matters even when the result disagrees.",
+    tagline:"You watched 49 games unbeaten. You've been grading on that curve ever since.",
     desc:"You have strong opinions about how things should be done, not just whether they work, but whether they're right. There's a method you believe in, an aesthetic you hold to, and you've developed a specific kind of frustration reserved for situations where you're clearly correct and the outcome hasn't caught up yet. Other people find this exhausting. You find their indifference to craft exhausting. Arsenal is a club that plays the way you think things should be done, loses occasionally, and absolutely will not apologise for the approach.",
     why:[
       "How you win matters to you, the method isn't separate from the outcome, it's part of it. That's pure Arsenal.",
@@ -429,7 +429,7 @@ const teams = {
   },
   EV: {
     name:"Everton",           emoji:"🔵", color:"#003399",
-    tagline:"You understand that loyalty isn't something you feel when things are good.",
+    tagline:"You loved Goodison most in the seasons it gave you least.",
     desc:"The people you love most are the ones you've stuck with through the hard patches. Not because you couldn't leave, because that's not what loyalty means to you. You absorb things quietly. You don't perform your suffering for an audience. You've been waiting a long time for something and you've made a kind of peace with the waiting that isn't acceptance, exactly, more like stubbornness dressed up as patience. Goodison has held this feeling for over a century. You understand it completely.",
     why:[
       "Your loyalty is unconditional and it defines you more than almost anything else. You stay. That's the whole statement.",
@@ -441,7 +441,7 @@ const teams = {
   },
   NC: {
     name:"Newcastle United",  emoji:"⚫", color:"#241F20",
-    tagline:"You don't want to belong to something global. You want to belong to something real.",
+    tagline:"The Toon stops on matchday. You've never once found that strange.",
     desc:"There's a difference between a fanbase and a city. Most clubs have the former. Newcastle is the latter, the whole place stops on matchday, every generation has supported them, and the identity of the city and the club are genuinely inseparable in a way that's almost impossible to manufacture. You've lived something like this, a belonging so complete it doesn't need explaining to the people who share it. St James' Park holds 52,000 and it has never once felt big enough to contain what the city brings to it.",
     why:[
       "Your community drive is at the top, specifically the real, local, place-rooted kind, not the global-brand kind.",
@@ -453,7 +453,7 @@ const teams = {
   },
   WH: {
     name:"West Ham",          emoji:"⚒️", color:"#7A263A",
-    tagline:"You can love something and be angry at it at the same time. You've had practice.",
+    tagline:"You left your heart at Upton Park. You visit it from the London Stadium.",
     desc:"You're proud of where you come from and you don't need to justify that to anyone. But you also carry a specific frustration with institutions, the people who run the things you love making decisions that feel like a betrayal of what those things are supposed to be. The Upton Park move sits in the chest of every long-term West Ham fan in a specific way. You understand that feeling: belonging to something that was more itself before someone decided to make it bigger. You stayed anyway. So did they.",
     why:[
       "Your place-identity is fierce and specific, east London, the Boleyn Ground, what was there before. The brand is not the club.",
@@ -465,7 +465,7 @@ const teams = {
   },
   CP: {
     name:"Crystal Palace",    emoji:"🦅", color:"#1B458F",
-    tagline:"You don't need a mythology. You make the atmosphere yourself.",
+    tagline:"South London and proud of it.",
     desc:"The Holmesdale Fanatics have created one of the most genuinely intimidating atmospheres in English football through sheer organised will, tifos, chants, coordinated noise, not because Crystal Palace have trophies to fall back on, but precisely because they don't. You understand this instinct. When what you have is the thing itself, the place, the people, the matchday, you invest in that completely. You don't need history to hand you an identity. You build one, wall by wall, Saturday by Saturday.",
     why:[
       "Your place-identity is intense but self-created, not handed down by trophies but built through sustained collective effort.",
@@ -477,7 +477,7 @@ const teams = {
   },
   MU: {
     name:"Manchester United",  emoji:"🔴", color:"#DA291C",
-    tagline:"You know what this is supposed to feel like. That's the whole problem.",
+    tagline:"You grew up expecting late winners. The 93rd minute still feels like a plan.",
     desc:"Most fans have never had to grieve former greatness from the inside. You have. You were there, or you inherited the expectation from people who were, and you know exactly what this club is supposed to feel like when it works. That knowledge is a gift and a curse. The present era is not it. You are not confused about this. You are not willing to lower the bar. The Fergie years set a standard that embedded itself into the identity of the club permanently, and you carry that weight every single week.",
     why:[
       "Your legacy dimension is extremely high, you define yourself through what has been, not just what is currently happening.",
@@ -489,7 +489,7 @@ const teams = {
   },
   SP: {
     name:"Tottenham Hotspur", emoji:"⚪", color:"#132257",
-    tagline:"You hold genuine belief and full self-awareness simultaneously. Most people can't do that.",
+    tagline:"You know exactly what Spursy means. You believe anyway.",
     desc:"You've developed a very specific psychological skill: you believe completely in something while also knowing, analytically, that the odds are against you, the history is against you, and you've been here before. This isn't delusion, it's a kind of sophisticated resilience that most people mistake for stubbornness. The dark humour is real. The hope is also real. Somehow both exist at the same time. Spurs fans have had to figure this out across sixty years of almost. You've figured it out too.",
     why:[
       "Your near-miss resilience is striking, you process disappointment, reset fast, and genuinely believe again. Most people can't.",
@@ -501,7 +501,7 @@ const teams = {
   },
   LE: {
     name:"Leicester City",    emoji:"🦊", color:"#003090",
-    tagline:"You have evidence that the impossible happens. That changes everything.",
+    tagline:"You watched 5000-1 come in. You've never been fully rational since.",
     desc:"Most people protect themselves from hope. You used to do that too, and then 2016 happened, and something shifted permanently. Not naivety. The opposite of naivety. You saw the actual proof, against every rational calculation, that the universe occasionally ignores the odds. You can never fully go back to not believing after that. You manage your expectations carefully because you've also learned that the miracle doesn't come on demand. But the door is open in a way it can't be closed again.",
     why:[
       "One improbable moment defines your relationship with possibility more than any other dimension. Leicester did it. You saw it. That's permanent.",
@@ -513,7 +513,7 @@ const teams = {
   },
   NF: {
     name:"Nottingham Forest",  emoji:"🌲", color:"#DD0000",
-    tagline:"You know the best stories are the ones that shouldn't have happened.",
+    tagline:"You won two European Cups against all logic. You've trusted chaos ever since.",
     desc:"You've always been drawn to things that work when they're not supposed to. The underdog that shouldn't have been in the room, the manager who was too eccentric for the job, the season that had no business ending the way it did. Other people want clean trajectories and clear narratives. You want the mythological, the thing that required something close to collective belief to even exist. Brian Clough took a second-division club and won the European Cup twice. Forest's whole identity is built on that impossibility. Yours is too.",
     why:[
       "Your chaos tolerance is significantly above average, Forest's continued existence at this level requires faith in the improbable as a baseline.",
@@ -525,7 +525,7 @@ const teams = {
   },
   BR: {
     name:"Brentford",         emoji:"🐝", color:"#D20000",
-    tagline:"You were there before it was easy to be there.",
+    tagline:"You beat parachute payments with a spreadsheet and a set-piece coach.",
     desc:"Griffin Park had a pub on each of its four corners and held 12,000 people. You found your way to Brentford when they were in the third tier, because something about a club that genuinely belongs to its west London community, that hasn't been bought or rebranded or relocated to chase a bigger market, felt right to you. The analytics came later and proved the approach worked. But the identity was already there: small, tight, real, yours. The new stadium has the pubs on the corners too. Some things are worth preserving.",
     why:[
       "Your community-over-brand instinct is strong, Brentford's identity is local, generational, and genuinely rooted, not manufactured.",
@@ -537,7 +537,7 @@ const teams = {
   },
   BH: {
     name:"Brighton",          emoji:"🐦", color:"#0057B8",
-    tagline:"You got here by thinking carefully, and you haven't stopped being surprised that it worked.",
+    tagline:"You sell your best player every summer and somehow finish higher.",
     desc:"You apply real intelligence to most things you care about and you've found it pays off more often than people expect, partly because most people don't bother. But unlike some people who think carefully and become cold about it, you've stayed genuinely warm. You're still delighted when things go right. Brighton figured out that being smart and being joyful aren't opposites, you can have the careful model and the seaside atmosphere and the European nights and still feel like the whole thing is slightly miraculous. You feel the same way about your own life sometimes.",
     why:[
       "Your analytical approach is clear, but your emotional warmth never dropped. That combination is rarer than it sounds.",
@@ -549,7 +549,7 @@ const teams = {
   },
   WO: {
     name:"Wolves",            emoji:"🐺", color:"#FDB913",
-    tagline:"Your city doesn't need the world's attention. It has its own.",
+    tagline:"You never needed London's attention. The Black Country glows old gold without it.",
     desc:"Wolverhampton doesn't get written about much unless someone is trying to illustrate decline. Wolves fans don't care. Molineux has been on the same ground since 1889 and three league titles in the 1950s sit quietly in the history, not worn on a sleeve, not constantly referenced, just there. The city's motto is out of darkness cometh light, which is printed in the crest colours without ceremony. You live something like this, the pride that doesn't need broadcasting, the quality that doesn't need external confirmation. The right people already know.",
     why:[
       "Your place-identity is deep and working-class, Molineux and Wolverhampton are inseparable and have been for over 130 years.",
@@ -561,7 +561,7 @@ const teams = {
   },
   FU: {
     name:"Fulham",            emoji:"⚫", color:"#CC0000",
-    tagline:"You've made peace with exactly what you are, and that took more confidence than ambition would.",
+    tagline:"You watch football beside the Thames and feel zero need to conquer it.",
     desc:"Craven Cottage is the oldest football ground still in use in England. It has an actual cottage on the pitch. The Thames runs behind the Riverside Stand. On a sunny matchday it is, by some margin, the most pleasant place to watch football in London, possibly in England. Fulham fans know this. They're not crowing about it. They're just there, enjoying the thing for what it is, with no particular need for it to be bigger or louder or more important than it is. This requires a confidence that people mistake for lacking ambition. It's actually the opposite.",
     why:[
       "Your contentment is genuine, not suppressed ambition, not resignation, but real self-knowledge. That's rare and it's Fulham.",
@@ -573,7 +573,7 @@ const teams = {
   },
   BO: {
     name:"Bournemouth",       emoji:"🍒", color:"#DA291C",
-    tagline:"You're genuinely happy to be here, and you don't think that's a small thing.",
+    tagline:"Your ground holds 11,000 and your gratitude holds considerably more.",
     desc:"Bournemouth were in League Two in 2012. The Vitality Stadium holds 11,307 people. They have no famous history, no trophy cabinet, no big-city mythology. What they have is a fanbase that took an improbable journey to the Premier League and has not, for a single second, pretended it was supposed to happen or stopped being grateful that it did. You recognise this feeling, the specific joy of being somewhere you weren't expected, enjoying something you didn't fully count on, with no chip on your shoulder about any of it. That's actually quite hard to sustain.",
     why:[
       "Your comfortable-in-your-own-skin score is the defining dimension. No chip, no complex, no performance. Just real enjoyment.",
@@ -586,7 +586,7 @@ const teams = {
 
   AV: {
     name:"Aston Villa",       emoji:"🦁", color:"#670E36",
-    tagline:"You respect where you came from without being imprisoned by it.",
+    tagline:"You've got a European Cup from '82 and a strong feeling it shouldn't be lonely.",
     desc:"You hold two things at once without contradiction: a deep respect for what was built before you, and a genuine impatience for what comes next. The 1982 European Cup sits in Villa Park's history not as nostalgia but as proof, this club has been at the summit and knows what it takes to get back. The Emery rebuild isn't a rebrand or a restart. It's a sleeping giant waking up and remembering what it is. You've lived this feeling, the moment something that had gone quiet in you starts to come back to life.",
     why:[
       "Your optimism is grounded, not naive, you back projects before they're proven because you can read the signs early.",
@@ -598,7 +598,7 @@ const teams = {
   },
   SU: {
     name:"Sunderland",        emoji:"🐱", color:"#EB172B",
-    tagline:"You stayed when staying was the hardest thing to do.",
+    tagline:"You sold out League One away ends. Your loyalty was never conditional.",
     desc:"The documentary showed it to the world, but Sunderland fans already knew. Administration. League One. 46,000 people filling the Stadium of Light in the third tier of English football not out of habit but out of something that can't be manufactured: the genuine belief that this was worth staying for. You understand this instinct completely. You've stood by something when it was easier not to, not because you were passive, but because leaving would have meant giving up on something true. The promotion back felt earned in a way that nothing bought can replicate.",
     why:[
       "Your loyalty through institutional difficulty is the defining score, Sunderland's journey from near-extinction to the Premier League maps onto your stubbornness.",
@@ -610,7 +610,7 @@ const teams = {
   },
   LU: {
     name:"Leeds United",      emoji:"⚪", color:"#1D428A",
-    tagline:"You experience everything at full range. The highs, the lows, and the chaos in between.",
+    tagline:"You feel every match at full volume: total love, total chaos, no regrets.",
     desc:"Revie built something dominant and controversial in the 70s and the fall from it was long and strange. Bielsa arrived and gave the fanbase something rare: a way of playing that made you fall back in love with football itself, not just your club. The promotion in 2020 felt like a religious experience. What followed felt like punishment. Leeds fans exist at maximum intensity because the history demands it, everything at this club happens fully, loudly, with consequence. You recognise this frequency. You don't do half-measures either.",
     why:[
       "Your emotional intensity is at the ceiling and specifically connected to identity, Leeds is a club whose supporters define themselves through the full arc, not just the highs.",
@@ -622,7 +622,7 @@ const teams = {
   },
   CH: {
     name:"Chelsea",           emoji:"🔵", color:"#034694",
-    tagline:"You know what it felt like when it worked. That's not something you forget.",
+    tagline:"Winning arrived all at once for you. Now every season answers to that stretch.",
     desc:"The borough gentrified around the club long before Abramovich arrived, working-class west London absorbed into one of the wealthiest postcodes in the world, Swinging London glamour layered over Stamford Bridge's terraces, the King's Road as the centre of everything fashionable. Then Russian money arrived in 2003, and Chelsea won everything. 19 trophies in 19 years. When the sanctions came and he had to leave, long-term fans chanted his name not out of politics but out of grief, for what the club felt like when everything aligned. You understand this specific feeling: having experienced something at its best, then watching it be taken apart by forces entirely outside your control, and staying anyway because the place and the people are still yours.",
     why:[
       "Your relationship with transformation is lived-in, Chelsea's identity has shifted repeatedly and you've moved through all of it.",
@@ -634,7 +634,7 @@ const teams = {
   },
   IT: {
     name:"Ipswich Town",      emoji:"🔵", color:"#0044A9",
-    tagline:"You find more meaning in belonging to something real than something famous.",
+    tagline:"You chose Portman Road over the glamour an hour down the A12. Every time.",
     desc:"Bobby Robson managed Ipswich for 13 years, won the FA Cup and the UEFA Cup, and turned a small Suffolk market town into a place the whole of English football knew. That story, of a modest club doing extraordinary things through genuine quality and community rootedness, is the soul of Ipswich. Kieran McKenna took them from League One to the Premier League in consecutive seasons without losing that spirit. The fanbase is warm, self-aware about their own scale, and completely unbothered by not being Chelsea or Manchester United. You recognise this posture: the confidence that comes from knowing exactly what you are and finding it genuinely enough.",
     why:[
       "Your community-rooted belonging is specific: Suffolk, Portman Road, the Bobby Robson mythology. Not global, not branded. Real.",
@@ -646,7 +646,7 @@ const teams = {
   },
   CV: {
     name:"Coventry City",     emoji:"🩵", color:"#59CBEE",
-    tagline:"You keep showing up for something that keeps making it hard to show up.",
+    tagline:"You drove to Birmingham for home games. Loyalty with a motorway exit.",
     desc:"Coventry City played their home games at Birmingham City's ground. Then almost moved to Northampton. Then came back to a half-built stadium in their own city. The fanbase kept showing up through all of it, not because they were naive about what was happening, not because they approved of the decisions, but because the club was theirs and that fact didn't change regardless of what the ownership did with it. This is a very specific kind of love. It isn't blind. It isn't easy. It's the love that stays when leaving would have been completely understandable. The Premier League is the payoff for years of stubborn, complicated belonging.",
     why:[
       "Your institutional grief score is the defining dimension, Coventry fans have had more reason to feel abandoned by their own club than almost anyone in English football.",
@@ -915,7 +915,7 @@ const nearlyGot = {
  
     BO:"Both find genuine joy in what the club represents. Liverpool's joy is operatic and global. Bournemouth's is quieter and more personal. Both are genuine. Liverpool fans experience the club as mythology lived collectively. Bournemouth fans experience it as something surprising that keeps being good.",
  
-    SU:"Both are clubs where the fanbase's loyalty is unconditional and communal. Liverpool's community has mythology and global reach. Sunderland's is more local and more tested — the Stadium of Light held 46,000 in League One. Both are examples of what genuine football community looks like. Liverpool's is louder. Sunderland's may be deeper.",
+    SU:"Both are clubs where the fanbase's loyalty is unconditional and communal. Liverpool's community has mythology and global reach. Sunderland's is more local and more tested, the Stadium of Light held 46,000 in League One. Both are examples of what genuine football community looks like. Liverpool's is louder. Sunderland's may be deeper.",
  
     CH:"Both have won major trophies and expect to compete for them. Liverpool's identity is rooted in community and mythology. Chelsea's is rooted in a west London identity complicated by billionaire ownership. Liverpool fans carry the past as fuel. Chelsea fans currently navigate which version of the past is still relevant.",
  
@@ -985,7 +985,7 @@ const nearlyGot = {
  
     LE:"Both have experienced the specific joy of doing it properly and having it recognised. Leicester's recognition came once, explosively, in 2016. Arsenal's came in cycles and is being rebuilt. Both fanbases understand what it feels like when the approach justifies itself. Leicester's came as a shock and Arsenal's comes as vindication.",
  
-    SU:"Both have a fanbase that stays through difficulty out of genuine belief rather than habit. Sunderland's belief has been tested more severely. Arsenal's difficulty has been relative — near-misses rather than relegation. Both know what it is to support a club that should be better and keep showing up anyway.",
+    SU:"Both have a fanbase that stays through difficulty out of genuine belief rather than habit. Sunderland's belief has been tested more severely. Arsenal's difficulty has been relative, near-misses rather than relegation. Both know what it is to support a club that should be better and keep showing up anyway.",
  
     LU:"Both are clubs with a strong sense of their own identity and a fanbase that holds the institution to it. Leeds' identity is combative and confrontational. Arsenal's is principled and aesthetic. Both will tell you loudly who they are. The difference is Leeds' version involves more defiance and Arsenal's involves more conviction.",
  
@@ -1013,7 +1013,7 @@ const nearlyGot = {
  
     WH:"Both are working-class clubs with genuine place-rooted identities and complicated institutional histories. West Ham's identity is East End and explicitly historical. Everton's is Merseyside and defined partly by what it is not. Both resist the drift toward corporate football identity. Both have something worth protecting.",
  
-    CP:"Both are clubs where the fanbase's authenticity is the most reliable thing about the institution. Palace built their culture deliberately through fan organisation. Everton's is older and more absorbed — it's just how it's always been. Both resist the drift toward corporate football identity. Both are worth protecting.",
+    CP:"Both are clubs where the fanbase's authenticity is the most reliable thing about the institution. Palace built their culture deliberately through fan organisation. Everton's is older and more absorbed, it's just how it's always been. Both resist the drift toward corporate football identity. Both are worth protecting.",
  
     BR:"Both have fanbases that care about the club as a community institution rather than a product. Brentford formalised this through community ownership. Everton's version is older and less explicit but no less real. Both would resist the club becoming something purely commercial. Brentford has institutional structures to enforce that. Everton relies on culture.",
  
@@ -1021,7 +1021,7 @@ const nearlyGot = {
  
     WO:"Both are clubs that get on with it without drama. Wolves do it quietly in the Midlands. Everton do it quietly on Merseyside. Both have fanbases that absorb difficulty without excessive performance. Both resist the drift toward the performative. Both just care, genuinely and without theatrics.",
  
-    FU:"Both are clubs where contentment with identity coexists with frustration at results. Fulham are more genuinely content. Everton's relationship with contentment is more complicated — they want more, they've always wanted more, but they've learned to absorb not getting it. Fulham's understanding is simpler and lighter.",
+    FU:"Both are clubs where contentment with identity coexists with frustration at results. Fulham are more genuinely content. Everton's relationship with contentment is more complicated, they want more, they've always wanted more, but they've learned to absorb not getting it. Fulham's understanding is simpler and lighter.",
  
     BO:"Both have fanbases where the passion is genuine rather than performed. Bournemouth's passion is newer and comes with more surprise. Everton's is older and comes with more weight. Both are real. Bournemouth fans are grateful to be here. Everton fans are here because they've always been here and always will be.",
  
@@ -1050,7 +1050,7 @@ const nearlyGot = {
  
     SP:"Both are clubs where proximity to greatness and the frustration of not quite getting there is part of the experience. Spurs do it with self-aware dark humour. Newcastle do it with a directness that reflects the character of the city. Both keep believing.",
  
-    LE:"Both have experienced improbable moments of genuine success. Leicester's was the 2016 title. Newcastle's greatest moments were earlier — Kevin Keegan's entertainers of the 1990s who nearly won the title. Both fanbases have reference points for what is possible. Leicester's reference point is more recent.",
+    LE:"Both have experienced improbable moments of genuine success. Leicester's was the 2016 title. Newcastle's greatest moments were earlier, Kevin Keegan's entertainers of the 1990s who nearly won the title. Both fanbases have reference points for what is possible. Leicester's reference point is more recent.",
  
     NF:"Both are clubs with improbable histories relative to their size. Forest's improbability is European and mythological. Newcastle's improbability is the scale of community attachment relative to the number of trophies. Both know what it means to have had moments of genuine greatness.",
  
@@ -1081,7 +1081,7 @@ const nearlyGot = {
  
     MC:"Both are clubs that have been transformed by investment relative to what they were. City's transformation is total and historic. West Ham's has been more modest and more contested. West Ham fans have more of the original identity to protect. City fans have more success to justify the change.",
  
-    AR:"Both find value in doing things a certain way. Arsenal's way is principled and philosophical. West Ham's way is rooted in the academy tradition — the idea that the club produces players rather than buys them. Both hold the club to a standard that is about identity as much as results.",
+    AR:"Both find value in doing things a certain way. Arsenal's way is principled and philosophical. West Ham's way is rooted in the academy tradition, the idea that the club produces players rather than buys them. Both hold the club to a standard that is about identity as much as results.",
  
     EV:"Both are working-class clubs with genuine place-rooted identities and fanbases that carry those identities regardless of results. Everton's identity is Merseyside. West Ham's is East End and explicitly historical. Both resist the drift toward corporate football identity. Both have something worth protecting.",
  
@@ -1107,16 +1107,16 @@ const nearlyGot = {
  
     IT:"Both are clubs where community and belonging matter more than profile. West Ham's community is East End and explicitly historical. Ipswich's is Suffolk and rooted in the Bobby Robson era. The communities are specific, different, and equally genuine.",
  
-    AV:"Both are clubs with genuine histories and fanbases that believe the club deserves more. Villa's belief is currently being rewarded with genuine quality and ambition. West Ham's is more frustrated — the stadium move complicated the identity and the results haven't consistently justified the ambition.",
+    AV:"Both are clubs with genuine histories and fanbases that believe the club deserves more. Villa's belief is currently being rewarded with genuine quality and ambition. West Ham's is more frustrated, the stadium move complicated the identity and the results haven't consistently justified the ambition.",
   },
   CP:{
     NC:"Both intensely local and belonging-focused. Scale is the gap: Newcastle engulfs a whole city; Palace owns a corner of London. Palace fans don't need the whole city, they have Selhurst, and that is genuinely enough.",
     WH:"Both unpretentious and local. Palace is the simpler of the two, less burdened by institutional history. If you have no interest in the complicated backstory and just want the thing itself, Palace is the cleaner answer.",
     MU:"The only thing you share is the direct, front-facing approach. United demand results from historical greatness. Palace's directness comes from pride without pretension. Completely different sources, similar energy.",
  
-    LI:"Both have a specific atmosphere that is more than just noise — it means something culturally. The Kop is a global institution. Selhurst Park's Holmesdale End was built from scratch by organised fans and is arguably the most genuine atmosphere in the Premier League. Liverpool's is mythological. Palace's is almost defiant in its authenticity.",
+    LI:"Both have a specific atmosphere that is more than just noise, it means something culturally. The Kop is a global institution. Selhurst Park's Holmesdale End was built from scratch by organised fans and is arguably the most genuine atmosphere in the Premier League. Liverpool's is mythological. Palace's is almost defiant in its authenticity.",
  
-    MC:"Both have fanbases that know what it feels like when football goes right. City's experience of things going right is sustained and dominant. Palace's is more episodic — a great cup run, a good season, a famous result. Both appreciate genuine quality. City's comes with expectation and Palace's still comes with surprise.",
+    MC:"Both have fanbases that know what it feels like when football goes right. City's experience of things going right is sustained and dominant. Palace's is more episodic, a great cup run, a good season, a famous result. Both appreciate genuine quality. City's comes with expectation and Palace's still comes with surprise.",
  
     AR:"Both have a fanbase that believes the club represents something worth defending. Arsenal's identity is principled and philosophical. Palace's is local and atmospheric. Both will fight for it. Arsenal fans argue about whether the method is right. Palace fans just turn up and generate something.",
  
@@ -1126,7 +1126,7 @@ const nearlyGot = {
  
     LE:"Both achieved something bigger than their resources should have allowed. Leicester's 2016 title is the most statistically improbable achievement in the Premier League era. Palace's sustained Premier League presence is impressive for a south London club of their size. Both earned something. Leicester's moment was louder.",
  
-    NF:"Both are clubs with improbable histories that define the fanbase's relationship with the possible. Forest's improbability is European and mythological. Palace's is more local — a club sustaining Premier League presence through sheer fanbase intensity. Both prove that size isn't everything.",
+    NF:"Both are clubs with improbable histories that define the fanbase's relationship with the possible. Forest's improbability is European and mythological. Palace's is more local, a club sustaining Premier League presence through sheer fanbase intensity. Both prove that size isn't everything.",
  
     BR:"Both are clubs that earned their place by being exactly what they are. Brentford did it through data and community ownership. Palace did it through atmosphere and fan culture. The methods were different but the spirit of earning it rather than buying it is the same.",
  
@@ -1194,7 +1194,7 @@ const nearlyGot = {
  
     MC:"Both are clubs that have experienced Champions League finals. City won theirs. Spurs reached theirs in 2019 and didn't win it. City fans know what getting it feels like. Spurs fans know what getting close feels like, which is both better and worse than not getting close at all.",
  
-    NC:"Both have fanbases that feel the club should be competing at the highest level. Newcastle's feeling is place-rooted. Spurs' is historically backed — they were England's first double winners and have genuine claims to being a big club. Both live with the gap between where they are and where they feel they should be.",
+    NC:"Both have fanbases that feel the club should be competing at the highest level. Newcastle's feeling is place-rooted. Spurs' is historically backed, they were England's first double winners and have genuine claims to being a big club. Both live with the gap between where they are and where they feel they should be.",
  
     WH:"Both are London clubs with specific identities and fanbases that know exactly who they are. West Ham's identity is East End and working-class. Spurs' involves the fighting cockerel, the pub at the foot of White Hart Lane, and a history of brilliant football that hasn't produced Premier League trophies. Both are real. Both endure.",
  
@@ -1210,11 +1210,11 @@ const nearlyGot = {
  
     BO:"Both have fanbases where hope is a central feature. Spurs' hope is tortured and self-aware. Bournemouth's is simpler and more straightforward. Spurs fans believe it against considerable historical evidence. Bournemouth fans believe it because things have been genuinely going well.",
  
-    NF:"Both are clubs with improbable histories. Forest's improbability happened and is finished — two European Cups. Spurs' improbability feels ongoing and perpetually about to arrive. Forest's evidence is conclusive. Spurs' is pending.",
+    NF:"Both are clubs with improbable histories. Forest's improbability happened and is finished, two European Cups. Spurs' improbability feels ongoing and perpetually about to arrive. Forest's evidence is conclusive. Spurs' is pending.",
  
     AV:"Both are clubs where the proximity to greatness is part of the experience. Spurs have been close in the Premier League era without converting. Villa achieved it decades ago and are building toward something again. Spurs' belief is more tortured. Villa's is more hopeful.",
  
-    SU:"Both are clubs where loyalty is tested and the fanbase keeps showing up regardless. Sunderland's tests have been more severe. Spurs fans endure a different kind of difficulty — the specific frustration of being close without getting there. Sunderland's loyalty involves more genuine hardship. Spurs' involves more self-aware anguish.",
+    SU:"Both are clubs where loyalty is tested and the fanbase keeps showing up regardless. Sunderland's tests have been more severe. Spurs fans endure a different kind of difficulty, the specific frustration of being close without getting there. Sunderland's loyalty involves more genuine hardship. Spurs' involves more self-aware anguish.",
  
     LU:"Both are clubs with big fanbases and complicated relationships with success they feel they deserve. Leeds' complication is about a historical identity that demands to be at the top. Spurs' is about being good enough to compete but not quite good enough to win. Leeds fans believe confrontationally. Spurs fans believe with resigned self-awareness.",
  
@@ -1270,17 +1270,17 @@ const nearlyGot = {
 
     EV:"Both have a stubborn romantic loyalty to a version of their club that no longer quite exists. Everton's romanticism is about the School of Science and the belief they should be better. Forest's is about Clough and the European Cups and the specific improbability of what they achieved. Both fanbases are waiting for a return that may or may not come.",
  
-    LI:"Both have European glory that defines the club's identity. Liverpool's is sustained and recurring. Forest's is older and more mythological — two European Cups in the late 1970s under a manager who built it from almost nothing. Both know what it means when a football club becomes something bigger than the game. Forest's version happened in a way that makes it permanently extraordinary.",
+    LI:"Both have European glory that defines the club's identity. Liverpool's is sustained and recurring. Forest's is older and more mythological, two European Cups in the late 1970s under a manager who built it from almost nothing. Both know what it means when a football club becomes something bigger than the game. Forest's version happened in a way that makes it permanently extraordinary.",
  
     MC:"Both have experienced what it means to be genuinely dominant in Europe. City's is more recent and more resource-intensive. Forest's is older and more improbable. The mechanisms were completely different: City through systematic investment, Forest through one man's genius and a specific kind of chaos.",
  
     NC:"Both are northern clubs with passionate fanbases and a sense that they belong at a higher level than they sometimes occupy. Newcastle's sense is place-rooted. Forest's is rooted in the mythology of what they achieved under Clough. Both carry those reference points as permanent background conviction.",
  
-    CP:"Both are clubs with improbable histories that define the fanbase's relationship with the possible. Forest's improbability is European and mythological. Palace's is more local — sustained Premier League presence through sheer fanbase intensity. Both prove that size isn't the whole story.",
+    CP:"Both are clubs with improbable histories that define the fanbase's relationship with the possible. Forest's improbability is European and mythological. Palace's is more local, sustained Premier League presence through sheer fanbase intensity. Both prove that size isn't the whole story.",
  
     MU:"Both are clubs with European Cup history that defines the club's identity. United's European history is more sustained and more recent. Forest's is older and more improbable. The character of how they got there is very different: United through sustained excellence, Forest through chaos and genius.",
  
-    SP:"Both are clubs where hope and the possibility of improbable success is part of the experience. Spurs' hope is contemporary and tortured. Forest's is historical and mythological — they did the impossible and it happened when nobody thought it could. Spurs are waiting for their version. Forest's already happened.",
+    SP:"Both are clubs where hope and the possibility of improbable success is part of the experience. Spurs' hope is contemporary and tortured. Forest's is historical and mythological, they did the impossible and it happened when nobody thought it could. Spurs are waiting for their version. Forest's already happened.",
  
     BR:"Both are clubs that earned something improbable. Brentford earned Premier League football through a model. Forest earned European Cups through something that can't be fully modelled. Forest's achievement is older and less replicable.",
  
@@ -1309,7 +1309,7 @@ const nearlyGot = {
     BH:"Both are data-forward clubs. Brighton does it with more warmth and communal joy. Brentford does it more quietly and with more contrarian energy. If you celebrate the smartness openly, Brighton. If you just act on it without needing anyone to notice, Brentford.",
     WO:"Both private, process-driven, underdog-comfortable. Brentford is more explicitly contrarian. Wolves are more quietly disciplined. If the data-nerd identity resonates strongly and you want people to know it, Brentford. If it's just how you operate, Wolves.",
  
-    LI:"Both have a community at the heart of what the club means. Liverpool's community is global and mythological. Brentford's is intensely local — Griffin Park's streets, Bees United, the community ownership model. Liverpool fans feel the belonging at scale. Brentford fans feel it in a way that is specific and almost private.",
+    LI:"Both have a community at the heart of what the club means. Liverpool's community is global and mythological. Brentford's is intensely local, Griffin Park's streets, Bees United, the community ownership model. Liverpool fans feel the belonging at scale. Brentford fans feel it in a way that is specific and almost private.",
  
     AR:"Both think carefully about how football should be done. Arsenal's thinking is aesthetic and philosophical. Brentford's is operational and data-driven. Both believe there is a right way. Arsenal fans argue the case publicly. Brentford fans just see it working and find satisfaction in that.",
  
@@ -1331,7 +1331,7 @@ const nearlyGot = {
  
     FU:"Both are west London clubs with community-first identities and no complex about their scale. Fulham have Craven Cottage and a longer top-flight history. Brentford have community ownership and a data model that has become nationally admired. Both are undefensive. Both belong.",
  
-    SU:"Both are clubs where loyalty was tested and held. Sunderland's test was more severe — League One, years of decline. Brentford spent decades in the lower leagues before their rise. Both fanbases kept showing up. The character of the loyalty is similar even if the scale of the difficulty differed.",
+    SU:"Both are clubs where loyalty was tested and held. Sunderland's test was more severe, League One, years of decline. Brentford spent decades in the lower leagues before their rise. Both fanbases kept showing up. The character of the loyalty is similar even if the scale of the difficulty differed.",
  
     LU:"Both are clubs with fanbases that feel the identity of the club as something worth protecting. Leeds' identity is confrontational and historically loaded. Brentford's is communal and analytically grounded. Both are serious about what the club means. Leeds fans assert it loudly. Brentford fans live it quietly.",
  
@@ -1378,7 +1378,7 @@ const nearlyGot = {
  
     CH:"Both are clubs that have won things and expect to compete. Chelsea's expectation is rooted in recent spending-powered dominance. Brighton's is rooted in a model they believe can sustain. Chelsea fans are currently confused. Brighton fans understand exactly what the club is doing and broadly approve.",
  
-    AV:"Both are clubs currently in genuine positive moments. Villa's positivity is more traditionally rooted — big club, big history, big ambition. Brighton's is model-driven and philosophically consistent. Both are enjoyable right now. Villa fans want trophies. Brighton fans want the model to keep producing.",
+    AV:"Both are clubs currently in genuine positive moments. Villa's positivity is more traditionally rooted, big club, big history, big ambition. Brighton's is model-driven and philosophically consistent. Both are enjoyable right now. Villa fans want trophies. Brighton fans want the model to keep producing.",
  
     IT:"Both are modest clubs that earned their place through intelligence rather than resources. Ipswich's intelligence is rooted in community and a specific Suffolk pride. Brighton's is operational and data-driven. Both are undefensive about their scale. Brighton's approach is more explicitly modern. Ipswich's identity is more traditionally community-based.",
  
@@ -1432,7 +1432,7 @@ const nearlyGot = {
 
     IT:"Both are clubs that know exactly what they are and find it genuinely enough. Ipswich's version is rooted in Suffolk identity and the specific pride of a small-city club that once competed in Europe. Fulham's is rooted in Craven Cottage and a kind of London gentility. Both are completely undefensive about their scale.",
  
-    LI:"Both have a specific place that defines the club's identity more than trophies do. The Kop defines Liverpool. Craven Cottage defines Fulham. Both are irreplaceable. Liverpool's place generates mythology and collective emotion. Fulham's generates a specific gentle pride — the Cottage, the Thames, the fact that it has been there since 1896.",
+    LI:"Both have a specific place that defines the club's identity more than trophies do. The Kop defines Liverpool. Craven Cottage defines Fulham. Both are irreplaceable. Liverpool's place generates mythology and collective emotion. Fulham's generates a specific gentle pride, the Cottage, the Thames, the fact that it has been there since 1896.",
  
     MC:"Both appreciate football done well but the emotional register is entirely different. City fans expect dominance and systematic excellence. Fulham fans appreciate good football while being comfortable not expecting to win anything. Both enjoy quality. One's enjoyment comes with expectation. The other's comes with none.",
  
@@ -1460,7 +1460,7 @@ const nearlyGot = {
  
     CH:"Both are west London clubs with very different relationships to ambition and money. Chelsea built an identity around dominance through spending. Fulham built theirs around Craven Cottage and being comfortable with what they are. Chelsea's identity is currently feeling unmoored. Fulham's is as clear as it's ever been.",
  
-    CV:"Both are clubs where contentment with identity has been a defining characteristic. Coventry's contentment was forged through necessity — when you lose your home ground, you learn to carry the identity without the place. Fulham's is more comfortable and long-standing. Both know who they are. Coventry's knowledge was harder to hold onto.",
+    CV:"Both are clubs where contentment with identity has been a defining characteristic. Coventry's contentment was forged through necessity, when you lose your home ground, you learn to carry the identity without the place. Fulham's is more comfortable and long-standing. Both know who they are. Coventry's knowledge was harder to hold onto.",
   },
   BO:{
     FU:"Both are genuinely content clubs with no identity crisis about their size. Fulham has the Thames, Craven Cottage, and a century of First Division football as context for that contentment. Bournemouth's contentment is newer, earned through an unlikely ascent, and carries more of the surprise still in it.",
@@ -1473,7 +1473,7 @@ const nearlyGot = {
  
     MC:"Both are clubs where the quality of football is something to appreciate. City's quality comes with enormous expectation. Bournemouth's comes with genuine surprise that they're here at all. Both fanbases enjoy good football. City fans take it as their right. Bournemouth fans take it as a gift.",
  
-    AR:"Both find meaning in football done properly. Arsenal's version comes with philosophical weight and decades of expectation. Bournemouth's is simpler — they're just genuinely happy to be playing good football in the Premier League. Both appreciate the how. Arsenal fans argue about it; Bournemouth fans just enjoy it.",
+    AR:"Both find meaning in football done properly. Arsenal's version comes with philosophical weight and decades of expectation. Bournemouth's is simpler, they're just genuinely happy to be playing good football in the Premier League. Both appreciate the how. Arsenal fans argue about it; Bournemouth fans just enjoy it.",
  
     EV:"Both are clubs where the fanbase is the most genuine thing about the institution. Everton's fanbase carries decades of frustrated loyalty. Bournemouth's is newer to the Premier League and still partly amazed by it. Both have real communities behind their clubs. Everton's community is heavier; Bournemouth's is lighter.",
  
@@ -1522,7 +1522,7 @@ const nearlyGot = {
  
     LE:"Both are clubs that have experienced the specific joy of doing something improbable. Leicester's moment was more concentrated and more statistically impossible. Villa's European Cup was longer ago but equally defining. Both know what it feels like when a football club becomes something bigger than the game for a moment.",
  
-    NF:"Both have European Cup history that defines the club's identity regardless of what comes after. Forest's is more mythological — Clough, the chaos, the back-to-back improbability. Villa's is part of a longer history of genuine top-flight presence. Both fanbases know what it is to have been truly great and to be working toward that again.",
+    NF:"Both have European Cup history that defines the club's identity regardless of what comes after. Forest's is more mythological, Clough, the chaos, the back-to-back improbability. Villa's is part of a longer history of genuine top-flight presence. Both fanbases know what it is to have been truly great and to be working toward that again.",
  
     BR:"Both are clubs where careful thinking has driven genuine progress. Brentford's thinking is operational and data-led. Villa's is more traditional but with new ownership and genuine investment. Brentford are building steadily. Villa are building rapidly. Both believe in a process. The scale and pace are very different.",
  
@@ -1551,11 +1551,11 @@ const nearlyGot = {
 
     CV:"Both are clubs defined by survival and institutional difficulty that the fanbase absorbed without abandoning ship. Sunderland's difficulty involved a fall to League One and the long climb back. Coventry's involved years without a proper home ground. Both tested loyalty beyond what most fanbases would tolerate and found it still there.",
  
-    LI:"Both are clubs where the fanbase's loyalty is unconditional and communal. Liverpool's community has mythology and global reach. Sunderland's is more local and has been tested more severely — the Stadium of Light held 46,000 in League One. Liverpool's is louder. Sunderland's may be more unconditional.",
+    LI:"Both are clubs where the fanbase's loyalty is unconditional and communal. Liverpool's community has mythology and global reach. Sunderland's is more local and has been tested more severely, the Stadium of Light held 46,000 in League One. Liverpool's is louder. Sunderland's may be more unconditional.",
  
     MC:"Both are northern clubs with large fanbases that have been through very different kinds of difficulty. City's difficulty was mid-table obscurity. Sunderland's was a fall to the third tier. City's story resolved into extraordinary dominance. Sunderland's is a longer climb back toward where they believe they belong.",
  
-    AR:"Both have fanbases that believe the club deserves more than it currently has. Arsenal's belief is principled and argued. Sunderland's is simpler and more communal — this is our club, it belongs here, it should be competing. Both are frustrated. The scale and character of the frustration is different.",
+    AR:"Both have fanbases that believe the club deserves more than it currently has. Arsenal's belief is principled and argued. Sunderland's is simpler and more communal, this is our club, it belongs here, it should be competing. Both are frustrated. The scale and character of the frustration is different.",
  
     WH:"Both are clubs where institutional decisions damaged the fanbase's trust and yet the loyalty held. West Ham left Upton Park. Sunderland fell to League One under ownership that didn't deserve the fanbase it had. Both fanbases absorbed what no supporter base should have to absorb. Both are still there.",
  
@@ -1579,7 +1579,7 @@ const nearlyGot = {
  
     BO:"Both are clubs that have experienced prolonged difficulty before better times. Bournemouth went through administration. Sunderland went to League One. Both fanbases held on through periods that tested loyalty. Both are now competing at a higher level. Bournemouth's improvement has been more dramatic.",
  
-    IT:"Both are clubs defined by community loyalty through difficult periods. Ipswich have had long periods outside the top flight. Sunderland went further — all the way to League One. Both kept their identity regardless of division.",
+    IT:"Both are clubs defined by community loyalty through difficult periods. Ipswich have had long periods outside the top flight. Sunderland went further, all the way to League One. Both kept their identity regardless of division.",
  
     CH:"Both are clubs where the fanbase's identity has been complicated by institutional decisions. Chelsea's was shaped by billionaire ownership that transformed the club. Sunderland's was shaped by ownership that took the club to League One. Sunderland's test was more basic and more prolonged.",
  
@@ -1600,7 +1600,7 @@ const nearlyGot = {
  
     CP:"Both have atmospheres more intense than the club's position might suggest. Palace's Holmesdale is the most organised fan culture in the Premier League. Elland Road is historically one of the most intimidating grounds in England. Both fanbases have created something the institution didn't give them.",
  
-    MU:"Both are northern clubs with big fanbases and complicated histories. United's history is more successful but Leeds' is arguably more operatic — the Revie era, the fall, the Championship years. Both have fanbases that believe the club belongs at the top. United's belief is backed by recent evidence. Leeds' is backed by older history and sheer conviction.",
+    MU:"Both are northern clubs with big fanbases and complicated histories. United's history is more successful but Leeds' is arguably more operatic, the Revie era, the fall, the Championship years. Both have fanbases that believe the club belongs at the top. United's belief is backed by recent evidence. Leeds' is backed by older history and sheer conviction.",
  
     SP:"Both are clubs where suffering and hope coexist in an ongoing unresolved relationship. Spurs do it with self-aware dark humour. Leeds do it with confrontational intensity. Both have been close to things without consistently getting them. Both keep believing. The emotional register around that belief is very different.",
  
@@ -1633,7 +1633,7 @@ const nearlyGot = {
  
     MC:"Both won titles through significant investment and systematic excellence. City's excellence has been more sustained and more dominant. Chelsea's was more chaotic and less consistent. City fans now expect to win things. Chelsea fans have more complicated feelings about what their recent dominance means.",
  
-    EV:"Both carry former glory and current frustration. Everton's frustration is longer and deeper. Chelsea's is more recent and more confusing — they spent enormous amounts and the results were inconsistent. Both fanbases understand what it means to expect more than they're getting. The emotional quality of the frustration is different.",
+    EV:"Both carry former glory and current frustration. Everton's frustration is longer and deeper. Chelsea's is more recent and more confusing, they spent enormous amounts and the results were inconsistent. Both fanbases understand what it means to expect more than they're getting. The emotional quality of the frustration is different.",
  
     NC:"Both have fanbases that feel the club belongs at the top of the game. Newcastle's belief is rooted in place and community. Chelsea's is rooted in recent dominance and historical west London identity. Both currently feel the gap between where they are and where they should be. Newcastle's frustration is older and more communal. Chelsea's is more recent and more confused.",
  
@@ -1655,11 +1655,11 @@ const nearlyGot = {
  
     BO:"Both have won things and know what success feels like. Chelsea's success was bought and dominant. Bournemouth's is smaller and more genuine. Chelsea fans expect more success. Bournemouth fans appreciate what they have. The relationship each fanbase has to success is formed by completely different experiences of it.",
  
-    SU:"Both are clubs where the fanbase's loyalty has been tested. Sunderland's test was institutional and prolonged. Chelsea's test is more existential — who are we without the billionaire? Both fanbases are navigating what the club means. Sunderland fans know exactly. Chelsea fans are working it out.",
+    SU:"Both are clubs where the fanbase's loyalty has been tested. Sunderland's test was institutional and prolonged. Chelsea's test is more existential, who are we without the billionaire? Both fanbases are navigating what the club means. Sunderland fans know exactly. Chelsea fans are working it out.",
  
     LU:"Both are clubs with big fanbases and complicated recent histories. Leeds' complications are rooted in a dramatic fall from the top. Chelsea's are rooted in money-fuelled success that is now gone. Both have fans who remember better times. Leeds fans carry it as identity. Chelsea fans carry it as expectation.",
  
-    IT:"Both are clubs where belonging to the institution means something specific. Ipswich's meaning is local, community-rooted, and tied to the Bobby Robson era. Chelsea's meaning is more fragmented — different eras mean different things to different fans. Ipswich fans know exactly what the club means to them. Chelsea fans have more to navigate.",
+    IT:"Both are clubs where belonging to the institution means something specific. Ipswich's meaning is local, community-rooted, and tied to the Bobby Robson era. Chelsea's meaning is more fragmented, different eras mean different things to different fans. Ipswich fans know exactly what the club means to them. Chelsea fans have more to navigate.",
  
     CV:"Both are clubs where the fanbase's identity has been complicated by decisions made above them. Coventry lost their ground. Chelsea lost their owner and the certainty that came with him. Both fanbases are navigating what the club is without the defining thing that shaped it. Coventry fans held on through it. Chelsea fans are still finding out if they will.",
   },
@@ -1668,11 +1668,11 @@ const nearlyGot = {
     BO:"Both are modest clubs genuinely happy to be in the Premier League and undefensive about not being Arsenal. Ipswich has the deeper historical roots and the Robson mythology. Bournemouth is simpler, smaller, and lighter about it.",
     NC:"Both are clubs where community is the whole point. Newcastle's community is louder and larger. Ipswich's is more specific, Suffolk, Portman Road, a market town that happens to have a football club.",
  
-    LI:"Both have specific communities at the heart of what the club means. Liverpool's community is global and mythological. Ipswich's is a county — Suffolk, specific, agricultural, quietly proud. Both matter to people for reasons beyond football. Liverpool's matters globally. Ipswich's matters locally and all the more specifically for that.",
+    LI:"Both have specific communities at the heart of what the club means. Liverpool's community is global and mythological. Ipswich's is a county, Suffolk, specific, agricultural, quietly proud. Both matter to people for reasons beyond football. Liverpool's matters globally. Ipswich's matters locally and all the more specifically for that.",
  
     MC:"Both are clubs that achieved extraordinary things at their level. City achieved sustained domestic dominance. Ipswich achieved a UEFA Cup with a county town club under Bobby Robson. Both fanbases have a period they point to. City fans live in it continuously. Ipswich fans hold it as something improbable that actually happened.",
  
-    AR:"Both find value in doing things properly. Arsenal's version is philosophical and aesthetic. Ipswich's is quieter and more community-rooted — the Bobby Robson era, the specific Suffolk pride. Both believe in the right way. Arsenal argues about it. Ipswich just remembers it.",
+    AR:"Both find value in doing things properly. Arsenal's version is philosophical and aesthetic. Ipswich's is quieter and more community-rooted, the Bobby Robson era, the specific Suffolk pride. Both believe in the right way. Arsenal argues about it. Ipswich just remembers it.",
  
     EV:"Both are clubs where the local community identity is the most genuine thing about the institution. Everton's is Merseyside, in the shadow of Liverpool. Ipswich's is Suffolk, distinct and quietly proud. Both have fanbases that hold the club as something that belongs to their place more than to any owner.",
  
@@ -1713,7 +1713,7 @@ const nearlyGot = {
  
     MC:"Both are clubs that experienced prolonged periods without the thing they most wanted. City spent decades below Arsenal and United. Coventry spent years without a home ground. Both fanbases held on. City's wait ended with extraordinary dominance. Coventry's ended with a return to the CBS Arena.",
  
-    AR:"Both have fanbases that believe the club deserves better than it currently has. Arsenal's belief is rooted in philosophical conviction. Coventry's is rooted in a simpler loyalty — this is our club, it should have a proper home, it should be competing. Both are frustrated. Arsenal's frustration is about standard. Coventry's is about survival.",
+    AR:"Both have fanbases that believe the club deserves better than it currently has. Arsenal's belief is rooted in philosophical conviction. Coventry's is rooted in a simpler loyalty, this is our club, it should have a proper home, it should be competing. Both are frustrated. Arsenal's frustration is about standard. Coventry's is about survival.",
  
     NC:"Both are clubs where the community's relationship to the institution has been tested by decisions made above the fanbase. Newcastle's community was sold to sportswashing ownership. Coventry's lost their home ground. Both fanbases kept showing up. The nature of the betrayal was different but the loyalty was the same.",
  
@@ -1723,13 +1723,13 @@ const nearlyGot = {
  
     LE:"Both are Midlands-adjacent clubs with improbable recent histories. Leicester's improbability was a title won against all odds. Coventry's was surviving prolonged structural chaos. Both proved something about what fanbases can hold onto. Leicester proved miracles happen. Coventry proved loyalty outlasts almost anything.",
  
-    NF:"Both are clubs where the fanbase's stubbornness kept the club going through difficult periods. Forest's difficulty was a long fall from the heights of the Clough era. Coventry's was structural and physical — years without a real home. Both fanbases held on to something they believed was worth preserving.",
+    NF:"Both are clubs where the fanbase's stubbornness kept the club going through difficult periods. Forest's difficulty was a long fall from the heights of the Clough era. Coventry's was structural and physical, years without a real home. Both fanbases held on to something they believed was worth preserving.",
  
     BR:"Both are clubs where the community relationship is central to what the club means. Brentford is community-owned. Coventry's fanbase fought for years to bring the club home. Both are examples of what supporters do when they decide the club belongs to them rather than to whoever owns it.",
  
     BH:"Both are clubs that have had to be patient for things to improve. Brighton's patience was rewarded with an intelligent model and Premier League stability. Coventry's patience was rewarded with a return to the CBS Arena. Both fanbases understand what it means to wait for something and still care enough to keep waiting.",
  
-    FU:"Both are clubs where contentment with identity has been a survival mechanism as much as a choice. Fulham's contentment is comfortable and long-standing. Coventry's was forged through necessity — when you don't have a home ground, you learn to carry the identity without the place. Both know who they are. Coventry's knowledge was hard-won.",
+    FU:"Both are clubs where contentment with identity has been a survival mechanism as much as a choice. Fulham's contentment is comfortable and long-standing. Coventry's was forged through necessity, when you don't have a home ground, you learn to carry the identity without the place. Both know who they are. Coventry's knowledge was hard-won.",
  
     BO:"Both are clubs that have been through periods where existence itself was the achievement. Bournemouth went through administration before their rise. Coventry lost their home ground. Both fanbases kept the club alive through difficult times. Both are now in better positions. Bournemouth's improvement has been more dramatic.",
  
@@ -1737,7 +1737,7 @@ const nearlyGot = {
  
     LU:"Both are clubs with proud histories and fanbases that carry that history despite long periods without commensurate success. Leeds' history involves European nights and Don Revie. Coventry's involves an FA Cup and Jimmy Hill's transformation of the club. Both know what they used to be and believe in what they still are.",
  
-    IT:"Both are clubs where the local community is the whole point. Ipswich's community is Suffolk — specific, agricultural, distinct. Coventry's is a city that has kept its football club at the centre of its identity through industrial change. Both are examples of football genuinely belonging to its place.",
+    IT:"Both are clubs where the local community is the whole point. Ipswich's community is Suffolk, specific, agricultural, distinct. Coventry's is a city that has kept its football club at the centre of its identity through industrial change. Both are examples of football genuinely belonging to its place.",
  
     CH:"Both are clubs where the fanbase's identity has been tested by decisions made above them. Chelsea's was shaped by billionaire ownership that is now gone. Coventry's was shaped by years without a proper home ground. Both fanbases navigated something that tested what the club means. Coventry's test was more basic and more prolonged.",
   },
@@ -1763,7 +1763,7 @@ const scoring = {
     left: {MC:3,LI:2,MU:3,AR:2,NC:2,EV:1,AV:2,LU:2,SU:1},
     right:{EV:3,SP:3,NF:2,FU:2,BO:2,LE:2,CV:2,IT:2,CH:1},
   },
-  // Q3: overlooked — reaction
+  // Q3: overlooked, reaction
   q3:{
     A:{MC:2,WO:3,BR:2,BH:1},
     B:{AR:3,BH:2,FU:3,BR:1,IT:2},
@@ -2060,6 +2060,77 @@ const DIM_LABELS = {
   loyalty:"Loyalty",emotion:"Emotional intensity",ambition:"Ambition",
   process:"Process thinking",community:"Community drive",chaos:"Chaos tolerance",rootedness:"Rootedness",
 };
+
+// ── Share card system (canvas, 1080x1350). Section 6 spec. ──────────────
+// Fixed dimension palette: colour = trait identity, band height = score.
+const DIM_COLORS = {loyalty:"#d4a44e",emotion:"#d6685c",ambition:"#c46c96",process:"#688eb0",community:"#68b096",chaos:"#dc8e46",rootedness:"#9280c6"};
+const DIM_CODES  = {loyalty:"LOY",emotion:"EMO",ambition:"AMB",process:"PRO",community:"COM",chaos:"CHA",rootedness:"ROO"};
+const DIM_ORDER  = ["loyalty","emotion","ambition","process","community","chaos","rootedness"];
+// Approved badge map. null = intentional monogram (the 2-letter code).
+const CARD_BADGES = {LI:null,AR:null,MC:"🚢",EV:"🍬",NC:"🐦‍⬛",MU:"🔱",SP:"🐓",FU:"🏡",CH:"🦁",IT:"🚜",LU:"🦚",CV:"☁️",AV:"🍷",CP:"🦅",LE:"🦊",NF:"🌲",BR:"🐝",BH:"🐦",WO:"🐺",BO:"🍒",SU:"🐱",WH:"⚒️"};
+// Generic shape emojis vanish on a same-colour roundel: always monogram instead.
+const GENERIC_EMOJI = new Set(["🔴","🔵","⚫","⚪","🩵","🟡","🟢","🟣","🟠","🟤","🔶","🔷"]);
+
+function hexToRgb(h){h=h.replace("#","");return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+function relLum(rgb){const f=v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);};return 0.2126*f(rgb[0])+0.7152*f(rgb[1])+0.0722*f(rgb[2]);}
+function onColorText(hex){return relLum(hexToRgb(hex))>0.5?"#0c0c12":"#f4f1ec";}
+function roundRectPath(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+function trackedWidth(ctx,s,tr){let w=0;for(const ch of s)w+=ctx.measureText(ch).width+tr;return s.length?w-tr:0;}
+function drawTracked(ctx,s,cxc,y,font,fill,tr){ctx.save();ctx.font=font;ctx.fillStyle=fill;ctx.textAlign="left";const w=trackedWidth(ctx,s,tr);let xx=cxc-w/2;for(const ch of s){ctx.fillText(ch,xx,y);xx+=ctx.measureText(ch).width+tr;}ctx.restore();}
+function wrapCanvasText(ctx,s,maxw){const words=s.split(" ");const lines=[];let cur="";for(const w of words){const t=cur?cur+" "+w:w;if(ctx.measureText(t).width<=maxw||!cur)cur=t;else{lines.push(cur);cur=w;}}if(cur)lines.push(cur);return lines;}
+
+async function generateShareCard(key){
+  const W=1080,H=1350,cv=document.createElement("canvas");cv.width=W;cv.height=H;
+  const x=cv.getContext("2d"),team=teams[key],col=team.color,dims=teamDims[key]||{},cx=W/2;
+  try{await Promise.all([
+    document.fonts.load("600 100px 'Cormorant Garamond'"),
+    document.fonts.load("italic 42px 'Cormorant Garamond'"),
+    document.fonts.load("400 30px 'DM Mono'"),
+  ]);}catch(e){}
+  x.fillStyle="#16161e";x.fillRect(0,0,W,H);
+  const g=x.createLinearGradient(0,0,0,560);g.addColorStop(0,col+"2e");g.addColorStop(1,col+"00");
+  x.fillStyle=g;x.fillRect(0,0,W,560);
+  x.textAlign="center";x.textBaseline="alphabetic";
+  drawTracked(x,"YOUR CLUB",cx,118,"400 30px 'DM Mono',monospace","#9696b4",18);
+  const R=82,ry=258;
+  x.beginPath();x.arc(cx,ry,R+5,0,Math.PI*2);x.fillStyle="#f7f4ef";x.fill();
+  x.beginPath();x.arc(cx,ry,R,0,Math.PI*2);x.fillStyle=col;x.fill();
+  const badge=CARD_BADGES[key];
+  x.textBaseline="middle";
+  if(badge&&!GENERIC_EMOJI.has(badge)){
+    x.font="110px 'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif";x.fillText(badge,cx,ry+4);
+  }else{
+    x.font="400 66px 'DM Mono',monospace";x.fillStyle=onColorText(col);x.fillText(key,cx,ry+2);
+  }
+  x.textBaseline="alphabetic";
+  let nsz=104;x.fillStyle="#e8e4de";
+  do{x.font="600 "+nsz+"px 'Cormorant Garamond',serif";if(x.measureText(team.name).width<=900)break;nsz-=2;}while(nsz>44);
+  const nameY=ry+R+70;x.textAlign="center";x.fillText(team.name,cx,nameY);
+  const arc=(archetypes[key]||"").toUpperCase();
+  x.font="400 24px 'DM Mono',monospace";
+  const padX=22,padY=12,tw=trackedWidth(x,arc,3),ph=24+padY*2,pillY=nameY+34;
+  roundRectPath(x,cx-tw/2-padX,pillY,tw+padX*2,ph,8);x.fillStyle=col;x.fill();
+  drawTracked(x,arc,cx,pillY+padY+24,"400 24px 'DM Mono',monospace",onColorText(col),3);
+  x.font="italic 42px 'Cormorant Garamond',serif";x.fillStyle="#c9c4bd";x.textAlign="center";
+  const tl=wrapCanvasText(x,team.tagline,860).slice(0,2),ty=pillY+ph+52;
+  tl.forEach((ln,i)=>x.fillText(ln,cx,ty+i*52));
+  const stripTop=ty+(tl.length*52)+20;
+  drawTracked(x,"CORE SEQUENCE",cx,stripTop+30,"400 30px 'DM Mono',monospace","#9696b4",16);
+  const laneTop=stripTop+120,laneH=210,laneW=86,gap=(820-7*laneW)/6,x0=cx-410;
+  DIM_ORDER.forEach((dk,i)=>{
+    const lx=x0+i*(laneW+gap),dcol=DIM_COLORS[dk],score=dims[dk]||0;
+    drawTracked(x,DIM_CODES[dk],lx+laneW/2,laneTop-26,"400 24px 'DM Mono',monospace",dcol,2);
+    roundRectPath(x,lx,laneTop,laneW,laneH,10);x.fillStyle="#1e1e2a";x.fill();x.strokeStyle="#34344a";x.lineWidth=1;x.stroke();
+    const bandH=14,by=laneTop+8+(1-score/10)*(laneH-16-bandH);
+    x.save();x.shadowColor=dcol;x.shadowBlur=16;roundRectPath(x,lx+10,by,laneW-20,bandH,6);x.fillStyle=dcol;x.fill();x.restore();
+    roundRectPath(x,lx+10,by,laneW-20,4,3);x.fillStyle="rgba(255,255,255,0.35)";x.fill();
+  });
+  const seqY=laneTop+laneH+62;x.textAlign="center";
+  drawTracked(x,"FanDNA: PL-"+key,cx,seqY,"400 42px 'DM Mono',monospace","#d6d2ca",2);
+  x.font="italic 40px 'Cormorant Garamond',serif";x.fillStyle="#9898b8";x.fillText("Which club are you, really?",cx,seqY+62);
+  drawTracked(x,"fandna.vercel.app",cx,seqY+112,"400 24px 'DM Mono',monospace","#7878a0",3);
+  return await new Promise(res=>cv.toBlob(res,"image/png"));
+}
 
 
 const badgeUrls = {
@@ -2397,7 +2468,7 @@ export default function App(){
         ::-webkit-scrollbar-thumb{background:#1e1e2e;border-radius:2px}
       `}</style>
 
-      {/* Ambient glow — changes with phase */}
+      {/* Ambient glow, changes with phase */}
       <div style={{
         position:"fixed",inset:0,zIndex:0,pointerEvents:"none",
         background:`radial-gradient(ellipse at 30% 40%, ${result?teams[result].color+"08":"#ffffff08"} 0%, transparent 65%)`,
@@ -2455,6 +2526,14 @@ export default function App(){
               </div>
             </div>
 
+            {/* Entry framing, first question only (per 1b) */}
+            {cur===0&&(
+              <div style={{textAlign:"center",marginBottom:26}}>
+                <div style={{fontSize:11,color:"#7878a0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:10}}>Which club are you, really?</div>
+                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(14px,3.4vw,17px)",color:"#9898b8",lineHeight:1.55,margin:0}}>38 questions, no football knowledge needed. New to the league or loyal for life, this is the club in your DNA.</p>
+              </div>
+            )}
+
             {/* Question */}
             <h2 style={{
               fontFamily:"'Cormorant Garamond',Georgia,serif",
@@ -2494,7 +2573,7 @@ export default function App(){
               </div>
             </div>
 
-            {/* Tabs — scrollable row */}
+            {/* Tabs, scrollable row */}
             <div style={{position:"relative",marginBottom:22}}>
               <div style={{display:"flex",gap:0,marginBottom:0,borderBottom:"1px solid #0f0f1a",overflowX:"auto",scrollbarWidth:"none",WebkitOverflowScrolling:"touch",msOverflowStyle:"none"}}>
               {[["result","Match"],["analysis","Why you?"],["stats","Club Vitals"],["nearly","Almost you"]].map(([id,label])=>(
@@ -2512,7 +2591,7 @@ export default function App(){
                 >{label}</button>
               ))}
             </div>
-              {/* Right-edge fade — indicates more tabs off-screen */}
+              {/* Right-edge fade, indicates more tabs off-screen */}
               <div style={{
                 position:"absolute",top:0,right:0,width:52,height:"calc(100% - 1px)",
                 background:"linear-gradient(to right, transparent, #16161e)",
@@ -2526,43 +2605,44 @@ export default function App(){
                 <div style={{width:28,height:2,background:team.color,marginBottom:18,borderRadius:2}}/>
                 <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(19px,4vw,22px)",fontWeight:300,color:"#d8d4ce",lineHeight:1.85,margin:"0 0 20px",fontStyle:"italic"}}>{team.desc}</p>
                 <p style={{fontSize:14,color:"#bbb",lineHeight:1.75,margin:"0 0 24px",borderLeft:`1px solid #252535`,paddingLeft:14,fontFamily:"'DM Mono',monospace"}}>{team.note}</p>
+                {/* Fandom vs FanDNA reframe (per 1b) */}
+                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(15px,3.4vw,18px)",fontStyle:"italic",color:"#9898b8",lineHeight:1.6,margin:"6px 0 22px"}}>This is your club by DNA. What you support on Saturdays is up to you.</p>
                 {/* Share card */}
-                <div style={{background:"#141420",border:"1px solid #222230",borderRadius:8,padding:"16px 18px",marginBottom:20,marginTop:28,borderTop:`2px solid ${team.color}20`}}>
-                  <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:10}}>Share your result</div>
-                  <div style={{
-                    background:`linear-gradient(135deg,${team.color}25,#0c0c18)`,
-                    border:`1px solid ${team.color}22`,borderRadius:6,
-                    padding:"14px 16px",marginBottom:12,
-                    fontFamily:"'Cormorant Garamond',Georgia,serif",
-                  }}>
-                    <div style={{fontSize:11,color:"#888",marginBottom:10,fontFamily:"'DM Mono',monospace",letterSpacing:"0.15em",textTransform:"uppercase"}}>My Premier League club is</div>
-                    <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:8}}>
-                      <BadgeImg url={badgeUrls[result]} emoji={team.emoji} size={44}/>
-                      <div>
-                        <div style={{fontSize:24,color:"#ffffff",fontWeight:300,letterSpacing:"-.01em",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>{team.name}</div>
-                        <div style={{fontSize:12,color:(teamTextColors[result]||team.color),fontStyle:"italic",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>{archetypes[result]}</div>
-                      </div>
-                    </div>
-                    {archetypeDesc[result]&&(
-                      <p style={{margin:0,fontSize:15,color:"#ccc",lineHeight:1.65,fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",borderTop:`1px solid ${team.color}20`,paddingTop:8,marginTop:4}}>
-                        {archetypeDesc[result]}
-                      </p>
-                    )}
-                  </div>
+                <div style={{background:"#141420",border:"1px solid #222230",borderRadius:8,padding:"16px 18px",marginBottom:20,marginTop:8,borderTop:`2px solid ${team.color}20`}}>
+                  <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:12}}>Share your genome</div>
                   <button
-                    onClick={()=>{
-                      const text=`My Premier League club is ${team.name} (${archetypes[result]}). ${archetypeDesc[result]||team.tagline} Find yours:`;
-                      navigator.clipboard?.writeText(text).then(()=>alert("Copied to clipboard!")).catch(()=>alert("Copy: "+text));
+                    onClick={async()=>{
+                      const caption=`Which club are you, really? Turns out I'm ${team.name}, ${archetypes[result]}. FanDNA: PL-${result}. Find yours: fandna.vercel.app`;
+                      let blob=null;
+                      try{blob=await generateShareCard(result);}catch(e){blob=null;}
+                      if(blob&&navigator.canShare){
+                        const file=new File([blob],`fandna-${result}.png`,{type:"image/png"});
+                        if(navigator.canShare({files:[file]})){
+                          try{await navigator.share({files:[file],text:caption});return;}
+                          catch(e){if(e&&e.name==="AbortError")return;}
+                        }
+                      }
+                      if(blob){
+                        const url=URL.createObjectURL(blob);
+                        const a=document.createElement("a");a.href=url;a.download=`fandna-${result}.png`;
+                        document.body.appendChild(a);a.click();a.remove();
+                        setTimeout(()=>URL.revokeObjectURL(url),1500);
+                        navigator.clipboard?.writeText(caption).catch(()=>{});
+                        return;
+                      }
+                      navigator.clipboard?.writeText(caption).then(()=>alert("Card couldn't render here. Caption copied.")).catch(()=>alert(caption));
                     }}
                     style={{
-                      background:`${team.color}15`,border:`1px solid ${team.color}30`,borderRadius:4,
-                      padding:"8px 16px",color:(teamTextColors[result]||team.color),fontSize:10,letterSpacing:"0.15em",
+                      display:"inline-flex",alignItems:"center",gap:10,
+                      background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,
+                      padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",
                       textTransform:"uppercase",fontFamily:"'DM Mono',monospace",cursor:"pointer",
-                      transition:"all .15s",
+                      transition:"all .15s ease",fontWeight:500,
                     }}
-                    onMouseEnter={e=>{e.currentTarget.style.background=`${team.color}25`;}}
-                    onMouseLeave={e=>{e.currentTarget.style.background=`${team.color}15`;}}
-                  >↗ Copy result</button>
+                    onMouseEnter={e=>{e.currentTarget.style.background=`${team.color}33`;}}
+                    onMouseLeave={e=>{e.currentTarget.style.background=`${team.color}22`;}}
+                  >🧬 Share card</button>
+                  <div style={{fontSize:11,color:"#666",marginTop:10,fontFamily:"'DM Mono',monospace",letterSpacing:"0.05em"}}>Saves a card to share. On mobile, opens your share sheet.</div>
                 </div>
                 <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:4}}>
                   <a href={team.kit} target="_blank" rel="noopener noreferrer"
@@ -2669,7 +2749,7 @@ export default function App(){
               <div style={{animation:"fadeIn .3s ease"}}>
                 <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:6}}>Almost you...</div>
                 <p style={{fontSize:13,color:"#aaa",margin:"0 0 20px",fontFamily:"'DM Mono',monospace",lineHeight:1.6}}>
-                  These clubs scored closest to you. Here's what you share — and what separates you.
+                  These clubs scored closest to you. Here's what you share, and what separates you.
                 </p>
                 {nearClubs.length===0&&(
                   <p style={{fontSize:"clamp(15px,3.5vw,17px)",color:"#ccc",fontStyle:"italic",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>
