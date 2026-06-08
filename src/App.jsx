@@ -2481,20 +2481,6 @@ export default function App(){
         transition:"background 1s ease",
       }}/>
 
-      {/* Progress: six-segment phase tracker */}
-      {!result&&(
-        <div style={{position:"fixed",top:0,left:0,right:0,height:3,zIndex:99,display:"flex",gap:2,background:"#16161e"}}>
-          {phaseOrder.map((ph,i)=>{
-            const frac=i<phaseIdx?1:i>phaseIdx?0:Math.min(1,Math.max(0,(cur-phaseStart+1)/phaseLen));
-            return(
-              <div key={ph} style={{flex:1,height:"100%",background:"#1e1e2e",overflow:"hidden"}}>
-                <div style={{height:"100%",width:`${frac*100}%`,background:"#6a6a90",transition:"width .3s ease"}}/>
-              </div>
-            );
-          })}
-        </div>
-      )}
-
       <div style={{
         width:"100%",maxWidth:560,position:"relative",zIndex:1,
         animation:`${phase==="out"?"slideOut":"slideIn"} .22s ease forwards`,
@@ -2503,6 +2489,18 @@ export default function App(){
         {/* ── QUIZ ── */}
         {!result&&(
           <>
+            {/* Progress: six-segment phase tracker (in-flow, not jammed to viewport top) */}
+            <div style={{display:"flex",gap:3,height:4,marginBottom:24}}>
+              {phaseOrder.map((ph,i)=>{
+                const frac=i<phaseIdx?1:i>phaseIdx?0:Math.min(1,Math.max(0,(cur-phaseStart+1)/phaseLen));
+                return(
+                  <div key={ph} style={{flex:1,height:"100%",background:"#1e1e2e",borderRadius:2,overflow:"hidden"}}>
+                    <div style={{height:"100%",width:`${frac*100}%`,background:"#6a6a90",borderRadius:2,transition:"width .3s ease"}}/>
+                  </div>
+                );
+              })}
+            </div>
+
             {/* Nav row */}
             <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:28,flexWrap:"nowrap",gap:8}}>
               <div style={{display:"flex",gap:10,alignItems:"center",flexShrink:1}}>
@@ -2820,7 +2818,7 @@ export default function App(){
 
             {/* Support + feedback footer (off the newcomer's critical path) */}
             <div style={{marginTop:28,paddingTop:20,borderTop:"1px solid #1e1e2e",textAlign:"center"}}>
-              <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#7a7a98",lineHeight:1.6,margin:"0 auto 14px",maxWidth:380}}>Built by one person and far too many spreadsheets. If this got your club right, you can buy me a coffee.</p>
+              <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#7a7a98",lineHeight:1.6,margin:"0 auto 14px",maxWidth:380}}>Built by one person and far too many spreadsheets. If this made you laugh, argue, or text a friend, you can buy me a coffee.</p>
               <div style={{display:"flex",gap:20,justifyContent:"center",flexWrap:"wrap"}}>
                 <a href="https://buymeacoffee.com/fandna" target="_blank" rel="noopener noreferrer"
                   style={{color:"#9898b8",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"color .15s"}}
