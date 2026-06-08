@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { track } from "@vercel/analytics";
 
 // ─── QUESTIONS ────────────────────────────────────────────────────────────────
 // 30 questions across 5 phases
@@ -2194,6 +2195,31 @@ function getAllScores(answers) {
   return s;
 }
 
+// Points contributed only by answers within a single phase (used for tie-breaking).
+function phaseScores(answers, phaseName) {
+  const ps = Object.fromEntries(Object.keys(teams).map(k=>[k,0]));
+  for (const [qId,ans] of Object.entries(answers)) {
+    const qq = questions.find(p=>p.id===qId);
+    if (qq && qq.phase===phaseName) {
+      for (const [club,pts] of Object.entries(scoring[qId]?.[ans]||{})) {
+        if (ps[club]!==undefined) ps[club]+=pts;
+      }
+    }
+  }
+  return ps;
+}
+
+// Largest single-answer point award per club (final tie-break proxy: strongest single pull).
+function maxSingleAward(answers) {
+  const m = Object.fromEntries(Object.keys(teams).map(k=>[k,0]));
+  for (const [qId,ans] of Object.entries(answers)) {
+    for (const [club,pts] of Object.entries(scoring[qId]?.[ans]||{})) {
+      if (m[club]!==undefined && pts>m[club]) m[club]=pts;
+    }
+  }
+  return m;
+}
+
 // ─── QUESTION COMPONENTS ──────────────────────────────────────────────────────
 const BTN = {
   base:{
@@ -2375,14 +2401,37 @@ export default function App(){
   function handleSelect(val){
     const na={...answers,[q.id]:val};
     setAnswers(na);
+    if(Object.keys(answers).length===0) track("quiz_started");
     if(cur+1<questions.length){
+      const nextPhase=questions[cur+1].phase;
+      if(nextPhase!==q.phase) track("quiz_phase",{phase:nextPhase});
       setPhase("out");
       setTimeout(()=>{setCur(c=>c+1);setPhase("in");},220);
     } else {
       const s=getAllScores(na);
-      const top=Object.entries(s).sort((a,b)=>b[1]-a[1])[0][0];
+      // Assignment: top score wins. Ties break on the final phase ("What it comes
+      // down to"), then on the strongest single-answer pull, then teams{} order.
+      const max=Math.max(...Object.values(s));
+      let tied=Object.keys(s).filter(k=>s[k]===max);
+      let top;
+      if(tied.length===1){
+        top=tied[0];
+      } else {
+        const finalPhase=questions[questions.length-1].phase;
+        const dec=phaseScores(na,finalPhase);
+        const decMax=Math.max(...tied.map(k=>dec[k]));
+        let dtied=tied.filter(k=>dec[k]===decMax);
+        if(dtied.length===1){
+          top=dtied[0];
+        } else {
+          const single=maxSingleAward(na);
+          const sMax=Math.max(...dtied.map(k=>single[k]));
+          top=dtied.filter(k=>single[k]===sMax)[0];
+        }
+      }
       setScores(s);
       setResult(top);
+      track("quiz_completed",{club:top});
     }
   }
 
@@ -2818,13 +2867,13 @@ export default function App(){
 
             {/* Support + feedback footer (off the newcomer's critical path) */}
             <div style={{marginTop:28,paddingTop:20,borderTop:"1px solid #1e1e2e",textAlign:"center"}}>
-              <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#7a7a98",lineHeight:1.6,margin:"0 auto 14px",maxWidth:380}}>Built by one person and far too many spreadsheets. If this made you laugh, argue, or text a friend, you can buy me a coffee.</p>
+              <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#7a7a98",lineHeight:1.6,margin:"0 auto 14px",maxWidth:380}}>Built by one person and far too many spreadsheets. If this made you laugh, argue, or text a friend, you can buy me a pint.</p>
               <div style={{display:"flex",gap:20,justifyContent:"center",flexWrap:"wrap"}}>
                 <a href="https://buymeacoffee.com/fandna" target="_blank" rel="noopener noreferrer"
                   style={{color:"#9898b8",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"color .15s"}}
                   onMouseEnter={e=>e.currentTarget.style.color="#d0ccc6"}
                   onMouseLeave={e=>e.currentTarget.style.color="#9898b8"}
-                >☕ Buy me a coffee</a>
+                >🍺 Buy me a pint</a>
                 <a href="https://forms.gle/kAV9KGGUxdcA1dYv6" target="_blank" rel="noopener noreferrer"
                   style={{color:"#9898b8",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"color .15s"}}
                   onMouseEnter={e=>e.currentTarget.style.color="#d0ccc6"}
