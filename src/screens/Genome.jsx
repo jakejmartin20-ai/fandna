@@ -33,7 +33,7 @@ export function GenomeHome({
   const anyTaken = sports.some(s=>genome[s.code]&&genome[s.code].club);
 
   function copyShare(){
-    const txt = `${shareString} . Find yours: fandna.vercel.app`;
+    const txt = `${shareString}. Find yours: fandna.vercel.app`;
     if(navigator.clipboard&&navigator.clipboard.writeText){
       navigator.clipboard.writeText(txt).then(()=>{
         setCopied(true);
