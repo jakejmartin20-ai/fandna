@@ -2227,7 +2227,7 @@ const badgeUrls = {
   CH:"https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg",
   IT:"https://upload.wikimedia.org/wikipedia/en/4/43/Ipswich_Town.svg",
   CV:"",
-  HU:"https://upload.wikimedia.org/wikipedia/en/2/20/Hull_City_Crest_2014.svg",
+  HU:"https://cdn.worldvectorlogo.com/logos/hull-city-fc.svg",
 };
 
 const squadUrls = {
