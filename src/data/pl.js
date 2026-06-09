@@ -1,386 +1,260 @@
+import { DIM_LABELS, DIM_COLORS, DIM_CODES, DIM_ORDER } from "./core";
 // FanDNA data — all literals extracted verbatim from App.jsx (Phase 1 refactor, behaviour-neutral).
 // Currently holds the full PL + core dataset; Phase 2 lifts core questions into core.js.
 
-const questions = [
-
-  // ── PHASE 1: GLOBAL PERSONALITY (Q1–Q6) ─────────────────────────────────────
-
+const moduleQuestions = [
   {
-    id:"q1", type:"choice",
-    phase:"Who are you?",
-    question:"You're furious about something. What do people around you see?",
-    options:[
-      {label:"They know immediately. I don't hide it.",              value:"A"},
-      {label:"I get quieter. The colder the worse.",                 value:"B"},
-      {label:"I vent loudly, then it's gone fast.",                  value:"C"},
-      {label:"Nothing. I process alone and come back sorted.",      value:"D"},
-      {label:"Depends entirely on who caused it.",                   value:"E"},
+    "id": "pl_q1",
+    "type": "binary",
+    "phase": "The fine print",
+    "question": "Which lands closer:",
+    "left": "The story of how it happened matters as much as that it happened",
+    "right": "Nobody remembers how. They remember the result"
+  },
+  {
+    "id": "pl_q2",
+    "type": "choice",
+    "phase": "The fine print",
+    "question": "Your relationship with being right:",
+    "options": [
+      {
+        "label": "I need the world to eventually acknowledge it.",
+        "value": "A"
+      },
+      {
+        "label": "Knowing I was right is enough.",
+        "value": "B"
+      },
+      {
+        "label": "Being right without winning is cold comfort.",
+        "value": "C"
+      },
+      {
+        "label": "I'm more interested in being accurate than right.",
+        "value": "D"
+      },
+      {
+        "label": "I'm wrong often enough that I hold it loosely.",
+        "value": "E"
+      }
     ]
   },
   {
-    id:"q2", type:"binary",
-    phase:"Who are you?",
-    question:"Instinctively:",
-    left:"I set the bar high and feel it when we fall short",
-    right:"I manage expectations to protect myself from the fall",
+    "id": "pl_q3",
+    "type": "slider",
+    "phase": "The fine print",
+    "question": "Contentment:",
+    "left": "I'm genuinely okay with what I have, peace is underrated",
+    "right": "Contentment is just ambition that gave up"
   },
   {
-    id:"q3", type:"choice",
-    phase:"Who are you?",
-    question:"Something you worked hard on gets overlooked. Your move:",
-    options:[
-      {label:"Say nothing. Let the next thing speak.",               value:"A"},
-      {label:"Bring it up, clearly, calmly, once.",                 value:"B"},
-      {label:"Stew. For longer than I'd admit.",                     value:"C"},
-      {label:"Move on fast. Dwelling is a waste.",                   value:"D"},
-      {label:"Take it personally. It stays with me.",                value:"E"},
+    "id": "pl_q4",
+    "type": "choice",
+    "phase": "The fine print",
+    "question": "Which stings most?",
+    "options": [
+      {
+        "label": "Being second when you should have won.",
+        "value": "A"
+      },
+      {
+        "label": "Not being taken seriously.",
+        "value": "B"
+      },
+      {
+        "label": "Getting close over and over and never quite making it.",
+        "value": "C"
+      },
+      {
+        "label": "Being let down by someone you trusted completely.",
+        "value": "D"
+      },
+      {
+        "label": "Watching someone else succeed with your approach.",
+        "value": "E"
+      }
     ]
   },
   {
-    id:"q4", type:"slider",
-    phase:"Who are you?",
-    question:"When a plan falls apart:",
-    left:"I need a moment, then I rebuild methodically",
-    right:"I adapt in real time. Chaos doesn't slow me down",
+    "id": "pl_q5",
+    "type": "binary",
+    "phase": "The fine print",
+    "question": "Deep down:",
+    "left": "I want one perfect, improbable, unforgettable moment",
+    "right": "I want sustained, proven, undeniable excellence"
   },
   {
-    id:"q5", type:"choice",
-    phase:"Who are you?",
-    question:"Your ideal Saturday:",
-    options:[
-      {label:"Big group, loud, energy feeding energy.",              value:"A"},
-      {label:"Four or five people I actually trust.",                value:"B"},
-      {label:"One other person, or nobody.",                         value:"C"},
-      {label:"Structured. I like having a plan.",                   value:"D"},
-      {label:"Whatever feels right that morning.",                   value:"E"},
+    "id": "pl_q6",
+    "type": "choice",
+    "phase": "The fine print",
+    "question": "Which sentence actually fits:",
+    "options": [
+      {
+        "label": "\"We've been here before. We know what to do.\"",
+        "value": "A"
+      },
+      {
+        "label": "\"This time genuinely feels different.\"",
+        "value": "B"
+      },
+      {
+        "label": "\"Just once. I just want it to happen once.\"",
+        "value": "C"
+      },
+      {
+        "label": "\"The process is right. Results follow.\"",
+        "value": "D"
+      },
+      {
+        "label": "\"They never saw us coming.\"",
+        "value": "E"
+      }
     ]
   },
   {
-    id:"q6", type:"binary",
-    phase:"Who are you?",
-    question:"In a group:",
-    left:"I lead from the front, visibly",
-    right:"I shape things from behind the scenes",
+    "id": "pl_q7",
+    "type": "binary",
+    "phase": "What it comes down to",
+    "question": "When you turn out to be right:",
+    "left": "Knowing it yourself is enough",
+    "right": "You need the world to eventually acknowledge it"
   },
-
-  // ── PHASE 2: IDENTITY + BELONGING (Q7–Q12) ──────────────────────────────────
-
   {
-    id:"q7", type:"choice",
-    phase:"Where do you belong?",
-    question:"What do people underestimate about you?",
-    options:[
-      {label:"How competitive I actually am.",                       value:"A"},
-      {label:"How deeply I care.",                                   value:"B"},
-      {label:"How patiently I can wait.",                            value:"C"},
-      {label:"How analytically I think.",                            value:"D"},
-      {label:"How stubborn I become once I've decided.",             value:"E"},
+    "id": "pl_q8",
+    "type": "choice",
+    "phase": "What it comes down to",
+    "question": "An institution you love makes a decision that feels like a betrayal. You:",
+    "options": [
+      {
+        "label": "Leave. That decision tells you everything.",
+        "value": "A"
+      },
+      {
+        "label": "Stay, but carry the anger alongside the love. Both are real.",
+        "value": "B"
+      },
+      {
+        "label": "Understand it even if you hate it. Institutions aren't simple.",
+        "value": "C"
+      },
+      {
+        "label": "Try to change it from the inside.",
+        "value": "D"
+      },
+      {
+        "label": "Separate the institution from the thing you actually love.",
+        "value": "E"
+      }
     ]
   },
   {
-    id:"q8", type:"slider",
-    phase:"Where do you belong?",
-    question:"Your relationship with where you're from:",
-    left:"It's one part of me, I'm not defined by it",
-    right:"It's everything. Identity starts with place",
+    "id": "pl_q9",
+    "type": "binary",
+    "phase": "What it comes down to",
+    "question": "Belonging feels most real when:",
+    "left": "It's tight and local, the same streets, the same faces",
+    "right": "It's vast, thousands of people feeling the same thing simultaneously"
   },
   {
-    id:"q9", type:"choice",
-    phase:"Where do you belong?",
-    question:"A long-standing group you love is struggling badly. You:",
-    options:[
-      {label:"Double down. Hard times are when loyalty counts.",     value:"A"},
-      {label:"Stay, but it costs you more than you show.",           value:"B"},
-      {label:"Try to fix it from the inside.",                       value:"C"},
-      {label:"Give it a defined window, then reassess.",             value:"D"},
-      {label:"Accept the struggle as part of belonging.",            value:"E"},
+    "id": "pl_q10",
+    "type": "choice",
+    "phase": "What it comes down to",
+    "question": "The absence of burning ambition is:",
+    "options": [
+      {
+        "label": "Peace. Not everything needs to be a project.",
+        "value": "A"
+      },
+      {
+        "label": "Concerning. Contentment is ambition that gave up.",
+        "value": "B"
+      },
+      {
+        "label": "Complicated. Depends what you've been through to get there.",
+        "value": "C"
+      },
+      {
+        "label": "Fine for now. The ambition comes back eventually.",
+        "value": "D"
+      },
+      {
+        "label": "Sometimes wisdom, sometimes fear. Hard to tell from inside.",
+        "value": "E"
+      }
     ]
   },
   {
-    id:"q10", type:"binary",
-    phase:"Where do you belong?",
-    question:"Honestly:",
-    left:"I need to be part of something bigger than myself",
-    right:"I find meaning in doing excellent work independently",
+    "id": "pl_q11",
+    "type": "binary",
+    "phase": "What it comes down to",
+    "question": "Something you love:",
+    "left": "Doesn't need to mean more than it is, the thing itself is enough",
+    "right": "Needs to feel like it matters, like it's part of a bigger story"
   },
   {
-    id:"q11", type:"choice",
-    phase:"Where do you belong?",
-    question:"Your relationship with the past:",
-    options:[
-      {label:"It's fuel. I carry it forward.",                      value:"A"},
-      {label:"It's an anchor, hard to fully shake.",                value:"B"},
-      {label:"I reference it often. Others find this annoying.",     value:"C"},
-      {label:"Useful context, not a destination.",                   value:"D"},
-      {label:"I'm actively building something new. Past is fine.",   value:"E"},
+    "id": "pl_q12",
+    "type": "choice",
+    "phase": "What it comes down to",
+    "question": "Your relationship with the improbable:",
+    "options": [
+      {
+        "label": "I've seen it happen. That changed how I see what's possible.",
+        "value": "A"
+      },
+      {
+        "label": "I believe in it. I have no proof but I can't stop.",
+        "value": "B"
+      },
+      {
+        "label": "I'm drawn to it in stories even if I'm careful in real life.",
+        "value": "C"
+      },
+      {
+        "label": "I find it useful as a concept. Possibility matters.",
+        "value": "D"
+      },
+      {
+        "label": "I don't think in those terms. What happens, happens.",
+        "value": "E"
+      }
     ]
   },
   {
-    id:"q12", type:"slider",
-    phase:"Where do you belong?",
-    question:"When you care about something:",
-    left:"My intensity is internal, I feel it but don't broadcast it",
-    right:"Everyone around me knows exactly how much I care",
+    "id": "pl_q13",
+    "type": "binary",
+    "phase": "What it comes down to",
+    "question": "Belonging needs:",
+    "left": "A place, a ground, a street, a city. Geography is the whole thing",
+    "right": "A story, a history, a mythology, something that gives it meaning"
   },
-
-  // ── PHASE 3: AMBITION + PROCESS (Q13–Q18) ───────────────────────────────────
-
   {
-    id:"q13", type:"choice",
-    phase:"How do you win?",
-    question:"What does winning actually mean to you?",
-    options:[
-      {label:"Everything. The only point of competing.",             value:"A"},
-      {label:"It matters, but how you win matters too.",             value:"B"},
-      {label:"It would mean everything after everything we've been through.", value:"C"},
-      {label:"Proof that the model is right.",                       value:"D"},
-      {label:"A step, not a destination, immediately onto the next.", value:"E"},
+    "id": "pl_q14",
+    "type": "choice",
+    "phase": "What it comes down to",
+    "question": "Holding genuine belief alongside full awareness of how unlikely it is:",
+    "options": [
+      {
+        "label": "That's just called hope. Everyone does this.",
+        "value": "A"
+      },
+      {
+        "label": "It's a specific skill I've developed over years of practice.",
+        "value": "B"
+      },
+      {
+        "label": "I find it exhausting honestly.",
+        "value": "C"
+      },
+      {
+        "label": "I believe when I need to and protect myself when I don't.",
+        "value": "D"
+      },
+      {
+        "label": "I've stopped trying to reconcile the two. They both exist.",
+        "value": "E"
+      }
     ]
-  },
-  {
-    id:"q14", type:"binary",
-    phase:"How do you win?",
-    question:"Pick one, no negotiating:",
-    left:"Romantic underdog",
-    right:"Ruthless favourite",
-  },
-  {
-    id:"q15", type:"choice",
-    phase:"How do you win?",
-    question:"Your tolerance for chaos and disorder:",
-    options:[
-      {label:"Zero. Systems and process prevent chaos.",             value:"A"},
-      {label:"Low. I prefer order and can usually maintain it.",     value:"B"},
-      {label:"Medium, depends entirely on what's at stake.",        value:"C"},
-      {label:"High. I see pattern where others see chaos.",          value:"D"},
-      {label:"I generate it. Controlled chaos is my natural state.", value:"E"},
-    ]
-  },
-  {
-    id:"q16", type:"slider",
-    phase:"How do you win?",
-    question:"Being the underdog:",
-    left:"Insulting, I expect to compete, not scrape",
-    right:"Comfortable, low expectations are freeing",
-  },
-  {
-    id:"q17", type:"choice",
-    phase:"How do you win?",
-    question:"What motivates you most?",
-    options:[
-      {label:"Proving people wrong.",                                value:"A"},
-      {label:"The craft, doing it as well as it can be done.",      value:"B"},
-      {label:"The people I'm doing it with.",                        value:"C"},
-      {label:"Legacy, what it means long after.",                   value:"D"},
-      {label:"Winning. That's the whole thing.",                     value:"E"},
-    ]
-  },
-  {
-    id:"q18", type:"binary",
-    phase:"How do you win?",
-    question:"Be honest:",
-    left:"The journey genuinely matters more than the destination",
-    right:"Results are all that actually counts in the end",
-  },
-
-  // ── PHASE 4: EMOTIONAL TEXTURE (Q19–Q24) ────────────────────────────────────
-
-  {
-    id:"q19", type:"choice",
-    phase:"How do you feel it?",
-    question:"You just got genuinely good news. You:",
-    options:[
-      {label:"Celebrate loudly and immediately.",                    value:"A"},
-      {label:"Share it with one or two people close to you.",        value:"B"},
-      {label:"Sit with it quietly for a while first.",               value:"C"},
-      {label:"Feel it for ten minutes then think about what's next.",value:"D"},
-      {label:"Wait for the catch, good news makes you nervous.",    value:"E"},
-    ]
-  },
-  {
-    id:"q20", type:"slider",
-    phase:"How do you feel it?",
-    question:"When something goes wrong, your instinct is:",
-    left:"Find who's responsible",
-    right:"Fix the system so it doesn't happen again",
-  },
-  {
-    id:"q21", type:"choice",
-    phase:"How do you feel it?",
-    question:"A long drought finally ends. First reaction:",
-    options:[
-      {label:"Pure, immediate, overwhelming joy.",                   value:"A"},
-      {label:"Tears. The genuine kind.",                             value:"B"},
-      {label:"Relief so deep it almost feels like grief.",           value:"C"},
-      {label:"Disbelief. Takes a while to land.",                    value:"D"},
-      {label:"Quiet satisfaction. You always knew.",                 value:"E"},
-    ]
-  },
-  {
-    id:"q22", type:"binary",
-    phase:"How do you feel it?",
-    question:"Your suffering:",
-    left:"Is private, you feel it alone",
-    right:"Is shared, misery loves company and honesty",
-  },
-  {
-    id:"q23", type:"choice",
-    phase:"How do you feel it?",
-    question:"Something you built from scratch finally pays off. You feel:",
-    options:[
-      {label:"Vindicated. You knew it all along.",                   value:"A"},
-      {label:"Relieved, more than anything else.",                   value:"B"},
-      {label:"Proud of everyone involved.",                          value:"C"},
-      {label:"Already onto the next challenge.",                     value:"D"},
-      {label:"Like it doesn't compute yet, need time to absorb.",   value:"E"},
-    ]
-  },
-  {
-    id:"q24", type:"slider",
-    phase:"How do you feel it?",
-    question:"Hope, for you:",
-    left:"Is rational, based on genuine evidence",
-    right:"Persists regardless of evidence. You can't kill it",
-  },
-
-  // ── PHASE 5: INTRA-CLUSTER DISCRIMINATORS (Q25–Q30) ─────────────────────────
-
-  {
-    id:"q25", type:"binary",
-    phase:"The fine print",
-    question:"Which lands closer:",
-    left:"The story of how it happened matters as much as that it happened",
-    right:"Nobody remembers how. They remember the result",
-  },
-  {
-    id:"q26", type:"choice",
-    phase:"The fine print",
-    question:"Your relationship with being right:",
-    options:[
-      {label:"I need the world to eventually acknowledge it.",       value:"A"},
-      {label:"Knowing I was right is enough.",                       value:"B"},
-      {label:"Being right without winning is cold comfort.",         value:"C"},
-      {label:"I'm more interested in being accurate than right.",    value:"D"},
-      {label:"I'm wrong often enough that I hold it loosely.",       value:"E"},
-    ]
-  },
-  {
-    id:"q27", type:"slider",
-    phase:"The fine print",
-    question:"Contentment:",
-    left:"I'm genuinely okay with what I have, peace is underrated",
-    right:"Contentment is just ambition that gave up",
-  },
-  {
-    id:"q28", type:"choice",
-    phase:"The fine print",
-    question:"Which stings most?",
-    options:[
-      {label:"Being second when you should have won.",               value:"A"},
-      {label:"Not being taken seriously.",                           value:"B"},
-      {label:"Getting close over and over and never quite making it.",value:"C"},
-      {label:"Being let down by someone you trusted completely.",    value:"D"},
-      {label:"Watching someone else succeed with your approach.",    value:"E"},
-    ]
-  },
-  {
-    id:"q29", type:"binary",
-    phase:"The fine print",
-    question:"Deep down:",
-    left:"I want one perfect, improbable, unforgettable moment",
-    right:"I want sustained, proven, undeniable excellence",
-  },
-  {
-    id:"q30", type:"choice",
-    phase:"The fine print",
-    question:"Which sentence actually fits:",
-    options:[
-      {label:"\"We've been here before. We know what to do.\"",      value:"A"},
-      {label:"\"This time genuinely feels different.\"",             value:"B"},
-      {label:"\"Just once. I just want it to happen once.\"",        value:"C"},
-      {label:"\"The process is right. Results follow.\"",            value:"D"},
-      {label:"\"They never saw us coming.\"",                        value:"E"},
-    ]
-  },
-
-  // ── PHASE 6: WHAT IT COMES DOWN TO (Q31–Q38) ────────────────────────────────
-
-  {
-    id:"q31", type:"binary",
-    phase:"What it comes down to",
-    question:"When you turn out to be right:",
-    left:"Knowing it yourself is enough",
-    right:"You need the world to eventually acknowledge it",
-  },
-  {
-    id:"q32", type:"choice",
-    phase:"What it comes down to",
-    question:"An institution you love makes a decision that feels like a betrayal. You:",
-    options:[
-      {label:"Leave. That decision tells you everything.",                   value:"A"},
-      {label:"Stay, but carry the anger alongside the love. Both are real.", value:"B"},
-      {label:"Understand it even if you hate it. Institutions aren't simple.",value:"C"},
-      {label:"Try to change it from the inside.",                           value:"D"},
-      {label:"Separate the institution from the thing you actually love.",  value:"E"},
-    ]
-  },
-  {
-    id:"q33", type:"binary",
-    phase:"What it comes down to",
-    question:"Belonging feels most real when:",
-    left:"It's tight and local, the same streets, the same faces",
-    right:"It's vast, thousands of people feeling the same thing simultaneously",
-  },
-  {
-    id:"q34", type:"choice",
-    phase:"What it comes down to",
-    question:"The absence of burning ambition is:",
-    options:[
-      {label:"Peace. Not everything needs to be a project.",                value:"A"},
-      {label:"Concerning. Contentment is ambition that gave up.",           value:"B"},
-      {label:"Complicated. Depends what you've been through to get there.", value:"C"},
-      {label:"Fine for now. The ambition comes back eventually.",            value:"D"},
-      {label:"Sometimes wisdom, sometimes fear. Hard to tell from inside.", value:"E"},
-    ]
-  },
-  {
-    id:"q35", type:"binary",
-    phase:"What it comes down to",
-    question:"Something you love:",
-    left:"Doesn't need to mean more than it is, the thing itself is enough",
-    right:"Needs to feel like it matters, like it's part of a bigger story",
-  },
-  {
-    id:"q36", type:"choice",
-    phase:"What it comes down to",
-    question:"Your relationship with the improbable:",
-    options:[
-      {label:"I've seen it happen. That changed how I see what's possible.", value:"A"},
-      {label:"I believe in it. I have no proof but I can't stop.",           value:"B"},
-      {label:"I'm drawn to it in stories even if I'm careful in real life.", value:"C"},
-      {label:"I find it useful as a concept. Possibility matters.",         value:"D"},
-      {label:"I don't think in those terms. What happens, happens.",        value:"E"},
-    ]
-  },
-  {
-    id:"q37", type:"binary",
-    phase:"What it comes down to",
-    question:"Belonging needs:",
-    left:"A place, a ground, a street, a city. Geography is the whole thing",
-    right:"A story, a history, a mythology, something that gives it meaning",
-  },
-  {
-    id:"q38", type:"choice",
-    phase:"What it comes down to",
-    question:"Holding genuine belief alongside full awareness of how unlikely it is:",
-    options:[
-      {label:"That's just called hope. Everyone does this.",                value:"A"},
-      {label:"It's a specific skill I've developed over years of practice.", value:"B"},
-      {label:"I find it exhausting honestly.",                              value:"C"},
-      {label:"I believe when I need to and protect myself when I don't.",   value:"D"},
-      {label:"I've stopped trying to reconcile the two. They both exist.",  value:"E"},
-    ]
-  },
+  }
 ];
 
 // ─── CLUB DEFINITIONS ──────────────────────────────────────────────────────────
@@ -1813,286 +1687,1303 @@ const nearlyGot = {
 // Weights: 3 = primary signal, 2 = secondary, 1 = mild lean
 
 const scoring = {
-  // Q1: anger expression
-  // A=visible/loud → communal; B=cold/quiet → analytical/private; C=vent+forget → chaos/West Ham
-  // D=process alone → analytical; E=depends → flexible/Bournemouth
-  q1:{
-    A:{LI:3,NC:3,WH:2,CP:3,MU:1,SU:2,LU:3,HU:2},
-    B:{MC:3,WO:2,BR:2,EV:1,IT:2},
-    C:{WH:3,NF:2,CP:2,BO:1,SP:1,LU:1,CV:1},
-    D:{MC:2,BR:3,BH:2,WO:1},
-    E:{BO:3,FU:2,BH:1,LE:1,AV:1,CH:2,IT:1,CV:2},
+  "q1": {
+    "A": {
+      "LI": 3,
+      "NC": 3,
+      "WH": 2,
+      "CP": 3,
+      "MU": 1,
+      "SU": 2,
+      "LU": 3,
+      "HU": 2
+    },
+    "B": {
+      "MC": 3,
+      "WO": 2,
+      "BR": 2,
+      "EV": 1,
+      "IT": 2
+    },
+    "C": {
+      "WH": 3,
+      "NF": 2,
+      "CP": 2,
+      "BO": 1,
+      "SP": 1,
+      "LU": 1,
+      "CV": 1
+    },
+    "D": {
+      "MC": 2,
+      "BR": 3,
+      "BH": 2,
+      "WO": 1
+    },
+    "E": {
+      "BO": 3,
+      "FU": 2,
+      "BH": 1,
+      "LE": 1,
+      "AV": 1,
+      "CH": 2,
+      "IT": 1,
+      "CV": 2
+    }
   },
-  // Q2: high expectations vs managing down
-  q2:{
-    left: {MC:3,LI:2,MU:3,AR:2,NC:2,EV:1,AV:2,LU:2,SU:1},
-    right:{EV:3,SP:3,NF:2,FU:2,BO:2,LE:2,CV:2,IT:2,CH:1},
+  "q2": {
+    "left": {
+      "MC": 3,
+      "LI": 2,
+      "MU": 3,
+      "AR": 2,
+      "NC": 2,
+      "EV": 1,
+      "AV": 2,
+      "LU": 2,
+      "SU": 1
+    },
+    "right": {
+      "EV": 3,
+      "SP": 3,
+      "NF": 2,
+      "FU": 2,
+      "BO": 2,
+      "LE": 2,
+      "CV": 2,
+      "IT": 2,
+      "CH": 1
+    }
   },
-  // Q3: overlooked, reaction
-  q3:{
-    A:{MC:2,WO:3,BR:2,BH:1},
-    B:{AR:3,BH:2,FU:3,BR:1,IT:2,HU:2},
-    C:{EV:2,SP:3,MU:2,NF:1},
-    D:{MC:2,BO:3,LE:2,CP:1,AV:2,CH:2},
-    E:{LI:2,EV:3,NC:2,WH:1,LU:2,SU:2},
+  "q3": {
+    "A": {
+      "MC": 2,
+      "WO": 3,
+      "BR": 2,
+      "BH": 1
+    },
+    "B": {
+      "AR": 3,
+      "BH": 2,
+      "FU": 3,
+      "BR": 1,
+      "IT": 2,
+      "HU": 2
+    },
+    "C": {
+      "EV": 2,
+      "SP": 3,
+      "MU": 2,
+      "NF": 1
+    },
+    "D": {
+      "MC": 2,
+      "BO": 3,
+      "LE": 2,
+      "CP": 1,
+      "AV": 2,
+      "CH": 2
+    },
+    "E": {
+      "LI": 2,
+      "EV": 3,
+      "NC": 2,
+      "WH": 1,
+      "LU": 2,
+      "SU": 2
+    }
   },
-  // Q4: methodical rebuild vs real-time adapt
-  q4:{
-    1:{MC:3,AR:2,WO:2,BR:1},
-    2:{MC:2,AR:2,BH:2,WO:1},
-    3:{AV:3,FU:2,BO:3,BH:1,CP:1},
-    4:{LI:2,NC:2,WH:2,NF:1,AV:2,SP:1,CV:1},
-    5:{NF:3,WH:2,LE:3,CP:2,LU:2,CH:2,CV:1},
+  "q4": {
+    "1": {
+      "MC": 3,
+      "AR": 2,
+      "WO": 2,
+      "BR": 1
+    },
+    "2": {
+      "MC": 2,
+      "AR": 2,
+      "BH": 2,
+      "WO": 1
+    },
+    "3": {
+      "AV": 3,
+      "FU": 2,
+      "BO": 3,
+      "BH": 1,
+      "CP": 1
+    },
+    "4": {
+      "LI": 2,
+      "NC": 2,
+      "WH": 2,
+      "NF": 1,
+      "AV": 2,
+      "SP": 1,
+      "CV": 1
+    },
+    "5": {
+      "NF": 3,
+      "WH": 2,
+      "LE": 3,
+      "CP": 2,
+      "LU": 2,
+      "CH": 2,
+      "CV": 1
+    }
   },
-  // Q5: group size / social preference
-  q5:{
-    A:{LI:3,NC:3,WH:2,CP:3,SU:2,LU:2},
-    B:{EV:2,NF:2,WO:2,FU:1,SP:1,IT:2,CV:2},
-    C:{BR:3,WO:3,MC:1},
-    D:{MC:3,BR:2,AR:1,AV:1},
-    E:{BO:3,BH:2,FU:2,LE:2,AV:1,CH:2},
+  "q5": {
+    "A": {
+      "LI": 3,
+      "NC": 3,
+      "WH": 2,
+      "CP": 3,
+      "SU": 2,
+      "LU": 2
+    },
+    "B": {
+      "EV": 2,
+      "NF": 2,
+      "WO": 2,
+      "FU": 1,
+      "SP": 1,
+      "IT": 2,
+      "CV": 2
+    },
+    "C": {
+      "BR": 3,
+      "WO": 3,
+      "MC": 1
+    },
+    "D": {
+      "MC": 3,
+      "BR": 2,
+      "AR": 1,
+      "AV": 1
+    },
+    "E": {
+      "BO": 3,
+      "BH": 2,
+      "FU": 2,
+      "LE": 2,
+      "AV": 1,
+      "CH": 2
+    }
   },
-  // Q6: lead from front vs behind scenes
-  q6:{
-    left: {LI:3,NC:3,MU:2,WH:2,CP:2,SP:1,AV:2,SU:2,LU:2,CV:1},
-    right:{MC:2,BR:3,AR:2,BH:2,WO:1,CH:2,IT:2},
+  "q6": {
+    "left": {
+      "LI": 3,
+      "NC": 3,
+      "MU": 2,
+      "WH": 2,
+      "CP": 2,
+      "SP": 1,
+      "AV": 2,
+      "SU": 2,
+      "LU": 2,
+      "CV": 1
+    },
+    "right": {
+      "MC": 2,
+      "BR": 3,
+      "AR": 2,
+      "BH": 2,
+      "WO": 1,
+      "CH": 2,
+      "IT": 2
+    }
   },
-  // Q7: what people underestimate
-  q7:{
-    A:{MC:2,LI:2,MU:2,NC:1,CP:2,SP:1,AV:2,CH:1},
-    B:{EV:3,NF:3,LI:2,WH:1,BO:1,SU:2},
-    C:{NF:2,WO:2,EV:2,FU:1,AV:2,LE:1,IT:2},
-    D:{BR:3,BH:3,MC:2,AR:1},
-    E:{EV:2,MU:2,WO:2,SP:1,LU:2,CV:2,HU:3},
+  "q7": {
+    "A": {
+      "MC": 2,
+      "LI": 2,
+      "MU": 2,
+      "NC": 1,
+      "CP": 2,
+      "SP": 1,
+      "AV": 2,
+      "CH": 1
+    },
+    "B": {
+      "EV": 3,
+      "NF": 3,
+      "LI": 2,
+      "WH": 1,
+      "BO": 1,
+      "SU": 2
+    },
+    "C": {
+      "NF": 2,
+      "WO": 2,
+      "EV": 2,
+      "FU": 1,
+      "AV": 2,
+      "LE": 1,
+      "IT": 2
+    },
+    "D": {
+      "BR": 3,
+      "BH": 3,
+      "MC": 2,
+      "AR": 1
+    },
+    "E": {
+      "EV": 2,
+      "MU": 2,
+      "WO": 2,
+      "SP": 1,
+      "LU": 2,
+      "CV": 2,
+      "HU": 3
+    }
   },
-  // Q8: place identity slider
-  q8:{
-    1:{MU:2,MC:2,WO:3,BR:1,BH:1},
-    2:{AR:2,BH:2,BO:2,CH:3},
-    3:{FU:2,AV:3,LE:1,CP:1,SP:1,IT:1},
-    4:{WH:2,EV:2,NF:2,NC:1,CV:2,IT:2},
-    5:{NC:3,CP:3,LI:2,WH:2,SU:3,LU:3,HU:3},
+  "q8": {
+    "1": {
+      "MU": 2,
+      "MC": 2,
+      "WO": 3,
+      "BR": 1,
+      "BH": 1
+    },
+    "2": {
+      "AR": 2,
+      "BH": 2,
+      "BO": 2,
+      "CH": 3
+    },
+    "3": {
+      "FU": 2,
+      "AV": 3,
+      "LE": 1,
+      "CP": 1,
+      "SP": 1,
+      "IT": 1
+    },
+    "4": {
+      "WH": 2,
+      "EV": 2,
+      "NF": 2,
+      "NC": 1,
+      "CV": 2,
+      "IT": 2
+    },
+    "5": {
+      "NC": 3,
+      "CP": 3,
+      "LI": 2,
+      "WH": 2,
+      "SU": 3,
+      "LU": 3,
+      "HU": 3
+    }
   },
-  // Q9: stick with struggling group
-  q9:{
-    A:{EV:2,LI:3,NC:2,CP:3,FU:1,SU:3,LU:2,IT:2,CV:3,HU:3},
-    B:{EV:2,MU:2,SP:2,NF:1,WH:2,AV:2,CH:1},
-    C:{AR:2,BH:2,AV:3,BR:1,CH:2},
-    D:{MC:2,SP:2,BO:2,LE:1},
-    E:{LI:2,NF:2,BO:2,LE:1},
+  "q9": {
+    "A": {
+      "EV": 2,
+      "LI": 3,
+      "NC": 2,
+      "CP": 3,
+      "FU": 1,
+      "SU": 3,
+      "LU": 2,
+      "IT": 2,
+      "CV": 3,
+      "HU": 3
+    },
+    "B": {
+      "EV": 2,
+      "MU": 2,
+      "SP": 2,
+      "NF": 1,
+      "WH": 2,
+      "AV": 2,
+      "CH": 1
+    },
+    "C": {
+      "AR": 2,
+      "BH": 2,
+      "AV": 3,
+      "BR": 1,
+      "CH": 2
+    },
+    "D": {
+      "MC": 2,
+      "SP": 2,
+      "BO": 2,
+      "LE": 1
+    },
+    "E": {
+      "LI": 2,
+      "NF": 2,
+      "BO": 2,
+      "LE": 1
+    }
   },
-  // Q10: part of something bigger vs excellent independently
-  q10:{
-    left: {LI:3,NC:3,WH:2,CP:3,MU:2,EV:1,AV:1,BO:1,HU:1},
-    right:{MC:2,BR:3,WO:3,AR:2,BH:1},
+  "q10": {
+    "left": {
+      "LI": 3,
+      "NC": 3,
+      "WH": 2,
+      "CP": 3,
+      "MU": 2,
+      "EV": 1,
+      "AV": 1,
+      "BO": 1,
+      "HU": 1
+    },
+    "right": {
+      "MC": 2,
+      "BR": 3,
+      "WO": 3,
+      "AR": 2,
+      "BH": 1
+    }
   },
-  // Q11: relationship with the past
-  q11:{
-    A:{LI:3,MU:2,NF:2,EV:1,WH:2,SU:2,IT:2,CV:2,HU:2},
-    B:{EV:3,MU:3,SP:2,NF:1},
-    C:{MU:3,EV:2,LI:2,NF:2,CP:2},
-    D:{AR:2,BH:2,BR:2,AV:1,FU:2,WO:1},
-    E:{MC:2,NC:2,AV:3,BH:2,BO:2,LE:1},
+  "q11": {
+    "A": {
+      "LI": 3,
+      "MU": 2,
+      "NF": 2,
+      "EV": 1,
+      "WH": 2,
+      "SU": 2,
+      "IT": 2,
+      "CV": 2,
+      "HU": 2
+    },
+    "B": {
+      "EV": 3,
+      "MU": 3,
+      "SP": 2,
+      "NF": 1
+    },
+    "C": {
+      "MU": 3,
+      "EV": 2,
+      "LI": 2,
+      "NF": 2,
+      "CP": 2
+    },
+    "D": {
+      "AR": 2,
+      "BH": 2,
+      "BR": 2,
+      "AV": 1,
+      "FU": 2,
+      "WO": 1
+    },
+    "E": {
+      "MC": 2,
+      "NC": 2,
+      "AV": 3,
+      "BH": 2,
+      "BO": 2,
+      "LE": 1
+    }
   },
-  // Q12: emotional intensity slider (private ↔ public)
-  q12:{
-    1:{BR:2,WO:3,MC:2,BH:1},
-    2:{AR:2,WO:2,FU:3,IT:2},
-    3:{FU:2,BH:2,BO:2,LE:1,AV:2,CH:2},
-    4:{NC:2,EV:2,SP:2,LI:1,HU:2},
-    5:{LI:2,NC:3,WH:3,CP:3,SU:3,LU:3},
+  "q12": {
+    "1": {
+      "BR": 2,
+      "WO": 3,
+      "MC": 2,
+      "BH": 1
+    },
+    "2": {
+      "AR": 2,
+      "WO": 2,
+      "FU": 3,
+      "IT": 2
+    },
+    "3": {
+      "FU": 2,
+      "BH": 2,
+      "BO": 2,
+      "LE": 1,
+      "AV": 2,
+      "CH": 2
+    },
+    "4": {
+      "NC": 2,
+      "EV": 2,
+      "SP": 2,
+      "LI": 1,
+      "HU": 2
+    },
+    "5": {
+      "LI": 2,
+      "NC": 3,
+      "WH": 3,
+      "CP": 3,
+      "SU": 3,
+      "LU": 3
+    }
   },
-  // Q13: what winning means
-  q13:{
-    A:{MC:3,LI:2,MU:2,CH:2},
-    B:{AR:3,BH:2,AV:3,FU:1,IT:2},
-    C:{EV:3,SP:3,NF:2,WH:2,LE:2,NC:2,SU:2,LU:2,CV:2,HU:2},
-    D:{BR:3,MC:2,BH:2,AV:1},
-    E:{MC:2,LI:3,MU:2,CP:1,AV:2,CH:1},
+  "q13": {
+    "A": {
+      "MC": 3,
+      "LI": 2,
+      "MU": 2,
+      "CH": 2
+    },
+    "B": {
+      "AR": 3,
+      "BH": 2,
+      "AV": 3,
+      "FU": 1,
+      "IT": 2
+    },
+    "C": {
+      "EV": 3,
+      "SP": 3,
+      "NF": 2,
+      "WH": 2,
+      "LE": 2,
+      "NC": 2,
+      "SU": 2,
+      "LU": 2,
+      "CV": 2,
+      "HU": 2
+    },
+    "D": {
+      "BR": 3,
+      "MC": 2,
+      "BH": 2,
+      "AV": 1
+    },
+    "E": {
+      "MC": 2,
+      "LI": 3,
+      "MU": 2,
+      "CP": 1,
+      "AV": 2,
+      "CH": 1
+    }
   },
-  // Q14: romantic underdog vs ruthless favourite
-  q14:{
-    left: {NF:3,BR:2,LE:3,BO:2,FU:2,BH:1,SU:2,LU:2,IT:2,CV:3,HU:2},
-    right:{MC:2,LI:2,MU:3,AR:1,EV:1,AV:2,CH:2,WH:1,NC:1},
+  "q14": {
+    "left": {
+      "NF": 3,
+      "BR": 2,
+      "LE": 3,
+      "BO": 2,
+      "FU": 2,
+      "BH": 1,
+      "SU": 2,
+      "LU": 2,
+      "IT": 2,
+      "CV": 3,
+      "HU": 2
+    },
+    "right": {
+      "MC": 2,
+      "LI": 2,
+      "MU": 3,
+      "AR": 1,
+      "EV": 1,
+      "AV": 2,
+      "CH": 2,
+      "WH": 1,
+      "NC": 1
+    }
   },
-  // Q15: chaos tolerance
-  q15:{
-    A:{MC:3,WO:2,BR:2,AR:1},
-    B:{AR:2,BH:2,WO:2,FU:2,IT:2},
-    C:{AV:3,NC:2,FU:2,BO:1,SP:1,LE:1,SU:2,CV:1,HU:2},
-    D:{BR:3,AR:2,NF:2,BH:1},
-    E:{NF:3,WH:3,LE:3,CP:2,LU:2,CH:2},
+  "q15": {
+    "A": {
+      "MC": 3,
+      "WO": 2,
+      "BR": 2,
+      "AR": 1
+    },
+    "B": {
+      "AR": 2,
+      "BH": 2,
+      "WO": 2,
+      "FU": 2,
+      "IT": 2
+    },
+    "C": {
+      "AV": 3,
+      "NC": 2,
+      "FU": 2,
+      "BO": 1,
+      "SP": 1,
+      "LE": 1,
+      "SU": 2,
+      "CV": 1,
+      "HU": 2
+    },
+    "D": {
+      "BR": 3,
+      "AR": 2,
+      "NF": 2,
+      "BH": 1
+    },
+    "E": {
+      "NF": 3,
+      "WH": 3,
+      "LE": 3,
+      "CP": 2,
+      "LU": 2,
+      "CH": 2
+    }
   },
-  // Q16: underdog comfort slider
-  q16:{
-    1:{MC:2,MU:3,LI:2,CH:2},
-    2:{LI:2,AR:2,MU:2,EV:1,CP:1,AV:2},
-    3:{SP:3,NC:2,WH:2,AV:1,SU:2,LU:2},
-    4:{NF:2,LE:2,BO:2,WH:1,IT:2,CV:2,HU:2},
-    5:{BR:2,WO:3,BH:2,LE:2},
+  "q16": {
+    "1": {
+      "MC": 2,
+      "MU": 3,
+      "LI": 2,
+      "CH": 2
+    },
+    "2": {
+      "LI": 2,
+      "AR": 2,
+      "MU": 2,
+      "EV": 1,
+      "CP": 1,
+      "AV": 2
+    },
+    "3": {
+      "SP": 3,
+      "NC": 2,
+      "WH": 2,
+      "AV": 1,
+      "SU": 2,
+      "LU": 2
+    },
+    "4": {
+      "NF": 2,
+      "LE": 2,
+      "BO": 2,
+      "WH": 1,
+      "IT": 2,
+      "CV": 2,
+      "HU": 2
+    },
+    "5": {
+      "BR": 2,
+      "WO": 3,
+      "BH": 2,
+      "LE": 2
+    }
   },
-  // Q17: motivation
-  q17:{
-    A:{NC:3,CP:3,EV:2,MU:2,SP:2,LU:2,CV:2,SU:2,AV:2},
-    B:{AR:3,BR:3,BH:2,FU:1,WO:2},
-    C:{LI:3,WH:2,NC:2,BO:2,SU:2,IT:2,LU:1,HU:1},
-    D:{LI:2,MU:2,EV:2,NF:2,SP:1,AV:2},
-    E:{MC:3,LI:2,MU:1},
+  "q17": {
+    "A": {
+      "NC": 3,
+      "CP": 3,
+      "EV": 2,
+      "MU": 2,
+      "SP": 2,
+      "LU": 2,
+      "CV": 2,
+      "SU": 2,
+      "AV": 2
+    },
+    "B": {
+      "AR": 3,
+      "BR": 3,
+      "BH": 2,
+      "FU": 1,
+      "WO": 2
+    },
+    "C": {
+      "LI": 3,
+      "WH": 2,
+      "NC": 2,
+      "BO": 2,
+      "SU": 2,
+      "IT": 2,
+      "LU": 1,
+      "HU": 1
+    },
+    "D": {
+      "LI": 2,
+      "MU": 2,
+      "EV": 2,
+      "NF": 2,
+      "SP": 1,
+      "AV": 2
+    },
+    "E": {
+      "MC": 3,
+      "LI": 2,
+      "MU": 1
+    }
   },
-  // Q18: journey vs results
-  q18:{
-    left: {AR:3,NF:3,FU:3,BO:2,BH:2,SP:2,AV:2,SU:2,LU:2,IT:2,CV:3,HU:2},
-    right:{MC:3,LI:2,MU:2,EV:2,CP:1,AV:2,NC:1,CH:2},
+  "q18": {
+    "left": {
+      "AR": 3,
+      "NF": 3,
+      "FU": 3,
+      "BO": 2,
+      "BH": 2,
+      "SP": 2,
+      "AV": 2,
+      "SU": 2,
+      "LU": 2,
+      "IT": 2,
+      "CV": 3,
+      "HU": 2
+    },
+    "right": {
+      "MC": 3,
+      "LI": 2,
+      "MU": 2,
+      "EV": 2,
+      "CP": 1,
+      "AV": 2,
+      "NC": 1,
+      "CH": 2
+    }
   },
-  // Q19: reaction to good news
-  q19:{
-    A:{LI:3,NC:3,WH:2,CP:3,SU:2,LU:2},
-    B:{EV:2,NF:2,FU:3,WO:1,IT:2,CV:2,HU:2},
-    C:{BR:2,WO:2,AR:2,BH:1},
-    D:{MC:2,AR:2,BH:2,AV:2,CH:1},
-    E:{SP:3,EV:3,MU:2,NF:1,LE:1},
+  "q19": {
+    "A": {
+      "LI": 3,
+      "NC": 3,
+      "WH": 2,
+      "CP": 3,
+      "SU": 2,
+      "LU": 2
+    },
+    "B": {
+      "EV": 2,
+      "NF": 2,
+      "FU": 3,
+      "WO": 1,
+      "IT": 2,
+      "CV": 2,
+      "HU": 2
+    },
+    "C": {
+      "BR": 2,
+      "WO": 2,
+      "AR": 2,
+      "BH": 1
+    },
+    "D": {
+      "MC": 2,
+      "AR": 2,
+      "BH": 2,
+      "AV": 2,
+      "CH": 1
+    },
+    "E": {
+      "SP": 3,
+      "EV": 3,
+      "MU": 2,
+      "NF": 1,
+      "LE": 1
+    }
   },
-  // Q20: blame vs fix system slider
-  q20:{
-    1:{EV:3,CP:3,WH:2,MU:1,CV:2,HU:2},
-    2:{WH:2,LI:2,NC:2},
-    3:{AR:2,AV:3,BH:2,FU:1,IT:2},
-    4:{BR:2,MC:2,WO:2,AR:1},
-    5:{MC:2,BR:3,BH:2,WO:1,CH:2},
+  "q20": {
+    "1": {
+      "EV": 3,
+      "CP": 3,
+      "WH": 2,
+      "MU": 1,
+      "CV": 2,
+      "HU": 2
+    },
+    "2": {
+      "WH": 2,
+      "LI": 2,
+      "NC": 2
+    },
+    "3": {
+      "AR": 2,
+      "AV": 3,
+      "BH": 2,
+      "FU": 1,
+      "IT": 2
+    },
+    "4": {
+      "BR": 2,
+      "MC": 2,
+      "WO": 2,
+      "AR": 1
+    },
+    "5": {
+      "MC": 2,
+      "BR": 3,
+      "BH": 2,
+      "WO": 1,
+      "CH": 2
+    }
   },
-  // Q21: drought ending reaction
-  q21:{
-    A:{LI:3,NC:3,WH:2,CP:3,SU:2,LU:2},
-    B:{EV:3,NF:3,MU:2,SU:1,CV:2},
-    C:{SP:3,MU:3,EV:2,HU:2},
-    D:{LE:3,AV:3,BH:2,BO:2,CH:1},
-    E:{MC:2,BR:2,WO:2,IT:1},
+  "q21": {
+    "A": {
+      "LI": 3,
+      "NC": 3,
+      "WH": 2,
+      "CP": 3,
+      "SU": 2,
+      "LU": 2
+    },
+    "B": {
+      "EV": 3,
+      "NF": 3,
+      "MU": 2,
+      "SU": 1,
+      "CV": 2
+    },
+    "C": {
+      "SP": 3,
+      "MU": 3,
+      "EV": 2,
+      "HU": 2
+    },
+    "D": {
+      "LE": 3,
+      "AV": 3,
+      "BH": 2,
+      "BO": 2,
+      "CH": 1
+    },
+    "E": {
+      "MC": 2,
+      "BR": 2,
+      "WO": 2,
+      "IT": 1
+    }
   },
-  // Q22: suffering private vs shared
-  q22:{
-    left: {EV:3,WO:3,BR:2,AR:2,FU:1,IT:2,CH:2},
-    right:{SP:3,WH:3,NF:2,LI:1,CP:2,BO:1,LE:1,AV:1,SU:3,LU:3,CV:2,HU:1},
+  "q22": {
+    "left": {
+      "EV": 3,
+      "WO": 3,
+      "BR": 2,
+      "AR": 2,
+      "FU": 1,
+      "IT": 2,
+      "CH": 2
+    },
+    "right": {
+      "SP": 3,
+      "WH": 3,
+      "NF": 2,
+      "LI": 1,
+      "CP": 2,
+      "BO": 1,
+      "LE": 1,
+      "AV": 1,
+      "SU": 3,
+      "LU": 3,
+      "CV": 2,
+      "HU": 1
+    }
   },
-  // Q23: payoff reaction
-  q23:{
-    A:{BR:3,AR:2,MC:2,BH:1,WO:2},
-    B:{SP:3,EV:3,NF:2},
-    C:{LI:3,NC:2,WH:2,BO:2,SU:2,HU:1},
-    D:{MC:2,MU:2,AR:1},
-    E:{LE:3,NF:2,AV:3,SP:2,FU:1},
+  "q23": {
+    "A": {
+      "BR": 3,
+      "AR": 2,
+      "MC": 2,
+      "BH": 1,
+      "WO": 2
+    },
+    "B": {
+      "SP": 3,
+      "EV": 3,
+      "NF": 2
+    },
+    "C": {
+      "LI": 3,
+      "NC": 2,
+      "WH": 2,
+      "BO": 2,
+      "SU": 2,
+      "HU": 1
+    },
+    "D": {
+      "MC": 2,
+      "MU": 2,
+      "AR": 1
+    },
+    "E": {
+      "LE": 3,
+      "NF": 2,
+      "AV": 3,
+      "SP": 2,
+      "FU": 1
+    }
   },
-  // Q24: hope (rational ↔ irrational persistence)
-  q24:{
-    1:{BR:3,MC:2,BH:2,WO:1},
-    2:{AR:2,BH:2,FU:2,CH:2},
-    3:{AV:3,BO:2,BH:1,LE:2,IT:2,CH:1},
-    4:{SP:2,LE:2,NC:2,LI:1,SU:2,LU:2,CV:2,HU:1},
-    5:{SP:3,EV:3,NF:2,LI:2,CV:1},
+  "q24": {
+    "1": {
+      "BR": 3,
+      "MC": 2,
+      "BH": 2,
+      "WO": 1
+    },
+    "2": {
+      "AR": 2,
+      "BH": 2,
+      "FU": 2,
+      "CH": 2
+    },
+    "3": {
+      "AV": 3,
+      "BO": 2,
+      "BH": 1,
+      "LE": 2,
+      "IT": 2,
+      "CH": 1
+    },
+    "4": {
+      "SP": 2,
+      "LE": 2,
+      "NC": 2,
+      "LI": 1,
+      "SU": 2,
+      "LU": 2,
+      "CV": 2,
+      "HU": 1
+    },
+    "5": {
+      "SP": 3,
+      "EV": 3,
+      "NF": 2,
+      "LI": 2,
+      "CV": 1
+    }
   },
-  // Q25: story matters vs result only (key intra-cluster discriminator)
-  q25:{
-    left: {NF:3,AR:3,LI:2,LE:2,FU:2,BO:1,AV:2,SU:2,LU:2,IT:2,CV:2,HU:2},
-    right:{MC:2,MU:3,CP:2,EV:2,BR:1,SP:2,WH:1,CH:2},
+  "pl_q1": {
+    "left": {
+      "NF": 3,
+      "AR": 3,
+      "LI": 2,
+      "LE": 2,
+      "FU": 2,
+      "BO": 1,
+      "AV": 2,
+      "SU": 2,
+      "LU": 2,
+      "IT": 2,
+      "CV": 2,
+      "HU": 2
+    },
+    "right": {
+      "MC": 2,
+      "MU": 3,
+      "CP": 2,
+      "EV": 2,
+      "BR": 1,
+      "SP": 2,
+      "WH": 1,
+      "CH": 2
+    }
   },
-  // Q26: relationship with being right
-  q26:{
-    A:{NC:2,MU:2,WH:2,CP:2,AV:2,SU:2,LU:2,CV:2,HU:2},
-    B:{WO:3,BR:3,BH:2,FU:1,IT:2},
-    C:{MC:2,EV:2,CP:2,LI:1,MU:2,CH:2},
-    D:{BR:3,BH:3,AR:2,MC:1},
-    E:{BO:3,FU:3,BH:2,LE:1},
+  "pl_q2": {
+    "A": {
+      "NC": 2,
+      "MU": 2,
+      "WH": 2,
+      "CP": 2,
+      "AV": 2,
+      "SU": 2,
+      "LU": 2,
+      "CV": 2,
+      "HU": 2
+    },
+    "B": {
+      "WO": 3,
+      "BR": 3,
+      "BH": 2,
+      "FU": 1,
+      "IT": 2
+    },
+    "C": {
+      "MC": 2,
+      "EV": 2,
+      "CP": 2,
+      "LI": 1,
+      "MU": 2,
+      "CH": 2
+    },
+    "D": {
+      "BR": 3,
+      "BH": 3,
+      "AR": 2,
+      "MC": 1
+    },
+    "E": {
+      "BO": 3,
+      "FU": 3,
+      "BH": 2,
+      "LE": 1
+    }
   },
-  // Q27: contentment slider
-  q27:{
-    1:{FU:3,BO:3,BH:2},
-    2:{FU:2,BO:2,AR:2,BH:1,IT:2},
-    3:{AV:2,NC:2,WH:2,SU:2,CV:2,LU:1,HU:1},
-    4:{LI:2,MU:2,EV:2,SP:2,AV:2,LU:2,CH:2},
-    5:{MC:3,LI:2,MU:3,AR:1,WO:2,CH:2},
+  "pl_q3": {
+    "1": {
+      "FU": 3,
+      "BO": 3,
+      "BH": 2
+    },
+    "2": {
+      "FU": 2,
+      "BO": 2,
+      "AR": 2,
+      "BH": 1,
+      "IT": 2
+    },
+    "3": {
+      "AV": 2,
+      "NC": 2,
+      "WH": 2,
+      "SU": 2,
+      "CV": 2,
+      "LU": 1,
+      "HU": 1
+    },
+    "4": {
+      "LI": 2,
+      "MU": 2,
+      "EV": 2,
+      "SP": 2,
+      "AV": 2,
+      "LU": 2,
+      "CH": 2
+    },
+    "5": {
+      "MC": 3,
+      "LI": 2,
+      "MU": 3,
+      "AR": 1,
+      "WO": 2,
+      "CH": 2
+    }
   },
-  // Q28: what stings most (key intra-cluster: Spurs/Arsenal/EV/Man Utd split)
-  q28:{
-    A:{MC:3,LI:2,MU:2,AR:1,AV:2,CH:2},
-    B:{NC:3,CP:3,WH:2,MU:2,LE:1,LU:2,HU:2},
-    C:{SP:3,AR:3,EV:2,NF:1,LE:2,FU:2,CV:1},
-    D:{LI:2,EV:3,NC:2,WH:2,SU:2,CV:3},
-    E:{BR:3,BH:3,AR:2,WO:1,IT:2},
+  "pl_q4": {
+    "A": {
+      "MC": 3,
+      "LI": 2,
+      "MU": 2,
+      "AR": 1,
+      "AV": 2,
+      "CH": 2
+    },
+    "B": {
+      "NC": 3,
+      "CP": 3,
+      "WH": 2,
+      "MU": 2,
+      "LE": 1,
+      "LU": 2,
+      "HU": 2
+    },
+    "C": {
+      "SP": 3,
+      "AR": 3,
+      "EV": 2,
+      "NF": 1,
+      "LE": 2,
+      "FU": 2,
+      "CV": 1
+    },
+    "D": {
+      "LI": 2,
+      "EV": 3,
+      "NC": 2,
+      "WH": 2,
+      "SU": 2,
+      "CV": 3
+    },
+    "E": {
+      "BR": 3,
+      "BH": 3,
+      "AR": 2,
+      "WO": 1,
+      "IT": 2
+    }
   },
-  // Q29: one moment vs sustained excellence (key discriminator: LE/NF/Forest vs MC/LI)
-  q29:{
-    left: {LE:3,NF:3,SP:3,WH:2,BO:2,CP:1,AV:1,SU:2,LU:2,IT:2,CV:2,HU:2},
-    right:{MC:3,LI:2,MU:2,AR:2,EV:1,NC:2,AV:2,CH:2},
+  "pl_q5": {
+    "left": {
+      "LE": 3,
+      "NF": 3,
+      "SP": 3,
+      "WH": 2,
+      "BO": 2,
+      "CP": 1,
+      "AV": 1,
+      "SU": 2,
+      "LU": 2,
+      "IT": 2,
+      "CV": 2,
+      "HU": 2
+    },
+    "right": {
+      "MC": 3,
+      "LI": 2,
+      "MU": 2,
+      "AR": 2,
+      "EV": 1,
+      "NC": 2,
+      "AV": 2,
+      "CH": 2
+    }
   },
-  // Q30: defining phrase
-  q30:{
-    A:{LI:3,EV:2,MU:2,NF:1,FU:2,SU:2,CH:2,LU:1,HU:1},
-    B:{AV:3,NC:3,BH:2,AR:1,LE:3,SU:1},
-    C:{SP:3,EV:3,NF:2,WH:1},
-    D:{MC:3,BR:3,AR:1,CH:1,IT:1},
-    E:{BR:2,WO:3,BH:2,LE:2,IT:2},
+  "pl_q6": {
+    "A": {
+      "LI": 3,
+      "EV": 2,
+      "MU": 2,
+      "NF": 1,
+      "FU": 2,
+      "SU": 2,
+      "CH": 2,
+      "LU": 1,
+      "HU": 1
+    },
+    "B": {
+      "AV": 3,
+      "NC": 3,
+      "BH": 2,
+      "AR": 1,
+      "LE": 3,
+      "SU": 1
+    },
+    "C": {
+      "SP": 3,
+      "EV": 3,
+      "NF": 2,
+      "WH": 1
+    },
+    "D": {
+      "MC": 3,
+      "BR": 3,
+      "AR": 1,
+      "CH": 1,
+      "IT": 1
+    },
+    "E": {
+      "BR": 2,
+      "WO": 3,
+      "BH": 2,
+      "LE": 2,
+      "IT": 2
+    }
   },
-
-  // Q31: knowing you're right privately vs needing acknowledgment
-  // left=private → WO,BR,FU,IT; right=acknowledged → NC,LU,SU,MU,CP,AV
-  q31:{
-    left: {WO:3,BR:3,FU:2,IT:3,BH:2,MC:1,BO:2},
-    right:{NC:2,LU:3,SU:2,MU:2,CP:2,AV:2,LI:1,CV:1,CH:2,HU:1},
+  "pl_q7": {
+    "left": {
+      "WO": 3,
+      "BR": 3,
+      "FU": 2,
+      "IT": 3,
+      "BH": 2,
+      "MC": 1,
+      "BO": 2
+    },
+    "right": {
+      "NC": 2,
+      "LU": 3,
+      "SU": 2,
+      "MU": 2,
+      "CP": 2,
+      "AV": 2,
+      "LI": 1,
+      "CV": 1,
+      "CH": 2,
+      "HU": 1
+    }
   },
-  // Q32: institution betrayal reaction
-  // A=leave → CH (pre-Abramovich fans some left); B=carry anger+love → WH,CV,SU; 
-  // C=understand complexity → FU,AR; D=fix from inside → AV,BH; E=separate thing from inst. → NF,LE,LI
-  q32:{
-    A:{CH:3,MC:1},
-    B:{WH:3,CV:3,SU:3,LU:2,NC:1,HU:3},
-    C:{FU:2,AR:2,BH:2,AV:1},
-    D:{AV:3,BH:2,BR:2,IT:1},
-    E:{NF:2,LE:3,LI:2,EV:2,SP:1},
+  "pl_q8": {
+    "A": {
+      "CH": 3,
+      "MC": 1
+    },
+    "B": {
+      "WH": 3,
+      "CV": 3,
+      "SU": 3,
+      "LU": 2,
+      "NC": 1,
+      "HU": 3
+    },
+    "C": {
+      "FU": 2,
+      "AR": 2,
+      "BH": 2,
+      "AV": 1
+    },
+    "D": {
+      "AV": 3,
+      "BH": 2,
+      "BR": 2,
+      "IT": 1
+    },
+    "E": {
+      "NF": 2,
+      "LE": 3,
+      "LI": 2,
+      "EV": 2,
+      "SP": 1
+    }
   },
-  // Q33: tight/local vs vast/collective belonging
-  // left=local → CP,WH,CV,IT,FU,WO; right=vast → LI,NC,SU,LU,MU
-  q33:{
-    left: {CP:3,WH:3,CV:3,IT:3,FU:2,WO:2,BR:2,BO:2,HU:3},
-    right:{LI:2,NC:3,SU:2,LU:2,MU:2,EV:1,CH:2},
+  "pl_q9": {
+    "left": {
+      "CP": 3,
+      "WH": 3,
+      "CV": 3,
+      "IT": 3,
+      "FU": 2,
+      "WO": 2,
+      "BR": 2,
+      "BO": 2,
+      "HU": 3
+    },
+    "right": {
+      "LI": 2,
+      "NC": 3,
+      "SU": 2,
+      "LU": 2,
+      "MU": 2,
+      "EV": 1,
+      "CH": 2
+    }
   },
-  // Q34: absence of ambition
-  // A=peace → FU,BO,IT; B=concerning → MC,MU,LU,CH; C=complicated → CV,WH,SU; D=comes back → AV,NC; E=wisdom/fear → AR,SP,LE
-  q34:{
-    A:{FU:3,BO:3,IT:2,BH:2},
-    B:{MC:3,MU:2,LU:2,CH:2,AR:1},
-    C:{CV:3,WH:2,SU:2,NF:1,HU:3},
-    D:{AV:2,NC:2,BR:2,BH:2},
-    E:{AR:2,SP:2,LE:3,EV:1},
+  "pl_q10": {
+    "A": {
+      "FU": 3,
+      "BO": 3,
+      "IT": 2,
+      "BH": 2
+    },
+    "B": {
+      "MC": 3,
+      "MU": 2,
+      "LU": 2,
+      "CH": 2,
+      "AR": 1
+    },
+    "C": {
+      "CV": 3,
+      "WH": 2,
+      "SU": 2,
+      "NF": 1,
+      "HU": 3
+    },
+    "D": {
+      "AV": 2,
+      "NC": 2,
+      "BR": 2,
+      "BH": 2
+    },
+    "E": {
+      "AR": 2,
+      "SP": 2,
+      "LE": 3,
+      "EV": 1
+    }
   },
-  // Q35: thing itself is enough vs needs bigger story
-  // left=thing itself → BO,FU,CP,IT,WO; right=bigger story → LI,NF,MU,SU,LU,EV
-  q35:{
-    left: {BO:3,FU:3,CP:2,IT:3,WO:2,BR:2,BH:2,HU:3},
-    right:{LI:3,NF:3,MU:2,SU:2,LU:2,EV:2,AR:1,CV:1},
+  "pl_q11": {
+    "left": {
+      "BO": 3,
+      "FU": 3,
+      "CP": 2,
+      "IT": 3,
+      "WO": 2,
+      "BR": 2,
+      "BH": 2,
+      "HU": 3
+    },
+    "right": {
+      "LI": 3,
+      "NF": 3,
+      "MU": 2,
+      "SU": 2,
+      "LU": 2,
+      "EV": 2,
+      "AR": 1,
+      "CV": 1
+    }
   },
-  // Q36: relationship with the improbable
-  // A=seen it/evidence → LE,SU; B=believe without proof → SP,EV,CV; C=drawn to stories → NF,AR; D=useful concept → AV,BH,BR; E=don't think in those terms → MC,WO,FU
-  q36:{
-    A:{LE:3,SU:3,CV:2,LU:2,HU:2},
-    B:{SP:3,EV:3,NF:2,CV:2},
-    C:{NF:3,AR:2,LU:2,IT:1},
-    D:{AV:2,BH:2,BR:2,AR:1},
-    E:{MC:3,WO:3,FU:2,IT:1,BO:2},
+  "pl_q12": {
+    "A": {
+      "LE": 3,
+      "SU": 3,
+      "CV": 2,
+      "LU": 2,
+      "HU": 2
+    },
+    "B": {
+      "SP": 3,
+      "EV": 3,
+      "NF": 2,
+      "CV": 2
+    },
+    "C": {
+      "NF": 3,
+      "AR": 2,
+      "LU": 2,
+      "IT": 1
+    },
+    "D": {
+      "AV": 2,
+      "BH": 2,
+      "BR": 2,
+      "AR": 1
+    },
+    "E": {
+      "MC": 3,
+      "WO": 3,
+      "FU": 2,
+      "IT": 1,
+      "BO": 2
+    }
   },
-  // Q37: place vs story for belonging
-  // left=place → NC,CP,WH,CV,WO,IT,FU,SU; right=story → LI,NF,MU,EV,LU,AR
-  q37:{
-    left: {NC:3,CP:3,WH:3,CV:3,WO:2,IT:3,FU:2,SU:2,BO:1,CH:1,HU:3},
-    right:{LI:2,NF:3,MU:2,EV:2,LU:2,AR:2,CH:1},
+  "pl_q13": {
+    "left": {
+      "NC": 3,
+      "CP": 3,
+      "WH": 3,
+      "CV": 3,
+      "WO": 2,
+      "IT": 3,
+      "FU": 2,
+      "SU": 2,
+      "BO": 1,
+      "CH": 1,
+      "HU": 3
+    },
+    "right": {
+      "LI": 2,
+      "NF": 3,
+      "MU": 2,
+      "EV": 2,
+      "LU": 2,
+      "AR": 2,
+      "CH": 1
+    }
   },
-  // Q38: holding belief and self-awareness together
-  // A=everyone does this → BO,FU; B=specific skill developed → SP,SU,CV,EV; C=exhausting → MC,WO,BR; D=strategic belief → AV,CH,AR; E=both coexist without reconciling → NF,LE,LU,SP
-  q38:{
-    A:{BO:2,FU:2,IT:2,NC:1},
-    B:{SP:3,SU:3,CV:3,EV:2,WH:1,HU:1},
-    C:{MC:2,WO:2,BR:2,BH:1},
-    D:{AV:3,CH:3,AR:2,BR:1},
-    E:{NF:3,LE:3,LU:3,SP:2,EV:1},
-  },
+  "pl_q14": {
+    "A": {
+      "BO": 2,
+      "FU": 2,
+      "IT": 2,
+      "NC": 1
+    },
+    "B": {
+      "SP": 3,
+      "SU": 3,
+      "CV": 3,
+      "EV": 2,
+      "WH": 1,
+      "HU": 1
+    },
+    "C": {
+      "MC": 2,
+      "WO": 2,
+      "BR": 2,
+      "BH": 1
+    },
+    "D": {
+      "AV": 3,
+      "CH": 3,
+      "AR": 2,
+      "BR": 1
+    },
+    "E": {
+      "NF": 3,
+      "LE": 3,
+      "LU": 3,
+      "SP": 2,
+      "EV": 1
+    }
+  }
 };
 
 // ─── TEAM PERSONALITY DIMENSIONS (for analysis tab) ──────────────────────────
@@ -2122,16 +3013,9 @@ const teamDims = {
   HU:{loyalty:9, emotion:6, ambition:4, process:3, community:8, chaos:6, rootedness:10},
 };
 
-const DIM_LABELS = {
-  loyalty:"Loyalty",emotion:"Emotional intensity",ambition:"Ambition",
-  process:"Process thinking",community:"Community drive",chaos:"Chaos tolerance",rootedness:"Rootedness",
-};
 
 // ── Share card system (canvas, 1080x1350). Section 6 spec. ──────────────
 // Fixed dimension palette: colour = trait identity, band height = score.
-const DIM_COLORS = {loyalty:"#d4a44e",emotion:"#d6685c",ambition:"#c46c96",process:"#688eb0",community:"#68b096",chaos:"#dc8e46",rootedness:"#9280c6"};
-const DIM_CODES  = {loyalty:"LOY",emotion:"EMO",ambition:"AMB",process:"PRO",community:"COM",chaos:"CHA",rootedness:"ROO"};
-const DIM_ORDER  = ["loyalty","emotion","ambition","process","community","chaos","rootedness"];
 // Approved badge map. null = intentional monogram (the 2-letter code).
 const CARD_BADGES = {LI:null,AR:null,MC:"🚢",EV:"🍬",NC:"🐦‍⬛",MU:"🔱",SP:"🐓",FU:"🏡",CH:"🦁",IT:"🚜",LU:"🦚",CV:"☁️",AV:"🍷",CP:"🦅",LE:"🦊",NF:"🌲",BR:"🐝",BH:"🐦",WO:"🐺",BO:"🍒",SU:"🐱",WH:"⚒️",HU:"🐯"};
 // Generic shape emojis vanish on a same-colour roundel: always monogram instead.
@@ -2192,4 +3076,4 @@ const squadUrls = {
 
 // ─── HELPERS ──────────────────────────────────────────────────────────────────
 
-export { questions, teams, archetypes, teamTextColors, archetypeDesc, greats, vitalStats, nearlyGot, scoring, teamDims, DIM_LABELS, DIM_COLORS, DIM_CODES, DIM_ORDER, CARD_BADGES, GENERIC_EMOJI, badgeUrls, squadUrls };
+export { moduleQuestions, teams, archetypes, teamTextColors, archetypeDesc, greats, vitalStats, nearlyGot, scoring, teamDims, DIM_LABELS, DIM_COLORS, DIM_CODES, DIM_ORDER, CARD_BADGES, GENERIC_EMOJI, badgeUrls, squadUrls };
