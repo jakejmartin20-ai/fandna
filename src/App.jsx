@@ -657,6 +657,18 @@ const teams = {
     note:"FA Cup winners 1987. The Ricoh Arena / CBS Arena saga. Playing at St Andrew's. Almost Northampton. Back in Coventry. Now in the Premier League. The fans made this happen by simply refusing to stop caring.",
     kit:"https://shop.ccfc.co.uk",
   },
+  HU: {
+    name:"Hull City",        emoji:"🐯", color:"#F18A00",
+    tagline:"They said the City in your name was bad for business. Turns out it was the whole point.",
+    desc:"There's a kind of person who treats identity as something to defend, not just something they happen to carry. That's you. You can be easy about most of it, the league position, whether anyone outside your city has heard of you, the size of the whole thing. But there is a line, and below it sits what actually makes you you. Hull City fans found that line when an owner decided the word City was bad for business and tried to rename the club for a bigger market. They gathered under one banner, City Till We Die, refused to move, and kept a name that had stood since 1904. You know that instinct without being taught it. The things worth keeping rarely win you anything. You keep them because they are yours, and because the day you trade your name for reach, you stop being the thing in the first place.",
+    why:[
+      "Your rootedness sits at the ceiling. The place is not a detail of who you support, it is the entire point, and you will not let anyone treat it as negotiable.",
+      "Your loyalty is load-bearing, not sentimental. Bad seasons never tested it. What tested it was someone trying to change what the club fundamentally is, and you held the line.",
+      "Your community instinct is the kind that organises. A club belongs to the people who fill it, not the people who own it, and you have the receipts to prove you mean that.",
+    ],
+    note:"In 2014, the FA blocked an owner's bid to rename the club Hull Tigers, after the fans refused it first. A name standing since 1904 never moved, and the owner eventually sold up. Some clubs win trophies. This one won the right to stay itself.",
+    kit:"https://www.tigerleisure.com",
+  },
 };
 
 
@@ -670,6 +682,7 @@ const archetypes = {
   BO:"The Cherry",        AV:"The Villan",         SU:"The Mackem",
   LU:"The Peacock",       CH:"The Shed Ender",     IT:"The Tractor Boy",
   CV:"The Sky Blue",
+  HU:"The Diehard",
 };
 
 const teamTextColors = {
@@ -679,6 +692,7 @@ const teamTextColors = {
   BH:"#4499ee", WO:"#FDB913", FU:"#ff5555", BO:"#ff5566",
   AV:"#dd55aa", SU:"#ff5555", LU:"#6688cc", CH:"#5588dd",
   IT:"#6688dd", CV:"#59CBEE",
+  HU:"#F6A623",
 };
 
 const archetypeDesc = {
@@ -704,6 +718,7 @@ const archetypeDesc = {
   CH:"You know what it felt like when it worked, and that knowledge is both gift and burden. The Shed End was Stamford Bridge's working-class terrace heart long before the money arrived: the original Chelsea, the one that was there before the King's Road glamour and will be there after the current chaos resolves.",
   IT:"You find genuine meaning in belonging to something real rather than something famous, and you are completely undefensive about the scale of it. Tractor Boy started as an insult about Suffolk's agricultural character and was immediately reclaimed as a badge of honour. That is the whole personality in one origin story.",
   CV:"You keep showing up for something that keeps making it hard to show up. Jimmy Hill introduced the sky blue kit and the Sky Blue identity in 1961 and it survived Northampton, Birmingham, four stadium owners and 20 years of institutional chaos completely intact. That is not a colour. That is a statement about what kind of fan you are.",
+  HU:"The Diehard's loyalty is load-bearing, not sentimental. You belong to a place that was told it would be worth more if it stopped being itself, and you decided that being itself was the worth. You don't defend what's yours because it's winning, you defend it because it's yours.",
 };
 
 const greats = {
@@ -887,10 +902,12 @@ const vitalStats = {
   CH:{ founded:1905, ground:"Stamford Bridge",         city:"London (SW6)",    capacity:"40,341",  lastTitle:"2021/22 (PL)",    kitMaker:"Nike",     colors:"Blue & white",        nickname:"The Blues",       },
   IT:{ founded:1878, ground:"Portman Road",            city:"Ipswich",         capacity:"30,311",  lastTitle:"None (PL era)",   kitMaker:"Hummel",   colors:"Blue & white",        nickname:"The Tractor Boys", },
   CV:{ founded:1883, ground:"CBS Arena",               city:"Coventry",        capacity:"32,609",  lastTitle:"None (PL era)",   kitMaker:"Hummel",   colors:"Sky blue & white",    nickname:"The Sky Blues",   },
+  HU:{ founded:1904, ground:"MKM Stadium", city:"Hull", capacity:"25,586", lastTitle:"None", kitMaker:"Kappa", colors:"Amber & black", nickname:"The Tigers", },
 };
 
 const nearlyGot = {
   LI:{
+    HU:"Both of you live inside the club rather than watch it, the belonging total. Yours is mythology at full volume, European nights and a global Kop. Hull's is narrower and more defensive, a belonging it once had to physically protect when an owner came for the name. Both of you feel it completely. You expect to win. Hull expects to last.",
     NC:"You both live for collective belonging and loud shared emotion. The difference: Liverpool wraps it in mythology and global reach, YNWA, European nights, a fanbase that spans continents. Newcastle is more local, more raw, less ornate. Liverpool fans carry history like armour. Newcastle fans carry it like a wound that's finally starting to heal.",
     EV:"You share the same city, the same working-class roots, the same capacity for deep feeling. The gap is expectation: Liverpool fans carry the weight of what they've won. Everton fans carry the weight of what they haven't. Both are heavy. Different kind of heavy.",
     WH:"Both loud, emotional, place-proud. West Ham's identity is more complicated, the stadium move, the cockney mythology, the sense of something lost. Liverpool's collective feeling is uncomplicated by institutional grief. If you found the 'complicated' part resonant, West Ham might actually be your club.",
@@ -925,6 +942,7 @@ const nearlyGot = {
     CV:"Both have fanbases where collective loyalty is the defining quality. Liverpool's collective loyalty has been rewarded with sustained success. Coventry's has been tested by years of institutional difficulty. Both are real communities that hold the club together through whatever comes. The scale and the recent experience are completely different.",
   },
   MC:{
+    HU:"You are close to opposites. You are the engineered global project, success built deliberately and sold to the world. Hull is the club offered exactly that path, an owner promising a bigger market for a smaller name, and it turned the offer down flat. Both of you know what global ambition looks like. You chased it. Hull refused it.",
     BR:"Both are analytically wired and process-first. The gap is scale and sentiment. City are a machine built to dominate; Brentford are a machine built to punch above their weight. If you find smart underdogs more interesting than smart favourites, Brentford might actually fit you better.",
     BH:"Both think carefully and back evidence. Brighton adds warmth, they're genuinely delighted to be here. City are not delighted; they expect. If the joy of the journey matters alongside the thinking, Brighton is the right call.",
     WO:"Both private, process-oriented, low on chaos. Wolves are underdog-comfortable; City are not. If you find more appeal in quiet competence at a smaller scale than relentless dominance, Wolves fits that gap.",
@@ -963,6 +981,7 @@ const nearlyGot = {
     CV:"Both are clubs whose fanbases held on through long difficult periods before things improved. City spent decades in the lower divisions and in Liverpool and United's shadow. Coventry spent years without a proper home. Both kept going. City's improvement was transformative. Coventry's has been more modest but no less significant to the fanbase.",
   },
   AR:{
+    HU:"Both of you stand on principle, the sense that there is a right way you will not abandon. Yours is the method, doing it properly even when the result disagrees. Hull's is identity, staying who it is even when an owner says it costs money. Both would rather be right than convenient. You defend your style. Hull defended its name.",
     BH:"Both are progressive, thinking clubs that care about the how. Brighton is more cheerful about it, pleasantly surprised by their own success. Arsenal carries the weight of expectation and the torment of almost. If you're more optimist than tortured, Brighton might suit you.",
     NF:"Both are romantic in how they relate to football. Forest is purer chaos and mythology. Arsenal is more principled, they want to do it properly, not just dramatically. If the messy story appeals more than the right method, Forest is worth a second look.",
     FU:"Both find value in doing things properly at their own pace. Arsenal fans still want to win everything; Fulham fans are genuinely fine with a good season. If you're more settled than restless, Fulham is the honest answer.",
@@ -999,6 +1018,7 @@ const nearlyGot = {
     AV:"Both are clubs rebuilding toward something they believe they deserve. Villa's rebuild is newer and the excitement is less complicated. Arsenal's rebuild is longer-running and carries more weight of expectation. Both have a fanbase that genuinely believes the club is heading somewhere. Arsenal's belief is more anxious, Villa's is more hopeful.",
   },
   EV:{
+    HU:"For both of you, loyalty is what you prove when the club gives you the least. Yours was tested on the pitch, decades of waiting without once thinking of leaving. Hull's was tested in the boardroom, an owner deciding the name was holding the club back. Both of you treat staying as the whole statement. You stayed through the football. Hull stayed through the rebrand.",
     SP:"Both are long-suffering clubs with painful near-misses. Everton suffer quietly and inwardly; Spurs perform the suffering publicly with a kind of self-aware dark humour. If your pain is something you share loudly rather than absorb alone, Spurs is probably you.",
     MU:"Both carry former glory and present frustration. United's former greatness is more recent and more dominant; Everton's is older and harder to hold onto. The key question: are you haunted by recent proximity to greatness, or by a longer drought?",
     LI:"Same city, same roots, very different emotional register. The key fork: do you expect success or endure without it? Liverpool fans expect. Everton fans endure. One isn't better than the other. They're just different kinds of love.",
@@ -1031,6 +1051,7 @@ const nearlyGot = {
     IT:"Both are clubs where belonging to the local community matters more than national profile. Ipswich's community is Suffolk-specific. Everton's is Merseyside, in the shadow of Liverpool, carrying an identity defined partly by what it refuses to become. Both are genuine. Both are more interesting than their current profiles suggest.",
   },
   NC:{
+    HU:"Both of you want something real instead of something global, the rooted over the marketable. You never had to defend it, the city and the club inseparable for generations. Hull did, against an owner who wanted the name to travel further than the place it came from. Both of you won that argument. You won it by simply being. Hull won it by fighting.",
     LI:"The communal dimension is nearly identical. The fork is mythology vs locality: Liverpool is a global phenomenon built on story and anthem. Newcastle is a city that simply cannot be separated from its club. If you want the purer, rawer version of collective belonging without the global scale, Newcastle is it.",
     WH:"Both place-defined, proud, working-class-rooted clubs. Newcastle's trajectory is currently upward and optimistic; West Ham's identity is tangled in a stadium move many fans resented. If you're drawn to the upward arc, Newcastle. If the complicated loyalty resonates more, West Ham.",
     CP:"Both intensely local and no-frills, Palace south London, Newcastle the northeast. The main distinction is scale: Newcastle engulfs an entire city. Palace is a tight, fiercely proud corner of London. Both are real. One is bigger.",
@@ -1070,6 +1091,7 @@ const nearlyGot = {
     CV:"Both are clubs where institutional decisions tested the fanbase's relationship with the institution. Newcastle's ownership saga divided opinion. Coventry lost their home ground. Both fanbases navigated something difficult without abandoning the club. Both know that the club is the community more than it is the institution.",
   },
   WH:{
+    HU:"Both of you love a club you have also had to fight, carrying the love and the grievance together. Yours was the move from Upton Park, the feeling of being made bigger and less yourself at once. Hull's was the rebrand, an owner trying to swap the name for a brand. Both of you stayed and fought rather than walked. You lost the ground but kept the club. Hull kept the name.",
     NC:"The shared dimension is raw belonging and working-class place pride. West Ham's specific identity is more conflicted, the move from Upton Park left a visible scar. Newcastle's current chapter is more optimistic. If complicated institutional grief rings true, West Ham is real.",
     CP:"Both unpretentious and locally-rooted. West Ham has more history and complexity behind the identity. Palace is simpler and less burdened by institutional decisions. If you want the cleaner version of local pride, Palace might suit you better.",
     LI:"Both loud and place-proud. Liverpool's collective emotion is uncomplicated by the kind of institutional grief West Ham carries. If you want the feeling without the baggage, Liverpool. If the baggage is part of what makes it real, West Ham.",
@@ -1111,6 +1133,7 @@ const nearlyGot = {
     AV:"Both are clubs with genuine histories and fanbases that believe the club deserves more. Villa's belief is currently being rewarded with genuine quality and ambition. West Ham's is more frustrated, the stadium move complicated the identity and the results haven't consistently justified the ambition.",
   },
   CP:{
+    HU:"You are the two most rooted clubs in the league, both certain the place is the point. You built that identity from nothing, manufacturing an atmosphere at a club with no trophies to lean on. Hull defended one it inherited, going to war to keep the name an owner wanted to sell. Both of you refused to let the club turn generic. You made your roots. Hull guarded its.",
     NC:"Both intensely local and belonging-focused. Scale is the gap: Newcastle engulfs a whole city; Palace owns a corner of London. Palace fans don't need the whole city, they have Selhurst, and that is genuinely enough.",
     WH:"Both unpretentious and local. Palace is the simpler of the two, less burdened by institutional history. If you have no interest in the complicated backstory and just want the thing itself, Palace is the cleaner answer.",
     MU:"The only thing you share is the direct, front-facing approach. United demand results from historical greatness. Palace's directness comes from pride without pretension. Completely different sources, similar energy.",
@@ -1152,6 +1175,7 @@ const nearlyGot = {
     CV:"Both are clubs where the fanbase kept the identity alive through periods the institution made difficult. Coventry had ownership crises and years without a home. Palace had ownership crises and near-extinction moments. Both fanbases developed a specific resilience. Both know what it feels like to belong to something that might not survive. Both did.",
   },
   MU:{
+    HU:"Both of you guard an identity, but very different ones. You guard a winning past, the memory of dominance you cannot quite recreate. Hull guarded a name, the plain fact of being Hull City, when an owner tried to trade it for a global brand. Both of you refuse a lesser version of the club. You want your old self back. Hull simply kept its.",
     LI:"Both global, both historically great, both emotionally demanding. The fork: Liverpool's identity is collective and mythological. United's is individual excellence and status. YNWA is about everyone together; United at their best is about being the undisputed best.",
     EV:"Both carry the weight of expectation and former glory. United's was more recent and more dominant; Everton's is older and harder to hold. The question: are you haunted by proximity to what you had, or waiting for something that feels further away?",
     SP:"Both suffering from proximity to former success. United's former greatness was more recent and more dominant. Spurs' has been further away for longer. If you believe your club is currently underperforming relative to its actual quality, United. If you're not sure it'll ever quite come together, Spurs.",
@@ -1186,6 +1210,7 @@ const nearlyGot = {
     CV:"Both are clubs where the fanbase's loyalty has been tested relative to their expectations. United fans expected sustained success and are navigating its absence. Coventry fans expected a home ground and a stable institution and were tested to the limit. The nature of what they were holding on for was very different.",
   },
   SP:{
+    HU:"Both of you hold belief and clear eyes at once, fully invested and fully self-aware. You laugh at your own near-misses, self-deprecation as a survival skill. Hull refused to be laughed at, defending its name without flinching when an owner treated it as a punchline. Both of you know exactly who you are. You joke about it. Hull went to war over it.",
     EV:"The key fork is public versus private suffering. Spurs fans perform the suffering with a kind of dark comedy and self-awareness. Everton fans absorb it quietly and carry it alone. You know which one you are.",
     AR:"Both long-suffering with principled identities and tortured near-misses. Arsenal hold a clear philosophy as sacred. Spurs are more chaotically self-aware about their own absurdity. If you take the method seriously, Arsenal. If you've developed a sense of humour about your own hope, Spurs.",
     LE:"Both defined by hope that won't die. Leicester actually got the impossible thing. Spurs have come agonisingly close. If you want to follow a club where the miracle already happened and now you need a second one, Leicester. If you prefer living in the agonising anticipation, Spurs.",
@@ -1226,6 +1251,7 @@ const nearlyGot = {
     CV:"Both are clubs where the fanbase's loyalty has been tested over prolonged periods. Coventry's tests were structural and existential. Spurs' have been the specific frustration of nearly winning things and not quite getting there. The nature of the tests was very different but the loyalty was equally genuine.",
   },
   LE:{
+    HU:"Both of you have lived proof that the impossible happens. Yours was a 5000-to-1 title nobody had any right to win. Hull's was smaller and stranger, a fanbase that beat its own owner to keep the name on the badge. Both of you know the long shot can land. You won a trophy. Hull won an argument that mattered more to it than any trophy.",
     NF:"Both are miracle clubs, Forest's is older and mythologically bigger; Leicester's is more recent and arguably more statistically improbable. Forest is pure chaos and manager mythology. Leicester is the team 5000-to-1 couldn't stop. If chaos and the long-ago miracle appeal over the recent one, Forest.",
     SP:"Both are clubs where impossible hope is the whole point. The fork is that Leicester actually converted theirs in 2016, which changed what hope means for them permanently. Spurs carry the hope without the proof. That shapes everything about how each fanbase relates to the next season.",
     BH:"Both pleasantly surprised to be where they are. Brighton earns it through careful thinking. Leicester earned it through the most improbable moment in modern football. If you'd rather be the joyful smart club than the miracle club still chasing the second one, Brighton is the closer fit.",
@@ -1265,6 +1291,7 @@ const nearlyGot = {
     CV:"Both are Midlands-adjacent clubs with loyal fanbases and complicated recent histories. Coventry's difficulty has been more prolonged and structural. Leicester's post-2016 has involved relegations and rebuilding. Both have fans that hold the club's identity regardless of league position. Leicester's identity now has a permanent reference point that most clubs will never have.",
   },
   NF:{
+    HU:"Both of you love the stories that had no business happening. Yours was two European Cups won from outside the top flight, the most improbable rise in the English game. Hull's was quieter, a supporters' campaign overturning an owner's rebrand to keep a name dating to 1904. Both of you trust the improbable. You conquered Europe. Hull kept itself.",
     LE:"Forest's miracle is older, less statistical, more mythological, Clough, a manager cult, a team that shouldn't have existed at that level. Leicester's is more recent, more data-defying. Both are romantic clubs. Forest has more mythology; Leicester has more recent proof.",
     AR:"Both have a romantic relationship with their club's past and a sense of what the club means beyond results. Arsenal's romance is about doing it properly. Forest's is about doing it impossibly. One worships the method; one worships the myth.",
     WH:"Both tolerate chaos and have complicated histories. Forest's chaos is mythological and historic; West Ham's is more ongoing and present-tense. If you prefer your chaos to be legendary rather than current, Forest.",
@@ -1306,6 +1333,7 @@ const nearlyGot = {
     CV:"Both are Midlands clubs with fanbases that held on through long difficult periods. Forest spent years outside the top flight after their peak. Coventry spent years without a home ground. Both kept their identity regardless. Both know that football clubs mean something to their communities that outlasts any particular era.",
   },
   BR:{
+    HU:"Both of you reached this level from outside the obvious path, by routes that could not differ more. You outsmarted the system, building an edge from data nobody else trusted. Hull dug in and refused to be moved, keeping a name an owner had already decided to sell. Same league, opposite method. You were the cleverest team in the room. Hull was the most immovable.",
     MC:"Both are process-first and analytically wired. The underdog/favourite divide is the line. City expect to win everything. Brentford expect to be smart enough to compete with people who spend ten times what they spend.",
     BH:"Both are data-forward clubs. Brighton does it with more warmth and communal joy. Brentford does it more quietly and with more contrarian energy. If you celebrate the smartness openly, Brighton. If you just act on it without needing anyone to notice, Brentford.",
     WO:"Both private, process-driven, underdog-comfortable. Brentford is more explicitly contrarian. Wolves are more quietly disciplined. If the data-nerd identity resonates strongly and you want people to know it, Brentford. If it's just how you operate, Wolves.",
@@ -1345,6 +1373,7 @@ const nearlyGot = {
     CV:"Both are clubs where the fanbase's loyalty was tested by institutional difficulty. Coventry's difficulty was structural and prolonged. Brentford spent decades in the lower divisions before their rise. Both know what it means to keep believing when the circumstances don't justify it. Both are now in better places.",
   },
   BH:{
+    HU:"Both of you have punched above your size by opposite methods. You did it with a clever plan, an analytics model that turned a small club into a smart one. Hull did it with a flat refusal to be moved, beating an owner's rebrand through collective stubbornness. Both of you proved size is not the whole story. You outthought the room. Hull out-stubborned it.",
     BR:"Both are analytically run, community-rooted clubs that earned their place through intelligence rather than spending. Brighton does it with more warmth and a bigger stage. Brentford is smaller, quieter, more insider. The values are identical, the volume differs.e contrarianism.",
     MC:"Both think carefully. Brighton adds warmth, the Amex atmosphere, the community, the delight. City have none of the delight; they have the expectation. Very different emotional registers built on similar analytical foundations.",
     AR:"Both think carefully about how football should be played. Brighton is more cheerful and less tortured. Arsenal carries more expectation and more pain. If you're content with your club's direction, Brighton. If you need things to match what they should be, Arsenal.",
@@ -1386,6 +1415,7 @@ const nearlyGot = {
     CV:"Both are clubs where the fanbase's loyalty survived institutional difficulty. Coventry's difficulty was more prolonged and structural. Brighton's rise involved years of lower league football and ground-sharing before the Amex. Both fanbases have earned their current position. The nature of the difficulty was different but the loyalty is equally genuine.",
   },
   WO:{
+    HU:"You share the amber and the quiet pride in your own corner of England. You never had to shout about it, Wolverhampton's certainty in itself never really questioned. Hull did have to shout, fighting to keep the City an owner tried to delete from its name. Both of you are proud of a place outside the spotlight. You assume it. Hull defended it.",
     BR:"Both are quietly methodical clubs with no interest in performing for anyone outside the ground. Brentford earns that through data and community ownership, Wolves through Midlands grit and a consistently underrated football culture. The difference is Wolves have a longer history of genuine top-flight presence.",
     MC:"Both systematic, low-chaos, high process. Scale separates them. City want everything. Wolves want to exceed what they're supposed to be. Disciplined punching-above-weight appeals more than relentless dominance? Wolves.",
     FU:"Both quiet and comfortable with their identity. Wolves are more competitive about it, there's a quiet fire, a chip. Fulham are more genuinely at peace. If you have the quiet fire, Wolves. If you're actually fine, Fulham.",
@@ -1427,6 +1457,7 @@ const nearlyGot = {
     CV:"Both are Midlands clubs with loyal fanbases and a sense that the club belongs to its community more than to any particular owner. Coventry's community went through years of groundlessness. Wolves' community has had a more stable relationship with its ground. Both prove that Midlands football is more than Birmingham and Aston Villa.",
   },
   FU:{
+    HU:"Both of you have made peace with not being famous, content at the size you are. Yours came easily, the gentle confidence of a club that never needed to argue about itself. Hull's came after a war, an owner insisting it would be worth more as something else, and a fanbase that disagreed and won. Both of you are comfortable being yourselves. You always were. Hull earned it.",
     BO:"Both genuinely content clubs with no complex about their scale. Fulham have Craven Cottage, the Thames, a long top-flight history, and a kind of gentility that sets them apart. Bournemouth are newer to it, smaller, simpler. If the character of the place matters, Fulham. If you just want the joy without the history, Bournemouth.",
     WO:"Both quiet. Wolves have a competitive edge beneath the calm, they want to exceed expectations. Fulham are more genuinely fine. If you have the quiet competitive fire, Wolves. If you're actually content, Fulham is the honest answer.",
     AR:"Both find meaning in doing things properly. Fulham are content with that as the goal itself. Arsenal fans want the trophies to follow. If you genuinely don't need the trophies to feel like it meant something, Fulham is the more honest answer.",
@@ -1464,6 +1495,7 @@ const nearlyGot = {
     CV:"Both are clubs where contentment with identity has been a defining characteristic. Coventry's contentment was forged through necessity, when you lose your home ground, you learn to carry the identity without the place. Fulham's is more comfortable and long-standing. Both know who they are. Coventry's knowledge was harder to hold onto.",
   },
   BO:{
+    HU:"Both of you are genuinely glad to be exactly where you are. Yours is sunshine, the easy joy of a small south-coast club that keeps surprising itself. Hull's is harder won, a club it once had to defend from an owner who wanted to rename it. Both of you are content in your own skin. Yours came free. Hull's it had to fight for.",
     FU:"Both are genuinely content clubs with no identity crisis about their size. Fulham has the Thames, Craven Cottage, and a century of First Division football as context for that contentment. Bournemouth's contentment is newer, earned through an unlikely ascent, and carries more of the surprise still in it.",
     LE:"Both small clubs with improbable recent histories. Leicester's story is more dramatic now and comes with more expectation. Bournemouth are still just happy to be here, no complex attached. If the miracle still defines you, Leicester. If you've moved past that and just want to enjoy the football, Bournemouth.",
     BH:"Both south coast, both progressive, both without historical reason to be in the Premier League. Brighton have the smarter operation and the bigger stadium. Bournemouth have the simpler joy and less overthinking. If the analytics and the careful model matter to you, Brighton. If you just want to enjoy it, Bournemouth.",
@@ -1505,6 +1537,7 @@ const nearlyGot = {
     CV:"Both are clubs where survival has been a genuine theme. Coventry's survival story is more dramatic and structural. Bournemouth went through administration before their remarkable rise. Both know what it means to exist without certainty. The current contentment of both fanbases is earned rather than assumed.",
   },
   AV:{
+    HU:"Both of you respect where you came from, the history and the place behind the club. You carry the past without being trapped by it, the old glory feeding the hunger rather than replacing it. Hull was ready to go to the wall for its, refusing to let an owner sell the name off for reach. Both of you honour the roots. You build on them. Hull defended them.",
     LI:"Both are clubs with genuine European pedigree and current ambition. Liverpool's identity is fully formed and rooted in mythology. Villa's is in the process of being rebuilt, the hunger is newer and the joy of it is different. If you want the completed story, Liverpool. If you want to be part of one being written, Villa.",
     NC:"Both are ambitious clubs with proud histories experiencing a genuine resurgence. The difference is place and scale: Newcastle is a whole city with a single identity. Villa is a sleeping giant in the UK's second city, which means the identity is bigger and more diverse.",
     MU:"Both are former-greatness clubs with European Cup history and high expectations. United's former greatness was more recent and more dominant. Villa's is older and the current rebuild feels more hopeful. If you're grieving something, United. If you're building toward something, Villa.",
@@ -1546,6 +1579,7 @@ const nearlyGot = {
     CV:"Both are Midlands clubs with loyal fanbases who have been through genuinely difficult periods. Coventry's difficulty was more prolonged and more structural. Villa's was shorter and the recovery has been more dramatic. Both know what it means to support a club that should be bigger than its current circumstances. Villa's circumstances have dramatically improved.",
   },
   SU:{
+    HU:"Both of you stayed through the kind of collapse that empties other grounds. You stayed out of heartbreak, filling 46,000 seats in the third tier because leaving was never a thought. Hull stayed out of stubbornness, refusing to be rebranded out of its own identity. Both loyalties were proven in the bad years. Yours is grief carried with pride. Hull's is defiance.",
     NC:"Both are northern, communal, place-rooted clubs with painful institutional histories followed by genuine optimism. Newcastle's fanbase is larger and the trajectory is further along. Sunderland's story is rawer, the fall was deeper and the comeback is still being written.",
     EV:"Both are clubs defined by loyalty through difficulty and communal suffering. Everton's is quieter and more private. Sunderland's was documented publicly, which gave it a different quality, the whole world watched the pain and the comeback.",
     LU:"Both are intensely passionate northern fanbases that have been through genuine darkness and come back. Leeds' identity is more operatic and volatile. Sunderland's is more communal and specifically rooted in a city that lost more than just its football club.",
@@ -1587,6 +1621,7 @@ const nearlyGot = {
     AV:"Both are clubs where the community loyalty is unconditional but the institutional history is complicated. Villa's complications were briefer and the recovery more dramatic. Sunderland's difficulty was more prolonged. Villa's belief is currently being rewarded more visibly.",
   },
   LU:{
+    HU:"Both of you are rooted and road-worn, fanbases that have been down the divisions and back. You live every high and low at full volume, the drama half the identity. Hull held its line more quietly, fighting to keep its name without making theatre of it. Both of you are unmistakably yourselves. You perform it. Hull just refused to be anything else.",
     LI:"Both are maximum-intensity clubs with huge fanbases and complete emotional commitment. Liverpool's identity is more mythological and the history is cleaner. Leeds' is more chaotic and contradictory. If you want the clean collective myth, Liverpool. If you want the full complicated operatic version, Leeds.",
     SU:"Both are intensely passionate northern fanbases that have been through institutional pain and still show up. The difference is Leeds carry it at higher volume and with more edge: Elland Road is confrontational, the identity is combative. Sunderland's loyalty is quieter, more resigned, more about endurance than assertion.",
     EV:"Both are clubs where suffering is real and loyalty is unconditional. Everton's is quieter. Leeds' is louder and comes with more chaos and more recent trauma. If you stew privately, Everton. If you process it loudly, Leeds.",
@@ -1626,6 +1661,7 @@ const nearlyGot = {
     CV:"Both are clubs with proud histories and fanbases that have kept the identity alive through genuinely difficult periods. Coventry's difficulty was structural and prolonged. Leeds' involved Championship years and ownership chaos. Both held on. Both believe the club should be bigger than its circumstances. Leeds fans tend to be louder about that belief.",
   },
   CH:{
+    HU:"Both of you remember what it felt like when it mattered. You remember winning, the trophies and nights that defined a generation. Hull remembers a fight, the years its fanbase spent refusing to let an owner rebrand the club out of existence. Both of you hold onto something the club used to be. You miss the winning. Hull kept the thing worth keeping.",
     MU:"Both are historically great clubs navigating decline from very recent peaks. United's identity is more rooted in legacy and status. Chelsea's is more layered, the glamour of the neighbourhood, the Abramovich transformation, the specific grief of having it taken by geopolitics.",
     AR:"Both are London clubs with prestige and a fanbase that holds its identity carefully. Arsenal's identity is principled and aesthetic. Chelsea's is more worldly, shaped by money and transformation and grief in ways Arsenal's hasn't been.",
     WH:"Both are west London clubs with complicated relationships with their own identity. West Ham's complication is the stadium move. Chelsea's is the Abramovich era and what came after. The difference is mythology: West Ham have Upton Park. Chelsea have the King's Road and 19 trophies.",
@@ -1665,6 +1701,7 @@ const nearlyGot = {
     CV:"Both are clubs where the fanbase's identity has been complicated by decisions made above them. Coventry lost their ground. Chelsea lost their owner and the certainty that came with him. Both fanbases are navigating what the club is without the defining thing that shaped it. Coventry fans held on through it. Chelsea fans are still finding out if they will.",
   },
   IT:{
+    HU:"Both of you choose belonging to something real over something famous, and neither feels small about it. You settled into that peacefully, a Suffolk identity at ease with itself. Hull arrived at the same place through a fight, when an owner tried to trade the name away for a bigger market. Both communities are rooted and unbothered by scale. Yours was never threatened. Hull's was, and it held.",
     FU:"Both are clubs that know exactly what they are and find it genuinely enough. Fulham has the character of place, Craven Cottage, the Thames, the understated history. Ipswich has the community roots in Suffolk and the Bobby Robson mythology.",
     BO:"Both are modest clubs genuinely happy to be in the Premier League and undefensive about not being Arsenal. Ipswich has the deeper historical roots and the Robson mythology. Bournemouth is simpler, smaller, and lighter about it.",
     NC:"Both are clubs where community is the whole point. Newcastle's community is louder and larger. Ipswich's is more specific, Suffolk, Portman Road, a market town that happens to have a football club.",
@@ -1706,6 +1743,7 @@ const nearlyGot = {
     CV:"Both are clubs where the local community is the whole point and always has been. Coventry is a city that kept its football club through extraordinary institutional difficulty. Ipswich is a county town that once competed in Europe and holds that memory with quiet pride. Both are examples of football genuinely belonging to its place.",
   },
   CV:{
+    HU:"Both of you kept faith through a club that kept finding ways to test it. Yours was exile, years spent playing miles from the city on the badge before you got home. Hull's was the name itself, an owner who decided the word City was bad for business. Neither of you let go of the thing that made the club yours. You got your ground back. Hull kept its name.",
     WH:"Both are clubs where institutional decisions made above the fanbase left genuine scars. West Ham's wound is the Upton Park move. Coventry's is the ground saga. Both involve a fanbase that kept showing up despite having every reason not to.",
     EV:"Both are defined by loyalty that required no reward to persist. Everton's is quiet and absorbed. Coventry's has been tested more directly by institutional failure, they didn't just wait, they kept showing up for a club that seemed to be actively dismantling what belonging meant.",
     SU:"Both are clubs defined by survival and comeback. Sunderland's fall was more dramatic. Coventry's was different, the club was there, but the home wasn't. Both are genuinely about loyalty in extremis.",
@@ -1742,6 +1780,30 @@ const nearlyGot = {
  
     CH:"Both are clubs where the fanbase's identity has been tested by decisions made above them. Chelsea's was shaped by billionaire ownership that is now gone. Coventry's was shaped by years without a proper home ground. Both fanbases navigated something that tested what the club means. Coventry's test was more basic and more prolonged.",
   },
+  HU:{
+    IT:"Both of you choose belonging to something real over something famous, and neither of you feels small about it. Ipswich arrived there peacefully, a Suffolk identity at ease with itself. You arrived through a fight, when an owner tried to trade your name away for a bigger market. Both communities are rooted and unbothered by scale. Ipswich's was never threatened. Yours was, and it held.",
+    CV:"Both of you kept faith through a club that kept finding new ways to test it. Coventry's test was exile, years spent playing miles from the city on the badge. Yours was the name itself, an owner who decided the word City was bad for business. Neither of you let go of the thing that made the club yours. Coventry got its ground back. You kept your name.",
+    SU:"Both of you stayed through the kind of collapse that empties other grounds. Sunderland stayed out of heartbreak, filling 46,000 seats in the third tier because leaving was never a real thought. You stayed out of stubbornness, refusing to be rebranded out of your own identity. Both loyalties were proven in the bad years rather than the good ones. Sunderland's is grief. Yours is defiance.",
+    NC:"Both of you want to belong to something real instead of something global, the local over the marketable. Newcastle never had to defend that, the city and the club inseparable for generations. You did, against an owner who wanted the name to travel further than the place it came from. Both of you won the argument. Newcastle by simply being. You by fighting.",
+    WH:"Both of you love a club you have also had to fight, carrying the love and the grievance at once. West Ham's fight was the move from Upton Park, the feeling of being made bigger and less itself at the same time. Yours was the rebrand, an owner trying to swap the name for a brand. Both of you stayed and fought rather than walked. West Ham lost its ground. You kept your name.",
+    EV:"For both of you, loyalty is the thing you prove when the club gives you the least, not the most. Everton's test came on the pitch, decades of waiting without once thinking of leaving. Yours came in the boardroom, an owner deciding the name was holding the club back. Both of you treat staying as the whole statement. Everton stayed through the football. You stayed through the rebrand.",
+    CP:"You are the two most rooted clubs in the league, both certain that the place is the point. Palace built that identity from nothing, manufacturing an atmosphere at a club with no trophies to lean on. You defended one you inherited, going to war to keep the name an owner wanted to sell. Both of you refused to let the club turn generic. Palace made its roots. You guarded yours.",
+    LE:"Both of you have lived proof that the impossible actually happens, and it changed how you see what is possible. Leicester's proof was a 5000-to-1 title nobody had any right to win. Yours was smaller and stranger, a fanbase that beat its own owner to keep the name on the badge. Both of you know the long shot can land. Leicester won a trophy. You won an argument that mattered more.",
+    NF:"Both of you are drawn to the stories that had no business happening. Forest's was two European Cups won from outside the top flight, the most improbable rise in the English game. Yours was quieter, a supporters' campaign overturning an owner's rebrand to keep a name dating to 1904. Both of you trust the improbable. Forest conquered Europe. You kept yourselves.",
+    LU:"Both of you are rooted and road-worn, fanbases that have been down the divisions and back. Leeds lives every high and low at full volume, the drama half the identity. You held your line more quietly, fighting to keep your name without ever making theatre of it. Both of you are unmistakably yourselves. Leeds performs it. You simply refused to be anything else.",
+    LI:"Both of you live inside the club rather than watch it from a distance, the belonging total. Liverpool's is mythology at full volume, European nights and a global Kop. Yours is narrower and more defensive, a belonging you once had to physically protect when an owner came for the name. Both of you feel it completely. Liverpool expects to win. You expect to last.",
+    MU:"Both of you guard an identity, but you guard very different things. United guards a winning past, the memory of dominance it cannot quite recreate. You guarded a name, the plain fact of being Hull City, when an owner tried to trade it for a global brand. Both of you refuse a lesser version of the club. United wants its old self back. You kept yours.",
+    MC:"You are close to opposites. The Blue Moon is the engineered global project, success built deliberately and sold to the world. You are the club offered exactly that path, an owner promising a bigger market for a smaller name, and you turned it down flat. Both of you know what global ambition looks like. City chased it. You refused it.",
+    AR:"Both of you stand on principle, the sense that there is a right way and you will not abandon it. Arsenal's principle is the method, doing it properly even when the result disagrees. Yours is identity, staying who you are even when an owner says it costs you money. Both would rather be right than convenient. Arsenal defends its style. You defended your name.",
+    CH:"Both of you remember what it felt like when it mattered, and you carry that forward. Chelsea remembers winning, the trophies and the nights that defined a generation. You remember a fight, the years your fanbase spent refusing to let an owner rebrand the club out of existence. Both of you hold onto something the club used to be. Chelsea misses the winning. You kept the thing worth keeping.",
+    SP:"Both of you hold belief and clear eyes at the same time, fully invested and fully self-aware. Spurs laughs at its own near-misses, self-deprecation as a survival skill. You refused to be laughed at, defending your name without flinching when an owner treated it as a punchline. Both of you know exactly who you are. Spurs jokes about it. You went to war over it.",
+    AV:"Both of you respect where you came from, the history and the place that made the club. Villa carries its past without being trapped by it, the old glory feeding the hunger rather than replacing it. You were ready to go to the wall for yours, refusing to let an owner sell the name off for reach. Both of you honour the roots. Villa builds on them. You defended them.",
+    BH:"Both of you have punched above your size, but by completely opposite methods. Brighton did it with a clever plan, an analytics model that turned a small club into a smart one. You did it with a flat refusal to be moved, beating an owner's rebrand through sheer collective stubbornness. Both of you proved size is not the whole story. Brighton outthought the room. You out-stubborned it.",
+    BR:"Both of you reached this level from outside the obvious path, by routes that could not differ more. Brentford outsmarted the system, building an edge from data nobody else trusted. You dug in and refused to be moved, keeping a name an owner had already decided to sell. Same league, opposite method. Brentford was the cleverest team in the room. You were the most immovable.",
+    WO:"You share the amber and the quiet pride in your own corner of England. Wolves never had to shout about it, Wolverhampton's certainty in itself never seriously questioned. You did have to shout, fighting to keep the City an owner tried to delete from your name. Both of you are proud of a place outside the spotlight. Wolves assumes it. You defended it.",
+    FU:"Both of you have made peace with not being famous, content to be exactly the size you are. Fulham's peace came easily, the gentle confidence of a club that never needed to argue about itself. Yours came after a war, an owner insisting you would be worth more as something else, and a fanbase that disagreed and won. Both of you are comfortable being yourselves. Fulham always was. You earned it.",
+    BO:"Both of you are genuinely glad to be exactly where you are, with no performance about it. Bournemouth's gladness is sunshine, the easy joy of a small south-coast club that keeps surprising itself. Yours is harder won, a club you once had to defend from an owner who wanted to rename it. Both of you are content in your own skin. Bournemouth's came free. Yours you had to fight for.",
+  },
 };
 
 // ─── SCORING MATRIX ───────────────────────────────────────────────────────────
@@ -1753,7 +1815,7 @@ const scoring = {
   // A=visible/loud → communal; B=cold/quiet → analytical/private; C=vent+forget → chaos/West Ham
   // D=process alone → analytical; E=depends → flexible/Bournemouth
   q1:{
-    A:{LI:3,NC:3,WH:2,CP:3,MU:1,SU:2,LU:3},
+    A:{LI:3,NC:3,WH:2,CP:3,MU:1,SU:2,LU:3,HU:2},
     B:{MC:3,WO:2,BR:2,EV:1,IT:2},
     C:{WH:3,NF:2,CP:2,BO:1,SP:1,LU:1,CV:1},
     D:{MC:2,BR:3,BH:2,WO:1},
@@ -1767,7 +1829,7 @@ const scoring = {
   // Q3: overlooked, reaction
   q3:{
     A:{MC:2,WO:3,BR:2,BH:1},
-    B:{AR:3,BH:2,FU:3,BR:1,IT:2},
+    B:{AR:3,BH:2,FU:3,BR:1,IT:2,HU:2},
     C:{EV:2,SP:3,MU:2,NF:1},
     D:{MC:2,BO:3,LE:2,CP:1,AV:2,CH:2},
     E:{LI:2,EV:3,NC:2,WH:1,LU:2,SU:2},
@@ -1799,7 +1861,7 @@ const scoring = {
     B:{EV:3,NF:3,LI:2,WH:1,BO:1,SU:2},
     C:{NF:2,WO:2,EV:2,FU:1,AV:2,LE:1,IT:2},
     D:{BR:3,BH:3,MC:2,AR:1},
-    E:{EV:2,MU:2,WO:2,SP:1,LU:2,CV:2},
+    E:{EV:2,MU:2,WO:2,SP:1,LU:2,CV:2,HU:3},
   },
   // Q8: place identity slider
   q8:{
@@ -1807,11 +1869,11 @@ const scoring = {
     2:{AR:2,BH:2,BO:2,CH:3},
     3:{FU:2,AV:3,LE:1,CP:1,SP:1,IT:1},
     4:{WH:2,EV:2,NF:2,NC:1,CV:2,IT:2},
-    5:{NC:3,CP:3,LI:2,WH:2,SU:3,LU:3},
+    5:{NC:3,CP:3,LI:2,WH:2,SU:3,LU:3,HU:3},
   },
   // Q9: stick with struggling group
   q9:{
-    A:{EV:2,LI:3,NC:2,CP:3,FU:1,SU:3,LU:2,IT:2,CV:3},
+    A:{EV:2,LI:3,NC:2,CP:3,FU:1,SU:3,LU:2,IT:2,CV:3,HU:3},
     B:{EV:2,MU:2,SP:2,NF:1,WH:2,AV:2,CH:1},
     C:{AR:2,BH:2,AV:3,BR:1,CH:2},
     D:{MC:2,SP:2,BO:2,LE:1},
@@ -1819,12 +1881,12 @@ const scoring = {
   },
   // Q10: part of something bigger vs excellent independently
   q10:{
-    left: {LI:3,NC:3,WH:2,CP:3,MU:2,EV:1,AV:1,BO:1},
+    left: {LI:3,NC:3,WH:2,CP:3,MU:2,EV:1,AV:1,BO:1,HU:1},
     right:{MC:2,BR:3,WO:3,AR:2,BH:1},
   },
   // Q11: relationship with the past
   q11:{
-    A:{LI:3,MU:2,NF:2,EV:1,WH:2,SU:2,IT:2,CV:2},
+    A:{LI:3,MU:2,NF:2,EV:1,WH:2,SU:2,IT:2,CV:2,HU:2},
     B:{EV:3,MU:3,SP:2,NF:1},
     C:{MU:3,EV:2,LI:2,NF:2,CP:2},
     D:{AR:2,BH:2,BR:2,AV:1,FU:2,WO:1},
@@ -1835,27 +1897,27 @@ const scoring = {
     1:{BR:2,WO:3,MC:2,BH:1},
     2:{AR:2,WO:2,FU:3,IT:2},
     3:{FU:2,BH:2,BO:2,LE:1,AV:2,CH:2},
-    4:{NC:2,EV:2,SP:2,LI:1},
+    4:{NC:2,EV:2,SP:2,LI:1,HU:2},
     5:{LI:2,NC:3,WH:3,CP:3,SU:3,LU:3},
   },
   // Q13: what winning means
   q13:{
     A:{MC:3,LI:2,MU:2,CH:2},
     B:{AR:3,BH:2,AV:3,FU:1,IT:2},
-    C:{EV:3,SP:3,NF:2,WH:2,LE:2,NC:2,SU:2,LU:2,CV:2},
+    C:{EV:3,SP:3,NF:2,WH:2,LE:2,NC:2,SU:2,LU:2,CV:2,HU:2},
     D:{BR:3,MC:2,BH:2,AV:1},
     E:{MC:2,LI:3,MU:2,CP:1,AV:2,CH:1},
   },
   // Q14: romantic underdog vs ruthless favourite
   q14:{
-    left: {NF:3,BR:2,LE:3,BO:2,FU:2,BH:1,SU:2,LU:2,IT:2,CV:3},
+    left: {NF:3,BR:2,LE:3,BO:2,FU:2,BH:1,SU:2,LU:2,IT:2,CV:3,HU:2},
     right:{MC:2,LI:2,MU:3,AR:1,EV:1,AV:2,CH:2,WH:1,NC:1},
   },
   // Q15: chaos tolerance
   q15:{
     A:{MC:3,WO:2,BR:2,AR:1},
     B:{AR:2,BH:2,WO:2,FU:2,IT:2},
-    C:{AV:3,NC:2,FU:2,BO:1,SP:1,LE:1,SU:2,CV:1},
+    C:{AV:3,NC:2,FU:2,BO:1,SP:1,LE:1,SU:2,CV:1,HU:2},
     D:{BR:3,AR:2,NF:2,BH:1},
     E:{NF:3,WH:3,LE:3,CP:2,LU:2,CH:2},
   },
@@ -1864,33 +1926,33 @@ const scoring = {
     1:{MC:2,MU:3,LI:2,CH:2},
     2:{LI:2,AR:2,MU:2,EV:1,CP:1,AV:2},
     3:{SP:3,NC:2,WH:2,AV:1,SU:2,LU:2},
-    4:{NF:2,LE:2,BO:2,WH:1,IT:2,CV:2},
+    4:{NF:2,LE:2,BO:2,WH:1,IT:2,CV:2,HU:2},
     5:{BR:2,WO:3,BH:2,LE:2},
   },
   // Q17: motivation
   q17:{
     A:{NC:3,CP:3,EV:2,MU:2,SP:2,LU:2,CV:2,SU:2,AV:2},
     B:{AR:3,BR:3,BH:2,FU:1,WO:2},
-    C:{LI:3,WH:2,NC:2,BO:2,SU:2,IT:2,LU:1},
+    C:{LI:3,WH:2,NC:2,BO:2,SU:2,IT:2,LU:1,HU:1},
     D:{LI:2,MU:2,EV:2,NF:2,SP:1,AV:2},
     E:{MC:3,LI:2,MU:1},
   },
   // Q18: journey vs results
   q18:{
-    left: {AR:3,NF:3,FU:3,BO:2,BH:2,SP:2,AV:2,SU:2,LU:2,IT:2,CV:3},
+    left: {AR:3,NF:3,FU:3,BO:2,BH:2,SP:2,AV:2,SU:2,LU:2,IT:2,CV:3,HU:2},
     right:{MC:3,LI:2,MU:2,EV:2,CP:1,AV:2,NC:1,CH:2},
   },
   // Q19: reaction to good news
   q19:{
     A:{LI:3,NC:3,WH:2,CP:3,SU:2,LU:2},
-    B:{EV:2,NF:2,FU:3,WO:1,IT:2,CV:2},
+    B:{EV:2,NF:2,FU:3,WO:1,IT:2,CV:2,HU:2},
     C:{BR:2,WO:2,AR:2,BH:1},
     D:{MC:2,AR:2,BH:2,AV:2,CH:1},
     E:{SP:3,EV:3,MU:2,NF:1,LE:1},
   },
   // Q20: blame vs fix system slider
   q20:{
-    1:{EV:3,CP:3,WH:2,MU:1,CV:2},
+    1:{EV:3,CP:3,WH:2,MU:1,CV:2,HU:2},
     2:{WH:2,LI:2,NC:2},
     3:{AR:2,AV:3,BH:2,FU:1,IT:2},
     4:{BR:2,MC:2,WO:2,AR:1},
@@ -1900,20 +1962,20 @@ const scoring = {
   q21:{
     A:{LI:3,NC:3,WH:2,CP:3,SU:2,LU:2},
     B:{EV:3,NF:3,MU:2,SU:1,CV:2},
-    C:{SP:3,MU:3,EV:2},
+    C:{SP:3,MU:3,EV:2,HU:2},
     D:{LE:3,AV:3,BH:2,BO:2,CH:1},
     E:{MC:2,BR:2,WO:2,IT:1},
   },
   // Q22: suffering private vs shared
   q22:{
     left: {EV:3,WO:3,BR:2,AR:2,FU:1,IT:2,CH:2},
-    right:{SP:3,WH:3,NF:2,LI:1,CP:2,BO:1,LE:1,AV:1,SU:3,LU:3,CV:2},
+    right:{SP:3,WH:3,NF:2,LI:1,CP:2,BO:1,LE:1,AV:1,SU:3,LU:3,CV:2,HU:1},
   },
   // Q23: payoff reaction
   q23:{
     A:{BR:3,AR:2,MC:2,BH:1,WO:2},
     B:{SP:3,EV:3,NF:2},
-    C:{LI:3,NC:2,WH:2,BO:2,SU:2},
+    C:{LI:3,NC:2,WH:2,BO:2,SU:2,HU:1},
     D:{MC:2,MU:2,AR:1},
     E:{LE:3,NF:2,AV:3,SP:2,FU:1},
   },
@@ -1922,17 +1984,17 @@ const scoring = {
     1:{BR:3,MC:2,BH:2,WO:1},
     2:{AR:2,BH:2,FU:2,CH:2},
     3:{AV:3,BO:2,BH:1,LE:2,IT:2,CH:1},
-    4:{SP:2,LE:2,NC:2,LI:1,SU:2,LU:2,CV:2},
+    4:{SP:2,LE:2,NC:2,LI:1,SU:2,LU:2,CV:2,HU:1},
     5:{SP:3,EV:3,NF:2,LI:2,CV:1},
   },
   // Q25: story matters vs result only (key intra-cluster discriminator)
   q25:{
-    left: {NF:3,AR:3,LI:2,LE:2,FU:2,BO:1,AV:2,SU:2,LU:2,IT:2,CV:2},
+    left: {NF:3,AR:3,LI:2,LE:2,FU:2,BO:1,AV:2,SU:2,LU:2,IT:2,CV:2,HU:2},
     right:{MC:2,MU:3,CP:2,EV:2,BR:1,SP:2,WH:1,CH:2},
   },
   // Q26: relationship with being right
   q26:{
-    A:{NC:2,MU:2,WH:2,CP:2,AV:2,SU:2,LU:2,CV:2},
+    A:{NC:2,MU:2,WH:2,CP:2,AV:2,SU:2,LU:2,CV:2,HU:2},
     B:{WO:3,BR:3,BH:2,FU:1,IT:2},
     C:{MC:2,EV:2,CP:2,LI:1,MU:2,CH:2},
     D:{BR:3,BH:3,AR:2,MC:1},
@@ -1942,26 +2004,26 @@ const scoring = {
   q27:{
     1:{FU:3,BO:3,BH:2},
     2:{FU:2,BO:2,AR:2,BH:1,IT:2},
-    3:{AV:2,NC:2,WH:2,SU:2,CV:2,LU:1},
+    3:{AV:2,NC:2,WH:2,SU:2,CV:2,LU:1,HU:1},
     4:{LI:2,MU:2,EV:2,SP:2,AV:2,LU:2,CH:2},
     5:{MC:3,LI:2,MU:3,AR:1,WO:2,CH:2},
   },
   // Q28: what stings most (key intra-cluster: Spurs/Arsenal/EV/Man Utd split)
   q28:{
     A:{MC:3,LI:2,MU:2,AR:1,AV:2,CH:2},
-    B:{NC:3,CP:3,WH:2,MU:2,LE:1,LU:2},
+    B:{NC:3,CP:3,WH:2,MU:2,LE:1,LU:2,HU:2},
     C:{SP:3,AR:3,EV:2,NF:1,LE:2,FU:2,CV:1},
     D:{LI:2,EV:3,NC:2,WH:2,SU:2,CV:3},
     E:{BR:3,BH:3,AR:2,WO:1,IT:2},
   },
   // Q29: one moment vs sustained excellence (key discriminator: LE/NF/Forest vs MC/LI)
   q29:{
-    left: {LE:3,NF:3,SP:3,WH:2,BO:2,CP:1,AV:1,SU:2,LU:2,IT:2,CV:2},
+    left: {LE:3,NF:3,SP:3,WH:2,BO:2,CP:1,AV:1,SU:2,LU:2,IT:2,CV:2,HU:2},
     right:{MC:3,LI:2,MU:2,AR:2,EV:1,NC:2,AV:2,CH:2},
   },
   // Q30: defining phrase
   q30:{
-    A:{LI:3,EV:2,MU:2,NF:1,FU:2,SU:2,CH:2,LU:1},
+    A:{LI:3,EV:2,MU:2,NF:1,FU:2,SU:2,CH:2,LU:1,HU:1},
     B:{AV:3,NC:3,BH:2,AR:1,LE:3,SU:1},
     C:{SP:3,EV:3,NF:2,WH:1},
     D:{MC:3,BR:3,AR:1,CH:1,IT:1},
@@ -1972,14 +2034,14 @@ const scoring = {
   // left=private → WO,BR,FU,IT; right=acknowledged → NC,LU,SU,MU,CP,AV
   q31:{
     left: {WO:3,BR:3,FU:2,IT:3,BH:2,MC:1,BO:2},
-    right:{NC:2,LU:3,SU:2,MU:2,CP:2,AV:2,LI:1,CV:1,CH:2},
+    right:{NC:2,LU:3,SU:2,MU:2,CP:2,AV:2,LI:1,CV:1,CH:2,HU:1},
   },
   // Q32: institution betrayal reaction
   // A=leave → CH (pre-Abramovich fans some left); B=carry anger+love → WH,CV,SU; 
   // C=understand complexity → FU,AR; D=fix from inside → AV,BH; E=separate thing from inst. → NF,LE,LI
   q32:{
     A:{CH:3,MC:1},
-    B:{WH:3,CV:3,SU:3,LU:2,NC:1},
+    B:{WH:3,CV:3,SU:3,LU:2,NC:1,HU:3},
     C:{FU:2,AR:2,BH:2,AV:1},
     D:{AV:3,BH:2,BR:2,IT:1},
     E:{NF:2,LE:3,LI:2,EV:2,SP:1},
@@ -1987,7 +2049,7 @@ const scoring = {
   // Q33: tight/local vs vast/collective belonging
   // left=local → CP,WH,CV,IT,FU,WO; right=vast → LI,NC,SU,LU,MU
   q33:{
-    left: {CP:3,WH:3,CV:3,IT:3,FU:2,WO:2,BR:2,BO:2},
+    left: {CP:3,WH:3,CV:3,IT:3,FU:2,WO:2,BR:2,BO:2,HU:3},
     right:{LI:2,NC:3,SU:2,LU:2,MU:2,EV:1,CH:2},
   },
   // Q34: absence of ambition
@@ -1995,20 +2057,20 @@ const scoring = {
   q34:{
     A:{FU:3,BO:3,IT:2,BH:2},
     B:{MC:3,MU:2,LU:2,CH:2,AR:1},
-    C:{CV:3,WH:2,SU:2,NF:1},
+    C:{CV:3,WH:2,SU:2,NF:1,HU:3},
     D:{AV:2,NC:2,BR:2,BH:2},
     E:{AR:2,SP:2,LE:3,EV:1},
   },
   // Q35: thing itself is enough vs needs bigger story
   // left=thing itself → BO,FU,CP,IT,WO; right=bigger story → LI,NF,MU,SU,LU,EV
   q35:{
-    left: {BO:3,FU:3,CP:2,IT:3,WO:2,BR:2,BH:2},
+    left: {BO:3,FU:3,CP:2,IT:3,WO:2,BR:2,BH:2,HU:3},
     right:{LI:3,NF:3,MU:2,SU:2,LU:2,EV:2,AR:1,CV:1},
   },
   // Q36: relationship with the improbable
   // A=seen it/evidence → LE,SU; B=believe without proof → SP,EV,CV; C=drawn to stories → NF,AR; D=useful concept → AV,BH,BR; E=don't think in those terms → MC,WO,FU
   q36:{
-    A:{LE:3,SU:3,CV:2,LU:2},
+    A:{LE:3,SU:3,CV:2,LU:2,HU:2},
     B:{SP:3,EV:3,NF:2,CV:2},
     C:{NF:3,AR:2,LU:2,IT:1},
     D:{AV:2,BH:2,BR:2,AR:1},
@@ -2017,14 +2079,14 @@ const scoring = {
   // Q37: place vs story for belonging
   // left=place → NC,CP,WH,CV,WO,IT,FU,SU; right=story → LI,NF,MU,EV,LU,AR
   q37:{
-    left: {NC:3,CP:3,WH:3,CV:3,WO:2,IT:3,FU:2,SU:2,BO:1,CH:1},
+    left: {NC:3,CP:3,WH:3,CV:3,WO:2,IT:3,FU:2,SU:2,BO:1,CH:1,HU:3},
     right:{LI:2,NF:3,MU:2,EV:2,LU:2,AR:2,CH:1},
   },
   // Q38: holding belief and self-awareness together
   // A=everyone does this → BO,FU; B=specific skill developed → SP,SU,CV,EV; C=exhausting → MC,WO,BR; D=strategic belief → AV,CH,AR; E=both coexist without reconciling → NF,LE,LU,SP
   q38:{
     A:{BO:2,FU:2,IT:2,NC:1},
-    B:{SP:3,SU:3,CV:3,EV:2,WH:1},
+    B:{SP:3,SU:3,CV:3,EV:2,WH:1,HU:1},
     C:{MC:2,WO:2,BR:2,BH:1},
     D:{AV:3,CH:3,AR:2,BR:1},
     E:{NF:3,LE:3,LU:3,SP:2,EV:1},
@@ -2055,6 +2117,7 @@ const teamDims = {
   CH:{loyalty:5, emotion:6, ambition:8, process:5, community:3, chaos:7, rootedness:5},
   IT:{loyalty:8, emotion:6, ambition:5, process:5, community:8, chaos:4, rootedness:9},
   CV:{loyalty:9, emotion:7, ambition:5, process:4, community:7, chaos:5, rootedness:8},
+  HU:{loyalty:9, emotion:6, ambition:4, process:3, community:8, chaos:6, rootedness:10},
 };
 
 const DIM_LABELS = {
@@ -2068,7 +2131,7 @@ const DIM_COLORS = {loyalty:"#d4a44e",emotion:"#d6685c",ambition:"#c46c96",proce
 const DIM_CODES  = {loyalty:"LOY",emotion:"EMO",ambition:"AMB",process:"PRO",community:"COM",chaos:"CHA",rootedness:"ROO"};
 const DIM_ORDER  = ["loyalty","emotion","ambition","process","community","chaos","rootedness"];
 // Approved badge map. null = intentional monogram (the 2-letter code).
-const CARD_BADGES = {LI:null,AR:null,MC:"🚢",EV:"🍬",NC:"🐦‍⬛",MU:"🔱",SP:"🐓",FU:"🏡",CH:"🦁",IT:"🚜",LU:"🦚",CV:"☁️",AV:"🍷",CP:"🦅",LE:"🦊",NF:"🌲",BR:"🐝",BH:"🐦",WO:"🐺",BO:"🍒",SU:"🐱",WH:"⚒️"};
+const CARD_BADGES = {LI:null,AR:null,MC:"🚢",EV:"🍬",NC:"🐦‍⬛",MU:"🔱",SP:"🐓",FU:"🏡",CH:"🦁",IT:"🚜",LU:"🦚",CV:"☁️",AV:"🍷",CP:"🦅",LE:"🦊",NF:"🌲",BR:"🐝",BH:"🐦",WO:"🐺",BO:"🍒",SU:"🐱",WH:"⚒️",HU:"🐯"};
 // Generic shape emojis vanish on a same-colour roundel: always monogram instead.
 const GENERIC_EMOJI = new Set(["🔴","🔵","⚫","⚪","🩵","🟡","🟢","🟣","🟠","🟤","🔶","🔷"]);
 
