@@ -7,6 +7,8 @@ import { scoreCore, scoreModule } from "./lib/scoring";
 import { loadState, saveResult, clearAll } from "./lib/storage";
 import { generateShareCard } from "./lib/card";
 import { ChoiceQ, BinaryQ, SliderQ, DimBars, BadgeImg } from "./components/quiz";
+import { GenomeHome } from "./screens/Genome";
+import { SPORTS } from "./lib/manifest";
 
 export default function App(){
   const [cur,setCur]=useState(0);
@@ -17,6 +19,8 @@ export default function App(){
   const [tab,setTab]=useState("result");
   const [mode,setMode]=useState("full");        // "full" = core+module ; "module" = PL module only
   const [savedCore,setSavedCore]=useState(null); // cached {coreAnswers,coreProfile} for module-only retakes
+  const [screen,setScreen]=useState("home");     // "home" | "quiz" | "result" - the genome home is the landing page
+  const [genome,setGenome]=useState({});         // saved results map { PL:{club} } - drives the home strands + share string
   const containerRef=useRef(null);
 
   // The active question run. First time: 24 core + 14 PL module = 38, in the v1 order.
@@ -37,9 +41,12 @@ export default function App(){
   const phaseStart=sequence.findIndex(p=>p.phase===currentPhase);
   const phaseLen=sequence.filter(p=>p.phase===currentPhase).length;
 
-  // Resume a previously completed PL genome (returning visitor only; first-timers are unaffected).
+  // Resume a previously completed PL genome. The result is PRELOADED so the completed
+  // strand on the home screen is tappable straight to it, but we stay on the home screen
+  // (the landing page) rather than jumping into the result. First-timers are unaffected.
   useEffect(()=>{
     const st=loadState();
+    setGenome(st.results||{});
     if(st.results&&st.results.PL&&st.results.PL.club){
       setSavedCore({coreAnswers:st.coreAnswers,coreProfile:st.coreProfile});
       setScores(st.results.PL.scores||null);
@@ -50,6 +57,7 @@ export default function App(){
   // Keyboard handler
   useEffect(()=>{
     const h=(e)=>{
+      if(screen!=="quiz") return;
       if(result) return;
       if(q.type==="choice"){
         const n=parseInt(e.key);
@@ -64,7 +72,7 @@ export default function App(){
     };
     window.addEventListener("keydown",h);
     return()=>window.removeEventListener("keydown",h);
-  },[cur,q,result]);
+  },[cur,q,result,screen]);
 
   function handleSelect(val){
     const na={...answers,[q.id]:val};
@@ -89,6 +97,8 @@ export default function App(){
       const { club, scores:s } = scoreModule("PL", { coreProfile, coreAnswers, moduleAnswers });
       setScores(s);
       setResult(club);
+      setScreen("result");
+      setGenome(g=>({...g,PL:{club}}));
       track("quiz_completed",{club});
       saveResult("PL",{coreAnswers,coreProfile,club,moduleAnswers,scores:s});
     }
@@ -102,10 +112,11 @@ export default function App(){
 
   function startOver(){
     clearAll();
-    setMode("full");setSavedCore(null);
+    setMode("full");setSavedCore(null);setGenome({});
     setPhase("out");
     setTimeout(()=>{
-      setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");setPhase("in");
+      setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");
+      setScreen("home");setPhase("in");
     },160);
   }
   // Redo just the PL module; keep the already-sequenced core. Falls back to a full
@@ -117,8 +128,31 @@ export default function App(){
     setMode("module");
     setPhase("out");
     setTimeout(()=>{
-      setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");setPhase("in");
+      setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");
+      setScreen("quiz");setPhase("in");
     },160);
+  }
+  // Start a sport from the home screen (a live, untaken strand). Today only PL is live.
+  // If the shared core is already sequenced, run just that sport's module; else run the full set.
+  function startSport(){
+    const st=loadState();
+    if(st.coreAnswers){
+      setSavedCore({coreAnswers:st.coreAnswers,coreProfile:st.coreProfile});
+      setMode("module");
+    } else {
+      setSavedCore(null);
+      setMode("full");
+    }
+    setPhase("out");
+    setTimeout(()=>{
+      setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");
+      setScreen("quiz");setPhase("in");
+    },160);
+  }
+  // Open a completed sport's result from the home screen. Today only PL has a result screen.
+  function openResult(){
+    setTab("result");
+    setScreen("result");
   }
 
   const team=result?teams[result]:null;
@@ -174,6 +208,17 @@ export default function App(){
   const ng = result ? (nearlyGot[result]||{}) : {};
   const nearClubs = sortedOthers.slice(0,4).map(([k])=>k).filter(k=>teams[k]);
 
+  // ── Home-screen data, all manifest-driven ─────────────────────────────────
+  // The share string lists every sport in the manifest: a completed one shows its club
+  // code, every other shows "?". Adding a sport later extends this automatically.
+  const shareString = "FanDNA: " + SPORTS.map(s=>{
+    const r=genome[s.code];
+    return `${s.code}-${(r&&r.club)?r.club:"?"}`;
+  }).join(" · ");
+  const coreSequenced = Object.keys(genome).length>0;
+  const coreCount = coreQuestions.length;
+  const moduleCounts = { PL: moduleQuestions.length };  // future sports add their own count here
+
   return(
     <div ref={containerRef} style={{
       minHeight:"100vh",
@@ -190,6 +235,7 @@ export default function App(){
         @keyframes slideOut {from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-8px)}}
         @keyframes popIn    {0%{opacity:0;transform:scale(.94)}60%{transform:scale(1.01)}100%{opacity:1;transform:scale(1)}}
         @keyframes fadeIn   {from{opacity:0}to{opacity:1}}
+        @keyframes strandPulse {0%,100%{border-color:#3a3a50}50%{border-color:#6a6a90}}
         *{box-sizing:border-box}
         ::-webkit-scrollbar{width:3px}
         ::-webkit-scrollbar-track{background:#16161e}
@@ -208,8 +254,26 @@ export default function App(){
         animation:`${phase==="out"?"slideOut":"slideIn"} .22s ease forwards`,
       }}>
 
+        {/* ── GENOME HOME (landing page) ── */}
+        {screen==="home"&&(
+          <GenomeHome
+            sports={SPORTS}
+            genome={genome}
+            teams={teams}
+            archetypes={archetypes}
+            badgeUrls={badgeUrls}
+            teamTextColors={teamTextColors}
+            coreSequenced={coreSequenced}
+            coreCount={coreCount}
+            moduleCounts={moduleCounts}
+            shareString={shareString}
+            onOpenResult={openResult}
+            onStartSport={startSport}
+          />
+        )}
+
         {/* ── QUIZ ── */}
-        {!result&&(
+        {screen==="quiz"&&(
           <>
             {/* Progress: six-segment phase tracker (in-flow, not jammed to viewport top) */}
             <div style={{display:"flex",gap:3,height:4,marginBottom:24}}>
@@ -283,8 +347,21 @@ export default function App(){
         )}
 
         {/* ── RESULT ── */}
-        {result&&(
+        {screen==="result"&&result&&(
           <div style={{animation:"popIn .45s cubic-bezier(.2,.8,.3,1) both",background:`linear-gradient(160deg,${team.color}06 0%,transparent 40%)`,borderRadius:12,padding:"4px"}}>
+
+            {/* Back to the genome home */}
+            <div style={{marginBottom:14}}>
+              <button onClick={()=>setScreen("home")}
+                style={{
+                  background:"none",border:"none",padding:0,
+                  color:"#9898b8",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",
+                  fontFamily:"'DM Mono',monospace",cursor:"pointer",transition:"color .15s",
+                }}
+                onMouseEnter={e=>e.currentTarget.style.color="#ccc"}
+                onMouseLeave={e=>e.currentTarget.style.color="#9898b8"}
+              >← genome</button>
+            </div>
 
             {/* Club header */}
             <div style={{marginBottom:20,paddingBottom:20,borderBottom:"1px solid #0f0f1a"}}>
