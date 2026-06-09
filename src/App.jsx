@@ -422,7 +422,7 @@ export default function App(){
                   <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:12}}>Share your genome</div>
                   <button
                     onClick={async()=>{
-                      const caption=`Which club are you, really? Turns out I'm ${team.name}, ${archetypes[result]}. FanDNA: PL-${result}. Find yours: fandna.vercel.app`;
+                      const caption=`Which club are you, really? Turns out I'm ${team.name}, ${archetypes[result]}. ${shareString}. Find yours: fandna.vercel.app`;
                       let blob=null;
                       try{blob=await generateShareCard(result);}catch(e){blob=null;}
                       if(blob&&navigator.canShare){
