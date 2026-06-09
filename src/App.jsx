@@ -876,6 +876,13 @@ const greats = {
     {name:"Dion Dublin",     years:"1994-1998", note:"Scored 62 goals in four seasons and was the attacking engine of the Ron Atkinson sides that kept Coventry competitive in the Premier League. Voted the club's greatest player in a fan poll."},
     {name:"Robbie Keane",    years:"1997-1999", note:"The teenage striker who announced himself at Highfield Road before the big clubs came calling. Two seasons of genuine brilliance that gave Coventry fans something to point to during the difficult years that followed."},
   ],
+  HU:[
+    {name:"Ken Wagstaff", years:"1964-1976", note:"Voted the greatest Tiger of all time at the club's 2005 centenary. His goals, and his strike partnership with Chris Chilton, powered the finest Hull side of the 1960s."},
+    {name:"Chris Chilton", years:"1960-1971", note:"The club's all-time leading scorer with 222 goals, a homegrown centre-forward who tormented defences through the 1960s. A record that may never be beaten."},
+    {name:"Dean Windass", years:"1991-1995, 2007-2009", note:"The hometown striker whose volley in the 2008 playoff final at Wembley took Hull into the top flight for the first time in the club's history. A local lad delivering the single biggest moment the Tigers have ever had."},
+    {name:"Andy Davidson", years:"1952-1968", note:"579 appearances across sixteen years, a club record that still stands. The one-club servant whose loyalty is exactly the kind this club is built on."},
+    {name:"Raich Carter", years:"1948-1952", note:"The player-manager who won the Third Division North title in his first season and stayed on despite better offers elsewhere. A street in the city still carries his name."},
+  ],
 };
 
 const vitalStats = {
@@ -2220,6 +2227,7 @@ const badgeUrls = {
   CH:"https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg",
   IT:"https://upload.wikimedia.org/wikipedia/en/4/43/Ipswich_Town.svg",
   CV:"",
+  HU:"https://upload.wikimedia.org/wikipedia/en/2/20/Hull_City_Crest_2014.svg",
 };
 
 const squadUrls = {
@@ -2245,6 +2253,7 @@ const squadUrls = {
   CH:"https://www.premierleague.com/en/clubs/8/chelsea/squad",
   IT:"https://www.premierleague.com/en/clubs/40/ipswich-town/squad",
   CV:"https://www.premierleague.com/en/clubs/57/coventry-city/squad",
+  HU:"https://www.premierleague.com/en/clubs/88/hull-city/squad",
 };
 
 // ─── HELPERS ──────────────────────────────────────────────────────────────────
