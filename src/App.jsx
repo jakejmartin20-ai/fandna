@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { track } from "@vercel/analytics";
-import { questions, teams, archetypes, teamTextColors, greats, vitalStats, nearlyGot, badgeUrls, squadUrls } from "./data/pl";
-import { getAllScores, phaseScores, maxSingleAward } from "./lib/scoring";
+import { coreQuestions } from "./data/core";
+import { moduleQuestions, teams, archetypes, teamTextColors, greats, vitalStats, nearlyGot, badgeUrls, squadUrls } from "./data/pl";
+import { scoreCore, scoreModule } from "./lib/scoring";
+import { loadState, saveResult, clearAll } from "./lib/storage";
 import { generateShareCard } from "./lib/card";
 import { ChoiceQ, BinaryQ, SliderQ, DimBars, BadgeImg } from "./components/quiz";
 
@@ -13,17 +15,37 @@ export default function App(){
   const [result,setResult]=useState(null);
   const [phase,setPhase]=useState("in");
   const [tab,setTab]=useState("result");
+  const [mode,setMode]=useState("full");        // "full" = core+module ; "module" = PL module only
+  const [savedCore,setSavedCore]=useState(null); // cached {coreAnswers,coreProfile} for module-only retakes
   const containerRef=useRef(null);
 
-  const q=questions[cur];
-  const pct=Math.round((cur/questions.length)*100);
+  // The active question run. First time: 24 core + 14 PL module = 38, in the v1 order.
+  // Module-only retake: just the 14 PL questions (the core is already sequenced).
+  const sequence=useMemo(
+    ()=> mode==="module" ? moduleQuestions : [...coreQuestions, ...moduleQuestions],
+    [mode]
+  );
+  const coreIds=useMemo(()=>new Set(coreQuestions.map(p=>p.id)),[]);
+
+  const q=sequence[cur];
+  const pct=Math.round((cur/sequence.length)*100);
   const currentPhase=q?.phase;
 
-  // Six-segment phase tracker: frames the quiz as short chapters, not 38 questions.
-  const phaseOrder=[...new Set(questions.map(p=>p.phase))];
+  // Phase tracker: frames the quiz as short chapters.
+  const phaseOrder=[...new Set(sequence.map(p=>p.phase))];
   const phaseIdx=phaseOrder.indexOf(currentPhase);
-  const phaseStart=questions.findIndex(p=>p.phase===currentPhase);
-  const phaseLen=questions.filter(p=>p.phase===currentPhase).length;
+  const phaseStart=sequence.findIndex(p=>p.phase===currentPhase);
+  const phaseLen=sequence.filter(p=>p.phase===currentPhase).length;
+
+  // Resume a previously completed PL genome (returning visitor only; first-timers are unaffected).
+  useEffect(()=>{
+    const st=loadState();
+    if(st.results&&st.results.PL&&st.results.PL.club){
+      setSavedCore({coreAnswers:st.coreAnswers,coreProfile:st.coreProfile});
+      setScores(st.results.PL.scores||null);
+      setResult(st.results.PL.club);
+    }
+  },[]);
 
   // Keyboard handler
   useEffect(()=>{
@@ -48,36 +70,27 @@ export default function App(){
     const na={...answers,[q.id]:val};
     setAnswers(na);
     if(Object.keys(answers).length===0) track("quiz_started");
-    if(cur+1<questions.length){
-      const nextPhase=questions[cur+1].phase;
+    if(cur+1<sequence.length){
+      const nextPhase=sequence[cur+1].phase;
       if(nextPhase!==q.phase) track("quiz_phase",{phase:nextPhase});
       setPhase("out");
       setTimeout(()=>{setCur(c=>c+1);setPhase("in");},220);
     } else {
-      const s=getAllScores(na);
-      // Assignment: top score wins. Ties break on the final phase ("What it comes
-      // down to"), then on the strongest single-answer pull, then teams{} order.
-      const max=Math.max(...Object.values(s));
-      let tied=Object.keys(s).filter(k=>s[k]===max);
-      let top;
-      if(tied.length===1){
-        top=tied[0];
-      } else {
-        const finalPhase=questions[questions.length-1].phase;
-        const dec=phaseScores(na,finalPhase);
-        const decMax=Math.max(...tied.map(k=>dec[k]));
-        let dtied=tied.filter(k=>dec[k]===decMax);
-        if(dtied.length===1){
-          top=dtied[0];
-        } else {
-          const single=maxSingleAward(na);
-          const sMax=Math.max(...dtied.map(k=>single[k]));
-          top=dtied.filter(k=>single[k]===sMax)[0];
-        }
-      }
+      // Two-stage scoring. Split the answers into the shared core and the PL module.
+      // On a module-only retake the core comes from the already-saved genome.
+      const coreAnswers = mode==="module"
+        ? (savedCore?savedCore.coreAnswers:{})
+        : Object.fromEntries(Object.entries(na).filter(([k])=>coreIds.has(k)));
+      const moduleAnswers = Object.fromEntries(Object.entries(na).filter(([k])=>!coreIds.has(k)));
+      const coreProfile = (mode==="module" && savedCore && savedCore.coreProfile)
+        ? savedCore.coreProfile
+        : scoreCore(coreAnswers);
+      // PL's module reproduces the exact v1 assignment (full matrix + tie-break).
+      const { club, scores:s } = scoreModule("PL", { coreProfile, coreAnswers, moduleAnswers });
       setScores(s);
-      setResult(top);
-      track("quiz_completed",{club:top});
+      setResult(club);
+      track("quiz_completed",{club});
+      saveResult("PL",{coreAnswers,coreProfile,club,moduleAnswers,scores:s});
     }
   }
 
@@ -87,7 +100,21 @@ export default function App(){
     setTimeout(()=>{setCur(c=>c-1);setPhase("in");},220);
   }
 
-  function restart(){
+  function startOver(){
+    clearAll();
+    setMode("full");setSavedCore(null);
+    setPhase("out");
+    setTimeout(()=>{
+      setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");setPhase("in");
+    },160);
+  }
+  // Redo just the PL module; keep the already-sequenced core. Falls back to a full
+  // run if no saved core exists (e.g. a genome saved before this version).
+  function retakeModule(){
+    const st=loadState();
+    if(!st.coreAnswers){ startOver(); return; }
+    setSavedCore({coreAnswers:st.coreAnswers,coreProfile:st.coreProfile});
+    setMode("module");
     setPhase("out");
     setTimeout(()=>{
       setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");setPhase("in");
@@ -227,7 +254,7 @@ export default function App(){
                   {phaseShortNames[currentPhase]||currentPhase}
                 </span>
                 <span style={{fontSize:10,color:"#aaa",letterSpacing:"0.15em",fontFamily:"'DM Mono',monospace"}}>
-                  {cur+1}/{questions.length}
+                  {cur+1}/{sequence.length}
                 </span>
               </div>
             </div>
@@ -236,7 +263,7 @@ export default function App(){
             {cur===0&&(
               <div style={{textAlign:"center",marginBottom:26}}>
                 <div style={{fontSize:11,color:"#7878a0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:10}}>Which club are you, really?</div>
-                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(14px,3.4vw,17px)",color:"#9898b8",lineHeight:1.55,margin:0}}>38 questions, no football knowledge needed. New to the league or loyal for life, this is the club in your DNA.</p>
+                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(14px,3.4vw,17px)",color:"#9898b8",lineHeight:1.55,margin:0}}>{mode==="module"?`Your core DNA is already sequenced. ${moduleQuestions.length} questions to remap your Premier League strand.`:"38 questions, no football knowledge needed. New to the league or loyal for life, this is the club in your DNA."}</p>
               </div>
             )}
 
@@ -503,12 +530,17 @@ export default function App(){
             )}
 
             
-            <div style={{marginTop:32,textAlign:"center"}}>
-              <button onClick={restart}
+            <div style={{marginTop:32,textAlign:"center",display:"flex",gap:14,justifyContent:"center",flexWrap:"wrap"}}>
+              <button onClick={retakeModule}
                 style={{background:"none",border:"1px solid #444",borderRadius:5,padding:"9px 22px",color:"#bbb",fontSize:11,letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",cursor:"pointer",transition:"all .15s"}}
                 onMouseEnter={e=>{e.currentTarget.style.borderColor="#888";e.currentTarget.style.color="#aaa";}}
                 onMouseLeave={e=>{e.currentTarget.style.borderColor="#252535";e.currentTarget.style.color="#666";}}
-              >retake</button>
+              >retake PL</button>
+              <button onClick={startOver}
+                style={{background:"none",border:"1px solid #444",borderRadius:5,padding:"9px 22px",color:"#bbb",fontSize:11,letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",cursor:"pointer",transition:"all .15s"}}
+                onMouseEnter={e=>{e.currentTarget.style.borderColor="#888";e.currentTarget.style.color="#aaa";}}
+                onMouseLeave={e=>{e.currentTarget.style.borderColor="#252535";e.currentTarget.style.color="#666";}}
+              >start over</button>
             </div>
 
             {/* Support + feedback footer (off the newcomer's critical path) */}
