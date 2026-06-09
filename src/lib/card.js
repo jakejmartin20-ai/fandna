@@ -1,5 +1,6 @@
-// FanDNA share-card rendering — canvas helpers + generateShareCard, verbatim from App.jsx (Phase 1).
+// FanDNA share-card rendering, canvas helpers + generateShareCard, verbatim from App.jsx (Phase 1).
 import { teams, teamDims, archetypes, CARD_BADGES, GENERIC_EMOJI, DIM_COLORS, DIM_CODES, DIM_ORDER } from "../data/pl";
+import { SPORTS } from "../lib/manifest";
 
 function hexToRgb(h){h=h.replace("#","");return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
 function relLum(rgb){const f=v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);};return 0.2126*f(rgb[0])+0.7152*f(rgb[1])+0.0722*f(rgb[2]);}
@@ -56,7 +57,10 @@ async function generateShareCard(key){
     roundRectPath(x,lx+10,by,laneW-20,4,3);x.fillStyle="rgba(255,255,255,0.35)";x.fill();
   });
   const seqY=laneTop+laneH+62;x.textAlign="center";
-  drawTracked(x,"FanDNA: PL-"+key,cx,seqY,"400 42px 'DM Mono',monospace","#d6d2ca",2);
+  const seq="FanDNA: "+SPORTS.map(s=>`${s.code}-${s.code==="PL"?key:"?"}`).join(" · ");
+  let seqSz=42,seqFont="400 42px 'DM Mono',monospace";
+  do{seqFont="400 "+seqSz+"px 'DM Mono',monospace";x.font=seqFont;if(trackedWidth(x,seq,2)<=960)break;seqSz-=2;}while(seqSz>22);
+  drawTracked(x,seq,cx,seqY,seqFont,"#d6d2ca",2);
   x.font="italic 40px 'Cormorant Garamond',serif";x.fillStyle="#9898b8";x.fillText("Which club are you, really?",cx,seqY+62);
   drawTracked(x,"fandna.vercel.app",cx,seqY+112,"400 24px 'DM Mono',monospace","#7878a0",3);
   return await new Promise(res=>cv.toBlob(res,"image/png"));
