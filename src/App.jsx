@@ -220,11 +220,10 @@ export default function App(){
   const moduleCounts = { PL: moduleQuestions.length };  // future sports add their own count here
 
   return(
-    <div ref={containerRef} style={{
-      minHeight:"100vh",
+    <div ref={containerRef} className="app-root" style={{
       background:"#16161e",
       display:"flex",alignItems:"center",justifyContent:"center",
-      padding:"52px 20px",
+      padding:"32px 20px",
       fontFamily:"'Georgia','Times New Roman',serif",
       position:"relative",
     }}>
@@ -236,6 +235,8 @@ export default function App(){
         @keyframes popIn    {0%{opacity:0;transform:scale(.94)}60%{transform:scale(1.01)}100%{opacity:1;transform:scale(1)}}
         @keyframes fadeIn   {from{opacity:0}to{opacity:1}}
         @keyframes strandPulse {0%,100%{border-color:#3a3a50}50%{border-color:#6a6a90}}
+        html,body{margin:0;overscroll-behavior:none}
+        .app-root{min-height:100vh;min-height:100dvh}
         *{box-sizing:border-box}
         ::-webkit-scrollbar{width:3px}
         ::-webkit-scrollbar-track{background:#16161e}
@@ -275,6 +276,10 @@ export default function App(){
         {/* ── QUIZ ── */}
         {screen==="quiz"&&(
           <>
+            {/* League indicator: which sequence you're taking, always visible */}
+            <div style={{textAlign:"center",marginBottom:14,fontSize:11,color:"#7878a0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>
+              {(SPORTS.find(s=>s.code==="PL")||{}).name||"Premier League"}
+            </div>
             {/* Progress: six-segment phase tracker (in-flow, not jammed to viewport top) */}
             <div style={{display:"flex",gap:3,height:4,marginBottom:24}}>
               {phaseOrder.map((ph,i)=>{
@@ -327,7 +332,7 @@ export default function App(){
             {cur===0&&(
               <div style={{textAlign:"center",marginBottom:26}}>
                 <div style={{fontSize:11,color:"#7878a0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:10}}>Which club are you, really?</div>
-                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(14px,3.4vw,17px)",color:"#9898b8",lineHeight:1.55,margin:0}}>{mode==="module"?`Your core DNA is already sequenced. ${moduleQuestions.length} questions to remap your Premier League strand.`:"38 questions, no football knowledge needed. New to the league or loyal for life, this is the club in your DNA."}</p>
+                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(14px,3.4vw,17px)",color:"#9898b8",lineHeight:1.55,margin:0}}>{mode==="module"?`Your core DNA is already sequenced. ${moduleQuestions.length} questions to remap your Premier League strand.`:"Answer honestly, not how you wish you were. New to the league or loyal for life, this is the club in your DNA."}</p>
               </div>
             )}
 
@@ -350,8 +355,8 @@ export default function App(){
         {screen==="result"&&result&&(
           <div style={{animation:"popIn .45s cubic-bezier(.2,.8,.3,1) both",background:`linear-gradient(160deg,${team.color}06 0%,transparent 40%)`,borderRadius:12,padding:"4px"}}>
 
-            {/* Back to the genome home */}
-            <div style={{marginBottom:14}}>
+            {/* Back to the genome home + league indicator */}
+            <div style={{marginBottom:14,display:"flex",justifyContent:"space-between",alignItems:"center"}}>
               <button onClick={()=>setScreen("home")}
                 style={{
                   background:"none",border:"none",padding:0,
@@ -361,6 +366,9 @@ export default function App(){
                 onMouseEnter={e=>e.currentTarget.style.color="#ccc"}
                 onMouseLeave={e=>e.currentTarget.style.color="#9898b8"}
               >← genome</button>
+              <span style={{fontSize:11,color:"#7878a0",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>
+                {(SPORTS.find(s=>s.code==="PL")||{}).name||"Premier League"}
+              </span>
             </div>
 
             {/* Club header */}
@@ -374,7 +382,7 @@ export default function App(){
                   <div style={{display:"flex",alignItems:"center",gap:10,flexWrap:"wrap",marginBottom:4}}>
                     <h1 style={{fontFamily:"'Cormorant Garamond',Georgia,serif",margin:0,fontSize:"clamp(26px,6vw,38px)",fontWeight:300,color:"#e8e4de",letterSpacing:"-.02em",lineHeight:1}}>{team.name}</h1>
                     <div style={{display:"inline-flex",alignItems:"center",gap:6,background:`${team.color}15`,border:`1px solid ${team.color}30`,borderRadius:4,padding:"3px 10px",flexShrink:0}}>
-                      <span style={{fontSize:11,color:"#aaa",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>archetype</span>
+                      <span style={{fontSize:11,color:"#aaa",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>type</span>
                       <span style={{fontSize:11,color:(teamTextColors[result]||team.color),fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic"}}>{archetypes[result]}</span>
                     </div>
                   </div>
