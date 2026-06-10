@@ -1,6 +1,6 @@
-// FanDNA quiz UI components — BTN + ChoiceQ/BinaryQ/SliderQ/DimBars/BadgeImg, verbatim from App.jsx (Phase 1).
+// FanDNA quiz UI components - BTN + ChoiceQ/BinaryQ/SliderQ/DimBars/BadgeImg, verbatim from App.jsx (Phase 1).
 import { useState } from "react";
-import { teamDims, DIM_LABELS } from "../data/pl";
+import { DIM_LABELS } from "../data/pl";
 
 // ─── QUESTION COMPONENTS ──────────────────────────────────────────────────────
 const BTN = {
@@ -96,19 +96,19 @@ function SliderQ({q,onSelect}){
 }
 
 // ─── RESULT COMPONENTS ────────────────────────────────────────────────────────
-function DimBars({teamKey,color}){
-  const dims=teamDims[teamKey];
+function DimBars({dims,color}){
+  const d=dims||{};
   return(
     <div>
       {Object.entries(DIM_LABELS).map(([k,label])=>(
         <div key={k} style={{marginBottom:8}}>
           <div style={{display:"flex",justifyContent:"space-between",marginBottom:3}}>
             <span style={{fontSize:11,color:"#bbb",fontFamily:"monospace"}}>{label}</span>
-            <span style={{fontSize:11,color:"#bbb",fontFamily:"monospace"}}>{dims[k]}/10</span>
+            <span style={{fontSize:11,color:"#bbb",fontFamily:"monospace"}}>{d[k]}/10</span>
           </div>
           <div style={{height:2,background:"#141420",borderRadius:2,overflow:"hidden"}}>
             <div style={{
-              height:"100%",width:`${dims[k]*10}%`,
+              height:"100%",width:`${(d[k]||0)*10}%`,
               background:`linear-gradient(90deg,${color}66,${color})`,
               borderRadius:2,transition:"width 1s cubic-bezier(.4,0,.2,1)",
             }}/>
