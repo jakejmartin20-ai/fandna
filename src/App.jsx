@@ -379,9 +379,9 @@ export default function App(){
               letterSpacing:".01em",
             }}>{q.question}</h2>
 
-            {q.type==="choice"&&<ChoiceQ q={q} onSelect={handleSelect}/>}
-            {q.type==="binary"&&<BinaryQ q={q} onSelect={handleSelect}/>}
-            {q.type==="slider"&&<SliderQ q={q} onSelect={handleSelect}/>}
+            {q.type==="choice"&&<ChoiceQ key={q.id} q={q} onSelect={handleSelect}/>}
+            {q.type==="binary"&&<BinaryQ key={q.id} q={q} onSelect={handleSelect}/>}
+            {q.type==="slider"&&<SliderQ key={q.id} q={q} onSelect={handleSelect}/>}
           </>
         )}
 
@@ -525,7 +525,7 @@ export default function App(){
                 </div>
                 <div style={{borderTop:"1px solid #0f0f1a",paddingTop:20}}>
                   <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:14}}>Personality dimensions</div>
-                  <DimBars teamKey={result} color={team.color}/>
+                  <DimBars dims={D.teamDims[result]} color={team.color}/>
                 </div>
                 {/* ── CTAs ── */}
                 <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:24,paddingTop:20,borderTop:"1px solid #2a2a3a"}}>
@@ -655,7 +655,7 @@ export default function App(){
                 style={{background:"none",border:"1px solid #444",borderRadius:5,padding:"9px 22px",color:"#bbb",fontSize:11,letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",cursor:"pointer",transition:"all .15s"}}
                 onMouseEnter={e=>{e.currentTarget.style.borderColor="#888";e.currentTarget.style.color="#aaa";}}
                 onMouseLeave={e=>{e.currentTarget.style.borderColor="#252535";e.currentTarget.style.color="#666";}}
-              >retake PL</button>
+              >retake {activeSport}</button>
               <button onClick={startOver}
                 style={{background:"none",border:"1px solid #444",borderRadius:5,padding:"9px 22px",color:"#bbb",fontSize:11,letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",cursor:"pointer",transition:"all .15s"}}
                 onMouseEnter={e=>{e.currentTarget.style.borderColor="#888";e.currentTarget.style.color="#aaa";}}
