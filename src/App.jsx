@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef, useMemo, Component } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { track } from "@vercel/analytics";
 import { coreQuestions } from "./data/core";
@@ -10,7 +10,28 @@ import { ChoiceQ, BinaryQ, SliderQ, DimBars, BadgeImg } from "./components/quiz"
 import { GenomeHome } from "./screens/Genome";
 import { SPORTS } from "./lib/manifest";
 
-export default function App(){
+// TEMPORARY diagnostic: if any screen throws, show the error instead of a blank page,
+// so the exact message and line are visible (and screenshottable) on the phone.
+class ErrorBoundary extends Component {
+  constructor(p){ super(p); this.state={err:null}; }
+  static getDerivedStateFromError(err){ return {err}; }
+  componentDidCatch(err){ try{ track("render_error",{message:String(err&&err.message).slice(0,120)}); }catch(e){} }
+  render(){
+    if(this.state.err){
+      const e=this.state.err;
+      return (
+        <div style={{maxWidth:560,margin:"40px auto",padding:20,border:"1px solid #5a2a2a",borderRadius:10,background:"#1a1414",color:"#e8e4de",fontFamily:"'DM Mono',monospace",fontSize:13,lineHeight:1.6}}>
+          <div style={{color:"#d6685c",letterSpacing:"0.15em",textTransform:"uppercase",marginBottom:12,fontSize:11}}>Something broke. Screenshot this and send it.</div>
+          <div style={{whiteSpace:"pre-wrap",wordBreak:"break-word",color:"#f0d0c8"}}>{String(e&&e.message)}</div>
+          <div style={{whiteSpace:"pre-wrap",wordBreak:"break-word",color:"#8a8a9a",marginTop:12,fontSize:11}}>{String(e&&e.stack).split("\n").slice(0,6).join("\n")}</div>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
+function AppInner(){
   const [cur,setCur]=useState(0);
   const [answers,setAnswers]=useState({});
   const [scores,setScores]=useState(null);
@@ -685,4 +706,8 @@ export default function App(){
       </div>
     </div>
   );
+}
+
+export default function App(){
+  return (<ErrorBoundary><AppInner/></ErrorBoundary>);
 }
