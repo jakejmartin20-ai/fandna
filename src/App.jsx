@@ -3,12 +3,13 @@ import { Analytics } from "@vercel/analytics/react";
 import { track } from "@vercel/analytics";
 import { coreQuestions } from "./data/core";
 import { SPORT_DATA } from "./lib/sportData";
-import { scoreCore, scoreModule } from "./lib/scoring";
+import { scoreCore, scoreModule, matchEvidence } from "./lib/scoring";
 import { loadState, saveResult, clearAll } from "./lib/storage";
 import { generateShareCard } from "./lib/card";
 import { ChoiceQ, BinaryQ, SliderQ, DimBars, BadgeImg } from "./components/quiz";
 import { GenomeHome } from "./screens/Genome";
 import { CoreStrip } from "./components/CoreStrip";
+import { MatchEvidence } from "./components/MatchEvidence";
 import { SPORTS } from "./lib/manifest";
 
 // Fail-state guard. If anything in the app throws while rendering, the user sees this
@@ -67,6 +68,7 @@ function AppInner(){
   const [answers,setAnswers]=useState({});
   const [scores,setScores]=useState(null);
   const [result,setResult]=useState(null);
+  const [evidence,setEvidence]=useState(null); // match evidence (stability + tips) for the current result
   const [phase,setPhase]=useState("in");
   const [tab,setTab]=useState("result");
   const [mode,setMode]=useState("full");        // "full" = core+module ; "module" = PL module only
@@ -119,6 +121,7 @@ function AppInner(){
       setSavedCore({coreAnswers:st.coreAnswers,coreProfile:st.coreProfile});
       setScores(st.results.PL.scores||null);
       setResult(st.results.PL.club);
+      setEvidence(matchEvidence("PL",{coreAnswers:st.coreAnswers||{},moduleAnswers:st.results.PL.answers||{},coreProfile:st.coreProfile||null}));
     }
   },[]);
 
@@ -167,6 +170,7 @@ function AppInner(){
       setScores(s);
       setCoreProfile(coreProfile);
       setResult(club);
+      setEvidence(matchEvidence(activeSport,{coreAnswers,moduleAnswers,coreProfile}));
       setScreen("result");
       setGenome(g=>({...g,[activeSport]:{club}}));
       track("quiz_completed",{sport:activeSport,club});
@@ -182,7 +186,7 @@ function AppInner(){
 
   function startOver(){
     clearAll();
-    setMode("full");setSavedCore(null);setGenome({});setCoreProfile(null);
+    setMode("full");setSavedCore(null);setGenome({});setCoreProfile(null);setEvidence(null);
     setPhase("out");
     setTimeout(()=>{
       setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");
@@ -207,7 +211,7 @@ function AppInner(){
   function startSport(code){
     const sport=code||"PL";
     setActiveSport(sport);
-    setResult(null); setScores(null);   // drop any prior sport's result before this one's data loads
+    setResult(null); setScores(null); setEvidence(null);   // drop any prior sport's result before this one's data loads
     const st=loadState();
     if(st.coreAnswers){
       setSavedCore({coreAnswers:st.coreAnswers,coreProfile:st.coreProfile});
@@ -229,7 +233,9 @@ function AppInner(){
     setActiveSport(sport);
     const st=loadState();
     const r=(st.results&&st.results[sport])||{};
-    if(r.club){ setResult(r.club); setScores(r.scores||null); }
+    if(r.club){ setResult(r.club); setScores(r.scores||null);
+      setEvidence(matchEvidence(sport,{coreAnswers:st.coreAnswers||{},moduleAnswers:r.answers||{},coreProfile:st.coreProfile||null}));
+    }
     setTab("result");
     setScreen("result");
   }
@@ -538,30 +544,24 @@ function AppInner(){
               >Download</button>
             </div>
 
-            {/* Tabs, scrollable row */}
-            <div style={{position:"relative",marginBottom:22}}>
-              <div style={{display:"flex",gap:0,marginBottom:0,borderBottom:"1px solid #0f0f1a",overflowX:"auto",scrollbarWidth:"none",WebkitOverflowScrolling:"touch",msOverflowStyle:"none"}}>
-              {[["result","Match"],["analysis","Why you?"],["stats","Club Vitals"],["nearly","Almost you"]].map(([id,label])=>(
+            {/* Tabs, fitted to width (no horizontal scroll, no float) */}
+            <div style={{marginBottom:22}}>
+              <div style={{display:"flex",gap:0,marginBottom:0,borderBottom:"1px solid #0f0f1a"}}>
+              {[["result","Match"],["analysis","Why you"],["stats","Vitals"],["nearly","Almost"]].map(([id,label])=>(
                 <button key={id} onClick={()=>setTab(id)}
                   style={{
-                    background:"none",border:"none",
+                    flex:1,background:"none",border:"none",
                     borderBottom:`2px solid ${tab===id?team.color:"transparent"}`,
-                    padding:"8px 14px 10px",marginBottom:-1,whiteSpace:"nowrap",
+                    padding:"9px 4px 10px",marginBottom:-1,whiteSpace:"nowrap",textAlign:"center",
                     color:tab===id?"#e8e4de":"#666",
-                    fontSize:12,letterSpacing:"0.12em",textTransform:"uppercase",
+                    fontSize:11.5,letterSpacing:"0.06em",textTransform:"uppercase",
                     fontFamily:"'DM Mono',monospace",cursor:"pointer",
-                    transition:"all .15s ease",flexShrink:0,
+                    transition:"all .15s ease",
                     fontWeight:tab===id?"500":"400",
                   }}
                 >{label}</button>
               ))}
-            </div>
-              {/* Right-edge fade, indicates more tabs off-screen */}
-              <div style={{
-                position:"absolute",top:0,right:0,width:52,height:"calc(100% - 1px)",
-                background:"linear-gradient(to right, transparent, #16161e)",
-                pointerEvents:"none",
-              }}/>
+              </div>
             </div>
 
             {/* ── Tab: Match ── */}
@@ -572,6 +572,7 @@ function AppInner(){
                 {team.note&&(<p style={{fontSize:14,color:"#bbb",lineHeight:1.75,margin:"0 0 24px",borderLeft:`1px solid #252535`,paddingLeft:14,fontFamily:"'DM Mono',monospace"}}>{team.note}</p>)}
                 {/* Fandom vs FanDNA reframe (per 1b) - sport-aware */}
                 <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(15px,3.4vw,18px)",fontStyle:"italic",color:"#9898b8",lineHeight:1.6,margin:"6px 0 22px"}}>This is your {activeSport==="NFL"?"franchise":"club"} by DNA. What you support on {activeSport==="NFL"?"Sundays":"Saturdays"} is up to you.</p>
+                <MatchEvidence evidence={evidence} clubName={team.name} color={teamTextColors[result]||team.color}/>
                 <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:4}}>
                   {team.kit&&(<a href={team.kit} target="_blank" rel="noopener noreferrer"
                     style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
