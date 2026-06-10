@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo, Component } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { track } from "@vercel/analytics";
 import { coreQuestions } from "./data/core";
@@ -10,28 +10,7 @@ import { ChoiceQ, BinaryQ, SliderQ, DimBars, BadgeImg } from "./components/quiz"
 import { GenomeHome } from "./screens/Genome";
 import { SPORTS } from "./lib/manifest";
 
-// TEMPORARY diagnostic: if any screen throws, show the error instead of a blank page,
-// so the exact message and line are visible (and screenshottable) on the phone.
-class ErrorBoundary extends Component {
-  constructor(p){ super(p); this.state={err:null}; }
-  static getDerivedStateFromError(err){ return {err}; }
-  componentDidCatch(err){ try{ track("render_error",{message:String(err&&err.message).slice(0,120)}); }catch(e){} }
-  render(){
-    if(this.state.err){
-      const e=this.state.err;
-      return (
-        <div style={{maxWidth:560,margin:"40px auto",padding:20,border:"1px solid #5a2a2a",borderRadius:10,background:"#1a1414",color:"#e8e4de",fontFamily:"'DM Mono',monospace",fontSize:13,lineHeight:1.6}}>
-          <div style={{color:"#d6685c",letterSpacing:"0.15em",textTransform:"uppercase",marginBottom:12,fontSize:11}}>Something broke. Screenshot this and send it.</div>
-          <div style={{whiteSpace:"pre-wrap",wordBreak:"break-word",color:"#f0d0c8"}}>{String(e&&e.message)}</div>
-          <div style={{whiteSpace:"pre-wrap",wordBreak:"break-word",color:"#8a8a9a",marginTop:12,fontSize:11}}>{String(e&&e.stack).split("\n").slice(0,6).join("\n")}</div>
-        </div>
-      );
-    }
-    return this.props.children;
-  }
-}
-
-function AppInner(){
+export default function App(){
   const [cur,setCur]=useState(0);
   const [answers,setAnswers]=useState({});
   const [scores,setScores]=useState(null);
@@ -43,17 +22,7 @@ function AppInner(){
   const [screen,setScreen]=useState("home");     // "home" | "quiz" | "result" - the genome home is the landing page
   const [genome,setGenome]=useState({});         // saved results map { PL:{club} } - drives the home strands + share string
   const [activeSport,setActiveSport]=useState("PL"); // which sport's quiz/result/card is in play
-  const [dbgErr,setDbgErr]=useState(null);       // TEMP: captures any uncaught (handler/async) error for the on-screen strip
   const containerRef=useRef(null);
-
-  // TEMP diagnostic: surface uncaught errors that React's boundary can't catch (event handlers, async).
-  useEffect(()=>{
-    const onErr=(e)=>setDbgErr(String((e&&((e.error&&e.error.stack)||e.message))||e).slice(0,400));
-    const onRej=(e)=>setDbgErr("promise: "+String((e&&e.reason&&(e.reason.stack||e.reason.message))||(e&&e.reason)).slice(0,400));
-    window.addEventListener("error",onErr);
-    window.addEventListener("unhandledrejection",onRej);
-    return()=>{window.removeEventListener("error",onErr);window.removeEventListener("unhandledrejection",onRej);};
-  },[]);
 
   // NFL ships behind live:false. A hidden ?nfl=1 in the URL unlocks the strand on preview
   // (tappable, takeable) while the public still sees "coming soon". Nothing else changes.
@@ -297,12 +266,6 @@ function AppInner(){
       position:"relative",
     }}>
       <Analytics/>
-
-      {/* TEMP diagnostic strip: always visible, sits outside the fade wrapper so opacity can't hide it. */}
-      <div style={{position:"fixed",top:0,left:0,right:0,zIndex:99999,background:"#161620ee",color:"#7ee07e",fontFamily:"monospace",fontSize:10,lineHeight:1.4,padding:"4px 8px",borderBottom:"1px solid #2a5a2a",pointerEvents:"none",whiteSpace:"pre-wrap",wordBreak:"break-word"}}>
-        {`DBG screen=${screen} phase=${phase} sport=${activeSport} mode=${mode} cur=${cur} q=${q?q.id:"none"} result=${String(result)}`}
-        {dbgErr?`\nERR ${dbgErr}`:""}
-      </div>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
         @keyframes slideIn  {from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
@@ -722,8 +685,4 @@ function AppInner(){
       </div>
     </div>
   );
-}
-
-export default function App(){
-  return (<ErrorBoundary><AppInner/></ErrorBoundary>);
 }
