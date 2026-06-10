@@ -14,16 +14,16 @@
 
 import { useState } from "react";
 import { BadgeImg } from "../components/quiz";
-import { teamDims, DIM_ORDER, DIM_COLORS } from "../data/pl";
+import { DIM_ORDER, DIM_COLORS } from "../data/pl";
 
 // Mini gel echo: the seven core-sequence bands from the share card, shrunk for a strand row.
-function GelEcho({ club }){
-  const dims = teamDims[club] || {};
+function GelEcho({ dims }){
+  const d = dims || {};
   const H = 30, P = 3, BANDH = 4, TRAVEL = H - 2*P - BANDH;
   return (
     <div style={{display:"flex",gap:3,marginTop:11}}>
       {DIM_ORDER.map((dk)=>{
-        const score = dims[dk]||0;
+        const score = d[dk]||0;
         const top = P + (1 - score/10) * TRAVEL;
         return (
           <div key={dk} style={{position:"relative",flex:1,height:H,background:"#1e1e2a",border:"1px solid #2a2a3a",borderRadius:3,overflow:"hidden"}}>
@@ -49,10 +49,7 @@ function GelScaffold(){
 export function GenomeHome({
   sports,            // manifest list: [{code,name,live,hook}, ...]
   genome,            // saved results map: { PL: { club: "LI" }, ... }
-  teams,             // pl team data, for completed strands
-  archetypes,        // pl type labels
-  badgeUrls,         // pl crest urls
-  teamTextColors,    // pl accent colours
+  sportData,         // { PL:{teams,archetypes,badgeUrls,teamTextColors,teamDims}, NFL:{...} }
   coreSequenced,     // has the shared core already been answered once?
   coreCount,         // number of core questions (added to the first sport taken)
   moduleCounts,      // per-sport module question counts: { PL: 14, ... }
@@ -139,8 +136,9 @@ export function GenomeHome({
 
           // ---- Completed strand ----
           if(done){
-            const t = teams[r.club]||{};
-            const accent = teamTextColors[r.club]||t.color||"#9898b8";
+            const SD = sportData[s.code]||{};
+            const t = (SD.teams&&SD.teams[r.club])||{};
+            const accent = (SD.teamTextColors&&SD.teamTextColors[r.club])||t.color||"#9898b8";
             return(
               <div key={s.code} style={{position:"relative",marginBottom:last?0:14}}>
                 <div style={{position:"absolute",left:-18,top:"50%",transform:"translateY(-50%)",width:8,height:8,borderRadius:"50%",background:(t.color||"#9898b8"),boxShadow:`0 0 6px ${t.color||"#9898b8"}88`}}/>
@@ -155,15 +153,15 @@ export function GenomeHome({
                   onMouseLeave={e=>{e.currentTarget.style.borderColor="#222230";e.currentTarget.style.borderLeftColor=(t.color||"#9898b8");}}
                 >
                   <div style={{display:"flex",alignItems:"center",gap:12}}>
-                    <BadgeImg url={badgeUrls[r.club]} emoji={t.emoji} size={42}/>
+                    <BadgeImg url={SD.badgeUrls&&SD.badgeUrls[r.club]} emoji={t.emoji} size={42}/>
                     <div style={{flex:1,minWidth:0}}>
                       <div style={{fontSize:10,color:"#888",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:2}}>{s.name}</div>
                       <div style={{fontSize:"clamp(18px,4.6vw,22px)",color:"#e8e4de",fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:400,lineHeight:1.1}}>{t.name}</div>
-                      <div style={{fontSize:13,color:accent,fontStyle:"italic",fontFamily:"'Cormorant Garamond',Georgia,serif",marginTop:2}}>{archetypes[r.club]||""}</div>
+                      <div style={{fontSize:13,color:accent,fontStyle:"italic",fontFamily:"'Cormorant Garamond',Georgia,serif",marginTop:2}}>{(SD.archetypes&&SD.archetypes[r.club])||""}</div>
                     </div>
                     <span style={{border:`1px solid ${accent}66`,borderRadius:5,padding:"5px 12px",color:accent,fontSize:10,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",flexShrink:0}}>view</span>
                   </div>
-                  <GelEcho club={r.club}/>
+                  <GelEcho dims={SD.teamDims&&SD.teamDims[r.club]}/>
                 </button>
               </div>
             );
