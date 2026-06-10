@@ -157,4 +157,79 @@ function nearestInDimSpace(coreProfile, dimsTable){
   return best;
 }
 
-export { scoreCore, scoreModule, nearestInDimSpace, SPORT_ENGINES };
+// -- Match evidence (PL): stability + the answers that tipped it ------------------
+// READ-ONLY on top of the pick. It NEVER changes which club you get. It re-runs the
+// same pick with one answer changed at a time to measure how settled the result is
+// (the stability count), and reads the scoring matrix to surface the answers that
+// pulled hardest, and most distinctively, toward the club (the tips).
+
+const QUESTION_MAP = {};
+for (const q of coreQuestions)   QUESTION_MAP[q.id] = q;
+for (const q of moduleQuestions) QUESTION_MAP[q.id] = q;
+
+function answerLabel(qId, ans){
+  const q = QUESTION_MAP[qId];
+  if (!q) return String(ans);
+  if (q.type === "binary") return ans === "left" ? q.left : q.right;
+  const o = (q.options || []).find(o => o.value === ans);
+  return o ? o.label : String(ans);
+}
+function questionText(qId){
+  const q = QUESTION_MAP[qId];
+  return (q && q.question) ? q.question : "";
+}
+// A tip is only shown if it reads as a sentence (filters out slider values like "3").
+function readableTip(label){
+  if (typeof label !== "string") return false;
+  const letters = label.replace(/[^a-zA-Z]/g, "");
+  return letters.length >= 6 && !/^[0-9]+$/.test(label.trim());
+}
+
+function matchEvidence(sport, input){
+  // Only PL is wired for evidence right now. NFL waits on the module rebalance, so we
+  // return a null result and the UI renders nothing for it.
+  if (sport !== "PL") return { sport, club: null, safe: null, total: null, tips: [] };
+
+  const eng = SPORT_ENGINES.PL;
+  const all = { ...(input.coreAnswers || {}), ...(input.moduleAnswers || {}) };
+  const club = pickWinner(all, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase).club;
+
+  // Every question's answer-option set, read straight from the scoring tables.
+  const optionSpace = [];
+  for (const q of coreQuestions)   { const o = coreDimScoring[q.id]; if (o) optionSpace.push([q.id, Object.keys(o)]); }
+  for (const q of moduleQuestions) { const o = eng.matrix[q.id];     if (o) optionSpace.push([q.id, Object.keys(o)]); }
+
+  // STABILITY: a question is "safe" when no single alternative answer changes the club.
+  const total = optionSpace.length;
+  let safe = 0;
+  for (const [qId, opts] of optionSpace){
+    let flips = false;
+    for (const alt of opts){
+      if (alt === all[qId]) continue;
+      const perturbed = { ...all, [qId]: alt };
+      if (pickWinner(perturbed, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase).club !== club){ flips = true; break; }
+    }
+    if (!flips) safe++;
+  }
+
+  // TIPS: the answers that pull most distinctively toward the club
+  // (the club's points on that answer, minus the average across all clubs).
+  const teamKeys = eng.teamKeys;
+  const rows = [];
+  for (const [qId, ans] of Object.entries(all)){
+    const cell = eng.matrix[qId] && eng.matrix[qId][ans];
+    if (!cell) continue;
+    const clubPts = cell[club] || 0;
+    if (clubPts <= 0) continue;
+    let sum = 0; for (const t of teamKeys) sum += (cell[t] || 0);
+    const label = answerLabel(qId, ans);
+    if (!readableTip(label)) continue;
+    rows.push({ distinct: clubPts - sum / teamKeys.length, clubPts, question: questionText(qId), answer: label });
+  }
+  rows.sort((a, b) => (b.distinct - a.distinct) || (b.clubPts - a.clubPts));
+  const tips = rows.slice(0, 3).map(r => ({ question: r.question, answer: r.answer }));
+
+  return { sport, club, safe, total, tips };
+}
+
+export { scoreCore, scoreModule, nearestInDimSpace, matchEvidence, SPORT_ENGINES };
