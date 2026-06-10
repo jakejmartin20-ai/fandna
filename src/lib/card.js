@@ -13,14 +13,14 @@ function trackedWidth(ctx,s,tr){let w=0;for(const ch of s)w+=ctx.measureText(ch)
 function drawTracked(ctx,s,cxc,y,font,fill,tr){ctx.save();ctx.font=font;ctx.fillStyle=fill;ctx.textAlign="left";const w=trackedWidth(ctx,s,tr);let xx=cxc-w/2;for(const ch of s){ctx.fillText(ch,xx,y);xx+=ctx.measureText(ch).width+tr;}ctx.restore();}
 function wrapCanvasText(ctx,s,maxw){const words=s.split(" ");const lines=[];let cur="";for(const w of words){const t=cur?cur+" "+w:w;if(ctx.measureText(t).width<=maxw||!cur)cur=t;else{lines.push(cur);cur=w;}}if(cur)lines.push(cur);return lines;}
 
-async function generateShareCard(sport, key, genome){
+async function generateShareCard(sport, key, genome, coreProfile){
   const D=SPORT_DATA[sport]||SPORT_DATA.PL;
   const teams=D.teams, teamDims=D.teamDims, archetypes=D.archetypes, CARD_BADGES=D.CARD_BADGES;
   const isNFL=sport==="NFL";
   const topLabel=isNFL?"YOUR FRANCHISE":"YOUR CLUB";
   const closingLine=isNFL?"Which franchise are you, really?":"Which club are you, really?";
   const W=1080,H=1350,cv=document.createElement("canvas");cv.width=W;cv.height=H;
-  const x=cv.getContext("2d"),team=teams[key],col=team.color,dims=teamDims[key]||{},cx=W/2;
+  const x=cv.getContext("2d"),team=teams[key],col=team.color,dims=coreProfile||teamDims[key]||{},cx=W/2;
   try{await Promise.all([
     document.fonts.load("600 100px 'Cormorant Garamond'"),
     document.fonts.load("italic 42px 'Cormorant Garamond'"),
