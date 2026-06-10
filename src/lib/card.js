@@ -1,5 +1,8 @@
-// FanDNA share-card rendering, canvas helpers + generateShareCard, verbatim from App.jsx (Phase 1).
-import { teams, teamDims, archetypes, CARD_BADGES, GENERIC_EMOJI, DIM_COLORS, DIM_CODES, DIM_ORDER } from "../data/pl";
+// FanDNA share-card rendering, canvas helpers + generateShareCard. Sport-aware (Phase 4):
+// the team data comes from the active sport, the strip label and closing line follow the sport,
+// and the genome sequence shows every completed strand.
+import { GENERIC_EMOJI, DIM_COLORS, DIM_CODES, DIM_ORDER } from "../data/pl";
+import { SPORT_DATA } from "../lib/sportData";
 import { SPORTS } from "../lib/manifest";
 
 function hexToRgb(h){h=h.replace("#","");return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
@@ -10,7 +13,12 @@ function trackedWidth(ctx,s,tr){let w=0;for(const ch of s)w+=ctx.measureText(ch)
 function drawTracked(ctx,s,cxc,y,font,fill,tr){ctx.save();ctx.font=font;ctx.fillStyle=fill;ctx.textAlign="left";const w=trackedWidth(ctx,s,tr);let xx=cxc-w/2;for(const ch of s){ctx.fillText(ch,xx,y);xx+=ctx.measureText(ch).width+tr;}ctx.restore();}
 function wrapCanvasText(ctx,s,maxw){const words=s.split(" ");const lines=[];let cur="";for(const w of words){const t=cur?cur+" "+w:w;if(ctx.measureText(t).width<=maxw||!cur)cur=t;else{lines.push(cur);cur=w;}}if(cur)lines.push(cur);return lines;}
 
-async function generateShareCard(key){
+async function generateShareCard(sport, key, genome){
+  const D=SPORT_DATA[sport]||SPORT_DATA.PL;
+  const teams=D.teams, teamDims=D.teamDims, archetypes=D.archetypes, CARD_BADGES=D.CARD_BADGES;
+  const isNFL=sport==="NFL";
+  const topLabel=isNFL?"YOUR FRANCHISE":"YOUR CLUB";
+  const closingLine=isNFL?"Which franchise are you, really?":"Which club are you, really?";
   const W=1080,H=1350,cv=document.createElement("canvas");cv.width=W;cv.height=H;
   const x=cv.getContext("2d"),team=teams[key],col=team.color,dims=teamDims[key]||{},cx=W/2;
   try{await Promise.all([
@@ -22,7 +30,7 @@ async function generateShareCard(key){
   const g=x.createLinearGradient(0,0,0,560);g.addColorStop(0,col+"2e");g.addColorStop(1,col+"00");
   x.fillStyle=g;x.fillRect(0,0,W,560);
   x.textAlign="center";x.textBaseline="alphabetic";
-  drawTracked(x,"YOUR CLUB",cx,118,"400 30px 'DM Mono',monospace","#9696b4",18);
+  drawTracked(x,topLabel,cx,118,"400 30px 'DM Mono',monospace","#9696b4",18);
   const R=82,ry=258;
   x.beginPath();x.arc(cx,ry,R+5,0,Math.PI*2);x.fillStyle="#f7f4ef";x.fill();
   x.beginPath();x.arc(cx,ry,R,0,Math.PI*2);x.fillStyle=col;x.fill();
@@ -57,11 +65,11 @@ async function generateShareCard(key){
     roundRectPath(x,lx+10,by,laneW-20,4,3);x.fillStyle="rgba(255,255,255,0.35)";x.fill();
   });
   const seqY=laneTop+laneH+62;x.textAlign="center";
-  const seq="FanDNA: "+SPORTS.map(s=>`${s.code}-${s.code==="PL"?key:"?"}`).join(" · ");
+  const seq="FanDNA: "+SPORTS.map(s=>{const c=(s.code===sport)?key:((genome&&genome[s.code]&&genome[s.code].club)||"?");return `${s.code}-${c}`;}).join(" · ");
   let seqSz=42,seqFont="400 42px 'DM Mono',monospace";
   do{seqFont="400 "+seqSz+"px 'DM Mono',monospace";x.font=seqFont;if(trackedWidth(x,seq,2)<=960)break;seqSz-=2;}while(seqSz>22);
   drawTracked(x,seq,cx,seqY,seqFont,"#d6d2ca",2);
-  x.font="italic 40px 'Cormorant Garamond',serif";x.fillStyle="#9898b8";x.fillText("Which club are you, really?",cx,seqY+62);
+  x.font="italic 40px 'Cormorant Garamond',serif";x.fillStyle="#9898b8";x.fillText(closingLine,cx,seqY+62);
   drawTracked(x,"fandna.vercel.app",cx,seqY+112,"400 24px 'DM Mono',monospace","#7878a0",3);
   return await new Promise(res=>cv.toBlob(res,"image/png"));
 }
