@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { track } from "@vercel/analytics";
 import { coreQuestions } from "./data/core";
-import { moduleQuestions, teams, archetypes, teamTextColors, greats, vitalStats, nearlyGot, badgeUrls, squadUrls } from "./data/pl";
+import { SPORT_DATA } from "./lib/sportData";
 import { scoreCore, scoreModule } from "./lib/scoring";
 import { loadState, saveResult, clearAll } from "./lib/storage";
 import { generateShareCard } from "./lib/card";
@@ -21,13 +21,27 @@ export default function App(){
   const [savedCore,setSavedCore]=useState(null); // cached {coreAnswers,coreProfile} for module-only retakes
   const [screen,setScreen]=useState("home");     // "home" | "quiz" | "result" - the genome home is the landing page
   const [genome,setGenome]=useState({});         // saved results map { PL:{club} } - drives the home strands + share string
+  const [activeSport,setActiveSport]=useState("PL"); // which sport's quiz/result/card is in play
   const containerRef=useRef(null);
+
+  // NFL ships behind live:false. A hidden ?nfl=1 in the URL unlocks the strand on preview
+  // (tappable, takeable) while the public still sees "coming soon". Nothing else changes.
+  const nflUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("nfl");
+  const sportsList = SPORTS.map(s=> s.code==="NFL" ? {...s, live: s.live||nflUnlocked} : s);
+
+  // Active sport's data, bound to the same names the screens already use, so the result
+  // screen and quiz read the right sport with no other changes. PL behaves exactly as before.
+  const D = SPORT_DATA[activeSport] || SPORT_DATA.PL;
+  const moduleQuestions = D.moduleQuestions;
+  const teams = D.teams, archetypes = D.archetypes, teamTextColors = D.teamTextColors;
+  const greats = D.greats, vitalStats = D.vitalStats, nearlyGot = D.nearlyGot;
+  const badgeUrls = D.badgeUrls, squadUrls = D.squadUrls;
 
   // The active question run. First time: 24 core + 14 PL module = 38, in the v1 order.
   // Module-only retake: just the 14 PL questions (the core is already sequenced).
   const sequence=useMemo(
     ()=> mode==="module" ? moduleQuestions : [...coreQuestions, ...moduleQuestions],
-    [mode]
+    [mode,activeSport]
   );
   const coreIds=useMemo(()=>new Set(coreQuestions.map(p=>p.id)),[]);
 
@@ -93,14 +107,15 @@ export default function App(){
       const coreProfile = (mode==="module" && savedCore && savedCore.coreProfile)
         ? savedCore.coreProfile
         : scoreCore(coreAnswers);
-      // PL's module reproduces the exact v1 assignment (full matrix + tie-break).
-      const { club, scores:s } = scoreModule("PL", { coreProfile, coreAnswers, moduleAnswers });
+      // PL reproduces the exact v1 assignment (full matrix + tie-break); NFL uses the
+      // fingerprint-plus-module path. scoreModule routes on the sport.
+      const { club, scores:s } = scoreModule(activeSport, { coreProfile, coreAnswers, moduleAnswers });
       setScores(s);
       setResult(club);
       setScreen("result");
-      setGenome(g=>({...g,PL:{club}}));
-      track("quiz_completed",{club});
-      saveResult("PL",{coreAnswers,coreProfile,club,moduleAnswers,scores:s});
+      setGenome(g=>({...g,[activeSport]:{club}}));
+      track("quiz_completed",{sport:activeSport,club});
+      saveResult(activeSport,{coreAnswers,coreProfile,club,moduleAnswers,scores:s});
     }
   }
 
@@ -132,9 +147,11 @@ export default function App(){
       setScreen("quiz");setPhase("in");
     },160);
   }
-  // Start a sport from the home screen (a live, untaken strand). Today only PL is live.
+  // Start a sport from the home screen (a live, untaken strand). Sets it active.
   // If the shared core is already sequenced, run just that sport's module; else run the full set.
-  function startSport(){
+  function startSport(code){
+    const sport=code||"PL";
+    setActiveSport(sport);
     const st=loadState();
     if(st.coreAnswers){
       setSavedCore({coreAnswers:st.coreAnswers,coreProfile:st.coreProfile});
@@ -149,8 +166,14 @@ export default function App(){
       setScreen("quiz");setPhase("in");
     },160);
   }
-  // Open a completed sport's result from the home screen. Today only PL has a result screen.
-  function openResult(){
+  // Open a completed sport's result from the home screen. Loads that sport's saved
+  // club + scores so the result screen (and its Almost-you percentages) render.
+  function openResult(code){
+    const sport=code||"PL";
+    setActiveSport(sport);
+    const st=loadState();
+    const r=(st.results&&st.results[sport])||{};
+    if(r.club){ setResult(r.club); setScores(r.scores||null); }
     setTab("result");
     setScreen("result");
   }
@@ -194,19 +217,33 @@ export default function App(){
 
 
     // ── Pre-compute tab data (no logic inside JSX) ───────────────────────────
-  const statsData = result && vitalStats[result] ? [
-    ["Nickname",    vitalStats[result].nickname],
-    ["Founded",     String(vitalStats[result].founded)],
-    ["Ground",      vitalStats[result].ground],
-    ["City",        vitalStats[result].city],
-    ["Capacity",    vitalStats[result].capacity],
-    ["Kit colours", vitalStats[result].colors],
-    ["Kit maker",   vitalStats[result].kitMaker],
-    ["Last title",  vitalStats[result].lastTitle],
-  ].filter(([,v])=>v!=null) : [];
+  const vit = result ? vitalStats[result] : null;
+  const statsData = vit ? (activeSport==="NFL" ? [
+    ["Nickname",   vit.nickname],
+    ["Founded",    String(vit.founded)],
+    ["Stadium",    vit.stadium],
+    ["City",       vit.city],
+    ["Capacity",   vit.capacity],
+    ["Colours",    vit.colors],
+    ["Titles",     vit.titles],
+    ["Last title", vit.lastTitle],
+  ] : [
+    ["Nickname",    vit.nickname],
+    ["Founded",     String(vit.founded)],
+    ["Ground",      vit.ground],
+    ["City",        vit.city],
+    ["Capacity",    vit.capacity],
+    ["Kit colours", vit.colors],
+    ["Kit maker",   vit.kitMaker],
+    ["Last title",  vit.lastTitle],
+  ]).filter(([,v])=>v!=null&&v!=="") : [];
 
   const ng = result ? (nearlyGot[result]||{}) : {};
-  const nearClubs = sortedOthers.slice(0,4).map(([k])=>k).filter(k=>teams[k]);
+  // PL shows the four highest-scoring runners-up (dynamic). NFL shows the four matchups the
+  // craft authored for this team (the deliberate near-misses), which always carry a written line.
+  const nearClubs = activeSport==="NFL"
+    ? Object.keys(ng).filter(k=>teams[k])
+    : sortedOthers.slice(0,4).map(([k])=>k).filter(k=>teams[k]);
 
   // ── Home-screen data, all manifest-driven ─────────────────────────────────
   // The share string lists every sport in the manifest: a completed one shows its club
@@ -217,7 +254,7 @@ export default function App(){
   }).join(" · ");
   const coreSequenced = Object.keys(genome).length>0;
   const coreCount = coreQuestions.length;
-  const moduleCounts = { PL: moduleQuestions.length };  // future sports add their own count here
+  const moduleCounts = { PL: SPORT_DATA.PL.moduleQuestions.length, NFL: SPORT_DATA.NFL.moduleQuestions.length };
 
   return(
     <div ref={containerRef} className="app-root" style={{
@@ -258,12 +295,9 @@ export default function App(){
         {/* ── GENOME HOME (landing page) ── */}
         {screen==="home"&&(
           <GenomeHome
-            sports={SPORTS}
+            sports={sportsList}
             genome={genome}
-            teams={teams}
-            archetypes={archetypes}
-            badgeUrls={badgeUrls}
-            teamTextColors={teamTextColors}
+            sportData={SPORT_DATA}
             coreSequenced={coreSequenced}
             coreCount={coreCount}
             moduleCounts={moduleCounts}
@@ -278,7 +312,7 @@ export default function App(){
           <>
             {/* League indicator: which sequence you're taking, always visible */}
             <div style={{textAlign:"center",marginBottom:14,fontSize:11,color:"#7878a0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>
-              {(SPORTS.find(s=>s.code==="PL")||{}).name||"Premier League"}
+              {(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"}
             </div>
             {/* Progress: six-segment phase tracker (in-flow, not jammed to viewport top) */}
             <div style={{display:"flex",gap:3,height:4,marginBottom:24}}>
@@ -367,7 +401,7 @@ export default function App(){
                 onMouseLeave={e=>e.currentTarget.style.color="#9898b8"}
               >← genome</button>
               <span style={{fontSize:11,color:"#7878a0",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>
-                {(SPORTS.find(s=>s.code==="PL")||{}).name||"Premier League"}
+                {(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"}
               </span>
             </div>
 
@@ -422,7 +456,7 @@ export default function App(){
               <div style={{animation:"fadeIn .3s ease"}}>
                 <div style={{width:28,height:2,background:team.color,marginBottom:18,borderRadius:2}}/>
                 <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(19px,4vw,22px)",fontWeight:300,color:"#d8d4ce",lineHeight:1.85,margin:"0 0 20px",fontStyle:"italic"}}>{team.desc}</p>
-                <p style={{fontSize:14,color:"#bbb",lineHeight:1.75,margin:"0 0 24px",borderLeft:`1px solid #252535`,paddingLeft:14,fontFamily:"'DM Mono',monospace"}}>{team.note}</p>
+                {team.note&&(<p style={{fontSize:14,color:"#bbb",lineHeight:1.75,margin:"0 0 24px",borderLeft:`1px solid #252535`,paddingLeft:14,fontFamily:"'DM Mono',monospace"}}>{team.note}</p>)}
                 {/* Fandom vs FanDNA reframe (per 1b) */}
                 <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(15px,3.4vw,18px)",fontStyle:"italic",color:"#9898b8",lineHeight:1.6,margin:"6px 0 22px"}}>This is your club by DNA. What you support on Saturdays is up to you.</p>
                 {/* Share card */}
@@ -430,9 +464,10 @@ export default function App(){
                   <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:12}}>Share your genome</div>
                   <button
                     onClick={async()=>{
-                      const caption=`Which club are you, really? Turns out I'm ${team.name}, ${archetypes[result]}. ${shareString}. Find yours: fandna.vercel.app`;
+                      const noun=activeSport==="NFL"?"franchise":"club";
+                      const caption=`Which ${noun} are you, really? Turns out I'm ${team.name}, ${archetypes[result]}. ${shareString}. Find yours: fandna.vercel.app`;
                       let blob=null;
-                      try{blob=await generateShareCard(result);}catch(e){blob=null;}
+                      try{blob=await generateShareCard(activeSport,result,genome);}catch(e){blob=null;}
                       if(blob&&navigator.canShare){
                         const file=new File([blob],`fandna-${result}.png`,{type:"image/png"});
                         if(navigator.canShare({files:[file]})){
@@ -463,10 +498,10 @@ export default function App(){
                   <div style={{fontSize:11,color:"#666",marginTop:10,fontFamily:"'DM Mono',monospace",letterSpacing:"0.05em"}}>Saves a card to share. On mobile, opens your share sheet.</div>
                 </div>
                 <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:4}}>
-                  <a href={team.kit} target="_blank" rel="noopener noreferrer"
+                  {team.kit&&(<a href={team.kit} target="_blank" rel="noopener noreferrer"
                     style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
                     <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> Buy the kit
-                  </a>
+                  </a>)}
                   {squadUrls[result]&&(
                     <a href={squadUrls[result]} target="_blank" rel="noopener noreferrer"
                       style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
@@ -494,10 +529,10 @@ export default function App(){
                 </div>
                 {/* ── CTAs ── */}
                 <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:24,paddingTop:20,borderTop:"1px solid #2a2a3a"}}>
-                  <a href={team.kit} target="_blank" rel="noopener noreferrer"
+                  {team.kit&&(<a href={team.kit} target="_blank" rel="noopener noreferrer"
                     style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
                     <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> Buy the kit
-                  </a>
+                  </a>)}
                   {squadUrls[result]&&(
                     <a href={squadUrls[result]} target="_blank" rel="noopener noreferrer"
                       style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
@@ -543,10 +578,10 @@ export default function App(){
                       </div>
                     )}
                     <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:8}}>
-                      <a href={team.kit} target="_blank" rel="noopener noreferrer"
+                      {team.kit&&(<a href={team.kit} target="_blank" rel="noopener noreferrer"
                         style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
                         <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> Buy the kit
-                      </a>
+                      </a>)}
                       {squadUrls[result]&&(
                         <a href={squadUrls[result]} target="_blank" rel="noopener noreferrer"
                           style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
