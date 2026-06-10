@@ -43,7 +43,17 @@ function AppInner(){
   const [screen,setScreen]=useState("home");     // "home" | "quiz" | "result" - the genome home is the landing page
   const [genome,setGenome]=useState({});         // saved results map { PL:{club} } - drives the home strands + share string
   const [activeSport,setActiveSport]=useState("PL"); // which sport's quiz/result/card is in play
+  const [dbgErr,setDbgErr]=useState(null);       // TEMP: captures any uncaught (handler/async) error for the on-screen strip
   const containerRef=useRef(null);
+
+  // TEMP diagnostic: surface uncaught errors that React's boundary can't catch (event handlers, async).
+  useEffect(()=>{
+    const onErr=(e)=>setDbgErr(String((e&&((e.error&&e.error.stack)||e.message))||e).slice(0,400));
+    const onRej=(e)=>setDbgErr("promise: "+String((e&&e.reason&&(e.reason.stack||e.reason.message))||(e&&e.reason)).slice(0,400));
+    window.addEventListener("error",onErr);
+    window.addEventListener("unhandledrejection",onRej);
+    return()=>{window.removeEventListener("error",onErr);window.removeEventListener("unhandledrejection",onRej);};
+  },[]);
 
   // NFL ships behind live:false. A hidden ?nfl=1 in the URL unlocks the strand on preview
   // (tappable, takeable) while the public still sees "coming soon". Nothing else changes.
@@ -287,6 +297,12 @@ function AppInner(){
       position:"relative",
     }}>
       <Analytics/>
+
+      {/* TEMP diagnostic strip: always visible, sits outside the fade wrapper so opacity can't hide it. */}
+      <div style={{position:"fixed",top:0,left:0,right:0,zIndex:99999,background:"#161620ee",color:"#7ee07e",fontFamily:"monospace",fontSize:10,lineHeight:1.4,padding:"4px 8px",borderBottom:"1px solid #2a5a2a",pointerEvents:"none",whiteSpace:"pre-wrap",wordBreak:"break-word"}}>
+        {`DBG screen=${screen} phase=${phase} sport=${activeSport} mode=${mode} cur=${cur} q=${q?q.id:"none"} result=${String(result)}`}
+        {dbgErr?`\nERR ${dbgErr}`:""}
+      </div>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
         @keyframes slideIn  {from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
