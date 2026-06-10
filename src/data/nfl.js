@@ -148,8 +148,8 @@ const moduleQuestions = [
     "type": "slider",
     "phase": "The fine print",
     "question": "Which lands closer:",
-    "left": ": Win ugly, win tough, do the hard things right. The grind is the glory.",
-    "right": ": Win with style. The spotlight, the spectacle, the show is half the point."
+    "left": "Win ugly, win tough, do the hard things right. The grind is the glory.",
+    "right": "Win with style. The spotlight, the spectacle, the show is half the point."
   },
   {
     "id": "nfl_q7",
@@ -212,8 +212,8 @@ const moduleQuestions = [
     "type": "slider",
     "phase": "What it comes down to",
     "question": "Which is more you:",
-    "left": ": I did something once that was flat-out perfect, and no one has matched it since. A small, honest part of me roots for everyone else to keep falling short, so it stays mine alone.",
-    "right": ": I just refuse to disappear. Given almost nothing, somehow impossible to get rid of."
+    "left": "I did something once that was flat-out perfect, and no one has matched it since. A small, honest part of me roots for everyone else to keep falling short, so it stays mine alone.",
+    "right": "I just refuse to disappear. Given almost nothing, somehow impossible to get rid of."
   },
   {
     "id": "nfl_q10",
@@ -248,8 +248,8 @@ const moduleQuestions = [
     "type": "slider",
     "phase": "What it comes down to",
     "question": "Your volume:",
-    "left": ": Calm. I don't need to make noise, the results speak.",
-    "right": ": Loud enough to move the needle, and on a good day loud enough to move the ground."
+    "left": "Calm. I don't need to make noise, the results speak.",
+    "right": "Loud enough to move the needle, and on a good day loud enough to move the ground."
   },
   {
     "id": "nfl_q12",
