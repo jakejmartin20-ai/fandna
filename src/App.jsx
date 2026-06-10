@@ -8,6 +8,7 @@ import { loadState, saveResult, clearAll } from "./lib/storage";
 import { generateShareCard } from "./lib/card";
 import { ChoiceQ, BinaryQ, SliderQ, DimBars, BadgeImg } from "./components/quiz";
 import { GenomeHome } from "./screens/Genome";
+import { CoreStrip } from "./components/CoreStrip";
 import { SPORTS } from "./lib/manifest";
 
 // Fail-state guard. If anything in the app throws while rendering, the user sees this
@@ -70,6 +71,7 @@ function AppInner(){
   const [tab,setTab]=useState("result");
   const [mode,setMode]=useState("full");        // "full" = core+module ; "module" = PL module only
   const [savedCore,setSavedCore]=useState(null); // cached {coreAnswers,coreProfile} for module-only retakes
+  const [coreProfile,setCoreProfile]=useState(null); // the user's 7-dim core; drives the strip everywhere
   const [screen,setScreen]=useState("home");     // "home" | "quiz" | "result" - the genome home is the landing page
   const [genome,setGenome]=useState({});         // saved results map { PL:{club} } - drives the home strands + share string
   const [activeSport,setActiveSport]=useState("PL"); // which sport's quiz/result/card is in play
@@ -112,6 +114,7 @@ function AppInner(){
   useEffect(()=>{
     const st=loadState();
     setGenome(st.results||{});
+    setCoreProfile(st.coreProfile||null);
     if(st.results&&st.results.PL&&st.results.PL.club){
       setSavedCore({coreAnswers:st.coreAnswers,coreProfile:st.coreProfile});
       setScores(st.results.PL.scores||null);
@@ -162,6 +165,7 @@ function AppInner(){
       // fingerprint-plus-module path. scoreModule routes on the sport.
       const { club, scores:s } = scoreModule(activeSport, { coreProfile, coreAnswers, moduleAnswers });
       setScores(s);
+      setCoreProfile(coreProfile);
       setResult(club);
       setScreen("result");
       setGenome(g=>({...g,[activeSport]:{club}}));
@@ -178,7 +182,7 @@ function AppInner(){
 
   function startOver(){
     clearAll();
-    setMode("full");setSavedCore(null);setGenome({});
+    setMode("full");setSavedCore(null);setGenome({});setCoreProfile(null);
     setPhase("out");
     setTimeout(()=>{
       setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");
@@ -308,6 +312,42 @@ function AppInner(){
   const coreCount = coreQuestions.length;
   const moduleCounts = { PL: SPORT_DATA.PL.moduleQuestions.length, NFL: SPORT_DATA.NFL.moduleQuestions.length };
 
+  // Build the share card (the user's core feeds the strip), then either open the share sheet
+  // or save the image. Download always saves. Both fall back to copying the caption.
+  function cardCaption(){
+    const noun=activeSport==="NFL"?"franchise":"club";
+    return `Which ${noun} are you, really? Turns out I'm ${team.name}, ${archetypes[result]}. ${shareString}. Find yours: fandna.vercel.app`;
+  }
+  function saveBlob(blob){
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement("a");a.href=url;a.download=`fandna-${result}.png`;
+    document.body.appendChild(a);a.click();a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1500);
+  }
+  async function shareCard(){
+    const caption=cardCaption();
+    let blob=null;
+    try{blob=await generateShareCard(activeSport,result,genome,coreProfile);}catch(e){blob=null;}
+    track("card_generated",{sport:activeSport,club:result});
+    if(blob&&navigator.canShare){
+      const file=new File([blob],`fandna-${result}.png`,{type:"image/png"});
+      if(navigator.canShare({files:[file]})){
+        try{await navigator.share({files:[file],text:caption});return;}
+        catch(e){if(e&&e.name==="AbortError")return;}
+      }
+    }
+    if(blob){ saveBlob(blob); navigator.clipboard?.writeText(caption).catch(()=>{}); return; }
+    navigator.clipboard?.writeText(caption).then(()=>alert("Card couldn't render here. Caption copied.")).catch(()=>alert(caption));
+  }
+  async function downloadCard(){
+    let blob=null;
+    try{blob=await generateShareCard(activeSport,result,genome,coreProfile);}catch(e){blob=null;}
+    track("card_generated",{sport:activeSport,club:result});
+    if(blob){ saveBlob(blob); return; }
+    const caption=cardCaption();
+    navigator.clipboard?.writeText(caption).then(()=>alert("Card couldn't render here. Caption copied.")).catch(()=>alert(caption));
+  }
+
   return(
     <div ref={containerRef} className="app-root" style={{
       background:"#16161e",
@@ -354,6 +394,7 @@ function AppInner(){
             coreCount={coreCount}
             moduleCounts={moduleCounts}
             shareString={shareString}
+            coreProfile={coreProfile}
             onOpenResult={openResult}
             onStartSport={startSport}
           />
@@ -418,7 +459,7 @@ function AppInner(){
             {cur===0&&(
               <div style={{textAlign:"center",marginBottom:26}}>
                 <div style={{fontSize:11,color:"#7878a0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:10}}>Which club are you, really?</div>
-                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(14px,3.4vw,17px)",color:"#9898b8",lineHeight:1.55,margin:0}}>{mode==="module"?`Your core DNA is already sequenced. ${moduleQuestions.length} questions to remap your Premier League strand.`:"Answer honestly, not how you wish you were. New to the league or loyal for life, this is the club in your DNA."}</p>
+                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(14px,3.4vw,17px)",color:"#9898b8",lineHeight:1.55,margin:0}}>{mode==="module"?`Your core DNA is already sequenced. ${moduleQuestions.length} questions to remap your ${(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"} strand.`:"Answer honestly, not how you wish you were. New to the league or loyal for life, this is the club in your DNA."}</p>
               </div>
             )}
 
@@ -457,24 +498,44 @@ function AppInner(){
               </span>
             </div>
 
-            {/* Club header */}
-            <div style={{marginBottom:20,paddingBottom:20,borderBottom:"1px solid #0f0f1a"}}>
-              <div style={{fontSize:11,color:"#888",letterSpacing:"0.4em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:16,textAlign:"center"}}>your club</div>
-              <div style={{display:"flex",alignItems:"center",gap:16,marginBottom:12}}>
-                {/* Badge - emoji default, img replaces on successful load */}
-                <BadgeImg url={badgeUrls[result]} emoji={team.emoji} size={60}/>
-                {/* Name + tagline + archetype inline */}
-                <div style={{flex:1,minWidth:0}}>
-                  <div style={{display:"flex",alignItems:"center",gap:10,flexWrap:"wrap",marginBottom:4}}>
-                    <h1 style={{fontFamily:"'Cormorant Garamond',Georgia,serif",margin:0,fontSize:"clamp(26px,6vw,38px)",fontWeight:300,color:"#e8e4de",letterSpacing:"-.02em",lineHeight:1}}>{team.name}</h1>
-                    <div style={{display:"inline-flex",alignItems:"center",gap:6,background:`${team.color}15`,border:`1px solid ${team.color}30`,borderRadius:4,padding:"3px 10px",flexShrink:0}}>
-                      <span style={{fontSize:11,color:"#aaa",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>type</span>
-                      <span style={{fontSize:11,color:(teamTextColors[result]||team.color),fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic"}}>{archetypes[result]}</span>
-                    </div>
-                  </div>
-                  <p style={{margin:0,fontSize:13,color:(teamTextColors[result]||team.color),fontStyle:"italic",letterSpacing:".01em",opacity:0.9}}>{team.tagline}</p>
+            {/* Card-as-hero: your share card, on screen, with the tappable core strip inside it.
+                Share and Download generate the flat image (which shows the codes only). */}
+            <div style={{border:`1px solid ${team.color}33`,borderRadius:14,overflow:"hidden",background:"#14141c",marginBottom:14}}>
+              <div style={{background:`linear-gradient(180deg,${team.color}2e 0%,transparent 70%)`,padding:"22px 18px 4px",textAlign:"center"}}>
+                <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",letterSpacing:"0.34em",textTransform:"uppercase",marginBottom:14}}>your {activeSport==="NFL"?"franchise":"club"}</div>
+                <div style={{display:"inline-flex",border:"5px solid #f7f4ef",borderRadius:"50%"}}>
+                  <BadgeImg url={badgeUrls[result]} emoji={team.emoji} size={74}/>
                 </div>
+                <h1 style={{fontFamily:"'Cormorant Garamond',Georgia,serif",margin:"14px 0 0",fontSize:"clamp(28px,7vw,38px)",fontWeight:300,color:"#e8e4de",letterSpacing:"-.02em",lineHeight:1}}>{team.name}</h1>
+                <div style={{display:"inline-flex",alignItems:"center",gap:7,background:`${team.color}15`,border:`1px solid ${team.color}30`,borderRadius:5,padding:"4px 11px",marginTop:11}}>
+                  <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#aaa",letterSpacing:"0.2em",textTransform:"uppercase"}}>type</span>
+                  <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:13,color:(teamTextColors[result]||team.color),fontStyle:"italic"}}>{archetypes[result]}</span>
+                </div>
+                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:15,color:"#c9c4bd",fontStyle:"italic",margin:"13px auto 0",maxWidth:300,lineHeight:1.45}}>{team.tagline}</p>
               </div>
+
+              <div style={{padding:"16px 16px 15px"}}>
+                <CoreStrip dims={coreProfile||D.teamDims[result]} compact/>
+              </div>
+
+              <div style={{padding:"0 16px 16px"}}>
+                <div style={{textAlign:"center",fontFamily:"'DM Mono',monospace",fontSize:11,color:"#c9c5cf",letterSpacing:"0.05em",marginBottom:4,wordBreak:"break-word"}}>{shareString}</div>
+                <div style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:14,color:"#9898b8",fontStyle:"italic"}}>Which {activeSport==="NFL"?"franchise":"club"} are you, really?</div>
+              </div>
+            </div>
+
+            {/* Share + Download */}
+            <div style={{display:"flex",gap:10,marginBottom:18}}>
+              <button onClick={shareCard}
+                style={{flex:1,textAlign:"center",background:`${team.color}26`,border:`1px solid ${team.color}66`,borderRadius:6,padding:"13px 10px",color:"#f1e7e7",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",cursor:"pointer",fontWeight:500}}
+                onMouseEnter={e=>{e.currentTarget.style.background=`${team.color}38`;}}
+                onMouseLeave={e=>{e.currentTarget.style.background=`${team.color}26`;}}
+              >Share</button>
+              <button onClick={downloadCard}
+                style={{flex:1,textAlign:"center",background:"transparent",border:"1px solid #33333f",borderRadius:6,padding:"13px 10px",color:"#bdbdd0",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",cursor:"pointer",fontWeight:500}}
+                onMouseEnter={e=>{e.currentTarget.style.borderColor="#55556a";e.currentTarget.style.color="#d8d4ce";}}
+                onMouseLeave={e=>{e.currentTarget.style.borderColor="#33333f";e.currentTarget.style.color="#bdbdd0";}}
+              >Download</button>
             </div>
 
             {/* Tabs, scrollable row */}
@@ -509,46 +570,8 @@ function AppInner(){
                 <div style={{width:28,height:2,background:team.color,marginBottom:18,borderRadius:2}}/>
                 <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(19px,4vw,22px)",fontWeight:300,color:"#d8d4ce",lineHeight:1.85,margin:"0 0 20px",fontStyle:"italic"}}>{team.desc}</p>
                 {team.note&&(<p style={{fontSize:14,color:"#bbb",lineHeight:1.75,margin:"0 0 24px",borderLeft:`1px solid #252535`,paddingLeft:14,fontFamily:"'DM Mono',monospace"}}>{team.note}</p>)}
-                {/* Fandom vs FanDNA reframe (per 1b) */}
-                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(15px,3.4vw,18px)",fontStyle:"italic",color:"#9898b8",lineHeight:1.6,margin:"6px 0 22px"}}>This is your club by DNA. What you support on Saturdays is up to you.</p>
-                {/* Share card */}
-                <div style={{background:"#141420",border:"1px solid #222230",borderRadius:8,padding:"16px 18px",marginBottom:20,marginTop:8,borderTop:`2px solid ${team.color}20`}}>
-                  <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:12}}>Share your genome</div>
-                  <button
-                    onClick={async()=>{
-                      const noun=activeSport==="NFL"?"franchise":"club";
-                      const caption=`Which ${noun} are you, really? Turns out I'm ${team.name}, ${archetypes[result]}. ${shareString}. Find yours: fandna.vercel.app`;
-                      let blob=null;
-                      try{blob=await generateShareCard(activeSport,result,genome);}catch(e){blob=null;}
-                      if(blob&&navigator.canShare){
-                        const file=new File([blob],`fandna-${result}.png`,{type:"image/png"});
-                        if(navigator.canShare({files:[file]})){
-                          try{await navigator.share({files:[file],text:caption});return;}
-                          catch(e){if(e&&e.name==="AbortError")return;}
-                        }
-                      }
-                      if(blob){
-                        const url=URL.createObjectURL(blob);
-                        const a=document.createElement("a");a.href=url;a.download=`fandna-${result}.png`;
-                        document.body.appendChild(a);a.click();a.remove();
-                        setTimeout(()=>URL.revokeObjectURL(url),1500);
-                        navigator.clipboard?.writeText(caption).catch(()=>{});
-                        return;
-                      }
-                      navigator.clipboard?.writeText(caption).then(()=>alert("Card couldn't render here. Caption copied.")).catch(()=>alert(caption));
-                    }}
-                    style={{
-                      display:"inline-flex",alignItems:"center",gap:10,
-                      background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,
-                      padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",
-                      textTransform:"uppercase",fontFamily:"'DM Mono',monospace",cursor:"pointer",
-                      transition:"all .15s ease",fontWeight:500,
-                    }}
-                    onMouseEnter={e=>{e.currentTarget.style.background=`${team.color}33`;}}
-                    onMouseLeave={e=>{e.currentTarget.style.background=`${team.color}22`;}}
-                  >🧬 Share card</button>
-                  <div style={{fontSize:11,color:"#666",marginTop:10,fontFamily:"'DM Mono',monospace",letterSpacing:"0.05em"}}>Saves a card to share. On mobile, opens your share sheet.</div>
-                </div>
+                {/* Fandom vs FanDNA reframe (per 1b) - sport-aware */}
+                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(15px,3.4vw,18px)",fontStyle:"italic",color:"#9898b8",lineHeight:1.6,margin:"6px 0 22px"}}>This is your {activeSport==="NFL"?"franchise":"club"} by DNA. What you support on {activeSport==="NFL"?"Sundays":"Saturdays"} is up to you.</p>
                 <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:4}}>
                   {team.kit&&(<a href={team.kit} target="_blank" rel="noopener noreferrer"
                     style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
