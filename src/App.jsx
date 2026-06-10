@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef, useMemo, Component } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { track } from "@vercel/analytics";
 import { coreQuestions } from "./data/core";
@@ -10,7 +10,58 @@ import { ChoiceQ, BinaryQ, SliderQ, DimBars, BadgeImg } from "./components/quiz"
 import { GenomeHome } from "./screens/Genome";
 import { SPORTS } from "./lib/manifest";
 
-export default function App(){
+// Fail-state guard. If anything in the app throws while rendering, the user sees this
+// instead of a blank screen. A plain reload keeps their saved genome.
+class ErrorBoundary extends Component {
+  constructor(p){ super(p); this.state={crashed:false}; }
+  static getDerivedStateFromError(){ return {crashed:true}; }
+  componentDidCatch(err){ try{ track("render_error",{message:String(err&&err.message).slice(0,120)}); }catch(e){} }
+  render(){
+    if(!this.state.crashed) return this.props.children;
+    return (
+      <div style={{
+        background:"#16161e",minHeight:"100dvh",
+        display:"flex",alignItems:"center",justifyContent:"center",
+        padding:"32px 24px",fontFamily:"'Georgia','Times New Roman',serif",position:"relative",overflow:"hidden",
+      }}>
+        <style>{`@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');html,body{margin:0}`}</style>
+
+        {/* faint helix backbone, echoes the home screen */}
+        <svg viewBox="0 0 520 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"
+          style={{position:"absolute",inset:0,zIndex:0,pointerEvents:"none",opacity:0.5,width:"100%",height:"100%"}}>
+          <path d="M180 0 C320 110, 200 220, 340 330 S 200 440, 340 540" stroke="#22222e" strokeWidth="1.5" fill="none"/>
+          <path d="M340 0 C200 110, 320 220, 180 330 S 320 440, 180 540" stroke="#22222e" strokeWidth="1.5" fill="none"/>
+        </svg>
+
+        <div style={{position:"relative",zIndex:1,textAlign:"center",maxWidth:340}}>
+          {/* one strand bar knocked out of line */}
+          <div style={{display:"flex",gap:4,justifyContent:"center",marginBottom:26}}>
+            <span style={{width:26,height:5,borderRadius:3,background:"#2a2a3a"}}/>
+            <span style={{width:26,height:5,borderRadius:3,background:"#2a2a3a"}}/>
+            <span style={{width:26,height:5,borderRadius:3,background:"#6a6a90",transform:"translateY(7px) rotate(-12deg)",opacity:0.8}}/>
+            <span style={{width:26,height:5,borderRadius:3,background:"#2a2a3a"}}/>
+            <span style={{width:26,height:5,borderRadius:3,background:"#2a2a3a"}}/>
+          </div>
+
+          <h1 style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:300,color:"#d8d4ce",lineHeight:1.2,fontSize:"clamp(28px,7vw,34px)",letterSpacing:".01em",margin:"0 0 16px"}}>A strand came loose.</h1>
+          <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(16px,4vw,18px)",lineHeight:1.55,color:"#9898b8",margin:"0 0 30px"}}>That one's on us, not your DNA. Refresh and we'll re-read the sequence.</p>
+
+          <button onClick={()=>window.location.reload()}
+            style={{border:"1px solid #4a4a6a",borderRadius:6,padding:"13px 30px",color:"#cfcbe6",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.25em",textTransform:"uppercase",background:"rgba(120,120,160,0.06)",cursor:"pointer"}}>
+            Re-sequence
+          </button>
+
+          <a href="https://forms.gle/kAV9KGGUxdcA1dYv6" target="_blank" rel="noopener noreferrer"
+            style={{display:"block",marginTop:20,fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.12em",textTransform:"uppercase",color:"#5a5a78",textDecoration:"none"}}>
+            Report it
+          </a>
+        </div>
+      </div>
+    );
+  }
+}
+
+function AppInner(){
   const [cur,setCur]=useState(0);
   const [answers,setAnswers]=useState({});
   const [scores,setScores]=useState(null);
@@ -685,4 +736,8 @@ export default function App(){
       </div>
     </div>
   );
+}
+
+export default function App(){
+  return (<ErrorBoundary><AppInner/></ErrorBoundary>);
 }
