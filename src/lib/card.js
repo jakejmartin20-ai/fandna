@@ -37,7 +37,8 @@ async function generateShareCard(sport, key, genome){
   const badge=CARD_BADGES[key];
   x.textBaseline="middle";
   if(badge&&!GENERIC_EMOJI.has(badge)){
-    x.font="110px 'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif";x.fillText(badge,cx,ry+4);
+    x.font="110px 'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif";
+    x.textAlign="left";const ew=x.measureText(badge).width;x.fillText(badge,cx-ew/2,ry+4);x.textAlign="center";
   }else{
     x.font="400 66px 'DM Mono',monospace";x.fillStyle=onColorText(col);x.fillText(key,cx,ry+2);
   }
