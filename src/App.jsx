@@ -152,6 +152,7 @@ export default function App(){
   function startSport(code){
     const sport=code||"PL";
     setActiveSport(sport);
+    setResult(null); setScores(null);   // drop any prior sport's result before this one's data loads
     const st=loadState();
     if(st.coreAnswers){
       setSavedCore({coreAnswers:st.coreAnswers,coreProfile:st.coreProfile});
@@ -259,7 +260,7 @@ export default function App(){
   return(
     <div ref={containerRef} className="app-root" style={{
       background:"#16161e",
-      display:"flex",alignItems:"center",justifyContent:"center",
+      display:"flex",alignItems:"flex-start",justifyContent:"center",
       padding:"32px 20px",
       fontFamily:"'Georgia','Times New Roman',serif",
       position:"relative",
@@ -283,7 +284,7 @@ export default function App(){
       {/* Ambient glow, changes with phase */}
       <div style={{
         position:"fixed",inset:0,zIndex:0,pointerEvents:"none",
-        background:`radial-gradient(ellipse at 30% 40%, ${result?teams[result].color+"08":"#ffffff08"} 0%, transparent 65%)`,
+        background:`radial-gradient(ellipse at 30% 40%, ${result&&teams[result]?teams[result].color+"08":"#ffffff08"} 0%, transparent 65%)`,
         transition:"background 1s ease",
       }}/>
 
