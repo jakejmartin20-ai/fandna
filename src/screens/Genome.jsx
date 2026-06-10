@@ -1,66 +1,38 @@
-// FanDNA - Genome home screen (Phase 3, the WC-end tease / launch landing page).
+// FanDNA - Genome home screen (Riff A). The new front door, manifest-driven: one "strand"
+// row per sport. Adding a future sport is a manifest line plus its data; this file needs no
+// changes for that. Order-agnostic: any live sport can be taken first (the shared core is the
+// one-time prerequisite, never a specific sport).
 //
-// The new front door. Driven ENTIRELY by the sports manifest: it maps over SPORTS and
-// renders one "strand" row per sport. Adding a future sport is just a manifest line plus
-// its data; this file needs no changes for that. Order-agnostic: any live sport can be
-// taken first (the shared core is the one-time prerequisite, never a specific sport).
-//
-// Per sport, a strand renders in one of three states:
-//   completed      -> a saved result exists (club colour, badge, name, Type, gel echo). Tappable -> result.
-//   live, untaken  -> live but not taken (dashed strand, hook, count, empty gel scaffold). Tappable -> quiz.
-//   coming soon    -> live:false. Named, dimmed, not tappable.
+// Riff A layout:
+//   - The seven-band core strip (CoreStrip) is the identity hero up top: YOUR core, the same
+//     bars across every sport. Shown once. It carries a quiet share footer (tap-to-copy plus a
+//     small Share link), not a loud button.
+//   - Each sport is a plain strand row (crest, name, Type for completed; the untaken live sport
+//     is the bright primary CTA). The bars are NOT repeated per row; the team identity is the
+//     per-row difference.
+//   - A faint double-helix and a backbone line thread the strands.
+//   - State-aware first run: with no genome yet, the hero collapses and the screen leads with
+//     the live sport as Start.
 //
 // All copy here is user-facing, so: no em dashes.
 
 import { useState } from "react";
 import { BadgeImg } from "../components/quiz";
-import { DIM_ORDER, DIM_COLORS } from "../data/pl";
-
-// Mini gel echo: the seven core-sequence bands from the share card, shrunk for a strand row.
-function GelEcho({ dims }){
-  const d = dims || {};
-  const H = 30, P = 3, BANDH = 4, TRAVEL = H - 2*P - BANDH;
-  return (
-    <div style={{display:"flex",gap:3,marginTop:11}}>
-      {DIM_ORDER.map((dk)=>{
-        const score = d[dk]||0;
-        const top = P + (1 - score/10) * TRAVEL;
-        return (
-          <div key={dk} style={{position:"relative",flex:1,height:H,background:"#1e1e2a",border:"1px solid #2a2a3a",borderRadius:3,overflow:"hidden"}}>
-            <div style={{position:"absolute",left:1,right:1,top,height:BANDH,borderRadius:2,background:DIM_COLORS[dk]}}/>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-// Empty gel scaffold: the same seven lanes, blank, on an untaken strand. Previews the payoff.
-function GelScaffold(){
-  return (
-    <div style={{display:"flex",gap:3,marginTop:11,opacity:0.45}}>
-      {[0,1,2,3,4,5,6].map((i)=>(
-        <div key={i} style={{flex:1,height:30,background:"#191926",border:"1px dashed #2a2a3a",borderRadius:3}}/>
-      ))}
-    </div>
-  );
-}
+import { CoreStrip } from "../components/CoreStrip";
 
 export function GenomeHome({
   sports,            // manifest list: [{code,name,live,hook}, ...]
   genome,            // saved results map: { PL: { club: "LI" }, ... }
-  sportData,         // { PL:{teams,archetypes,badgeUrls,teamTextColors,teamDims}, NFL:{...} }
+  sportData,         // { PL:{teams,archetypes,badgeUrls,teamTextColors,...}, NFL:{...} }
   coreSequenced,     // has the shared core already been answered once?
   coreCount,         // number of core questions (added to the first sport taken)
   moduleCounts,      // per-sport module question counts: { PL: 14, ... }
   shareString,       // genome sequence string, e.g. "FanDNA: PL-LI . NFL-?"
+  coreProfile,       // the user's 7-dim core; drives the hero strip
   onOpenResult,      // (code) => void
   onStartSport,      // (code) => void
 }){
   const [copied,setCopied]=useState(false);
-
-  const anyTaken = sports.some(s=>genome[s.code]&&genome[s.code].club);
-  const hasUntakenLive = sports.some(s=>s.live && !(genome[s.code]&&genome[s.code].club));
 
   function copyShare(){
     const txt = `${shareString}. Find yours: fandna.vercel.app`;
@@ -72,6 +44,11 @@ export function GenomeHome({
     } else {
       window.prompt("Copy your genome:", txt);
     }
+  }
+  function shareLink(){
+    const txt = `${shareString}. Find yours: fandna.vercel.app`;
+    if(navigator.share){ navigator.share({text:txt}).catch(()=>{}); }
+    else { copyShare(); }
   }
 
   return(
@@ -111,18 +88,26 @@ export function GenomeHome({
         Your personality already chose your team. Every sport, the same you. We just read it back.
       </p>
 
-      {/* Shared status line, state-driven (never repeated per strand) */}
+      {/* First-run: no genome yet, lead with Start (the strip stays collapsed / absent). */}
       {!coreSequenced&&(
         <p style={{textAlign:"center",fontSize:11,color:"#8888a8",letterSpacing:"0.08em",fontFamily:"'DM Mono',monospace",margin:"0 0 26px"}}>
           No trivia, no homework. Just you.
         </p>
       )}
-      {coreSequenced&&hasUntakenLive&&(
-        <p style={{textAlign:"center",fontSize:11,color:"#8888a8",letterSpacing:"0.08em",fontFamily:"'DM Mono',monospace",margin:"0 0 26px"}}>
-          Core sequenced. Each new sport is a quick module.
-        </p>
+
+      {/* Identity hero: the user's core strip, shown ONCE, with a quiet share footer. */}
+      {coreSequenced&&(
+        <div style={{position:"relative",zIndex:1,border:"1px solid #222230",borderRadius:12,padding:"15px 14px 13px",marginBottom:22,background:"#14141c"}}>
+          <CoreStrip dims={coreProfile}/>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginTop:14,paddingTop:11,borderTop:"1px solid #222230",gap:10}}>
+            <span style={{fontFamily:"'DM Mono',monospace",fontSize:12,color:"#c9c5cf",letterSpacing:"0.03em",wordBreak:"break-word"}}>{shareString}</span>
+            <span style={{display:"flex",gap:14,flexShrink:0}}>
+              <span onClick={copyShare} style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#7878a0",letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer"}}>{copied?"Copied":"Copy"}</span>
+              <span onClick={shareLink} style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#7878a0",letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer"}}>Share</span>
+            </span>
+          </div>
+        </div>
       )}
-      {coreSequenced&&!hasUntakenLive&&(<div style={{height:10}}/>)}
 
       {/* Strands, one per manifest sport, threaded onto a genome backbone */}
       <div style={{position:"relative",paddingLeft:22,marginBottom:26}}>
@@ -134,7 +119,7 @@ export function GenomeHome({
           const mod = moduleCounts[s.code]||0;
           const last = idx===sports.length-1;
 
-          // ---- Completed strand ----
+          // ---- Completed strand (plain: crest, name, Type, view) ----
           if(done){
             const SD = sportData[s.code]||{};
             const t = (SD.teams&&SD.teams[r.club])||{};
@@ -161,37 +146,35 @@ export function GenomeHome({
                     </div>
                     <span style={{border:`1px solid ${accent}66`,borderRadius:5,padding:"5px 12px",color:accent,fontSize:10,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",flexShrink:0}}>view</span>
                   </div>
-                  <GelEcho dims={SD.teamDims&&SD.teamDims[r.club]}/>
                 </button>
               </div>
             );
           }
 
-          // ---- Live but untaken strand ----
+          // ---- Live but untaken strand (the bright primary CTA) ----
           if(s.live){
             const count = coreSequenced ? mod : (coreCount+mod);
             return(
               <div key={s.code} style={{position:"relative",marginBottom:last?0:14}}>
-                <div style={{position:"absolute",left:-17,top:"50%",transform:"translateY(-50%)",width:8,height:8,borderRadius:"50%",background:"#6a6a90",boxShadow:"0 0 6px #6a6a9099"}}/>
+                <div style={{position:"absolute",left:-17,top:"50%",transform:"translateY(-50%)",width:9,height:9,borderRadius:"50%",background:"#8a8ac0",boxShadow:"0 0 8px #8a8ac0"}}/>
                 <button onClick={()=>onStartSport(s.code)}
                   style={{
-                    textAlign:"left",cursor:"pointer",width:"100%",background:"transparent",
-                    border:"1px dashed #3a3a50",borderRadius:10,padding:"13px 15px",
+                    textAlign:"left",cursor:"pointer",width:"100%",background:"#1b1b2a",
+                    border:"1px dashed #6a6a90",borderRadius:10,padding:"13px 15px",
                     animation:"strandPulse 2.4s ease-in-out infinite",
                   }}
-                  onMouseEnter={e=>{e.currentTarget.style.borderColor="#6a6a90";}}
-                  onMouseLeave={e=>{e.currentTarget.style.borderColor="#3a3a50";}}
+                  onMouseEnter={e=>{e.currentTarget.style.borderColor="#9090b8";}}
+                  onMouseLeave={e=>{e.currentTarget.style.borderColor="#6a6a90";}}
                 >
                   <div style={{display:"flex",alignItems:"center",gap:12}}>
-                    <div style={{width:42,height:42,borderRadius:"50%",flexShrink:0,border:"1px dashed #4a4a6a",display:"flex",alignItems:"center",justifyContent:"center",fontSize:22,color:"#7878a0",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>?</div>
+                    <div style={{width:42,height:42,borderRadius:"50%",flexShrink:0,border:"1px dashed #6a6a90",display:"flex",alignItems:"center",justifyContent:"center",fontSize:22,color:"#9898c8",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>?</div>
                     <div style={{flex:1,minWidth:0}}>
-                      <div style={{fontSize:10,color:"#888",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:2}}>{s.name}</div>
-                      <div style={{fontSize:"clamp(17px,4.3vw,20px)",color:"#d8d4ce",fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:400,lineHeight:1.2}}>{s.hook||"Which one are you?"}</div>
-                      <div style={{fontSize:11,color:"#888",fontFamily:"'DM Mono',monospace",letterSpacing:"0.05em",marginTop:3}}>{count} questions</div>
+                      <div style={{fontSize:10,color:"#9a9ac4",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:2}}>{s.name}</div>
+                      <div style={{fontSize:"clamp(17px,4.3vw,20px)",color:"#eceaf4",fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:400,lineHeight:1.2}}>{s.hook||"Which one are you?"}</div>
+                      <div style={{fontSize:11,color:"#9a9ac4",fontFamily:"'DM Mono',monospace",letterSpacing:"0.05em",marginTop:3}}>{count} questions</div>
                     </div>
-                    <span style={{border:"1px solid #6a6a90",borderRadius:5,padding:"5px 12px",color:"#cfcfe0",fontSize:10,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",flexShrink:0}}>start</span>
+                    <span style={{background:"#7a7aa8",borderRadius:5,padding:"6px 13px",color:"#16161e",fontSize:10,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",flexShrink:0,fontWeight:500}}>start</span>
                   </div>
-                  <GelScaffold/>
                 </button>
               </div>
             );
@@ -216,25 +199,6 @@ export function GenomeHome({
           );
         })}
       </div>
-
-      {/* Share the sequence string (only once there is a genome to share) */}
-      {anyTaken&&(
-        <div style={{background:"#141420",border:"1px solid #222230",borderRadius:8,padding:"16px 18px",marginBottom:24,position:"relative",zIndex:1}}>
-          <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:10}}>Your genome</div>
-          <div style={{fontSize:"clamp(15px,4vw,18px)",color:"#d8d4ce",fontFamily:"'DM Mono',monospace",letterSpacing:"0.04em",marginBottom:14,wordBreak:"break-word"}}>{shareString}</div>
-          <button onClick={copyShare}
-            style={{
-              display:"inline-flex",alignItems:"center",gap:10,
-              background:"#9898b822",border:"1px solid #9898b855",borderRadius:5,
-              padding:"10px 18px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",
-              textTransform:"uppercase",fontFamily:"'DM Mono',monospace",cursor:"pointer",
-              transition:"all .15s ease",fontWeight:500,
-            }}
-            onMouseEnter={e=>{e.currentTarget.style.background="#9898b833";}}
-            onMouseLeave={e=>{e.currentTarget.style.background="#9898b822";}}
-          >{copied?"Copied":"Copy genome"}</button>
-        </div>
-      )}
 
       {/* Support + feedback footer */}
       <div style={{paddingTop:20,borderTop:"1px solid #1e1e2e",textAlign:"center",position:"relative",zIndex:1}}>
