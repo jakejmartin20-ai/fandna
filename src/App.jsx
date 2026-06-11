@@ -10,6 +10,7 @@ import { ChoiceQ, BinaryQ, SliderQ, DimBars, BadgeImg } from "./components/quiz"
 import { GenomeHome } from "./screens/Genome";
 import { CoreStrip } from "./components/CoreStrip";
 import { MatchEvidence } from "./components/MatchEvidence";
+import { CrossMatch } from "./components/CrossMatch";
 import { SPORTS } from "./lib/manifest";
 
 // Fail-state guard. If anything in the app throws while rendering, the user sees this
@@ -69,6 +70,7 @@ function AppInner(){
   const [scores,setScores]=useState(null);
   const [result,setResult]=useState(null);
   const [evidence,setEvidence]=useState(null); // match evidence (stability + tips) for the current result
+  const [evidenceInput,setEvidenceInput]=useState(null); // {coreAnswers,moduleAnswers} for the cross-match compare
   const [phase,setPhase]=useState("in");
   const [tab,setTab]=useState("result");
   const [mode,setMode]=useState("full");        // "full" = core+module ; "module" = PL module only
@@ -122,6 +124,7 @@ function AppInner(){
       setScores(st.results.PL.scores||null);
       setResult(st.results.PL.club);
       setEvidence(matchEvidence("PL",{coreAnswers:st.coreAnswers||{},moduleAnswers:st.results.PL.answers||{},coreProfile:st.coreProfile||null}));
+      setEvidenceInput({coreAnswers:st.coreAnswers||{},moduleAnswers:st.results.PL.answers||{}});
     }
   },[]);
 
@@ -171,6 +174,7 @@ function AppInner(){
       setCoreProfile(coreProfile);
       setResult(club);
       setEvidence(matchEvidence(activeSport,{coreAnswers,moduleAnswers,coreProfile}));
+      setEvidenceInput({coreAnswers,moduleAnswers});
       setScreen("result");
       setGenome(g=>({...g,[activeSport]:{club}}));
       track("quiz_completed",{sport:activeSport,club});
@@ -186,7 +190,7 @@ function AppInner(){
 
   function startOver(){
     clearAll();
-    setMode("full");setSavedCore(null);setGenome({});setCoreProfile(null);setEvidence(null);
+    setMode("full");setSavedCore(null);setGenome({});setCoreProfile(null);setEvidence(null);setEvidenceInput(null);
     setPhase("out");
     setTimeout(()=>{
       setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");
@@ -211,7 +215,7 @@ function AppInner(){
   function startSport(code){
     const sport=code||"PL";
     setActiveSport(sport);
-    setResult(null); setScores(null); setEvidence(null);   // drop any prior sport's result before this one's data loads
+    setResult(null); setScores(null); setEvidence(null); setEvidenceInput(null);   // drop any prior sport's result before this one's data loads
     const st=loadState();
     if(st.coreAnswers){
       setSavedCore({coreAnswers:st.coreAnswers,coreProfile:st.coreProfile});
@@ -235,6 +239,7 @@ function AppInner(){
     const r=(st.results&&st.results[sport])||{};
     if(r.club){ setResult(r.club); setScores(r.scores||null);
       setEvidence(matchEvidence(sport,{coreAnswers:st.coreAnswers||{},moduleAnswers:r.answers||{},coreProfile:st.coreProfile||null}));
+      setEvidenceInput({coreAnswers:st.coreAnswers||{},moduleAnswers:r.answers||{}});
     }
     setTab("result");
     setScreen("result");
@@ -573,7 +578,7 @@ function AppInner(){
                 {/* Fandom vs FanDNA reframe (per 1b) - sport-aware */}
                 <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(15px,3.4vw,18px)",fontStyle:"italic",color:"#9898b8",lineHeight:1.6,margin:"6px 0 22px"}}>This is your {activeSport==="NFL"?"franchise":"club"} by DNA. What you support on {activeSport==="NFL"?"Sundays":"Saturdays"} is up to you.</p>
                 <MatchEvidence evidence={evidence} clubName={team.name} color={teamTextColors[result]||team.color}/>
-                <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:4}}>
+                <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:28}}>
                   {team.kit&&(<a href={team.kit} target="_blank" rel="noopener noreferrer"
                     style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
                     <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> Buy the kit
@@ -722,6 +727,15 @@ function AppInner(){
                     </div>
                   );
                 })}
+                <CrossMatch
+                  sport={activeSport}
+                  input={evidenceInput}
+                  teams={teams}
+                  teamTextColors={teamTextColors}
+                  matchedCode={result}
+                  matchedName={team.name}
+                  matchedColor={teamTextColors[result]||team.color}
+                />
               </div>
             )}
 
