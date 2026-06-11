@@ -202,6 +202,7 @@ function matchEvidence(sport, input){
   // STABILITY: a question is "safe" when no single alternative answer changes the club.
   const total = optionSpace.length;
   let safe = 0;
+  const locks = [];   // per-question: true = locked (no single change moves you), false = could have tipped it
   for (const [qId, opts] of optionSpace){
     let flips = false;
     for (const alt of opts){
@@ -209,6 +210,7 @@ function matchEvidence(sport, input){
       const perturbed = { ...all, [qId]: alt };
       if (pickWinner(perturbed, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase).club !== club){ flips = true; break; }
     }
+    locks.push(!flips);
     if (!flips) safe++;
   }
 
@@ -229,7 +231,83 @@ function matchEvidence(sport, input){
   rows.sort((a, b) => (b.distinct - a.distinct) || (b.clubPts - a.clubPts));
   const tips = rows.slice(0, 3).map(r => ({ question: r.question, answer: r.answer }));
 
-  return { sport, club, safe, total, tips };
+  return { sport, club, safe, total, locks, tips };
 }
 
-export { scoreCore, scoreModule, nearestInDimSpace, matchEvidence, SPORT_ENGINES };
+// -- Cross-match (PL): point the SAME pick at the club you actually support ----------
+// READ-ONLY, like matchEvidence. It never changes your result. It reports, for the club
+// you support: where it placed for you (rank, 1 = your match), how many answers you would
+// have to change to land it instead (a greedy walk, flipping your most-supported-favouring
+// answers one at a time until it would win), and the answers that pulled toward it vs toward
+// the club you actually matched. Alignment, not a bar-vs-bar overlay.
+
+// The answers that pull most distinctively toward a given club (same measure as the tips).
+function distinctiveTips(all, club, matrix, teamKeys, n){
+  const rows = [];
+  for (const [qId, ans] of Object.entries(all)){
+    const cell = matrix[qId] && matrix[qId][ans];
+    if (!cell) continue;
+    const clubPts = cell[club] || 0;
+    if (clubPts <= 0) continue;
+    let sum = 0; for (const t of teamKeys) sum += (cell[t] || 0);
+    const label = answerLabel(qId, ans);
+    if (!readableTip(label)) continue;
+    rows.push({ distinct: clubPts - sum / teamKeys.length, clubPts, question: questionText(qId), answer: label });
+  }
+  rows.sort((a, b) => (b.distinct - a.distinct) || (b.clubPts - a.clubPts));
+  return rows.slice(0, n).map(r => ({ question: r.question, answer: r.answer }));
+}
+
+// Greedy: from the current answers, change one not-yet-changed question at a time to its most
+// target-favouring option, taking a winning move as soon as one exists. Returns the number of
+// changes to land `target`, or null if even changing every answer never lands it.
+function changeToLand(all, target, eng){
+  if (pickWinner(all, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase).club === target) return 0;
+  const qIds = Object.keys(eng.matrix);
+  let cur = { ...all };
+  const changed = new Set();
+  for (let step = 1; step <= qIds.length; step++){
+    let bestQ = null, bestSheet = null, bestMargin = -Infinity, bestWins = false;
+    for (const q of qIds){
+      if (changed.has(q)) continue;
+      const opts = Object.keys(eng.matrix[q]);
+      let bestOpt = cur[q], bp = -Infinity;
+      for (const o of opts){ const p = eng.matrix[q][o]?.[target] || 0; if (p > bp){ bp = p; bestOpt = o; } }
+      if (bestOpt === cur[q]) continue;
+      const trial = { ...cur, [q]: bestOpt };
+      const { club, scores } = pickWinner(trial, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase);
+      const wins = club === target;
+      let comp = -Infinity; for (const c of eng.teamKeys){ if (c !== target && (scores[c] || 0) > comp) comp = scores[c] || 0; }
+      const margin = (scores[target] || 0) - comp;
+      if (wins && !bestWins){ bestWins = true; bestQ = q; bestSheet = trial; bestMargin = margin; }
+      else if (wins === bestWins && margin > bestMargin){ bestMargin = margin; bestQ = q; bestSheet = trial; }
+    }
+    if (!bestQ) return null;
+    cur = bestSheet; changed.add(bestQ);
+    if (bestWins) return step;
+  }
+  return null;
+}
+
+function crossMatch(sport, input, supportedClub){
+  if (sport !== "PL") return null;
+  const eng = SPORT_ENGINES.PL;
+  const all = { ...(input.coreAnswers || {}), ...(input.moduleAnswers || {}) };
+  const { club: matched, scores } = pickWinner(all, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase);
+  if (!supportedClub || scores[supportedClub] === undefined){
+    return { sport, matched, supported: supportedClub || null, isMatch: false, rank: null, totalClubs: eng.teamKeys.length, totalAnswers: Object.keys(eng.matrix).length, changeToLand: null, towardSupported: [], towardMatch: [] };
+  }
+  const isMatch = supportedClub === matched;
+  const supPts = scores[supportedClub] || 0;
+  let greater = 0; for (const c of eng.teamKeys){ if ((scores[c] || 0) > supPts) greater++; }
+  const rank = greater + 1;
+  return {
+    sport, matched, supported: supportedClub, isMatch,
+    rank, totalClubs: eng.teamKeys.length, totalAnswers: Object.keys(eng.matrix).length,
+    changeToLand: isMatch ? 0 : changeToLand(all, supportedClub, eng),
+    towardSupported: distinctiveTips(all, supportedClub, eng.matrix, eng.teamKeys, 2),
+    towardMatch:     distinctiveTips(all, matched,       eng.matrix, eng.teamKeys, 2),
+  };
+}
+
+export { scoreCore, scoreModule, nearestInDimSpace, matchEvidence, crossMatch, SPORT_ENGINES };
