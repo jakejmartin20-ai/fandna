@@ -28,12 +28,19 @@ export function MatchEvidence({ evidence, clubName, color = "#b8567a" }){
   const { safe, total, tips = [] } = evidence;
   const club = clubName || "your club";
 
-  // pivotal (could-have-tipped) cells spread evenly so they intersperse, not clump
-  const k = total - safe;
-  const cells = [];
-  for (let i = 0; i < total; i++){
-    const pivotal = Math.floor((i + 1) * k / total) > Math.floor(i * k / total);
-    cells.push(!pivotal); // true = locked
+  // The cell strip mirrors the real per-answer pattern: locks[i] is true when that answer is
+  // locked (no single change moves you off the club). Evidence without a locks array falls back
+  // to an even spread of the same count, so the number always reads correctly either way.
+  let cells;
+  if (Array.isArray(evidence.locks) && evidence.locks.length === total){
+    cells = evidence.locks.map(Boolean);
+  } else {
+    const k = total - safe;
+    cells = [];
+    for (let i = 0; i < total; i++){
+      const pivotal = Math.floor((i + 1) * k / total) > Math.floor(i * k / total);
+      cells.push(!pivotal); // true = locked
+    }
   }
   const stripColon = (s) => (s || "").replace(/\s*:\s*$/, "");
 
