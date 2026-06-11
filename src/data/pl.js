@@ -335,7 +335,7 @@ const teams = {
   },
   CP: {
     name:"Crystal Palace",    emoji:"🦅", color:"#1B458F",
-    tagline:"South London and proud of it.",
+    tagline:"Everyone underestimates Selhurst until they've stood in it.",
     desc:"The Holmesdale Fanatics have created one of the most genuinely intimidating atmospheres in English football through sheer organised will, tifos, chants, coordinated noise, not because Crystal Palace have trophies to fall back on, but precisely because they don't. You understand this instinct. When what you have is the thing itself, the place, the people, the matchday, you invest in that completely. You don't need history to hand you an identity. You build one, wall by wall, Saturday by Saturday.",
     why:[
       "Your place-identity is intense but self-created, not handed down by trophies but built through sustained collective effort.",
@@ -1837,7 +1837,7 @@ const scoring = {
       "LI": 3,
       "NC": 3,
       "WH": 2,
-      "CP": 3,
+      "CP": 4,
       "SU": 2,
       "LU": 2
     },
@@ -1923,7 +1923,7 @@ const scoring = {
     },
     "D": {
       "BR": 3,
-      "BH": 3,
+      "BH": 4,
       "MC": 2,
       "AR": 1
     },
@@ -2126,7 +2126,7 @@ const scoring = {
       "CH": 2
     },
     "B": {
-      "AR": 3,
+      "AR": 4,
       "BH": 2,
       "AV": 3,
       "FU": 1,
@@ -2462,7 +2462,7 @@ const scoring = {
       "BO": 1,
       "LE": 1,
       "AV": 1,
-      "SU": 3,
+      "SU": 4,
       "LU": 3,
       "CV": 2,
       "HU": 1
@@ -2658,7 +2658,7 @@ const scoring = {
     },
     "B": {
       "NC": 3,
-      "CP": 3,
+      "CP": 4,
       "WH": 2,
       "MU": 2,
       "LE": 1,
@@ -2850,7 +2850,7 @@ const scoring = {
       "AR": 1
     },
     "C": {
-      "CV": 3,
+      "CV": 4,
       "WH": 2,
       "SU": 2,
       "NF": 1,
