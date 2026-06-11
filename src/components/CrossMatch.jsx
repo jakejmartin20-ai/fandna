@@ -160,7 +160,7 @@ export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCo
             </>
           ) : (
             <>
-              <div style={{fontFamily:SERIF,fontSize:34,fontWeight:600,lineHeight:1.12,letterSpacing:"-.01em"}}>
+              <div style={{fontFamily:SERIF,fontSize:34,fontWeight:600,lineHeight:1.12,letterSpacing:"-.01em",color:"#d8d4ce"}}>
                 <span style={{color:supAccent}}>{chosen ? chosen.name : data.supported}</span> on the shirt,<br/>
                 <span style={{color:matchedColor}}>{matchedName}</span> in the DNA.
               </div>
