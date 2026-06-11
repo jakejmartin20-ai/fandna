@@ -25,6 +25,23 @@ function tierLine(n){
   return "Your shirt says one thing, your DNA says another.";
 }
 
+// Adaptive headline colour: clubs keep their own colour unless the two are too close to tell
+// apart (red-vs-red, blue-vs-blue), in which case the supported side falls back to bone so the
+// "shirt vs DNA" split always reads. The DNA (matched) side always keeps the result colour.
+const BONE = "#cfc9c1";
+function hexToRgb(h){
+  const m = /^#?([0-9a-f]{6})$/i.exec(h || "");
+  if (!m) return null;
+  const n = parseInt(m[1], 16);
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+function tooClose(a, b){
+  const ra = hexToRgb(a), rb = hexToRgb(b);
+  if (!ra || !rb) return false;
+  const d = Math.sqrt((ra[0]-rb[0])**2 + (ra[1]-rb[1])**2 + (ra[2]-rb[2])**2);
+  return d < 120;
+}
+
 function TipGroup({ title, color, tips }){
   if (!tips || tips.length === 0) return null;
   return (
@@ -66,6 +83,11 @@ export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCo
     () => (supported && supported !== "NONE") ? crossMatch(sport, input, supported) : null,
     [supported, sport, input]
   );
+
+  // supported side keeps its colour unless it collides with the matched colour, then bone
+  const supAccent = (data && !data.isMatch)
+    ? (tooClose(colorOf(data.supported), matchedColor) ? BONE : colorOf(data.supported))
+    : matchedColor;
 
   const pick = (code) => { setSupported(code); setOpen(false); setQuery(""); };
   const chosen = supported && supported !== "NONE" ? clubs.find(c=>c.code===supported) : null;
@@ -139,7 +161,7 @@ export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCo
           ) : (
             <>
               <div style={{fontFamily:SERIF,fontSize:34,fontWeight:600,lineHeight:1.12,letterSpacing:"-.01em"}}>
-                <span style={{color:colorOf(data.supported)}}>{chosen ? chosen.name : data.supported}</span> on the shirt,<br/>
+                <span style={{color:supAccent}}>{chosen ? chosen.name : data.supported}</span> on the shirt,<br/>
                 <span style={{color:matchedColor}}>{matchedName}</span> in the DNA.
               </div>
               <p style={{fontSize:14.5,color:"#c8c4be",lineHeight:1.55,margin:"14px 0 0"}}>You support {chosen ? chosen.name : data.supported}, but the way you actually follow the game reads as {matchedName}.</p>
@@ -155,7 +177,7 @@ export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCo
               </Card>
               <Card>
                 <Eyebrow>What tipped which way</Eyebrow>
-                <TipGroup title={`Pulled toward ${chosen ? chosen.name : data.supported}`} color={colorOf(data.supported)} tips={data.towardSupported}/>
+                <TipGroup title={`Pulled toward ${chosen ? chosen.name : data.supported}`} color={supAccent} tips={data.towardSupported}/>
                 <TipGroup title={`Pulled you to ${matchedName} instead`} color={matchedColor} tips={data.towardMatch}/>
               </Card>
             </>
