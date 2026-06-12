@@ -1782,7 +1782,8 @@ const scoring = {
       "LE": 2,
       "CP": 1,
       "AV": 2,
-      "CH": 2
+      "CH": 2,
+      "BH": 2
     },
     "E": {
       "LI": 2,
@@ -1848,7 +1849,8 @@ const scoring = {
       "FU": 1,
       "SP": 1,
       "IT": 2,
-      "CV": 2
+      "CV": 2,
+      "HU": 2
     },
     "C": {
       "BR": 3,
@@ -2055,7 +2057,8 @@ const scoring = {
       "EV": 3,
       "MU": 3,
       "SP": 2,
-      "NF": 1
+      "NF": 1,
+      "CH": 2
     },
     "C": {
       "MU": 3,
@@ -2142,7 +2145,8 @@ const scoring = {
       "SU": 2,
       "LU": 2,
       "CV": 2,
-      "HU": 2
+      "HU": 2,
+      "BO": 2
     },
     "D": {
       "BR": 3,
@@ -2171,7 +2175,8 @@ const scoring = {
       "LU": 2,
       "IT": 2,
       "CV": 3,
-      "HU": 2
+      "HU": 2,
+      "SP": 3
     },
     "right": {
       "MC": 2,
@@ -2304,7 +2309,8 @@ const scoring = {
     "E": {
       "MC": 3,
       "LI": 2,
-      "MU": 1
+      "MU": 1,
+      "CH": 3
     }
   },
   "q18": {
@@ -2349,7 +2355,8 @@ const scoring = {
       "WO": 1,
       "IT": 2,
       "CV": 2,
-      "HU": 2
+      "HU": 2,
+      "BO": 2
     },
     "C": {
       "BR": 2,
@@ -2740,7 +2747,8 @@ const scoring = {
       "SP": 3,
       "EV": 3,
       "NF": 2,
-      "WH": 1
+      "WH": 1,
+      "CV": 2
     },
     "D": {
       "MC": 3,
@@ -2888,7 +2896,9 @@ const scoring = {
       "LU": 2,
       "EV": 2,
       "AR": 1,
-      "CV": 1
+      "CV": 1,
+      "SP": 2,
+      "WH": 2
     }
   },
   "pl_q12": {
@@ -2903,7 +2913,8 @@ const scoring = {
       "SP": 3,
       "EV": 3,
       "NF": 2,
-      "CV": 2
+      "CV": 2,
+      "WH": 2
     },
     "C": {
       "NF": 3,
@@ -2946,7 +2957,8 @@ const scoring = {
       "EV": 2,
       "LU": 2,
       "AR": 2,
-      "CH": 1
+      "CH": 1,
+      "SP": 2
     }
   },
   "pl_q14": {
