@@ -558,7 +558,7 @@ const teams = {
     "name": "New York Mets",
     "emoji": "🍎",
     "color": "#002D72",
-    "tagline": "You are New York's other team, the lovable, heartbroken one, and you just spent the biggest contract in the history of sports to pull a superstar out of the Bronx and prove you are nobody's little brother.",
+    "tagline": "You are New York's other team, the lovable, heartbroken one, and you spent the biggest contract in the history of sports to pull a superstar out of the Bronx and prove you are nobody's little brother.",
     "desc": "You are New York's second team and you have built an identity out of it, lovable and luckless and self-aware, the home of miracle runs and slow-motion collapses. For decades you lived in the long shadow of the team across town. Then ownership decided enough was enough and signed the single biggest contract in the history of professional sports, pulling a superstar straight out of the Bronx, just to prove you would not be anyone's little brother. However it ends, glory or heartbreak, it will at least be loud.",
     "why": [
       "You wear underdog identity with humor and self-awareness, finding something lovable even in the heartbreak.",
@@ -2092,7 +2092,8 @@ const scoring = {
       "KC": 2,
       "AZ": 2,
       "MIA": 2,
-      "WSH": 2
+      "WSH": 2,
+      "TEX": 2
     },
     "D": {
       "BAL": 2,
@@ -2298,8 +2299,7 @@ const scoring = {
     "A": {
       "CIN": 2,
       "NYY": 2,
-      "SF": 2,
-      "STL": 2
+      "SF": 2
     },
     "B": {
       "LAD": 2,
