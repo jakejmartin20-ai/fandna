@@ -2,7 +2,7 @@
   "meta": {
     "purpose": "MLB regression gate. Each fixture is an input the live MLB engine maps to a team. Any future change to src/data/mlb.js scoring (or the shared fingerprint engine in src/lib/scoring.js) must reproduce every winner here, or the diff must be reviewed and accepted.",
     "generated": "2026-06-15",
-    "source": "Generated from the live MLB fingerprint matrix at the session-20 convergence build (30 teams, 12 module questions). MLB is a fingerprint sport like NFL: coreProfile vs teamDims plus module-point tiebreakers.",
+    "source": "Generated from the live MLB fingerprint matrix at the session-20 convergence build (30 teams, 12 module questions); re-baselined in the depth/resonance pass (2026-06-15) after an accepted matrix change (TEX added to q5/C, STL trimmed from q10/A). One random winner moved on the accepted matrix: rnd_009 TOR -> TEX (a near-tie tip in the intended direction); all 30 signatures still self-land, zero decisive flips on a 200k uniform sweep. MLB is a fingerprint sport like NFL: coreProfile vs teamDims plus module-point tiebreakers.",
     "synthetic_caveat": "Signatures pin coreProfile to each team's own teamDims (the perfectly matched taker) with its best module answers; randoms are uniform synthetic inputs. These verify engine reproducibility and per-team reachability ONLY. They are NOT real-taker rates and say nothing about how often a real person lands on a team.",
     "counts": {
       "signatures": 30,
@@ -1329,8 +1329,8 @@
         "mlb_q11": "E",
         "mlb_q12": "D"
       },
-      "winner": "TOR",
-      "winnerName": "Toronto Blue Jays"
+      "winner": "TEX",
+      "winnerName": "Texas Rangers"
     },
     {
       "id": "rnd_010",
