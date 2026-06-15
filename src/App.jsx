@@ -13,6 +13,15 @@ import { MatchEvidence } from "./components/MatchEvidence";
 import { CrossMatch } from "./components/CrossMatch";
 import { SPORTS } from "./lib/manifest";
 
+// Per-sport voice. The result screen and share card read these instead of branching on
+// sport inline, so a new sport is one row here. PL/NFL unchanged; MLB is the new ballclub voice.
+const REGISTER = {
+  PL:  { noun: "club",      tail: "What you support on Saturdays is up to you." },
+  NFL: { noun: "franchise", tail: "What you support on Sundays is up to you." },
+  MLB: { noun: "ballclub",  tail: "What you root for at the ballpark is up to you." },
+};
+function regOf(s){ return REGISTER[s] || REGISTER.PL; }
+
 // Fail-state guard. If anything in the app throws while rendering, the user sees this
 // instead of a blank screen. A plain reload keeps their saved genome.
 class ErrorBoundary extends Component {
@@ -81,10 +90,13 @@ function AppInner(){
   const [activeSport,setActiveSport]=useState("PL"); // which sport's quiz/result/card is in play
   const containerRef=useRef(null);
 
-  // NFL ships behind live:false. A hidden ?nfl=1 in the URL unlocks the strand on preview
-  // (tappable, takeable) while the public still sees "coming soon". Nothing else changes.
+  // NFL/MLB ship behind live:false. Hidden ?nfl=1 / ?mlb=1 in the URL unlock the strand on
+  // preview (tappable, takeable) while the public still sees "coming soon". Nothing else changes.
   const nflUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("nfl");
-  const sportsList = SPORTS.map(s=> s.code==="NFL" ? {...s, live: s.live||nflUnlocked} : s);
+  const mlbUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("mlb");
+  const sportsList = SPORTS.map(s=>
+    s.code==="NFL" ? {...s, live: s.live||nflUnlocked} :
+    s.code==="MLB" ? {...s, live: s.live||mlbUnlocked} : s);
 
   // Active sport's data, bound to the same names the screens already use, so the result
   // screen and quiz read the right sport with no other changes. PL behaves exactly as before.
@@ -285,7 +297,7 @@ function AppInner(){
 
     // ── Pre-compute tab data (no logic inside JSX) ───────────────────────────
   const vit = result ? vitalStats[result] : null;
-  const statsData = vit ? (activeSport==="NFL" ? [
+  const statsData = vit ? (activeSport!=="PL" ? [
     ["Nickname",   vit.nickname],
     ["Founded",    String(vit.founded)],
     ["Stadium",    vit.stadium],
@@ -308,7 +320,7 @@ function AppInner(){
   const ng = result ? (nearlyGot[result]||{}) : {};
   // PL shows the four highest-scoring runners-up (dynamic). NFL shows the four matchups the
   // craft authored for this team (the deliberate near-misses), which always carry a written line.
-  const nearClubs = activeSport==="NFL"
+  const nearClubs = activeSport!=="PL"
     ? Object.keys(ng).filter(k=>teams[k])
     : sortedOthers.slice(0,4).map(([k])=>k).filter(k=>teams[k]);
 
@@ -321,12 +333,12 @@ function AppInner(){
   }).join(" · ");
   const coreSequenced = Object.keys(genome).length>0;
   const coreCount = coreQuestions.length;
-  const moduleCounts = { PL: SPORT_DATA.PL.moduleQuestions.length, NFL: SPORT_DATA.NFL.moduleQuestions.length };
+  const moduleCounts = { PL: SPORT_DATA.PL.moduleQuestions.length, NFL: SPORT_DATA.NFL.moduleQuestions.length, MLB: SPORT_DATA.MLB.moduleQuestions.length };
 
   // Build the share card (the user's core feeds the strip), then either open the share sheet
   // or save the image. Download always saves. Both fall back to copying the caption.
   function cardCaption(){
-    const noun=activeSport==="NFL"?"franchise":"club";
+    const noun=regOf(activeSport).noun;
     return `Which ${noun} are you, really? Turns out I'm ${team.name}, ${archetypes[result]}. ${shareString}. Find yours: fandna.vercel.app`;
   }
   function saveBlob(blob){
@@ -513,7 +525,7 @@ function AppInner(){
                 Share and Download generate the flat image (which shows the codes only). */}
             <div style={{border:`1px solid ${team.color}33`,borderRadius:14,overflow:"hidden",background:"#14141c",marginBottom:14}}>
               <div style={{background:`linear-gradient(180deg,${team.color}2e 0%,transparent 70%)`,padding:"22px 18px 4px",textAlign:"center"}}>
-                <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",letterSpacing:"0.34em",textTransform:"uppercase",marginBottom:14}}>your {activeSport==="NFL"?"franchise":"club"}</div>
+                <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",letterSpacing:"0.34em",textTransform:"uppercase",marginBottom:14}}>your {regOf(activeSport).noun}</div>
                 <div style={{display:"inline-flex",border:"5px solid #f7f4ef",borderRadius:"50%"}}>
                   <BadgeImg url={badgeUrls[result]} emoji={team.emoji} size={74}/>
                 </div>
@@ -531,7 +543,7 @@ function AppInner(){
 
               <div style={{padding:"0 16px 16px"}}>
                 <div style={{textAlign:"center",fontFamily:"'DM Mono',monospace",fontSize:11,color:"#c9c5cf",letterSpacing:"0.05em",marginBottom:4,wordBreak:"break-word"}}>{shareString}</div>
-                <div style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:14,color:"#9898b8",fontStyle:"italic"}}>Which {activeSport==="NFL"?"franchise":"club"} are you, really?</div>
+                <div style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:14,color:"#9898b8",fontStyle:"italic"}}>Which {regOf(activeSport).noun} are you, really?</div>
               </div>
             </div>
 
@@ -576,7 +588,7 @@ function AppInner(){
                 <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(19px,4vw,22px)",fontWeight:300,color:"#d8d4ce",lineHeight:1.85,margin:"0 0 20px",fontStyle:"italic"}}>{team.desc}</p>
                 {team.note&&(<p style={{fontSize:14,color:"#bbb",lineHeight:1.75,margin:"0 0 24px",borderLeft:`1px solid #252535`,paddingLeft:14,fontFamily:"'DM Mono',monospace"}}>{team.note}</p>)}
                 {/* Fandom vs FanDNA reframe (per 1b) - sport-aware */}
-                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(15px,3.4vw,18px)",fontStyle:"italic",color:"#9898b8",lineHeight:1.6,margin:"6px 0 22px"}}>This is your {activeSport==="NFL"?"franchise":"club"} by DNA. What you support on {activeSport==="NFL"?"Sundays":"Saturdays"} is up to you.</p>
+                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(15px,3.4vw,18px)",fontStyle:"italic",color:"#9898b8",lineHeight:1.6,margin:"6px 0 22px"}}>This is your {regOf(activeSport).noun} by DNA. {regOf(activeSport).tail}</p>
                 <MatchEvidence evidence={evidence} clubName={team.name} color={teamTextColors[result]||team.color}/>
                 <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:28}}>
                   {team.kit&&(<a href={team.kit} target="_blank" rel="noopener noreferrer"
