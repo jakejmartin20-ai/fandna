@@ -16,9 +16,10 @@ function wrapCanvasText(ctx,s,maxw){const words=s.split(" ");const lines=[];let 
 async function generateShareCard(sport, key, genome, coreProfile){
   const D=SPORT_DATA[sport]||SPORT_DATA.PL;
   const teams=D.teams, teamDims=D.teamDims, archetypes=D.archetypes, CARD_BADGES=D.CARD_BADGES;
-  const isNFL=sport==="NFL";
-  const topLabel=isNFL?"YOUR FRANCHISE":"YOUR CLUB";
-  const closingLine=isNFL?"Which franchise are you, really?":"Which club are you, really?";
+  const NOUN={PL:"club",NFL:"franchise",MLB:"ballclub"};
+  const noun=NOUN[sport]||NOUN.PL;
+  const topLabel="YOUR "+noun.toUpperCase();
+  const closingLine="Which "+noun+" are you, really?";
   const W=1080,H=1350,cv=document.createElement("canvas");cv.width=W;cv.height=H;
   const x=cv.getContext("2d"),team=teams[key],col=team.color,dims=coreProfile||teamDims[key]||{},cx=W/2;
   try{await Promise.all([
