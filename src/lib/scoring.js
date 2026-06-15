@@ -13,6 +13,7 @@
 import { coreQuestions, coreDimScoring, DIM_ORDER } from "../data/core";
 import { moduleQuestions, scoring as plScoring, teams as plTeams } from "../data/pl";
 import { moduleQuestions as nflModule, scoring as nflScoring, teamDims as nflDims } from "../data/nfl";
+import { moduleQuestions as mlbModule, scoring as mlbScoring, teamDims as mlbDims } from "../data/mlb";
 
 // -- Stage 1: core answers -> coreProfile (7 dims, 0-10) -------------------------
 function scoreCore(coreAnswers){
@@ -92,7 +93,8 @@ const SPORT_ENGINES = {
 // -- Stage 2: map (coreProfile + module answers) to a team for a given sport -----
 // input = { coreProfile, coreAnswers, moduleAnswers }
 function scoreModule(sport, input){
-  if (sport==="NFL") return scoreNFL(input);   // fingerprint base + module tiebreakers
+  const fpEng = FP_ENGINES[sport];
+  if (fpEng) return scoreFingerprint(input, fpEng);   // fingerprint sports (NFL, MLB)
   const eng = SPORT_ENGINES[sport];
   if (!eng) throw new Error("No scoring engine for sport: "+sport);
   // PL (and any full-fidelity sport) scores the full answer set on its own matrix.
@@ -100,40 +102,51 @@ function scoreModule(sport, input){
   return pickWinner(answers, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase);
 }
 
-// -- NFL stage-2: "Option 1" = dimensional fingerprint base + module-point tiebreakers ----
+// -- Fingerprint stage-2 (NFL, MLB): dimensional fingerprint base + module-point tiebreakers ----
 // The coreProfile (the same 7 dims used everywhere) is matched against each team's teamDims:
-// closer team, bigger head start (the FINGERPRINT). The 12 NFL module answers then add points
-// from the craft-feeder "points toward" lists (the MODULE TIEBREAKERS), which is what separates
-// the dense clusters (heritage-pride, suffering-loyalty, moderate-narrative) that sit too close
-// in dim-space for the fingerprint alone. FP_W is the one calibrated knob (set in the Phase 4
-// simulation): heavy enough that the fingerprint decides ACROSS clusters, light enough that the
-// module answers decide WITHIN a cluster.
-const NFL_KEYS  = Object.keys(nflDims);
-const NFL_ID_TO_PHASE = {};
-for (const q of coreQuestions) NFL_ID_TO_PHASE[q.id]=q.phase;
-for (const q of nflModule)     NFL_ID_TO_PHASE[q.id]=q.phase;
-const NFL_FINAL_PHASE = nflModule[nflModule.length-1].phase;
+// closer team, bigger head start (the FINGERPRINT). A sport's module answers then add points
+// from its craft "points toward" lists (the MODULE TIEBREAKERS), which is what separates the
+// dense clusters that sit too close in dim-space for the fingerprint alone. FP_W is the one
+// calibrated knob: heavy enough that the fingerprint decides ACROSS clusters, light enough that
+// the module answers decide WITHIN a cluster. The engine is data-keyed, so every fingerprint
+// sport reads through the SAME code with its own data (no per-sport branch).
 const FP_W = 1.2;        // fingerprint weight (calibrated in the Phase 4 simulation)
 const DIST_REF = 14;     // headroom so the zero-clip rarely fires; does not affect the winner
 
-function fpBase(coreProfile){
+// A fingerprint engine is just a sport's data, pre-indexed. Build one per fingerprint sport;
+// nothing in the scorer is hardcoded to a sport, so adding MLB is one entry here. NFL keeps the
+// exact same dims/scoring/keys/weights it always had, so its results are unchanged.
+function makeFpEngine(dims, scoring, module){
+  const keys = Object.keys(dims);                 // iteration order = the final tie-break tail
+  const idToPhase = {};
+  for (const q of coreQuestions) idToPhase[q.id]=q.phase;
+  for (const q of module)        idToPhase[q.id]=q.phase;
+  const finalPhase = module[module.length-1].phase;
+  return { dims, scoring, keys, idToPhase, finalPhase, FP_W, DIST_REF };
+}
+const FP_ENGINES = {
+  NFL: makeFpEngine(nflDims, nflScoring, nflModule),
+  MLB: makeFpEngine(mlbDims, mlbScoring, mlbModule),
+};
+
+function fpBase(coreProfile, eng){
   const out={};
-  for (const code of NFL_KEYS){
-    const dims=nflDims[code]; let d=0;
+  for (const code of eng.keys){
+    const dims=eng.dims[code]; let d=0;
     for (const k of DIM_ORDER){ const diff=(coreProfile[k]||0)-(dims[k]||0); d+=diff*diff; }
     const dist=Math.sqrt(d);
-    out[code]={ dist, base: FP_W*Math.max(0, DIST_REF-dist) };
+    out[code]={ dist, base: eng.FP_W*Math.max(0, eng.DIST_REF-dist) };
   }
   return out;
 }
-function scoreNFL(input){
-  const fp = fpBase(input.coreProfile||{});
-  const mod = allScores(input.moduleAnswers||{}, nflScoring, NFL_KEYS);
-  const finalPts = phaseScores(input.moduleAnswers||{}, nflScoring, NFL_KEYS, NFL_ID_TO_PHASE, NFL_FINAL_PHASE);
+function scoreFingerprint(input, eng){
+  const fp = fpBase(input.coreProfile||{}, eng);
+  const mod = allScores(input.moduleAnswers||{}, eng.scoring, eng.keys);
+  const finalPts = phaseScores(input.moduleAnswers||{}, eng.scoring, eng.keys, eng.idToPhase, eng.finalPhase);
   const total={};
-  for (const c of NFL_KEYS) total[c] = fp[c].base + (mod[c]||0);
+  for (const c of eng.keys) total[c] = fp[c].base + (mod[c]||0);
   const max = Math.max(...Object.values(total));
-  let tied = NFL_KEYS.filter(c=>total[c]===max);
+  let tied = eng.keys.filter(c=>total[c]===max);
   let top;
   if (tied.length===1){ top=tied[0]; }
   else {

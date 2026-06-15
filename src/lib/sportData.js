@@ -3,7 +3,8 @@
 // so turning on a new sport is a data file plus one line here (and its manifest entry).
 import * as PL from "../data/pl";
 import * as NFL from "../data/nfl";
+import * as MLB from "../data/mlb";
 
-const SPORT_DATA = { PL, NFL };
+const SPORT_DATA = { PL, NFL, MLB };
 
 export { SPORT_DATA };
