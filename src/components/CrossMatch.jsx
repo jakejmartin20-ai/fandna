@@ -33,6 +33,15 @@ function tierLine(n, worn){
   if (n <= 10) return "The " + worn + " and the DNA pull different ways.";
   return "Your " + worn + " says one thing, your DNA says another.";
 }
+// Fingerprint sports verdict: keyed to rank (same buckets as placeWord) so the verdict line
+// and the headline always tell one story. Flip-count is too compressed here to carry the verdict.
+function rankVerdict(rank, worn){
+  if (rank == null) return "";
+  if (rank <= 4) return "The " + worn + " and the DNA nearly agree.";
+  if (rank <= 8) return "The " + worn + " and the DNA mostly line up.";
+  if (rank <= 15) return "The " + worn + " and the DNA pull different ways.";
+  return "Your " + worn + " says one thing, your DNA says another.";
+}
 
 // Adaptive headline colour: clubs keep their own colour unless the two are too close to tell
 // apart (red-vs-red, blue-vs-blue), in which case the supported side falls back to bone so the
@@ -183,11 +192,18 @@ export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCo
                 ) : (
                   <p style={{fontSize:15,color:"#c8c4be",lineHeight:1.6,margin:0}}>It would take changing <b style={{color:"#efe9e3",fontWeight:500,fontFamily:SERIF,fontSize:18}}>{data.changeToLand} of your {data.totalAnswers} answers</b> to land {chosen ? chosen.name : data.supported} instead.</p>
                 )}
-                <div style={{fontFamily:MONO,fontSize:11,letterSpacing:"0.04em",color:"#9696b4",marginTop:11}}>{data.changeToLand == null ? "As far apart as the "+v.worn+" and the DNA get." : tierLine(data.changeToLand, v.worn)}</div>
+                <div style={{fontFamily:MONO,fontSize:11,letterSpacing:"0.04em",color:"#9696b4",marginTop:11}}>{data.changeToLand == null ? "As far apart as the "+v.worn+" and the DNA get." : (data.closeByRank ? rankVerdict(data.rank, v.worn) : tierLine(data.changeToLand, v.worn))}</div>
               </Card>
               <Card>
                 <Eyebrow>What tipped which way</Eyebrow>
-                <TipGroup title={`Pulled toward ${chosen ? chosen.name : data.supported}`} color={supAccent} tips={data.towardSupported}/>
+                {(data.towardSupported && data.towardSupported.length > 0)
+                  ? <TipGroup title={`Pulled toward ${chosen ? chosen.name : data.supported}`} color={supAccent} tips={data.towardSupported}/>
+                  : (
+                    <div style={{marginTop:4}}>
+                      <div style={{fontFamily:MONO,fontSize:10,letterSpacing:"0.12em",textTransform:"uppercase",color:supAccent,margin:"18px 0 2px"}}>Pulled toward {chosen ? chosen.name : data.supported}</div>
+                      <div style={{fontFamily:SERIF,fontStyle:"italic",fontSize:15,color:"#8a8aac",lineHeight:1.4,padding:"11px 0 2px"}}>Nothing in your answers pulled toward {chosen ? chosen.name : data.supported}. Where it placed comes from your core DNA, not your picks.</div>
+                    </div>
+                  )}
                 <TipGroup title={`Pulled you to ${matchedName} instead`} color={matchedColor} tips={data.towardMatch}/>
               </Card>
             </>
