@@ -170,6 +170,129 @@ function nearestInDimSpace(coreProfile, dimsTable){
   return best;
 }
 
+// -- Fingerprint evidence + cross-match (NFL, MLB) --------------------------------
+// READ-ONLY, exactly like the PL versions. They never change the pick. The difference is
+// only the engine underneath: a fingerprint result is the coreProfile-to-teamDims distance
+// (the fingerprint base) plus module-answer points. So to test a CORE answer we re-derive the
+// coreProfile with scoreCore, then re-run scoreFingerprint; to test a MODULE answer we just
+// swap it and re-run. "What tipped it" reads the MODULE lean-lists only (the core's pull is the
+// fingerprint, already shown by the Why-you dimension bars, so we never double-count it).
+
+// Build the question option spaces straight from the data, same idea as the PL path:
+// core questions from coreDimScoring, module questions from the sport's module scoring.
+function fpCoreIds(){ return coreQuestions.map(q=>q.id).filter(id=>coreDimScoring[id]); }
+function fpProfile(input, eng){
+  // Prefer the coreProfile the result was computed from (identical to the displayed pick);
+  // fall back to deriving it from the core answers when it was not passed.
+  if (input.coreProfile && Object.keys(input.coreProfile).length) return input.coreProfile;
+  return scoreCore(input.coreAnswers || {});
+}
+
+function matchEvidenceFp(sport, input, eng){
+  const coreAns = input.coreAnswers || {};
+  const modAns  = input.moduleAnswers || {};
+  const baseProfile = fpProfile(input, eng);
+  const club = scoreFingerprint({ coreProfile: baseProfile, moduleAnswers: modAns }, eng).club;
+  const allAns = { ...coreAns, ...modAns };
+
+  // STABILITY: a question is "safe" when no single alternative answer changes the team.
+  const optionSpace = [];
+  for (const id of fpCoreIds())            optionSpace.push([id, Object.keys(coreDimScoring[id]), "core"]);
+  for (const id of Object.keys(eng.scoring)) optionSpace.push([id, Object.keys(eng.scoring[id]), "module"]);
+
+  const total = optionSpace.length;
+  let safe = 0;
+  const locks = [];
+  for (const [qId, opts, kind] of optionSpace){
+    let flips = false;
+    for (const alt of opts){
+      if (alt === allAns[qId]) continue;
+      let testClub;
+      if (kind === "module"){
+        testClub = scoreFingerprint({ coreProfile: baseProfile, moduleAnswers: { ...modAns, [qId]: alt } }, eng).club;
+      } else {
+        testClub = scoreFingerprint({ coreProfile: scoreCore({ ...coreAns, [qId]: alt }), moduleAnswers: modAns }, eng).club;
+      }
+      if (testClub !== club){ flips = true; break; }
+    }
+    locks.push(!flips);
+    if (!flips) safe++;
+  }
+
+  // TIPS: module lean-lists only (the distinctiveness measure), readable answers.
+  const tips = distinctiveTips(modAns, club, eng.scoring, eng.keys, 3);
+  return { sport, club, safe, total, locks, tips };
+}
+
+// Greedy walk for a fingerprint sport: from the current answers, change one not-yet-changed
+// question at a time toward `target` (a module change reads the lean-list, a core change re-derives
+// the profile), taking a winning move as soon as one exists. Returns the change count, or null.
+function changeToLandFp(coreAns, modAns, baseProfile, target, eng){
+  let curCore = { ...coreAns }, curMod = { ...modAns }, curProfile = baseProfile;
+  if (scoreFingerprint({ coreProfile: curProfile, moduleAnswers: curMod }, eng).club === target) return 0;
+  const coreIds = fpCoreIds();
+  const modIds  = Object.keys(eng.scoring);
+  const changed = new Set();
+  const compMax = (scores) => { let comp = -Infinity; for (const c of eng.keys){ if (c !== target && (scores[c] || 0) > comp) comp = scores[c] || 0; } return comp; };
+  const totalQ = coreIds.length + modIds.length;
+  for (let step = 1; step <= totalQ; step++){
+    let best = null;
+    const consider = (cand) => {
+      if (cand.wins && (!best || !best.wins)){ best = cand; return; }
+      if (!!cand.wins === !!(best && best.wins) && (!best || cand.margin > best.margin)) best = cand;
+    };
+    for (const q of modIds){
+      if (changed.has("m:"+q)) continue;
+      let bo = curMod[q], bp = -Infinity;
+      for (const o of Object.keys(eng.scoring[q])){ const p = eng.scoring[q][o]?.[target] || 0; if (p > bp){ bp = p; bo = o; } }
+      if (bo === curMod[q]) continue;
+      const trialMod = { ...curMod, [q]: bo };
+      const { club, scores } = scoreFingerprint({ coreProfile: curProfile, moduleAnswers: trialMod }, eng);
+      consider({ key:"m:"+q, core: curCore, mod: trialMod, profile: curProfile, margin: (scores[target] || 0) - compMax(scores), wins: club === target });
+    }
+    for (const q of coreIds){
+      if (changed.has("c:"+q)) continue;
+      let bo = null, bestTot = -Infinity, bestPf = null;
+      for (const o of Object.keys(coreDimScoring[q])){
+        if (o === curCore[q]) continue;
+        const pf = scoreCore({ ...curCore, [q]: o });
+        const tot = scoreFingerprint({ coreProfile: pf, moduleAnswers: curMod }, eng).scores[target] || 0;
+        if (tot > bestTot){ bestTot = tot; bo = o; bestPf = pf; }
+      }
+      if (bo == null) continue;
+      const trialCore = { ...curCore, [q]: bo };
+      const { club, scores } = scoreFingerprint({ coreProfile: bestPf, moduleAnswers: curMod }, eng);
+      consider({ key:"c:"+q, core: trialCore, mod: curMod, profile: bestPf, margin: (scores[target] || 0) - compMax(scores), wins: club === target });
+    }
+    if (!best) return null;
+    curCore = best.core; curMod = best.mod; curProfile = best.profile; changed.add(best.key);
+    if (best.wins) return step;
+  }
+  return null;
+}
+
+function crossMatchFp(sport, input, supportedClub, eng){
+  const coreAns = input.coreAnswers || {};
+  const modAns  = input.moduleAnswers || {};
+  const baseProfile = fpProfile(input, eng);
+  const { club: matched, scores } = scoreFingerprint({ coreProfile: baseProfile, moduleAnswers: modAns }, eng);
+  const totalAnswers = fpCoreIds().length + Object.keys(eng.scoring).length;
+  if (!supportedClub || scores[supportedClub] === undefined){
+    return { sport, matched, supported: supportedClub || null, isMatch: false, rank: null, totalClubs: eng.keys.length, totalAnswers, changeToLand: null, towardSupported: [], towardMatch: [] };
+  }
+  const isMatch = supportedClub === matched;
+  const supPts = scores[supportedClub] || 0;
+  let greater = 0; for (const c of eng.keys){ if ((scores[c] || 0) > supPts) greater++; }
+  const rank = greater + 1;
+  return {
+    sport, matched, supported: supportedClub, isMatch,
+    rank, totalClubs: eng.keys.length, totalAnswers,
+    changeToLand: isMatch ? 0 : changeToLandFp(coreAns, modAns, baseProfile, supportedClub, eng),
+    towardSupported: distinctiveTips(modAns, supportedClub, eng.scoring, eng.keys, 2),
+    towardMatch:     distinctiveTips(modAns, matched,       eng.scoring, eng.keys, 2),
+  };
+}
+
 // -- Match evidence (PL): stability + the answers that tipped it ------------------
 // READ-ONLY on top of the pick. It NEVER changes which club you get. It re-runs the
 // same pick with one answer changed at a time to measure how settled the result is
@@ -179,6 +302,8 @@ function nearestInDimSpace(coreProfile, dimsTable){
 const QUESTION_MAP = {};
 for (const q of coreQuestions)   QUESTION_MAP[q.id] = q;
 for (const q of moduleQuestions) QUESTION_MAP[q.id] = q;
+for (const q of nflModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (nfl_q*), no collision with PL
+for (const q of mlbModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (mlb_q*), no collision with PL
 
 function answerLabel(qId, ans){
   const q = QUESTION_MAP[qId];
@@ -199,8 +324,10 @@ function readableTip(label){
 }
 
 function matchEvidence(sport, input){
-  // Only PL is wired for evidence right now. NFL waits on the module rebalance, so we
-  // return a null result and the UI renders nothing for it.
+  // Data-keyed like scoreModule: fingerprint sports (NFL, MLB) take the fingerprint path,
+  // PL keeps its exact matrix path below (byte-identical), anything else renders nothing.
+  const fpEng = FP_ENGINES[sport];
+  if (fpEng) return matchEvidenceFp(sport, input || {}, fpEng);
   if (sport !== "PL") return { sport, club: null, safe: null, total: null, tips: [] };
 
   const eng = SPORT_ENGINES.PL;
@@ -303,6 +430,8 @@ function changeToLand(all, target, eng){
 }
 
 function crossMatch(sport, input, supportedClub){
+  const fpEng = FP_ENGINES[sport];
+  if (fpEng) return crossMatchFp(sport, input || {}, supportedClub, fpEng);
   if (sport !== "PL") return null;
   const eng = SPORT_ENGINES.PL;
   const all = { ...(input.coreAnswers || {}), ...(input.moduleAnswers || {}) };
