@@ -16,9 +16,15 @@ import { SPORTS } from "./lib/manifest";
 // Per-sport voice. The result screen and share card read these instead of branching on
 // sport inline, so a new sport is one row here. PL/NFL unchanged; MLB is the new ballclub voice.
 const REGISTER = {
-  PL:  { noun: "club",      tail: "What you support on Saturdays is up to you." },
-  NFL: { noun: "franchise", tail: "What you support on Sundays is up to you." },
-  MLB: { noun: "ballclub",  tail: "What you root for at the ballpark is up to you." },
+  PL:  { noun: "club",      worn: "shirt",  team: "club", teams: "clubs", league: "Premier League", leagueAbbr: "PL",
+         tail: "What you support on Saturdays is up to you.",
+         xmHeader: "Already have a favourite club?", xmEscape: "I don't support a Premier League club" },
+  NFL: { noun: "franchise", worn: "jersey", team: "team", teams: "teams", league: "NFL", leagueAbbr: "NFL",
+         tail: "What you support on Sundays is up to you.",
+         xmHeader: "Already root for a team?", xmEscape: "I don't follow an NFL team" },
+  MLB: { noun: "ballclub",  worn: "cap",    team: "team", teams: "teams", league: "MLB", leagueAbbr: "MLB",
+         tail: "What you root for at the ballpark is up to you.",
+         xmHeader: "Already have a ballclub?", xmEscape: "I don't have an MLB team" },
 };
 function regOf(s){ return REGISTER[s] || REGISTER.PL; }
 
@@ -136,7 +142,7 @@ function AppInner(){
       setScores(st.results.PL.scores||null);
       setResult(st.results.PL.club);
       setEvidence(matchEvidence("PL",{coreAnswers:st.coreAnswers||{},moduleAnswers:st.results.PL.answers||{},coreProfile:st.coreProfile||null}));
-      setEvidenceInput({coreAnswers:st.coreAnswers||{},moduleAnswers:st.results.PL.answers||{}});
+      setEvidenceInput({coreAnswers:st.coreAnswers||{},moduleAnswers:st.results.PL.answers||{},coreProfile:st.coreProfile||null});
     }
   },[]);
 
@@ -186,7 +192,7 @@ function AppInner(){
       setCoreProfile(coreProfile);
       setResult(club);
       setEvidence(matchEvidence(activeSport,{coreAnswers,moduleAnswers,coreProfile}));
-      setEvidenceInput({coreAnswers,moduleAnswers});
+      setEvidenceInput({coreAnswers,moduleAnswers,coreProfile});
       setScreen("result");
       setGenome(g=>({...g,[activeSport]:{club}}));
       track("quiz_completed",{sport:activeSport,club});
@@ -251,7 +257,7 @@ function AppInner(){
     const r=(st.results&&st.results[sport])||{};
     if(r.club){ setResult(r.club); setScores(r.scores||null);
       setEvidence(matchEvidence(sport,{coreAnswers:st.coreAnswers||{},moduleAnswers:r.answers||{},coreProfile:st.coreProfile||null}));
-      setEvidenceInput({coreAnswers:st.coreAnswers||{},moduleAnswers:r.answers||{}});
+      setEvidenceInput({coreAnswers:st.coreAnswers||{},moduleAnswers:r.answers||{},coreProfile:st.coreProfile||null});
     }
     setTab("result");
     setScreen("result");
@@ -589,7 +595,7 @@ function AppInner(){
                 {team.note&&(<p style={{fontSize:14,color:"#bbb",lineHeight:1.75,margin:"0 0 24px",borderLeft:`1px solid #252535`,paddingLeft:14,fontFamily:"'DM Mono',monospace"}}>{team.note}</p>)}
                 {/* Fandom vs FanDNA reframe (per 1b) - sport-aware */}
                 <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(15px,3.4vw,18px)",fontStyle:"italic",color:"#9898b8",lineHeight:1.6,margin:"6px 0 22px"}}>This is your {regOf(activeSport).noun} by DNA. {regOf(activeSport).tail}</p>
-                <MatchEvidence evidence={evidence} clubName={team.name} color={teamTextColors[result]||team.color}/>
+                <MatchEvidence evidence={evidence} clubName={team.name} color={teamTextColors[result]||team.color} noun={regOf(activeSport).noun}/>
                 <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:28}}>
                   {team.kit&&(<a href={team.kit} target="_blank" rel="noopener noreferrer"
                     style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
@@ -747,6 +753,7 @@ function AppInner(){
                   matchedCode={result}
                   matchedName={team.name}
                   matchedColor={teamTextColors[result]||team.color}
+                  voice={regOf(activeSport)}
                 />
               </div>
             )}
