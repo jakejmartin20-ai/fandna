@@ -287,6 +287,7 @@ function crossMatchFp(sport, input, supportedClub, eng){
   return {
     sport, matched, supported: supportedClub, isMatch,
     rank, totalClubs: eng.keys.length, totalAnswers,
+    closeByRank: true,   // in fingerprint sports module flips are big chunks, so flip-count is compressed; rank is the honest closeness signal, used for the verdict line
     changeToLand: isMatch ? 0 : changeToLandFp(coreAns, modAns, baseProfile, supportedClub, eng),
     towardSupported: distinctiveTips(modAns, supportedClub, eng.scoring, eng.keys, 2),
     towardMatch:     distinctiveTips(modAns, matched,       eng.scoring, eng.keys, 2),
