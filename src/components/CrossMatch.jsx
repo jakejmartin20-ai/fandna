@@ -27,14 +27,10 @@ function placeWord(rank){
   if (rank <= 15) return "a way off your match";
   return "a long way from your match";
 }
-function tierLine(n, worn){
-  if (n == null) return "";
-  if (n <= 5) return "The " + worn + " and the DNA nearly agree.";
-  if (n <= 10) return "The " + worn + " and the DNA pull different ways.";
-  return "Your " + worn + " says one thing, your DNA says another.";
-}
-// Fingerprint sports verdict: keyed to rank (same buckets as placeWord) so the verdict line
-// and the headline always tell one story. Flip-count is too compressed here to carry the verdict.
+// Verdict line, keyed to rank using the same buckets as placeWord, so the headline ("a long way")
+// and the verdict ("the X and the DNA ...") always tell one story on every sport. Flip-count is
+// not used for the verdict: it can run small even for a far-placed team, which is what made the
+// headline and the verdict contradict before.
 function rankVerdict(rank, worn){
   if (rank == null) return "";
   if (rank <= 4) return "The " + worn + " and the DNA nearly agree.";
@@ -192,7 +188,7 @@ export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCo
                 ) : (
                   <p style={{fontSize:15,color:"#c8c4be",lineHeight:1.6,margin:0}}>It would take changing <b style={{color:"#efe9e3",fontWeight:500,fontFamily:SERIF,fontSize:18}}>{data.changeToLand} of your {data.totalAnswers} answers</b> to land {chosen ? chosen.name : data.supported} instead.</p>
                 )}
-                <div style={{fontFamily:MONO,fontSize:11,letterSpacing:"0.04em",color:"#9696b4",marginTop:11}}>{data.changeToLand == null ? "As far apart as the "+v.worn+" and the DNA get." : (data.closeByRank ? rankVerdict(data.rank, v.worn) : tierLine(data.changeToLand, v.worn))}</div>
+                <div style={{fontFamily:MONO,fontSize:11,letterSpacing:"0.04em",color:"#9696b4",marginTop:11}}>{data.changeToLand == null ? "As far apart as the "+v.worn+" and the DNA get." : rankVerdict(data.rank, v.worn)}</div>
               </Card>
               <Card>
                 <Eyebrow>What tipped which way</Eyebrow>
