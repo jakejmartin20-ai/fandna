@@ -6,8 +6,9 @@
 //     strip, close ones leave gaps and say so.
 //  2) What tipped it: the three answers that pulled most distinctively toward the club.
 //     Texture, not proof. They never claim exclusivity, so they can never overclaim it.
-// All copy here is user-facing, so: no em dashes. PL only for now; evidence.safe is null
-// for any sport not yet wired, and we render nothing in that case.
+// All copy here is user-facing, so: no em dashes. The structural noun (club / franchise /
+// ballclub) comes from the per-sport voice; evidence.safe is null for any sport not yet wired,
+// and we render nothing in that case.
 
 import { useState, useEffect } from "react";
 
@@ -20,7 +21,7 @@ function verdictLine(safe, total, club){
   return "A close call. " + club + " edged it, and a good share of your answers could have sent you somewhere else.";
 }
 
-export function MatchEvidence({ evidence, clubName, color = "#b8567a" }){
+export function MatchEvidence({ evidence, clubName, color = "#b8567a", noun = "club" }){
   const [shown, setShown] = useState(false);
   useEffect(() => { const t = setTimeout(() => setShown(true), 150); return () => clearTimeout(t); }, []);
 
@@ -55,7 +56,7 @@ export function MatchEvidence({ evidence, clubName, color = "#b8567a" }){
           <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:60,fontWeight:600,color:"#efe9e3"}}>{safe}</span>
           <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:32,color:"#7878a0"}}>/ {total}</span>
         </div>
-        <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",marginTop:5}}>answers locked to this club</div>
+        <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",marginTop:5}}>answers locked to this {noun}</div>
 
         {/* the cell strip: this IS the number, counted out */}
         <div style={{marginTop:18,paddingTop:16,borderTop:"1px solid #242433"}}>
@@ -72,7 +73,7 @@ export function MatchEvidence({ evidence, clubName, color = "#b8567a" }){
             ))}
           </div>
           <div style={{display:"flex",gap:16,flexWrap:"wrap",fontFamily:"'DM Mono',monospace",fontSize:9,color:"#9696b4"}}>
-            <span><i style={{display:"inline-block",width:10,height:10,borderRadius:2,background:color,marginRight:6,verticalAlign:"-1px"}}/>locked, will not change your club</span>
+            <span><i style={{display:"inline-block",width:10,height:10,borderRadius:2,background:color,marginRight:6,verticalAlign:"-1px"}}/>locked, will not change your {noun}</span>
             <span><i style={{display:"inline-block",width:10,height:10,borderRadius:2,background:"#191922",border:"1px solid #2c2c3c",marginRight:6,verticalAlign:"-1px"}}/>could have tipped it</span>
           </div>
         </div>

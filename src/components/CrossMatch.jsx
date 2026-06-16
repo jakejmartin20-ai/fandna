@@ -3,13 +3,22 @@
 // placed for you, how many answers you would have to change to land it, and which answers pulled
 // toward it versus toward the club you matched. Alignment, never a bar-vs-bar overlay. The result
 // numbers come straight from the engine (scoring.crossMatch), nothing is invented here.
-// All copy is user-facing, so: no em dashes. PL only; renders nothing without an answer set.
+// All copy is user-facing, so: no em dashes. Words like the worn item (shirt / jersey / cap) and
+// the noun (club / franchise / ballclub) come from the per-sport voice; renders nothing without an answer set.
 
 import { useState, useMemo } from "react";
 import { crossMatch } from "../lib/scoring";
 
 const SERIF = "'Cormorant Garamond',Georgia,serif";
 const MONO = "'DM Mono',monospace";
+
+// Per-sport voice. Defaults reproduce the PL wording exactly; App passes the active sport's row.
+const DEFAULT_VOICE = {
+  noun: "club", worn: "shirt", team: "club", teams: "clubs",
+  league: "Premier League", leagueAbbr: "PL",
+  xmHeader: "Already have a favourite club?",
+  xmEscape: "I don't support a Premier League club",
+};
 
 function placeWord(rank){
   if (rank == null) return "";
@@ -18,11 +27,11 @@ function placeWord(rank){
   if (rank <= 15) return "a way off your match";
   return "a long way from your match";
 }
-function tierLine(n){
+function tierLine(n, worn){
   if (n == null) return "";
-  if (n <= 5) return "The shirt and the DNA nearly agree.";
-  if (n <= 10) return "The shirt and the DNA pull different ways.";
-  return "Your shirt says one thing, your DNA says another.";
+  if (n <= 5) return "The " + worn + " and the DNA nearly agree.";
+  if (n <= 10) return "The " + worn + " and the DNA pull different ways.";
+  return "Your " + worn + " says one thing, your DNA says another.";
 }
 
 // Adaptive headline colour: clubs keep their own colour unless the two are too close to tell
@@ -67,12 +76,13 @@ function Eyebrow({ children }){
   return <div style={{fontFamily:MONO,fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#7878a0",marginBottom:13}}>{children}</div>;
 }
 
-export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCode, matchedName, matchedColor = "#b8567a" }){
+export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCode, matchedName, matchedColor = "#b8567a", voice }){
   const [supported, setSupported] = useState(null); // club code, "NONE", or null
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
 
-  if (sport !== "PL" || !input) return null;
+  if (!input) return null;
+  const v = { ...DEFAULT_VOICE, ...(voice || {}) };
 
   const colorOf = (code) => teamTextColors[code] || (teams[code] && teams[code].color) || "#9696b4";
   const clubs = Object.entries(teams)
@@ -94,25 +104,25 @@ export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCo
 
   const q = query.toLowerCase();
   const filtered = clubs.filter(c => c.name.toLowerCase().includes(q));
-  const showEscape = !q || "i dont support a premier league club".includes(q.replace(/'/g,""));
+  const showEscape = !q || v.xmEscape.toLowerCase().replace(/'/g,"").includes(q.replace(/'/g,""));
 
   return (
     <div style={{marginTop:24,paddingTop:24,borderTop:"1px solid #2a2a3a"}}>
-      <h2 style={{fontFamily:SERIF,fontSize:26,color:"#efe9e3",lineHeight:1.2,margin:"0 0 16px",fontWeight:600}}>Already have a favourite club?</h2>
+      <h2 style={{fontFamily:SERIF,fontSize:26,color:"#efe9e3",lineHeight:1.2,margin:"0 0 16px",fontWeight:600}}>{v.xmHeader}</h2>
 
       <button onClick={()=>setOpen(o=>!o)}
         style={{width:"100%",display:"flex",alignItems:"center",justifyContent:"space-between",background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:12,padding:"15px 16px",color:chosen?"#efe9e3":"#9696b4",fontFamily:MONO,fontSize:14,cursor:"pointer"}}>
         <span style={{display:"flex",alignItems:"center",gap:10}}>
           {chosen
             ? (<><span style={{fontSize:20}}>{chosen.emoji}</span><span>{chosen.name}</span></>)
-            : (supported==="NONE" ? <span>No PL club</span> : <span>Pick your club</span>)}
+            : (supported==="NONE" ? <span>No {v.leagueAbbr} {v.team}</span> : <span>Pick your {v.team}</span>)}
         </span>
         <span style={{color:"#7878a0",fontSize:12}}>{open?"\u25B4":"\u25BE"}</span>
       </button>
 
       {open && (
         <div style={{marginTop:10,background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:12,overflow:"hidden"}}>
-          <input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search clubs" autoComplete="off"
+          <input value={query} onChange={e=>setQuery(e.target.value)} placeholder={"Search "+v.teams} autoComplete="off"
             style={{width:"100%",border:"none",outline:"none",background:"#191922",color:"#efe9e3",fontFamily:MONO,fontSize:14,padding:"14px 16px",borderBottom:"1px solid #2a2a3a"}}/>
           <div style={{maxHeight:320,overflowY:"auto"}}>
             {filtered.map((c,i)=>(
@@ -127,7 +137,7 @@ export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCo
               <div onClick={()=>pick("NONE")}
                 style={{display:"flex",alignItems:"center",gap:11,padding:"12px 16px",cursor:"pointer",borderTop:filtered.length?"1px solid #242433":"none"}}>
                 <span style={{fontSize:18,width:24,textAlign:"center",color:"#7878a0"}}>{"\u00B7"}</span>
-                <span style={{flex:1,fontSize:16,color:"#9696b4",fontStyle:"italic",fontFamily:SERIF}}>I don't support a Premier League club</span>
+                <span style={{flex:1,fontSize:16,color:"#9696b4",fontStyle:"italic",fontFamily:SERIF}}>{v.xmEscape}</span>
               </div>
             )}
           </div>
@@ -136,8 +146,8 @@ export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCo
 
       {supported === "NONE" && (
         <div style={{marginTop:22,background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:14,padding:"22px 18px"}}>
-          <div style={{fontFamily:SERIF,fontSize:21,color:"#efe9e3",marginBottom:8,lineHeight:1.3}}>No club named, nothing to line up.</div>
-          <p style={{fontSize:14,color:"#c8c4be",lineHeight:1.6,margin:0}}>The compare reads your club against your DNA. With no Premier League club to point at, there is nothing to compare yet. When more sports go live, this becomes a cross-sport read.</p>
+          <div style={{fontFamily:SERIF,fontSize:21,color:"#efe9e3",marginBottom:8,lineHeight:1.3}}>No {v.team} named, nothing to line up.</div>
+          <p style={{fontSize:14,color:"#c8c4be",lineHeight:1.6,margin:0}}>The compare reads your {v.noun} against your DNA. With no {v.league} {v.team} to point at, there is nothing to compare yet. When more sports go live, this becomes a cross-sport read.</p>
         </div>
       )}
 
@@ -145,13 +155,13 @@ export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCo
         <div style={{marginTop:24}}>
           {data.isMatch ? (
             <>
-              <div style={{fontFamily:SERIF,fontSize:34,fontWeight:600,lineHeight:1.12,letterSpacing:"-.01em",color:matchedColor}}>The shirt and the DNA agree.</div>
+              <div style={{fontFamily:SERIF,fontSize:34,fontWeight:600,lineHeight:1.12,letterSpacing:"-.01em",color:matchedColor}}>The {v.worn} and the DNA agree.</div>
               <p style={{fontSize:14.5,color:"#c8c4be",lineHeight:1.55,margin:"14px 0 0"}}>You support {matchedName}, and the quiz lands you there too. That agreement is rarer than it sounds.</p>
               <Card>
                 <Eyebrow>How close it came</Eyebrow>
                 <p style={{fontFamily:SERIF,fontSize:21,color:"#efe9e3",lineHeight:1.3,margin:"0 0 10px"}}>Nothing else gets near it.</p>
-                <p style={{fontSize:15,color:"#c8c4be",lineHeight:1.6,margin:0}}>No club comes within reach. Every read points the same way.</p>
-                <div style={{fontFamily:MONO,fontSize:11,letterSpacing:"0.04em",color:"#9696b4",marginTop:11}}>The club you chose and the club you are, the same answer.</div>
+                <p style={{fontSize:15,color:"#c8c4be",lineHeight:1.6,margin:0}}>No {v.noun} comes within reach. Every read points the same way.</p>
+                <div style={{fontFamily:MONO,fontSize:11,letterSpacing:"0.04em",color:"#9696b4",marginTop:11}}>The {v.noun} you chose and the {v.noun} you are, the same answer.</div>
               </Card>
               <Card>
                 <Eyebrow>What sealed it</Eyebrow>
@@ -161,7 +171,7 @@ export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCo
           ) : (
             <>
               <div style={{fontFamily:SERIF,fontSize:34,fontWeight:600,lineHeight:1.12,letterSpacing:"-.01em",color:"#d8d4ce"}}>
-                <span style={{color:supAccent}}>{chosen ? chosen.name : data.supported}</span> on the shirt,<br/>
+                <span style={{color:supAccent}}>{chosen ? chosen.name : data.supported}</span> on the {v.worn},<br/>
                 <span style={{color:matchedColor}}>{matchedName}</span> in the DNA.
               </div>
               <p style={{fontSize:14.5,color:"#c8c4be",lineHeight:1.55,margin:"14px 0 0"}}>You support {chosen ? chosen.name : data.supported}, but the way you actually follow the game reads as {matchedName}.</p>
@@ -173,7 +183,7 @@ export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCo
                 ) : (
                   <p style={{fontSize:15,color:"#c8c4be",lineHeight:1.6,margin:0}}>It would take changing <b style={{color:"#efe9e3",fontWeight:500,fontFamily:SERIF,fontSize:18}}>{data.changeToLand} of your {data.totalAnswers} answers</b> to land {chosen ? chosen.name : data.supported} instead.</p>
                 )}
-                <div style={{fontFamily:MONO,fontSize:11,letterSpacing:"0.04em",color:"#9696b4",marginTop:11}}>{data.changeToLand == null ? "As far apart as the shirt and the DNA get." : tierLine(data.changeToLand)}</div>
+                <div style={{fontFamily:MONO,fontSize:11,letterSpacing:"0.04em",color:"#9696b4",marginTop:11}}>{data.changeToLand == null ? "As far apart as the "+v.worn+" and the DNA get." : tierLine(data.changeToLand, v.worn)}</div>
               </Card>
               <Card>
                 <Eyebrow>What tipped which way</Eyebrow>
