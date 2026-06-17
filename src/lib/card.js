@@ -4,6 +4,7 @@
 import { GENERIC_EMOJI, DIM_COLORS, DIM_CODES, DIM_ORDER } from "../data/pl";
 import { SPORT_DATA } from "../lib/sportData";
 import { SPORTS } from "../lib/manifest";
+import { REGISTER } from "./register";
 
 function hexToRgb(h){h=h.replace("#","");return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
 function relLum(rgb){const f=v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);};return 0.2126*f(rgb[0])+0.7152*f(rgb[1])+0.0722*f(rgb[2]);}
@@ -16,8 +17,7 @@ function wrapCanvasText(ctx,s,maxw){const words=s.split(" ");const lines=[];let 
 async function generateShareCard(sport, key, genome, coreProfile){
   const D=SPORT_DATA[sport]||SPORT_DATA.PL;
   const teams=D.teams, teamDims=D.teamDims, archetypes=D.archetypes, CARD_BADGES=D.CARD_BADGES;
-  const NOUN={PL:"club",NFL:"franchise",MLB:"ballclub"};
-  const noun=NOUN[sport]||NOUN.PL;
+  const noun=(REGISTER[sport]||REGISTER.PL).noun;
   const topLabel="YOUR "+noun.toUpperCase();
   const closingLine="Which "+noun+" are you, really?";
   const W=1080,H=1350,cv=document.createElement("canvas");cv.width=W;cv.height=H;

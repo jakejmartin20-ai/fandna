@@ -4,7 +4,8 @@
 import * as PL from "../data/pl";
 import * as NFL from "../data/nfl";
 import * as MLB from "../data/mlb";
+import * as NBA from "../data/nba";
 
-const SPORT_DATA = { PL, NFL, MLB };
+const SPORT_DATA = { PL, NFL, MLB, NBA };
 
 export { SPORT_DATA };
