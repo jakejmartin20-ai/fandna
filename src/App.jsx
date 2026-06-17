@@ -12,21 +12,11 @@ import { CoreStrip } from "./components/CoreStrip";
 import { MatchEvidence } from "./components/MatchEvidence";
 import { CrossMatch } from "./components/CrossMatch";
 import { SPORTS } from "./lib/manifest";
+import { REGISTER, regOf } from "./lib/register";
 
-// Per-sport voice. The result screen and share card read these instead of branching on
-// sport inline, so a new sport is one row here. PL/NFL unchanged; MLB is the new ballclub voice.
-const REGISTER = {
-  PL:  { noun: "club",      worn: "shirt",  team: "club", teams: "clubs", league: "Premier League", leagueAbbr: "PL",
-         tail: "What you support on Saturdays is up to you.",
-         xmHeader: "Already have a favourite club?", xmEscape: "I don't support a Premier League club" },
-  NFL: { noun: "franchise", worn: "jersey", team: "team", teams: "teams", league: "NFL", leagueAbbr: "NFL",
-         tail: "What you support on Sundays is up to you.",
-         xmHeader: "Already root for a team?", xmEscape: "I don't follow an NFL team" },
-  MLB: { noun: "ballclub",  worn: "cap",    team: "team", teams: "teams", league: "MLB", leagueAbbr: "MLB",
-         tail: "What you root for at the ballpark is up to you.",
-         xmHeader: "Already have a ballclub?", xmEscape: "I don't have an MLB team" },
-};
-function regOf(s){ return REGISTER[s] || REGISTER.PL; }
+// Per-sport voice (noun, tail, cross-match labels) now lives in one shared source: ./lib/register.
+// The result screen, the share card, and any future sport all read REGISTER/regOf from there, so
+// the app and the card can never drift. Adding a sport is one row in register.js.
 
 // Fail-state guard. If anything in the app throws while rendering, the user sees this
 // instead of a blank screen. A plain reload keeps their saved genome.
@@ -100,9 +90,11 @@ function AppInner(){
   // preview (tappable, takeable) while the public still sees "coming soon". Nothing else changes.
   const nflUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("nfl");
   const mlbUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("mlb");
+  const nbaUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("nba");
   const sportsList = SPORTS.map(s=>
     s.code==="NFL" ? {...s, live: s.live||nflUnlocked} :
-    s.code==="MLB" ? {...s, live: s.live||mlbUnlocked} : s);
+    s.code==="MLB" ? {...s, live: s.live||mlbUnlocked} :
+    s.code==="NBA" ? {...s, live: s.live||nbaUnlocked} : s);
 
   // Active sport's data, bound to the same names the screens already use, so the result
   // screen and quiz read the right sport with no other changes. PL behaves exactly as before.
@@ -339,7 +331,7 @@ function AppInner(){
   }).join(" · ");
   const coreSequenced = Object.keys(genome).length>0;
   const coreCount = coreQuestions.length;
-  const moduleCounts = { PL: SPORT_DATA.PL.moduleQuestions.length, NFL: SPORT_DATA.NFL.moduleQuestions.length, MLB: SPORT_DATA.MLB.moduleQuestions.length };
+  const moduleCounts = { PL: SPORT_DATA.PL.moduleQuestions.length, NFL: SPORT_DATA.NFL.moduleQuestions.length, MLB: SPORT_DATA.MLB.moduleQuestions.length, NBA: SPORT_DATA.NBA.moduleQuestions.length };
 
   // Build the share card (the user's core feeds the strip), then either open the share sheet
   // or save the image. Download always saves. Both fall back to copying the caption.
