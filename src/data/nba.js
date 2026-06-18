@@ -251,7 +251,7 @@ const teams = {
     "name": "Los Angeles Lakers",
     "emoji": "💜",
     "color": "#552583",
-    "tagline": "Seventeen banners, courtside seats full of famous faces, and a town that treats your team like part of the show. You never once believed winning and glamour were supposed to be separate.",
+    "tagline": "Seventeen banners, courtside stars, and winning and glamour never once kept apart.",
     "desc": "You were raised to expect the trophy, and to want it to look good walking in. Seventeen championships line your rafters, gold on purple, in a town that treats the team as the marquee act. The stars come to you, the cameras come with them, and you have never apologized for the spectacle. Under the glitz is an older truth, a franchise that carried a lakes-country name across the country to a city without a single lake and won anyway, until winning in style became the only acceptable way to win.",
     "why": [
       "Your ambition sits at the very top and only counts in trophies. A great year that ends without a title reads to you as a near miss, not a success.",
@@ -263,7 +263,7 @@ const teams = {
     "name": "Boston Celtics",
     "emoji": "🍀",
     "color": "#007A33",
-    "tagline": "Eighteen banners, more than anyone has ever raised, hung over a parquet floor you would guard like family land. The glamour was never the point. The flag in the rafters was the only thing that ever counted.",
+    "tagline": "Eighteen banners over the parquet, and the flag was always the only thing that counted.",
     "desc": "You were taught that history is a scoreboard, and yours reads higher than anyone's. Eighteen titles, the most the league has ever seen, and you hold them like a duty to keep the number climbing. You love a battered green floor and the team-first, no-shortcuts way of winning the place demands, and you have no use for spectacle. A new banner is not a celebration. It is the rent you owe the eighteen already up there.",
     "why": [
       "Your ambition only speaks in trophies, and you measure it against the whole history of the sport, not against this one season.",
@@ -275,7 +275,7 @@ const teams = {
     "name": "Golden State Warriors",
     "emoji": "🌉",
     "color": "#1D428A",
-    "tagline": "You won four titles in eight years and built every one of them yourselves, drafting the core and letting it grow up together. You changed the way the whole sport shoots, and you did it by sharing the ball, not buying the answer.",
+    "tagline": "Four titles in eight years, all built not bought, and you changed how the sport shoots.",
     "desc": "You believe the right way to win is to build it, not buy it. You drafted a core, kept it together, let it grow into a dynasty, and talked the entire sport into shooting from places it used to call crazy. Your game is a passing game, strength in numbers instead of one hero with the rock. Four banners came in eight years, not one by stacking a roster overnight. You did the patient thing in a league built on shortcuts, and made it look like the most fun anyone has ever had.",
     "why": [
       "You trust building over buying. The right way to win is to draft well, develop patiently, and keep a core together long enough to peak.",
@@ -287,7 +287,7 @@ const teams = {
     "name": "Chicago Bulls",
     "emoji": "🐂",
     "color": "#CE1141",
-    "tagline": "Six championships in eight seasons, the most famous run the sport has ever produced, and not one banner since. You learned to live in the shadow of a dynasty you cannot stop measuring everything against.",
+    "tagline": "Six rings in eight years, the most famous run ever, and nothing but its shadow since.",
     "desc": "You belong to the most famous winning the game has ever seen. Six titles in eight years, two perfect three-peats, a red jersey that became a flag in every country on earth, the team that made the whole world watch. Then it ended, all at once, and the decades since have been spent inside its enormous shadow. You measure every season against a standard almost no one could meet, because you watched your team set it. The ghost is the hardest thing you have ever tried to live up to.",
     "why": [
       "Your loyalty is anchored to a peak you lived through. You stay devoted to a standard one unrepeatable run set.",
@@ -299,7 +299,7 @@ const teams = {
     "name": "San Antonio Spurs",
     "emoji": "⚫",
     "color": "#C4CED4",
-    "tagline": "Five championships out of a small Texas market, won so quietly the rest of the league barely noticed. You did it with patience and fundamentals and zero drama, and now a generational talent has you building it all over again.",
+    "tagline": "Five titles out of a small Texas market, won so quietly the league barely noticed.",
     "desc": "You win the quiet way, in a small market most of the league forgets exists, and you have never needed the spotlight to do it. Five championships came without scandal or theater, built on fundamentals, patience, and a continuity that became the envy of the sport. There was a beautiful, unselfish version of the game you played better than anyone. Now a once-in-a-generation talent has arrived to start the climb over, and you are not rattled. Doing it right, year after year, is what eventually gets it done.",
     "why": [
       "You trust the system and the standard over the spotlight. Doing it right, repeatedly, is the only way you respect.",
@@ -311,7 +311,7 @@ const teams = {
     "name": "Oklahoma City Thunder",
     "emoji": "⚡",
     "color": "#007AC1",
-    "tagline": "The smallest market in the league, and you built a champion out of nothing but patience and draft picks. You tore it down to the studs, trusted the long plan, and in 2025 you finished it, no shortcuts, no bought-in stars, just years of doing it right.",
+    "tagline": "Smallest market in the league, and you built a 2025 champion on patience and draft picks.",
     "desc": "You believe in the long plan, and you have patience almost no one else can stomach. In the smallest market in the league you tore the whole thing down on purpose, stockpiled picks, drafted well, and waited years for it to grow up while everyone louder chased shortcuts. In 2025 it paid off, the youngest champion in nearly fifty years, a title built entirely from the inside instead of bought off a shelf. You earned it the slow way, the only way you ever wanted it.",
     "why": [
       "You trust the long plan over the quick fix. A clear blueprint, run patiently, beats panic and shortcuts every time.",
@@ -323,7 +323,7 @@ const teams = {
     "name": "Philadelphia 76ers",
     "emoji": "🔔",
     "color": "#006BB6",
-    "tagline": "You are the only fanbase ever told, out loud, to root for losing, because losing now was the plan to win later. You trusted the process when the whole league laughed, and you are still waiting to be proven completely right.",
+    "tagline": "The only fans ever told to root for losing. You trusted the Process and are still waiting.",
     "desc": "You believe in the plan even when believing looks insane. You are the team that decided to be terrible on purpose, to bottom out and hoard the picks, and you told a passionate, demanding city to trust that the suffering was a strategy. They called it a joke, a tank, an embarrassment. You called it the Process and wore it like a badge. The payoff has been promised for years and has not fully arrived, and still you believe. One day it lands. Until then, you trust it.",
     "why": [
       "You trust a long plan with a faith most people cannot stomach. You will endure years of pain if the blueprint promises a payoff.",
@@ -335,7 +335,7 @@ const teams = {
     "name": "Denver Nuggets",
     "emoji": "⛏️",
     "color": "#0E2240",
-    "tagline": "You play a mile above sea level and you won your first title in 2023 the least glamorous way there is, around a player nobody else thought was a star, with passing and patience instead of hype.",
+    "tagline": "A mile above the league, you won a first title in 2023 the least glamorous way there is.",
     "desc": "You win the unglamorous way, the way that does not make the highlight shows until the trophy is already in your hands. A mile above everyone else, you built around a big man the league overlooked for years, a passer first and a showman never, and let the game run through him until it became unstoppable. No superteam, no shortcut, just a system and an unselfishness that broke through for a first championship in 2023. You proved the slow, generous game can win it all, and you have the banner to settle the argument.",
     "why": [
       "You trust the system over the star. The right structure, run patiently, beats a roster of names.",
@@ -347,7 +347,7 @@ const teams = {
     "name": "Milwaukee Bucks",
     "emoji": "🦌",
     "color": "#00471B",
-    "tagline": "A small Midwestern market found a skinny, overlooked teenager from the other side of the world, taught him the game, and watched him become a two-time MVP. In 2021 you ended a fifty-year wait for a title, and you did it your town's only way, by building it instead of buying it.",
+    "tagline": "A small market grew a raw teenager into an MVP and ended a fifty-year wait in 2021.",
     "desc": "You are a small market that does things the hard, homegrown way. You found a teenager nobody else understood, a project bigger franchises passed on, and developed him into a superstar instead of buying one. In 2021 it ended a fifty-year wait, a championship for a blue-collar town that had earned every bit of it. Your faith was never in spending power, because you never had it. It was in patience, development, and a community that shows up. You proved a small place can build something the whole league has to reckon with.",
     "why": [
       "Your loyalty runs to a place and a community, not to spending power. You show up regardless of the market's size.",
@@ -359,7 +359,7 @@ const teams = {
     "name": "Indiana Pacers",
     "emoji": "🏁",
     "color": "#002D62",
-    "tagline": "In your state, the gym is the town square and the whole place lives and dies on basketball. You ran all the way to a Game 7 of the Finals in 2025 and lost the last game of the year, one win from everything, and the town did not love you any less for it.",
+    "tagline": "Where the gym is the town square, you lost Game 7 of the 2025 Finals by a single win.",
     "desc": "You come from the one place where basketball is not a sport but a civic religion, where every small town has a gym that doubles as its heart and the whole state organizes its winters around the game. You are not a big market and have never pretended to be. What you have is devotion, the kind that fills a building win or lose. In 2025 you came within a single game of all of it, a Game 7 in the Finals that slipped away, and your people did not turn on you. You love the game itself, first and last.",
     "why": [
       "Your sense of belonging runs through a place and its love of the game, not through trophies. The gym is your town square.",
@@ -371,7 +371,7 @@ const teams = {
     "name": "Minnesota Timberwolves",
     "emoji": "🐺",
     "color": "#0C2340",
-    "tagline": "Up in the frozen north, you waited through decades of futility, and you have still, in all your years, never once reached the Finals. Lately you have finally become a team that matters, twice reaching the doorstep, only to be turned back each time.",
+    "tagline": "Frozen-north faithful, twice to the doorstep, turned back, still chasing a first Finals.",
     "desc": "You come from the frozen north, and for most of your existence the cold was the most exciting thing about your team. Decades of futility, a near-permanent address in the lottery, and the particular ache of letting your greatest player go and watching him win a championship somewhere else the very next year. You stayed anyway. Then it turned, and you reached the doorstep of the Finals two years running, close enough to touch a thing your franchise has never held. After all those empty years, being a team that matters is its own kind of arrival.",
     "why": [
       "Your loyalty was forged in lean years. You stayed devoted through a long stretch of nothing to root for, and that is the realest part of you.",
@@ -383,7 +383,7 @@ const teams = {
     "name": "Detroit Pistons",
     "emoji": "⚙️",
     "color": "#C8102E",
-    "tagline": "You are basketball's blue-collar town, where the game is supposed to look like a hard day's work and a little like a fistfight. You won with the meanest defense the league had ever seen, then years later set the record for the longest losing streak in history, and then you clawed all the way back the only way your city respects: by working for it, not tanking for it.",
+    "tagline": "Blue-collar ball, the meanest defense ever, a record losing streak clawed back by work.",
     "desc": "You are the Motor City, and your basketball is supposed to look like the work the town was built on. Your proudest era was also your meanest, a defense so punishing that beating you felt like surviving you, and a title won by grinders nobody thought could beat the stars. Then came a losing streak longer than any in league history, in your own building. You did not tank out of it and you did not buy your way out. You went back to work and clawed back one honest game at a time. The refusal to take a shortcut matters more.",
     "why": [
       "You believe in earning it the hard way. Effort and toughness are not tactics for you, they are a moral position.",
@@ -395,7 +395,7 @@ const teams = {
     "name": "Memphis Grizzlies",
     "emoji": "🐻",
     "color": "#5D76A9",
-    "tagline": "You are the only team the league ever pulled out of Canada and dropped in the deep south, and you turned into the hardest-nosed, lowest-to-the-floor team in basketball. In Memphis, you grind. You out-tough people, and that has always counted for more than out-talenting them.",
+    "tagline": "Pulled from Canada to the deep south, you turned into basketball's hardest-nosed grind.",
     "desc": "You were born in Canada and raised in the deep south, an odd journey that ended in the one city that fit you perfectly. Memphis is a place of soul and grit and hard living, and you became its team by playing the way it lives, all defense, all elbows, all heart, never the most talented group in the room and always the hardest to play against. Grit and grind was not a slogan, it was a value system. You are here to make the other guy's night miserable.",
     "why": [
       "You would rather out-work and out-tough than out-talent. Effort and grit are the qualities you actually respect.",
@@ -407,7 +407,7 @@ const teams = {
     "name": "Utah Jazz",
     "emoji": "🎵",
     "color": "#002B5C",
-    "tagline": "You ran the most famous pick-and-roll the game has ever seen, all the way to back-to-back Finals, and lost both to the same dynasty at its absolute peak. You never fully got over it, because being that good and that close and going home empty is a specific kind of ache.",
+    "tagline": "The most famous pick-and-roll ever, and back-to-back Finals lost to the same peak dynasty.",
     "desc": "You are the faithful of a small mountain market, and your golden age was a masterpiece of fundamentals. You ran a pick-and-roll so pure that coaches still teach it, two players in perfect rhythm, and it carried you to back-to-back Finals against the greatest dynasty of the era. You lost both, not blown out, just edged by a team at the peak of its powers. You never quite got over coming that close, and you would not want to, because the near miss is proof of how good you were. You came one dynasty short, and you are still proud of the chase.",
     "why": [
       "You believe in doing the simple things perfectly. Execution and repetition beat flash, every time.",
@@ -419,7 +419,7 @@ const teams = {
     "name": "Portland Trail Blazers",
     "emoji": "🌲",
     "color": "#E03A3E",
-    "tagline": "One championship, way back in 1977, and a fanbase that has sold out the building through decades of near-misses. Twice you held the draft pick that could have changed everything, and twice you took the big man whose body broke instead of the legend who got away. You stayed anyway. In Rip City, loyalty was never up for debate.",
+    "tagline": "One title, back in 1977, and a Rip City faithful that never stopped filling the building.",
     "desc": "You are Rip City, and your loyalty is close to legendary. One championship, in 1977, and then decades of being good but not quite, of seasons that ended in heartbreak instead of parades. The cruelest part is the draft, where twice you held the pick that could have rewritten your history and twice chose the big man who got hurt over the all-timer who got away. You sold out the building anyway, year after year, for a team that kept finding new ways to break your heart. The faith never went anywhere.",
     "why": [
       "Your loyalty is the unconditional kind. You fill the building through heartbreak after heartbreak because leaving was never an option.",
@@ -431,7 +431,7 @@ const teams = {
     "name": "New York Knicks",
     "emoji": "🗽",
     "color": "#F58426",
-    "tagline": "Fifty-three years you waited, in the loudest, most demanding basketball city on earth, packing the world's most famous arena through every near miss and every lost decade. In 2026 the wait finally ended, and a city that never stopped showing up got to lose its mind all at once.",
+    "tagline": "Fifty-three years in the loudest basketball city alive, and in 2026 the wait broke.",
     "desc": "You are the heartbeat of basketball in the city that thinks it invented the game. Madison Square Garden is your cathedral, the loudest and most unforgiving room in the sport, and for fifty-three years it was also the site of a long, public heartbreak. You demanded everything and got nothing to show for it, and you stayed louder than anyone anyway, because in your town loyalty is showing up and caring too much, not trophies. Then, in 2026, it finally happened. You waited longer than almost anyone, and never stopped believing it was yours.",
     "why": [
       "Your loyalty is total and unconditional. You show up and care too much, win or lose, decade after decade.",
@@ -443,7 +443,7 @@ const teams = {
     "name": "Cleveland Cavaliers",
     "emoji": "⚔️",
     "color": "#860038",
-    "tagline": "Your city went fifty-two years without a major trophy, and then in 2016 you delivered it the only way that felt right, by coming back from down three games to one against the best regular-season team there had ever been. The one who did it left you once before and once after. You will never forget that he came home long enough to keep the promise.",
+    "tagline": "Fifty-two years dry, then a 2016 title from down 3-1 against the best regular season ever.",
     "desc": "You come from a city that knew heartbreak as a way of life, a place that went more than half a century without a single championship in any sport. Then, in 2016, you got the one. The greatest comeback the Finals had ever seen, down three games to one against a team that had just had the best season in league history, and your city finally got to celebrate. The player who delivered it had left you once, come home to keep a promise, then left again. You hold the abandonment and the redemption at once, because that title was worth the wait.",
     "why": [
       "You feel sports deeply, the heartbreak and the joy both, because you come from a place that knew far more of the former.",
@@ -455,7 +455,7 @@ const teams = {
     "name": "Sacramento Kings",
     "emoji": "👑",
     "color": "#5A2D81",
-    "tagline": "No team that has ever won a championship has waited longer for the next one than you have, going all the way back to 1951, in a city most of your fans have never even been to. For seventeen straight years you missed the playoffs entirely, and you packed the building anyway. When the drought finally broke, you lit a purple beam into the sky and the whole city lost its mind.",
+    "tagline": "Longest title drought of any champion, since 1951, now lit by a purple beam over the city.",
     "desc": "You are the patron saint of the long wait. Your last championship came in 1951, when the franchise lived in a different city in a different era, which makes yours the longest title drought of any team that has ever won one at all. Then came seventeen straight seasons without so much as a playoff game, endured by one of the most loyal small-market crowds anywhere. And when it finally ended, you lit a purple beam over the city after every single win. The devotion never wavered, because for you, showing up was never about the standings.",
     "why": [
       "Your loyalty is the marathon kind. You filled the building through the longest droughts in the sport because leaving was never the point.",
@@ -467,7 +467,7 @@ const teams = {
     "name": "Atlanta Hawks",
     "emoji": "🦅",
     "color": "#E03A3E",
-    "tagline": "Your one and only championship was won in 1958, in a different city, by a team that did not move to Atlanta until years later. So the banner in your rafters technically belongs to a place none of your fans live, and since the city's been yours, you have been electric, watchable, and never once back to the Finals.",
+    "tagline": "Your only banner was won in 1958, in another city, before the team was ever Atlanta's.",
     "desc": "You root for a team whose only trophy is a kind of inheritance. The one banner was won in 1958, in St. Louis, by players who never set foot in your city, hung up before the franchise ever came south. Since it became truly yours, you have been one of the most electric, highlight-spawning teams in the league, and never gotten all the way back. You come from a new-South city the rest of the country loves to call disloyal, and you have spent years proving that wrong. You would trade a thousand highlights for one banner that actually belongs to Atlanta.",
     "why": [
       "Your history is complicated and a little borrowed, and you carry it without pretending otherwise. The deep roots other fans claim were never quite available to you.",
@@ -479,7 +479,7 @@ const teams = {
     "name": "Washington Wizards",
     "emoji": "🧙",
     "color": "#002B5C",
-    "tagline": "Your only championship came in 1978, won by a team called the Bullets, a name you no longer even use. You changed it, and the trophy stayed in a past that feels like it belonged to someone else. As the Wizards, you have never won a thing, and somewhere along the way you made a quiet peace with rooting for love instead of banners.",
+    "tagline": "One title in 1978 as the Bullets, a name you retired, and nothing since as the Wizards.",
     "desc": "You won it all once, in 1978, except the team that did it had a different name, one you have since retired. You are the Wizards now, and under that name you have never won anything at all, a glory that belongs to a version of you that no longer exists. You root in the nation's capital, a transient town that has never treated basketball as its first love. So you made peace with it, the long stretches of mediocrity, the years of just hoping to matter. Your loyalty was never about the trophy. It was about staying.",
     "why": [
       "Your loyalty was never conditional on winning. You stayed for the love of it through long stretches that offered little else.",
@@ -491,7 +491,7 @@ const teams = {
     "name": "Brooklyn Nets",
     "emoji": "🌃",
     "color": "#000000",
-    "tagline": "You went all in on the boldest bet in the sport, three superstars in the coolest borough in the world, a championship that everyone said was a formality. Then it detonated, drama and injury and ego, gone before it ever saw a Finals. You know better than anyone that the splashiest plan in the room is not the same thing as a foundation.",
+    "tagline": "Three superstars in the coolest borough, a sure thing that blew up before a Finals.",
     "desc": "You believe in the big swing, the kind that makes the whole league stop and stare. You brought three of the biggest names in basketball to the most stylish borough in America and dared everyone to bet against the coronation. It was thrilling while it lasted, and also a house with no foundation, and it came down fast, drama and injury and clashing egos turning a sure thing into a punchline overnight. You have learned the hard way that buying greatness is not the same as building it. You would do it again, though. The swing was too much fun.",
     "why": [
       "You are drawn to the bold, all-or-nothing move. The biggest swing in the room is the one that excites you, even when it misses.",
@@ -503,7 +503,7 @@ const teams = {
     "name": "Los Angeles Clippers",
     "emoji": "⛵",
     "color": "#C8102E",
-    "tagline": "You are the oldest team in the league that has never once reached a Finals, and you have spent your whole existence as the second team in a city that worships somebody else. You have bought stars, raised expectations, and broken your own heart over and over, always good enough to dream and never good enough to get there.",
+    "tagline": "The oldest team never to reach a Finals, second fiddle in a star's own city.",
     "desc": "You have waited your whole life for a moment that has never come, the oldest franchise never to reach a Finals, and you did it in the shadow of the most glamorous team in the league, sharing a city and for years even a building with the franchise that collected the rings you only dreamed about. You drafted stars, traded for them, bought them outright, and watched it fall apart in the playoffs again and again. Finally you got your own house, nobody's but yours. But you are still here, still convinced this is the year it breaks the other way.",
     "why": [
       "You know the particular ache of always being close and never quite there. Hope and heartbreak are old companions for you.",
@@ -515,7 +515,7 @@ const teams = {
     "name": "Phoenix Suns",
     "emoji": "☀️",
     "color": "#E56020",
-    "tagline": "Three times you have reached the Finals and three times you have come home with nothing, including an all-in bet on big names that fell flat on its face. In the Valley, you have had flash and stars and heartbreak in abundance, and the one thing you have never once had is a ring.",
+    "tagline": "Three trips to the Finals, three times home empty, and in the Valley still never a ring.",
     "desc": "You are the heartbreak kid of the desert. Three trips to the Finals across the decades, three times sent home empty, including a recent, expensive gamble on a roster of big names that flamed out almost immediately. You play in the Valley, where the sun is relentless and so, somehow, is the disappointment. You have never been short on stars or style or reasons to believe this was finally the year. You have only ever been short on the one thing that counts. You keep swinging, because hope in the Valley is a renewable resource.",
     "why": [
       "You aim high and swing big, drawn to star power and the bold bet over the patient build.",
@@ -527,7 +527,7 @@ const teams = {
     "name": "Miami Heat",
     "emoji": "🔥",
     "color": "#98002E",
-    "tagline": "You belong to the hardest-working program in the league, a place where undrafted nobodies get into the best shape of their lives and turn into players, all of it run on a standard nobody is allowed to fall below. You pair that grind with the glamour of South Beach and three championships, and you have never accepted being anything less than a contender.",
+    "tagline": "The hardest-working program in the league, with South Beach glamour and three titles.",
     "desc": "You are discipline disguised as glamour. On the surface you are South Beach, sunshine and spectacle, but underneath you run the most demanding program in the sport, where the conditioning tests are brutal, the standard is non-negotiable, and undrafted players nobody wanted become somebodies. Three championships have come out of that combination, and you treat every season that does not end in contention as a failure of will. You believe greatness is a habit, not a gift. You can have the beach and the standard at once, and you have proven it for decades.",
     "why": [
       "You hold yourself to a non-negotiable standard. Anything short of contention reads as a failure of effort, not luck.",
@@ -539,7 +539,7 @@ const teams = {
     "name": "Dallas Mavericks",
     "emoji": "🐎",
     "color": "#00538C",
-    "tagline": "Your one shining title came in 2011, when you took down a superteam everyone had already crowned, the sweetest possible revenge for a fanbase that had been heartbroken by the very same team before. And then, years later, you did the unthinkable, trading away your own generational superstar in his prime, a gut punch nobody saw coming.",
+    "tagline": "A 2011 title over a crowned superteam, then trading your own star away in his prime.",
     "desc": "You know the highest high and one of the cruelest lows the sport can hand a fanbase. In 2011 you won it all by toppling a superteam the world had already crowned, perfect revenge for an earlier heartbreak against that same team. Then came the unthinkable: you traded your own generational superstar, in his prime, the face of the franchise, a move that blindsided the league and broke hearts in a way losing never could. You are loyalty and whiplash at once. You have learned that here, nothing, not even your best player, is ever truly safe.",
     "why": [
       "You feel the extremes more than most. You have known the sweetest triumph and a uniquely brutal heartbreak, and you carry both.",
@@ -551,7 +551,7 @@ const teams = {
     "name": "Houston Rockets",
     "emoji": "🚀",
     "color": "#CE1141",
-    "tagline": "You are Clutch City, two championships won back to back when your city refused to accept the choke label the whole country had pinned on it. Ever since, you have lived on a pendulum, going all in on a superstar, tearing it all down to the studs, then doing it all over again, always chasing the next ring with everything you have got.",
+    "tagline": "Clutch City, back-to-back rings that buried the choke label, all-in or teardown since.",
     "desc": "You are Clutch City, and you earned the name the hard way. Two titles, back to back, won by a team the whole country had written off as chokers until it shoved the label back down their throats. Ever since, you have been the league's great pendulum, swinging from all-in superteam to total teardown and back, always either chasing a ring right now or blowing it up to chase one later. You do not do patience and you do not do mediocrity. You would rather gamble big and live with the wreckage than settle for being just okay.",
     "why": [
       "You have no patience for the middle. You would rather swing all the way to contention or all the way to a teardown than drift in between.",
@@ -563,7 +563,7 @@ const teams = {
     "name": "Toronto Raptors",
     "emoji": "🦖",
     "color": "#CE1141",
-    "tagline": "You are the only team in the league that plays in another country, an entire nation's basketball hopes carried on one franchise. In 2019 you shocked everyone and won it all, on the back of a superstar who stayed exactly one year, and a whole country north of the border lost its mind.",
+    "tagline": "The only team in another country, a whole nation's hopes, and a stunning 2019 title.",
     "desc": "You are not just a team, you are a country's team, the only franchise in the league that lives outside the United States and carries the hopes of an entire nation the sport spent years ignoring. We the North was a chip on the shoulder before it was a rallying cry, the pride of being the outsiders nobody took seriously. Then, in 2019, you stunned the world and won the title, partly on a superstar who stayed for exactly one glorious season and then left. It did not matter. You had the only banner in the country, and nobody can ever take that year away.",
     "why": [
       "You carry an outsider's pride, the chip-on-the-shoulder of representing a whole place the rest of the sport overlooked.",
@@ -575,7 +575,7 @@ const teams = {
     "name": "Orlando Magic",
     "emoji": "✨",
     "color": "#0077C0",
-    "tagline": "You are the team that keeps drafting a transcendent young big man, riding him to the edge of glory, and then watching him decide he would rather chase a ring somewhere else. Two trips to the Finals, both with a generational center, both ending in defeat, and both centers gone not long after. You have learned not to get too attached, even though you always do.",
+    "tagline": "Two Finals on two generational centers, and you watched each one leave to win elsewhere.",
     "desc": "You know what it is to fall in love with greatness and watch it walk out the door. Twice you drafted a young giant who looked like the future of the entire league, twice he carried you to the Finals, and twice, once the losing stung and the grass looked greener, he left to win somewhere else. It is a specific kind of heartbreak, being the place stars come from rather than the place they stay. You have built and rebuilt and built again, always hoping the cornerstone stays long enough to finish what he started. You keep getting attached anyway.",
     "why": [
       "You keep getting attached even though you have been left before. Your loyalty outlasts the people who do not return it.",
@@ -587,7 +587,7 @@ const teams = {
     "name": "New Orleans Pelicans",
     "emoji": "🐦",
     "color": "#0C2340",
-    "tagline": "You have the youngest identity in the league, a name barely a decade old, and a painful habit of landing a franchise-defining star and then having to watch him leave for a bigger stage. You keep starting over, in a city that lives for football, still figuring out exactly who you are.",
+    "tagline": "The youngest name in the league, always landing a star and then watching him leave.",
     "desc": "You are the newest thing in the league, an identity barely old enough to feel permanent, in a city that has always loved football first. Your short history has a cruel rhythm, you find a star, sometimes one of the very best in the world, build around him, and then the day comes when he wants out and you have to let him go and start again. You have done the starting-over so many times it is almost the defining feature of who you are. You are young, and you are searching. The story is genuinely still being written.",
     "why": [
       "Your identity is still forming, and you are comfortable with that. You root with hope and openness rather than deep, settled history.",
@@ -599,7 +599,7 @@ const teams = {
     "name": "Charlotte Hornets",
     "emoji": "🐝",
     "color": "#00788C",
-    "tagline": "Your team was literally taken from you once, packed up and moved to another city, and you spent years rooting for a replacement that never felt like yours. Then you fought to get your real name and your real history back, and you won. Buzz City reclaimed its own identity, the teal and purple and all of it, because some things are worth refusing to let go.",
+    "tagline": "Your team was taken away, and you fought back the name, the history, the teal and purple.",
     "desc": "Your story is about losing your team and then taking it back. You had a beloved one, teal and purple, all buzz and energy, and then it was packed up and moved a thousand miles away, and you were handed a replacement that never felt like the real thing. But you never accepted that the history belonged to someone else. You fought to reclaim the name, the colors, the records, all of it, and you got it back, an identity restored to the city it was born in. You are Buzz City again, on purpose. A team is a name and a history and a place, and yours was worth fighting to keep.",
     "why": [
       "Your loyalty is to a name and a history more than a trophy case. You fought to reclaim an identity because it mattered that much.",
