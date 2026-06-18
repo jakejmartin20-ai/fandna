@@ -273,6 +273,53 @@ function changeToLandFp(coreAns, modAns, baseProfile, target, eng){
   return null;
 }
 
+// Cross-match tips are HEAD-TO-HEAD between the two clubs being compared, not distinctive vs the
+// whole field. Each answer is attributed to whichever of the two it favoured MORE; an answer that
+// fed BOTH the same (or neither) tips NEITHER way and shows in neither column, so the same answer
+// can never appear under both clubs. Display-only: never changes the pick or the scores.
+function crossTips(answers, clubA, clubB, matrix, n){
+  const A = [], B = [];
+  for (const [qId, ans] of Object.entries(answers)){
+    const cell = matrix[qId] && matrix[qId][ans];
+    if (!cell) continue;
+    const delta = (cell[clubA] || 0) - (cell[clubB] || 0);
+    if (delta === 0) continue;
+    const label = answerLabel(qId, ans);
+    if (!readableTip(label)) continue;
+    (delta > 0 ? A : B).push({ mag: Math.abs(delta), question: questionText(qId), answer: label });
+  }
+  const top = arr => arr.sort((x, y) => y.mag - x.mag).slice(0, n).map(r => ({ question: r.question, answer: r.answer }));
+  return { A: top(A), B: top(B) };
+}
+// Core (DNA) tips for the same head-to-head: each core answer's trait profile pulls toward whichever
+// club it sits dimensionally closer to (a positive alignment with dimsB - dimsA pulled toward clubB).
+// Used to fill a column when the module answers gave one club no reasons, i.e. a match the core drove.
+function coreCrossTips(coreAns, dimsA, dimsB, n){
+  const A = [], B = [];
+  const diff = {}; for (const k of DIM_ORDER) diff[k] = (dimsB[k] || 0) - (dimsA[k] || 0);
+  for (const [qId, ans] of Object.entries(coreAns)){
+    const cell = coreDimScoring[qId] && coreDimScoring[qId][ans];
+    if (!cell) continue;
+    let dot = 0; for (const k of DIM_ORDER) dot += (cell[k] || 0) * diff[k];
+    if (dot === 0) continue;
+    const label = answerLabel(qId, ans);
+    if (!readableTip(label)) continue;
+    (dot < 0 ? A : B).push({ mag: Math.abs(dot), question: questionText(qId), answer: label });
+  }
+  const top = arr => arr.sort((x, y) => y.mag - x.mag).slice(0, n).map(r => ({ question: r.question, answer: r.answer }));
+  return { A: top(A), B: top(B) };
+}
+// Module reasons lead; core/DNA reasons fill a column only when the module answers gave that side
+// nothing. Up to n items per column, no question repeated.
+function blendCrossTips(modSide, coreSide, n){
+  const out = modSide.slice();
+  for (const t of coreSide){
+    if (out.length >= n) break;
+    if (!out.some(x => x.question === t.question)) out.push(t);
+  }
+  return out.slice(0, n);
+}
+
 function crossMatchFp(sport, input, supportedClub, eng){
   const coreAns = input.coreAnswers || {};
   const modAns  = input.moduleAnswers || {};
@@ -286,12 +333,14 @@ function crossMatchFp(sport, input, supportedClub, eng){
   const supPts = scores[supportedClub] || 0;
   let greater = 0; for (const c of eng.keys){ if ((scores[c] || 0) > supPts) greater++; }
   const rank = greater + 1;
+  const _xtMod  = crossTips(modAns, supportedClub, matched, eng.scoring, 2);
+  const _xtCore = coreCrossTips(coreAns, eng.dims[supportedClub] || {}, eng.dims[matched] || {}, 2);
   return {
     sport, matched, supported: supportedClub, isMatch,
     rank, totalClubs: eng.keys.length, totalAnswers,
     changeToLand: isMatch ? 0 : changeToLandFp(coreAns, modAns, baseProfile, supportedClub, eng),
-    towardSupported: distinctiveTips(modAns, supportedClub, eng.scoring, eng.keys, 2),
-    towardMatch:     distinctiveTips(modAns, matched,       eng.scoring, eng.keys, 2),
+    towardSupported: blendCrossTips(_xtMod.A, _xtCore.A, 2),
+    towardMatch:     blendCrossTips(_xtMod.B, _xtCore.B, 2),
   };
 }
 
@@ -446,12 +495,15 @@ function crossMatch(sport, input, supportedClub){
   const supPts = scores[supportedClub] || 0;
   let greater = 0; for (const c of eng.teamKeys){ if ((scores[c] || 0) > supPts) greater++; }
   const rank = greater + 1;
+  // PL has no separate core/module fingerprint: all answers live in one matrix, so the head-to-head
+  // runs over the combined answer set directly (no dimensional core fill needed).
+  const _xtPL = crossTips(all, supportedClub, matched, eng.matrix, 2);
   return {
     sport, matched, supported: supportedClub, isMatch,
     rank, totalClubs: eng.teamKeys.length, totalAnswers: Object.keys(eng.matrix).length,
     changeToLand: isMatch ? 0 : changeToLand(all, supportedClub, eng),
-    towardSupported: distinctiveTips(all, supportedClub, eng.matrix, eng.teamKeys, 2),
-    towardMatch:     distinctiveTips(all, matched,       eng.matrix, eng.teamKeys, 2),
+    towardSupported: _xtPL.A,
+    towardMatch:     _xtPL.B,
   };
 }
 
