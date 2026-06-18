@@ -6,7 +6,8 @@ import { SPORT_DATA } from "./lib/sportData";
 import { scoreCore, scoreModule, matchEvidence } from "./lib/scoring";
 import { loadState, saveResult, clearAll } from "./lib/storage";
 import { generateShareCard } from "./lib/card";
-import { ChoiceQ, BinaryQ, SliderQ, DimBars, BadgeImg } from "./components/quiz";
+import { ChoiceQ, BinaryQ, SliderQ, DimBars } from "./components/quiz";
+import { ClubMark } from "./components/ClubMark";
 import { GenomeHome } from "./screens/Genome";
 import { CoreStrip } from "./components/CoreStrip";
 import { MatchEvidence } from "./components/MatchEvidence";
@@ -102,7 +103,7 @@ function AppInner(){
   const moduleQuestions = D.moduleQuestions;
   const teams = D.teams, archetypes = D.archetypes, teamTextColors = D.teamTextColors;
   const greats = D.greats, vitalStats = D.vitalStats, nearlyGot = D.nearlyGot;
-  const badgeUrls = D.badgeUrls, squadUrls = D.squadUrls;
+  const squadUrls = D.squadUrls;
 
   // The active question run. First time: 24 core + 14 PL module = 38, in the v1 order.
   // Module-only retake: just the 14 PL questions (the core is already sequenced).
@@ -327,7 +328,9 @@ function AppInner(){
   // code, every other shows "?". Adding a sport later extends this automatically.
   const shareString = "FanDNA: " + SPORTS.map(s=>{
     const r=genome[s.code];
-    return `${s.code}-${(r&&r.club)?r.club:"?"}`;
+    const sd=SPORT_DATA[s.code];
+    const c3=(r&&r.club)?(((sd&&sd.teams&&sd.teams[r.club]&&sd.teams[r.club].code3))||r.club):"?";
+    return `${s.code}-${c3}`;
   }).join(" · ");
   const coreSequenced = Object.keys(genome).length>0;
   const coreCount = coreQuestions.length;
@@ -524,8 +527,8 @@ function AppInner(){
             <div style={{border:`1px solid ${team.color}33`,borderRadius:14,overflow:"hidden",background:"#14141c",marginBottom:14}}>
               <div style={{background:`linear-gradient(180deg,${team.color}2e 0%,transparent 70%)`,padding:"22px 18px 4px",textAlign:"center"}}>
                 <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",letterSpacing:"0.34em",textTransform:"uppercase",marginBottom:14}}>your {regOf(activeSport).noun}</div>
-                <div style={{display:"inline-flex",border:"5px solid #f7f4ef",borderRadius:"50%"}}>
-                  <BadgeImg url={badgeUrls[result]} emoji={team.emoji} size={74}/>
+                <div style={{display:"inline-flex"}}>
+                  <ClubMark team={team} size={84}/>
                 </div>
                 <h1 style={{fontFamily:"'Cormorant Garamond',Georgia,serif",margin:"14px 0 0",fontSize:"clamp(28px,7vw,38px)",fontWeight:300,color:"#e8e4de",letterSpacing:"-.02em",lineHeight:1}}>{team.name}</h1>
                 <div style={{display:"inline-flex",alignItems:"center",gap:7,background:`${team.color}15`,border:`1px solid ${team.color}30`,borderRadius:5,padding:"4px 11px",marginTop:11}}>
@@ -710,7 +713,7 @@ function AppInner(){
                       <div style={{padding:"14px 16px"}}>
                         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
                           <div style={{display:"flex",alignItems:"center",gap:10}}>
-                            <BadgeImg url={badgeUrls[k]} emoji={nt.emoji} size={36}/>
+                            <ClubMark team={nt} size={40}/>
                             <div>
                               <div style={{fontSize:15,color:"#ddd",fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:400}}>{nt.name}</div>
                               <div style={{fontSize:12,color:(teamTextColors[k]||nt.color),fontStyle:"italic",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>{archetypes[k]||""}</div>
@@ -779,6 +782,7 @@ function AppInner(){
                   onMouseLeave={e=>e.currentTarget.style.color="#9898b8"}
                 >Feedback or a bug?</a>
               </div>
+              <p style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#5f5f78",lineHeight:1.6,margin:"16px auto 0",maxWidth:360,letterSpacing:"0.02em"}}>FanDNA is an independent project. Not affiliated with, endorsed by, or associated with any club, league, or governing body.</p>
             </div>
           </div>
         )}
