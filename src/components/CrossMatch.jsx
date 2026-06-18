@@ -200,7 +200,14 @@ export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCo
                       <div style={{fontFamily:SERIF,fontStyle:"italic",fontSize:15,color:"#8a8aac",lineHeight:1.4,padding:"11px 0 2px"}}>Nothing in your answers pulled toward {chosen ? chosen.name : data.supported}. Where it placed comes from your core DNA, not your picks.</div>
                     </div>
                   )}
-                <TipGroup title={`Pulled you to ${matchedName} instead`} color={matchedColor} tips={data.towardMatch}/>
+                {(data.towardMatch && data.towardMatch.length > 0)
+                  ? <TipGroup title={`Pulled you to ${matchedName} instead`} color={matchedColor} tips={data.towardMatch}/>
+                  : (
+                    <div style={{marginTop:4}}>
+                      <div style={{fontFamily:MONO,fontSize:10,letterSpacing:"0.12em",textTransform:"uppercase",color:matchedColor,margin:"18px 0 2px"}}>Pulled you to {matchedName} instead</div>
+                      <div style={{fontFamily:SERIF,fontStyle:"italic",fontSize:15,color:"#8a8aac",lineHeight:1.4,padding:"11px 0 2px"}}>Nothing in your answers pulled toward {matchedName}. The match comes from your core DNA, not your picks.</div>
+                    </div>
+                  )}
               </Card>
             </>
           )}
