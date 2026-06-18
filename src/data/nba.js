@@ -248,7 +248,6 @@ const moduleQuestions = [
 
 const teams = {
   "LAL": {
-    "code3": "LAL", "kitType": "duo", "secondaryColor": "#FDB927",
     "name": "Los Angeles Lakers",
     "emoji": "💜",
     "color": "#552583",
@@ -261,7 +260,6 @@ const teams = {
     ]
   },
   "BOS": {
-    "code3": "BOS", "kitType": "duo", "secondaryColor": "#BA9653",
     "name": "Boston Celtics",
     "emoji": "🍀",
     "color": "#007A33",
@@ -274,7 +272,6 @@ const teams = {
     ]
   },
   "GSW": {
-    "code3": "GSW", "kitType": "duo", "secondaryColor": "#FFC72C",
     "name": "Golden State Warriors",
     "emoji": "🌉",
     "color": "#1D428A",
@@ -287,7 +284,6 @@ const teams = {
     ]
   },
   "CHI": {
-    "code3": "CHI", "kitType": "duo", "secondaryColor": "#000000",
     "name": "Chicago Bulls",
     "emoji": "🐂",
     "color": "#CE1141",
@@ -300,7 +296,6 @@ const teams = {
     ]
   },
   "SAS": {
-    "code3": "SAS", "kitType": "duo", "secondaryColor": "#000000",
     "name": "San Antonio Spurs",
     "emoji": "⚫",
     "color": "#C4CED4",
@@ -313,7 +308,6 @@ const teams = {
     ]
   },
   "OKC": {
-    "code3": "OKC", "kitType": "duo", "secondaryColor": "#EF3B24",
     "name": "Oklahoma City Thunder",
     "emoji": "⚡",
     "color": "#007AC1",
@@ -326,7 +320,6 @@ const teams = {
     ]
   },
   "PHI": {
-    "code3": "PHI", "kitType": "duo", "secondaryColor": "#ED174C",
     "name": "Philadelphia 76ers",
     "emoji": "🔔",
     "color": "#006BB6",
@@ -339,7 +332,6 @@ const teams = {
     ]
   },
   "DEN": {
-    "code3": "DEN", "kitType": "duo", "secondaryColor": "#FEC524",
     "name": "Denver Nuggets",
     "emoji": "⛏️",
     "color": "#0E2240",
@@ -352,7 +344,6 @@ const teams = {
     ]
   },
   "MIL": {
-    "code3": "MIL", "kitType": "duo", "secondaryColor": "#EEE1C6",
     "name": "Milwaukee Bucks",
     "emoji": "🦌",
     "color": "#00471B",
@@ -365,7 +356,6 @@ const teams = {
     ]
   },
   "IND": {
-    "code3": "IND", "kitType": "duo", "secondaryColor": "#FDBB30",
     "name": "Indiana Pacers",
     "emoji": "🏁",
     "color": "#002D62",
@@ -378,7 +368,6 @@ const teams = {
     ]
   },
   "MIN": {
-    "code3": "MIN", "kitType": "duo", "secondaryColor": "#78BE20",
     "name": "Minnesota Timberwolves",
     "emoji": "🐺",
     "color": "#0C2340",
@@ -391,7 +380,6 @@ const teams = {
     ]
   },
   "DET": {
-    "code3": "DET", "kitType": "duo", "secondaryColor": "#006BB6",
     "name": "Detroit Pistons",
     "emoji": "⚙️",
     "color": "#C8102E",
@@ -404,7 +392,6 @@ const teams = {
     ]
   },
   "MEM": {
-    "code3": "MEM", "kitType": "duo", "secondaryColor": "#12173F",
     "name": "Memphis Grizzlies",
     "emoji": "🐻",
     "color": "#5D76A9",
@@ -417,7 +404,6 @@ const teams = {
     ]
   },
   "UTA": {
-    "code3": "UTA", "kitType": "duo", "secondaryColor": "#F9A01B",
     "name": "Utah Jazz",
     "emoji": "🎵",
     "color": "#002B5C",
@@ -430,7 +416,6 @@ const teams = {
     ]
   },
   "POR": {
-    "code3": "POR", "kitType": "duo", "secondaryColor": "#000000",
     "name": "Portland Trail Blazers",
     "emoji": "🌲",
     "color": "#E03A3E",
@@ -443,7 +428,6 @@ const teams = {
     ]
   },
   "NYK": {
-    "code3": "NYK", "kitType": "duo", "secondaryColor": "#006BB6",
     "name": "New York Knicks",
     "emoji": "🗽",
     "color": "#F58426",
@@ -456,7 +440,6 @@ const teams = {
     ]
   },
   "CLE": {
-    "code3": "CLE", "kitType": "duo", "secondaryColor": "#FDBB30",
     "name": "Cleveland Cavaliers",
     "emoji": "⚔️",
     "color": "#860038",
@@ -469,7 +452,6 @@ const teams = {
     ]
   },
   "SAC": {
-    "code3": "SAC", "kitType": "duo", "secondaryColor": "#63727A",
     "name": "Sacramento Kings",
     "emoji": "👑",
     "color": "#5A2D81",
@@ -482,7 +464,6 @@ const teams = {
     ]
   },
   "ATL": {
-    "code3": "ATL", "kitType": "duo", "secondaryColor": "#26282A",
     "name": "Atlanta Hawks",
     "emoji": "🦅",
     "color": "#E03A3E",
@@ -495,7 +476,6 @@ const teams = {
     ]
   },
   "WAS": {
-    "code3": "WAS", "kitType": "duo", "secondaryColor": "#E31837",
     "name": "Washington Wizards",
     "emoji": "🧙",
     "color": "#002B5C",
@@ -508,7 +488,6 @@ const teams = {
     ]
   },
   "BKN": {
-    "code3": "BKN", "kitType": "solid", "secondaryColor": null,
     "name": "Brooklyn Nets",
     "emoji": "🌃",
     "color": "#000000",
@@ -521,7 +500,6 @@ const teams = {
     ]
   },
   "LAC": {
-    "code3": "LAC", "kitType": "duo", "secondaryColor": "#1D428A",
     "name": "Los Angeles Clippers",
     "emoji": "⛵",
     "color": "#C8102E",
@@ -534,7 +512,6 @@ const teams = {
     ]
   },
   "PHX": {
-    "code3": "PHX", "kitType": "duo", "secondaryColor": "#1D1160",
     "name": "Phoenix Suns",
     "emoji": "☀️",
     "color": "#E56020",
@@ -547,7 +524,6 @@ const teams = {
     ]
   },
   "MIA": {
-    "code3": "MIA", "kitType": "duo", "secondaryColor": "#F9A01B",
     "name": "Miami Heat",
     "emoji": "🔥",
     "color": "#98002E",
@@ -560,7 +536,6 @@ const teams = {
     ]
   },
   "DAL": {
-    "code3": "DAL", "kitType": "duo", "secondaryColor": "#B8C4CA",
     "name": "Dallas Mavericks",
     "emoji": "🐎",
     "color": "#00538C",
@@ -573,7 +548,6 @@ const teams = {
     ]
   },
   "HOU": {
-    "code3": "HOU", "kitType": "duo", "secondaryColor": "#000000",
     "name": "Houston Rockets",
     "emoji": "🚀",
     "color": "#CE1141",
@@ -586,7 +560,6 @@ const teams = {
     ]
   },
   "TOR": {
-    "code3": "TOR", "kitType": "duo", "secondaryColor": "#000000",
     "name": "Toronto Raptors",
     "emoji": "🦖",
     "color": "#CE1141",
@@ -599,7 +572,6 @@ const teams = {
     ]
   },
   "ORL": {
-    "code3": "ORL", "kitType": "duo", "secondaryColor": "#000000",
     "name": "Orlando Magic",
     "emoji": "✨",
     "color": "#0077C0",
@@ -612,7 +584,6 @@ const teams = {
     ]
   },
   "NOP": {
-    "code3": "NOP", "kitType": "duo", "secondaryColor": "#C8102E",
     "name": "New Orleans Pelicans",
     "emoji": "🐦",
     "color": "#0C2340",
@@ -625,7 +596,6 @@ const teams = {
     ]
   },
   "CHA": {
-    "code3": "CHA", "kitType": "duo", "secondaryColor": "#1D1160",
     "name": "Charlotte Hornets",
     "emoji": "🐝",
     "color": "#00788C",
@@ -1706,184 +1676,184 @@ const vitalStats = {
 
 const nearlyGot = {
   "LAL": {
-    "BOS": "",
-    "CHI": "",
-    "GSW": "",
-    "MIA": ""
+    "BOS": "Both of you live by banners and refuse to apologize for expecting the next one. The difference is the staging: Boston treats a title as a debt owed to the rafters, won on a scuffed parquet floor with no use for spectacle, while you were raised to want yours under the lights, with the stars and cameras that follow.",
+    "CHI": "Both of you turned winning into global fame, with stars the whole world tuned in to watch. The difference is the tense: Chicago lived one perfect run and has spent every year since inside its shadow, while you simply reload, pulling the next marquee name into the gold and purple. Same spotlight, one chasing a ghost and one still casting it.",
+    "GSW": "Both of you are modern champions who treat winning as the only acceptable outcome. The difference is how the roster gets built: Golden State drafted a core and grew it into a dynasty, the patient way, while you have always trusted that the biggest stars will simply come to you. Same trophies, one built from the inside and one drawn in by the lights.",
+    "MIA": "Both of you wrap winning in glamour and never apologize for the shine. The difference is what sits underneath it: Miami runs the most punishing program in the league and treats greatness as a habit earned in the gym, while you were raised to believe the spotlight and the stars are a birthright. Same beautiful surface, one earned through sweat and one expected by right."
   },
   "BOS": {
-    "LAL": "",
-    "GSW": "",
-    "CHI": "",
-    "NYK": ""
+    "LAL": "Both of you live by banners and refuse to apologize for expecting the next one. The difference is the staging: you treat a title as a debt owed to the rafters, won on a scuffed parquet floor with no use for spectacle, while Los Angeles was raised to want it under the lights, with the stars and cameras that follow. Same hunger, opposite feelings about being watched.",
+    "GSW": "Both of you believe in the team-first, no-shortcuts way of winning and have the rings to back it. The difference is the source: you carry the heaviest history in the sport and win out of duty to it, while Golden State built its dynasty from scratch and rewired how the whole league shoots. Same right-way creed, one honoring tradition and one inventing the future.",
+    "CHI": "Both of you measure everything by titles and the history behind them. The difference is the shape of that history: Chicago is one flawless run frozen in time, living forever in its own shadow, while yours is an ever-growing number you feel duty-bound to keep climbing. Same obsession with banners, one a single legend and one a standing account.",
+    "NYK": "Both of you are charter institutions of the sport, rooted in loud, demanding northeastern cities that expect everything. The difference is what the history holds: yours is eighteen banners and the duty to add more, while New York's is a half-century of devotion through drought, loyalty measured in showing up rather than trophies. Same fierce city, one defined by winning and one by waiting."
   },
   "GSW": {
-    "BOS": "",
-    "DEN": "",
-    "MIL": "",
-    "LAL": ""
+    "BOS": "Both of you believe in the team-first, no-shortcuts way of winning and have the rings to back it. The difference is the source: Boston carries the heaviest history in the sport and wins out of duty to it, while you built your dynasty from scratch and rewired how the whole league shoots. Same right-way creed, one honoring tradition and one inventing the future.",
+    "DEN": "Both of you won without a superteam, on unselfish passing and a system instead of one hero with the ball. The difference is the texture: Denver wins the unglamorous way, a mile up, off the highlight shows until the trophy is already in hand, while you made the patient build look like the most fun anyone ever had. Same blueprint, one quiet and one electric.",
+    "MIL": "Both of you proved you can build a winner instead of buying one, growing talent rather than stacking a roster overnight. The difference is the scale: Milwaukee developed a single raw teenager into an MVP to end a fifty-year wait, while you kept a drafted core together until it became a four-title dynasty. Same homegrown faith, one a long-awaited breakthrough and one a sustained empire.",
+    "LAL": "Both of you are modern champions who treat winning as the only acceptable outcome. The difference is how the roster gets built: you drafted a core and grew it into a dynasty, the patient way, while Los Angeles has always trusted that the biggest stars will simply come to it. Same trophies, one built from the inside and one drawn in by the lights."
   },
   "CHI": {
-    "LAL": "",
-    "BOS": "",
-    "GSW": "",
-    "NYK": ""
+    "LAL": "Both of you turned winning into global fame, with stars the whole world tuned in to watch. The difference is the tense: you lived one perfect run and have spent every year since inside its shadow, while Los Angeles simply reloads, pulling the next marquee name into the gold and purple. Same spotlight, one chasing a ghost and one still casting it.",
+    "BOS": "Both of you measure everything by titles and the history behind them. The difference is the shape of that history: yours is one flawless run frozen in time, living forever in its own shadow, while Boston's is an ever-growing number it feels duty-bound to keep climbing. Same obsession with banners, one a single legend and one a standing account.",
+    "GSW": "Both of you became global names by reshaping how the game is played and won. The difference is the engine: Golden State did it as a collective, a drafted core and a passing system built together, while your era ran through a single transcendent talent and a dynasty no one has matched since. Same worldwide fame, one a shared system and one a lone legend now living as a ghost.",
+    "NYK": "Both of you are huge-market giants haunted by something just out of reach. The difference is what does the haunting: New York spent fifty-three years aching for a title it only just won, while you are chased by your own perfect past, every season measured against a standard you watched your team set. Same heavy weight, one the absence of glory and one the memory of it."
   },
   "SAS": {
-    "DEN": "",
-    "OKC": "",
-    "UTA": "",
-    "IND": ""
+    "DEN": "Both of you win the quiet, unselfish way, a system over stars and no need for the spotlight. The difference is the resume: Denver broke through for a single recent title a mile in the air, while you stacked five championships so calmly the league barely noticed. Same patient creed, one a first taste and one a long-proven institution.",
+    "OKC": "Both of you proved a tiny market can win the patient way, on drafted talent and a stomach for the long build louder franchises never had. The difference is where you stand in the story: you are the monastery that already cashed in, five quiet titles the league barely noticed, while Oklahoma City is the hungry young version of the same idea, a brand-new champion still in its first flush.",
+    "UTA": "Both of you come from small markets and built beautiful, fundamentally sound basketball that the sport still studies. The difference is the ending: Utah ran its perfect pick-and-roll to back-to-back Finals and lost both to a peak dynasty, one heartbreak short, while you finished the job five times over. Same devotion to doing it right, one a proud near-miss and one a closed case.",
+    "IND": "Both of you are small markets who never needed the spotlight and built loyalty the honest way. The difference is the reward: Indiana came within a single Game 7 of it all and loves the game itself whether the trophy comes or not, while you quietly collected five and made winning right look routine. Same humility, one still chasing the banner and one with a wall of them."
   },
   "OKC": {
-    "DEN": "",
-    "SAS": "",
-    "MIL": "",
-    "UTA": ""
+    "DEN": "Both of you built a champion entirely from the inside, no shortcuts, after years of patience. The difference is the method: Denver grew around a big man the league overlooked and let the game run through him, while you tore it all down on purpose and stockpiled picks until the youngest champion in fifty years grew up. Same slow faith, two roads to one banner.",
+    "SAS": "Both of you proved a tiny market can win the patient way, on drafted talent and a stomach for the long build louder franchises never had. The difference is where you stand in the story: San Antonio is the monastery that already cashed in, five quiet titles the league barely noticed, while you are the hungry young version of the same idea, a brand-new champion still in its first flush.",
+    "MIL": "Both of you are small markets that built a winner from homegrown talent instead of buying one. The difference is the shape of the build: Milwaukee grew a single raw teenager into an MVP to end a fifty-year wait, while you hoarded years of picks and patience until the youngest champion in decades came of age. Same refusal to shortcut, one a single star and one a stockpile.",
+    "UTA": "Both of you are small markets that trusted patience and fundamentals over splashy spending. The difference is the payoff: Utah ran its perfect system to back-to-back Finals and came one dynasty short, while you waited out the long rebuild and cashed it for a title. Same belief in the slow way, one a beautiful near-miss and one the banner itself."
   },
   "PHI": {
-    "DEN": "",
-    "OKC": "",
-    "MIL": "",
-    "CLE": ""
+    "DEN": "Both of you bet everything on a plan the league laughed at, building patiently around a big man nobody valued. The difference is the ending: Denver's faith already paid off, a quiet title won a mile in the air with no superteam, while yours is still a promise. You wore the suffering as a badge and called it the Process; they just won.",
+    "OKC": "Both of you chose to bottom out on purpose and hoard picks, trusting the long plan while everyone louder chased shortcuts. The difference is the result: Oklahoma City's tank matured into the youngest champion in fifty years, while your Process is still a promise the city is waiting on. Same insane faith in the slow way, one redeemed and one unredeemed.",
+    "MIL": "Both of you asked a passionate, demanding town to trust patience over spending and to wait for a payoff. The difference is whether it came: Milwaukee's homegrown gamble ended a fifty-year wait with a banner, while you are still wearing the suffering and trusting that one day it lands. Same long faith, one rewarded and one still owed.",
+    "CLE": "Both of you are loyal, long-suffering cities promised that the wait would be worth it. The difference is the payoff: Cleveland got its miracle, a title from the brink that broke a fifty-two-year curse, while you are still trusting the Process to deliver the one it keeps promising. Same enduring belief, one already cashed and one still pending."
   },
   "DEN": {
-    "OKC": "",
-    "SAS": "",
-    "GSW": "",
-    "MIL": ""
+    "OKC": "Both of you built a champion entirely from the inside, no shortcuts, after years of patience. The difference is the method: you grew around a big man the league overlooked and let the game run through him, while Oklahoma City tore it all down on purpose and stockpiled picks until the youngest champion in fifty years grew up. Same slow faith, two roads to one banner.",
+    "SAS": "Both of you win the quiet, unselfish way, a system over stars and no need for the spotlight. The difference is the resume: you broke through for a single recent title a mile in the air, while San Antonio stacked five championships so calmly the league barely noticed. Same patient creed, one a first taste and one a long-proven institution.",
+    "GSW": "Both of you won without a superteam, on unselfish passing and a system instead of one hero with the ball. The difference is the texture: you win the unglamorous way, a mile up, off the highlight shows until the trophy is already in hand, while Golden State made the patient build look like the most fun anyone ever had. Same blueprint, one quiet and one electric.",
+    "MIL": "Both of you are small markets that built a winner around a developed star and ended a long drought with it. The difference is the flavor: Milwaukee grew a raw teenager into an MVP for a blue-collar town, while you let an overlooked passer run everything a mile in the air. Same homegrown breakthrough, one built on grit and one on an unselfish system."
   },
   "MIL": {
-    "IND": "",
-    "UTA": "",
-    "DEN": "",
-    "OKC": ""
+    "IND": "Both of you are small Midwest markets whose loyalty was never about spending power. The difference is the finish: you grew a homegrown star into an MVP and ended a fifty-year wait with a banner, while Indiana came within a single Game 7 and still loves the game whether the trophy comes or not. Same devotion, one over the line and one a game short.",
+    "UTA": "Both of you trusted patience and development over splashy money in a small market. The difference is the ending: you grew a raw teenager into a champion and broke a fifty-year wait, while Utah ran its perfect system to back-to-back Finals and came one dynasty short. Same homegrown faith, one a title and one a proud near-miss.",
+    "DEN": "Both of you are small markets that built a winner around a developed star and ended a long drought with it. The difference is the flavor: you grew a raw teenager into an MVP for a blue-collar town, while Denver let an overlooked passer run everything a mile in the air. Same homegrown breakthrough, one built on grit and one on an unselfish system.",
+    "OKC": "Both of you are small markets that built a winner from homegrown talent instead of buying one. The difference is the shape of the build: you grew a single raw teenager into an MVP to end a fifty-year wait, while Oklahoma City hoarded years of picks and patience until the youngest champion in decades came of age. Same refusal to shortcut, one a single star and one a stockpile."
   },
   "IND": {
-    "MIL": "",
-    "UTA": "",
-    "DET": "",
-    "POR": ""
+    "MIL": "Both of you are small Midwest markets whose loyalty was never about spending power. The difference is the finish: Milwaukee grew a homegrown star into an MVP and ended a fifty-year wait with a banner, while you came within a single Game 7 and still love the game whether the trophy comes or not. Same devotion, one over the line and one a game short.",
+    "UTA": "Both of you are small markets devoted to the game itself, and both came agonizingly close to a title. The difference is the texture of the heartbreak: Utah lost back-to-back Finals to a peak dynasty on its beautiful pick-and-roll, while you let Game 7 slip away in a state where the gym is the town square. Same near-miss ache, two different kinds of devotion behind it.",
+    "DET": "Both of you are blue-collar Midwest teams who believe in honest work over shortcuts. The difference is the proof: Detroit built the meanest defense ever and clawed back from a record losing streak one game at a time, while you treat basketball as a civic religion and love the building win or lose. Same work-ethic soul, one grinding toughness and one pure devotion.",
+    "POR": "Both of you are small markets whose crowds keep filling the building no matter how the season ends. The difference is the heartbreak: Portland's came at the draft, twice passing on an all-timer, plus decades of almost, while yours came a single Game 7 from the title. Same unwavering loyalty, two different cruelties behind it."
   },
   "MIN": {
-    "MEM": "",
-    "UTA": "",
-    "POR": "",
-    "OKC": ""
+    "MEM": "Both of you carry an odd-journey, cold-or-displaced identity and made grit the whole personality. The difference is the arc: Memphis turned hard-nosed defense into a value system and a permanent chip, while you endured decades of frozen-north futility before finally reaching the doorstep twice. Same underdog edge, one a settled grind and one a long-awaited arrival.",
+    "UTA": "Both of you reached the edge of the Finals and got turned away. The difference is how far the edge was: Utah actually made it twice and lost both to a peak dynasty, while you got within a round two years running and are still chasing a first Finals your franchise has never seen. Same doorstep heartbreak, one a near-dynasty and one a first taste of mattering.",
+    "POR": "Both of you are northern small markets who stayed loyal through long stretches of heartbreak. The difference is the moment you are in: Portland's loyalty runs through a 1977 title and decades of draft-day cruelty, while you spent years in the lottery and only recently became a team that matters. Same faithful cold-weather crowd, one rich in old scars and one new to relevance.",
+    "OKC": "Both of you rebuilt from the very bottom in a small market and asked your people to wait. The difference is the payoff: Oklahoma City's patience already cashed for the youngest title in fifty years, while you are still chasing a first Finals after years of futility. Same long rebuild, one already crowned and one still climbing."
   },
   "DET": {
-    "IND": "",
-    "POR": "",
-    "MIL": "",
-    "CLE": ""
+    "IND": "Both of you are blue-collar Midwest teams who believe in honest work over shortcuts. The difference is the proof: you built the meanest defense ever and clawed back from a record losing streak one game at a time, while Indiana treats basketball as a civic religion and loves the building win or lose. Same work-ethic soul, one grinding toughness and one pure devotion.",
+    "POR": "Both of you are loyal, hard-luck franchises that never went looking for a shortcut. The difference is the source of the pain: Portland's was the draft and decades of almost, endured by a sold-out building, while yours was a record losing streak you refused to tank out of and clawed back by sheer work. Same honest refusal, one faith through heartbreak and one grind back to respectability.",
+    "MIL": "Both of you are blue-collar Midwest towns that did it the hard, homegrown way. The difference is the method: Milwaukee grew a teenager into an MVP for a single title, while your proudest era was the meanest defense in history and a title won by grinders nobody believed in. Same no-shortcut ethic, one development and one pure toughness.",
+    "CLE": "Both of you are rust-belt cities that know hardship as a way of life. The difference is the deliverance: Cleveland got its miracle, a title from the brink after fifty-two dry years, while you clawed out of a record losing streak the only way you respect, one honest game at a time. Same grit, one a redemption story and one a refusal to take the easy way out."
   },
   "MEM": {
-    "MIN": "",
-    "IND": "",
-    "UTA": "",
-    "ORL": ""
+    "MIN": "Both of you carry an odd-journey, cold-or-displaced identity and made grit the whole personality. The difference is the arc: you turned hard-nosed defense into a value system and a permanent chip, while Minnesota endured decades of frozen-north futility before finally reaching the doorstep twice. Same underdog edge, one a settled grind and one a long-awaited arrival.",
+    "IND": "Both of you are small markets who never needed the spotlight, just devotion to the game. The difference is the flavor: Indiana loves basketball as a civic religion and came a single Game 7 short, while you became your city by being the hardest team in the league to play against. Same humble heart, one pure devotion and one pure grit.",
+    "UTA": "Both of you are small markets whose identity outran your raw talent. The difference is the expression: Utah built a flawless, fundamentally pure pick-and-roll that reached two Finals, while you turned all-defense, all-elbows toughness into a creed and made every opponent's night miserable. Same overlooked-market pride, one beautiful fundamentals and one sheer grind.",
+    "ORL": "Both of you are younger, non-traditional markets trying to build something that lasts. The difference is the staying power: Orlando kept drafting giants who carried it to the Finals and then left, while you found your soul in a city of grit and built an identity nobody could poach. Same outsider roots, one heartbreak when the stars leave and one a grind that stays put."
   },
   "UTA": {
-    "SAS": "",
-    "IND": "",
-    "DEN": "",
-    "MIL": ""
+    "SAS": "Both of you come from small markets and built beautiful, fundamentally sound basketball that the sport still studies. The difference is the ending: you ran your perfect pick-and-roll to back-to-back Finals and lost both to a peak dynasty, one heartbreak short, while San Antonio finished the job five times over. Same devotion to doing it right, one a proud near-miss and one a closed case.",
+    "IND": "Both of you are small markets devoted to the game itself, and both came agonizingly close to a title. The difference is the texture of the heartbreak: you lost back-to-back Finals to a peak dynasty on your beautiful pick-and-roll, while Indiana let Game 7 slip away in a state where the gym is the town square. Same near-miss ache, two different kinds of devotion behind it.",
+    "DEN": "Both of you are small mountain-west markets that win on system and fundamentals, not star power. The difference is the result: you ran the purest pick-and-roll ever to two Finals and came one dynasty short, while Denver's altitude system finally broke through for the banner. Same belief in the team game, one a proud near-miss and one a settled argument.",
+    "MIL": "Both of you trusted patience and development over splashy money in a small market. The difference is the ending: you ran your perfect system to back-to-back Finals and came one dynasty short, while Milwaukee grew a raw teenager into a champion and broke a fifty-year wait. Same homegrown faith, one a proud near-miss and one a title."
   },
   "POR": {
-    "IND": "",
-    "DET": "",
-    "UTA": "",
-    "MEM": ""
+    "IND": "Both of you are small markets whose crowds keep filling the building no matter how the season ends. The difference is the heartbreak: yours came at the draft, twice passing on an all-timer, plus decades of almost, while Indiana came a single Game 7 from the title. Same unwavering loyalty, two different cruelties behind it.",
+    "DET": "Both of you are loyal, hard-luck franchises that never went looking for a shortcut. The difference is the source of the pain: yours was the draft and decades of almost, endured by a sold-out building, while Detroit's was a record losing streak it refused to tank out of and clawed back by sheer work. Same honest refusal, one faith through heartbreak and one grind back to respectability.",
+    "UTA": "Both of you are small western markets whose loyalty survived years of coming up short. The difference is the cruelty: Utah's was two Finals lost to a peak dynasty, while yours was the draft, twice holding the pick that could have rewritten history and twice choosing wrong. Same faithful crowd, one a Finals near-miss and one a draft-day curse.",
+    "MEM": "Both of you are smaller markets defined by toughness and devotion rather than star power. The difference is the texture: Memphis made grit and defense a value system and a chip on the shoulder, while you sold out the building for decades for a team that kept finding new ways to break your heart. Same loyal underdog soul, one make-it-miserable grind and one faith through heartbreak."
   },
   "NYK": {
-    "CLE": "",
-    "BOS": "",
-    "CHI": "",
-    "ATL": ""
+    "CLE": "Both of you waited out a half-century drought and finally got the one. The difference is the cast: Cleveland's came as a miracle from the brink, delivered by a hometown hero who left and came home, while yours broke after fifty-three years of the loudest, most demanding devotion in the sport. Same long-overdue payoff, one a small-market redemption and one a big-city release.",
+    "BOS": "Both of you are charter institutions of the sport, rooted in loud, demanding northeastern cities that expect everything. The difference is what the history holds: Boston's is eighteen banners and the duty to add more, while yours was a half-century of devotion through drought, loyalty measured in showing up rather than trophies. Same fierce city, one defined by winning and one by waiting.",
+    "CHI": "Both of you are huge-market giants haunted by something just out of reach. The difference is what does the haunting: you spent fifty-three years aching for a title you only just won, while Chicago is chased by its own perfect past, every season measured against a standard it watched its team set. Same heavy weight, one the absence of glory and one the memory of it.",
+    "ATL": "Both of you measured your franchises by a title that stayed out of reach for generations. The difference is the resolution: Atlanta's only banner is a 1958 inheritance from another city and it is still chasing one that truly belongs to it, while you waited fifty-three loud years and finally won the real thing. Same long ache, one still searching and one at last rewarded."
   },
   "CLE": {
-    "NYK": "",
-    "DET": "",
-    "PHI": "",
-    "CHI": ""
+    "NYK": "Both of you waited out a half-century drought and finally got the one. The difference is the cast: yours came as a miracle from the brink, delivered by a hometown hero who left and came home, while New York's broke after fifty-three years of the loudest, most demanding devotion in the sport. Same long-overdue payoff, one a small-market redemption and one a big-city release.",
+    "DET": "Both of you are rust-belt cities that know hardship as a way of life. The difference is the deliverance: yours was a miracle, a title from the brink after fifty-two dry years, while Detroit clawed out of a record losing streak the only way it respects, one honest game at a time. Same grit, one a redemption story and one a refusal to take the easy way out.",
+    "PHI": "Both of you are loyal, long-suffering cities promised that the wait would be worth it. The difference is the payoff: you got your miracle, a title from the brink that broke a fifty-two-year curse, while Philadelphia is still trusting the Process to deliver the one it keeps promising. Same enduring belief, one already cashed and one still pending.",
+    "CHI": "Both of you had an era defined by a single transcendent talent. The difference is the shape of it: Chicago's was a six-ring dynasty now living as a ghost, while yours was one redemptive miracle delivered by a hometown hero who left, returned to keep a promise, then left again. Same one-superstar story, one an untouchable legend and one a tangle of abandonment and redemption."
   },
   "SAC": {
-    "ATL": "",
-    "CLE": "",
-    "POR": "",
-    "WAS": ""
+    "ATL": "Both of you carry a title so old it barely feels like yours. The difference is the devotion underneath: Atlanta's only banner is a 1958 inheritance and it spends its energy proving it is not disloyal, while you survived the longest drought of any champion, since 1951, and light a purple beam over the city after every single win. Same distant glory, one chasing relevance and one pure faith.",
+    "CLE": "Both of you are cities defined by the long, long wait. The difference is the ending: Cleveland's broke in 2016 with a miracle from the brink, while yours stretches back to 1951, the longest drought of any team that has ever won, still unbroken. Same patient suffering, one finally redeemed and one still keeping the faith.",
+    "POR": "Both of you have some of the most loyal small-market crowds anywhere, faithful through endless almost-and-nothing. The difference is the scar: Portland's runs through a 1977 title and decades of draft-day cruelty, while yours is the longest drought of any champion and seventeen straight years without a playoff game, endured and answered with a purple beam. Same showing-up devotion, two different lengths of wait.",
+    "WAS": "Both of you hold a championship that belongs to a different version of the franchise. The difference is the response: Washington's came in 1978 under a name it has since retired, and it made peace with mediocrity, while yours dates to 1951 in another city and you answered the long wait with relentless devotion and a beam in the sky. Same borrowed glory, one resigned and one still burning."
   },
   "ATL": {
-    "WAS": "",
-    "SAC": "",
-    "PHX": "",
-    "ORL": ""
+    "WAS": "Both of you hold one ancient title that hardly counts as yours. The difference is the feeling: Washington won in 1978 under a name it has since retired and made peace with the quiet years, while your only banner is a 1958 inheritance from St. Louis and you are still trying to win one that truly belongs to Atlanta. Same distant trophy, one resigned and one still hungry.",
+    "SAC": "Both of you carry a title so old it barely feels like yours. The difference is the devotion underneath: yours is a 1958 inheritance and you spend your energy proving you are not disloyal, while Sacramento survived the longest drought of any champion, since 1951, and lights a purple beam over the city after every win. Same distant glory, one chasing relevance and one pure faith.",
+    "PHX": "Both of you are electric, perennially exciting teams that have never quite gotten the one. The difference is how close you came: Phoenix reached the Finals three times and lost them all in the Valley, while your only banner is a 1958 inheritance and you have never made it back at all. Same ringless ache, one heartbreak at the doorstep and one still chasing a true Atlanta title.",
+    "ORL": "Both of you are exciting southern markets that the rest of the country underrates. The difference is the heartbreak: Orlando twice reached the Finals on a young giant who then left, while your only trophy is a 1958 inheritance and you have spent years just proving your city is not disloyal. Same underrated-South pride, one stars-leaving pain and one a borrowed banner."
   },
   "WAS": {
-    "SAC": "",
-    "ATL": "",
-    "CLE": "",
-    "ORL": ""
+    "SAC": "Both of you hold a championship that belongs to a different version of the franchise. The difference is the response: yours came in 1978 under a name you have since retired, and you made peace with mediocrity, while Sacramento's dates to 1951 in another city and it answered the long wait with relentless devotion and a beam in the sky. Same borrowed glory, one resigned and one still burning.",
+    "ATL": "Both of you hold one ancient title that hardly counts as yours. The difference is the feeling: your 1978 banner came under a name you have since retired and you made peace with the quiet years, while Atlanta's is a 1958 inheritance and it is still trying to win one that truly belongs to it. Same distant trophy, one resigned and one still hungry.",
+    "CLE": "Both of you made a kind of peace with long stretches of not mattering. The difference is the ending: Cleveland's wait broke in 2016 with a miracle from the brink, while yours simply continued, a title only in a retired name and a capital that never loved basketball first. Same endurance, one finally redeemed and one whose loyalty was always just about staying.",
+    "ORL": "Both of you root in towns where basketball was never the first love and the best days feel borrowed or gone. The difference is the texture: Orlando keeps getting attached to giants who carry it to the Finals and then leave, while your only glory lives under a retired name and you made peace with just staying. Same wistful loyalty, one heartbreak of departure and one quiet endurance."
   },
   "BKN": {
-    "LAC": "",
-    "PHX": "",
-    "HOU": "",
-    "DAL": ""
+    "LAC": "Both of you are big-market teams who collected stars and live in another franchise's shadow. The difference is the failure: you brought three superstars to the coolest borough and watched it implode before a Finals, while the Clippers are the oldest team never to reach one at all, collapsing in the playoffs year after year. Same star-stacking dream, one a fast explosion and one a slow drought.",
+    "PHX": "Both of you went all-in on a roster of big names that flamed out. The difference is how far it got: Phoenix's expensive gamble at least reached three Finals across its history before the latest one fizzled, while yours blew up before a single Finals, drama and injury turning a sure thing into a punchline overnight. Same bought-greatness lesson, one a near-miss and one a quick implosion.",
+    "HOU": "Both of you swing big, chasing greatness with a bold all-in roster. The difference is whether it landed: Houston's gambles delivered back-to-back titles and buried the doubters, while your three-superstar coronation came down fast with no foundation under it. Same appetite for the big move, one that paid off and one that became a cautionary tale.",
+    "DAL": "Both of you are bold, star-driven franchises burned by the very stars you bet on. The difference is the wound: Dallas won it all in 2011 and then stunned everyone by trading away its own generational face, while you assembled three of the biggest names alive and watched the whole thing implode before a Finals. Same star-sized heartbreak, one a self-inflicted trade and one a house with no foundation."
   },
   "LAC": {
-    "PHX": "",
-    "BKN": "",
-    "HOU": "",
-    "DAL": ""
+    "PHX": "Both of you are star-laden franchises forever chasing the one thing that never comes. The difference is the distance: Phoenix at least reached the Finals three times and lost, while you are the oldest team in the league never to make it at all. Same ringless heartbreak, one losing at the summit and one never quite reaching it.",
+    "BKN": "Both of you are big-market teams who collected stars and live in another franchise's shadow. The difference is the failure: Brooklyn brought three superstars to the coolest borough and watched it implode before a Finals, while you are the oldest team never to reach one at all, collapsing in the playoffs year after year. Same star-stacking dream, one a fast explosion and one a slow drought.",
+    "HOU": "Both of you chased rings by stacking talent and swinging big. The difference is the result: Houston's all-in bets delivered back-to-back titles, while yours fell apart in the playoffs again and again without a single Finals to show for it. Same star-chasing ambition, one that broke through and one still waiting for its first taste.",
+    "DAL": "Both of you built around stars and learned how cruel the playoffs can be. The difference is the high point: Dallas toppled a crowned superteam to win it all in 2011, while you are still the oldest franchise never to reach a Finals, undone by collapse after collapse. Same star-driven design, one with a banner and one still chasing the breakthrough."
   },
   "PHX": {
-    "LAC": "",
-    "DAL": "",
-    "HOU": "",
-    "ATL": ""
+    "LAC": "Both of you are star-laden franchises forever chasing the one thing that never comes. The difference is the distance: you reached the Finals three times and lost, while the Clippers are the oldest team in the league never to make it at all. Same ringless heartbreak, one losing at the summit and one never quite reaching it.",
+    "DAL": "Both of you are star-driven franchises the desert and the Metroplex built big dreams around. The difference is the cruelty: Dallas actually won it all in 2011 and then broke its own heart by trading its star, while you reached three Finals and came home empty every time. Same big-name ambition, one had the ring and lost the player and one never got the ring at all.",
+    "HOU": "Both of you swing big with star-driven rosters and refuse to settle for the middle. The difference is the payoff: Houston turned its boldness into back-to-back titles, while you turned yours into three trips to the Finals and three rides home empty. Same gambler's heart, one that cashed and one that keeps coming up just short.",
+    "ATL": "Both of you are electric, perennially exciting teams that have never quite gotten the one. The difference is how close you came: you reached the Finals three times and lost them all in the Valley, while Atlanta's only banner is a 1958 inheritance and it has never made it back at all. Same ringless ache, one heartbreak at the doorstep and one still chasing a true title."
   },
   "MIA": {
-    "HOU": "",
-    "DAL": "",
-    "PHX": "",
-    "LAL": ""
+    "HOU": "Both of you are bold winners who shoved the doubters' label right back at them. The difference is the engine: Houston was Clutch City, back-to-back rings that buried the choke talk, while you run the most demanding culture in the sport and turn castoffs into somebodies. Same defiant edge, one clutch swagger and one relentless standard.",
+    "DAL": "Both of you mix star power with championship pedigree and a streak of drama. The difference is the constant: you treat greatness as a non-negotiable habit, three titles out of a brutal program, while Dallas won in 2011 and then blindsided everyone by trading its own franchise face. Same big stage, one a steady standard and one a loyalty whiplash.",
+    "PHX": "Both of you are sun-and-style markets that wrap basketball in glamour. The difference is what the shine produces: you back yours with the most punishing program in the league and three titles, while Phoenix has the style and the stars but three lost Finals and no ring. Same glamorous surface, one discipline that wins and one heartbreak that does not.",
+    "LAL": "Both of you wrap winning in glamour and never apologize for the shine. The difference is what sits underneath it: you run the most punishing program in the league and treat greatness as a habit earned in the gym, while Los Angeles was raised to believe the spotlight and the stars are a birthright. Same beautiful surface, one earned through sweat and one expected by right."
   },
   "DAL": {
-    "PHX": "",
-    "HOU": "",
-    "MIA": "",
-    "LAC": ""
+    "PHX": "Both of you are star-driven franchises the desert and the Metroplex built big dreams around. The difference is the cruelty: you actually won it all in 2011 and then broke your own heart by trading your star, while Phoenix reached three Finals and came home empty every time. Same big-name ambition, one had the ring and lost the player and one never got the ring at all.",
+    "HOU": "Both of you are Texas franchises who swing boldly and live with the consequences. The difference is the shape of the swing: Houston gambles between all-in and total teardown and won back-to-back along the way, while you won in 2011 and then made the unthinkable move of trading your own generational face. Same nerve, one a pendulum of teardowns and one a single shocking betrayal.",
+    "MIA": "Both of you mix star power with championship pedigree and a streak of drama. The difference is the constant: Miami treats greatness as a non-negotiable habit, three titles out of a brutal program, while you won in 2011 and then blindsided everyone by trading your own franchise face. Same big stage, one a steady standard and one a loyalty whiplash.",
+    "LAC": "Both of you built around stars and learned how cruel the playoffs can be. The difference is the high point: you toppled a crowned superteam to win it all in 2011, while the Clippers are still the oldest franchise never to reach a Finals. Same star-driven design, one with a banner and one still chasing the breakthrough."
   },
   "HOU": {
-    "DAL": "",
-    "PHX": "",
-    "MIA": "",
-    "LAC": ""
+    "DAL": "Both of you are Texas franchises who swing boldly and live with the consequences. The difference is the shape of the swing: you gamble between all-in and total teardown and won back-to-back along the way, while Dallas won in 2011 and then made the unthinkable move of trading its own generational face. Same nerve, one a pendulum of teardowns and one a single shocking betrayal.",
+    "PHX": "Both of you swing big with star-driven rosters and refuse to settle for the middle. The difference is the payoff: you turned your boldness into back-to-back titles, while Phoenix turned its into three trips to the Finals and three rides home empty. Same gambler's heart, one that cashed and one that keeps coming up just short.",
+    "MIA": "Both of you are bold winners who shoved the doubters' label right back at them. The difference is the engine: you were Clutch City, back-to-back rings that buried the choke talk, while Miami runs the most demanding culture in the sport and turns castoffs into somebodies. Same defiant edge, one clutch swagger and one relentless standard.",
+    "LAC": "Both of you chased rings by stacking talent and swinging big. The difference is the result: your all-in bets delivered back-to-back titles, while the Clippers fell apart in the playoffs again and again without a single Finals to show for it. Same star-chasing ambition, one that broke through and one still waiting for its first taste."
   },
   "TOR": {
-    "ORL": "",
-    "CHA": "",
-    "NOP": "",
-    "MIN": ""
+    "ORL": "Both of you reached for greatness through a superstar who would not stay. The difference is the timing: Orlando twice rode a young giant to the Finals only to watch him leave without a banner, while your transcendent star stayed exactly one glorious season, won it all, and then walked. Same star-who-left story, one that got the trophy first and one that never did.",
+    "CHA": "Both of you are non-traditional markets fighting to be taken seriously. The difference is the prize: Charlotte fought to reclaim a team, name, and history that had been taken away, while you carried a whole country's hopes as the league's lone outsider and stunned everyone with a 2019 title. Same outsider's chip, one an identity restored and one a national banner.",
+    "NOP": "Both of you are younger franchises in markets that loved another sport first and have wrestled with losing stars. The difference is the payoff: New Orleans keeps finding a star and watching him leave, still searching, while you cashed one glorious year, a star who stayed just long enough to win it all. Same fragile star-hold, one a banner and one a story still being written.",
+    "MIN": "Both of you spent years as overlooked outsiders the sport barely noticed. The difference is the reward: you stunned the world as the league's only team abroad and won the 2019 title, while Minnesota endured frozen-north futility and is only now reaching the doorstep. Same underdog identity, one with a banner no one can take and one still chasing a first Finals."
   },
   "ORL": {
-    "TOR": "",
-    "NOP": "",
-    "CHA": "",
-    "MEM": ""
+    "TOR": "Both of you reached for greatness through a superstar who would not stay. The difference is the timing: you twice rode a young giant to the Finals only to watch him leave without a banner, while Toronto's transcendent star stayed exactly one glorious season, won it all, and then walked. Same star-who-left story, one that got the trophy first and one that never did.",
+    "NOP": "Both of you are young southern markets that keep building around a star who eventually leaves. The difference is how high you climbed: you twice reached the Finals on a young giant before he walked, while New Orleans tends to lose its star before the breakthrough ever comes. Same departure heartbreak, one that touched the Finals and one still waiting to.",
+    "CHA": "Both of you are younger southern markets carrying a particular kind of loss. The difference is the shape of it: Charlotte had its very team taken away and fought to win the name and history back, while you keep falling for giants who carry you to the Finals and then leave. Same heartbreak, one an identity stolen and reclaimed and one stars who would not stay.",
+    "MEM": "Both of you are younger, non-traditional markets trying to build something that lasts. The difference is the staying power: you kept drafting giants who carried you to the Finals and then left, while Memphis found its soul in a city of grit and built an identity nobody could poach. Same outsider roots, one heartbreak when the stars leave and one a grind that stays put."
   },
   "NOP": {
-    "ORL": "",
-    "CHA": "",
-    "TOR": "",
-    "MEM": ""
+    "ORL": "Both of you are young southern markets that keep building around a star who eventually leaves. The difference is how high you climbed: Orlando twice reached the Finals on a young giant before he walked, while you tend to lose your star before the breakthrough ever comes. Same departure heartbreak, one that touched the Finals and one still waiting to.",
+    "CHA": "Both of you are young, identity-unsettled franchises in football-first towns. The difference is the chapter: Charlotte lost its team entirely and fought to win the name and history back, while you are the newest name in the league, still finding a star, losing him, and starting over. Same search for solid ground, one a reclamation and one a story still being written.",
+    "TOR": "Both of you are younger franchises whose stars tend not to stay. The difference is the payoff: Toronto's transcendent player stayed exactly one season, won it all, and left with the banner secured, while you keep finding a star and watching him go before the breakthrough. Same fragile star-hold, one that cashed a glorious year and one still searching.",
+    "MEM": "Both of you are younger southern markets without a long history to lean on. The difference is the certainty: Memphis knows exactly who it is, all grit and defense and making the other guy's night miserable, while you are still the newest name in the league, searching, losing stars, starting over. Same youth, one a settled identity and one a story still being written."
   },
   "CHA": {
-    "NOP": "",
-    "ORL": "",
-    "TOR": "",
-    "MEM": ""
+    "NOP": "Both of you are young, identity-unsettled franchises in football-first towns. The difference is the chapter: you lost your team entirely and fought to win the name and history back, while New Orleans is the newest name in the league, still finding a star, losing him, and starting over. Same search for solid ground, one a reclamation and one a story still being written.",
+    "ORL": "Both of you are younger southern markets carrying a particular kind of loss. The difference is the shape of it: you had your very team taken away and fought to win the name and history back, while Orlando keeps falling for giants who carry it to the Finals and then leave. Same heartbreak, one an identity stolen and reclaimed and one stars who would not stay.",
+    "TOR": "Both of you are non-traditional markets fighting to be taken seriously. The difference is the prize: you fought to reclaim a team, name, and history that had been taken away, while Toronto carried a whole country's hopes as the league's lone outsider and stunned everyone with a 2019 title. Same outsider's chip, one an identity restored and one a national banner.",
+    "MEM": "Both of you are younger southern markets with a fierce sense of who you are. The difference is where it came from: Memphis forged its identity out of grit and an odd journey, the hardest team to play against, while yours was taken away and you fought to win the name, the colors, and the history back. Same hard-won self, one born of grind and one of reclamation."
   }
 };
 
@@ -2720,7 +2690,39 @@ const CARD_BADGES = {
   "CHA": "🐝"
 };
 
+const badgeUrls = {
+  "LAL": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
+  "BOS": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
+  "GSW": "https://a.espncdn.com/i/teamlogos/nba/500/gs.png",
+  "CHI": "https://a.espncdn.com/i/teamlogos/nba/500/chi.png",
+  "SAS": "https://a.espncdn.com/i/teamlogos/nba/500/sa.png",
+  "OKC": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
+  "PHI": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
+  "DEN": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
+  "MIL": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
+  "IND": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
+  "MIN": "https://a.espncdn.com/i/teamlogos/nba/500/min.png",
+  "DET": "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
+  "MEM": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
+  "UTA": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
+  "POR": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
+  "NYK": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
+  "CLE": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
+  "SAC": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
+  "ATL": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
+  "WAS": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
+  "BKN": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
+  "LAC": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
+  "PHX": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
+  "MIA": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
+  "DAL": "https://a.espncdn.com/i/teamlogos/nba/500/dal.png",
+  "HOU": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
+  "TOR": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
+  "ORL": "https://a.espncdn.com/i/teamlogos/nba/500/orl.png",
+  "NOP": "https://a.espncdn.com/i/teamlogos/nba/500/no.png",
+  "CHA": "https://a.espncdn.com/i/teamlogos/nba/500/cha.png"
+};
 
 const squadUrls = {};  // no per-team roster links yet; the View squad CTA stays hidden (data-gated)
 
-export { moduleQuestions, teams, archetypes, teamTextColors, archetypeDesc, greats, vitalStats, nearlyGot, scoring, teamDims, CARD_BADGES, squadUrls };
+export { moduleQuestions, teams, archetypes, teamTextColors, archetypeDesc, greats, vitalStats, nearlyGot, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };
