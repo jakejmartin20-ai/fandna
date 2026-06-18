@@ -319,7 +319,7 @@ function AppInner(){
   // PL shows the four highest-scoring runners-up (dynamic). NFL shows the four matchups the
   // craft authored for this team (the deliberate near-misses), which always carry a written line.
   const nearClubs = activeSport!=="PL"
-    ? Object.keys(ng).filter(k=>teams[k])
+    ? Object.keys(ng).filter(k=>teams[k]).sort((a,b)=>((scores||{})[b]||0)-((scores||{})[a]||0))
     : sortedOthers.slice(0,4).map(([k])=>k).filter(k=>teams[k]);
 
   // ── Home-screen data, all manifest-driven ─────────────────────────────────
