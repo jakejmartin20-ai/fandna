@@ -288,7 +288,7 @@ const teams = {
     "name": "Buffalo Bills",
     "emoji": "🦬",
     "color": "#00338D",
-    "tagline": "You lost four Super Bowls in a row, you have watched the kick sail wide right more than once, and not one heartbreak ever made the crowd smaller. Every time, it only got louder.",
+    "tagline": "Four straight Super Bowls lost, the kick wide right, and a crowd that got louder.",
     "desc": "Your devotion was forged in the cruelest way the game allows. You went to four straight Super Bowls in the early nineties and lost every one, the first on a kick that sailed wide right, a phrase that has haunted you ever since. None of it ever thinned the crowd. You became Bills Mafia, leaping through folding tables in the snow and raising millions for strangers, louder after every heartbreak. The trophy never came, and the faith never once needed it.",
     "why": [
       "Your loyalty is unconditional and sits at the ceiling. You do not leave, and Bills Mafia turned a city's worst heartbreaks into a reason to show up harder. You are the same.",
@@ -301,7 +301,7 @@ const teams = {
     "name": "New England Patriots",
     "emoji": "🇺🇸",
     "color": "#002244",
-    "tagline": "You won six in eighteen years and never once apologised for how you did it. The whole league's contempt only confirmed the math.",
+    "tagline": "Six titles in eighteen years, and the whole league's contempt only confirmed the math.",
     "desc": "Your standard is winning, and you have never apologized for it. Across eighteen years you collected six titles, until a generation of dominance stopped feeling like a thrill and became the baseline, the bare minimum, the way things were supposed to go. The rest of the league called you cheaters and resented every banner, and you took the contempt as proof. Do your job, say nothing, win again. The hatred was only ever the sound of everyone else losing.",
     "why": [
       "Your process orientation is at the absolute ceiling. You trust preparation over inspiration and systems over sentiment, which is exactly how a generation of titles got built.",
@@ -314,7 +314,7 @@ const teams = {
     "name": "Green Bay Packers",
     "emoji": "🧀",
     "color": "#203731",
-    "tagline": "You own a piece of it, and no billionaire ever can. The smallest town in the league made itself impossible to take away.",
+    "tagline": "You own a piece of it, and the smallest town in the league made it impossible to take.",
     "desc": "Your team cannot be bought, moved, or taken from you, because you already own it. The smallest market in the league is also the only one whose fans hold actual shares, hundreds of thousands of them, in a club owned by the public instead of a billionaire. You fill a frozen stadium they call the tundra, you wear foam wedges of cheese without a trace of irony, and you live in Titletown, with more championships than anyone. No one can ever make this someone else's trophy.",
     "why": [
       "Your loyalty is unconditional and sits at the absolute ceiling. You stay, full stop, and a town small enough to own its team outright is built entirely on people who feel that way. You are the same.",
@@ -327,7 +327,7 @@ const teams = {
     "name": "Dallas Cowboys",
     "emoji": "⭐",
     "color": "#003594",
-    "tagline": "Thirty years without a title, still the most valuable team in sports, a star people wear in every zip code. The drought has never once dented the swagger, because the swagger was never about the trophy.",
+    "tagline": "Thirty years without a title, still the most valuable team in sports, swagger intact.",
     "desc": "You are the most famous team in sports and the most divisive, which turns out to be the same thing. The blue star shows up in every state and half the world, worn by people who have never set foot in Texas. You won three titles in the nineties, then nothing for thirty years, the longest drought of any team that still acts like the main event. None of it touched the swagger or the price tag, still the most valuable franchise on earth. America's Team was never about being loved. It was about being impossible to ignore.",
     "why": [
       "Your ambition is at the absolute ceiling, and crucially it does not wait for evidence. You behave like the main event whether or not the results agree, which is the only kind of fan a lone star on the helmet was ever going to suit.",
@@ -340,7 +340,7 @@ const teams = {
     "name": "Pittsburgh Steelers",
     "emoji": "⚒️",
     "color": "#FFB612",
-    "tagline": "You come from a place that made steel and judged it by whether it held, and you have never learned to expect less from anything.",
+    "tagline": "A place that made steel and judged it by whether it held, and never expects less.",
     "desc": "Your belonging is inseparable from where you came from. Yinzer comes from yinz, the Pittsburgh word for 'you all,' an identity older than the team's success. The Terrible Towel began in 1975 as a radio gimmick and became a talisman that now funds care for people with disabilities, and when the mills closed and scattered the city, waving it was how you held onto home. Wherever you ended up, the team and the place stayed inseparable.",
     "why": [
       "Your rootedness is near the ceiling and it is the specific, place-fused kind. Where you come from is inseparable from who you are, and Yinzer is literally the local word for \"you all.\"",
@@ -353,7 +353,7 @@ const teams = {
     "name": "Las Vegas Raiders",
     "emoji": "☠️",
     "color": "#000000",
-    "tagline": "Silver and black, three home cities, and a following that shows up in every stadium like a threat. You were never loyal to a place, only to the colours.",
+    "tagline": "Silver and black through three home cities, loyal to the colors and never the place.",
     "desc": "You belong to an identity, not an address, and you wear it like a warning. The Black Hole began in 1995 when a group of fans in Oakland built the most feared section in the league, painted silver and black, asking nobody's permission. Then the team left for Los Angeles, came back, and left again for Las Vegas, and the Black Hole went with it every time. The city kept changing. The thing you belonged to never did.",
     "why": [
       "Your chaos tolerance is near the ceiling. You are drawn to the outlaw edge, the thing that asks nobody's permission, and a section painted silver and black that scares the league is exactly your speed.",
@@ -366,7 +366,7 @@ const teams = {
     "name": "New Orleans Saints",
     "emoji": "⚜️",
     "color": "#D3BC8D",
-    "tagline": "Your city went under, and people in power said maybe it shouldn't be rebuilt. You answered them by becoming champions of the world.",
+    "tagline": "Your city went under and was told to stay down, so you answered as champions.",
     "desc": "Your faith was tested the way few fanbases ever are. Who Dat is the chant that answers itself: who dat say dey gonna beat dem Saints? For years the honest answer was everybody, and fans wore paper bags as the Aints. Then Katrina flooded the city and turned the Superdome into a shelter for the desperate. Four years later the Saints won it all, and a city that had been told to give up put the paper bags away for good.",
     "why": [
       "Your emotional expression is at the absolute ceiling, communal and unguarded. The feeling is the whole point, and Who Dat is a chant a whole city answers together.",
@@ -379,7 +379,7 @@ const teams = {
     "name": "Detroit Lions",
     "emoji": "🦁",
     "color": "#0076B6",
-    "tagline": "Every Thanksgiving the whole country tunes in, and for decades it mostly watched you lose. You kept showing up anyway, because the loyalty was never a transaction.",
+    "tagline": "Every Thanksgiving the country tunes in, and for decades watched you lose anyway.",
     "desc": "You show up for something that has given you almost nothing back, and you decided long ago that was enough. A pride is a family of lions, and pride is what this fanbase has instead of trophies. No title since 1957, never a Super Bowl, and once an entire season without a single win. None of it ever made you reconsider, because you were never in it for the payoff. You were in it because it is yours.",
     "why": [
       "Your loyalty is at the absolute ceiling, and it is not a transaction. You show up for something that gave you almost nothing back, and you decided long ago that was enough.",
@@ -392,7 +392,7 @@ const teams = {
     "name": "Kansas City Chiefs",
     "emoji": "🏹",
     "color": "#E31837",
-    "tagline": "You went fifty years between titles, then it all turned at once. Now you are the team the whole league wants to beat, roaring from the loudest stadium on earth, and part of you still cannot believe the luck.",
+    "tagline": "Fifty years between titles, then the team the whole league is suddenly desperate to beat.",
     "desc": "You belong to a kingdom that spent most of its history waiting, and now sits on the throne. Chiefs Kingdom is what Kansas City calls itself, and Arrowhead is the loudest stadium on earth, a Guinness record, red from the first row to the last. The titles came late and all at once, and somewhere in the celebration you noticed you had become the team you grew up resenting. You carry it differently than the cold dynasties do, because you remember the fifty years before.",
     "why": [
       "Your ambition is high and recently fulfilled, and you carry it differently than people born winning. You spent decades waiting, so the throne still feels a little unreal.",
@@ -405,7 +405,7 @@ const teams = {
     "name": "San Francisco 49ers",
     "emoji": "⛏️",
     "color": "#AA0000",
-    "tagline": "You struck gold so completely once that everything since has felt like coming up just short of it.",
+    "tagline": "You struck gold so completely once that everything since has felt a step short of it.",
     "desc": "You expect excellence the way only people who once had it can. The name comes from the forty-niners, the prospectors who rushed west in 1849 chasing gold, and the franchise struck it: five championships in an era so elegant it set the standard for everyone else. Everything since has been measured against that, which is why the recent near-misses sting the way they do. The fanbase calls itself the Faithful, and lately it has also been Fitful.",
     "why": [
       "Your ambition and process both run high. You expect excellence, and you want it built properly, the elegant way that once set the standard for everyone.",
@@ -418,7 +418,7 @@ const teams = {
     "name": "Philadelphia Eagles",
     "emoji": "🦅",
     "color": "#004C54",
-    "tagline": "You were the best team in the league and still played the underdog, so you pulled on dog masks and turned the doubt into a dare. When the title finally came, you took it from the dynasty that was supposed to win.",
+    "tagline": "The best team that still wore dog masks, then took the title from the dynasty.",
     "desc": "You turned being doubted into a personality. The chant you adopted came from a London club branded as hooligans in the 1970s, fans who decided the contempt suited them fine, and Philadelphia heard its own soul in it. You booed Santa, booed your own picks, wore dog masks when the world called you underdogs, then climbed greased poles when you beat the dynasties anyway. Nobody likes you. You genuinely could not care less.",
     "why": [
       "Your rootedness is at the absolute ceiling and it is fiercely local. This is Philadelphia's club to its bones, and the chant you adopted from a London terrace fit because the city heard its own soul in it.",
@@ -431,7 +431,7 @@ const teams = {
     "name": "Seattle Seahawks",
     "emoji": "🔊",
     "color": "#002244",
-    "tagline": "You were never there just to watch. You are loud enough to move the needle, and on your best day, loud enough to move the ground.",
+    "tagline": "A crowd loud enough to move the needle, and on its best day the ground itself.",
     "desc": "You do not believe in the difference between the crowd and the team. In 1984 the franchise retired the number twelve so no player could ever wear it again, because the twelfth man was you. You have drawn false starts out of silence, set world records for sheer volume, and once roared loud enough to register as an earthquake. Other fans show up to watch their team. You show up to be on it.",
     "why": [
       "Your community drive is at the absolute ceiling. You do not believe in a line between the crowd and the team, which is why the number twelve was retired so no player could ever wear it.",
@@ -444,7 +444,7 @@ const teams = {
     "name": "Miami Dolphins",
     "emoji": "🐬",
     "color": "#008E97",
-    "tagline": "You own the one thing nobody else has managed in over fifty years, and a small, honest part of you needs everyone else to keep falling short of it.",
+    "tagline": "The one perfect season nobody's matched in fifty years, and you need it to stay that way.",
     "desc": "You are the keeper of the one perfect thing. In 1972 the franchise won every game it played, the only flawless season in the sport's history, and no one has matched it in over fifty years. Every autumn the survivors are said to raise a glass the moment the last unbeaten team falls, because the record is the inheritance. You have spent decades proud of a ghost and waiting to feel that good again. Dolfan is the word. The perfection is the point.",
     "why": [
       "Your defining trait is guarding one perfect thing. You are the keeper of the only flawless season the sport has ever seen, and a small honest part of you needs everyone else to keep falling short of it.",
@@ -457,7 +457,7 @@ const teams = {
     "name": "Los Angeles Chargers",
     "emoji": "⚡",
     "color": "#0080C6",
-    "tagline": "You have learned to expect the heartbreak and to show up for it anyway. They left the city that loved them for half a century, and that still isn't the cruelest thing they have done to you.",
+    "tagline": "You expect the heartbreak and show up anyway, even after they left San Diego.",
     "desc": "You keep bolting up for a team that keeps finding new ways to break your heart. After fifty-six years in San Diego it packed up for Los Angeles in 2017, leaving a fanbase that burned its jerseys in the street, and it now plays home games to crowds wearing the other team's colors. It has never won a title and has a gift for losing the games it should win. You show up anyway, because the curse is yours and so is the hope.",
     "why": [
       "Your chaos tolerance is high and your roots are loose, which is a hard combination to live with. You bolt up for a team that keeps finding new ways to break your heart, and you keep showing up.",
@@ -470,7 +470,7 @@ const teams = {
     "name": "Baltimore Ravens",
     "emoji": "🐦‍⬛",
     "color": "#241773",
-    "tagline": "Your city had a team stolen from it in the middle of the night, so you built a new one and made sure no one would enjoy playing it. You would rather be feared than liked, and you took your name from a poem about something that refuses to leave.",
+    "tagline": "A team stolen in the night, rebuilt under a poem's name and made to be feared.",
     "desc": "You come from a city that does not forgive easily and does not forget at all. Baltimore lost its old team to Indianapolis in 1984, waited twelve years, and got a new one only because Cleveland lost its own. They named it for the raven in Edgar Allan Poe's most famous poem, since Poe is buried here, and built it on a defense so suffocating it set the league's standard for menace. The Flock releases live ravens before kickoff. Nevermore was always the mood.",
     "why": [
       "Your defining instinct is to be feared rather than liked. You come from a city that does not forgive easily and built a defense to match, so menace is the identity.",
@@ -483,7 +483,7 @@ const teams = {
     "name": "Cleveland Browns",
     "emoji": "🐶",
     "color": "#FF3C00",
-    "tagline": "They took your team away in public, so you fought to keep its name, its colors, and its history, and made sure whatever came back was still yours. It has given you almost nothing in return, and you would not trade a single bark of it.",
+    "tagline": "They took your team, so you kept its name and colors and never stopped barking.",
     "desc": "You bark. It started in 1985, when two cornerbacks barked at each other in practice and the cheap-seat bleachers barked back, and it never stopped. Not when the owner moved the team to Baltimore in 1995, not when you fought to keep the name and colors and history and waited three years to get a team back, not through a winless season and a list of heartbreaks the city knows by name. You have never seen a Super Bowl. You would not be anyone else.",
     "why": [
       "Your loyalty is at the absolute ceiling and entirely unconditional. The team has given you almost nothing, and you would not trade a single bark of it.",
@@ -496,7 +496,7 @@ const teams = {
     "name": "New York Giants",
     "emoji": "🗽",
     "color": "#0B2265",
-    "tagline": "You have the calm of someone who has already won and stopped needing to prove it. You don't make noise, but the one time a team looked truly unbeatable, you were the reason it wasn't.",
+    "tagline": "The calm of a team that's already won, and the reason the unbeatable one wasn't.",
     "desc": "You do not panic. You have the unbothered confidence of old money, the kind that has won enough already to stop chasing the spotlight. One family bought this team for five hundred dollars in 1925 and never let go, and it became the calm grown-up of a loud league. Your quiet talent is for humbling the teams everyone else is afraid of, the unbeaten ones, the untouchable ones, the dynasties certain their moment had finally arrived. Big Blue doesn't chase legends. It ends them.",
     "why": [
       "Your defining trait is calm. You have the unbothered confidence of old money, the kind that has won enough already to stop chasing the spotlight.",
@@ -509,7 +509,7 @@ const teams = {
     "name": "Tampa Bay Buccaneers",
     "emoji": "🏴‍☠️",
     "color": "#D50A0A",
-    "tagline": "You were the punchline for so long that winning still feels like a heist you pulled on the whole league. So you dress like pirates, fire a cannon when you score, and celebrate like people who remember being the worst.",
+    "tagline": "The punchline for so long that every win still feels like a heist, cannon and all.",
     "desc": "You started by losing. Not a game, not a season, but the first twenty-six games this franchise ever played, the worst start in the sport's history. So Tampa leaned all the way into its old pirate festival: the Krewe, the costumes, a hundred-foot ship in the end zone that fires a cannon every time you score. Then, against all of it, you won the whole thing. Twice. You party because you remember the alternative.",
     "why": [
       "Your chaos tolerance runs high and you wear it as fun. You were the punchline for so long that winning still feels like a heist, so you dress like pirates and fire a cannon.",
@@ -522,7 +522,7 @@ const teams = {
     "name": "Minnesota Vikings",
     "emoji": "⚔️",
     "color": "#4F2683",
-    "tagline": "You have stood at the doorstep of the one thing you want four times and watched it taken away each time, often in ways that felt invented just to hurt you. You stopped expecting a different ending long ago, and you chant anyway.",
+    "tagline": "Four times at the doorstep of it all, denied each time, and you chant Skol anyway.",
     "desc": "You expect the worst, and you show up anyway. Minnesota was settled by Scandinavians, so its team is the Vikings, with the horns and a war chant the whole stadium thunders together: Skol. Four times this team reached the edge of a championship, and four times found a new and crueler way to fall short. You have made your peace with the doom. You raise your arms and chant for it anyway, because a hope you can't kill is its own kind of religion.",
     "why": [
       "Your emotional expression is loud and communal, and it has been hardened by loss. The whole stadium thunders the Skol chant together, and you mean every beat of it.",
@@ -535,7 +535,7 @@ const teams = {
     "name": "Chicago Bears",
     "emoji": "🐻",
     "color": "#0B162A",
-    "tagline": "You were there when the league was invented, and you built your identity on toughness, defense, and doing the hard things right. You've mastered every part of the game except the one glamorous position that decides it, and you've stopped pretending that doesn't drive you a little insane.",
+    "tagline": "A founding team that mastered everything but the one position that decides games.",
     "desc": "You don't say 'the Bears,' you say Da Bears, in the accent the whole city shares. This team helped invent the league in 1920, has won more games than anyone since, and built a century on ferocious defense and refusing to do anything the easy way. The Monsters of the Midway peaked with one of the most dominant teams the sport has seen, then spent the decades since hunting the one thing they could never draft: a quarterback. You grind on anyway. That's the whole point of you.",
     "why": [
       "Your rootedness is near the ceiling and it is woven into the city's accent. You do not say the Bears, you say Da Bears, and the whole town says it with you.",
@@ -548,7 +548,7 @@ const teams = {
     "name": "Indianapolis Colts",
     "emoji": "🐎",
     "color": "#002C5F",
-    "tagline": "You don't win the ugly way. You win with precision, indoors, behind one brilliant quarterback, and the heartbreak of your life is that the brilliant ones never stay long.",
+    "tagline": "Precision football indoors behind one brilliant arm that never stays long.",
     "desc": "You arrived in the dead of night. In 1984 fifteen moving trucks pulled the whole franchise out of Baltimore before the city woke, and Indianapolis got the team it had already built a dome for. You learned to win the clean way, climate-controlled, on precision and the arm of a quarterback who could thread anything. Twice you found that genius. Twice he was gone too soon, once to his body, once to a retirement no one saw coming. You win on brilliance, and you have learned to brace for its end.",
     "why": [
       "Your process orientation runs high and clean. You win with precision, climate-controlled, on preparation and a brilliant arm, never the ugly way.",
@@ -561,7 +561,7 @@ const teams = {
     "name": "Denver Broncos",
     "emoji": "🏔️",
     "color": "#FB4F14",
-    "tagline": "You live a mile up, where even the air is on your side, and you carry yourselves like a team the ground is rooting for.",
+    "tagline": "A mile up where even the air is on your side, carried like the ground roots for you.",
     "desc": "You are the only team for a thousand miles, so the whole Rocky Mountain region rolls in behind you, the way it has since 1960. Your home sits exactly one mile up, and visiting teams spend the fourth quarter gasping at air that has never once bothered you. You have won it all three times, you expect to again, and that expectation does not rise or fall with the standings. You do not just support this team. You are the altitude it plays at.",
     "why": [
       "Your rootedness is deep and regional. You are the only team for a thousand miles, so a whole mountain region rolls in behind you, and you carry that backing as identity.",
@@ -574,7 +574,7 @@ const teams = {
     "name": "Los Angeles Rams",
     "emoji": "🐏",
     "color": "#003594",
-    "tagline": "You are the only team to win it all in three different cities, because you will always chase the brightest lights and never once apologize for loving the show more than the zip code.",
+    "tagline": "The only team to win it all in three different cities, always chasing the brightest lights.",
     "desc": "You are the only franchise to win it all in three different cities, because you have always gone where the lights were brightest and never looked back at the ones you left. In 1948 you became the first team to paint a logo on a helmet, two curling horns, because of course you did. You built the most dazzling offence the sport had seen and let the world call it a show. When you wanted another title you traded the whole future to buy it, and it worked. You don't wait around for brilliance. You chase it across the map, and you have never once been sorry.",
     "why": [
       "Your ambition is at the ceiling and your roots are deliberately light. You follow the brightest lights on the field, and you have never apologized for loving the show more than the postcode.",
@@ -587,7 +587,7 @@ const teams = {
     "name": "Cincinnati Bengals",
     "emoji": "🐯",
     "color": "#FB4F14",
-    "tagline": "You went thirty-one years without a single playoff win, the longest wait in the league, in the only striped helmets in football, while nobody paid attention. Now that respect has come, it feels less like a gift than a score you are owed.",
+    "tagline": "Thirty-one years without a playoff win, in the only striped helmets in football.",
     "desc": "You were founded in 1968 by a coach the team up the road had just thrown away, which tells you everything about the chip you've carried since. For decades you were the small-market afterthought, and you reached the big game three times and lost all three. You wore tiger stripes nobody else would dare and chanted Who Dey into rooms that weren't listening. Then lately you got a team good enough to scare people. The swagger is new. The chip is not, and you would not trade it for anything.",
     "why": [
       "Your defining trait is a chip on the shoulder that never quite leaves. You were overlooked for so long that respect, now it is here, still feels mostly like a score to settle.",
@@ -600,7 +600,7 @@ const teams = {
     "name": "Atlanta Falcons",
     "emoji": "🪶",
     "color": "#A71930",
-    "tagline": "You were twenty-five points up in the biggest game of your life and watched all of it vanish, and you have never trusted a lead since, no matter how big.",
+    "tagline": "Up twenty-five in the biggest game of your life, and you've never trusted a lead since.",
     "desc": "You came into the league in 1966 named for a bird that climbs, and your slogan, decades later, became Rise Up, which is the cruel joke, because what the world remembers about you is a fall. You reached the big game twice and lost both, and the second time you were twenty-five points up and watched all of it go in front of everyone. A single scoreline has stood in for your whole history ever since. You are the Dirty Birds, and you have learned to enjoy the climb and brace for the drop at once.",
     "why": [
       "Your defining trait is not trusting a lead, ever. You were up by a mountain in the biggest game of your life and watched all of it vanish, and you have braced for the drop since.",
@@ -613,7 +613,7 @@ const teams = {
     "name": "Arizona Cardinals",
     "emoji": "🐦",
     "color": "#97233F",
-    "tagline": "You are the oldest team in football and you have not won it all since 1947, longer than anyone in any sport. Given almost nothing for a century, you somehow only got harder to get rid of.",
+    "tagline": "The oldest team in football, no title since 1947, and only harder to get rid of.",
     "desc": "You go back to 1898, older than the league itself, named off a box of faded hand-me-downs. You've been hauled from Chicago to St. Louis to the desert, lost more games than any team in the sport, and watched your last title recede so far back the people who saw it are mostly gone. You got close once and lost that too, in the final minute. And you are still here, the team that outlasted two World Wars, the Depression, and every reason in the world to quit.",
     "why": [
       "Your defining trait is sheer endurance. You have been given almost nothing for longer than almost anyone, and somehow that only made you harder to get rid of.",
@@ -639,7 +639,7 @@ const teams = {
     "name": "New York Jets",
     "emoji": "✈️",
     "color": "#125740",
-    "tagline": "You won once, on a guarantee, and no team in any sport has waited longer to do it again. Every year you are sure this is the one, and every year you are wrong, and every year you come back.",
+    "tagline": "One title on a guarantee, the longest wait in sports to get a second, and back every year.",
     "desc": "You arrived in 1960, and a decade later your brash young quarterback guaranteed a win nobody gave you a prayer in, then delivered it. That was the peak. You've spent every season since chasing it through dysfunction so reliable it became a punchline, sharing a stadium with the calm, decorated older team while you supplied the chaos. You are Gang Green, certain every August that this is the year. You are almost always wrong, and you have never once stopped being certain.",
     "why": [
       "Your defining pattern is hope that survives everything. Your heart breaks every year, you choose to believe anyway, and somehow that has always been enough.",
@@ -652,7 +652,7 @@ const teams = {
     "name": "Tennessee Titans",
     "emoji": "🗡️",
     "color": "#4B92DB",
-    "tagline": "You came up one yard short of a Super Bowl on the final play of the game, and you have measured every yard since against the one you never got.",
+    "tagline": "One yard short of it all on the final play, and you've measured every yard since.",
     "desc": "You came to Tennessee in 1997 from another city and another name, left a beloved old identity behind, and built a new one out of the hardest, most physical football you could play. In your first year under the new name you ran all the way to the Super Bowl and lost it by the length of a man's reach, a receiver stretched out and stopped a yard from tying the game as the clock hit zero. You grind for every yard there is. The one that mattered most, you came up thirty-six inches short of, and you've measured everything against it since.",
     "why": [
       "Your effort-over-flash score is the defining one. No need for the spotlight, just the willingness to do the hard, unglamorous work, and that is the whole Titans identity.",
@@ -665,7 +665,7 @@ const teams = {
     "name": "Houston Texans",
     "emoji": "🐂",
     "color": "#03202F",
-    "tagline": "Your city lost its team, so you built a new one from nothing and put the whole state's name on it. You have never once wondered whether it was worth it.",
+    "tagline": "Your city lost its team, so you built one from nothing with the whole state's name on it.",
     "desc": "In the late nineties the fourth-biggest city in America had its football team taken away to another state, and for a few years Houston had nothing. So in 2002 you started over: a new team, a bull's head on the helmet with a lone star for an eye, the whole state's name across the chest. You don't have the decades of glory and heartbreak the old guard trades on. What you have is a young team, a huge proud city, and the specific chip of people who know exactly what it feels like to lose a team and have sworn never to feel it again. H-Town, built from the ground up.",
     "why": [
       "Your defining trait is restoration after loss. Your city had its team taken away, so you built your own, and you have never been more certain it was worth it.",
@@ -678,7 +678,7 @@ const teams = {
     "name": "Carolina Panthers",
     "emoji": "🐈‍⬛",
     "color": "#0085CA",
-    "tagline": "Your entire creed is two words meaning keep fighting no matter the score, and you believe them because they came from a man who lived them when it counted most. You do not stop. You were never built to.",
+    "tagline": "A two-word creed to keep fighting, from a man who lived it, and you never stop.",
     "desc": "You arrived in 1995 as the team for two whole states, the Carolinas, nobody's single city and everybody's region. Your defining moment was never a trophy. It was a beloved coach, facing a terminal diagnosis, who told the team he'd had two choices, quit or keep pounding, and he had chosen to keep pounding, then outlasted his prognosis by more than a year. Those two words became your creed, beaten on a drum before every home game. You've reached the very biggest stage twice and come away with nothing both times, and not once has it made you want to quit. That was always the point.",
     "why": [
       "Your defining trait is a creed of never quitting. Your whole identity is two words that mean keep fighting no matter the score, and you believe them because they came from someone who lived them when it counted most.",
@@ -691,7 +691,7 @@ const teams = {
     "name": "Jacksonville Jaguars",
     "emoji": "🐆",
     "color": "#006778",
-    "tagline": "The league treats you like a secret, so you got louder and more local than anyone, chanting Duval, the name of your own county, like a dare.",
+    "tagline": "Treated like the league's secret, so you got loud and chant your county like a dare.",
     "desc": "You arrived in 1995 in one of the smallest markets the league has, a city plenty of people didn't expect to keep a team at all. You've spent the years since overlooked, ridiculed, even shipped overseas to play home games as if you belonged to no one. So you did the opposite of fade: you painted yourselves teal and turned the name of your own county into a roar nobody could pretend not to hear. Duuuval. You are the most local fans in football, on purpose, because everyone keeps treating you as the least permanent.",
     "why": [
       "Your defining trait is defiant locality. Everyone keeps overlooking you, so you got louder and more local than anyone, roaring exactly where you are from like a dare.",
