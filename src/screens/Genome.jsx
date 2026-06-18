@@ -17,13 +17,13 @@
 // All copy here is user-facing, so: no em dashes.
 
 import { useState } from "react";
-import { BadgeImg } from "../components/quiz";
+import { ClubMark } from "../components/ClubMark";
 import { CoreStrip } from "../components/CoreStrip";
 
 export function GenomeHome({
   sports,            // manifest list: [{code,name,live,hook}, ...]
   genome,            // saved results map: { PL: { club: "LI" }, ... }
-  sportData,         // { PL:{teams,archetypes,badgeUrls,teamTextColors,...}, NFL:{...} }
+  sportData,         // { PL:{teams,archetypes,teamTextColors,...}, NFL:{...} }
   coreSequenced,     // has the shared core already been answered once?
   coreCount,         // number of core questions (added to the first sport taken)
   moduleCounts,      // per-sport module question counts: { PL: 14, ... }
@@ -138,7 +138,7 @@ export function GenomeHome({
                   onMouseLeave={e=>{e.currentTarget.style.borderColor="#222230";e.currentTarget.style.borderLeftColor=(t.color||"#9898b8");}}
                 >
                   <div style={{display:"flex",alignItems:"center",gap:12}}>
-                    <BadgeImg url={SD.badgeUrls&&SD.badgeUrls[r.club]} emoji={t.emoji} size={42}/>
+                    <ClubMark team={t} size={46}/>
                     <div style={{flex:1,minWidth:0}}>
                       <div style={{fontSize:10,color:"#888",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:2}}>{s.name}</div>
                       <div style={{fontSize:"clamp(18px,4.6vw,22px)",color:"#e8e4de",fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:400,lineHeight:1.1}}>{t.name}</div>
@@ -214,6 +214,7 @@ export function GenomeHome({
             onMouseLeave={e=>e.currentTarget.style.color="#9898b8"}
           >Feedback or a bug?</a>
         </div>
+        <p style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#5f5f78",lineHeight:1.6,margin:"16px auto 0",maxWidth:360,letterSpacing:"0.02em"}}>FanDNA is an independent project. Not affiliated with, endorsed by, or associated with any club, league, or governing body.</p>
       </div>
 
     </div>
