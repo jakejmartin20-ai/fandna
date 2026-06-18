@@ -103,7 +103,7 @@ const moduleQuestions = [
         "value": "A"
       },
       {
-        "label": "The colours and the attitude. I'll wear them in any zip code.",
+        "label": "The colors and the attitude. I'll wear them in any zip code.",
         "value": "B"
       },
       {
@@ -191,7 +191,7 @@ const moduleQuestions = [
         "value": "A"
       },
       {
-        "label": "Fought to keep the name, the colours, the history. Made sure it stayed mine.",
+        "label": "Fought to keep the name, the colors, the history. Made sure it stayed mine.",
         "value": "B"
       },
       {
@@ -315,7 +315,7 @@ const teams = {
     "emoji": "🧀",
     "color": "#203731",
     "tagline": "You own a piece of it, and the smallest town in the league made it impossible to take.",
-    "desc": "Your team cannot be bought, moved, or taken from you, because you already own it. The smallest market in the league is also the only one whose fans hold actual shares, hundreds of thousands of them, in a club owned by the public instead of a billionaire. You fill a frozen stadium they call the tundra, you wear foam wedges of cheese without a trace of irony, and you live in Titletown, with more championships than anyone. No one can ever make this someone else's trophy.",
+    "desc": "Your team cannot be bought, moved, or taken from you, because you already own it. The smallest market in the league is also the only one whose fans hold actual shares, hundreds of thousands of them, in a team owned by the public instead of a billionaire. You fill a frozen stadium they call the tundra, you wear foam wedges of cheese without a trace of irony, and you live in Titletown, with more championships than anyone. No one can ever make this someone else's trophy.",
     "why": [
       "Your loyalty is unconditional and sits at the absolute ceiling. You stay, full stop, and a town small enough to own its team outright is built entirely on people who feel that way. You are the same.",
       "Your community drive is the place-rooted, collective kind, not the global-brand kind. The thing is shared or it barely counts, which is how the smallest market in the league became unbeatable off the field.",
@@ -357,7 +357,7 @@ const teams = {
     "desc": "You belong to an identity, not an address, and you wear it like a warning. The Black Hole began in 1995 when a group of fans in Oakland built the most feared section in the league, painted silver and black, asking nobody's permission. Then the team left for Los Angeles, came back, and left again for Las Vegas, and the Black Hole went with it every time. The city kept changing. The thing you belonged to never did.",
     "why": [
       "Your chaos tolerance is near the ceiling. You are drawn to the outlaw edge, the thing that asks nobody's permission, and a section painted silver and black that scares the league is exactly your speed.",
-      "Your loyalty is to an identity rather than an address. Three home cities never loosened your grip, because you were never loyal to the place, only to the colours.",
+      "Your loyalty is to an identity rather than an address. Three home cities never loosened your grip, because you were never loyal to the place, only to the colors.",
       "Your emotional pull is to menace and belonging at once. You want to be feared and you want to be part of something, and the Black Hole gives you both."
     ]
   },
@@ -421,7 +421,7 @@ const teams = {
     "tagline": "The best team that still wore dog masks, then took the title from the dynasty.",
     "desc": "You turned being doubted into a personality. The chant you adopted came from a London club branded as hooligans in the 1970s, fans who decided the contempt suited them fine, and Philadelphia heard its own soul in it. You booed Santa, booed your own picks, wore dog masks when the world called you underdogs, then climbed greased poles when you beat the dynasties anyway. Nobody likes you. You genuinely could not care less.",
     "why": [
-      "Your rootedness is at the absolute ceiling and it is fiercely local. This is Philadelphia's club to its bones, and the chant you adopted from a London terrace fit because the city heard its own soul in it.",
+      "Your rootedness is at the absolute ceiling and it is fiercely local. This is Philadelphia's team to its bones, and the chant you adopted from a London terrace fit because the city heard its own soul in it.",
       "Your emotional expression and chaos tolerance both run hot. You boo your own picks, wear dog masks, and climb greased poles, because the feeling has to come all the way out.",
       "You turned being doubted into a personality. You stopped wanting to be liked and started wanting to be proven right, then took it from the teams that were supposed to win."
     ]
@@ -488,7 +488,7 @@ const teams = {
     "why": [
       "Your loyalty is at the absolute ceiling and entirely unconditional. The team has given you almost nothing, and you would not trade a single bark of it.",
       "Your community and chaos both run hot. The Dawg Pound barks because that is how a working city makes its love physical and loud.",
-      "Your wound is external and you refused to let it win. They took the team away in public, so you fought to keep its name, colours, and history and made sure what came back was still yours."
+      "Your wound is external and you refused to let it win. They took the team away in public, so you fought to keep its name, colors, and history and made sure what came back was still yours."
     ]
   },
   "NYG": {
@@ -575,7 +575,7 @@ const teams = {
     "emoji": "🐏",
     "color": "#003594",
     "tagline": "The only team to win it all in three different cities, always chasing the brightest lights.",
-    "desc": "You are the only franchise to win it all in three different cities, because you have always gone where the lights were brightest and never looked back at the ones you left. In 1948 you became the first team to paint a logo on a helmet, two curling horns, because of course you did. You built the most dazzling offence the sport had seen and let the world call it a show. When you wanted another title you traded the whole future to buy it, and it worked. You don't wait around for brilliance. You chase it across the map, and you have never once been sorry.",
+    "desc": "You are the only franchise to win it all in three different cities, because you have always gone where the lights were brightest and never looked back at the ones you left. In 1948 you became the first team to paint a logo on a helmet, two curling horns, because of course you did. You built the most dazzling offense the sport had seen and let the world call it a show. When you wanted another title you traded the whole future to buy it, and it worked. You don't wait around for brilliance. You chase it across the map, and you have never once been sorry.",
     "why": [
       "Your ambition is at the ceiling and your roots are deliberately light. You follow the brightest lights on the field, and you have never apologized for loving the show more than the postcode.",
       "Your process is sharp and aggressive. You built the most dazzling offense around and, when you wanted another title, traded the whole future to buy it. It worked.",
@@ -631,7 +631,7 @@ const teams = {
     "why": [
       "Your loyalty is to something deeper than a name. When the name itself changed, you did not, because you were never loyal to the name in the first place.",
       "Your roots run deep through a glory era and a long fall alike. Three titles in a decade, then a generation of losing, and you stayed for all of it.",
-      "Your attachment is to the colours, the city, and the people beside you. That is what held when everything else, even the name, was stripped away."
+      "Your attachment is to the colors, the city, and the people beside you. That is what held when everything else, even the name, was stripped away."
     ]
   },
   "NYJ": {
@@ -774,7 +774,7 @@ const teamTextColors = {
 const archetypeDesc = {
   "BUF": "Your devotion was forged in the cruelest way the game allows. You went to four straight Super Bowls in the early nineties and lost every one, the first on a kick that sailed wide right, a phrase that has haunted you ever since. None of it ever thinned the crowd. You became Bills Mafia, leaping through folding tables in the snow and raising millions for strangers, louder after every heartbreak. The trophy never came, and the faith never once needed it.",
   "NE": "Your standard is winning, and you have never apologized for it. Across eighteen years you collected six titles, until a generation of dominance stopped feeling like a thrill and became the baseline, the bare minimum, the way things were supposed to go. The rest of the league called you cheaters and resented every banner, and you took the contempt as proof. Do your job, say nothing, win again. The hatred was only ever the sound of everyone else losing.",
-  "GB": "Your team cannot be bought, moved, or taken from you, because you already own it. The smallest market in the league is also the only one whose fans hold actual shares, hundreds of thousands of them, in a club owned by the public instead of a billionaire. You fill a frozen stadium they call the tundra, you wear foam wedges of cheese without a trace of irony, and you live in Titletown, with more championships than anyone. No one can ever make this someone else's trophy.",
+  "GB": "Your team cannot be bought, moved, or taken from you, because you already own it. The smallest market in the league is also the only one whose fans hold actual shares, hundreds of thousands of them, in a team owned by the public instead of a billionaire. You fill a frozen stadium they call the tundra, you wear foam wedges of cheese without a trace of irony, and you live in Titletown, with more championships than anyone. No one can ever make this someone else's trophy.",
   "DAL": "You are the most famous team in sports and the most divisive, which turns out to be the same thing. The blue star shows up in every state and half the world, worn by people who have never set foot in Texas. You won three titles in the nineties, then nothing for thirty years, the longest drought of any team that still acts like the main event. None of it touched the swagger or the price tag, still the most valuable franchise on earth. America's Team was never about being loved. It was about being impossible to ignore.",
   "PIT": "Your belonging is inseparable from where you came from. Yinzer comes from yinz, the Pittsburgh word for 'you all,' an identity older than the team's success. The Terrible Towel began in 1975 as a radio gimmick and became a talisman that now funds care for people with disabilities, and when the mills closed and scattered the city, waving it was how you held onto home. Wherever you ended up, the team and the place stayed inseparable.",
   "LV": "You belong to an identity, not an address, and you wear it like a warning. The Black Hole began in 1995 when a group of fans in Oakland built the most feared section in the league, painted silver and black, asking nobody's permission. Then the team left for Los Angeles, came back, and left again for Las Vegas, and the Black Hole went with it every time. The city kept changing. The thing you belonged to never did.",
@@ -794,7 +794,7 @@ const archetypeDesc = {
   "CHI": "You don't say 'the Bears,' you say Da Bears, in the accent the whole city shares. This team helped invent the league in 1920, has won more games than anyone since, and built a century on ferocious defense and refusing to do anything the easy way. The Monsters of the Midway peaked with one of the most dominant teams the sport has seen, then spent the decades since hunting the one thing they could never draft: a quarterback. You grind on anyway. That's the whole point of you.",
   "IND": "You arrived in the dead of night. In 1984 fifteen moving trucks pulled the whole franchise out of Baltimore before the city woke, and Indianapolis got the team it had already built a dome for. You learned to win the clean way, climate-controlled, on precision and the arm of a quarterback who could thread anything. Twice you found that genius. Twice he was gone too soon, once to his body, once to a retirement no one saw coming. You win on brilliance, and you have learned to brace for its end.",
   "DEN": "You are the only team for a thousand miles, so the whole Rocky Mountain region rolls in behind you, the way it has since 1960. Your home sits exactly one mile up, and visiting teams spend the fourth quarter gasping at air that has never once bothered you. You have won it all three times, you expect to again, and that expectation does not rise or fall with the standings. You do not just support this team. You are the altitude it plays at.",
-  "LAR": "You are the only franchise to win it all in three different cities, because you have always gone where the lights were brightest and never looked back at the ones you left. In 1948 you became the first team to paint a logo on a helmet, two curling horns, because of course you did. You built the most dazzling offence the sport had seen and let the world call it a show. When you wanted another title you traded the whole future to buy it, and it worked. You don't wait around for brilliance. You chase it across the map, and you have never once been sorry.",
+  "LAR": "You are the only franchise to win it all in three different cities, because you have always gone where the lights were brightest and never looked back at the ones you left. In 1948 you became the first team to paint a logo on a helmet, two curling horns, because of course you did. You built the most dazzling offense the sport had seen and let the world call it a show. When you wanted another title you traded the whole future to buy it, and it worked. You don't wait around for brilliance. You chase it across the map, and you have never once been sorry.",
   "CIN": "You were founded in 1968 by a coach the team up the road had just thrown away, which tells you everything about the chip you've carried since. For decades you were the small-market afterthought, and you reached the big game three times and lost all three. You wore tiger stripes nobody else would dare and chanted Who Dey into rooms that weren't listening. Then lately you got a team good enough to scare people. The swagger is new. The chip is not, and you would not trade it for anything.",
   "ATL": "You came into the league in 1966 named for a bird that climbs, and your slogan, decades later, became Rise Up, which is the cruel joke, because what the world remembers about you is a fall. You reached the big game twice and lost both, and the second time you were twenty-five points up and watched all of it go in front of everyone. A single scoreline has stood in for your whole history ever since. You are the Dirty Birds, and you have learned to enjoy the climb and brace for the drop at once.",
   "ARI": "You go back to 1898, older than the league itself, named off a box of faded hand-me-downs. You've been hauled from Chicago to St. Louis to the desert, lost more games than any team in the sport, and watched your last title recede so far back the people who saw it are mostly gone. You got close once and lost that too, in the final minute. And you are still here, the team that outlasted two World Wars, the Depression, and every reason in the world to quit.",
@@ -1790,7 +1790,7 @@ const vitalStats = {
     "stadium": "Lumen Field",
     "city": "Seattle, WA",
     "capacity": "69,000",
-    "colors": "Navy, action green, grey",
+    "colors": "Navy, action green, gray",
     "titles": "2 Super Bowls",
     "lastTitle": "2025 (Super Bowl LX), reigning champions"
   },
@@ -2017,7 +2017,7 @@ const nearlyGot = {
   },
   "DAL": {
     "ATL": "Both of you carry real flair and a taste for the spotlight, the kind that never waits for permission. Atlanta's confidence is haunted by a collapse it cannot shake; Dallas's is haunted by nothing at all. The same swagger, one bruised and the other bulletproof.",
-    "TB": "Both of you play the game with theatre and a bit of show. Tampa earned its swagger by climbing out of being the worst; Dallas simply assumed its from the start. The same flash, but one earned it and the other was born with it.",
+    "TB": "Both of you play the game with theater and a bit of show. Tampa earned its swagger by climbing out of being the worst; Dallas simply assumed its from the start. The same flash, but one earned it and the other was born with it.",
     "LAR": "Both of you chase the brightest lights and love the spectacle more than the postcode. The Rams will move cities to find the show; Dallas plants its flag and demands the show come to it. The same hunger for the stage, one that travels and one that holds court.",
     "SF": "Both of you expect to be the main characters of the league. San Francisco backs it with elegant, sustained excellence; Dallas backs it with sheer self-belief through a long drought. If the swagger has to be earned on the field to feel real, that is San Francisco."
   },
@@ -2028,7 +2028,7 @@ const nearlyGot = {
     "NYG": "Both of you carry old, sustained pedigree without much noise. The Giants do it with the calm of old money; Pittsburgh does it with the grit of a mill town. The same quiet authority, one inherited and one earned shift by shift."
   },
   "LV": {
-    "LAC": "Both of you carry chaos and heartbreak and hold place loosely. The Chargers wear it as wounded loyalty to a team that keeps leaving; the Raiders wear it as defiant loyalty to colours over any city. The same rootlessness, heartbroken on one side and proud of it on the other.",
+    "LAC": "Both of you carry chaos and heartbreak and hold place loosely. The Chargers wear it as wounded loyalty to a team that keeps leaving; the Raiders wear it as defiant loyalty to colors over any city. The same rootlessness, heartbroken on one side and proud of it on the other.",
     "TB": "Both of you have a theatrical, chaos-tolerant streak. Tampa dresses as pirates and fires a cannon; the Raiders dress as the most feared section in football. The same costume energy, but one is a party and one is a threat.",
     "NYJ": "Both of you run hot, chaotic, and a little doomed. The Jets are comic about it and keep believing; the Raiders are menacing about it and ask nobody's permission. The same disorder, a punchline on one side and a warning on the other.",
     "CIN": "Both of you carry a chip and a chaotic edge against the establishment. Cincinnati's is the small-market afterthought finally getting respect; the Raiders' is the outlaw who never wanted respect in the first place. If you crave the acknowledgement, that is Cincinnati."
@@ -2137,7 +2137,7 @@ const nearlyGot = {
   },
   "CIN": {
     "NYJ": "Both of you carry chaos and a long wait for respect. The Jets keep it comic and hopeful; Cincinnati keeps it as a chip waiting to be repaid. The same disorder, laughing on one side and settling scores on the other.",
-    "WAS": "Both of you are loyal through institutional frustration. Washington's loyalty is to colours over a name; Cincinnati's is to a small-market club that earned its swagger late. The same patience, for a tradition on one side and a slight on the other.",
+    "WAS": "Both of you are loyal through institutional frustration. Washington's loyalty is to colors over a name; Cincinnati's is to a small-market team that earned its swagger late. The same patience, for a tradition on one side and a slight on the other.",
     "JAX": "Both of you are overlooked, small-ish markets with a defiant streak. Jacksonville got loud and local; Cincinnati got striped and chip-shouldered. The same underdog energy, at a different outlet.",
     "CAR": "Both of you are moderate, story-shaped fanbases. Carolina's story is a never-quit creed; Cincinnati's is the afterthought finally getting feared. If it is the creed more than the chip, that is Carolina."
   },
@@ -2155,9 +2155,9 @@ const nearlyGot = {
   },
   "WAS": {
     "CHI": "Both of you are old, rooted, defense-proud fanbases that loved through a long decline. Chicago waits on a quarterback; Washington waited through a vanished name. The same endurance, around a different absence.",
-    "NYG": "Both of you are old-guard, deeply rooted clubs. The Giants' loyalty stays unbothered and steady; Washington's was tested by chaos and held to the colours. The same heritage, serene on one side and battered on the other.",
+    "NYG": "Both of you are old-guard, deeply rooted franchises. The Giants' loyalty stays unbothered and steady; Washington's was tested by chaos and held to the colors. The same heritage, serene on one side and battered on the other.",
     "DEN": "Both of you pair real pedigree with regional loyalty. Denver's expectation is steady and altitude-backed; Washington's is rebuilding from a long fall. The same standard, expectant on one side and recovering on the other.",
-    "JAX": "Both of you have loved through being overlooked or diminished. Jacksonville got loud about it; Washington stayed quietly true to the colours. If the answer is defiant volume, that is Jacksonville."
+    "JAX": "Both of you have loved through being overlooked or diminished. Jacksonville got loud about it; Washington stayed quietly true to the colors. If the answer is defiant volume, that is Jacksonville."
   },
   "NYJ": {
     "CIN": "Both of you carry chaos and a long wait. The Jets keep it comic and hopeful; Cincinnati keeps it as a chip to repay. The same disorder, laughing through it on one side and settling up on the other.",
@@ -2179,14 +2179,14 @@ const nearlyGot = {
   },
   "CAR": {
     "TEN": "The closest match in the whole league, the grit identical. Carolina made refusing to quit a creed; Tennessee made it a single lost yard. The same engine, facing forward on one side and facing the miss on the other.",
-    "JAX": "Both of you are 90s expansion clubs in overlooked markets. Jacksonville answers it by getting loud and local; Carolina answers it with a creed and a region behind it. The same upstart spirit, with a different rallying point.",
+    "JAX": "Both of you are 90s expansion franchises in overlooked markets. Jacksonville answers it by getting loud and local; Carolina answers it with a creed and a region behind it. The same upstart spirit, with a different rallying point.",
     "HOU": "Both of you are younger, story-shaped fanbases. Houston's is restoration after loss; Carolina's is a never-quit creed. The same scale, a comeback on one side and a code on the other.",
     "TB": "Both of you are moderate Southeastern fanbases. Tampa's story is the underdog who finally robbed the league; Carolina's is refusing to quit without the payoff yet. If it is delight over defiance, that is Tampa."
   },
   "JAX": {
-    "CAR": "Both of you are 90s expansion clubs in overlooked markets. Carolina rallies around a creed and a region; Jacksonville rallies by getting loud and defiantly local. The same upstart spirit, with a different rallying point.",
+    "CAR": "Both of you are 90s expansion franchises in overlooked markets. Carolina rallies around a creed and a region; Jacksonville rallies by getting loud and defiantly local. The same upstart spirit, with a different rallying point.",
     "TEN": "Both of you are flat-profile, story-shaped fanbases. Tennessee's story is the lost yard; Jacksonville's is being overlooked and roaring back. The same scale, a near-miss on one side and a dare on the other.",
-    "WAS": "Both of you have loved through being diminished. Washington stayed quietly true to its colours through a vanished name; Jacksonville got loud about being doubted. The same defiance, quiet on one side and roaring on the other.",
+    "WAS": "Both of you have loved through being diminished. Washington stayed quietly true to its colors through a vanished name; Jacksonville got loud about being doubted. The same defiance, quiet on one side and roaring on the other.",
     "CIN": "Both of you are overlooked markets with a chip. Cincinnati carries it as a score to settle; Jacksonville carries it as local pride turned up loud. If it is resentment more than hometown roar, that is Cincinnati."
   }
 };
