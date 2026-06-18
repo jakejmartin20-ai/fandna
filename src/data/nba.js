@@ -248,6 +248,7 @@ const moduleQuestions = [
 
 const teams = {
   "LAL": {
+    "code3": "LAL", "kitType": "duo", "secondaryColor": "#FDB927",
     "name": "Los Angeles Lakers",
     "emoji": "💜",
     "color": "#552583",
@@ -260,6 +261,7 @@ const teams = {
     ]
   },
   "BOS": {
+    "code3": "BOS", "kitType": "duo", "secondaryColor": "#BA9653",
     "name": "Boston Celtics",
     "emoji": "🍀",
     "color": "#007A33",
@@ -272,6 +274,7 @@ const teams = {
     ]
   },
   "GSW": {
+    "code3": "GSW", "kitType": "duo", "secondaryColor": "#FFC72C",
     "name": "Golden State Warriors",
     "emoji": "🌉",
     "color": "#1D428A",
@@ -284,6 +287,7 @@ const teams = {
     ]
   },
   "CHI": {
+    "code3": "CHI", "kitType": "duo", "secondaryColor": "#000000",
     "name": "Chicago Bulls",
     "emoji": "🐂",
     "color": "#CE1141",
@@ -296,6 +300,7 @@ const teams = {
     ]
   },
   "SAS": {
+    "code3": "SAS", "kitType": "duo", "secondaryColor": "#000000",
     "name": "San Antonio Spurs",
     "emoji": "⚫",
     "color": "#C4CED4",
@@ -308,6 +313,7 @@ const teams = {
     ]
   },
   "OKC": {
+    "code3": "OKC", "kitType": "duo", "secondaryColor": "#EF3B24",
     "name": "Oklahoma City Thunder",
     "emoji": "⚡",
     "color": "#007AC1",
@@ -320,6 +326,7 @@ const teams = {
     ]
   },
   "PHI": {
+    "code3": "PHI", "kitType": "duo", "secondaryColor": "#ED174C",
     "name": "Philadelphia 76ers",
     "emoji": "🔔",
     "color": "#006BB6",
@@ -332,6 +339,7 @@ const teams = {
     ]
   },
   "DEN": {
+    "code3": "DEN", "kitType": "duo", "secondaryColor": "#FEC524",
     "name": "Denver Nuggets",
     "emoji": "⛏️",
     "color": "#0E2240",
@@ -344,6 +352,7 @@ const teams = {
     ]
   },
   "MIL": {
+    "code3": "MIL", "kitType": "duo", "secondaryColor": "#EEE1C6",
     "name": "Milwaukee Bucks",
     "emoji": "🦌",
     "color": "#00471B",
@@ -356,6 +365,7 @@ const teams = {
     ]
   },
   "IND": {
+    "code3": "IND", "kitType": "duo", "secondaryColor": "#FDBB30",
     "name": "Indiana Pacers",
     "emoji": "🏁",
     "color": "#002D62",
@@ -368,6 +378,7 @@ const teams = {
     ]
   },
   "MIN": {
+    "code3": "MIN", "kitType": "duo", "secondaryColor": "#78BE20",
     "name": "Minnesota Timberwolves",
     "emoji": "🐺",
     "color": "#0C2340",
@@ -380,6 +391,7 @@ const teams = {
     ]
   },
   "DET": {
+    "code3": "DET", "kitType": "duo", "secondaryColor": "#006BB6",
     "name": "Detroit Pistons",
     "emoji": "⚙️",
     "color": "#C8102E",
@@ -392,6 +404,7 @@ const teams = {
     ]
   },
   "MEM": {
+    "code3": "MEM", "kitType": "duo", "secondaryColor": "#12173F",
     "name": "Memphis Grizzlies",
     "emoji": "🐻",
     "color": "#5D76A9",
@@ -404,6 +417,7 @@ const teams = {
     ]
   },
   "UTA": {
+    "code3": "UTA", "kitType": "duo", "secondaryColor": "#F9A01B",
     "name": "Utah Jazz",
     "emoji": "🎵",
     "color": "#002B5C",
@@ -416,6 +430,7 @@ const teams = {
     ]
   },
   "POR": {
+    "code3": "POR", "kitType": "duo", "secondaryColor": "#000000",
     "name": "Portland Trail Blazers",
     "emoji": "🌲",
     "color": "#E03A3E",
@@ -428,6 +443,7 @@ const teams = {
     ]
   },
   "NYK": {
+    "code3": "NYK", "kitType": "duo", "secondaryColor": "#006BB6",
     "name": "New York Knicks",
     "emoji": "🗽",
     "color": "#F58426",
@@ -440,6 +456,7 @@ const teams = {
     ]
   },
   "CLE": {
+    "code3": "CLE", "kitType": "duo", "secondaryColor": "#FDBB30",
     "name": "Cleveland Cavaliers",
     "emoji": "⚔️",
     "color": "#860038",
@@ -452,6 +469,7 @@ const teams = {
     ]
   },
   "SAC": {
+    "code3": "SAC", "kitType": "duo", "secondaryColor": "#63727A",
     "name": "Sacramento Kings",
     "emoji": "👑",
     "color": "#5A2D81",
@@ -464,6 +482,7 @@ const teams = {
     ]
   },
   "ATL": {
+    "code3": "ATL", "kitType": "duo", "secondaryColor": "#26282A",
     "name": "Atlanta Hawks",
     "emoji": "🦅",
     "color": "#E03A3E",
@@ -476,6 +495,7 @@ const teams = {
     ]
   },
   "WAS": {
+    "code3": "WAS", "kitType": "duo", "secondaryColor": "#E31837",
     "name": "Washington Wizards",
     "emoji": "🧙",
     "color": "#002B5C",
@@ -488,6 +508,7 @@ const teams = {
     ]
   },
   "BKN": {
+    "code3": "BKN", "kitType": "solid", "secondaryColor": null,
     "name": "Brooklyn Nets",
     "emoji": "🌃",
     "color": "#000000",
@@ -500,6 +521,7 @@ const teams = {
     ]
   },
   "LAC": {
+    "code3": "LAC", "kitType": "duo", "secondaryColor": "#1D428A",
     "name": "Los Angeles Clippers",
     "emoji": "⛵",
     "color": "#C8102E",
@@ -512,6 +534,7 @@ const teams = {
     ]
   },
   "PHX": {
+    "code3": "PHX", "kitType": "duo", "secondaryColor": "#1D1160",
     "name": "Phoenix Suns",
     "emoji": "☀️",
     "color": "#E56020",
@@ -524,6 +547,7 @@ const teams = {
     ]
   },
   "MIA": {
+    "code3": "MIA", "kitType": "duo", "secondaryColor": "#F9A01B",
     "name": "Miami Heat",
     "emoji": "🔥",
     "color": "#98002E",
@@ -536,6 +560,7 @@ const teams = {
     ]
   },
   "DAL": {
+    "code3": "DAL", "kitType": "duo", "secondaryColor": "#B8C4CA",
     "name": "Dallas Mavericks",
     "emoji": "🐎",
     "color": "#00538C",
@@ -548,6 +573,7 @@ const teams = {
     ]
   },
   "HOU": {
+    "code3": "HOU", "kitType": "duo", "secondaryColor": "#000000",
     "name": "Houston Rockets",
     "emoji": "🚀",
     "color": "#CE1141",
@@ -560,6 +586,7 @@ const teams = {
     ]
   },
   "TOR": {
+    "code3": "TOR", "kitType": "duo", "secondaryColor": "#000000",
     "name": "Toronto Raptors",
     "emoji": "🦖",
     "color": "#CE1141",
@@ -572,6 +599,7 @@ const teams = {
     ]
   },
   "ORL": {
+    "code3": "ORL", "kitType": "duo", "secondaryColor": "#000000",
     "name": "Orlando Magic",
     "emoji": "✨",
     "color": "#0077C0",
@@ -584,6 +612,7 @@ const teams = {
     ]
   },
   "NOP": {
+    "code3": "NOP", "kitType": "duo", "secondaryColor": "#C8102E",
     "name": "New Orleans Pelicans",
     "emoji": "🐦",
     "color": "#0C2340",
@@ -596,6 +625,7 @@ const teams = {
     ]
   },
   "CHA": {
+    "code3": "CHA", "kitType": "duo", "secondaryColor": "#1D1160",
     "name": "Charlotte Hornets",
     "emoji": "🐝",
     "color": "#00788C",
@@ -2690,39 +2720,7 @@ const CARD_BADGES = {
   "CHA": "🐝"
 };
 
-const badgeUrls = {
-  "LAL": "https://a.espncdn.com/i/teamlogos/nba/500/lal.png",
-  "BOS": "https://a.espncdn.com/i/teamlogos/nba/500/bos.png",
-  "GSW": "https://a.espncdn.com/i/teamlogos/nba/500/gs.png",
-  "CHI": "https://a.espncdn.com/i/teamlogos/nba/500/chi.png",
-  "SAS": "https://a.espncdn.com/i/teamlogos/nba/500/sa.png",
-  "OKC": "https://a.espncdn.com/i/teamlogos/nba/500/okc.png",
-  "PHI": "https://a.espncdn.com/i/teamlogos/nba/500/phi.png",
-  "DEN": "https://a.espncdn.com/i/teamlogos/nba/500/den.png",
-  "MIL": "https://a.espncdn.com/i/teamlogos/nba/500/mil.png",
-  "IND": "https://a.espncdn.com/i/teamlogos/nba/500/ind.png",
-  "MIN": "https://a.espncdn.com/i/teamlogos/nba/500/min.png",
-  "DET": "https://a.espncdn.com/i/teamlogos/nba/500/det.png",
-  "MEM": "https://a.espncdn.com/i/teamlogos/nba/500/mem.png",
-  "UTA": "https://a.espncdn.com/i/teamlogos/nba/500/utah.png",
-  "POR": "https://a.espncdn.com/i/teamlogos/nba/500/por.png",
-  "NYK": "https://a.espncdn.com/i/teamlogos/nba/500/ny.png",
-  "CLE": "https://a.espncdn.com/i/teamlogos/nba/500/cle.png",
-  "SAC": "https://a.espncdn.com/i/teamlogos/nba/500/sac.png",
-  "ATL": "https://a.espncdn.com/i/teamlogos/nba/500/atl.png",
-  "WAS": "https://a.espncdn.com/i/teamlogos/nba/500/wsh.png",
-  "BKN": "https://a.espncdn.com/i/teamlogos/nba/500/bkn.png",
-  "LAC": "https://a.espncdn.com/i/teamlogos/nba/500/lac.png",
-  "PHX": "https://a.espncdn.com/i/teamlogos/nba/500/phx.png",
-  "MIA": "https://a.espncdn.com/i/teamlogos/nba/500/mia.png",
-  "DAL": "https://a.espncdn.com/i/teamlogos/nba/500/dal.png",
-  "HOU": "https://a.espncdn.com/i/teamlogos/nba/500/hou.png",
-  "TOR": "https://a.espncdn.com/i/teamlogos/nba/500/tor.png",
-  "ORL": "https://a.espncdn.com/i/teamlogos/nba/500/orl.png",
-  "NOP": "https://a.espncdn.com/i/teamlogos/nba/500/no.png",
-  "CHA": "https://a.espncdn.com/i/teamlogos/nba/500/cha.png"
-};
 
 const squadUrls = {};  // no per-team roster links yet; the View squad CTA stays hidden (data-gated)
 
-export { moduleQuestions, teams, archetypes, teamTextColors, archetypeDesc, greats, vitalStats, nearlyGot, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };
+export { moduleQuestions, teams, archetypes, teamTextColors, archetypeDesc, greats, vitalStats, nearlyGot, scoring, teamDims, CARD_BADGES, squadUrls };

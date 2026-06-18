@@ -262,6 +262,7 @@ const moduleQuestions = [
 
 const teams = {
   LI: {
+    "code3": "LIV", "kitType": "solid", "secondaryColor": null,
     name:"Liverpool",         emoji:"🔴", color:"#C8102E",
     tagline:"You sing You'll Never Walk Alone and mean every single word.",
     desc:"There's a version of caring about something that's polite and measured. That's not you. When you're in, you're all the way in, the joy, the suffering, the mythology, all of it. You don't understand fans who stay quiet at the big moments. What's the point of feeling something if you're not going to let it out? The Kop exists because 50,000 people decided that collective feeling, taken to its absolute maximum, is the whole purpose. You already knew that.",
@@ -274,6 +275,7 @@ const teams = {
     kit:"https://store.liverpoolfc.com/kit",
   },
   MC: {
+    "code3": "MCI", "kitType": "solid", "secondaryColor": null,
     name:"Manchester City",   emoji:"🔵", color:"#6CABDD",
     tagline:"You watched a team hit 100 points and asked where the other 14 went.",
     desc:"You don't romanticise struggle. You prepare, you execute, and when it works you move immediately to the next standard. People call this cold, you call it honest. The emotional theatre around sport has never moved you much. What moves you is watching something done as well as it can be done, repeatedly, deliberately. Man City under Guardiola is the closest thing football has to a controlled experiment in sustained excellence. That's what you came for.",
@@ -286,6 +288,7 @@ const teams = {
     kit:"https://www.mancity.com/shop",
   },
   AR: {
+    "code3": "ARS", "kitType": "solid", "secondaryColor": null,
     name:"Arsenal",           emoji:"🔴", color:"#EF0107",
     tagline:"You watched 49 games unbeaten. You've been grading on that curve ever since.",
     desc:"You have strong opinions about how things should be done, not just whether they work, but whether they're right. There's a method you believe in, an aesthetic you hold to, and you've developed a specific kind of frustration reserved for situations where you're clearly correct and the outcome hasn't caught up yet. Other people find this exhausting. You find their indifference to craft exhausting. Arsenal is a club that plays the way you think things should be done, loses occasionally, and absolutely will not apologise for the approach.",
@@ -298,6 +301,7 @@ const teams = {
     kit:"https://arsenaldirect.arsenal.com/Football-Shirts-and-Kit/c/kit",
   },
   EV: {
+    "code3": "EVE", "kitType": "solid", "secondaryColor": null,
     name:"Everton",           emoji:"🔵", color:"#003399",
     tagline:"You loved Goodison most in the seasons it gave you least.",
     desc:"The people you love most are the ones you've stuck with through the hard patches. Not because you couldn't leave, because that's not what loyalty means to you. You absorb things quietly. You don't perform your suffering for an audience. You've been waiting a long time for something and you've made a kind of peace with the waiting that isn't acceptance, exactly, more like stubbornness dressed up as patience. Goodison has held this feeling for over a century. You understand it completely.",
@@ -310,6 +314,7 @@ const teams = {
     kit:"https://evertonfc.com/shop",
   },
   NC: {
+    "code3": "NEW", "kitType": "stripes", "secondaryColor": "#FFFFFF",
     name:"Newcastle United",  emoji:"⚫", color:"#241F20",
     tagline:"The Toon stops on matchday. You've never once found that strange.",
     desc:"There's a difference between a fanbase and a city. Most clubs have the former. Newcastle is the latter, the whole place stops on matchday, every generation has supported them, and the identity of the city and the club are genuinely inseparable in a way that's almost impossible to manufacture. You've lived something like this, a belonging so complete it doesn't need explaining to the people who share it. St James' Park holds 52,000 and it has never once felt big enough to contain what the city brings to it.",
@@ -322,6 +327,7 @@ const teams = {
     kit:"https://shop.nufc.co.uk",
   },
   WH: {
+    "code3": "WHU", "kitType": "sash", "secondaryColor": "#1BB1E7",
     name:"West Ham",          emoji:"⚒️", color:"#7A263A",
     tagline:"You left your heart at Upton Park. You visit it from the London Stadium.",
     desc:"You're proud of where you come from and you don't need to justify that to anyone. But you also carry a specific frustration with institutions, the people who run the things you love making decisions that feel like a betrayal of what those things are supposed to be. The Upton Park move sits in the chest of every long-term West Ham fan in a specific way. You understand that feeling: belonging to something that was more itself before someone decided to make it bigger. You stayed anyway. So did they.",
@@ -334,6 +340,7 @@ const teams = {
     kit:"https://www.whufc.com/shop",
   },
   CP: {
+    "code3": "CRY", "kitType": "stripes", "secondaryColor": "#C41E3A",
     name:"Crystal Palace",    emoji:"🦅", color:"#1B458F",
     tagline:"Everyone underestimates Selhurst until they've stood in it.",
     desc:"The Holmesdale Fanatics have created one of the most genuinely intimidating atmospheres in English football through sheer organised will, tifos, chants, coordinated noise, not because Crystal Palace have trophies to fall back on, but precisely because they don't. You understand this instinct. When what you have is the thing itself, the place, the people, the matchday, you invest in that completely. You don't need history to hand you an identity. You build one, wall by wall, Saturday by Saturday.",
@@ -346,6 +353,7 @@ const teams = {
     kit:"https://shop.cpfc.co.uk",
   },
   MU: {
+    "code3": "MUN", "kitType": "solid", "secondaryColor": null,
     name:"Manchester United",  emoji:"🔴", color:"#DA291C",
     tagline:"You grew up expecting late winners. The 93rd minute still feels like a plan.",
     desc:"Most fans have never had to grieve former greatness from the inside. You have. You were there, or you inherited the expectation from people who were, and you know exactly what this club is supposed to feel like when it works. That knowledge is a gift and a curse. The present era is not it. You are not confused about this. You are not willing to lower the bar. The Fergie years set a standard that embedded itself into the identity of the club permanently, and you carry that weight every single week.",
@@ -358,6 +366,7 @@ const teams = {
     kit:"https://store.manutd.com/en-us/c/jerseys",
   },
   SP: {
+    "code3": "TOT", "kitType": "solid", "secondaryColor": null,
     name:"Tottenham Hotspur", emoji:"⚪", color:"#132257",
     tagline:"You know exactly what Spursy means. You believe anyway.",
     desc:"You've developed a very specific psychological skill: you believe completely in something while also knowing, analytically, that the odds are against you, the history is against you, and you've been here before. This isn't delusion, it's a kind of sophisticated resilience that most people mistake for stubbornness. The dark humour is real. The hope is also real. Somehow both exist at the same time. Spurs fans have had to figure this out across sixty years of almost. You've figured it out too.",
@@ -370,6 +379,7 @@ const teams = {
     kit:"https://store.tottenhamhotspur.com",
   },
   LE: {
+    "code3": "LEI", "kitType": "solid", "secondaryColor": null,
     name:"Leicester City",    emoji:"🦊", color:"#003090",
     tagline:"You watched 5000-1 come in. You've never been fully rational since.",
     desc:"Most people protect themselves from hope. You used to do that too, and then 2016 happened, and something shifted permanently. Not naivety. The opposite of naivety. You saw the actual proof, against every rational calculation, that the universe occasionally ignores the odds. You can never fully go back to not believing after that. You manage your expectations carefully because you've also learned that the miracle doesn't come on demand. But the door is open in a way it can't be closed again.",
@@ -382,6 +392,7 @@ const teams = {
     kit:"https://shop.lcfc.com",
   },
   NF: {
+    "code3": "NFO", "kitType": "solid", "secondaryColor": null,
     name:"Nottingham Forest",  emoji:"🌲", color:"#DD0000",
     tagline:"You won two European Cups against all logic. You've trusted chaos ever since.",
     desc:"You've always been drawn to things that work when they're not supposed to. The underdog that shouldn't have been in the room, the manager who was too eccentric for the job, the season that had no business ending the way it did. Other people want clean trajectories and clear narratives. You want the mythological, the thing that required something close to collective belief to even exist. Brian Clough took a second-division club and won the European Cup twice. Forest's whole identity is built on that impossibility. Yours is too.",
@@ -394,6 +405,7 @@ const teams = {
     kit:"https://shop.nottinghamforest.co.uk",
   },
   BR: {
+    "code3": "BRE", "kitType": "stripes", "secondaryColor": "#FFFFFF",
     name:"Brentford",         emoji:"🐝", color:"#D20000",
     tagline:"You beat parachute payments with a spreadsheet and a set-piece coach.",
     desc:"Griffin Park had a pub on each of its four corners and held 12,000 people. You found your way to Brentford when they were in the third tier, because something about a club that genuinely belongs to its west London community, that hasn't been bought or rebranded or relocated to chase a bigger market, felt right to you. The analytics came later and proved the approach worked. But the identity was already there: small, tight, real, yours. The new stadium has the pubs on the corners too. Some things are worth preserving.",
@@ -406,6 +418,7 @@ const teams = {
     kit:"https://shop.brentfordfc.com/kit/2526-home-kit",
   },
   BH: {
+    "code3": "BHA", "kitType": "stripes", "secondaryColor": "#FFFFFF",
     name:"Brighton",          emoji:"🐦", color:"#0057B8",
     tagline:"You sell your best player every summer and somehow finish higher.",
     desc:"You apply real intelligence to most things you care about and you've found it pays off more often than people expect, partly because most people don't bother. But unlike some people who think carefully and become cold about it, you've stayed genuinely warm. You're still delighted when things go right. Brighton figured out that being smart and being joyful aren't opposites, you can have the careful model and the seaside atmosphere and the European nights and still feel like the whole thing is slightly miraculous. You feel the same way about your own life sometimes.",
@@ -418,6 +431,7 @@ const teams = {
     kit:"https://shop.brightonandhovealbion.com",
   },
   WO: {
+    "code3": "WOL", "kitType": "duo", "secondaryColor": "#231F20",
     name:"Wolves",            emoji:"🐺", color:"#FDB913",
     tagline:"You never needed London's attention. The Black Country glows old gold without it.",
     desc:"Wolverhampton doesn't get written about much unless someone is trying to illustrate decline. Wolves fans don't care. Molineux has been on the same ground since 1889 and three league titles in the 1950s sit quietly in the history, not worn on a sleeve, not constantly referenced, just there. The city's motto is out of darkness cometh light, which is printed in the crest colours without ceremony. You live something like this, the pride that doesn't need broadcasting, the quality that doesn't need external confirmation. The right people already know.",
@@ -430,6 +444,7 @@ const teams = {
     kit:"https://shop.wolves.co.uk",
   },
   FU: {
+    "code3": "FUL", "kitType": "solid", "secondaryColor": null,
     name:"Fulham",            emoji:"⚫", color:"#CC0000",
     tagline:"You watch football beside the Thames and feel zero need to conquer it.",
     desc:"Craven Cottage is the oldest football ground still in use in England. It has an actual cottage on the pitch. The Thames runs behind the Riverside Stand. On a sunny matchday it is, by some margin, the most pleasant place to watch football in London, possibly in England. Fulham fans know this. They're not crowing about it. They're just there, enjoying the thing for what it is, with no particular need for it to be bigger or louder or more important than it is. This requires a confidence that people mistake for lacking ambition. It's actually the opposite.",
@@ -442,6 +457,7 @@ const teams = {
     kit:"https://shop.fulhamfc.com",
   },
   BO: {
+    "code3": "BOU", "kitType": "stripes", "secondaryColor": "#111111",
     name:"Bournemouth",       emoji:"🍒", color:"#DA291C",
     tagline:"Your ground holds 11,000 and your gratitude holds considerably more.",
     desc:"Bournemouth were in League Two in 2012. The Vitality Stadium holds 11,307 people. They have no famous history, no trophy cabinet, no big-city mythology. What they have is a fanbase that took an improbable journey to the Premier League and has not, for a single second, pretended it was supposed to happen or stopped being grateful that it did. You recognise this feeling, the specific joy of being somewhere you weren't expected, enjoying something you didn't fully count on, with no chip on your shoulder about any of it. That's actually quite hard to sustain.",
@@ -455,6 +471,7 @@ const teams = {
   },
 
   AV: {
+    "code3": "AVL", "kitType": "sash", "secondaryColor": "#95BFE5",
     name:"Aston Villa",       emoji:"🦁", color:"#670E36",
     tagline:"You've got a European Cup from '82 and a strong feeling it shouldn't be lonely.",
     desc:"You hold two things at once without contradiction: a deep respect for what was built before you, and a genuine impatience for what comes next. The 1982 European Cup sits in Villa Park's history not as nostalgia but as proof, this club has been at the summit and knows what it takes to get back. The Emery rebuild isn't a rebrand or a restart. It's a sleeping giant waking up and remembering what it is. You've lived this feeling, the moment something that had gone quiet in you starts to come back to life.",
@@ -467,6 +484,7 @@ const teams = {
     kit:"https://shop.avfc.co.uk",
   },
   SU: {
+    "code3": "SUN", "kitType": "stripes", "secondaryColor": "#FFFFFF",
     name:"Sunderland",        emoji:"🐱", color:"#EB172B",
     tagline:"You sold out League One away ends. Your loyalty was never conditional.",
     desc:"The documentary showed it to the world, but Sunderland fans already knew. Administration. League One. 46,000 people filling the Stadium of Light in the third tier of English football not out of habit but out of something that can't be manufactured: the genuine belief that this was worth staying for. You understand this instinct completely. You've stood by something when it was easier not to, not because you were passive, but because leaving would have meant giving up on something true. The promotion back felt earned in a way that nothing bought can replicate.",
@@ -479,6 +497,7 @@ const teams = {
     kit:"https://www.safc.com/shop",
   },
   LU: {
+    "code3": "LEE", "kitType": "solid", "secondaryColor": null,
     name:"Leeds United",      emoji:"⚪", color:"#1D428A",
     tagline:"You feel every match at full volume: total love, total chaos, no regrets.",
     desc:"Revie built something dominant and controversial in the 70s and the fall from it was long and strange. Bielsa arrived and gave the fanbase something rare: a way of playing that made you fall back in love with football itself, not just your club. The promotion in 2020 felt like a religious experience. What followed felt like punishment. Leeds fans exist at maximum intensity because the history demands it, everything at this club happens fully, loudly, with consequence. You recognise this frequency. You don't do half-measures either.",
@@ -491,6 +510,7 @@ const teams = {
     kit:"https://shop.leedsunited.com",
   },
   CH: {
+    "code3": "CHE", "kitType": "solid", "secondaryColor": null,
     name:"Chelsea",           emoji:"🔵", color:"#034694",
     tagline:"Winning arrived all at once for you. Now every season answers to that stretch.",
     desc:"The borough gentrified around the club long before Abramovich arrived, working-class west London absorbed into one of the wealthiest postcodes in the world, Swinging London glamour layered over Stamford Bridge's terraces, the King's Road as the centre of everything fashionable. Then Russian money arrived in 2003, and Chelsea won everything. 19 trophies in 19 years. When the sanctions came and he had to leave, long-term fans chanted his name not out of politics but out of grief, for what the club felt like when everything aligned. You understand this specific feeling: having experienced something at its best, then watching it be taken apart by forces entirely outside your control, and staying anyway because the place and the people are still yours.",
@@ -503,6 +523,7 @@ const teams = {
     kit:"https://store.chelseafc.com/en/chelsea-football-kits",
   },
   IT: {
+    "code3": "IPS", "kitType": "solid", "secondaryColor": null,
     name:"Ipswich Town",      emoji:"🔵", color:"#0044A9",
     tagline:"You chose Portman Road over the glamour an hour down the A12. Every time.",
     desc:"Bobby Robson managed Ipswich for 13 years, won the FA Cup and the UEFA Cup, and turned a small Suffolk market town into a place the whole of English football knew. That story, of a modest club doing extraordinary things through genuine quality and community rootedness, is the soul of Ipswich. Kieran McKenna took them from League One to the Premier League in consecutive seasons without losing that spirit. The fanbase is warm, self-aware about their own scale, and completely unbothered by not being Chelsea or Manchester United. You recognise this posture: the confidence that comes from knowing exactly what you are and finding it genuinely enough.",
@@ -515,6 +536,7 @@ const teams = {
     kit:"https://shop.itfc.co.uk",
   },
   CV: {
+    "code3": "COV", "kitType": "solid", "secondaryColor": null,
     name:"Coventry City",     emoji:"🩵", color:"#59CBEE",
     tagline:"You drove to Birmingham for home games. Loyalty with a motorway exit.",
     desc:"Coventry City played their home games at Birmingham City's ground. Then almost moved to Northampton. Then came back to a half-built stadium in their own city. The fanbase kept showing up through all of it, not because they were naive about what was happening, not because they approved of the decisions, but because the club was theirs and that fact didn't change regardless of what the ownership did with it. This is a very specific kind of love. It isn't blind. It isn't easy. It's the love that stays when leaving would have been completely understandable. The Premier League is the payoff for years of stubborn, complicated belonging.",
@@ -527,6 +549,7 @@ const teams = {
     kit:"https://shop.ccfc.co.uk",
   },
   HU: {
+    "code3": "HUL", "kitType": "stripes", "secondaryColor": "#111111",
     name:"Hull City",        emoji:"🐯", color:"#F18A00",
     tagline:"They said the City in your name was bad for business. Turns out it was the whole point.",
     desc:"There's a kind of person who treats identity as something to defend, not just something they happen to carry. That's you. You can be easy about most of it, the league position, whether anyone outside your city has heard of you, the size of the whole thing. But there is a line, and below it sits what actually makes you you. Hull City fans found that line when an owner decided the word City was bad for business and tried to rename the club for a bigger market. They gathered under one banner, City Till We Die, refused to move, and kept a name that had stood since 1904. You know that instinct without being taught it. The things worth keeping rarely win you anything. You keep them because they are yours, and because the day you trade your name for reach, you stop being the thing in the first place.",
@@ -3034,31 +3057,6 @@ const CARD_BADGES = {LI:null,AR:null,MC:"🚢",EV:"🍬",NC:"🐦‍⬛",MU:"�
 const GENERIC_EMOJI = new Set(["🔴","🔵","⚫","⚪","🩵","🟡","🟢","🟣","🟠","🟤","🔶","🔷"]);
 
 
-const badgeUrls = {
-  LI:"https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
-  MC:"https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
-  AR:"https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
-  EV:"https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg",
-  NC:"https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg",
-  WH:"https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg",
-  CP:"",
-  MU:"https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
-  SP:"https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg",
-  LE:"https://upload.wikimedia.org/wikipedia/en/2/2d/Leicester_City_crest.svg",
-  NF:"https://upload.wikimedia.org/wikipedia/en/e/e5/Nottingham_Forest_F.C._logo.svg",
-  BR:"https://upload.wikimedia.org/wikipedia/en/2/2a/Brentford_FC_crest.svg",
-  BH:"https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_%26_Hove_Albion_logo.svg",
-  WO:"https://upload.wikimedia.org/wikipedia/en/f/fc/Wolverhampton_Wanderers.svg",
-  FU:"https://upload.wikimedia.org/wikipedia/en/e/eb/Fulham_FC_%28shield%29.svg",
-  BO:"https://upload.wikimedia.org/wikipedia/en/e/e5/AFC_Bournemouth_%282013%29.svg",
-  AV:"",
-  SU:"",
-  LU:"https://upload.wikimedia.org/wikipedia/en/5/54/Leeds_United_F.C._logo.svg",
-  CH:"https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg",
-  IT:"https://upload.wikimedia.org/wikipedia/en/4/43/Ipswich_Town.svg",
-  CV:"",
-  HU:"https://en.wikipedia.org/wiki/Special:FilePath/Hull_City_A.F.C._logo.svg",
-};
 
 const squadUrls = {
   LI:"https://www.premierleague.com/en/clubs/14/liverpool/squad",
@@ -3088,4 +3086,4 @@ const squadUrls = {
 
 // ─── HELPERS ──────────────────────────────────────────────────────────────────
 
-export { moduleQuestions, teams, archetypes, teamTextColors, archetypeDesc, greats, vitalStats, nearlyGot, scoring, teamDims, DIM_LABELS, DIM_COLORS, DIM_CODES, DIM_ORDER, CARD_BADGES, GENERIC_EMOJI, badgeUrls, squadUrls };
+export { moduleQuestions, teams, archetypes, teamTextColors, archetypeDesc, greats, vitalStats, nearlyGot, scoring, teamDims, DIM_LABELS, DIM_COLORS, DIM_CODES, DIM_ORDER, CARD_BADGES, GENERIC_EMOJI, squadUrls };
