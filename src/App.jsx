@@ -104,6 +104,7 @@ function AppInner(){
   const teams = D.teams, archetypes = D.archetypes, teamTextColors = D.teamTextColors;
   const greats = D.greats, vitalStats = D.vitalStats, nearlyGot = D.nearlyGot;
   const squadUrls = D.squadUrls;
+  const milestones = D.milestones || {};
 
   // The active question run. First time: 24 core + 14 PL module = 38, in the v1 order.
   // Module-only retake: just the 14 PL questions (the core is already sequenced).
@@ -667,6 +668,17 @@ function AppInner(){
                               <span style={{fontSize:10,color:(teamTextColors[result]||team.color),fontFamily:"'DM Mono',monospace"}}>{g.years}</span>
                             </div>
                             <p style={{margin:0,fontSize:13,color:"#bbb",lineHeight:1.65,fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic"}}>{g.note}</p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {/* Club milestones - fallback for clubs with no all-time greats */}
+                    {!greats[result]&&milestones[result]&&(
+                      <div style={{marginBottom:20}}>
+                        <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:12,marginTop:20}}>Club milestones</div>
+                        {milestones[result].map((m,i)=>(
+                          <div key={i} style={{padding:"10px 0",borderBottom:"1px solid #1e1e2e"}}>
+                            <p style={{margin:0,fontSize:14,color:"#e8e4de",lineHeight:1.65,fontFamily:"'Cormorant Garamond',Georgia,serif"}}>{m}</p>
                           </div>
                         ))}
                       </div>
