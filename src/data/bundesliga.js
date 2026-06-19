@@ -15,7 +15,7 @@ const teams = {
     note:"Thirty-four Bundesliga titles and eleven in a row from 2013 to 2023, the longest championship streak in any of Europe's top five leagues. Making dominance look routine is the hardest thing in the sport. That is very Bayern.",
     kit:"https://fcbayern.com/en/shop" },
 
-  HSV: { code3:"HSV", kitType:"solid", secondaryColor:null, name:"Hamburger SV", emoji:"🦕", color:"#003D7C",
+  HSV: { code3:"HSV", kitType:"sash", secondaryColor:"#E2001A", name:"Hamburger SV", emoji:"🦕", color:"#FFFFFF",
     tagline:"The last dinosaur, ever-present, until the clock stopped and you came back.",
     desc:"You built your sense of yourself on a record nobody else could claim, and when it finally broke it shook you to the foundation. But you did not disappear. You went down, you sat in the second tier longer than a club your size should ever have to, and you climbed back, because the alternative was unthinkable. There is a particular pride in having been permanent, and a particular stubbornness in refusing to let a fall be the end of the story. You carry both.",
     why:[
@@ -26,7 +26,7 @@ const teams = {
     note:"A stadium clock once counted Hamburg's unbroken years in the top flight, the only club never relegated since the Bundesliga began. It stopped in 2018. They returned in 2025, and the clock is the most Hamburg thing there is.",
     kit:"https://shop.hsv.de" },
 
-  VFB: { code3:"VFB", kitType:"solid", secondaryColor:null, name:"VfB Stuttgart", emoji:"⚙️", color:"#FFFFFF",
+  VFB: { code3:"VFB", kitType:"sash", secondaryColor:"#E32219", name:"VfB Stuttgart", emoji:"⚙️", color:"#FFFFFF",
     tagline:"You wear the Brustring like a blueprint and build like an engineer.",
     desc:"You trust the work. Not the lucky bounce or the sudden inspiration, but the slow, deliberate building of something that holds together under pressure. You come from a place that makes the best engines in the world and treats precision as a kind of morality, and it shows in how you support: you want it done properly, improved season on season, with a plan you can see. When it clicks, it is not a fluke. It is the design finally running the way you always believed it could.",
     why:[
@@ -37,7 +37,7 @@ const teams = {
     note:"The red Brustring, the hooped band across the chest, has been Stuttgart's mark for a century. The club sits in the heart of Swabia, home to Mercedes and Porsche, where doing it right is close to a regional creed.",
     kit:"https://shop.vfb.de" },
 
-  BMG: { code3:"BMG", kitType:"solid", secondaryColor:null, name:"Borussia Mönchengladbach", emoji:"🐎", color:"#FFFFFF",
+  BMG: { code3:"BMG", kitType:"duo", secondaryColor:"#1A1A1A", name:"Borussia Mönchengladbach", emoji:"🐎", color:"#FFFFFF",
     tagline:"You were the Foals who ran Bayern close in the seventies, and you still live on it.",
     desc:"Your golden age is behind you, and you would not trade it for anyone else's present. There was a decade when you were the most thrilling team in Europe, young and fearless and beautiful to watch, and that memory is not a weight you carry but a light you steer by. You know exactly who you are because you know exactly who you were. The trophies stopped coming, but the identity never did, and you would rather be a club with a soul and a history than a club with a balance sheet.",
     why:[
@@ -59,7 +59,7 @@ const teams = {
     note:"Werder won four German championships and the 2004 double under Thomas Schaaf, playing some of the most attacking football the league has seen. Lebenslang Gruen-Weiss, lifelong green and white, is the motto, and Bremen fans mean it literally.",
     kit:"https://shop.werder.de" },
 
-  RBL: { code3:"RBL", kitType:"solid", secondaryColor:null, name:"RB Leipzig", emoji:"🐂", color:"#DD0741",
+  RBL: { code3:"RBL", kitType:"duo", secondaryColor:"#DD0741", name:"RB Leipzig", emoji:"🐂", color:"#FFFFFF",
     tagline:"You were built to win fast, and you let the whole country resent you for it.",
     desc:"You were not handed a hundred years of tradition, so you decided to build a winner from scratch and never apologized for the method. You judge things by whether they work, not by how long they have existed, and you have a thick skin about the people who hate you for it. Let them. While the purists write their columns, you keep qualifying for Europe and signing the next young talent before anyone else has noticed him. Results are the argument, and you are comfortable making it.",
     why:[
@@ -114,7 +114,7 @@ const teams = {
     note:"The Suedtribuene, the Yellow Wall, holds nearly 25,000 standing fans, the largest terrace in European football. Dortmund have lost two Champions League finals in agonizing fashion, and the Wall sells out regardless.",
     kit:"https://www.bvbonlineshop.com" },
 
-  SCF: { code3:"SCF", kitType:"solid", secondaryColor:null, name:"SC Freiburg", emoji:"🌲", color:"#E2001A",
+  SCF: { code3:"SCF", kitType:"duo", secondaryColor:"#000000", name:"SC Freiburg", emoji:"🌲", color:"#E2001A",
     tagline:"Your stadium runs on sunlight and your club on patience, and it keeps working.",
     desc:"You do it the right way and you do not make a fuss about it. A small budget, a clear plan, continuity where everyone else churns, and somehow the results keep coming. You are not interested in spending your way to anything or chasing a quick fix that betrays who you are. You would rather build something sustainable and sound and be quietly proud of it than buy a season of noise. In the Black Forest, doing it properly is not a strategy. It is the point.",
     why:[
@@ -136,7 +136,7 @@ const teams = {
     note:"Augsburg is one of Germany's oldest cities, home of the Renaissance Fugger banking dynasty. The club reached the top flight for the first time in 2011 and has mostly stayed there without fuss, which is exactly how its fans like it.",
     kit:"https://shop.fcaugsburg.de" },
 
-  KOE: { code3:"KOE", kitType:"solid", secondaryColor:null, name:"1. FC Köln", emoji:"🐐", color:"#ED1C24",
+  KOE: { code3:"KOE", kitType:"duo", secondaryColor:"#E2261F", name:"1. FC Köln", emoji:"🐐", color:"#FFFFFF",
     tagline:"Up, down, up again, and Hennes the goat watches every fall from the touchline.",
     desc:"You love it precisely because it never stops putting you through it. Promoted, relegated, promoted again, a club that cannot sit still, and you would not swap the chaos for a stable mid-table existence if you could. This is a carnival city, and the football matches the temperament: feel everything, laugh through the worst of it, and turn up again next week regardless. Your loyalty does not depend on the league you are in. It is unconditional, and a little unhinged, and entirely the point.",
     why:[
@@ -158,7 +158,7 @@ const teams = {
     note:"Mainz is a capital of German carnival, and the club's wit is part of its identity. Jürgen Klopp spent his entire playing career here and began his management here, building the gegenpressing style that later conquered Europe.",
     kit:"https://shop.mainz05.de" },
 
-  FCU: { code3:"FCU", kitType:"solid", secondaryColor:null, name:"Union Berlin", emoji:"⚒️", color:"#EE1C25",
+  FCU: { code3:"FCU", kitType:"duo", secondaryColor:"#1A1A1A", name:"Union Berlin", emoji:"⚒️", color:"#EE1C25",
     tagline:"Your fans built the stand with their own hands and gave blood to save the club.",
     desc:"You believe a club belongs to the people who carry it, because yours literally would not exist without them. When there was no money, the supporters donated blood and sold it to fund the club. When the stadium needed rebuilding, they did the labor themselves, tens of thousands of volunteer hours, with their own tools. You do not see yourself as a customer of a football club. You see yourself as a part-owner of something you helped build, in a corner of the east that the rest of the game overlooked, and you are fiercely proud of every bit of it.",
     why:[
@@ -180,7 +180,7 @@ const teams = {
     note:"Spiesen-Elversberg, population around thirteen thousand, is the smallest municipality ever represented in the German top flight. The stadium is named for the Kaiserlinde, a near-century-old lime tree felled by a cyclone in 2015.",
     kit:"https://www.sv-elversberg.de" },
 
-  SCP: { code3:"SCP", kitType:"solid", secondaryColor:null, name:"SC Paderborn", emoji:"🔵", color:"#003F87",
+  SCP: { code3:"SCP", kitType:"duo", secondaryColor:"#000000", name:"SC Paderborn", emoji:"🔵", color:"#003F87",
     tagline:"You yo-yo up from East Westphalia, and nobody outside it ever learns your name.",
     desc:"You are used to being overlooked, and you have stopped minding. A small club from a corner of East Westphalia that most of the country could not find on a map, you go up, you come down, you go up again, and you keep turning up unfashionable and unbothered. You do not have the history or the glamour or the famous names, and you have made your peace with all of it. What you have is a stubborn refusal to know your place, and that has carried you further than anyone outside Paderborn ever expected.",
     why:[
@@ -537,17 +537,17 @@ const moduleQuestions = [
               {label:"Knowing you could lose it all and build again", value:"B"},
               {label:"Never having had much to lose in the first place", value:"C"} ] },
   { id:"bl_q8", type:"binary", phase:"2", question:"Which would you rather be?",
-    options:[ {label:"Dependable and consistent, week in week out", value:"A"},
-              {label:"Thrilling and unpredictable, even if it costs you", value:"B"} ] },
+    left:"Dependable and consistent, week in week out",
+    right:"Thrilling and unpredictable, even if it costs you" },
   { id:"bl_q9", type:"binary", phase:"2", question:"With the things you love, are you...",
-    options:[ {label:"All in no matter what, through every high and low", value:"A"},
-              {label:"All in, as long as it's going somewhere", value:"B"} ] },
+    left:"All in no matter what, through every high and low",
+    right:"All in, as long as it's going somewhere" },
   { id:"bl_q10", type:"binary", phase:"2", question:"Which feels more like you?",
-    options:[ {label:"Quietly first-rate; you don't need it noticed", value:"A"},
-              {label:"If you're that good, you want it seen", value:"B"} ] },
+    left:"Quietly first-rate; you don't need it noticed",
+    right:"If you're that good, you want it seen" },
   { id:"bl_q11", type:"binary", phase:"2", question:"Which fires you up more?",
-    options:[ {label:"Being doubted, and proving them wrong", value:"A"},
-              {label:"Living up to a big name and high expectations", value:"B"} ] },
+    left:"Being doubted, and proving them wrong",
+    right:"Living up to a big name and high expectations" },
   { id:"bl_q12", type:"choice", phase:"2", question:"When something you care about is struggling, your move is...",
     options:[ {label:"Back the people and hold the line", value:"A"},
               {label:"Shake it up - fresh ideas, new blood", value:"B"},
@@ -580,14 +580,14 @@ const scoring = {
   bl_q7: { A: cell(["HSV","BAY","S04","BMG","SVW","KOE"]),
            B: cell(["BVB","VFB","SGE","B04","FCU"]),
            C: cell(["ELV","SCP","TSG","RBL","FCA","M05","SCF"]) },
-  bl_q8: { A: cell(["BAY","VFB","SCF","SVW","FCA","B04","TSG","RBL","M05","SCP"]),
-           B: cell(["BVB","SGE","KOE","HSV","S04","FCU","BMG","ELV"]) },
-  bl_q9: { A: cell(["KOE","S04","FCU","HSV","SVW","BVB","BMG","FCA","ELV","SCP","M05","SCF"]),
-           B: cell(["BAY","RBL","B04","TSG","VFB","SGE"]) },
-  bl_q10:{ A: cell(["SCF","FCA","SVW","M05","TSG","VFB","FCU","BMG","ELV","SCP","B04"]),
-           B: cell(["BAY","RBL","BVB","SGE","KOE","S04","HSV"]) },
-  bl_q11:{ A: cell(["ELV","SCP","FCU","SCF","M05","TSG","FCA","VFB","RBL"]),
-           B: cell(["BAY","BVB","S04","HSV","BMG","KOE","SVW","SGE","B04"]) },
+  bl_q8: { left: cell(["BAY","VFB","SCF","SVW","FCA","B04","TSG","RBL","M05","SCP"]),
+           right: cell(["BVB","SGE","KOE","HSV","S04","FCU","BMG","ELV"]) },
+  bl_q9: { left: cell(["KOE","S04","FCU","HSV","SVW","BVB","BMG","FCA","ELV","SCP","M05","SCF"]),
+           right: cell(["BAY","RBL","B04","TSG","VFB","SGE"]) },
+  bl_q10:{ left: cell(["SCF","FCA","SVW","M05","TSG","VFB","FCU","BMG","ELV","SCP","B04"]),
+           right: cell(["BAY","RBL","BVB","SGE","KOE","S04","HSV"]) },
+  bl_q11:{ left: cell(["ELV","SCP","FCU","SCF","M05","TSG","FCA","VFB","RBL"]),
+           right: cell(["BAY","BVB","S04","HSV","BMG","KOE","SVW","SGE","B04"]) },
   bl_q12:{ A: cell(["SCF","FCA","M05","FCU","SVW","ELV"]),
            B: cell(["RBL","B04","TSG","BAY","VFB","SGE"]),
            C: cell(["S04","KOE","HSV","BVB","BMG","SCP"]) },
