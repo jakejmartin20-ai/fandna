@@ -15,6 +15,9 @@ const REGISTER = {
   NBA: { noun: "team",      worn: "jersey", team: "team", teams: "teams", league: "NBA", leagueAbbr: "NBA",
          tail: "What you cheer for on gameday is up to you.",
          xmHeader: "Already have a team?", xmEscape: "I don't follow an NBA team" },
+  BL:  { noun: "club",      worn: "scarf",  team: "club", teams: "clubs", league: "Bundesliga", leagueAbbr: "BL",
+         tail: "Who you sing for on matchday is up to you.",
+         xmHeader: "Already have a Bundesliga club?", xmEscape: "I don't support a Bundesliga club" },
 };
 function regOf(s){ return REGISTER[s] || REGISTER.PL; }
 

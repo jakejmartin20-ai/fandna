@@ -15,6 +15,7 @@ import { moduleQuestions, scoring as plScoring, teams as plTeams } from "../data
 import { moduleQuestions as nflModule, scoring as nflScoring, teamDims as nflDims } from "../data/nfl";
 import { moduleQuestions as mlbModule, scoring as mlbScoring, teamDims as mlbDims } from "../data/mlb";
 import { moduleQuestions as nbaModule, scoring as nbaScoring, teamDims as nbaDims } from "../data/nba";
+import { moduleQuestions as blModule, scoring as blScoring, teamDims as blDims } from "../data/bundesliga";
 
 // -- Stage 1: core answers -> coreProfile (7 dims, 0-10) -------------------------
 function scoreCore(coreAnswers){
@@ -129,6 +130,7 @@ const FP_ENGINES = {
   NFL: makeFpEngine(nflDims, nflScoring, nflModule),
   MLB: makeFpEngine(mlbDims, mlbScoring, mlbModule),
   NBA: makeFpEngine(nbaDims, nbaScoring, nbaModule),
+  BL: makeFpEngine(blDims, blScoring, blModule),
 };
 
 function fpBase(coreProfile, eng){

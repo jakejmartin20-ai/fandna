@@ -7,6 +7,7 @@ const SPORTS = [
   { code: "NFL", name: "NFL",            live: false, hook: "Which franchise are you?" },
   { code: "MLB", name: "MLB",            live: false, hook: "Which ballclub are you?" },
   { code: "NBA", name: "NBA",            live: false, hook: "Which team are you?" },
+  { code: "BL",  name: "Bundesliga",    live: false, hook: "Which club are you?" },
 ];
 
 function liveSports(){ return SPORTS.filter(s=>s.live); }
