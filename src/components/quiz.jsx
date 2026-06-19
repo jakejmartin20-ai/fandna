@@ -1,4 +1,4 @@
-// FanDNA quiz UI components - BTN + ChoiceQ/BinaryQ/SliderQ/DimBars/BadgeImg, verbatim from App.jsx (Phase 1).
+// FanDNA quiz UI components - BTN + ChoiceQ/BinaryQ/SliderQ/DimBars, verbatim from App.jsx (Phase 1).
 import { useState } from "react";
 import { DIM_LABELS } from "../data/pl";
 
@@ -119,28 +119,4 @@ function DimBars({dims,color}){
   );
 }
 
-// ─── MAIN APP ─────────────────────────────────────────────────────────────────
-
-// BadgeImg: renders img if CDN loads, otherwise emoji. Never both.
-function BadgeImg({url, emoji, size}){
-  const [loaded, setLoaded] = useState(false);
-  const [failed, setFailed] = useState(false);
-  const showImg = url && loaded && !failed;
-  return(
-    <div style={{width:size,height:size,flexShrink:0,display:"flex",alignItems:"center",justifyContent:"center"}}>
-      {!showImg&&(
-        <span style={{fontSize:size*0.72,lineHeight:1}}>{emoji}</span>
-      )}
-      {url&&(
-        <img src={url} width={size} height={size}
-          style={{objectFit:"contain",display:showImg?"block":"none"}}
-          onLoad={()=>setLoaded(true)}
-          onError={()=>setFailed(true)}
-        />
-      )}
-    </div>
-  );
-}
-
-
-export { BTN, ChoiceQ, BinaryQ, SliderQ, DimBars, BadgeImg };
+export { BTN, ChoiceQ, BinaryQ, SliderQ, DimBars };
