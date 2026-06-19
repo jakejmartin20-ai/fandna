@@ -316,6 +316,7 @@ function AppInner(){
     ["Capacity",    vit.capacity],
     ["Kit colours", vit.colors],
     ["Kit maker",   vit.kitMaker],
+    ["Titles",      vit.titles],
     ["Last title",  vit.lastTitle],
   ]).filter(([,v])=>v!=null&&v!=="") : [];
 
