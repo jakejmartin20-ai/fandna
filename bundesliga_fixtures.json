@@ -26,10 +26,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "BAY"
@@ -54,10 +54,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "HSV"
@@ -82,10 +82,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "VFB"
@@ -110,10 +110,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "BMG"
@@ -138,10 +138,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "SVW"
@@ -166,10 +166,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "RBL"
@@ -194,10 +194,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "TSG"
@@ -222,10 +222,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "B04"
@@ -250,10 +250,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "S04"
@@ -278,10 +278,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "BVB"
@@ -306,10 +306,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "SCF"
@@ -334,10 +334,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "FCA"
@@ -362,10 +362,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "KOE"
@@ -390,10 +390,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "M05"
@@ -418,10 +418,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "FCU"
@@ -446,10 +446,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -474,10 +474,10 @@
         "bl_q5": "C",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "SCP"
@@ -502,10 +502,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "SGE"
@@ -548,10 +548,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "BMG"
@@ -592,10 +592,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "M05"
@@ -636,10 +636,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "TSG"
@@ -680,10 +680,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "BAY"
@@ -724,10 +724,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "M05"
@@ -768,10 +768,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "ELV"
@@ -812,10 +812,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "SCP"
@@ -856,10 +856,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "VFB"
@@ -900,10 +900,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "HSV"
@@ -944,10 +944,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "VFB"
@@ -988,10 +988,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "BAY"
@@ -1032,10 +1032,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "BMG"
@@ -1076,10 +1076,10 @@
         "bl_q5": "C",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -1120,10 +1120,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "FCA"
@@ -1164,10 +1164,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "SVW"
@@ -1208,10 +1208,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "BAY"
@@ -1252,10 +1252,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "FCU"
@@ -1296,10 +1296,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -1340,10 +1340,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "BAY"
@@ -1384,10 +1384,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "BVB"
@@ -1428,10 +1428,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "SCP"
@@ -1472,10 +1472,10 @@
         "bl_q5": "C",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "SVW"
@@ -1516,10 +1516,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "VFB"
@@ -1560,10 +1560,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "M05"
@@ -1604,10 +1604,10 @@
         "bl_q5": "C",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "SCP"
@@ -1648,10 +1648,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "SGE"
@@ -1692,10 +1692,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "FCA"
@@ -1736,10 +1736,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "M05"
@@ -1780,10 +1780,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "SGE"
@@ -1824,10 +1824,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "SVW"
@@ -1868,10 +1868,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "HSV"
@@ -1912,10 +1912,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "VFB"
@@ -1956,10 +1956,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "M05"
@@ -2000,10 +2000,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "SGE"
@@ -2044,10 +2044,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -2088,10 +2088,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "SGE"
@@ -2132,10 +2132,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "BMG"
@@ -2176,10 +2176,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "VFB"
@@ -2220,10 +2220,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "M05"
@@ -2264,10 +2264,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -2308,10 +2308,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "HSV"
@@ -2352,10 +2352,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "SCP"
@@ -2396,10 +2396,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "BVB"
@@ -2440,10 +2440,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "ELV"
@@ -2484,10 +2484,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "SVW"
@@ -2528,10 +2528,10 @@
         "bl_q5": "C",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "BMG"
@@ -2572,10 +2572,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "ELV"
@@ -2616,10 +2616,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -2660,10 +2660,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "BMG"
@@ -2704,10 +2704,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "SGE"
@@ -2748,10 +2748,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "ELV"
@@ -2792,10 +2792,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -2836,10 +2836,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -2880,10 +2880,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "BMG"
@@ -2924,10 +2924,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "HSV"
@@ -2968,10 +2968,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "SVW"
@@ -3012,10 +3012,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "M05"
@@ -3056,10 +3056,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "HSV"
@@ -3100,10 +3100,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "SGE"
@@ -3144,10 +3144,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "M05"
@@ -3188,10 +3188,10 @@
         "bl_q5": "C",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "SCP"
@@ -3232,10 +3232,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "M05"
@@ -3276,10 +3276,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "M05"
@@ -3320,10 +3320,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "M05"
@@ -3364,10 +3364,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "VFB"
@@ -3408,10 +3408,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "S04"
@@ -3452,10 +3452,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "SCP"
@@ -3496,10 +3496,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "KOE"
@@ -3540,10 +3540,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "ELV"
@@ -3584,10 +3584,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "SCP"
@@ -3628,10 +3628,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "ELV"
@@ -3672,10 +3672,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "M05"
@@ -3716,10 +3716,10 @@
         "bl_q5": "C",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "BMG"
@@ -3760,10 +3760,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "HSV"
@@ -3804,10 +3804,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -3848,10 +3848,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "B04"
@@ -3892,10 +3892,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "S04"
@@ -3936,10 +3936,10 @@
         "bl_q5": "C",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "TSG"
@@ -3980,10 +3980,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "HSV"
@@ -4024,10 +4024,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "M05"
@@ -4068,10 +4068,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "B04"
@@ -4112,10 +4112,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -4156,10 +4156,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "SCP"
@@ -4200,10 +4200,10 @@
         "bl_q5": "C",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "VFB"
@@ -4244,10 +4244,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "B04"
@@ -4288,10 +4288,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "SVW"
@@ -4332,10 +4332,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "SCP"
@@ -4376,10 +4376,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "RBL"
@@ -4420,10 +4420,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "M05"
@@ -4464,10 +4464,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "ELV"
@@ -4508,10 +4508,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "BAY"
@@ -4552,10 +4552,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "TSG"
@@ -4596,10 +4596,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "ELV"
@@ -4640,10 +4640,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -4684,10 +4684,10 @@
         "bl_q5": "C",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -4728,10 +4728,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -4772,10 +4772,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "ELV"
@@ -4816,10 +4816,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "B04"
@@ -4860,10 +4860,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "SVW"
@@ -4904,10 +4904,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "VFB"
@@ -4948,10 +4948,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "FCU"
@@ -4992,10 +4992,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "M05"
@@ -5036,10 +5036,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "BAY"
@@ -5080,10 +5080,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "BMG"
@@ -5124,10 +5124,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "VFB"
@@ -5168,10 +5168,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "SVW"
@@ -5212,10 +5212,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "VFB"
@@ -5256,10 +5256,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "SGE"
@@ -5300,10 +5300,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "BAY"
@@ -5344,10 +5344,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "M05"
@@ -5388,10 +5388,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "SCP"
@@ -5432,10 +5432,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "M05"
@@ -5476,10 +5476,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "M05"
@@ -5520,10 +5520,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "BMG"
@@ -5564,10 +5564,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "SGE"
@@ -5608,10 +5608,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "B04"
@@ -5652,10 +5652,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "SCP"
@@ -5696,10 +5696,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "SGE"
@@ -5740,10 +5740,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "HSV"
@@ -5784,10 +5784,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "M05"
@@ -5828,10 +5828,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "SVW"
@@ -5872,10 +5872,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "BMG"
@@ -5916,10 +5916,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "M05"
@@ -5960,10 +5960,10 @@
         "bl_q5": "C",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "SCP"
@@ -6004,10 +6004,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "BAY"
@@ -6048,10 +6048,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "SCP"
@@ -6092,10 +6092,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "M05"
@@ -6136,10 +6136,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "SCP"
@@ -6180,10 +6180,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "BVB"
@@ -6224,10 +6224,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "SVW"
@@ -6268,10 +6268,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "FCU"
@@ -6312,10 +6312,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "SGE"
@@ -6356,10 +6356,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "FCA"
@@ -6400,10 +6400,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -6444,10 +6444,10 @@
         "bl_q5": "C",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -6488,10 +6488,10 @@
         "bl_q5": "C",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "SCP"
@@ -6532,10 +6532,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "HSV"
@@ -6576,10 +6576,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "M05"
@@ -6620,10 +6620,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "HSV"
@@ -6664,10 +6664,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "SCP"
@@ -6708,10 +6708,10 @@
         "bl_q5": "C",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "SCP"
@@ -6752,10 +6752,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -6796,10 +6796,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "HSV"
@@ -6840,10 +6840,10 @@
         "bl_q5": "C",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "HSV"
@@ -6884,10 +6884,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "SVW"
@@ -6928,10 +6928,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "SCP"
@@ -6972,10 +6972,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "SCP"
@@ -7016,10 +7016,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "SVW"
@@ -7060,10 +7060,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "SCP"
@@ -7104,10 +7104,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "SCP"
@@ -7148,10 +7148,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "BMG"
@@ -7192,10 +7192,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "M05"
@@ -7236,10 +7236,10 @@
         "bl_q5": "C",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "SGE"
@@ -7280,10 +7280,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "M05"
@@ -7324,10 +7324,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "BAY"
@@ -7368,10 +7368,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "ELV"
@@ -7412,10 +7412,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "VFB"
@@ -7456,10 +7456,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "KOE"
@@ -7500,10 +7500,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "M05"
@@ -7544,10 +7544,10 @@
         "bl_q5": "C",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "SVW"
@@ -7588,10 +7588,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "BMG"
@@ -7632,10 +7632,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "SVW"
@@ -7676,10 +7676,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "HSV"
@@ -7720,10 +7720,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "SVW"
@@ -7764,10 +7764,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "ELV"
@@ -7808,10 +7808,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -7852,10 +7852,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "BMG"
@@ -7896,10 +7896,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "HSV"
@@ -7940,10 +7940,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -7984,10 +7984,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "SCP"
@@ -8028,10 +8028,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "SVW"
@@ -8072,10 +8072,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "SCP"
@@ -8116,10 +8116,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -8160,10 +8160,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "HSV"
@@ -8204,10 +8204,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "HSV"
@@ -8248,10 +8248,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "M05"
@@ -8292,10 +8292,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "HSV"
@@ -8336,10 +8336,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "VFB"
@@ -8380,10 +8380,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "BMG"
@@ -8424,10 +8424,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "SCP"
@@ -8468,10 +8468,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "BMG"
@@ -8512,10 +8512,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "BAY"
@@ -8556,10 +8556,10 @@
         "bl_q5": "A",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "S04"
@@ -8600,10 +8600,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "ELV"
@@ -8644,10 +8644,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "M05"
@@ -8688,10 +8688,10 @@
         "bl_q5": "B",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "M05"
@@ -8732,10 +8732,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "BMG"
@@ -8776,10 +8776,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "ELV"
@@ -8820,10 +8820,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "SVW"
@@ -8864,10 +8864,10 @@
         "bl_q5": "C",
         "bl_q6": "B",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "BAY"
@@ -8908,10 +8908,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "ELV"
@@ -8952,10 +8952,10 @@
         "bl_q5": "A",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "SCP"
@@ -8996,10 +8996,10 @@
         "bl_q5": "A",
         "bl_q6": "C",
         "bl_q7": "A",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "A",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "left",
+        "bl_q11": "left",
         "bl_q12": "C"
       },
       "expected": "M05"
@@ -9040,10 +9040,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "B"
       },
       "expected": "S04"
@@ -9084,10 +9084,10 @@
         "bl_q5": "B",
         "bl_q6": "B",
         "bl_q7": "B",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "B04"
@@ -9128,10 +9128,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -9172,10 +9172,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "C",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "right",
         "bl_q12": "B"
       },
       "expected": "ELV"
@@ -9216,10 +9216,10 @@
         "bl_q5": "C",
         "bl_q6": "C",
         "bl_q7": "C",
-        "bl_q8": "A",
-        "bl_q9": "A",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "left",
+        "bl_q9": "left",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "FCA"
@@ -9260,10 +9260,10 @@
         "bl_q5": "C",
         "bl_q6": "A",
         "bl_q7": "A",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "B",
-        "bl_q11": "A",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "right",
+        "bl_q11": "left",
         "bl_q12": "A"
       },
       "expected": "ELV"
@@ -9304,10 +9304,10 @@
         "bl_q5": "B",
         "bl_q6": "A",
         "bl_q7": "B",
-        "bl_q8": "B",
-        "bl_q9": "B",
-        "bl_q10": "A",
-        "bl_q11": "B",
+        "bl_q8": "right",
+        "bl_q9": "right",
+        "bl_q10": "left",
+        "bl_q11": "right",
         "bl_q12": "C"
       },
       "expected": "ELV"
