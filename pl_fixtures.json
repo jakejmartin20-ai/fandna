@@ -1,15 +1,13 @@
 {
  "meta": {
   "purpose": "PL v1-reproduction gate. Each fixture is a full 38-question answer sheet with the club the live scoring matrix assigns it. Any future change to PL scoring must reproduce every winner here, or the diff must be reviewed and accepted.",
-  "generated": "2026-06-12",
-  "source": "Re-baselined from the live post-identity-coverage-audit PL matrix (src/data/pl.js, identity-coverage faithfulness audit, session 10). 12 cells added; 3 of these 63 fixtures moved to a new accepted winner, all toward the bumped club, zero signature flips.",
-  "engine": "src/lib/scoring.js pickWinner (full core+module on the PL matrix, exact v1 tie-break).",
+  "generated": "2026-06-19",
+  "source": "Re-baselined from the live PL matrix after the personality-fit tie-break change (src/lib/scoring.js, session 37). When the matrix cannot separate the survivors of a tie, the result now goes to the club the taker is closest to in the 7 dims (the fingerprint method) instead of club-list order. 1 of 63 fixtures moved to an accepted winner; zero signature flips. Prior baseline: session 10 identity-coverage audit.",
+  "engine": "src/lib/scoring.js pickWinner (full core+module on the PL matrix; personality-fit final tie-break).",
   "seed": "signatures are deterministic; the 40 random sheets use mulberry32 seed 0xFA9D11A.",
   "count": 63,
   "rebaseline_note": [
-   "rand_02: HU -> CV",
-   "rand_07: SU -> SP",
-   "rand_13: EV -> SP"
+   "rand_25: LI -> MU (true tie LI=MU=35 pts; profile closer to MU)"
   ]
  },
  "fixtures": [
@@ -2241,8 +2239,8 @@
     "pl_q13": "right",
     "pl_q14": "D"
    },
-   "winner": "LI",
-   "winnerName": "Liverpool"
+   "winner": "MU",
+   "winnerName": "Manchester United"
   },
   {
    "id": "rand_26",
