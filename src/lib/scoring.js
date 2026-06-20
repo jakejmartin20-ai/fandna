@@ -11,7 +11,7 @@
 // Future sports (NFL) plug in a lighter nearest-archetype path on the SAME coreProfile.
 
 import { coreQuestions, coreDimScoring, DIM_ORDER } from "../data/core";
-import { moduleQuestions, scoring as plScoring, teams as plTeams } from "../data/pl";
+import { moduleQuestions, scoring as plScoring, teams as plTeams, teamDims as plTeamDims } from "../data/pl";
 import { moduleQuestions as nflModule, scoring as nflScoring, teamDims as nflDims } from "../data/nfl";
 import { moduleQuestions as mlbModule, scoring as mlbScoring, teamDims as mlbDims } from "../data/mlb";
 import { moduleQuestions as nbaModule, scoring as nbaScoring, teamDims as nbaDims } from "../data/nba";
@@ -57,7 +57,24 @@ function maxSingleAward(answers, matrix, teamKeys){
 }
 // Exact v1 winner selection: top total, then most points in the final phase,
 // then strongest single pull, then team iteration order.
-function pickWinner(answers, matrix, teamKeys, idToPhase, finalPhase){
+// Final, point-blind tie-break: when the matrix genuinely can't separate the survivors
+// (total points, final-phase points, and max single award all tied), give the result to the
+// club the taker's coreProfile sits CLOSEST to in the 7 dims (same distance the result shows).
+// Falls back to teamKeys order only when no profile/dims are supplied (read-only/legacy calls).
+function fitTieBreak(cands, dims, coreProfile){
+  if (cands.length===1) return cands[0];
+  if (dims && coreProfile){
+    let best=cands[0], bestD=Infinity;
+    for (const k of cands){
+      const v=dims[k]; if(!v) continue;
+      let d=0; for (const dim of DIM_ORDER){ const diff=(coreProfile[dim]||0)-(v[dim]||0); d+=diff*diff; }
+      if (d<bestD){ bestD=d; best=k; }
+    }
+    return best;
+  }
+  return cands[0];
+}
+function pickWinner(answers, matrix, teamKeys, idToPhase, finalPhase, dims, coreProfile){
   const s = allScores(answers, matrix, teamKeys);
   const max = Math.max(...Object.values(s));
   let tied = Object.keys(s).filter(k=>s[k]===max);
@@ -71,7 +88,8 @@ function pickWinner(answers, matrix, teamKeys, idToPhase, finalPhase){
     else {
       const single = maxSingleAward(answers, matrix, teamKeys);
       const sMax = Math.max(...dtied.map(k=>single[k]));
-      top = dtied.filter(k=>single[k]===sMax)[0];
+      const cands = dtied.filter(k=>single[k]===sMax);
+      top = fitTieBreak(cands, dims, coreProfile);
     }
   }
   return { club: top, scores: s };
@@ -87,7 +105,8 @@ for (const q of moduleQuestions) ID_TO_PHASE[q.id]=q.phase;
 const SPORT_ENGINES = {
   PL: {
     matrix: plScoring,
-    teamKeys: Object.keys(plTeams),          // iteration order = tie-break tail (unchanged)
+    teamKeys: Object.keys(plTeams),          // iteration order = tie-break tail (now last resort only)
+    dims: plTeamDims,                        // 7-dim club vectors for the personality-fit tie-break
     finalPhase: moduleQuestions[moduleQuestions.length-1].phase,
   },
 };
@@ -101,7 +120,7 @@ function scoreModule(sport, input){
   if (!eng) throw new Error("No scoring engine for sport: "+sport);
   // PL (and any full-fidelity sport) scores the full answer set on its own matrix.
   const answers = { ...(input.coreAnswers||{}), ...(input.moduleAnswers||{}) };
-  return pickWinner(answers, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase);
+  return pickWinner(answers, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase, eng.dims, input.coreProfile);
 }
 
 // -- Fingerprint stage-2 (NFL, MLB): dimensional fingerprint base + module-point tiebreakers ----
@@ -386,7 +405,7 @@ function matchEvidence(sport, input){
 
   const eng = SPORT_ENGINES.PL;
   const all = { ...(input.coreAnswers || {}), ...(input.moduleAnswers || {}) };
-  const club = pickWinner(all, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase).club;
+  const club = pickWinner(all, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase, eng.dims, input.coreProfile).club;
 
   // Every question's answer-option set, read straight from the scoring tables.
   const optionSpace = [];
@@ -402,7 +421,7 @@ function matchEvidence(sport, input){
     for (const alt of opts){
       if (alt === all[qId]) continue;
       const perturbed = { ...all, [qId]: alt };
-      if (pickWinner(perturbed, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase).club !== club){ flips = true; break; }
+      if (pickWinner(perturbed, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase, eng.dims, input.coreProfile).club !== club){ flips = true; break; }
     }
     locks.push(!flips);
     if (!flips) safe++;
@@ -455,8 +474,8 @@ function distinctiveTips(all, club, matrix, teamKeys, n){
 // Greedy: from the current answers, change one not-yet-changed question at a time to its most
 // target-favouring option, taking a winning move as soon as one exists. Returns the number of
 // changes to land `target`, or null if even changing every answer never lands it.
-function changeToLand(all, target, eng){
-  if (pickWinner(all, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase).club === target) return 0;
+function changeToLand(all, target, eng, coreProfile){
+  if (pickWinner(all, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase, eng.dims, coreProfile).club === target) return 0;
   const qIds = Object.keys(eng.matrix);
   let cur = { ...all };
   const changed = new Set();
@@ -469,7 +488,7 @@ function changeToLand(all, target, eng){
       for (const o of opts){ const p = eng.matrix[q][o]?.[target] || 0; if (p > bp){ bp = p; bestOpt = o; } }
       if (bestOpt === cur[q]) continue;
       const trial = { ...cur, [q]: bestOpt };
-      const { club, scores } = pickWinner(trial, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase);
+      const { club, scores } = pickWinner(trial, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase, eng.dims, coreProfile);
       const wins = club === target;
       let comp = -Infinity; for (const c of eng.teamKeys){ if (c !== target && (scores[c] || 0) > comp) comp = scores[c] || 0; }
       const margin = (scores[target] || 0) - comp;
@@ -489,7 +508,7 @@ function crossMatch(sport, input, supportedClub){
   if (sport !== "PL") return null;
   const eng = SPORT_ENGINES.PL;
   const all = { ...(input.coreAnswers || {}), ...(input.moduleAnswers || {}) };
-  const { club: matched, scores } = pickWinner(all, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase);
+  const { club: matched, scores } = pickWinner(all, eng.matrix, eng.teamKeys, ID_TO_PHASE, eng.finalPhase, eng.dims, input.coreProfile);
   if (!supportedClub || scores[supportedClub] === undefined){
     return { sport, matched, supported: supportedClub || null, isMatch: false, rank: null, totalClubs: eng.teamKeys.length, totalAnswers: Object.keys(eng.matrix).length, changeToLand: null, towardSupported: [], towardMatch: [] };
   }
@@ -503,7 +522,7 @@ function crossMatch(sport, input, supportedClub){
   return {
     sport, matched, supported: supportedClub, isMatch,
     rank, totalClubs: eng.teamKeys.length, totalAnswers: Object.keys(eng.matrix).length,
-    changeToLand: isMatch ? 0 : changeToLand(all, supportedClub, eng),
+    changeToLand: isMatch ? 0 : changeToLand(all, supportedClub, eng, input.coreProfile),
     towardSupported: _xtPL.A,
     towardMatch:     _xtPL.B,
   };
