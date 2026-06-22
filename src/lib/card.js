@@ -9,6 +9,9 @@ import { REGISTER } from "./register";
 function hexToRgb(h){h=h.replace("#","");return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
 function relLum(rgb){const f=v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);};return 0.2126*f(rgb[0])+0.7152*f(rgb[1])+0.0722*f(rgb[2]);}
 function onColorText(hex){return relLum(hexToRgb(hex))>0.5?"#0c0c12":"#f4f1ec";}
+// Does this disc color blend into the cream ring? (mirrors the on-screen ClubMark, which
+// auto-outlines pale fields; the share card is a separate path that lacked this until now.)
+function ringBlend(hex){const ringL=relLum(hexToRgb("#f7f4ef")),a=relLum(hexToRgb(hex));const hi=Math.max(a,ringL)+0.05,lo=Math.min(a,ringL)+0.05;return hi/lo<2.5;}
 function roundRectPath(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
 function trackedWidth(ctx,s,tr){let w=0;for(const ch of s)w+=ctx.measureText(ch).width+tr;return s.length?w-tr:0;}
 function drawTracked(ctx,s,cxc,y,font,fill,tr){ctx.save();ctx.font=font;ctx.fillStyle=fill;ctx.textAlign="left";const w=trackedWidth(ctx,s,tr);let xx=cxc-w/2;for(const ch of s){ctx.fillText(ch,xx,y);xx+=ctx.measureText(ch).width+tr;}ctx.restore();}
@@ -35,6 +38,7 @@ async function generateShareCard(sport, key, genome, coreProfile){
   const R=82,ry=258;
   x.beginPath();x.arc(cx,ry,R+5,0,Math.PI*2);x.fillStyle="#f7f4ef";x.fill();
   x.beginPath();x.arc(cx,ry,R,0,Math.PI*2);x.fillStyle=col;x.fill();
+  if(ringBlend(col)){x.beginPath();x.arc(cx,ry,R-1.5,0,Math.PI*2);x.lineWidth=3;x.strokeStyle="#8b8b99";x.stroke();}
   const badge=CARD_BADGES[key];
   x.textBaseline="middle";
   if(badge&&!GENERIC_EMOJI.has(badge)){
