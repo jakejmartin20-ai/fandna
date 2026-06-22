@@ -18,6 +18,9 @@ const REGISTER = {
   BL:  { noun: "club",      worn: "scarf",  team: "club", teams: "clubs", league: "Bundesliga", leagueAbbr: "BL",
          tail: "Who you sing for on matchday is up to you.",
          xmHeader: "Already have a Bundesliga club?", xmEscape: "I don't support a Bundesliga club" },
+  LL:  { noun: "club",      worn: "shirt",  team: "club", teams: "clubs", league: "La Liga", leagueAbbr: "LL",
+         tail: "Who you live for, win or lose, is up to you.",
+         xmHeader: "Already have a La Liga club?", xmEscape: "I don't support a La Liga club" },
 };
 function regOf(s){ return REGISTER[s] || REGISTER.PL; }
 
