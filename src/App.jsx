@@ -93,11 +93,13 @@ function AppInner(){
   const mlbUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("mlb");
   const nbaUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("nba");
   const blUnlocked  = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("bl");
+  const llUnlocked  = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("ll");
   const sportsList = SPORTS.map(s=>
     s.code==="NFL" ? {...s, live: s.live||nflUnlocked} :
     s.code==="MLB" ? {...s, live: s.live||mlbUnlocked} :
     s.code==="NBA" ? {...s, live: s.live||nbaUnlocked} :
-    s.code==="BL"  ? {...s, live: s.live||blUnlocked} : s);
+    s.code==="BL"  ? {...s, live: s.live||blUnlocked} :
+    s.code==="LL"  ? {...s, live: s.live||llUnlocked} : s);
 
   // Active sport's data, bound to the same names the screens already use, so the result
   // screen and quiz read the right sport with no other changes. PL behaves exactly as before.
@@ -338,7 +340,7 @@ function AppInner(){
   }).join(" · ");
   const coreSequenced = Object.keys(genome).length>0;
   const coreCount = coreQuestions.length;
-  const moduleCounts = { PL: SPORT_DATA.PL.moduleQuestions.length, NFL: SPORT_DATA.NFL.moduleQuestions.length, MLB: SPORT_DATA.MLB.moduleQuestions.length, NBA: SPORT_DATA.NBA.moduleQuestions.length, BL: SPORT_DATA.BL.moduleQuestions.length };
+  const moduleCounts = { PL: SPORT_DATA.PL.moduleQuestions.length, NFL: SPORT_DATA.NFL.moduleQuestions.length, MLB: SPORT_DATA.MLB.moduleQuestions.length, NBA: SPORT_DATA.NBA.moduleQuestions.length, BL: SPORT_DATA.BL.moduleQuestions.length, LL: SPORT_DATA.LL.moduleQuestions.length };
 
   // Build the share card (the user's core feeds the strip), then either open the share sheet
   // or save the image. Download always saves. Both fall back to copying the caption.
