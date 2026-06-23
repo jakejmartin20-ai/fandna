@@ -1,6 +1,6 @@
 {
   "sport": "BL",
-  "note": "FanDNA Bundesliga regression baseline. Replay through real scoreCore + scoreModule; expected club must not change unless intentionally re-baselined. ideal[] use coreProfile directly (reachability lock); random[] are seeded full answer-sheets.",
+  "note": "FanDNA Bundesliga regression baseline. Replay through real scoreCore + scoreModule; expected club must not change unless intentionally re-baselined. ideal[] use coreProfile directly (reachability lock); random[] are seeded full answer-sheets | s42: re-baselined after TSG ambition 6->4 and RBL community/rootedness 2->3 (magnet calibration); 2 random flips (seeds 3,92) off TSG, 2 ideal coreProfiles re-pinned.",
   "engine": {
     "clubs": 18,
     "moduleQuestions": 12
@@ -154,9 +154,9 @@
         "emotion": 5,
         "ambition": 9,
         "process": 9,
-        "community": 2,
+        "community": 3,
         "chaos": 3,
-        "rootedness": 2
+        "rootedness": 3
       },
       "moduleAnswers": {
         "bl_q1": "B",
@@ -180,7 +180,7 @@
       "coreProfile": {
         "loyalty": 5,
         "emotion": 4,
-        "ambition": 6,
+        "ambition": 4,
         "process": 8,
         "community": 3,
         "chaos": 3,
@@ -642,7 +642,7 @@
         "bl_q11": "right",
         "bl_q12": "B"
       },
-      "expected": "TSG"
+      "expected": "BMG"
     },
     {
       "seed": 4,
@@ -4558,7 +4558,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "TSG"
+      "expected": "RBL"
     },
     {
       "seed": 93,
