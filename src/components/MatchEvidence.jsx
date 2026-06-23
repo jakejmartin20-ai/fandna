@@ -81,8 +81,9 @@ export function MatchEvidence({ evidence, clubName, color = "#b8567a", noun = "c
         <p style={{fontSize:14,color:"#c8c4be",lineHeight:1.55,margin:"14px 0 0"}}>{verdictLine(safe, total, club)}</p>
       </div>
 
-      {/* WHAT TIPPED IT, the texture */}
-      {tips.length > 0 && (
+      {/* WHAT TIPPED IT, the texture. When nothing stands out (a genuine broad match), a strong
+          line says so on purpose, so the result never reads as bare. */}
+      {tips.length > 0 ? (
         <div style={{background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:14,padding:"18px 16px",marginTop:16}}>
           <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#7878a0",marginBottom:4}}>What tipped it</div>
           <p style={{fontSize:12.5,color:"#9696b4",lineHeight:1.45,margin:"0 0 12px"}}>The answers that pulled you hardest toward {club}.</p>
@@ -95,6 +96,11 @@ export function MatchEvidence({ evidence, clubName, color = "#b8567a", noun = "c
               </div>
             </div>
           ))}
+        </div>
+      ) : (
+        <div style={{background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:14,padding:"18px 16px",marginTop:16}}>
+          <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#7878a0",marginBottom:10}}>Why this lands</div>
+          <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:19,lineHeight:1.45,color:"#e4ddd4",margin:0}}>This match runs deeper than any one answer. {club} is where your whole core settles, not a {noun} one choice tipped you into. A broad match like this is its own kind of strong.</p>
         </div>
       )}
 
