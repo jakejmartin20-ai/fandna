@@ -1,6 +1,6 @@
 {
   "sport": "BL",
-  "note": "FanDNA Bundesliga regression baseline. Replay through real scoreCore + scoreModule; expected club must not change unless intentionally re-baselined. ideal[] use coreProfile directly (reachability lock); random[] are seeded full answer-sheets | s42: re-baselined after TSG ambition 6->4 and RBL community/rootedness 2->3 (magnet calibration); 2 random flips (seeds 3,92) off TSG, 2 ideal coreProfiles re-pinned.",
+  "note": "FanDNA Bundesliga regression baseline. Replay through real scoreCore + scoreModule; expected club must not change unless intentionally re-baselined. ideal[] use coreProfile directly (reachability lock); random[] are seeded full answer-sheets | s42: re-baselined after TSG ambition 6->4 and RBL community/rootedness 2->3 (magnet calibration); 2 random flips (seeds 3,92) off TSG, 2 ideal coreProfiles re-pinned. | s49: re-baselined after Bayern bl_q6 re-key (B->C); 12 random flips (onto BAY seeds 65,86,157; off BAY seeds 4,11,16,103,109,125,155,182,190); BAY ideal sheet bl_q6 B->C (still self-lands).",
   "engine": {
     "clubs": 18,
     "moduleQuestions": 12
@@ -24,7 +24,7 @@
         "bl_q3": "B",
         "bl_q4": "B",
         "bl_q5": "C",
-        "bl_q6": "B",
+        "bl_q6": "C",
         "bl_q7": "A",
         "bl_q8": "left",
         "bl_q9": "right",
@@ -686,7 +686,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "BAY"
+      "expected": "BMG"
     },
     {
       "seed": 5,
@@ -994,7 +994,7 @@
         "bl_q11": "right",
         "bl_q12": "B"
       },
-      "expected": "BAY"
+      "expected": "BMG"
     },
     {
       "seed": 12,
@@ -1214,7 +1214,7 @@
         "bl_q11": "right",
         "bl_q12": "B"
       },
-      "expected": "BAY"
+      "expected": "BMG"
     },
     {
       "seed": 17,
@@ -3370,7 +3370,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "VFB"
+      "expected": "BAY"
     },
     {
       "seed": 66,
@@ -4294,7 +4294,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "SVW"
+      "expected": "BAY"
     },
     {
       "seed": 87,
@@ -5042,7 +5042,7 @@
         "bl_q11": "right",
         "bl_q12": "B"
       },
-      "expected": "BAY"
+      "expected": "BMG"
     },
     {
       "seed": 104,
@@ -5306,7 +5306,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "BAY"
+      "expected": "RBL"
     },
     {
       "seed": 110,
@@ -6010,7 +6010,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "BAY"
+      "expected": "BMG"
     },
     {
       "seed": 126,
@@ -7330,7 +7330,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "BAY"
+      "expected": "RBL"
     },
     {
       "seed": 156,
@@ -7418,7 +7418,7 @@
         "bl_q11": "right",
         "bl_q12": "B"
       },
-      "expected": "VFB"
+      "expected": "BAY"
     },
     {
       "seed": 158,
@@ -8518,7 +8518,7 @@
         "bl_q11": "right",
         "bl_q12": "A"
       },
-      "expected": "BAY"
+      "expected": "M05"
     },
     {
       "seed": 183,
@@ -8870,7 +8870,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "BAY"
+      "expected": "VFB"
     },
     {
       "seed": 191,
