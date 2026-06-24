@@ -548,6 +548,11 @@ function AppInner(){
                 <CoreStrip dims={coreProfile||D.teamDims[result]} compact/>
               </div>
 
+              {/* Universal genome line: this club is how the user's core shows up in THIS league.
+                  Display-only, templated on team.name + the register's articled league phrase
+                  (regOf().leagueIn) so it reads true on every league. Periods only, no em dashes. */}
+              <div style={{padding:"0 16px 14px",textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:13,fontStyle:"italic",color:"#9a9ac4",lineHeight:1.45}}>{team.name} is how your genome shows up in {regOf(activeSport).leagueIn}.</div>
+
               <div style={{padding:"0 16px 16px"}}>
                 <div style={{textAlign:"center",fontFamily:"'DM Mono',monospace",fontSize:11,color:"#c9c5cf",letterSpacing:"0.05em",marginBottom:4,wordBreak:"break-word"}}>{shareString}</div>
                 <div style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:14,color:"#9898b8",fontStyle:"italic"}}>Which {regOf(activeSport).noun} are you, really?</div>
