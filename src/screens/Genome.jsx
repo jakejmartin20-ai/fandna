@@ -78,6 +78,15 @@ export function GenomeHome({
     else { copyShare(); }
   }
 
+  // ---- cross-league invitation: reframe the blanked genome string as an earned next step.
+  // Reads only from the live-resolved manifest + the saved genome (no new plumbing). Shows when
+  // the core is sequenced, at least one live league is done, and at least one live league remains.
+  const liveList    = sports.filter(s=>s.live);
+  const takenLive   = liveList.filter(s=>{ const r=genome[s.code]; return !!(r&&r.club); });
+  const untakenLive = liveList.filter(s=>{ const r=genome[s.code]; return !(r&&r.club); });
+  const showInvite  = coreSequenced && takenLive.length>0 && untakenLive.length>0;
+  const oneLeft     = untakenLive.length===1;
+
   // ---- one strand row (reused inside both family panels) ----
   function Strand({ s, last }){
     const r = genome[s.code];
@@ -249,6 +258,25 @@ export function GenomeHome({
               <span onClick={shareLink} style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#7878a0",letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer"}}>Share</span>
             </span>
           </div>
+
+          {/* Cross-league invitation: the blank slots in the string are an earned next step, not a gap.
+              Names the next league when exactly one remains; otherwise "another league". User-facing: no em dashes. */}
+          {showInvite&&(
+            <div style={{marginTop:13,paddingTop:12,borderTop:"1px solid #222230",textAlign:"center"}}>
+              <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:13,fontStyle:"italic",color:"#9a9ac4",lineHeight:1.5}}>
+                You've sequenced {takenLive.length} of your {liveList.length} leagues.
+              </div>
+              {oneLeft?(
+                <div onClick={()=>onStartSport(untakenLive[0].code)} style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:13,fontStyle:"italic",color:PERI,lineHeight:1.5,cursor:"pointer"}}>
+                  Take {untakenLive[0].name} to fill in your genome.
+                </div>
+              ):(
+                <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:13,fontStyle:"italic",color:"#9a9ac4",lineHeight:1.5}}>
+                  Take another league to fill in your genome.
+                </div>
+              )}
+            </div>
+          )}
         </div>
       )}
 
