@@ -2323,7 +2323,7 @@ const scoring = {
     },
     "D": {
       "LI": 2,
-      "MU": 2,
+      "MU": 3,
       "EV": 2,
       "NF": 2,
       "SP": 1,
@@ -2332,7 +2332,7 @@ const scoring = {
     "E": {
       "MC": 3,
       "LI": 2,
-      "MU": 1,
+      "MU": 2,
       "CH": 3
     }
   },
@@ -2817,6 +2817,8 @@ const scoring = {
       "MC": 1
     },
     "B": {
+      "CP": 2,
+      "EV": 3,
       "WH": 3,
       "CV": 3,
       "SU": 3,
@@ -2846,6 +2848,7 @@ const scoring = {
   },
   "pl_q9": {
     "left": {
+      "EV": 2,
       "CP": 3,
       "WH": 3,
       "CV": 3,
@@ -2881,6 +2884,8 @@ const scoring = {
       "AR": 1
     },
     "C": {
+      "CP": 2,
+      "EV": 2,
       "CV": 4,
       "WH": 2,
       "SU": 2,
@@ -2926,6 +2931,7 @@ const scoring = {
   },
   "pl_q12": {
     "A": {
+      "CP": 2,
       "LE": 3,
       "SU": 3,
       "CV": 2,
@@ -2992,6 +2998,7 @@ const scoring = {
       "NC": 1
     },
     "B": {
+      "CP": 2,
       "SP": 3,
       "SU": 3,
       "CV": 3,
@@ -3006,6 +3013,7 @@ const scoring = {
       "BH": 1
     },
     "D": {
+      "MU": 1,
       "AV": 3,
       "CH": 3,
       "AR": 2,
