@@ -2328,7 +2328,7 @@ const scoring = {
   "mlb_q10": {
     "A": {
       "CIN": 2,
-      "NYY": 2,
+      "NYY": 3,
       "SF": 2
     },
     "B": {
