@@ -1,6 +1,6 @@
 {
   "sport": "LL",
-  "note": "FanDNA La Liga regression baseline. Replay through real scoreCore + scoreModule; expected club must not change unless intentionally re-baselined. ideal[] use coreProfile directly (reachability lock); random[] are seeded full answer-sheets.",
+  "note": "FanDNA La Liga regression baseline. Replay through real scoreCore + scoreModule; expected club must not change unless intentionally re-baselined. ideal[] use coreProfile directly (reachability lock); random[] are seeded full answer-sheets. Re-baselined after the La Liga marquee fix (Barca/Atletico +1 on six distinctive cells); 19 random sheets re-pointed, 0 ideal.",
   "engine": {
     "clubs": 20,
     "moduleQuestions": 12
@@ -1315,7 +1315,7 @@
         "ll_q11": "D",
         "ll_q12": "right"
       },
-      "expected": "RAY"
+      "expected": "BAR"
     },
     {
       "seed": 18,
@@ -1711,7 +1711,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "BAR"
+      "expected": "ATM"
     },
     {
       "seed": 27,
@@ -1799,7 +1799,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "VIL"
+      "expected": "ATM"
     },
     {
       "seed": 29,
@@ -1843,7 +1843,7 @@
         "ll_q11": "D",
         "ll_q12": "left"
       },
-      "expected": "ALA"
+      "expected": "ATM"
     },
     {
       "seed": 30,
@@ -1931,7 +1931,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "DEP"
+      "expected": "BAR"
     },
     {
       "seed": 32,
@@ -2811,7 +2811,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "OSA"
+      "expected": "ATM"
     },
     {
       "seed": 52,
@@ -4307,7 +4307,7 @@
         "ll_q11": "B",
         "ll_q12": "left"
       },
-      "expected": "CEL"
+      "expected": "ATM"
     },
     {
       "seed": 86,
@@ -4439,7 +4439,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "OSA"
+      "expected": "BAR"
     },
     {
       "seed": 89,
@@ -4967,7 +4967,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "VIL"
+      "expected": "ATM"
     },
     {
       "seed": 101,
@@ -5803,7 +5803,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "RMA"
+      "expected": "ATM"
     },
     {
       "seed": 120,
@@ -5847,7 +5847,7 @@
         "ll_q11": "D",
         "ll_q12": "right"
       },
-      "expected": "RMA"
+      "expected": "ATM"
     },
     {
       "seed": 121,
@@ -5979,7 +5979,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "VAL"
+      "expected": "BAR"
     },
     {
       "seed": 124,
@@ -7167,7 +7167,7 @@
         "ll_q11": "C",
         "ll_q12": "left"
       },
-      "expected": "ALA"
+      "expected": "ATM"
     },
     {
       "seed": 151,
@@ -7519,7 +7519,7 @@
         "ll_q11": "D",
         "ll_q12": "left"
       },
-      "expected": "OSA"
+      "expected": "BAR"
     },
     {
       "seed": 159,
@@ -7607,7 +7607,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "VAL"
+      "expected": "ATM"
     },
     {
       "seed": 161,
@@ -7871,7 +7871,7 @@
         "ll_q11": "C",
         "ll_q12": "left"
       },
-      "expected": "CEL"
+      "expected": "ATM"
     },
     {
       "seed": 167,
@@ -8091,7 +8091,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "VAL"
+      "expected": "BAR"
     },
     {
       "seed": 172,
@@ -8311,7 +8311,7 @@
         "ll_q11": "D",
         "ll_q12": "left"
       },
-      "expected": "RAC"
+      "expected": "ATM"
     },
     {
       "seed": 177,
@@ -9235,7 +9235,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "OSA"
+      "expected": "BAR"
     },
     {
       "seed": 198,
