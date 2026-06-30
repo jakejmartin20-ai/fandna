@@ -125,25 +125,21 @@ export function GenomeHome({
     }
 
     if(s.live){
-      const count = coreSequenced ? mod : (coreCount+mod);
       return(
         <button onClick={()=>onStartSport(s.code)}
           style={{
-            display:"block",textAlign:"left",cursor:"pointer",width:"100%",marginBottom:mb,background:"#1b1b2a",
-            border:"1px dashed #6a6a90",borderRadius:10,padding:"12px 14px",
-            animation:"strandPulse 2.4s ease-in-out infinite",
+            display:"block",textAlign:"left",cursor:"pointer",width:"100%",marginBottom:mb,background:"#16161f",
+            border:"1px solid #242433",borderRadius:10,padding:"12px 14px",transition:"border-color .15s ease",
           }}
-          onMouseEnter={e=>{e.currentTarget.style.borderColor="#9090b8";}}
-          onMouseLeave={e=>{e.currentTarget.style.borderColor="#6a6a90";}}
+          onMouseEnter={e=>{e.currentTarget.style.borderColor="#3a3a50";}}
+          onMouseLeave={e=>{e.currentTarget.style.borderColor="#242433";}}
         >
           <div style={{display:"flex",alignItems:"center",gap:12}}>
-            <div style={{width:42,height:42,borderRadius:"50%",flexShrink:0,border:"1px dashed #6a6a90",display:"flex",alignItems:"center",justifyContent:"center",fontSize:22,color:"#9898c8",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>?</div>
+            <div style={{width:46,height:46,borderRadius:"50%",flexShrink:0,border:"1px dashed #565674",display:"flex",alignItems:"center",justifyContent:"center",fontSize:22,color:"#8a8ab0",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>?</div>
             <div style={{flex:1,minWidth:0}}>
-              <div style={{fontSize:10,color:"#9a9ac4",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:2}}>{s.name}</div>
-              <div style={{fontSize:"clamp(17px,4.3vw,20px)",color:"#eceaf4",fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:400,lineHeight:1.2}}>{s.hook||"Which one are you?"}</div>
-              <div style={{fontSize:11,color:"#9a9ac4",fontFamily:"'DM Mono',monospace",letterSpacing:"0.05em",marginTop:3}}>{count} questions</div>
+              <div style={{fontSize:10,color:"#9a9ac4",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:3}}>{s.name}</div>
+              <div style={{fontSize:"clamp(18px,4.6vw,21px)",color:"#c9b27a",fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:400,lineHeight:1.1}}>Map it &rarr;</div>
             </div>
-            <span style={{background:"#7a7aa8",borderRadius:5,padding:"6px 13px",color:"#16161e",fontSize:10,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",flexShrink:0,fontWeight:500}}>start</span>
           </div>
         </button>
       );
@@ -174,12 +170,8 @@ export function GenomeHome({
     const maxH = MAX_ROWS*ROW_PX + PEEK;
 
     return(
-      <div style={{position:"relative",marginBottom:last?0:16}}>
-        {/* bough off the backbone into this panel header */}
-        <div style={{position:"absolute",left:-15,top:22,width:15,height:2,background:RAIL}}/>
-        <div style={{position:"absolute",left:-19,top:18,width:9,height:9,borderRadius:"50%",background:RAIL,boxShadow:`0 0 6px ${RAIL}99`}}/>
-
-        <div style={{position:"relative",background:PBG,border:`1px solid ${PBD}`,borderLeft:`3px solid ${RAIL}`,borderRadius:"0 12px 12px 0",overflow:"hidden"}}>
+      <div style={{marginBottom:last?0:16}}>
+        <div style={{position:"relative",background:PBG,border:`1px solid ${PBD}`,borderRadius:12,overflow:"hidden"}}>
           {/* header */}
           <div style={{display:"flex",alignItems:"center",gap:9,padding:"13px 15px 11px",borderBottom:`1px solid ${PBD}`}}>
             <FamilyGlyph kind={fam.glyph}/>
@@ -260,7 +252,6 @@ export function GenomeHome({
               <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(16px,4.3vw,19px)",color:"#9898b8",lineHeight:1.5}}>{readOut.read} {readOut.closing}</div>
             </div>
           )}
-          <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#7878a0",letterSpacing:"0.26em",textTransform:"uppercase",marginBottom:10}}>Your core</div>
           <CoreStrip dims={coreProfile}/>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginTop:14,paddingTop:11,borderTop:"1px solid #222230",gap:10}}>
             <span style={{fontFamily:"'DM Mono',monospace",fontSize:12,color:"#c9c5cf",letterSpacing:"0.03em",wordBreak:"break-word"}}>{shareString}</span>
@@ -270,33 +261,6 @@ export function GenomeHome({
             </span>
           </div>
 
-          {/* Cross-league invitation: the blank slots in the string are an earned next step, not a gap.
-              Names the next league when exactly one remains; otherwise "another league". User-facing: no em dashes. */}
-          {showInvite&&(
-            <div style={{marginTop:13,paddingTop:12,borderTop:"1px solid #222230",textAlign:"center"}}>
-              <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:13,fontStyle:"italic",color:"#9a9ac4",lineHeight:1.5}}>
-                You've sequenced {takenLive.length} of your {liveList.length} leagues.
-              </div>
-              {oneLeft?(
-                <div onClick={()=>onStartSport(untakenLive[0].code)} style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:13,fontStyle:"italic",color:PERI,lineHeight:1.5,cursor:"pointer"}}>
-                  Take {untakenLive[0].name} to fill in your genome.
-                </div>
-              ):(
-                <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:13,fontStyle:"italic",color:"#9a9ac4",lineHeight:1.5}}>
-                  Take another league to fill in your genome.
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Branch junction off the core (only once there is a core to branch from). */}
-      {coreSequenced&&(
-        <div style={{position:"relative",height:30,zIndex:1}}>
-          <div style={{position:"absolute",left:"50%",top:0,width:2,height:16,marginLeft:-1,background:"#4a4a66"}}/>
-          <div style={{position:"absolute",left:"calc(50% - 5px)",top:11,width:10,height:10,borderRadius:"50%",background:PERI,boxShadow:`0 0 9px ${PERI}`}}/>
-          <div style={{position:"absolute",left:7,top:15,width:"calc(50% - 7px)",height:2,background:"#3a3a52"}}/>
         </div>
       )}
 
@@ -307,9 +271,8 @@ export function GenomeHome({
         </div>
       )}
 
-      {/* The two family branches, threaded onto a faint backbone. */}
-      <div style={{position:"relative",paddingLeft:21,marginBottom:26}}>
-        <div style={{position:"absolute",left:7,top:0,bottom:14,width:1,background:"#2a2a3c"}}/>
+      {/* The two family panels - the through-line's evidence and the way into each league. */}
+      <div style={{marginTop:22,marginBottom:26}}>
         {FAMILIES.map((fam,i)=>(
           <FamilyPanel key={fam.id} fam={fam} last={i===FAMILIES.length-1}/>
         ))}
