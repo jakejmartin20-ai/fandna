@@ -483,7 +483,7 @@ const scoring = {
            C: cell(["ROM","LAZ","NAP","MIL","COM","MON"]),
            D: cell(["LEC","SAS","VEN","PAR"]) },
   sa_q3: { A: cell(["GEN","CAG","FIO","TOR","FRO","LEC"]),
-           B: cell(["BOL","VEN","PAR","NAP"]),
+           B: { ...cell(["BOL","VEN","PAR","NAP"]), NAP: 4 },
            C: cell(["ATA","LAZ","ROM"]),
            D: cell(["JUV","INT","MIL","COM","UDI","SAS","MON"]) },
   sa_q4: { A: cell(["JUV","UDI","ATA","BOL","SAS","COM"]),
