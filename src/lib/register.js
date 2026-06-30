@@ -24,6 +24,9 @@ const REGISTER = {
   L1:  { noun: "club",      worn: "scarf",  team: "club", teams: "clubs", league: "Ligue 1", leagueAbbr: "L1", leagueIn: "Ligue 1",
          tail: "Who you turn up for, week after week, is up to you.",
          xmHeader: "Already have a Ligue 1 club?", xmEscape: "I don't support a Ligue 1 club" },
+  SA:  { noun: "club",      worn: "scarf",  team: "club", teams: "clubs", league: "Serie A", leagueAbbr: "SA", leagueIn: "Serie A",
+         tail: "Who you'd lose your voice for, Sunday after Sunday, is up to you.",
+         xmHeader: "Already have a Serie A club?", xmEscape: "I don't support a Serie A club" },
 };
 function regOf(s){ return REGISTER[s] || REGISTER.PL; }
 
