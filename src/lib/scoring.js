@@ -17,6 +17,7 @@ import { moduleQuestions as mlbModule, scoring as mlbScoring, teamDims as mlbDim
 import { moduleQuestions as nbaModule, scoring as nbaScoring, teamDims as nbaDims } from "../data/nba";
 import { moduleQuestions as blModule, scoring as blScoring, teamDims as blDims } from "../data/bundesliga";
 import { moduleQuestions as llModule, scoring as llScoring, teamDims as llDims } from "../data/laliga";
+import { moduleQuestions as l1Module, scoring as l1Scoring, teamDims as l1Dims } from "../data/ligue1";
 
 // -- Stage 1: core answers -> coreProfile (7 dims, 0-10) -------------------------
 function scoreCore(coreAnswers){
@@ -152,6 +153,7 @@ const FP_ENGINES = {
   NBA: makeFpEngine(nbaDims, nbaScoring, nbaModule),
   BL: makeFpEngine(blDims, blScoring, blModule),
   LL: makeFpEngine(llDims, llScoring, llModule),
+  L1: makeFpEngine(l1Dims, l1Scoring, l1Module),
 };
 
 function fpBase(coreProfile, eng){
@@ -381,6 +383,7 @@ for (const q of mlbModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (ml
 for (const q of nbaModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (nba_q*), no collision with PL
 for (const q of blModule)        QUESTION_MAP[q.id] = q;   // namespaced ids (bl_q*), no collision with PL
 for (const q of llModule)        QUESTION_MAP[q.id] = q;   // namespaced ids (ll_q*), no collision with PL
+for (const q of l1Module)        QUESTION_MAP[q.id] = q;   // namespaced ids (l1_q*), no collision with PL
 
 function answerLabel(qId, ans){
   const q = QUESTION_MAP[qId];
