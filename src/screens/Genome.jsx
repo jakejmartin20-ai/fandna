@@ -17,6 +17,7 @@ import { useState } from "react";
 import { ClubMark } from "../components/ClubMark";
 import { CoreStrip } from "../components/CoreStrip";
 import { FAMILIES } from "../lib/manifest";
+import { generateRead } from "../lib/genomeRead";
 
 // Structural palette: one quiet "DNA backbone" color for the tree, so the only saturated
 // color on the page comes from the strip and the clubs.
@@ -86,6 +87,7 @@ export function GenomeHome({
   const untakenLive = liveList.filter(s=>{ const r=genome[s.code]; return !(r&&r.club); });
   const showInvite  = coreSequenced && takenLive.length>0 && untakenLive.length>0;
   const oneLeft     = untakenLive.length===1;
+  const readOut     = coreSequenced ? generateRead(coreProfile, takenLive.length) : null;
 
   // ---- one strand row (reused inside both family panels) ----
   function Strand({ s, last }){
@@ -251,6 +253,14 @@ export function GenomeHome({
       {/* Identity hero: the user's core strip, shown ONCE, with a quiet share footer. */}
       {coreSequenced&&(
         <div style={{position:"relative",zIndex:1,border:"1px solid #222230",borderRadius:12,padding:"15px 14px 13px",background:"#14141c"}}>
+          {readOut&&(
+            <div style={{marginBottom:16,paddingBottom:15,borderBottom:"1px solid #222230"}}>
+              <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#7878a0",letterSpacing:"0.26em",textTransform:"uppercase",marginBottom:8}}>The through-line</div>
+              <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:400,fontSize:"clamp(30px,8.4vw,38px)",color:"#e8e4de",lineHeight:1.04,marginBottom:9}}>{readOut.headline}</div>
+              <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(16px,4.3vw,19px)",color:"#9898b8",lineHeight:1.5}}>{readOut.read} {readOut.closing}</div>
+            </div>
+          )}
+          <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#7878a0",letterSpacing:"0.26em",textTransform:"uppercase",marginBottom:10}}>Your core</div>
           <CoreStrip dims={coreProfile}/>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginTop:14,paddingTop:11,borderTop:"1px solid #222230",gap:10}}>
             <span style={{fontFamily:"'DM Mono',monospace",fontSize:12,color:"#c9c5cf",letterSpacing:"0.03em",wordBreak:"break-word"}}>{shareString}</span>
@@ -287,6 +297,13 @@ export function GenomeHome({
           <div style={{position:"absolute",left:"50%",top:0,width:2,height:16,marginLeft:-1,background:"#4a4a66"}}/>
           <div style={{position:"absolute",left:"calc(50% - 5px)",top:11,width:10,height:10,borderRadius:"50%",background:PERI,boxShadow:`0 0 9px ${PERI}`}}/>
           <div style={{position:"absolute",left:7,top:15,width:"calc(50% - 7px)",height:2,background:"#3a3a52"}}/>
+        </div>
+      )}
+
+      {/* Caption framing the league list as the through-line's evidence (earned at 2+ leagues). */}
+      {coreSequenced&&takenLive.length>=2&&(
+        <div style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#8a8aa8",margin:"0 0 15px",position:"relative",zIndex:1}}>
+          The proof, league by league
         </div>
       )}
 
