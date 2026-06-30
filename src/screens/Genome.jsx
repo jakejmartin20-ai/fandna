@@ -166,7 +166,8 @@ export function GenomeHome({
   function FamilyPanel({ fam, last }){
     const list = sports.filter(s=>s.group===fam.id);
     if(list.length===0) return null;
-    const doneN = list.filter(s=>{ const r=genome[s.code]; return !!(r&&r.club); }).length;
+    const liveInFam = list.filter(s=>s.live);
+    const doneN = liveInFam.filter(s=>{ const r=genome[s.code]; return !!(r&&r.club); }).length;
     const scrolls = list.length>MAX_ROWS;
     const maxH = MAX_ROWS*ROW_PX + PEEK;
 
@@ -181,7 +182,7 @@ export function GenomeHome({
           <div style={{display:"flex",alignItems:"center",gap:9,padding:"13px 15px 11px",borderBottom:`1px solid ${PBD}`}}>
             <FamilyGlyph kind={fam.glyph}/>
             <span style={{fontFamily:"'DM Mono',monospace",fontSize:12,color:PLBL,letterSpacing:"0.32em",textTransform:"uppercase",fontWeight:500,flex:1,minWidth:0}}>{fam.label}</span>
-            <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:COUNT,letterSpacing:"0.12em",textTransform:"uppercase",flexShrink:0}}>{doneN} of {list.length} mapped</span>
+            {liveInFam.length>0&&(<span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:COUNT,letterSpacing:"0.12em",textTransform:"uppercase",flexShrink:0}}>{doneN} of {liveInFam.length} mapped</span>)}
           </div>
 
           {/* leagues (scrolls inside when there are more than MAX_ROWS) */}
