@@ -221,27 +221,73 @@ const archetypeDesc = {
 
 // All-time greats. Clubs with none fall back to milestones.
 const greats = {
-  PSG:["Marquinhos","Zlatan Ibrahimović","Pauleta","Kylian Mbappé"],
-  MAR:["Jean-Pierre Papin","Basile Boli","Steve Mandanda","Chris Waddle"],
-  MON:["Thierry Henry","George Weah","Fabien Barthez","Emmanuel Petit"],
-  LIL:["Eden Hazard","Mike Maignan","Rio Mavuba","Burak Yılmaz"],
-  LYO:["Juninho Pernambucano","Karim Benzema","Sidney Govou","Grégory Coupet"],
-  LEN:["Éric Sikora","Vladimír Šmicer","Seydou Keïta","Tony Vairelles"],
-  REN:["Ousmane Dembélé","Eduardo Camavinga","Sylvain Wiltord","Jérémy Doku"],
-  NIC:["Hugo Lloris","Just Fontaine"],
-  AJA:["Éric Cantona","Djibril Cissé","Philippe Mexès"],
-  HAC:["Paul Pogba","Riyad Mahrez","Lassana Diarra"],
+  PSG:[
+    {name:"Marquinhos", years:"2013-present", note:"the long-serving Brazilian captain"},
+    {name:"Zlatan Ibrahimović", years:"2012-2016", note:"the king who dominated France and never let anyone forget it"},
+    {name:"Pauleta", years:"2003-2008", note:"the Portuguese striker, a club-record scorer before the new era"},
+    {name:"Kylian Mbappé", years:"2017-2024", note:"the homegrown superstar and all-time top scorer"},
+  ],
+  MAR:[
+    {name:"Jean-Pierre Papin", years:"1986-1992", note:"JPP, the Ballon d'Or striker of the great OM side"},
+    {name:"Basile Boli", years:"1990-1994", note:"the defender whose header won the 1993 European Cup"},
+    {name:"Steve Mandanda", years:"2007-2016, 2017-2022", note:"the long-serving keeper and club icon"},
+    {name:"Chris Waddle", years:"1989-1992", note:"the English winger adored at the Vélodrome"},
+  ],
+  MON:[
+    {name:"Thierry Henry", years:"1994-1999", note:"the academy product who first broke through here"},
+    {name:"George Weah", years:"1988-1992", note:"the future Ballon d'Or winner's European launchpad"},
+    {name:"Fabien Barthez", years:"1992-1995", note:"the keeper who won the title before a World Cup"},
+    {name:"Emmanuel Petit", years:"1989-1997", note:"the midfielder who came through the ranks"},
+  ],
+  LIL:[
+    {name:"Eden Hazard", years:"2007-2012", note:"the academy jewel who lit up the 2011 Double"},
+    {name:"Mike Maignan", years:"2015-2021", note:"the keeper of the shock 2021 title"},
+    {name:"Rio Mavuba", years:"2008-2017", note:"the long-serving captain"},
+    {name:"Burak Yılmaz", years:"2020-2022", note:"the Turkish striker who dragged Lille to the 2021 title"},
+  ],
+  LYO:[
+    {name:"Juninho Pernambucano", years:"2001-2009", note:"the free-kick king of the seven-title dynasty"},
+    {name:"Karim Benzema", years:"2004-2009", note:"the academy striker before Madrid"},
+    {name:"Sidney Govou", years:"1999-2010", note:"the homegrown winger of the dynasty"},
+    {name:"Grégory Coupet", years:"1997-2008", note:"the goalkeeper of the title years"},
+  ],
+  LEN:[
+    {name:"Éric Sikora", years:"1985-2000", note:"Mr Lens, the one-club full-back"},
+    {name:"Vladimír Šmicer", years:"1996-1999", note:"the Czech who shone before Liverpool"},
+    {name:"Seydou Keïta", years:"2002-2007", note:"the Malian engine and captain before Sevilla and Barcelona"},
+    {name:"Tony Vairelles", years:"1995-1999", note:"Tonygol, the striker of the 1998 title"},
+  ],
+  REN:[
+    {name:"Ousmane Dembélé", years:"2015-2016", note:"the academy breakout before Dortmund"},
+    {name:"Eduardo Camavinga", years:"2019-2021", note:"the teenage prodigy before Madrid"},
+    {name:"Sylvain Wiltord", years:"1997-1999", note:"the striker who left for Bordeaux and Arsenal"},
+    {name:"Jérémy Doku", years:"2020-2023", note:"the explosive winger before Manchester City"},
+  ],
+  NIC:[
+    {name:"Hugo Lloris", years:"2005-2008", note:"the hometown keeper before Lyon, Spurs and a World Cup"},
+    {name:"Just Fontaine", years:"1953-1956", note:"the prolific striker who made his name before Reims and 1958"},
+  ],
+  AJA:[
+    {name:"Éric Cantona", years:"1983-1988", note:"the mercurial talent who began here"},
+    {name:"Djibril Cissé", years:"1998-2004", note:"the striker of the golden era before Liverpool"},
+    {name:"Philippe Mexès", years:"2000-2004", note:"the defender who left for Roma"},
+  ],
+  HAC:[
+    {name:"Paul Pogba", years:"academy", note:"the World Cup winner who came through here before Manchester United"},
+    {name:"Riyad Mahrez", years:"2009-2014", note:"the future Premier League champion who started here"},
+    {name:"Lassana Diarra", years:"academy", note:"the France midfielder who came through the academy"},
+  ],
 };
 
 const milestones = {
-  BRE:"The 2024 Champions League qualification, the proudest night in the club's history, carrying tiny Brest onto Europe's biggest stage for the first time.",
-  STR:"The 2011 resurrection: bankrupt and dissolved, refounded in the fifth tier, and carried back to Ligue 1 by its own supporters, division by division.",
-  TOU:"The 2023 Coupe de France, a stunning trophy for the smart club in a rugby city, and a return to European football after years away.",
-  ANG:"The 2017 Coupe de France final, the showpiece run that briefly put unfashionable Angers on the national stage, and the stubborn knack of surviving year after year.",
-  LOR:"The 2002 Coupe de France, the finest hour for the Merlus, a small Breton port's club lifting a national trophy.",
-  PFC:"The 2025 return to Ligue 1 after forty-six years away, and the arrival of serious backing to build Paris a genuine second club.",
-  TRO:"The 2001 Intertoto Cup and a famous European run, including a 4-4 thriller against Newcastle, the high point of the Champagne club's story.",
-  LEM:"Didier Drogba's breakout season here two decades ago, the launchpad for one of the game's great strikers, and the long climb back from the amateur tiers.",
+  BRE:["The 2024 Champions League qualification, the proudest night in the club's history, carrying tiny Brest onto Europe's biggest stage for the first time."],
+  STR:["The 2011 resurrection: bankrupt and dissolved, refounded in the fifth tier, and carried back to Ligue 1 by its own supporters, division by division."],
+  TOU:["The 2023 Coupe de France, a stunning trophy for the smart club in a rugby city, and a return to European football after years away."],
+  ANG:["The 2017 Coupe de France final, the showpiece run that briefly put unfashionable Angers on the national stage, and the stubborn knack of surviving year after year."],
+  LOR:["The 2002 Coupe de France, the finest hour for the Merlus, a small Breton port's club lifting a national trophy."],
+  PFC:["The 2025 return to Ligue 1 after forty-six years away, and the arrival of serious backing to build Paris a genuine second club."],
+  TRO:["The 2001 Intertoto Cup and a famous European run, including a 4-4 thriller against Newcastle, the high point of the Champagne club's story."],
+  LEM:["Didier Drogba's breakout season here two decades ago, the launchpad for one of the game's great strikers, and the long climb back from the amateur tiers."],
 };
 
 const vitalStats = {

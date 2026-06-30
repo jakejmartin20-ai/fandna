@@ -245,31 +245,93 @@ const archetypeDesc = {
 };
 
 const greats = {
-  INT:["Javier Zanetti","Giuseppe Meazza","Lautaro Martínez","Marco Materazzi"],
-  JUV:["Alessandro Del Piero","Gianluigi Buffon","Giampiero Boniperti","Pavel Nedvěd"],
-  MIL:["Paolo Maldini","Franco Baresi","Marco van Basten","Andriy Shevchenko"],
-  NAP:["Diego Maradona","Marek Hamšík","Dries Mertens","Lorenzo Insigne"],
-  ROM:["Francesco Totti","Daniele De Rossi","Roberto Pruzzo","Aldair"],
-  LAZ:["Alessandro Nesta","Giuseppe Signori","Pavel Nedvěd","Ciro Immobile"],
-  ATA:["Papu Gómez","Marten de Roon","Josip Iličić","Duván Zapata"],
-  FIO:["Gabriel Batistuta","Giancarlo Antognoni","Roberto Baggio","Kurt Hamrin"],
-  BOL:["Giacomo Bulgarelli","Roberto Baggio","Beppe Signori"],
-  TOR:["Valentino Mazzola","Paolo Pulici","the Grande Torino"],
-  GEN:["Gianluca Signorini","Marco Rossi"],
-  UDI:["Antonio Di Natale","Oliver Bierhoff","Alexis Sánchez"],
-  CAG:["Gigi Riva"],
-  PAR:["Gianluigi Buffon","Fabio Cannavaro","Hernán Crespo","Lilian Thuram"],
+  INT:[
+    {name:"Javier Zanetti", years:"1995-2014", note:"the eternal captain, 858 games and never a transfer request"},
+    {name:"Giuseppe Meazza", years:"1927-1940", note:"the prewar genius the San Siro is named after"},
+    {name:"Lautaro Martínez", years:"2018-present", note:"the Argentine captain and talisman of the modern side"},
+    {name:"Marco Materazzi", years:"2001-2011", note:"the combative defender at the heart of the treble"},
+  ],
+  JUV:[
+    {name:"Alessandro Del Piero", years:"1993-2012", note:"the one-club idol and all-time top scorer"},
+    {name:"Gianluigi Buffon", years:"2001-2018", note:"the goalkeeper who defined a generation in black and white"},
+    {name:"Giampiero Boniperti", years:"1946-1961", note:"the postwar great who later ran the club as president"},
+    {name:"Pavel Nedvěd", years:"2001-2009", note:"the Czech Fury, a Ballon d'Or in midfield"},
+  ],
+  MIL:[
+    {name:"Paolo Maldini", years:"1985-2009", note:"the one-club captain, twenty-five years on the left of defense"},
+    {name:"Franco Baresi", years:"1977-1997", note:"the libero and one-club sweeper, number 6 retired"},
+    {name:"Marco van Basten", years:"1987-1995", note:"the Dutch master whose knee ended a peerless career too soon"},
+    {name:"Andriy Shevchenko", years:"1999-2006", note:"the Ukrainian striker and Ballon d'Or winner"},
+  ],
+  NAP:[
+    {name:"Diego Maradona", years:"1984-1991", note:"the god who delivered the scudetti, his number 10 retired forever"},
+    {name:"Marek Hamšík", years:"2007-2019", note:"the long-serving captain and record scorer"},
+    {name:"Dries Mertens", years:"2013-2022", note:"the Belgian who became the club's all-time leading scorer"},
+    {name:"Lorenzo Insigne", years:"2010-2022", note:"the boy from Scampia who became the Neapolitan idol"},
+  ],
+  ROM:[
+    {name:"Francesco Totti", years:"1992-2017", note:"Il Capitano, twenty-five years, one club, the prince of Rome"},
+    {name:"Daniele De Rossi", years:"2001-2019", note:"the other one-club Roman, the warrior in midfield"},
+    {name:"Roberto Pruzzo", years:"1978-1988", note:"the striker who fired the 1983 scudetto side"},
+    {name:"Aldair", years:"1990-2003", note:"the Brazilian rock at the back for thirteen seasons"},
+  ],
+  LAZ:[
+    {name:"Alessandro Nesta", years:"1993-2002", note:"the elegant defender who came through the youth ranks"},
+    {name:"Giuseppe Signori", years:"1992-1997", note:"Beppe-gol, the goalscoring idol of the nineties"},
+    {name:"Pavel Nedvěd", years:"1996-2001", note:"the Czech who lit up the 2000 scudetto before Juventus"},
+    {name:"Ciro Immobile", years:"2016-2024", note:"the all-time top scorer, the modern bomber"},
+  ],
+  ATA:[
+    {name:"Papu Gómez", years:"2014-2021", note:"the little magician who led the rise to Europe"},
+    {name:"Marten de Roon", years:"2015-2016, 2017-present", note:"the midfield heartbeat of the Gasperini era"},
+    {name:"Josip Iličić", years:"2017-2022", note:"the Slovenian whose four goals at Valencia lit up a European night"},
+    {name:"Duván Zapata", years:"2018-2023", note:"the powerful Colombian who supplied the goals"},
+  ],
+  FIO:[
+    {name:"Gabriel Batistuta", years:"1991-2000", note:"Batigol, the Argentine who stayed even through relegation"},
+    {name:"Giancarlo Antognoni", years:"1972-1987", note:"the elegant one-club playmaker, the eternal Viola"},
+    {name:"Roberto Baggio", years:"1985-1990", note:"the Divine Ponytail's first home before a bitter sale"},
+    {name:"Kurt Hamrin", years:"1958-1967", note:"the Swedish winger, one of the club's greatest ever"},
+  ],
+  BOL:[
+    {name:"Giacomo Bulgarelli", years:"1956-1975", note:"the one-club midfield great of the last title era"},
+    {name:"Roberto Baggio", years:"1997-1998", note:"the single golden season that revived a World Cup dream"},
+    {name:"Beppe Signori", years:"1998-2004", note:"the goalscorer reborn in red and blue"},
+  ],
+  TOR:[
+    {name:"Valentino Mazzola", years:"1942-1949", note:"the captain of the Grande Torino, lost at Superga"},
+    {name:"Paolo Pulici", years:"1967-1982", note:"the striker of the 1976 scudetto, the club's last title"},
+    {name:"The Grande Torino", years:"1943-1949", note:"the five-time champions taken by the Superga air disaster"},
+  ],
+  GEN:[
+    {name:"Gianluca Signorini", years:"1988-1995", note:"the captain of the great early-nineties side, number 6 retired"},
+    {name:"Marco Rossi", years:"2003-2014", note:"the versatile captain whose number 7 the club retired"},
+  ],
+  UDI:[
+    {name:"Antonio Di Natale", years:"2004-2016", note:"Totò, the one-club captain and all-time top scorer"},
+    {name:"Oliver Bierhoff", years:"1995-1998", note:"the German striker who top-scored in Serie A here"},
+    {name:"Alexis Sánchez", years:"2008-2011", note:"the Chilean who earned his move to Barcelona"},
+  ],
+  CAG:[
+    {name:"Gigi Riva", years:"1963-1976", note:"Rombo di Tuono, the one-club legend of the 1970 scudetto"},
+  ],
+  PAR:[
+    {name:"Gianluigi Buffon", years:"1995-2001", note:"the goalkeeper who emerged in the golden era"},
+    {name:"Fabio Cannavaro", years:"1995-2002", note:"the defender who left for the world and a Ballon d'Or"},
+    {name:"Hernán Crespo", years:"1996-2000", note:"the Argentine striker of the great Parma side"},
+    {name:"Lilian Thuram", years:"1996-2001", note:"the France World Cup winner at the back"},
+  ],
 };
 
 const milestones = {
-  ATA:"The 2024 Europa League, the first major European trophy in the club's history, the proudest night Bergamo has ever known.",
-  COM:"The return to Serie A under one of the wealthiest ownerships in world football, the start of a fast and glamorous climb on the shore of Lake Como.",
-  LEC:"A long history of yo-yo defiance from the heel of Italy, promoted and relegated and always back, faithful to the Salento through every drop.",
-  SAS:"The rise from a town of forty thousand to the top flight, a modern club built cleanly and well by a local company, competence over romance.",
-  MON:"The first promotion to Serie A in the club's century-long history, won under Berlusconi in 2022, shortly before his death.",
-  FRO:"A fourth promotion to Serie A, a tiny provincial club from the Ciociaria gatecrashing the big time and enjoying every improbable minute.",
-  VEN:"A club on the islands of Venice, ground reached by boat, wearing a kit the fashion world covets, style and atmosphere as its whole identity.",
-  GEN:"Nine league titles, all before 1924, won by the oldest football club in Italy, founded 1893, a port city's pride that never faded.",
+  ATA:["The 2024 Europa League, the first major European trophy in the club's history, the proudest night Bergamo has ever known."],
+  COM:["The return to Serie A under one of the wealthiest ownerships in world football, the start of a fast and glamorous climb on the shore of Lake Como."],
+  LEC:["A long history of yo-yo defiance from the heel of Italy, promoted and relegated and always back, faithful to the Salento through every drop."],
+  SAS:["The rise from a town of forty thousand to the top flight, a modern club built cleanly and well by a local company, competence over romance."],
+  MON:["The first promotion to Serie A in the club's century-long history, won under Berlusconi in 2022, shortly before his death."],
+  FRO:["A fourth promotion to Serie A, a tiny provincial club from the Ciociaria gatecrashing the big time and enjoying every improbable minute."],
+  VEN:["A club on the islands of Venice, ground reached by boat, wearing a kit the fashion world covets, style and atmosphere as its whole identity."],
+  GEN:["Nine league titles, all before 1924, won by the oldest football club in Italy, founded 1893, a port city's pride that never faded."],
 };
 
 const vitalStats = {
