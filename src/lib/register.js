@@ -1,0 +1,33 @@
+// FanDNA per-sport voice (the "register"): the noun, what you wear, the team words, the league
+// labels, the result tail, and the cross-match header/escape. ONE source of truth, read by both
+// the app (result screen) and the share card, so a sport's voice lives in exactly one place and
+// the two can never drift. Adding a sport is one row here. PL/NFL/MLB are unchanged.
+const REGISTER = {
+  PL:  { noun: "club",      worn: "shirt",  team: "club", teams: "clubs", league: "Premier League", leagueAbbr: "PL", leagueIn: "the Premier League",
+         tail: "What you support on Saturdays is up to you.",
+         xmHeader: "Already have a favourite club?", xmEscape: "I don't support a Premier League club" },
+  NFL: { noun: "franchise", worn: "jersey", team: "team", teams: "teams", league: "NFL", leagueAbbr: "NFL", leagueIn: "the NFL",
+         tail: "What you support on Sundays is up to you.",
+         xmHeader: "Already root for a team?", xmEscape: "I don't follow an NFL team" },
+  MLB: { noun: "ballclub",  worn: "cap",    team: "team", teams: "teams", league: "MLB", leagueAbbr: "MLB", leagueIn: "MLB",
+         tail: "What you root for at the ballpark is up to you.",
+         xmHeader: "Already have a ballclub?", xmEscape: "I don't have an MLB team" },
+  NBA: { noun: "team",      worn: "jersey", team: "team", teams: "teams", league: "NBA", leagueAbbr: "NBA", leagueIn: "the NBA",
+         tail: "What you cheer for on gameday is up to you.",
+         xmHeader: "Already have a team?", xmEscape: "I don't follow an NBA team" },
+  BL:  { noun: "club",      worn: "scarf",  team: "club", teams: "clubs", league: "Bundesliga", leagueAbbr: "BL", leagueIn: "the Bundesliga",
+         tail: "Who you sing for on matchday is up to you.",
+         xmHeader: "Already have a Bundesliga club?", xmEscape: "I don't support a Bundesliga club" },
+  LL:  { noun: "club",      worn: "shirt",  team: "club", teams: "clubs", league: "La Liga", leagueAbbr: "LL", leagueIn: "La Liga",
+         tail: "Who you live for, win or lose, is up to you.",
+         xmHeader: "Already have a La Liga club?", xmEscape: "I don't support a La Liga club" },
+  L1:  { noun: "club",      worn: "scarf",  team: "club", teams: "clubs", league: "Ligue 1", leagueAbbr: "L1", leagueIn: "Ligue 1",
+         tail: "Who you turn up for, week after week, is up to you.",
+         xmHeader: "Already have a Ligue 1 club?", xmEscape: "I don't support a Ligue 1 club" },
+  SA:  { noun: "club",      worn: "scarf",  team: "club", teams: "clubs", league: "Serie A", leagueAbbr: "SA", leagueIn: "Serie A",
+         tail: "Who you'd lose your voice for, Sunday after Sunday, is up to you.",
+         xmHeader: "Already have a Serie A club?", xmEscape: "I don't support a Serie A club" },
+};
+function regOf(s){ return REGISTER[s] || REGISTER.PL; }
+
+export { REGISTER, regOf };
