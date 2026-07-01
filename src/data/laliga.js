@@ -205,6 +205,33 @@ const teams = {
     kit:"https://www.elchecf.es" },
 };
 
+// Per-club, per-dimension flavour for the result's 'where you differ' line (display-only; drawn
+// from each club's own why-copy). Merged onto teams below; the scoring path never reads it.
+const teamEdge = {
+  RMA: {ambition:"a club that judges a year by the trophy and treats anything less as a crisis", rootedness:"a rootedness in winning, a history of trophies that sets the bar every season", chaos:"the expectation that the machine delivers, fixed rather than romanticized when it stalls"},
+  BAR: {process:"the way it is done, the academy and the identity, not just the result on the board", ambition:"bound to a method, where a title won the wrong way would never satisfy", community:"a club that stands for a people and a place, inseparable from the football", rootedness:"a club that stands for a people and a place, inseparable from the football"},
+  ATM: {emotion:"every match felt in the body, the suffering not a side effect but the point", loyalty:"fierce and unconditional, staying through the grind because the grind is the point", ambition:"the ambition to win the hard way, not to be handed the spotlight"},
+  ATH: {process:"the how mattering as much as the what, a creed it will not compromise to win faster", rootedness:"a people and a place, the club the living proof of it", loyalty:"a people and a place, the club the living proof of it", ambition:"real and hungry, but fenced inside the creed and wanted no other way"},
+  RSO: {process:"building properly and developing its own, the craft trusted over the drama", chaos:"the calm, well-run version of things rather than the theatrical one", rootedness:"strong but understated, knowing exactly who it is without needing to announce it", loyalty:"strong but understated, knowing exactly who it is without needing to announce it"},
+  SEV: {chaos:"the last few years lived brilliant in Europe and brittle at home", ambition:"anchored in a European record almost no one can match", loyalty:"holding through a fall that would have broken a softer support, refusing to surrender"},
+  BET: {emotion:"this club felt in the bones, the ache part of the love rather than its price", loyalty:"unconditional and proud of it, there and singing win or lose", community:"the people's club, where belonging matters more than any trophy"},
+  VAL: {chaos:"a decade of one long fight with its own boardroom", emotion:"staying and raging, which is harder than leaving and a great deal more devoted", loyalty:"staying and raging, which is harder than leaving and a great deal more devoted", rootedness:"knowing what the club was and should be, and refusing to let anyone forget it"},
+  DEP: {loyalty:"sitting through the fall, all the way down, never once thinking of anyone else", rootedness:"the memory of being champions carried as identity, not nostalgia, setting the standard", emotion:"the climb back felt as keenly as the drop, maybe more"},
+  RAC: {rootedness:"one of the oldest stories in Spanish football, that history the whole point", loyalty:"held through fourteen years away, never once stopping being who it is", ambition:"quieter than the giants', where being back where it began means more than the top of the table"},
+  MAL: {loyalty:"staying through a fall all the way to the third tier, there for the long road back up", chaos:"earned the hard way, through a boom and a bust most clubs never live through", emotion:"highs and lows both, having felt the full range of what the game can do to a club"},
+  VIL: {process:"the well-run, well-built thing, which has taken it further than anyone predicted", chaos:"the smart, steady side rather than the dramatic one", ambition:"real and quietly relentless, never announced, just always back at the top table"},
+  ALA: {emotion:"the great night and the heartbreak bound together, both felt in every telling", loyalty:"loving the club for the story it gave, and staying for all of it, win or lose", rootedness:"Vitoria's club, one unforgettable European night stitched into its identity forever"},
+  GET: {chaos:"disruption as the plan, at its best when the game turns ugly", ambition:"not about trophies but the result, the clean sheet, the spoiled afternoon", rootedness:"light and worn easily, no grand history needed to make life miserable for clubs that have one"},
+  OSA: {community:"owned by its members, where that belonging is everything", rootedness:"a region's club, in a place with a fierce sense of its own identity", loyalty:"wanting the club to be its truest self more than it wants a trophy", ambition:"wanting the club to be its truest self more than it wants a trophy"},
+  RAY: {community:"the club that is the neighborhood, and the neighborhood that is the club", chaos:"the politics, the activism and the fight, all of it embraced as part of the territory", loyalty:"a place and a cause, not just a team", rootedness:"a place and a cause, not just a team"},
+  ESP: {loyalty:"defiant, the harder club chosen in its own city, stayed with out of conviction not convenience", rootedness:"its own century of history, distinct from the famous neighbors and held proudly", chaos:"the yo-yo years and the shadow-living that come with being the other club"},
+  CEL: {rootedness:"Galicia and the Atlantic coast, an identity all its own", community:"woven into the place, carried by people who are of it, not just paid by it", ambition:"modest by choice, where being truly Galicia's club matters more than the table"},
+  LEV: {chaos:"survival dramatic by nature, more last-day escapes lived than most", ambition:"grounded in reality, the goal to stay and endure, with pride in being the side that always does", loyalty:"the third club in town, loved by the people who actually choose it", rootedness:"the third club in town, loved by the people who actually choose it"},
+  ELC: {loyalty:"supporting a small club through the lean years, plainly, because it is yours", ambition:"modest and clear-eyed, the aim to belong and hold on, with dignity in it", rootedness:"a small Alicante club, one unmistakable green sash and a long refusal to fade"},
+};
+Object.keys(teamEdge).forEach(k=>{ if(teams[k]) teams[k].edge = teamEdge[k]; });
+
+
 const archetypes = {
   RMA:"Los Blancos",
   BAR:"Més que un club",

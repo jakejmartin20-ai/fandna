@@ -185,6 +185,31 @@ const teams = {
     kit:"https://www.lemansfc.fr" },
 };
 
+// Per-club, per-dimension flavour for the result's 'where you differ' line (display-only; drawn
+// from each club's own why-copy). Merged onto teams below; the scoring path never reads it.
+const teamEdge = {
+  PSG: {ambition:"a hunger pinned at the ceiling, where nothing but the very top would do and it spent whatever that took", rootedness:"a modern project built fast for glamour, not a story handed down over generations", community:"a global brand before a neighborhood, where the local grit was never the point"},
+  MAR: {emotion:"a club that suffers and soars, where the intensity is the whole point", chaos:"drama, turmoil, protest and upheaval all lived through, and never once traded for calm", loyalty:"its city's club and its people's club, inseparable from where it is from", rootedness:"its city's club and its people's club, inseparable from where it is from"},
+  MON: {process:"run like a smart machine, recruitment and development before romance, and it delivers", community:"no roaring terrace and no neighborhood behind it, a peace it has long since made", emotion:"the clever, measured way rather than the theatrical one, the calm a strength"},
+  LIL: {process:"the well-built, well-run version of things, with a title to prove it works", emotion:"the calm, clever side rather than the dramatic one, the restraint deliberate", ambition:"aimed high but reached by being sharp, not by spending its way up"},
+  LYO: {ambition:"measured against a golden age, where anything short of the top feels like falling", chaos:"ownership turmoil and brushes with the drop that made the last few years anything but calm", emotion:"the ache of the gap between what it was and what it is, which never quite settles"},
+  LEN: {community:"a region's club before anything else, where the belonging is total", rootedness:"a region's club before anything else, where the belonging is total", emotion:"Bollaert on a big day, one of the great atmospheres in France", loyalty:"a bond that held through decline and the lower divisions, because leaving was never a thought"},
+  BRE: {community:"a small Breton town's club, close-knit and unpretentious, the togetherness its edge", chaos:"well run and steady, the recent rise built on order rather than drama", ambition:"the happy kind, thrilled by the climb rather than entitled to it"},
+  REN: {ambition:"backed to push for Europe and the top, and restless whenever it is not there", process:"a famed academy and a serious project underneath, producing talent year after year", rootedness:"the Breton identity and the Roazhon support, the constant beneath the ambition"},
+  STR: {community:"fans who rebuilt the club from nothing, a bond that will not break", loyalty:"fans who rebuilt the club from nothing, a bond that will not break", rootedness:"Alsace, the border and La Meinau, an identity the years of crisis only hardened", ambition:"returning under new ownership, though the comeback is still the story that defines it"},
+  TOU: {process:"a smart, modern, recruitment-led model that gives it an edge above its means", emotion:"a rugby city where the football noise is muted, an identity that needs no roar", ambition:"measured, overachieving through cleverness rather than spending, as the 2023 cup proved"},
+  NIC: {ambition:"new backing and the bearing of a club that feels it ought to be more than mid-table", rootedness:"the Riviera, glamorous but transient, a belonging real without being fierce", chaos:"a recent brush with the drop, a scare that nothing is ever guaranteed"},
+  AJA: {process:"the patient, academy-led way that is the whole identity, and once won everything", rootedness:"a small Burgundy town and decades of continuity at l'Abbe-Deschamps", chaos:"stability as the point, building slowly and refusing to panic"},
+  HAC: {rootedness:"the oldest club in France, founded in 1872, a history nothing else can match", community:"a working port city's club, its academy feeding the game from its own backyard", ambition:"modest and content, measured by staying up and developing its own"},
+  ANG: {ambition:"modest, with survival and one more year up as the honest measure", rootedness:"Anjou as home, an identity kept scrappy by the yo-yo years", chaos:"instability as its normal, lived in without ever losing its nerve"},
+  LOR: {community:"a small Breton port town's club, local to the bone, with a maritime identity of its own", rootedness:"a small Breton port town's club, local to the bone, with a maritime identity of its own", ambition:"modest, aiming to stay up and stay itself rather than climb", emotion:"the even temper of a place that has always lived by the tide"},
+  PFC: {ambition:"serious money and an explicit plan to rise, a project on the way up", process:"a well-resourced, well-built operation, a project before it is a movement", rootedness:"a club reborn, its history thin in this shape and its identity yet to harden", community:"a club reborn, its history thin in this shape and its identity yet to harden"},
+  TRO: {chaos:"the constant up-and-down between divisions, long since stopped being unsettling", process:"a structured, development-led model inside a global ownership group", ambition:"promotion as the goal, though only ever one node in a bigger empire"},
+  LEM: {community:"the town that stayed through the fall to the amateur tiers, a bond that carried it back", loyalty:"the town that stayed through the fall to the amateur tiers, a bond that carried it back", chaos:"earned the hard way, through bankruptcy, collapse and a long uncertain climb back up", rootedness:"the racing city as home, a history that survived even when the club very nearly did not"},
+};
+Object.keys(teamEdge).forEach(k=>{ if(teams[k]) teams[k].edge = teamEdge[k]; });
+
+
 const archetypes = {
   PSG:"Ici c'est Paris", MAR:"À jamais les premiers", MON:"Le Rocher", LIL:"Les Dogues",
   LYO:"Les Gones", LEN:"Sang et Or", BRE:"Ti-Zef", REN:"Le Roazhon", STR:"La Meinau",

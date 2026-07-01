@@ -563,6 +563,36 @@ const teams = {
   },
 };
 
+// Per-club, per-dimension flavour for the result's 'where you differ' line (display-only; drawn
+// from each club's own why-copy). Merged onto teams below; the scoring path never reads it.
+const teamEdge = {
+  LI: {emotion:"felt at full volume, outward and unreserved, or it isn't real at all", community:"belonging to something vast, the sheer scale of the shared feeling", rootedness:"the past carried forward as fuel, the history the reason this moment means anything"},
+  MC: {process:"a relentless standard, preparation over inspiration, excellence done deliberately and repeatedly", loyalty:"predating the success, there for the lean years and the lower divisions, a local faith outsiders never see", rootedness:"working-class roots that never went anywhere, the club of the people actually from here"},
+  AR: {process:"how it wins mattering as much as the winning, the care for the quality of the thing not just the scoreline", ambition:"a faith through the near-misses that holds because the approach is sound"},
+  EV: {loyalty:"unconditional, defining more than almost anything else, the whole statement being that it stays", emotion:"suffering carried inward and private rather than broadcast", rootedness:"a resilience through the long droughts, something more stubborn than hope"},
+  NC: {community:"the real, local, place-rooted kind, not the global-brand kind", emotion:"collective and outward, it happens together or it barely counts", loyalty:"the joy real now, landing differently for the two decades of frustration that came before"},
+  WH: {rootedness:"east London, the Boleyn Ground and what was there before, the brand never the club", emotion:"proud but genuinely complicated, both the love and the legitimate grievance carried", loyalty:"a low tolerance for decisions it disagrees with, though leaving never seriously crossed its mind"},
+  CP: {community:"intense but self-created, built through sustained collective effort rather than handed down by trophies", emotion:"no need for mythology, the atmosphere it makes being the whole narrative", chaos:"backs-against-the-wall energy, getting louder when things get hard rather than retreating"},
+  MU: {rootedness:"defining itself through what has been, not just what is happening now", emotion:"the grief of former greatness, suffering not for never winning but for knowing it has and it isn't now", community:"a global identity that transcends any one place, for better and for worse"},
+  SP: {emotion:"processing the disappointment, resetting fast, and genuinely believing again", ambition:"the longing for one defining moment, more powerful here than almost anywhere"},
+  LE: {chaos:"above average, having seen chaos produce the best thing that ever happened", ambition:"one improbable moment as permanent proof of what is possible"},
+  NF: {rootedness:"two European Cups carried as living identity, the reason, the proof and the standard", loyalty:"staying through decades in the wilderness, the City Ground full and loud through all of it", emotion:"pride tinged with longing, immense in what was done and aching at how far it once fell"},
+  BR: {community:"local, generational and genuinely rooted, community over brand and never manufactured", ambition:"comfortable being underestimated, needing no validation from outside the community that already gets it"},
+  BH: {process:"a clear, analytical approach with the emotional warmth never dropped, rarer than it sounds", emotion:"having expected less and got more, enjoying it rather than taking it for granted", community:"progressive and community-rooted, genuinely happy to be where it is"},
+  WO: {rootedness:"deep and working-class, Molineux and Wolverhampton inseparable for over 130 years", ambition:"quietly competitive and historically proud, comfortable being underestimated by those who haven't looked closely"},
+  FU: {ambition:"genuine contentment, neither suppressed ambition nor resignation but real self-knowledge", rootedness:"warm and specific, the cottage, the river and the ritual, identity through character not trophies"},
+  BO: {emotion:"comfortable in its own skin, no chip and no complex, just real enjoyment", ambition:"finding more meaning in the ride itself than in prestige or status", chaos:"genuine, League Two to the Premier League and back more than once, learned not to take any of it for granted"},
+  AV: {ambition:"grounded optimism and patience, backing the rebuild before it is proven because it reads the signs early", rootedness:"a balanced relationship with the past, Villa Park history and momentum at once, the past informing without anchoring"},
+  SU: {loyalty:"through institutional difficulty, the journey from near-extinction to the Premier League mapped onto pure stubbornness", emotion:"communal suffering and communal resurrection equally real, the joy never coming without the grief before it", community:"forty-six thousand at the Stadium of Light in League One, and knowing exactly what that crowd was saying"},
+  LU: {emotion:"at the ceiling and tied to identity, defined through the full arc, not just the highs", chaos:"real, the history requires it, and what keeps it there is something older and more stubborn than reason"},
+  CH: {chaos:"an identity that has shifted repeatedly, and having moved through all of it", emotion:"the complicated grief of the Abramovich era, mourned in a way hard to explain to outsiders", rootedness:"Stamford Bridge still there and the old guard still in the seats, some things surviving the money and the chaos"},
+  IT: {community:"Suffolk, Portman Road and the Bobby Robson mythology, not global, not branded, real", ambition:"high, undefensive self-knowledge, not a big club and never pretending otherwise"},
+  CV: {loyalty:"explicitly unconditional in the face of active institutional failure, tested more directly than most", emotion:"an institutional grief with more reason to feel abandoned than almost anyone in the English game"},
+  HU: {rootedness:"the place as the entire point, and never letting anyone treat it as negotiable", loyalty:"load-bearing rather than sentimental, tested when someone tried to change what the club fundamentally is, and holding the line", community:"the kind that organises, a club belonging to the people who fill it, not the people who own it"},
+};
+Object.keys(teamEdge).forEach(k=>{ if(teams[k]) teams[k].edge = teamEdge[k]; });
+
+
 
 // ─── ARCHETYPES + VITAL STATS ────────────────────────────────────────────────
 const archetypes = {
