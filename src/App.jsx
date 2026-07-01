@@ -77,7 +77,7 @@ class ErrorBoundary extends Component {
 // and where you differ, and a templated, data-driven line explains why a gap does not break the
 // match (nearest overall shape, not any single line). Display-only: reads coreProfile + teamDims,
 // never scoring. All copy here is user-facing, so: no em dashes.
-function CoreCompare({ core, club, clubName="the club", accent="#b8567a", leagueIn="the league", noun="club" }){
+function CoreCompare({ core, club, clubName="the club", accent="#b8567a", leagueIn="the league", noun="club", edge={} }){
   if(!core || !club) return null;
   const clamp=(v)=>Math.max(0,Math.min(10,Math.round(v||0)));
   const YOU="#e8e4de";
@@ -113,8 +113,9 @@ function CoreCompare({ core, club, clubName="the club", accent="#b8567a", league
     return `${ls.slice(0,-1).join(", ")} and ${ls[ls.length-1]}`;
   })();
   const d0=differ[0];
+  const edgeClause = (d0 && edge && edge[d0.k]) ? `, ${edge[d0.k]}` : "";
   const explainer = d0
-    ? `No ${noun} in ${leagueIn} is an exact copy of you. ${clubName} is the closest overall fit: you line up on ${meetList}, and it runs ${d0.them>d0.you?"higher":"lower"} on ${d0.label.toLowerCase()} than you do. The match is the whole shape, not any single line.`
+    ? `No ${noun} in ${leagueIn} is an exact copy of you. ${clubName} is the closest overall fit: you line up on ${meetList}, and it runs ${d0.them>d0.you?"higher":"lower"} on ${d0.label.toLowerCase()} than you do${edgeClause}. The match is the whole shape, not any single line.`
     : `You and ${clubName} line up across the board. That is an unusually clean match: no single dimension pulls against it.`;
 
   const H=(t)=>(<div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.25em",textTransform:"uppercase",color:"#7878a0",margin:"0 0 4px"}}>{t}</div>);
@@ -702,7 +703,7 @@ function AppInner(){
                 {coreProfile ? (
                   <CoreCompare core={coreProfile} club={D.teamDims[result]} clubName={team.name}
                     accent={teamTextColors[result]||team.color}
-                    leagueIn={regOf(activeSport).leagueIn} noun={regOf(activeSport).noun}/>
+                    leagueIn={regOf(activeSport).leagueIn} noun={regOf(activeSport).noun} edge={team.edge}/>
                 ) : (
                   <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:16,fontStyle:"italic",color:"#9a9ac4",lineHeight:1.6,margin:"0 0 8px"}}>Retake this {regOf(activeSport).noun} to map your core against {team.name}.</p>
                 )}
