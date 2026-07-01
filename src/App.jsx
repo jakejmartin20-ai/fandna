@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef, useMemo, Component } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { track } from "@vercel/analytics";
-import { coreQuestions } from "./data/core";
+import { coreQuestions, DIM_ORDER, DIM_LABELS } from "./data/core";
 import { SPORT_DATA } from "./lib/sportData";
 import { scoreCore, scoreModule, matchEvidence } from "./lib/scoring";
 import { loadState, saveResult, clearAll } from "./lib/storage";
 import { generateShareCard } from "./lib/card";
-import { ChoiceQ, BinaryQ, SliderQ, DimBars } from "./components/quiz";
+import { ChoiceQ, BinaryQ, SliderQ } from "./components/quiz";
 import { ClubMark } from "./components/ClubMark";
 import { GenomeHome } from "./screens/Genome";
 import { CoreStrip } from "./components/CoreStrip";
@@ -68,6 +68,79 @@ class ErrorBoundary extends Component {
       </div>
     );
   }
+}
+
+// CoreCompare - the honest "why you" readout on the result. Plots the USER's core (coreProfile)
+// against the matched club's dims on one shared track per dimension: the club is a filled dot,
+// you are an open ring, so two markers together read as alignment and two apart read as the gap
+// (the ring/dot shapes stay legible whatever the club colour is). Rows split into where you meet
+// and where you differ, and a templated, data-driven line explains why a gap does not break the
+// match (nearest overall shape, not any single line). Display-only: reads coreProfile + teamDims,
+// never scoring. All copy here is user-facing, so: no em dashes.
+function CoreCompare({ core, club, clubName="the club", accent="#b8567a", leagueIn="the league", noun="club" }){
+  if(!core || !club) return null;
+  const clamp=(v)=>Math.max(0,Math.min(10,Math.round(v||0)));
+  const YOU="#e8e4de";
+  const rows=DIM_ORDER.map(k=>{
+    const you=clamp(core[k]), them=clamp(club[k]);
+    return { k, label:DIM_LABELS[k], you, them, gap:Math.abs(you-them) };
+  });
+  const meet   = rows.filter(r=>r.gap<=1).sort((a,b)=>a.gap-b.gap);
+  const differ = rows.filter(r=>r.gap>=2).sort((a,b)=>b.gap-a.gap);
+
+  const Row=({r,gap})=>{
+    const lo=Math.min(r.you,r.them)*10, hi=Math.max(r.you,r.them)*10;
+    return (
+      <div style={{display:"flex",alignItems:"center",gap:12,padding:"9px 0"}}>
+        <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:16,color:"#d8d4ce",width:112,flexShrink:0}}>{r.label}</span>
+        <div style={{position:"relative",flex:1,height:16}}>
+          <div style={{position:"absolute",top:7,left:0,right:0,height:2,background:"#1c1c28",borderRadius:2}}/>
+          {gap&&(<div style={{position:"absolute",top:7,height:2,background:"#4c3a44",borderRadius:2,left:`${lo}%`,width:`${hi-lo}%`}}/>)}
+          <span style={{position:"absolute",top:2,left:`${r.them*10}%`,transform:"translateX(-50%)",width:12,height:12,borderRadius:"50%",background:accent,boxShadow:`0 0 6px ${accent}88`}}/>
+          <span style={{position:"absolute",top:0,left:`${r.you*10}%`,transform:"translateX(-50%)",width:16,height:16,borderRadius:"50%",background:"#12121c",border:`2px solid ${YOU}`}}/>
+        </div>
+        <span style={{fontFamily:"'DM Mono',monospace",fontSize:13,width:50,textAlign:"right",flexShrink:0}}>
+          <span style={{color:YOU}}>{r.you}</span><span style={{color:"#6a6a90"}}> / </span><span style={{color:accent}}>{r.them}</span>
+        </span>
+      </div>
+    );
+  };
+
+  const meetList=(()=>{
+    const ls=meet.slice(0,3).map(r=>r.label.toLowerCase());
+    if(ls.length<=1) return ls[0]||"the core traits";
+    if(ls.length===2) return `${ls[0]} and ${ls[1]}`;
+    return `${ls.slice(0,-1).join(", ")} and ${ls[ls.length-1]}`;
+  })();
+  const d0=differ[0];
+  const explainer = d0
+    ? `No ${noun} in ${leagueIn} is an exact copy of you. ${clubName} is the closest overall fit: you line up on ${meetList}, and it runs ${d0.them>d0.you?"higher":"lower"} on ${d0.label.toLowerCase()} than you do. The match is the whole shape, not any single line.`
+    : `You and ${clubName} line up across the board. That is an unusually clean match: no single dimension pulls against it.`;
+
+  const H=(t)=>(<div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.25em",textTransform:"uppercase",color:"#7878a0",margin:"0 0 4px"}}>{t}</div>);
+
+  return (
+    <div>
+      <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.22em",textTransform:"uppercase",color:"#9696b4",marginBottom:6}}>Your core vs {clubName}</div>
+      <div style={{display:"flex",gap:18,fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",marginBottom:14}}>
+        <span><i style={{display:"inline-block",width:11,height:11,borderRadius:"50%",background:"#12121c",border:`2px solid ${YOU}`,marginRight:6,verticalAlign:"-2px"}}/>you</span>
+        <span><i style={{display:"inline-block",width:11,height:11,borderRadius:"50%",background:accent,marginRight:6,verticalAlign:"-2px"}}/>{clubName}</span>
+      </div>
+
+      {meet.length>0&&(<div style={{marginBottom:differ.length?18:6}}>
+        {H("Where you meet")}
+        {meet.map(r=>(<Row key={r.k} r={r} gap={false}/>))}
+      </div>)}
+
+      {differ.length>0&&(<div>
+        {H("Where you differ")}
+        {differ.map(r=>(<Row key={r.k} r={r} gap={true}/>))}
+      </div>)}
+
+      <div style={{borderTop:`1px solid ${accent}`,margin:"22px 0 0"}}/>
+      <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(16px,3.5vw,18px)",fontStyle:"italic",color:"#9a9ac4",lineHeight:1.6,margin:"16px 0 0"}}>{explainer}</p>
+    </div>
+  );
 }
 
 function AppInner(){
@@ -256,6 +329,7 @@ function AppInner(){
     const sport=code||"PL";
     setActiveSport(sport);
     const st=loadState();
+    setCoreProfile(st.coreProfile||null);
     const r=(st.results&&st.results[sport])||{};
     if(r.club){ setResult(r.club); setScores(r.scores||null);
       setEvidence(matchEvidence(sport,{coreAnswers:st.coreAnswers||{},moduleAnswers:r.answers||{},coreProfile:st.coreProfile||null}));
@@ -548,9 +622,11 @@ function AppInner(){
                 <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:15,color:"#c9c4bd",fontStyle:"italic",margin:"13px auto 0",maxWidth:300,lineHeight:1.45}}>{team.tagline}</p>
               </div>
 
+              {coreProfile&&(
               <div style={{padding:"16px 16px 15px"}}>
-                <CoreStrip dims={coreProfile||D.teamDims[result]} compact/>
+                <CoreStrip dims={coreProfile} compact/>
               </div>
+              )}
 
               {/* Universal genome line: this club is how the user's core shows up in THIS league.
                   Display-only, templated on team.name + the register's articled league phrase
@@ -623,19 +699,13 @@ function AppInner(){
             {/* ── Tab: Analysis ── */}
             {tab==="analysis"&&(
               <div style={{animation:"fadeIn .3s ease"}}>
-                <div style={{marginBottom:24}}>
-                  <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:14}}>Why this match</div>
-                  {team.why.map((line,i)=>(
-                    <div key={i} style={{display:"flex",gap:12,marginBottom:14,alignItems:"flex-start"}}>
-                      <span style={{color:(teamTextColors[result]||team.color),fontFamily:"'DM Mono',monospace",fontSize:10,marginTop:4,flexShrink:0}}>→</span>
-                      <p style={{margin:0,fontSize:"clamp(16px,3.5vw,18px)",color:"#c8c4be",lineHeight:1.8}}>{line}</p>
-                    </div>
-                  ))}
-                </div>
-                <div style={{borderTop:"1px solid #0f0f1a",paddingTop:20}}>
-                  <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:14}}>Personality dimensions</div>
-                  <DimBars dims={D.teamDims[result]} color={team.color}/>
-                </div>
+                {coreProfile ? (
+                  <CoreCompare core={coreProfile} club={D.teamDims[result]} clubName={team.name}
+                    accent={teamTextColors[result]||team.color}
+                    leagueIn={regOf(activeSport).leagueIn} noun={regOf(activeSport).noun}/>
+                ) : (
+                  <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:16,fontStyle:"italic",color:"#9a9ac4",lineHeight:1.6,margin:"0 0 8px"}}>Retake this {regOf(activeSport).noun} to map your core against {team.name}.</p>
+                )}
                 {/* ── CTAs ── */}
                 <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:24,paddingTop:20,borderTop:"1px solid #2a2a3a"}}>
                   {team.kit&&(<a href={team.kit} target="_blank" rel="noopener noreferrer"
