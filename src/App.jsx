@@ -12,7 +12,7 @@ import { GenomeHome } from "./screens/Genome";
 import { CoreStrip } from "./components/CoreStrip";
 import { MatchEvidence } from "./components/MatchEvidence";
 import { CrossMatch } from "./components/CrossMatch";
-import { SPORTS } from "./lib/manifest";
+import { SPORTS, FAMILIES } from "./lib/manifest";
 import { REGISTER, regOf } from "./lib/register";
 
 // Per-sport voice (noun, tail, cross-match labels) now lives in one shared source: ./lib/register.
@@ -428,6 +428,17 @@ function AppInner(){
     const c3=(r&&r.club)?(((sd&&sd.teams&&sd.teams[r.club]&&sd.teams[r.club].code3))||r.club):"?";
     return `${s.code}-${c3}`;
   }).join(" · ");
+  // Group the same strands by family (GLOBAL / USA) for a decluttered result-screen readout.
+  // Display-only; reads the same manifest the share string does, no new plumbing.
+  const shareGroups = FAMILIES.map(f=>({
+    fam: f,
+    items: SPORTS.filter(s=>s.group===f.id).map(s=>{
+      const r=genome[s.code];
+      const sd=SPORT_DATA[s.code];
+      const c3=(r&&r.club)?(((sd&&sd.teams&&sd.teams[r.club]&&sd.teams[r.club].code3))||r.club):"?";
+      return `${s.code}-${c3}`;
+    })
+  })).filter(g=>g.items.length>0);
   const coreSequenced = Object.keys(genome).length>0;
   const coreCount = coreQuestions.length;
   const moduleCounts = { PL: SPORT_DATA.PL.moduleQuestions.length, NFL: SPORT_DATA.NFL.moduleQuestions.length, MLB: SPORT_DATA.MLB.moduleQuestions.length, NBA: SPORT_DATA.NBA.moduleQuestions.length, BL: SPORT_DATA.BL.moduleQuestions.length, LL: SPORT_DATA.LL.moduleQuestions.length, L1: SPORT_DATA.L1.moduleQuestions.length, SA: SPORT_DATA.SA.moduleQuestions.length };
@@ -646,7 +657,17 @@ function AppInner(){
               <div style={{padding:"0 16px 14px",textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:13,fontStyle:"italic",color:"#9a9ac4",lineHeight:1.45}}>{team.name} is how your genome shows up in {regOf(activeSport).leagueIn}.</div>
 
               <div style={{padding:"0 16px 16px"}}>
-                <div style={{textAlign:"center",fontFamily:"'DM Mono',monospace",fontSize:11,color:"#c9c5cf",letterSpacing:"0.05em",marginBottom:4,wordBreak:"break-word"}}>{shareString}</div>
+                <div style={{display:"flex",flexDirection:"column",gap:5,alignItems:"center",marginBottom:6}}>
+                  {shareGroups.map(g=>{
+                    const dim = g.fam.glyph!=="globe";
+                    return (
+                      <div key={g.fam.id} style={{display:"flex",gap:8,alignItems:"baseline"}}>
+                        <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.14em",color:dim?"#5f5f76":"#7d7d9c",flexShrink:0,width:36,textAlign:"right"}}>{g.fam.glyph==="globe"?"GLOBAL":"USA"}</span>
+                        <span style={{fontFamily:"'DM Mono',monospace",fontSize:12,color:dim?"#82829a":"#c9c5cf",letterSpacing:"0.03em",wordBreak:"break-word",lineHeight:1.45}}>{g.items.join(" · ")}</span>
+                      </div>
+                    );
+                  })}
+                </div>
                 <div style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:14,color:"#9898b8",fontStyle:"italic"}}>Which {regOf(activeSport).noun} are you, really?</div>
               </div>
             </div>
@@ -878,7 +899,7 @@ function AppInner(){
             {/* Support + feedback footer (off the newcomer's critical path) */}
             <div style={{marginTop:28,paddingTop:20,borderTop:"1px solid #1e1e2e",textAlign:"center"}}>
               <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#7a7a98",lineHeight:1.6,margin:"0 auto 14px",maxWidth:380}}>Built by one person and far too many spreadsheets. If this made you laugh, argue, or text a friend, you can buy me a pint.</p>
-              <div style={{display:"flex",gap:20,justifyContent:"center",flexWrap:"wrap"}}>
+              <div style={{display:"flex",gap:20,justifyContent:"center",alignItems:"center",flexWrap:"wrap"}}>
                 <a href="https://buymeacoffee.com/fandna" target="_blank" rel="noopener noreferrer"
                   style={{color:"#9898b8",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"color .15s"}}
                   onMouseEnter={e=>e.currentTarget.style.color="#d0ccc6"}
