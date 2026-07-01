@@ -158,6 +158,27 @@ const FP_ENGINES = {
   SA: makeFpEngine(saDims, saScoring, saModule),
 };
 
+
+// -- Core decompression (candidate) --------------------------------------------
+// scoreCore compresses every taker into a ~0.8-pt band (SD ~0.26) while teamDims use
+// the full 0-10 scale, so raw fingerprint distance funnels everyone to central clubs.
+// We rescale the coreProfile by its POPULATION z (baked 200k scoreCore sweep) and
+// re-express on the club-dim centre, so RELATIVE shape drives the cluster. Applied
+// ONLY in the fingerprint path (below); PL, the displayed strip, the card, the genome
+// read and the why-you comparison all keep the raw coreProfile untouched.
+const CORE_POP_MEAN = {"loyalty":6.449,"emotion":6.55,"ambition":6.678,"process":5.469,"community":6.164,"chaos":4.619,"rootedness":6.5};
+const CORE_POP_SD   = {"loyalty":0.272,"emotion":0.286,"ambition":0.194,"process":0.358,"community":0.256,"chaos":0.181,"rootedness":0.264};
+const CORE_TGT_MEAN = {"loyalty":7.423,"emotion":6.679,"ambition":6.518,"process":5.923,"community":6.423,"chaos":5.226,"rootedness":6.982};
+const CORE_STRETCH  = 1.7;
+function decompressProfile(profile){
+  const out={};
+  for (const d of DIM_ORDER){
+    const z=((profile[d]||0)-CORE_POP_MEAN[d])/(CORE_POP_SD[d]||1);
+    out[d]=Math.max(0,Math.min(10, CORE_TGT_MEAN[d]+z*CORE_STRETCH));
+  }
+  return out;
+}
+
 function fpBase(coreProfile, eng){
   const out={};
   for (const code of eng.keys){
@@ -169,7 +190,7 @@ function fpBase(coreProfile, eng){
   return out;
 }
 function scoreFingerprint(input, eng){
-  const fp = fpBase(input.coreProfile||{}, eng);
+  const fp = fpBase(decompressProfile(input.coreProfile||{}), eng);
   const mod = allScores(input.moduleAnswers||{}, eng.scoring, eng.keys);
   const finalPts = phaseScores(input.moduleAnswers||{}, eng.scoring, eng.keys, eng.idToPhase, eng.finalPhase);
   const total={};
