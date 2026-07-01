@@ -50,11 +50,11 @@ export function MatchEvidence({ evidence, clubName, color = "#b8567a", noun = "c
 
       {/* STABILITY, the proof */}
       <div style={{background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:14,padding:"18px 16px"}}>
-        <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#7878a0",marginBottom:14}}>How solid is this</div>
+        <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#8484b0",marginBottom:14}}>How solid is this</div>
 
         <div style={{display:"flex",alignItems:"baseline",gap:5,lineHeight:1}}>
           <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:60,fontWeight:600,color:"#efe9e3"}}>{safe}</span>
-          <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:32,color:"#7878a0"}}>/ {total}</span>
+          <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:32,color:"#8484b0"}}>/ {total}</span>
         </div>
         <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",marginTop:5}}>answers locked to this {noun}</div>
 
@@ -85,13 +85,13 @@ export function MatchEvidence({ evidence, clubName, color = "#b8567a", noun = "c
           line says so on purpose, so the result never reads as bare. */}
       {tips.length > 0 ? (
         <div style={{background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:14,padding:"18px 16px",marginTop:16}}>
-          <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#7878a0",marginBottom:4}}>What tipped it</div>
+          <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#8484b0",marginBottom:4}}>What tipped it</div>
           <p style={{fontSize:12.5,color:"#9696b4",lineHeight:1.45,margin:"0 0 12px"}}>The answers that pulled you hardest toward {club}.</p>
           {tips.map((t, i) => (
             <div key={i} style={{display:"flex",gap:12,padding:"13px 0",borderTop:i===0?"none":"1px solid #242433"}}>
               <span style={{width:7,height:7,borderRadius:"50%",background:color,marginTop:7,flexShrink:0,boxShadow:`0 0 7px ${color}`}}/>
               <div>
-                <div style={{fontFamily:"'DM Mono',monospace",fontSize:9.5,letterSpacing:"0.1em",textTransform:"uppercase",color:"#6a6a90",marginBottom:5}}>{stripColon(t.question)}</div>
+                <div style={{fontFamily:"'DM Mono',monospace",fontSize:9.5,letterSpacing:"0.1em",textTransform:"uppercase",color:"#8585b4",marginBottom:5}}>{stripColon(t.question)}</div>
                 <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:17,lineHeight:1.3,color:"#e4ddd4"}}>{t.answer}</div>
               </div>
             </div>
@@ -99,7 +99,7 @@ export function MatchEvidence({ evidence, clubName, color = "#b8567a", noun = "c
         </div>
       ) : (
         <div style={{background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:14,padding:"18px 16px",marginTop:16}}>
-          <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#7878a0",marginBottom:10}}>Why this lands</div>
+          <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#8484b0",marginBottom:10}}>Why this lands</div>
           <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:19,lineHeight:1.45,color:"#e4ddd4",margin:0}}>This match runs deeper than any one answer. {club} is where your whole core settles, not a {noun} one choice tipped you into. A broad match like this is its own kind of strong.</p>
         </div>
       )}

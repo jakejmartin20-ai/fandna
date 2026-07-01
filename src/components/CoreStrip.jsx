@@ -22,15 +22,19 @@ export function CoreStrip({ dims, compact=false }){
   const topFor = (s)=> P + (1 - clamp(s)/10) * travel;
 
   return (
-    <div onClick={()=>setOpen(o=>!o)} style={{cursor:"pointer"}}>
+    <div role="button" tabIndex={0} aria-expanded={open}
+      aria-label={open?"Hide your core dimension scores":"Show your core dimension scores"}
+      onClick={()=>setOpen(o=>!o)}
+      onKeyDown={(e)=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); setOpen(o=>!o); } }}
+      style={{cursor:"pointer"}}>
 
       {/* Label + subtle tap cue */}
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:12}}>
         <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",letterSpacing:"0.28em",textTransform:"uppercase"}}>Your core</span>
-        <span style={{display:"flex",alignItems:"center",gap:6,opacity:0.6,fontFamily:"'DM Mono',monospace",fontSize:9,color:"#7878a0",letterSpacing:"0.14em",textTransform:"uppercase"}}>
+        <span style={{display:"flex",alignItems:"center",gap:6,opacity:0.6,fontFamily:"'DM Mono',monospace",fontSize:9,color:"#8484b0",letterSpacing:"0.14em",textTransform:"uppercase"}}>
           {open?"tap to close":"tap to read"}
           <svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true" style={{transform:open?"rotate(180deg)":"none",transition:"transform .25s ease"}}>
-            <path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="#7878a0" strokeWidth="1.3"/>
+            <path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="#8484b0" strokeWidth="1.3"/>
           </svg>
         </span>
       </div>
