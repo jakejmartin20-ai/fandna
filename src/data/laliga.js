@@ -604,7 +604,7 @@ const scoring = {
   ll_q4: { A: cell(["BAR", "BET", "RAY", "ESP"]),
            B: { ...cell(["RMA", "ATM", "SEV", "VAL"]), ATM: 3 },
            C: cell(["ATH", "RAC", "MAL", "VIL", "GET", "OSA", "CEL", "LEV", "ELC"]),
-           D: cell(["RSO", "DEP", "ALA"]) },
+           D: { ...cell(["RSO", "DEP", "ALA"]), DEP: 4 } },
   ll_q5: { A: cell(["ATM", "BET", "MAL", "RAY", "LEV"]),
            B: cell(["RMA", "ATH", "RSO", "RAC", "VIL", "ELC"]),
            C: cell(["SEV", "DEP", "ALA", "GET", "ESP", "CEL"]),
