@@ -70,72 +70,83 @@ class ErrorBoundary extends Component {
   }
 }
 
-// CoreCompare - the honest "why you" readout on the result. Plots the USER's core (coreProfile)
-// against the matched club's dims on one shared track per dimension: the club is a filled dot,
-// you are an open ring, so two markers together read as alignment and two apart read as the gap
-// (the ring/dot shapes stay legible whatever the club colour is). Rows split into where you meet
-// and where you differ, and a templated, data-driven line explains why a gap does not break the
-// match (nearest overall shape, not any single line). Display-only: reads coreProfile + teamDims,
-// never scoring. All copy here is user-facing, so: no em dashes.
+// CoreCompare - the honest "why you" readout on the result. Compares the SHAPE of the user's
+// core against the club's teamDims (which traits DEFINE each of them), not raw score, because
+// the core sits in a compressed band while teamDims use the full 0-10 scale. A dim reads as
+// "aligned" when it is relatively high (or low) for BOTH, even if the numbers differ.
+// Display-only: never read by the scoring path.
 function CoreCompare({ core, club, clubName="the club", accent="#b8567a", leagueIn="the league", noun="club", edge={} }){
   if(!core || !club) return null;
-  const clamp=(v)=>Math.max(0,Math.min(10,Math.round(v||0)));
   const YOU="#e8e4de";
-  const rows=DIM_ORDER.map(k=>{
-    const you=clamp(core[k]), them=clamp(club[k]);
-    return { k, label:DIM_LABELS[k], you, them, gap:Math.abs(you-them) };
-  });
-  const meet   = rows.filter(r=>r.gap<=1).sort((a,b)=>a.gap-b.gap);
-  const differ = rows.filter(r=>r.gap>=2).sort((a,b)=>b.gap-a.gap);
-
-  const Row=({r,gap})=>{
-    const lo=Math.min(r.you,r.them)*10, hi=Math.max(r.you,r.them)*10;
-    return (
-      <div style={{display:"flex",alignItems:"center",gap:12,padding:"9px 0"}}>
-        <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:16,color:"#d8d4ce",width:112,flexShrink:0}}>{r.label}</span>
-        <div style={{position:"relative",flex:1,height:16}}>
-          <div style={{position:"absolute",top:7,left:0,right:0,height:2,background:"#1c1c28",borderRadius:2}}/>
-          {gap&&(<div style={{position:"absolute",top:7,height:2,background:"#4c3a44",borderRadius:2,left:`${lo}%`,width:`${hi-lo}%`}}/>)}
-          <span style={{position:"absolute",top:2,left:`${r.them*10}%`,transform:"translateX(-50%)",width:12,height:12,borderRadius:"50%",background:accent,boxShadow:`0 0 6px ${accent}88`}}/>
-          <span style={{position:"absolute",top:0,left:`${r.you*10}%`,transform:"translateX(-50%)",width:16,height:16,borderRadius:"50%",background:"#12121c",border:`2px solid ${YOU}`}}/>
-        </div>
-        <span style={{fontFamily:"'DM Mono',monospace",fontSize:13,width:50,textAlign:"right",flexShrink:0}}>
-          <span style={{color:YOU}}>{r.you}</span><span style={{color:"#6a6a90"}}> / </span><span style={{color:accent}}>{r.them}</span>
-        </span>
-      </div>
-    );
+  const zof=(prof)=>{
+    const v=DIM_ORDER.map(d=>+prof[d]||0);
+    const m=v.reduce((a,b)=>a+b,0)/v.length;
+    const sd=Math.sqrt(v.reduce((a,b)=>a+(b-m)*(b-m),0)/v.length) || 1;
+    const z={}; DIM_ORDER.forEach((d,i)=>{ z[d]=(v[i]-m)/sd; }); return z;
   };
+  const zy=zof(core), zt=zof(club);
+  const rows=DIM_ORDER.map(k=>({ k, label:DIM_LABELS[k], zy:zy[k], zt:zt[k],
+    dz:Math.abs(zy[k]-zt[k]), you:+core[k]||0, them:+club[k]||0 }));
+  // Split by shape agreement: order by how differently each trait defines you vs the club,
+  // then cut at the widest natural gap that keeps 3-5 traits in "align" (so both groups fill).
+  const byAgree=[...rows].sort((a,b)=>a.dz-b.dz);
+  let cut=5, best=-1;
+  for(const c of [3,4,5]){ const g=byAgree[c].dz-byAgree[c-1].dz; if(g>best){ best=g; cut=c; } }
+  const align  = byAgree.slice(0,cut);
+  const diverge= byAgree.slice(cut).sort((a,b)=>b.dz-a.dz);
 
-  const meetList=(()=>{
-    const ls=meet.slice(0,3).map(r=>r.label.toLowerCase());
+  // Map a within-profile z to a shared track position (same axis for you and the club).
+  const ZLO=-2.2, ZHI=1.5;
+  const xp=(z)=>Math.max(3,Math.min(97, ((z-ZLO)/(ZHI-ZLO))*100 ));
+
+  const Row=({r})=>(
+    <div style={{display:"flex",alignItems:"center",gap:12,padding:"10px 0"}}>
+      <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:16,color:"#d8d4ce",width:112,flexShrink:0}}>{r.label}</span>
+      <div style={{position:"relative",flex:1,height:16}}>
+        <div style={{position:"absolute",top:7,left:0,right:0,height:2,background:"#1c1c28",borderRadius:2}}/>
+        <span style={{position:"absolute",top:2,left:`${xp(r.zt)}%`,transform:"translateX(-50%)",width:12,height:12,borderRadius:"50%",background:accent,boxShadow:`0 0 6px ${accent}88`}}/>
+        <span style={{position:"absolute",top:0,left:`${xp(r.zy)}%`,transform:"translateX(-50%)",width:16,height:16,borderRadius:"50%",background:"#12121c",border:`2px solid ${YOU}`}}/>
+      </div>
+    </div>
+  );
+
+  const human=(arr)=>{ const ls=arr.map(r=>r.label.toLowerCase());
     if(ls.length<=1) return ls[0]||"the core traits";
     if(ls.length===2) return `${ls[0]} and ${ls[1]}`;
-    return `${ls.slice(0,-1).join(", ")} and ${ls[ls.length-1]}`;
-  })();
-  const d0=differ[0];
-  const edgeClause = (d0 && edge && edge[d0.k]) ? `, ${edge[d0.k]}` : "";
+    return `${ls.slice(0,-1).join(", ")} and ${ls[ls.length-1]}`; };
+  const alignList=human(align.slice(0,3));
+  const divUp=diverge.filter(r=>r.them>r.you);
+  const d0=divUp[0]||diverge[0];
+  const leans = d0 ? d0.them>d0.you : false;
+  const edgeClause=(d0 && leans && edge && edge[d0.k]) ? `, ${edge[d0.k]}` : "";
   const explainer = d0
-    ? `No ${noun} in ${leagueIn} is an exact copy of you. ${clubName} is the closest overall fit: you line up on ${meetList}, and it runs ${d0.them>d0.you?"higher":"lower"} on ${d0.label.toLowerCase()} than you do${edgeClause}. The match is the whole shape, not any single line.`
-    : `You and ${clubName} line up across the board. That is an unusually clean match: no single dimension pulls against it.`;
+    ? `No ${noun} in ${leagueIn} is an exact copy of you. ${clubName} is the closest overall fit, matched on the shape of your character rather than raw score. You line up on ${alignList}, and where you part ways it ${leans?"leans into":"plays down"} ${d0.label.toLowerCase()} ${leans?"far more":"more"} than you do${edgeClause}. The match is the whole shape, not any single line.`
+    : `You and ${clubName} share the same shape across the board. That is an unusually clean match: no single trait pulls against it.`;
 
   const H=(t)=>(<div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.25em",textTransform:"uppercase",color:"#7878a0",margin:"0 0 4px"}}>{t}</div>);
+  const axis=(<div style={{display:"flex",alignItems:"center",gap:12,margin:"0 0 2px"}}>
+      <span style={{width:112,flexShrink:0}}/>
+      <div style={{flex:1,display:"flex",justifyContent:"space-between",fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.08em",color:"#6a6a86"}}><span>less defining</span><span>more defining</span></div>
+    </div>);
 
   return (
     <div>
       <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.22em",textTransform:"uppercase",color:"#9696b4",marginBottom:6}}>Your core vs {clubName}</div>
+      <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:15,fontStyle:"italic",color:"#8a8ab0",marginBottom:12}}>matched on shape, not raw score</div>
       <div style={{display:"flex",gap:18,fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",marginBottom:14}}>
         <span><i style={{display:"inline-block",width:11,height:11,borderRadius:"50%",background:"#12121c",border:`2px solid ${YOU}`,marginRight:6,verticalAlign:"-2px"}}/>you</span>
         <span><i style={{display:"inline-block",width:11,height:11,borderRadius:"50%",background:accent,marginRight:6,verticalAlign:"-2px"}}/>{clubName}</span>
       </div>
 
-      {meet.length>0&&(<div style={{marginBottom:differ.length?18:6}}>
-        {H("Where you meet")}
-        {meet.map(r=>(<Row key={r.k} r={r} gap={false}/>))}
+      {align.length>0&&(<div style={{marginBottom:diverge.length?18:6}}>
+        {H("Where you align")}
+        {axis}
+        {align.map(r=>(<Row key={r.k} r={r}/>))}
       </div>)}
 
-      {differ.length>0&&(<div>
-        {H("Where you differ")}
-        {differ.map(r=>(<Row key={r.k} r={r} gap={true}/>))}
+      {diverge.length>0&&(<div>
+        {H("Where you diverge")}
+        {diverge.map(r=>(<Row key={r.k} r={r}/>))}
       </div>)}
 
       <div style={{borderTop:`1px solid ${accent}`,margin:"22px 0 0"}}/>
