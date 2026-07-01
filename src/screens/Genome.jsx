@@ -48,6 +48,22 @@ function FamilyGlyph({ kind }){
   );
 }
 
+// Sizes/positions the always-visible scroll thumb inside a scrolling family panel (display-only).
+function sizeThumb(scroll){
+  if(!scroll) return;
+  const wrap = scroll.parentElement; if(!wrap) return;
+  const thumb = wrap.querySelector(".fdna-thumb");
+  const track = wrap.querySelector(".fdna-track");
+  if(!thumb||!track) return;
+  const th = track.clientHeight;
+  const denom = scroll.scrollHeight || 1;
+  const h = Math.max(20, Math.round((scroll.clientHeight/denom)*th));
+  const room = Math.max(0, scroll.scrollHeight-scroll.clientHeight);
+  const top = room>0 ? Math.round((scroll.scrollTop/room)*(th-h)) : 0;
+  thumb.style.height = h+"px";
+  thumb.style.transform = "translateY("+top+"px)";
+}
+
 export function GenomeHome({
   sports,            // manifest list (live-flag resolved): [{code,name,live,hook,group}, ...]
   genome,            // saved results map: { PL: { club: "LI" }, ... }
@@ -62,8 +78,19 @@ export function GenomeHome({
 }){
   const [copied,setCopied]=useState(false);
 
+  // Group the genome sequence by family for a decluttered, split share readout (display-only).
+  const SHARE = (()=>{
+    const raw=(shareString||"").replace(/^\s*FanDNA:\s*/i,"").trim();
+    const toks = raw ? raw.split(/\s*·\s*/).filter(Boolean) : [];
+    const grpOf=(t)=>{ const x=sports.find(y=>y.code===t.split("-")[0]); return x?x.group:null; };
+    let groups = FAMILIES.map(f=>({ fam:f, items: toks.filter(t=>grpOf(t)===f.id) })).filter(g=>g.items.length>0);
+    if(groups.length===0 && toks.length) groups=[{ fam:{id:"all",glyph:"globe"}, items:toks }];
+    return { groups, seq: groups.flatMap(g=>g.items).join(" · ") };
+  })();
+  const shareText = SHARE.seq ? ("FanDNA: "+SHARE.seq) : shareString;
+
   function copyShare(){
-    const txt = `${shareString}. Find yours: fandna.vercel.app`;
+    const txt = `${shareText}. Find yours: fandna.vercel.app`;
     if(navigator.clipboard&&navigator.clipboard.writeText){
       navigator.clipboard.writeText(txt).then(()=>{
         setCopied(true);
@@ -74,7 +101,7 @@ export function GenomeHome({
     }
   }
   function shareLink(){
-    const txt = `${shareString}. Find yours: fandna.vercel.app`;
+    const txt = `${shareText}. Find yours: fandna.vercel.app`;
     if(navigator.share){ navigator.share({text:txt}).catch(()=>{}); }
     else { copyShare(); }
   }
@@ -180,13 +207,23 @@ export function GenomeHome({
           </div>
 
           {/* leagues (scrolls inside when there are more than MAX_ROWS) */}
-          <div className="fdna-scroll" style={{padding:"13px 13px",maxHeight:scrolls?maxH:"none",overflowY:scrolls?"auto":"visible"}}>
-            {list.map((s,i)=>(<Strand key={s.code} s={s} last={i===list.length-1}/>))}
-          </div>
-
-          {/* soft fade cue when scrollable */}
-          {scrolls&&(
-            <div style={{position:"absolute",left:3,right:0,bottom:0,height:30,pointerEvents:"none",background:`linear-gradient(to top, ${PBG} 10%, transparent)`}}/>
+          {scrolls ? (
+            <div style={{position:"relative"}}>
+              <div className="fdna-scroll" ref={el=>{ if(el) requestAnimationFrame(()=>sizeThumb(el)); }} onScroll={e=>sizeThumb(e.currentTarget)}
+                style={{padding:"13px 16px 13px 13px",maxHeight:maxH,overflowY:"auto"}}>
+                {list.map((s,i)=>(<Strand key={s.code} s={s} last={i===list.length-1}/>))}
+              </div>
+              {/* always-visible scroll bar so the peek is unmistakable */}
+              <div className="fdna-track" style={{position:"absolute",top:10,bottom:10,right:5,width:4,borderRadius:2,background:"#2b2b3a",pointerEvents:"none"}}>
+                <div className="fdna-thumb" style={{position:"absolute",top:0,left:0,width:4,borderRadius:2,background:"#63637e",height:24,willChange:"transform"}}/>
+              </div>
+              {/* soft fade cue */}
+              <div style={{position:"absolute",left:3,right:9,bottom:0,height:26,pointerEvents:"none",background:`linear-gradient(to top, ${PBG} 12%, transparent)`}}/>
+            </div>
+          ) : (
+            <div className="fdna-scroll" style={{padding:"13px 13px",overflowY:"visible"}}>
+              {list.map((s,i)=>(<Strand key={s.code} s={s} last={i===list.length-1}/>))}
+            </div>
           )}
         </div>
       </div>
@@ -196,9 +233,8 @@ export function GenomeHome({
   return(
     <div style={{animation:"popIn .45s cubic-bezier(.2,.8,.3,1) both",position:"relative",overflow:"hidden"}}>
       <style>{`
-        .fdna-scroll::-webkit-scrollbar{width:5px}
-        .fdna-scroll::-webkit-scrollbar-track{background:transparent}
-        .fdna-scroll::-webkit-scrollbar-thumb{background:#3a3a4e;border-radius:3px}
+        .fdna-scroll::-webkit-scrollbar{width:0;height:0}
+        .fdna-scroll{scrollbar-width:none;-ms-overflow-style:none}
       `}</style>
 
       {/* Faint double-helix behind the wordmark: lab-readout texture, not decoration. */}
@@ -253,8 +289,18 @@ export function GenomeHome({
             </div>
           )}
           <CoreStrip dims={coreProfile}/>
-          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginTop:14,paddingTop:11,borderTop:"1px solid #222230",gap:10}}>
-            <span style={{fontFamily:"'DM Mono',monospace",fontSize:12,color:"#c9c5cf",letterSpacing:"0.03em",wordBreak:"break-word"}}>{shareString}</span>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginTop:14,paddingTop:11,borderTop:"1px solid #222230",gap:10}}>
+            <div style={{flex:1,minWidth:0,display:"flex",flexDirection:"column",gap:5}}>
+              {SHARE.groups.map(g=>{
+                const dim = g.fam.glyph!=="globe";
+                return (
+                  <div key={g.fam.id} style={{display:"flex",gap:8,alignItems:"baseline"}}>
+                    <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.14em",color:dim?"#5f5f76":"#7d7d9c",flexShrink:0,width:36,paddingTop:1}}>{g.fam.glyph==="globe"?"GLOBAL":"USA"}</span>
+                    <span style={{fontFamily:"'DM Mono',monospace",fontSize:12,color:dim?"#82829a":"#c9c5cf",letterSpacing:"0.03em",wordBreak:"break-word",lineHeight:1.45}}>{g.items.join(" · ")}</span>
+                  </div>
+                );
+              })}
+            </div>
             <span style={{display:"flex",gap:14,flexShrink:0}}>
               <span onClick={copyShare} style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#7878a0",letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer"}}>{copied?"Copied":"Copy"}</span>
               <span onClick={shareLink} style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#7878a0",letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer"}}>Share</span>
@@ -266,7 +312,7 @@ export function GenomeHome({
 
       {/* Caption framing the league list as the through-line's evidence (earned at 2+ leagues). */}
       {coreSequenced&&takenLive.length>=2&&(
-        <div style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#8a8aa8",margin:"0 0 15px",position:"relative",zIndex:1}}>
+        <div style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#8a8aa8",margin:"20px 0 15px",position:"relative",zIndex:1}}>
           The proof, league by league
         </div>
       )}
@@ -280,7 +326,7 @@ export function GenomeHome({
 
       {/* Support + feedback footer */}
       <div style={{paddingTop:20,borderTop:"1px solid #1e1e2e",textAlign:"center",position:"relative",zIndex:1}}>
-        <div style={{display:"flex",gap:20,justifyContent:"center",flexWrap:"wrap"}}>
+        <div style={{display:"flex",gap:20,justifyContent:"center",alignItems:"center",flexWrap:"wrap"}}>
           <a href="https://buymeacoffee.com/fandna" target="_blank" rel="noopener noreferrer"
             style={{color:"#9898b8",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"color .15s"}}
             onMouseEnter={e=>e.currentTarget.style.color="#d0ccc6"}
