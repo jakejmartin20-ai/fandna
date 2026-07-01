@@ -178,7 +178,7 @@ const teams = {
       "Your chaos tolerance is high. The improbable ride, the wild swings, the fairytale of it, that is what you signed up for.",
     ],
     note:"Spiesen-Elversberg, population around thirteen thousand, is the smallest municipality ever represented in the German top flight. The stadium is named for the Kaiserlinde, a near-century-old lime tree felled by a cyclone in 2015.",
-    kit:"https://www.sv-elversberg.de" },
+    kit:"https://shop.sv07elversberg.de" },
 
   SCP: { code3:"SCP", kitType:"duo", secondaryColor:"#000000", name:"SC Paderborn", emoji:"🔵", color:"#003F87",
     tagline:"You yo-yo up from East Westphalia, and nobody outside it ever learns your name.",
