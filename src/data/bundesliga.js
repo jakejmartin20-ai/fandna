@@ -203,6 +203,31 @@ const teams = {
     kit:"https://shop.eintracht.de" },
 };
 
+// Per-club, per-dimension flavour for the result's 'where you differ' line (display-only; drawn
+// from each club's own why-copy). Merged onto teams below; the scoring path never reads it.
+const teamEdge = {
+  BAY: {ambition:"a club that measures a year by the trophy, not the journey, and makes no apology for it", process:"structure and preparation over sentiment, dominance engineered and then maintained", chaos:"the steady, expected outcome rather than the romantic underdog story"},
+  HSV: {rootedness:"an identity built on a long, unbroken record, a fall that genuinely rocks it for how much it meant", loyalty:"not flinching in the lean years, sat through the drop and never once thinking of anyone else", emotion:"highs and lows felt hard, real emotion rather than the cool detachment of a club that expects to win"},
+  VFB: {process:"the method, the steady build, the thing constructed to last rather than thrown together", ambition:"real and rising, not content to drift, trusting the work to take it there", chaos:"the well-built side rather than the unpredictable one"},
+  BMG: {rootedness:"what the club once was defining what it is, carried gladly", loyalty:"steady and unconditional, the glory years long gone and never once wavered", emotion:"the romance of it, about the idea of the club and what it once meant, not the table"},
+  SVW: {loyalty:"bone-deep and lifelong, green and white a fact rather than a preference", rootedness:"the colors, the city and the continuity, all mattering more than any trophy", chaos:"steady and its own, exactly enough, with no need for the spotlight"},
+  RBL: {ambition:"high and unsentimental, wanting to win now by the most effective route, history no prerequisite", process:"the model, the recruitment and the system, trusted over any nostalgia", rootedness:"low by choice, looking forward rather than back, and not minding who that annoys"},
+  TSG: {process:"the plan, the model and the steady build, over the lucky result", chaos:"a calm, well-engineered season rather than a dramatic one", rootedness:"young and unburdened by history, a lightness it finds freeing rather than empty"},
+  B04: {process:"the structured, well-run project, believed in even through the years it did not pay off", ambition:"never dimmed through the near-misses, kept aiming at the top until it finally arrived"},
+  S04: {loyalty:"handed down rather than chosen, walking away never once dreamed of", community:"a collective rather than a brand, the people in the stand beside you, the we over the I", rootedness:"rooted to a place and its history, where it is from the reason any of it matters"},
+  BVB: {emotion:"felt at full volume, a quiet matchday a wasted one", community:"the thousands around you, all feeling it together", chaos:"the heartbreak taken with the highs, the intensity the whole appeal"},
+  SCF: {process:"the patient, principled build over the splashy shortcut", chaos:"stability, continuity and a plan that holds, not drama", loyalty:"a loyalty to a way of doing things, getting there honestly rather than winning ugly and losing itself"},
+  FCA: {ambition:"genuinely low and honest about it, belonging at this level being enough", chaos:"a calm mid-table season over a dramatic one, every time", rootedness:"quiet and real, the city and the routine mattering more than any silverware"},
+  KOE: {loyalty:"unconditional, the yo-yo years that would break others binding it tighter", chaos:"the yo-yo years lived completely, promotion and relegation felt and never traded away", emotion:"hot, every promotion and relegation felt completely and wanted no other way", community:"the city, the carnival and the singing, the collective and its mood"},
+  M05: {process:"out-thinking and out-working opponents rather than out-spending them, because it cannot out-spend them", ambition:"sensible, the ego small, overachieving its means the whole satisfaction"},
+  FCU: {community:"the club that is its people, its builders rather than its audience", loyalty:"absolute, time and labor and literal blood given, walking away never conceivable"},
+  ELV: {chaos:"the improbable ride, the wild swings and the fairytale, exactly what it signed up for", ambition:"nothing to lose and playing free, a lightness it would never trade"},
+  SCP: {ambition:"modest and grounded, punching above its weight the whole achievement", chaos:"the yo-yo between divisions that does not shake it, just how its story goes"},
+  SGE: {community:"a traveling mass, the crowd it belongs to the whole point", emotion:"living for the big, unpredictable nights and the energy that comes with them", chaos:"the big, unpredictable nights and the energy that comes with them"},
+};
+Object.keys(teamEdge).forEach(k=>{ if(teams[k]) teams[k].edge = teamEdge[k]; });
+
+
 const archetypes = {
   BAY:"Der Rekordmeister", HSV:"Der Dino", VFB:"Der Brustring", BMG:"Die Fohlen", SVW:"Die Grün-Weißen",
   RBL:"Die Roten Bullen", TSG:"Der Dorfklub", B04:"Die Werkself", S04:"Die Knappen", BVB:"Die Gelbe Wand",

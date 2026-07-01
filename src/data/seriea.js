@@ -206,6 +206,33 @@ const teams = {
     kit:"https://www.veneziafc.it" },
 };
 
+// Per-club, per-dimension flavour for the result's 'where you differ' line (display-only; drawn
+// from each club's own why-copy). Merged onto teams below; the scoring path never reads it.
+const teamEdge = {
+  INT: {ambition:"a club that measures a season in trophies, where anything short of contention feels like failure", process:"a serious operation, well-built and well-run rather than a romance", rootedness:"a great cosmopolitan club before a neighborhood, open to the world by design"},
+  JUV: {ambition:"the title or nothing, fino alla fine, no apology for the hunger", process:"a winning machine run with discipline, control prized over flair every time", community:"a nationwide institution, loved and resented everywhere, tied to no single terrace"},
+  MIL: {ambition:"a giant by birthright, expecting to compete for everything, every year", emotion:"European nights carried in the bones, the gap felt whenever the present falls short of the past", chaos:"ownership changes and dramatic swings ridden out and survived"},
+  NAP: {emotion:"a club that suffers and soars, where the intensity is the whole point", community:"the city's soul, inseparable from where it is from", rootedness:"the city's soul, inseparable from where it is from", chaos:"eruption, drama, ecstasy and despair, never traded for anyone's calm"},
+  ROM: {loyalty:"a bond that stays through the heartbreak, because leaving was never a thought", emotion:"every result landing in the chest, the highs and lows lived all the way out", community:"the city's romance, a shared ache and joy passed down through families"},
+  LAZ: {emotion:"every Rome derby felt in the spine, the pride carried out loud", ambition:"solid rather than ravenous, wanting to matter without measuring life by trophies alone", community:"a proud minority, comfortable standing apart, never desperate to be the favorite"},
+  ATA: {process:"beautifully built and run, the academy and the system before any shortcut", ambition:"high and earned, climbed from mid-table to Europe on merit and meaning to stay", community:"a provincial city that sees itself in the club, fierce and proud behind the project"},
+  FIO: {rootedness:"Florence's club, inseparable from a city that believes it is the center of the world", emotion:"near-misses felt keenly and heroes loved fiercely, all of it lived out loud", ambition:"the bearing of a club that holds itself the equal of any, whatever the cabinet says"},
+  BOL: {process:"a recent rise built on intelligence and a clear plan, not a chequebook", rootedness:"a century of history worn lightly, behind the present without weighing it down", emotion:"the calm, civilized way rather than the volatile one"},
+  TOR: {loyalty:"staying through everything, because that is what the word actually means", rootedness:"the bull, the city and the wound of Superga, all inseparable from who it is", emotion:"grief and pride carried together, both felt every time it turns up"},
+  GEN: {rootedness:"the oldest club in Italy, history itself, anchored in a port that defines it", loyalty:"faithful through a century of decline, never once thinking of leaving", emotion:"a port city's pride and an ancient derby that keep the feeling alive"},
+  UDI: {process:"run like a smart, sustainable business, recruitment and discipline before romance", emotion:"the measured, clever way, never losing its head over a single result", ambition:"realistic, built to endure and overachieve rather than win the lot"},
+  COM: {ambition:"backed to climb, with the resources to make the rise real", process:"a modern, well-funded project, built deliberately rather than handed down", rootedness:"a glamorous new build, trajectory over heritage, the climb its whole story"},
+  CAG: {rootedness:"Sardinia's club, an island identity that answers to no mainland", community:"the whole island seeing itself in the club, close-knit and fiercely protective", emotion:"pride carried calmly, settled in who it is rather than chasing what it is not"},
+  LEC: {loyalty:"staying through the relegations and the climbs back, because the club is the place and the place is home", rootedness:"the deep South's club, the heel of Italy, proud of a corner the rest of the country forgets", ambition:"modest and honest, aiming to belong and survive, taking the ups and downs as they come"},
+  PAR: {loyalty:"the faithful who stayed all the way down to the fifth tier and carried the club back from nothing", chaos:"glory, collapse and rebirth all lived, the turmoil woven into who it is", rootedness:"the crusader's cross that survived bankruptcy and erasure, and still means everything"},
+  SAS: {process:"a well-run, well-organized project, built the proper way from a clean sheet", rootedness:"a modern build with no deep past, carried lightly", emotion:"the sensible, calm way, the competent club rather than the dramatic one"},
+  MON: {ambition:"backed and lifted higher than ever before, carrying that aspiration forward", process:"built deliberately, a project with a plan rather than an accident", emotion:"sitting between the giants and the strugglers, getting on with the business of belonging"},
+  FRO: {community:"a small provincial town's club, close-knit and unpretentious, the togetherness its edge", chaos:"steady and well-run, the recent rises built on order rather than drama", ambition:"the happy kind, thrilled by the climb itself, without a shred of entitlement"},
+  VEN: {rootedness:"Venice itself, a sense of place no money could manufacture, reached by boat across the lagoon", emotion:"the game felt keenly and wrapped in atmosphere and beauty rather than raw fury", ambition:"gentle, aiming to belong and do it with style, untroubled by the hunger of the giants"},
+};
+Object.keys(teamEdge).forEach(k=>{ if(teams[k]) teams[k].edge = teamEdge[k]; });
+
+
 const archetypes = {
   INT:"La Beneamata", JUV:"La Vecchia Signora", MIL:"Il Diavolo", NAP:"I Partenopei",
   ROM:"La Magica", LAZ:"Le Aquile", ATA:"La Dea", FIO:"La Viola", BOL:"I Felsinei",
