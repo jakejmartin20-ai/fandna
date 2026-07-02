@@ -65,7 +65,7 @@ function TipGroup({ title, color, tips }){
         <div key={i} style={{display:"flex",gap:11,padding:"11px 0",borderTop:i===0?"none":"1px solid #242433"}}>
           <span style={{width:7,height:7,borderRadius:"50%",background:color,marginTop:8,flexShrink:0,boxShadow:`0 0 7px ${color}`}}/>
           <div>
-            <div style={{fontFamily:MONO,fontSize:9.5,letterSpacing:"0.08em",textTransform:"uppercase",color:"#6a6a90",marginBottom:5,lineHeight:1.4}}>{(t.question||"").replace(/\s*:\s*$/,"")}</div>
+            <div style={{fontFamily:MONO,fontSize:9.5,letterSpacing:"0.08em",textTransform:"uppercase",color:"#8585b4",marginBottom:5,lineHeight:1.4}}>{(t.question||"").replace(/\s*:\s*$/,"")}</div>
             <div style={{fontFamily:SERIF,fontSize:17,lineHeight:1.3,color:"#e4ddd4"}}>{t.answer}</div>
           </div>
         </div>
@@ -78,7 +78,7 @@ function Card({ children }){
   return <div style={{background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:14,padding:"18px 16px",marginTop:18}}>{children}</div>;
 }
 function Eyebrow({ children }){
-  return <div style={{fontFamily:MONO,fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#7878a0",marginBottom:13}}>{children}</div>;
+  return <div style={{fontFamily:MONO,fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#8484b0",marginBottom:13}}>{children}</div>;
 }
 
 export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCode, matchedName, matchedColor = "#b8567a", voice }){
@@ -115,35 +115,36 @@ export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCo
     <div style={{marginTop:24,paddingTop:24,borderTop:"1px solid #2a2a3a"}}>
       <h2 style={{fontFamily:SERIF,fontSize:26,color:"#efe9e3",lineHeight:1.2,margin:"0 0 16px",fontWeight:600}}>{v.xmHeader}</h2>
 
-      <button onClick={()=>setOpen(o=>!o)}
+      <button onClick={()=>setOpen(o=>!o)} aria-haspopup="listbox" aria-expanded={open}
         style={{width:"100%",display:"flex",alignItems:"center",justifyContent:"space-between",background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:12,padding:"15px 16px",color:chosen?"#efe9e3":"#9696b4",fontFamily:MONO,fontSize:14,cursor:"pointer"}}>
         <span style={{display:"flex",alignItems:"center",gap:10}}>
           {chosen
             ? (<><span style={{fontSize:20}}>{chosen.emoji}</span><span>{chosen.name}</span></>)
             : (supported==="NONE" ? <span>No {v.leagueAbbr} {v.team}</span> : <span>Pick your {v.team}</span>)}
         </span>
-        <span style={{color:"#7878a0",fontSize:12}}>{open?"\u25B4":"\u25BE"}</span>
+        <span style={{color:"#8484b0",fontSize:12}}>{open?"\u25B4":"\u25BE"}</span>
       </button>
 
       {open && (
         <div style={{marginTop:10,background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:12,overflow:"hidden"}}>
           <input value={query} onChange={e=>setQuery(e.target.value)} placeholder={"Search "+v.teams} autoComplete="off"
-            style={{width:"100%",border:"none",outline:"none",background:"#191922",color:"#efe9e3",fontFamily:MONO,fontSize:14,padding:"14px 16px",borderBottom:"1px solid #2a2a3a"}}/>
+            aria-label={"Search "+v.teams}
+            style={{width:"100%",border:"none",background:"#191922",color:"#efe9e3",fontFamily:MONO,fontSize:14,padding:"14px 16px",borderBottom:"1px solid #2a2a3a"}}/>
           <div style={{maxHeight:320,overflowY:"auto"}}>
             {filtered.map((c,i)=>(
-              <div key={c.code} onClick={()=>pick(c.code)}
-                style={{display:"flex",alignItems:"center",gap:11,padding:"12px 16px",cursor:"pointer",borderTop:i===0?"none":"1px solid #242433"}}>
+              <button type="button" key={c.code} onClick={()=>pick(c.code)}
+                style={{width:"100%",textAlign:"left",background:"none",display:"flex",alignItems:"center",gap:11,padding:"12px 16px",cursor:"pointer",border:"none",borderTop:i===0?"none":"1px solid #242433"}}>
                 <span style={{fontSize:20,width:24,textAlign:"center"}}>{c.emoji}</span>
                 <span style={{flex:1,fontSize:15,color:"#c8c4be"}}>{c.name}</span>
                 <span style={{width:9,height:9,borderRadius:"50%",background:c.color}}/>
-              </div>
+              </button>
             ))}
             {showEscape && (
-              <div onClick={()=>pick("NONE")}
-                style={{display:"flex",alignItems:"center",gap:11,padding:"12px 16px",cursor:"pointer",borderTop:filtered.length?"1px solid #242433":"none"}}>
-                <span style={{fontSize:18,width:24,textAlign:"center",color:"#7878a0"}}>{"\u00B7"}</span>
+              <button type="button" onClick={()=>pick("NONE")}
+                style={{width:"100%",textAlign:"left",background:"none",display:"flex",alignItems:"center",gap:11,padding:"12px 16px",cursor:"pointer",border:"none",borderTop:filtered.length?"1px solid #242433":"none"}}>
+                <span style={{fontSize:18,width:24,textAlign:"center",color:"#8484b0"}}>{"\u00B7"}</span>
                 <span style={{flex:1,fontSize:16,color:"#9696b4",fontStyle:"italic",fontFamily:SERIF}}>{v.xmEscape}</span>
-              </div>
+              </button>
             )}
           </div>
         </div>

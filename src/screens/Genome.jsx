@@ -26,7 +26,7 @@ const RAIL = "#7d7da6";   // the bough into each panel
 const PLBL = "#b6b2cc";   // panel label + glyph
 const PBG  = "#181820";   // panel fill
 const PBD  = "#262633";   // panel border
-const COUNT= "#6a6a82";   // the "x of y mapped" count
+const COUNT= "#80809d";   // the "x of y mapped" count
 const MAX_ROWS = 3;       // rows shown before a family panel scrolls inside its box
 const ROW_PX = 84;        // approx height of one strand row (card + gap)
 const PEEK = 24;          // extra sliver so the next row peeks when scrollable
@@ -175,14 +175,14 @@ export function GenomeHome({
     return(
       <div style={{
         display:"flex",alignItems:"center",gap:12,background:"transparent",marginBottom:mb,
-        border:"1px solid #1f1f2b",borderRadius:10,padding:"12px 14px",opacity:0.55,
+        border:"1px solid #23232f",borderRadius:10,padding:"12px 14px",
       }}>
-        <div style={{width:42,height:42,borderRadius:"50%",flexShrink:0,border:"1px solid #2a2a3a",display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,color:"#4a4a6a",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>?</div>
+        <div style={{width:42,height:42,borderRadius:"50%",flexShrink:0,border:"1px solid #3a3a4a",display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,color:"#6f6f88",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>?</div>
         <div style={{flex:1,minWidth:0}}>
-          <div style={{fontSize:10,color:"#666",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:3}}>{s.name}</div>
-          <div style={{fontSize:"clamp(15px,3.6vw,17px)",color:"#888",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic"}}>Coming soon</div>
+          <div style={{fontSize:10,color:"#818181",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:3}}>{s.name}</div>
+          <div style={{fontSize:"clamp(15px,3.6vw,17px)",color:"#9a9a9a",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic"}}>Coming soon</div>
         </div>
-        <span style={{fontSize:10,color:"#444",letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",flexShrink:0}}>soon</span>
+        <span style={{fontSize:10,color:"#818181",letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",flexShrink:0}}>soon</span>
       </div>
     );
   }
@@ -250,14 +250,14 @@ export function GenomeHome({
 
       {/* Wordmark + line */}
       <div style={{textAlign:"center",marginBottom:22,position:"relative",zIndex:1}}>
-        <div style={{
+        <h1 style={{
           fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:300,
-          fontSize:"clamp(44px,12vw,66px)",color:"#e8e4de",letterSpacing:"-.02em",lineHeight:1,
+          fontSize:"clamp(44px,12vw,66px)",color:"#e8e4de",letterSpacing:"-.02em",lineHeight:1,margin:0,
         }}>
           Fan<span style={{color:"#9898b8"}}>DNA</span>
-        </div>
+        </h1>
         <div style={{
-          marginTop:10,fontSize:11,color:"#7878a0",letterSpacing:"0.35em",
+          marginTop:10,fontSize:11,color:"#8484b0",letterSpacing:"0.35em",
           textTransform:"uppercase",fontFamily:"'DM Mono',monospace",
         }}>Your fandom, sequenced</div>
       </div>
@@ -283,7 +283,7 @@ export function GenomeHome({
         <div style={{position:"relative",zIndex:1,border:"1px solid #222230",borderRadius:12,padding:"15px 14px 13px",background:"#14141c"}}>
           {readOut&&(
             <div style={{marginBottom:16,paddingBottom:15,borderBottom:"1px solid #222230"}}>
-              <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#7878a0",letterSpacing:"0.26em",textTransform:"uppercase",marginBottom:8}}>The through-line</div>
+              <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#8484b0",letterSpacing:"0.26em",textTransform:"uppercase",marginBottom:8}}>The through-line</div>
               <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:400,fontSize:"clamp(30px,8.4vw,38px)",color:"#e8e4de",lineHeight:1.04,marginBottom:9}}>{readOut.headline}</div>
               <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(16px,4.3vw,19px)",color:"#9898b8",lineHeight:1.5}}>{readOut.read} {readOut.closing}</div>
             </div>
@@ -295,15 +295,15 @@ export function GenomeHome({
                 const dim = g.fam.glyph!=="globe";
                 return (
                   <div key={g.fam.id} style={{display:"flex",gap:8,alignItems:"baseline"}}>
-                    <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.14em",color:dim?"#5f5f76":"#7d7d9c",flexShrink:0,width:36,paddingTop:1}}>{g.fam.glyph==="globe"?"GLOBAL":"USA"}</span>
+                    <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.14em",color:dim?"#7f7f9f":"#7d7d9c",flexShrink:0,width:36,paddingTop:1}}>{g.fam.glyph==="globe"?"GLOBAL":"USA"}</span>
                     <span style={{fontFamily:"'DM Mono',monospace",fontSize:12,color:dim?"#82829a":"#c9c5cf",letterSpacing:"0.03em",wordBreak:"break-word",lineHeight:1.45}}>{g.items.join(" · ")}</span>
                   </div>
                 );
               })}
             </div>
-            <span style={{display:"flex",gap:14,flexShrink:0}}>
-              <span onClick={copyShare} style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#7878a0",letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer"}}>{copied?"Copied":"Copy"}</span>
-              <span onClick={shareLink} style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#7878a0",letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer"}}>Share</span>
+            <span style={{display:"flex",gap:8,flexShrink:0}}>
+              <button type="button" onClick={copyShare} aria-live="polite" style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#8484b0",letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer",background:"none",border:"none",padding:"6px 6px",margin:0}}>{copied?"Copied":"Copy"}</button>
+              <button type="button" onClick={shareLink} style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#8484b0",letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer",background:"none",border:"none",padding:"6px 6px",margin:0}}>Share</button>
             </span>
           </div>
 
@@ -338,7 +338,7 @@ export function GenomeHome({
             onMouseLeave={e=>e.currentTarget.style.color="#9898b8"}
           >Feedback or a bug?</a>
         </div>
-        <p style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#5f5f78",lineHeight:1.6,margin:"16px auto 0",maxWidth:360,letterSpacing:"0.02em"}}>FanDNA is an independent project. Not affiliated with, endorsed by, or associated with any club, league, or governing body.</p>
+        <p style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#7f7f9f",lineHeight:1.6,margin:"16px auto 0",maxWidth:360,letterSpacing:"0.02em"}}>FanDNA is an independent project. Not affiliated with, endorsed by, or associated with any club, league, or governing body.</p>
       </div>
 
     </div>
