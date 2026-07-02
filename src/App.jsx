@@ -123,10 +123,10 @@ function CoreCompare({ core, club, clubName="the club", accent="#b8567a", league
     ? `No ${noun} in ${leagueIn} is an exact copy of you. ${clubName} is the closest overall fit, matched on the shape of your character rather than raw score. You line up on ${alignList}, and where you part ways it ${leans?"leans into":"plays down"} ${d0.label.toLowerCase()} ${leans?"far more":"more"} than you do${edgeClause}. The match is the whole shape, not any single line.`
     : `You and ${clubName} share the same shape across the board. That is an unusually clean match: no single trait pulls against it.`;
 
-  const H=(t)=>(<div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.25em",textTransform:"uppercase",color:"#7878a0",margin:"0 0 4px"}}>{t}</div>);
+  const H=(t)=>(<div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.25em",textTransform:"uppercase",color:"#8484b0",margin:"0 0 4px"}}>{t}</div>);
   const axis=(<div style={{display:"flex",alignItems:"center",gap:12,margin:"0 0 2px"}}>
       <span style={{width:112,flexShrink:0}}/>
-      <div style={{flex:1,display:"flex",justifyContent:"space-between",fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.08em",color:"#6a6a86"}}><span>less defining</span><span>more defining</span></div>
+      <div style={{flex:1,display:"flex",justifyContent:"space-between",fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.08em",color:"#7e7e9f"}}><span>less defining</span><span>more defining</span></div>
     </div>);
 
   return (
@@ -501,6 +501,11 @@ function AppInner(){
         ::-webkit-scrollbar{width:3px}
         ::-webkit-scrollbar-track{background:#16161e}
         ::-webkit-scrollbar-thumb{background:#1e1e2e;border-radius:2px}
+        :focus-visible{outline:2px solid #b6b2cc;outline-offset:2px;border-radius:4px}
+        :focus:not(:focus-visible){outline:none}
+        @media (prefers-reduced-motion: reduce){
+          *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+        }
       `}</style>
 
       {/* Ambient glow, changes with phase */}
@@ -534,8 +539,14 @@ function AppInner(){
         {/* ── QUIZ ── */}
         {screen==="quiz"&&(
           <>
+            <h1 style={{position:"absolute",width:1,height:1,padding:0,margin:-1,overflow:"hidden",clip:"rect(0,0,0,0)",whiteSpace:"nowrap",border:0}}>
+              FanDNA quiz: {(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"}
+            </h1>
+            <div aria-live="polite" style={{position:"absolute",width:1,height:1,padding:0,margin:-1,overflow:"hidden",clip:"rect(0,0,0,0)",whiteSpace:"nowrap",border:0}}>
+              Question {cur+1} of {sequence.length}
+            </div>
             {/* League indicator: which sequence you're taking, always visible */}
-            <div style={{textAlign:"center",marginBottom:14,fontSize:11,color:"#7878a0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>
+            <div style={{textAlign:"center",marginBottom:14,fontSize:11,color:"#8484b0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>
               {(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"}
             </div>
             {/* Progress: six-segment phase tracker (in-flow, not jammed to viewport top) */}
@@ -589,7 +600,7 @@ function AppInner(){
             {/* Entry framing, first question only (per 1b) */}
             {cur===0&&(
               <div style={{textAlign:"center",marginBottom:26}}>
-                <div style={{fontSize:11,color:"#7878a0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:10}}>Which club are you, really?</div>
+                <div style={{fontSize:11,color:"#8484b0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:10}}>Which club are you, really?</div>
                 <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(14px,3.4vw,17px)",color:"#9898b8",lineHeight:1.55,margin:0}}>{mode==="module"?`Your core DNA is already sequenced. ${moduleQuestions.length} questions to remap your ${(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"} strand.`:"Answer honestly, not how you wish you were. New to the league or loyal for life, this is the club in your DNA."}</p>
               </div>
             )}
@@ -624,7 +635,7 @@ function AppInner(){
                 onMouseEnter={e=>e.currentTarget.style.color="#ccc"}
                 onMouseLeave={e=>e.currentTarget.style.color="#9898b8"}
               >← genome</button>
-              <span style={{fontSize:11,color:"#7878a0",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>
+              <span style={{fontSize:11,color:"#8484b0",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>
                 {(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"}
               </span>
             </div>
@@ -662,7 +673,7 @@ function AppInner(){
                     const dim = g.fam.glyph!=="globe";
                     return (
                       <div key={g.fam.id} style={{display:"flex",gap:8,alignItems:"baseline"}}>
-                        <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.14em",color:dim?"#5f5f76":"#7d7d9c",flexShrink:0,width:36,textAlign:"right"}}>{g.fam.glyph==="globe"?"GLOBAL":"USA"}</span>
+                        <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.14em",color:dim?"#7f7f9f":"#7d7d9c",flexShrink:0,width:36,textAlign:"right"}}>{g.fam.glyph==="globe"?"GLOBAL":"USA"}</span>
                         <span style={{fontFamily:"'DM Mono',monospace",fontSize:12,color:dim?"#82829a":"#c9c5cf",letterSpacing:"0.03em",wordBreak:"break-word",lineHeight:1.45}}>{g.items.join(" · ")}</span>
                       </div>
                     );
@@ -695,7 +706,7 @@ function AppInner(){
                     flex:1,background:"none",border:"none",
                     borderBottom:`2px solid ${tab===id?team.color:"transparent"}`,
                     padding:"9px 4px 10px",marginBottom:-1,whiteSpace:"nowrap",textAlign:"center",
-                    color:tab===id?"#e8e4de":"#666",
+                    color:tab===id?"#e8e4de":"#818181",
                     fontSize:11.5,letterSpacing:"0.06em",textTransform:"uppercase",
                     fontFamily:"'DM Mono',monospace",cursor:"pointer",
                     transition:"all .15s ease",
@@ -887,18 +898,18 @@ function AppInner(){
               <button onClick={retakeModule}
                 style={{background:"none",border:"1px solid #444",borderRadius:5,padding:"9px 22px",color:"#bbb",fontSize:11,letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",cursor:"pointer",transition:"all .15s"}}
                 onMouseEnter={e=>{e.currentTarget.style.borderColor="#888";e.currentTarget.style.color="#aaa";}}
-                onMouseLeave={e=>{e.currentTarget.style.borderColor="#252535";e.currentTarget.style.color="#666";}}
+                onMouseLeave={e=>{e.currentTarget.style.borderColor="#252535";e.currentTarget.style.color="#818181";}}
               >retake {activeSport}</button>
               <button onClick={startOver}
                 style={{background:"none",border:"1px solid #444",borderRadius:5,padding:"9px 22px",color:"#bbb",fontSize:11,letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",cursor:"pointer",transition:"all .15s"}}
                 onMouseEnter={e=>{e.currentTarget.style.borderColor="#888";e.currentTarget.style.color="#aaa";}}
-                onMouseLeave={e=>{e.currentTarget.style.borderColor="#252535";e.currentTarget.style.color="#666";}}
+                onMouseLeave={e=>{e.currentTarget.style.borderColor="#252535";e.currentTarget.style.color="#818181";}}
               >start over</button>
             </div>
 
             {/* Support + feedback footer (off the newcomer's critical path) */}
             <div style={{marginTop:28,paddingTop:20,borderTop:"1px solid #1e1e2e",textAlign:"center"}}>
-              <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#7a7a98",lineHeight:1.6,margin:"0 auto 14px",maxWidth:380}}>Built by one person and far too many spreadsheets. If this made you laugh, argue, or text a friend, you can buy me a pint.</p>
+              <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#7f7f9e",lineHeight:1.6,margin:"0 auto 14px",maxWidth:380}}>Built by one person and far too many spreadsheets. If this made you laugh, argue, or text a friend, you can buy me a pint.</p>
               <div style={{display:"flex",gap:20,justifyContent:"center",alignItems:"center",flexWrap:"wrap"}}>
                 <a href="https://buymeacoffee.com/fandna" target="_blank" rel="noopener noreferrer"
                   style={{color:"#9898b8",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"color .15s"}}
@@ -911,7 +922,7 @@ function AppInner(){
                   onMouseLeave={e=>e.currentTarget.style.color="#9898b8"}
                 >Feedback or a bug?</a>
               </div>
-              <p style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#5f5f78",lineHeight:1.6,margin:"16px auto 0",maxWidth:360,letterSpacing:"0.02em"}}>FanDNA is an independent project. Not affiliated with, endorsed by, or associated with any club, league, or governing body.</p>
+              <p style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#7f7f9f",lineHeight:1.6,margin:"16px auto 0",maxWidth:360,letterSpacing:"0.02em"}}>FanDNA is an independent project. Not affiliated with, endorsed by, or associated with any club, league, or governing body.</p>
             </div>
           </div>
         )}
