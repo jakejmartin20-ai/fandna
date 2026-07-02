@@ -30,7 +30,7 @@ const teams = {
     tagline:"You wear the Brustring like a blueprint and build like an engineer.",
     desc:"You trust the work. Not the lucky bounce or the sudden inspiration, but the slow, deliberate building of something that holds together under pressure. You come from a place that makes the best engines in the world and treats precision as a kind of morality, and it shows in how you support: you want it done properly, improved season on season, with a plan you can see. When it clicks, it is not a fluke. It is the design finally running the way you always believed it could.",
     why:[
-      "Your process orientation is high. You believe in the method, the steady build, the thing constructed to last rather than thrown together.",
+      "Your trust in the system is high. You believe in the method, the steady build, the thing constructed to last rather than thrown together.",
       "Your ambition is real and rising. You are not content to drift; you want to climb, and you trust the work to take you there.",
       "Your chaos tolerance is low. You would rather be the well-built side than the unpredictable one.",
     ],
@@ -64,7 +64,7 @@ const teams = {
     desc:"You were not handed a hundred years of tradition, so you decided to build a winner from scratch and never apologized for the method. You judge things by whether they work, not by how long they have existed, and you have a thick skin about the people who hate you for it. Let them. While the purists write their columns, you keep qualifying for Europe and signing the next young talent before anyone else has noticed him. Results are the argument, and you are comfortable making it.",
     why:[
       "Your ambition is high and unsentimental. You want to win now, by the most effective route, and history is not a prerequisite.",
-      "Your process orientation is at the ceiling. You trust the model, the recruitment, the system, more than you trust nostalgia.",
+      "Your trust in the system is at the ceiling. You believe in the model and the recruitment far more than in nostalgia.",
       "Your rootedness in old tradition is low by choice. You are looking forward, not back, and you do not mind who that annoys.",
     ],
     note:"Founded in 2009 and in the Champions League within a decade, with two German Cups already in the cabinet. No club in modern German football is more efficient, or more resented, and Leipzig wears both facts lightly.",
@@ -74,7 +74,7 @@ const teams = {
     tagline:"You trust the model and the method, not the century of history you never had.",
     desc:"You trust what is built and measured. Not the lucky bounce or the inherited birthright, but the plan run properly, the model that holds up when you check it, the side put together by design rather than handed down. You came up the modern way, on method and conviction and a refusal to accept that a place with no history could not build one of its own. People want every good thing to be a hundred years old before it counts. You never needed it to be. What you trust is whether the thing works, and yours does.",
     why:[
-      "Your process orientation is high. You trust the plan, the model, and the steady build over the lucky result.",
+      "Your trust in the system is high. You back the plan, the model, and the steady build over the lucky result.",
       "Your tolerance for chaos is low. You would rather run a calm, well-engineered season than chase a dramatic one.",
       "Your rootedness is light. The club is young and unburdened by history, and you find that freeing rather than empty.",
     ],
@@ -85,7 +85,7 @@ const teams = {
     tagline:"You were Neverkusen for thirty years, then went a whole season unbeaten.",
     desc:"You spent decades as the team that came second, the one that found a way to fall short with the finish line in sight, and the nickname stuck like a curse. You kept turning up anyway. Then it broke, all at once, in a season so complete that nobody could call you nearly-men ever again. You know what it is to do everything right and still not win, which is exactly why you understand that when it finally arrives, you do not let go of it.",
     why:[
-      "Your process orientation is at the ceiling. You believe in the structured, well-run project even through the years it does not pay off.",
+      "Your trust in the system is at the ceiling. You believe in the structured, well-run project even through the years it does not pay off.",
       "Your ambition never dimmed through the near-misses. You kept aiming at the top until you finally got there.",
       "Your patience is real. You carried the runner-up label for decades without abandoning the way you wanted to do things.",
     ],
@@ -93,7 +93,7 @@ const teams = {
     kit:"https://shop.bayer04.de" },
 
   S04: { code3:"S04", kitType:"solid", secondaryColor:null, name:"Schalke 04", emoji:"⛏️", color:"#004B9B",
-    tagline:"No title since 1958, and Gelsenkirchen still empties into the stand.",
+    tagline:"You have not won since 1958, and still all of Gelsenkirchen pours into the stand.",
     desc:"Your people came up from the mines, and you support the way they worked: hard, together, no airs. You have no patience for glory-hunters, or for fans who only turn up when it is going well. Down here loyalty isn't a slogan, it's the whole inheritance. Gelsenkirchen is not a place anyone moves to for the weather or the prospects, and that is exactly why the club means what it means. Sixty-odd years without a championship would have emptied a lesser stand. Yours just sings louder.",
     why:[
       "Your loyalty runs as deep as it goes. Schalke is handed down, not chosen, and you would never dream of walking away. You're the same.",
@@ -118,7 +118,7 @@ const teams = {
     tagline:"Your stadium runs on sunlight and your club on patience, and it keeps working.",
     desc:"You do it the right way and you do not make a fuss about it. A small budget, a clear plan, continuity where everyone else churns, and somehow the results keep coming. You are not interested in spending your way to anything or chasing a quick fix that betrays who you are. You would rather build something sustainable and sound and be quietly proud of it than buy a season of noise. In the Black Forest, doing it properly is not a strategy. It is the point.",
     why:[
-      "Your process orientation is at the ceiling. You believe in the patient, principled build over the splashy shortcut.",
+      "Your trust in the system is at the ceiling. You believe in the patient, principled build over the splashy shortcut.",
       "Your chaos tolerance is very low. You want stability, continuity, and a plan that holds, not drama.",
       "Your loyalty is to a way of doing things. You would rather get there honestly than win ugly and lose yourself.",
     ],
@@ -137,7 +137,7 @@ const teams = {
     kit:"https://shop.fcaugsburg.de" },
 
   KOE: { code3:"KOE", kitType:"duo", secondaryColor:"#E2261F", name:"1. FC Köln", emoji:"🐐", color:"#FFFFFF",
-    tagline:"Up, down, up again, and Hennes the goat watches every fall from the touchline.",
+    tagline:"Up, down, up again, and you would not swap the chaos. Hennes the goat watches every fall.",
     desc:"You love it precisely because it never stops putting you through it. Promoted, relegated, promoted again, a club that cannot sit still, and you would not swap the chaos for a stable mid-table existence if you could. This is a carnival city, and the football matches the temperament: feel everything, laugh through the worst of it, and turn up again next week regardless. Your loyalty does not depend on the league you are in. It is unconditional, and a little unhinged, and entirely the point.",
     why:[
       "Your loyalty is unconditional and your chaos tolerance is high. The yo-yo years would break others; they bond you tighter.",
@@ -152,7 +152,7 @@ const teams = {
     desc:"You have always been the smaller, smarter one in the room, and you turned that into a personality rather than a complaint. A carnival city's club, you take the football seriously and yourselves not at all, and you have made a habit of beating sides with three times the budget by being cleverer and harder-working and a little bit funnier about the whole thing. Lightness is not the same as not caring. For you it is how you survive at this level, and how you enjoy it.",
     why:[
       "You meet adversity with humor and lightness. When it goes wrong, you laugh first; that is genuinely how you cope.",
-      "Your process orientation is solid. You out-think and out-work opponents rather than out-spending them, because you cannot out-spend them.",
+      "Your trust in the system is solid. You out-think and out-work opponents rather than out-spending them, because you cannot out-spend them.",
       "Your ambition is sensible and your ego is small. Overachieving your means is the whole satisfaction.",
     ],
     note:"Mainz is a capital of German carnival, and the club's wit is part of its identity. Jürgen Klopp spent his entire playing career here and began his management here, building the gegenpressing style that later conquered Europe.",
@@ -170,7 +170,7 @@ const teams = {
     kit:"https://shop.fc-union-berlin.de" },
 
   ELV: { code3:"ELV", kitType:"solid", secondaryColor:null, name:"SV Elversberg", emoji:"🌳", color:"#1A1A1A",
-    tagline:"A Saarland village of thirteen thousand woke up sharing a league with Bayern.",
+    tagline:"You are a Saarland village of thirteen thousand that woke up sharing a league with Bayern.",
     desc:"You love being the team nobody saw coming. A village in the Saarland with a ground that still has terraces and a name borrowed from an old lime tree has no business in the same division as Bayern Munich, and that is exactly what makes it the best story in the league. You are not weighed down by expectation or history or anyone's idea of where you belong. You get to play with house money and prove the doubters wrong every single week, and there is nothing in football quite as fun as that.",
     why:[
       "You are energized by being underestimated. Nobody expected you here, and proving them wrong is the whole thrill.",
@@ -392,94 +392,94 @@ const vitalStats = {
 // "Almost You": each club's nearest dim-neighbours. Second person, shared-trait open, one separator, no em-dashes.
 const nearlyGot = {
   BAY:{
-    VFB:"Both of you trust the well-built thing over the lucky one, the plan over the prayer. The difference is the altitude: you start every season expecting the title and treat anything less as a fault to fix, while Stuttgart is still climbing, building the engine that might one day get there. Same faith in doing it properly, one defending the summit and one ascending it.",
-    BMG:"Both of you carry a sense of being German football royalty, of belonging at the top of the game. The difference is the tense: you live in the present, reloading and winning, while Gladbach lives in a glorious past it would not trade for anyone's now. Same aristocratic certainty, one earning it this season and one remembering when it did.",
+    VFB:"Both of you trust the well-built thing over the lucky one, the plan over the prayer. The difference is the altitude: you start every season expecting the title and treat anything less as a fault to fix, while Stuttgart is still climbing, building the engine that might one day get there. You defend the summit and treat anything less as a fault to fix; Stuttgart is still building the engine to get there.",
+    BMG:"Both of you carry a sense of being German football royalty, of belonging at the top of the game. The difference is the tense: you live in the present, reloading and winning, while Gladbach lives in a glorious past it would not trade for anyone's now. You win in the present, reloading every year, while Gladbach lives in a golden past it would not trade.",
     SVW:"Both of you are old, settled clubs with a deep, unbothered confidence about who you are. The difference is appetite: you need the trophy, every year, and treat the season as a verdict, while Bremen made peace long ago with steady, loyal, mid-table life. Same rootedness, one demanding silverware and one content without it.",
   },
   HSV:{
-    BMG:"Both of you steer by a past that was grander than your present, and you wear that history with pride. The difference is the wound: Gladbach's golden age simply faded, while yours ended in a fall so public it stopped a famous clock. Same love of what you were, one a gentle nostalgia and one a scar you carry.",
-    S04:"Both of you are fallen giants with vast, loyal supports who stayed through the lean years. The difference is the texture: Schalke's pride runs through coal and graft and the Ruhr, while yours runs through a Hanseatic port and a record of permanence that finally broke. Same refusal to fade, one forged underground and one counted on a clock.",
-    KOE:"Both of you have ridden the drop and clawed your way back, and your fans never blinked. The difference is the mood: Köln laughs through the chaos as a carnival, while you carry the fall as a wound to a proud, ever-present record. Same devotion through the fall, one a party and one a reckoning.",
+    BMG:"Both of you steer by a past that was grander than your present, and you wear that history with pride. The difference is the wound: Gladbach's golden age simply faded, while yours ended in a fall so public it stopped a famous clock. Gladbach's golden age simply faded; yours ended in a fall so public it stopped a clock.",
+    S04:"Both of you are fallen giants with vast, loyal supports who stayed through the lean years. The difference is the texture: Schalke's pride runs through coal and graft and the Ruhr, while yours runs through a Hanseatic port and a record of permanence that finally broke. Schalke's pride runs through coal and the Ruhr, while yours ran through a Hanseatic port and a record of permanence that finally broke.",
+    KOE:"Both of you have ridden the drop and clawed your way back, and your fans never blinked. The difference is the mood: Köln laughs through the chaos as a carnival, while you carry the fall as a wound to a proud, ever-present record. Köln laughs through the chaos like a carnival. You carry the fall as a wound to a proud, ever-present record.",
   },
   VFB:{
-    BAY:"Both of you trust the well-built thing and treat precision as close to a moral code. The difference is the altitude: Bayern starts from the title and defends the summit, while you are the ascending side, building the engine season on season. Same faith in doing it properly, one at the top and one climbing toward it.",
-    SCF:"Both of you come from the south-west and believe in the patient, properly-built project over the splashy fix. The difference is the ambition: you want to climb and win, treating the build as a route to the top, while Freiburg measures success by doing it sustainably and right. Same engineering instinct, one aiming for silverware and one for the model.",
+    BAY:"Both of you trust the well-built thing and treat precision as close to a moral code. The difference is the altitude: Bayern starts from the title and defends the summit, while you are the ascending side, building the engine season on season. Bayern starts from the title and defends it. You are still building the engine, season on season.",
+    SCF:"Both of you come from the south-west and believe in the patient, properly-built project over the splashy fix. The difference is the ambition: you want to climb and win, treating the build as a route to the top, while Freiburg measures success by doing it sustainably and right. You want to climb and win, treating the build as a route to the top, while Freiburg measures success by doing it right and sustainably.",
     BMG:"Both of you are proud old clubs with a strong sense of your own pedigree. The difference is the direction you face: you are building forward, an engine coming back to life, while Gladbach steers by the glory it already had. Same pedigree, one ascending and one remembering.",
   },
   BMG:{
-    SVW:"Both of you are old, loyal clubs whose great days are behind you, carried without bitterness. The difference is the flavor: Bremen's pride is quiet green-and-white continuity, while yours is the swagger of the fearless seventies side that ran Bayern close. Same steady love of a faded power, one understated and one romantic.",
-    M05:"Both of you punch with personality rather than money and refuse to take yourselves too seriously. The difference is the source: Mainz runs on carnival wit and cleverness, while you run on the memory of a genuinely golden era. Same lightness of touch, one a joke-first underdog and one a club living gladly on its past.",
-    HSV:"Both of you steer by a grander past and wear your history proudly. The difference is the wound: your golden age faded gently, while Hamburg's ended in a fall that stopped a famous clock. Same nostalgia for what you were, one a warm memory and one a scar.",
+    SVW:"Both of you are old, loyal clubs whose great days are behind you, carried without bitterness. The difference is the flavor: Bremen's pride is quiet green-and-white continuity, while yours is the swagger of the fearless seventies side that ran Bayern close. Bremen's pride is quiet green-and-white continuity. Yours is the swagger of the seventies side that ran Bayern close.",
+    M05:"Both of you punch with personality rather than money and refuse to take yourselves too seriously. The difference is the source: Mainz runs on carnival wit and cleverness, while you run on the memory of a genuinely golden era. Mainz runs on carnival wit, while you run on the memory of a genuinely golden era.",
+    HSV:"Both of you steer by a grander past and wear your history proudly. The difference is the wound: your golden age faded gently, while Hamburg's ended in a fall that stopped a famous clock. Your golden age faded gently. Hamburg's ended in a fall that stopped a clock.",
   },
   SVW:{
-    BMG:"Both of you are old, loyal clubs living gladly with a faded golden age. The difference is the flavor: yours is quiet green-and-white continuity, the same as it ever was, while Gladbach carries the swagger of its seventies side. Same steady love of a faded power, one understated and one romantic.",
-    M05:"Both of you are unflashy clubs that ask for very little and stay endlessly loyal. The difference is the temperament: Mainz meets it all with carnival wit, while you meet it with quiet, lifelong constancy. Same modest contentment, one laughing and one simply staying.",
+    BMG:"Both of you are old, loyal clubs living gladly with a faded golden age. The difference is the flavor: yours is quiet green-and-white continuity, the same as it ever was, while Gladbach carries the swagger of its seventies side. Yours is quiet green-and-white continuity, the same as it ever was, while Gladbach carries the swagger of its seventies side.",
+    M05:"Both of you are unflashy clubs that ask for very little and stay endlessly loyal. The difference is the temperament: Mainz meets it all with carnival wit, while you meet it with quiet, lifelong constancy. Mainz meets it all with carnival wit; you meet it with quiet, lifelong constancy.",
     FCU:"Both of you are deeply loyal, community-minded clubs with no taste for glamour. The difference is the origin: Union's bond was forged by fans who literally built and bled for the club, while yours is the unbroken green-and-white habit of a lifetime. Same devotion, one self-built and one inherited.",
   },
   RBL:{
-    B04:"Both of you are modern, well-run clubs that trust the system and the recruitment over nostalgia. The difference is the welcome: Leverkusen is the long-established works team that the league tolerates, while you are the disruptor it resents. Same faith in the model, one accepted and one resented.",
-    TSG:"Both of you were built fast by money and conviction rather than slow tradition, and you make no apology for it. The difference is the scale of the resentment: Hoffenheim is the benefactor's village project, while you are the corporate machine the whole country loves to hate. Same shortcut, one a quiet experiment and one a lightning rod.",
+    B04:"Both of you are modern, well-run clubs that trust the system and the recruitment over nostalgia. The difference is the welcome: Leverkusen is the long-established works team that the league tolerates, while you are the disruptor it resents. Leverkusen is the works team the league tolerates; you are the disruptor it resents.",
+    TSG:"Both of you were built fast by money and conviction rather than slow tradition, and you make no apology for it. The difference is the scale of the resentment: Hoffenheim is the benefactor's village project, while you are the corporate machine the whole country loves to hate. Hoffenheim is the benefactor's village project, while you are the corporate machine the whole country loves to hate.",
     VFB:"Both of you trust the structured, well-built side and the plan behind it. The difference is the heritage: Stuttgart is a century-old club ascending the proper way, while you built a winner from scratch and dare anyone to mind. Same engineered ambition, one with roots and one without them by choice.",
   },
   TSG:{
-    B04:"Both of you are company-backed clubs that the purists eye warily, trusting investment and a plan. The difference is the standing: Leverkusen is the established works team with a title now, while you are the village lifted by one man's money. Same benefactor model, one vindicated by silverware and one still proving the point.",
-    RBL:"Both of you were built fast by belief and funding rather than slow tradition. The difference is the scale: you are the small Kraichgau project of one believer, while Leipzig is the corporate machine the country resents. Same shortcut, both at peace with how they got here.",
+    B04:"Both of you are company-backed clubs that the purists eye warily, trusting investment and a plan. The difference is the standing: Leverkusen is the established works team with a title now, while you are the village lifted by one man's money. Leverkusen is the established works team with a title now. You are the village lifted by one man's money, still proving the point.",
+    RBL:"Both of you were built fast by belief and funding rather than slow tradition. The difference is the scale: you are the small Kraichgau project of one believer, while Leipzig is the corporate machine the country resents. You are one believer's small Kraichgau project; Leipzig is the machine a whole country resents.",
     VFB:"Both of you sit in the south-west and trust the plan and the structure behind a side. The difference is the soul: Stuttgart carries a century of Swabian heritage, while you are young and unburdened by any of it. Same faith in the build, one rooted and one free of roots.",
   },
   B04:{
-    RBL:"Both of you are modern, well-run sides that trust the model over the myth. The difference is the welcome: you are the long-established works team the league accepts, while Leipzig is the disruptor it resents. Same faith in the system, one tolerated and one resented.",
-    TSG:"Both of you are company clubs the traditionalists keep at arm's length. The difference is the payoff: you carried the runner-up label for decades and finally won everything, while Hoffenheim is still the benefactor's project chasing its moment. Same backed model, one vindicated and one waiting.",
+    RBL:"Both of you are modern, well-run sides that trust the model over the myth. The difference is the welcome: you are the long-established works team the league accepts, while Leipzig is the disruptor it resents. You are the long-established works team the league accepts, while Leipzig is the disruptor it resents.",
+    TSG:"Both of you are company clubs the traditionalists keep at arm's length. The difference is the payoff: you carried the runner-up label for decades and finally won everything, while Hoffenheim is still the benefactor's project chasing its moment. You carried the runner-up label for decades and finally won everything; Hoffenheim is still the project chasing its moment.",
     VFB:"Both of you believe in the structured, properly-built side and the patience it takes. The difference is the history with heartbreak: you spent decades as nearly-men before it broke, while Stuttgart is simply ascending. Same engineered faith, one scarred by near-misses and one unscarred.",
   },
   S04:{
-    KOE:"Both of you carry huge working-class followings and a love that asks nothing back. The difference is the mood: Köln rides the carnival, laughing through every promotion and relegation, while you carry yours like a shift underground, heavier, prouder, slower to smile. Same devotion to the stand, one worn as a party and one as a calling.",
-    FCU:"Both of you are proud, collective clubs where the people in the stand are the whole point. The difference is the inheritance: Union's bond was built by fans who gave blood and labor, while yours was handed down through generations of miners. Same we-over-I creed, one self-built and one inherited from the mines.",
-    HSV:"Both of you are fallen giants whose vast supports never wavered through the drop. The difference is the texture: your pride runs through coal and the Ruhr, while Hamburg's runs through a port and a broken record of permanence. Same refusal to fade, one forged underground and one counted on a clock.",
+    KOE:"Both of you carry huge working-class followings and a love that asks nothing back. The difference is the mood: Köln rides the carnival, laughing through every promotion and relegation, while you carry yours like a shift underground, heavier, prouder, slower to smile. Köln rides the carnival, laughing through every up and down, while you carry yours like a shift underground, heavier and prouder.",
+    FCU:"Both of you are proud, collective clubs where the people in the stand are the whole point. The difference is the inheritance: Union's bond was built by fans who gave blood and labor, while yours was handed down through generations of miners. Union's bond was built by fans who gave blood and labor; yours was handed down through generations of miners.",
+    HSV:"Both of you are fallen giants whose vast supports never wavered through the drop. The difference is the texture: your pride runs through coal and the Ruhr, while Hamburg's runs through a port and a broken record of permanence. Your pride runs through coal and the Ruhr. Hamburg's runs through a port and a broken record of permanence.",
   },
   BVB:{
-    SGE:"Both of you turn a matchday into something closer to a religion, all noise and color and feeling at full tilt. The difference is the direction it points: Frankfurt aims its energy outward, at the powers running the game and at every away end it invades, while yours pours straight down onto the pitch from the Wall. Same furnace, one a protest and one a prayer.",
-    S04:"Both of you are giant Ruhr clubs whose terraces are the whole point, bound by the Revierderby. The difference is the register: Schalke's pride is the miner's, hard and unglamorous, while yours is pure spectacle, the biggest wall of noise in Europe. Same working heartland, one a shift and one a show.",
+    SGE:"Both of you turn a matchday into something closer to a religion, all noise and color and feeling at full tilt. The difference is the direction it points: Frankfurt aims its energy outward, at the powers running the game and at every away end it invades, while yours pours straight down onto the pitch from the Wall. Frankfurt aims its fire outward, at the powers and every away end it invades; yours pours straight down onto the pitch from the Wall.",
+    S04:"Both of you are giant Ruhr clubs whose terraces are the whole point, bound by the Revierderby. The difference is the register: Schalke's pride is the miner's, hard and unglamorous, while yours is pure spectacle, the biggest wall of noise in Europe. Schalke's pride is the miner's, hard and unglamorous, while yours is pure spectacle, the biggest wall of noise in Europe.",
     KOE:"Both of you live for the feeling in the stand more than the line in the table. The difference is the scale: Köln's is a carnival city's loyal chaos, while yours is eighty thousand on a single terrace. Same devotion to the atmosphere, one a party and one a cathedral.",
   },
   SCF:{
-    VFB:"Both of you come from the south-west and trust the patient, properly-built project. The difference is the goal: Stuttgart wants to climb and win, while you measure success by doing it sustainably and right. Same engineering instinct, one chasing silverware and one chasing the model.",
-    SVW:"Both of you are unflashy, principled clubs that stay loyal to a way of doing things. The difference is the trajectory: you are the well-run overachiever still rising, while Bremen is the proud traditionalist living on a faded peak. Same quiet integrity, one ascending and one settled.",
-    M05:"Both of you overachieve your means by being smarter and steadier than richer clubs. The difference is the tone: Mainz wraps it in carnival wit, while you wrap it in Black Forest patience and a solar-roofed sense of doing things right. Same clever modesty, one a joke and one a principle.",
+    VFB:"Both of you come from the south-west and trust the patient, properly-built project. The difference is the goal: Stuttgart wants to climb and win, while you measure success by doing it sustainably and right. Stuttgart wants to climb and win; you measure success by doing it sustainably and right.",
+    SVW:"Both of you are unflashy, principled clubs that stay loyal to a way of doing things. The difference is the trajectory: you are the well-run overachiever still rising, while Bremen is the proud traditionalist living on a faded peak. You are the well-run overachiever still rising, while Bremen is the proud traditionalist living on a faded peak.",
+    M05:"Both of you overachieve your means by being smarter and steadier than richer clubs. The difference is the tone: Mainz wraps it in carnival wit, while you wrap it in Black Forest patience and a solar-roofed sense of doing things right. Mainz wraps it in carnival wit. You wrap it in Black Forest patience and a solar-roofed sense of doing things right.",
   },
   FCA:{
-    SCP:"Both of you are small, modest clubs at peace with punching where you punch, no glory expected. The difference is the ride: Paderborn yo-yos between divisions as an underdog, while you simply stay up, calm and unbothered, year after year. Same contentment, one a rollercoaster and one a steady hum.",
-    M05:"Both of you are unglamorous clubs that ask for little and keep your feet on the ground. The difference is the personality: Mainz leans into carnival wit, while you lean into quiet, undramatic survival. Same modesty, one funny and one calm.",
+    SCP:"Both of you are small, modest clubs at peace with punching where you punch, no glory expected. The difference is the ride: Paderborn yo-yos between divisions as an underdog, while you simply stay up, calm and unbothered, year after year. Paderborn yo-yos between divisions as an underdog; you simply stay up, calm and unbothered, year after year.",
+    M05:"Both of you are unglamorous clubs that ask for little and keep your feet on the ground. The difference is the personality: Mainz leans into carnival wit, while you lean into quiet, undramatic survival. Mainz leans into carnival wit, while you lean into quiet, undramatic survival.",
     BMG:"Both of you sit some distance from glory and are honest about it. The difference is the past: Gladbach steers by a genuinely golden era, while you have no such peak to remember and have made peace with that. Same lack of present silverware, one nostalgic and one content.",
   },
   KOE:{
-    S04:"Both of you carry huge working-class followings and a love that asks nothing back. The difference is the mood: you ride the carnival, laughing through every promotion and relegation, while Schalke carries its loyalty like a shift underground, heavier and prouder. Same devotion to the stand, one a party and one a calling.",
-    SGE:"Both of you are loud, fervent clubs whose support is the whole spectacle. The difference is the spirit: Frankfurt's energy is political and defiant, an away-day army, while yours is carnival, a city throwing a party through every up and down. Same volume, one a protest and one a celebration.",
-    BVB:"Both of you live for the feeling in the stand more than the table. The difference is the scale: yours is a carnival city's loyal chaos, the yo-yo worn with a grin, while Dortmund's is eighty thousand on one vast terrace. Same devotion to atmosphere, one a party and one a cathedral.",
+    S04:"Both of you carry huge working-class followings and a love that asks nothing back. The difference is the mood: you ride the carnival, laughing through every promotion and relegation, while Schalke carries its loyalty like a shift underground, heavier and prouder. You ride the carnival, laughing through every up and down; Schalke carries its loyalty like a shift underground.",
+    SGE:"Both of you are loud, fervent clubs whose support is the whole spectacle. The difference is the spirit: Frankfurt's energy is political and defiant, an away-day army, while yours is carnival, a city throwing a party through every up and down. Frankfurt's energy is political and defiant, an away-day army, while yours is carnival, a city throwing a party.",
+    BVB:"Both of you live for the feeling in the stand more than the table. The difference is the scale: yours is a carnival city's loyal chaos, the yo-yo worn with a grin, while Dortmund's is eighty thousand on one vast terrace. Yours is a carnival city's loyal chaos. Dortmund's is eighty thousand on one vast terrace.",
   },
   M05:{
-    ELV:"Both of you are small clubs playing with house money and a smile, no weight of expectation. The difference is the source of the joy: Elversberg's is the fairytale of arriving at all, while yours is the carnival wit of staying and out-thinking richer sides. Same lightness, one the thrill of the climb and one the art of the stay.",
-    SCP:"Both of you are modest clubs that overachieve and refuse to take it too seriously. The difference is the temperament: Paderborn yo-yos as a stubborn underdog, while you survive by being cleverer and funnier than your budget. Same small-club spirit, one defiant and one witty.",
+    ELV:"Both of you are small clubs playing with house money and a smile, no weight of expectation. The difference is the source of the joy: Elversberg's is the fairytale of arriving at all, while yours is the carnival wit of staying and out-thinking richer sides. Elversberg's is the fairytale of arriving at all; yours is the carnival wit of staying and out-thinking richer sides.",
+    SCP:"Both of you are modest clubs that overachieve and refuse to take it too seriously. The difference is the temperament: Paderborn yo-yos as a stubborn underdog, while you survive by being cleverer and funnier than your budget. Paderborn yo-yos as a stubborn underdog, while you survive by being cleverer and funnier than your budget.",
     BMG:"Both of you carry personality far bigger than your present trophy haul. The difference is the source: Gladbach lives on a golden past, while you live on carnival wit and gegenpressing cleverness in the now. Same outsized character, one nostalgic and one mischievous.",
   },
   FCU:{
-    S04:"Both of you are proud, collective clubs where the people in the stand are the whole point. The difference is the inheritance: your bond was built recently by fans who gave blood and labor, while Schalke's was handed down through generations of miners. Same we-over-I creed, one self-built and one inherited.",
-    SVW:"Both of you are deeply loyal clubs with no taste for glamour. The difference is the origin: your bond was forged by supporters who literally built and bled for the club, while Bremen's is the unbroken green-and-white habit of a lifetime. Same devotion, one self-made and one inherited.",
-    KOE:"Both of you are fiercely loyal, community clubs that ride the lower divisions without flinching. The difference is the spirit: Köln does it as a carnival, all party, while you do it as a project the fans built with their own hands. Same unconditional bond, one celebrated and one constructed.",
+    S04:"Both of you are proud, collective clubs where the people in the stand are the whole point. The difference is the inheritance: your bond was built recently by fans who gave blood and labor, while Schalke's was handed down through generations of miners. Your bond was built recently by fans who gave blood and labor, while Schalke's was handed down through generations of miners.",
+    SVW:"Both of you are deeply loyal clubs with no taste for glamour. The difference is the origin: your bond was forged by supporters who literally built and bled for the club, while Bremen's is the unbroken green-and-white habit of a lifetime. Your bond was forged by supporters who literally built the club; Bremen's is the unbroken green-and-white habit of a lifetime.",
+    KOE:"Both of you are fiercely loyal, community clubs that ride the lower divisions without flinching. The difference is the spirit: Köln does it as a carnival, all party, while you do it as a project the fans built with their own hands. Köln does it as a carnival, all party. You do it as a project the fans built with their own hands.",
   },
   ELV:{
-    M05:"Both of you are small clubs playing without a shred of expectation and loving it. The difference is the chapter: yours is the fairytale of arriving at all, the smallest town in the league, while Mainz has long since mastered the art of the witty stay. Same lightness, one a debut thrill and one a settled craft.",
-    SCP:"Both of you are tiny, overlooked clubs that have no business sharing a league with giants. The difference is the story: Paderborn is the seasoned yo-yo underdog, back for another go, while you are the first-time fairytale with everything still ahead. Same underdog joy, one a returning veteran and one a wide-eyed newcomer.",
+    M05:"Both of you are small clubs playing without a shred of expectation and loving it. The difference is the chapter: yours is the fairytale of arriving at all, the smallest town in the league, while Mainz has long since mastered the art of the witty stay. Yours is the fairytale of arriving at all, the smallest town in the league, while Mainz has long since mastered the witty stay.",
+    SCP:"Both of you are tiny, overlooked clubs that have no business sharing a league with giants. The difference is the story: Paderborn is the seasoned yo-yo underdog, back for another go, while you are the first-time fairytale with everything still ahead. Paderborn is the seasoned yo-yo back for another go; you are the first-time fairytale with everything still ahead.",
     BMG:"Both of you sit a long way from the favorites, but for opposite reasons. The difference is the history: Gladbach was once European royalty and remembers it, while you have never been here before and are simply thrilled to have arrived. Same outsider status, one a faded great and one a rising minnow.",
   },
   SCP:{
-    M05:"Both of you are modest clubs that overachieve and keep your feet on the ground. The difference is the texture: you yo-yo between divisions as a stubborn underdog, while Mainz survives by carnival wit and cleverness. Same small-club spirit, one defiant and one funny.",
-    ELV:"Both of you are tiny, overlooked clubs improbably sharing a league with giants. The difference is the mileage: you are the seasoned yo-yo side back for another crack, while Elversberg is the wide-eyed first-time fairytale. Same underdog joy, one a veteran and one a newcomer.",
+    M05:"Both of you are modest clubs that overachieve and keep your feet on the ground. The difference is the texture: you yo-yo between divisions as a stubborn underdog, while Mainz survives by carnival wit and cleverness. You yo-yo between divisions as a stubborn underdog; Mainz survives by carnival wit and cleverness.",
+    ELV:"Both of you are tiny, overlooked clubs improbably sharing a league with giants. The difference is the mileage: you are the seasoned yo-yo side back for another crack, while Elversberg is the wide-eyed first-time fairytale. You are the seasoned yo-yo side back for another crack, while Elversberg is the wide-eyed first-timer.",
     FCA:"Both of you are small, unfussy clubs with no glory to chase. The difference is the rhythm: you ride the rollercoaster between divisions, while Augsburg simply stays up, calm and content. Same modest contentment, one a yo-yo and one a steady hum.",
   },
   SGE:{
-    BVB:"Both of you turn a matchday into something closer to a religion, all noise and color at full tilt. The difference is the direction it points: you aim your energy outward, at the powers running the game and at every away end you invade, while Dortmund pours its straight down from the Wall. Same furnace, one a protest and one a prayer.",
-    KOE:"Both of you bring loud, fervent supports that are the whole spectacle. The difference is the spirit: yours is political and defiant, a traveling army, while Köln's is carnival, a city at a party. Same volume, one a protest and one a celebration.",
-    S04:"Both of you carry vast, passionate, working supports with a streak of defiance. The difference is the cause: Schalke's energy is the miner's pride and loyalty, while yours is aimed at the powers running modern football. Same fervor, one inward and proud, one outward and political.",
+    BVB:"Both of you turn a matchday into something closer to a religion, all noise and color at full tilt. The difference is the direction it points: you aim your energy outward, at the powers running the game and at every away end you invade, while Dortmund pours its straight down from the Wall. You aim your energy outward, at the powers and every away end you invade, while Dortmund pours its straight down from the Wall.",
+    KOE:"Both of you bring loud, fervent supports that are the whole spectacle. The difference is the spirit: yours is political and defiant, a traveling army, while Köln's is carnival, a city at a party. Yours is political and defiant, a traveling army. Köln's is pure carnival, a whole city at a party.",
+    S04:"Both of you carry vast, passionate, working supports with a streak of defiance. The difference is the cause: Schalke's energy is the miner's pride and loyalty, while yours is aimed at the powers running modern football. Schalke's fervor is the miner's pride and loyalty; yours is aimed squarely at the powers running modern football.",
   },
 };
 
