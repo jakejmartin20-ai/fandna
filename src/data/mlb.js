@@ -1944,7 +1944,7 @@ const scoring = {
       "CWS": 2,
       "PIT": 2,
       "CLE": 2,
-      "DET": 2,
+      "DET": 3,
       "ATH": 2,
       "TB": 2
     },
@@ -1970,7 +1970,7 @@ const scoring = {
       "MIA": 2,
       "AZ": 2,
       "LAA": 2,
-      "MIN": 2
+      "MIN": 3
     }
   },
   "mlb_q2": {
@@ -2008,7 +2008,7 @@ const scoring = {
       "CWS": 2
     },
     "5": {
-      "PIT": 3,
+      "PIT": 2,
       "SEA": 3,
       "COL": 3,
       "CLE": 3,
@@ -2039,7 +2039,7 @@ const scoring = {
     },
     "C": {
       "CHC": 2,
-      "SEA": 2,
+      "SEA": 3,
       "SD": 2,
       "COL": 2,
       "MIN": 2,
@@ -2066,7 +2066,7 @@ const scoring = {
       "CHC": 3,
       "BOS": 3,
       "PHI": 3,
-      "PIT": 3,
+      "PIT": 2,
       "NYM": 3,
       "TOR": 3,
       "KC": 3,
@@ -2096,7 +2096,7 @@ const scoring = {
       "TB": 3,
       "ATH": 3,
       "HOU": 3,
-      "LAD": 3,
+      "LAD": 2,
       "CLE": 3,
       "STL": 3,
       "BAL": 3,
@@ -2181,7 +2181,7 @@ const scoring = {
     "E": {
       "CHC": 2,
       "BOS": 2,
-      "SEA": 2,
+      "SEA": 3,
       "COL": 2,
       "MIA": 2,
       "WSH": 2
@@ -2213,7 +2213,7 @@ const scoring = {
       "DET": 2
     },
     "D": {
-      "CLE": 2,
+      "CLE": 3,
       "ATH": 2,
       "MIA": 2,
       "CWS": 2,
@@ -2277,9 +2277,7 @@ const scoring = {
       "ATH": 3,
       "MIL": 3,
       "CLE": 3,
-      "MIN": 3,
       "KC": 3,
-      "PIT": 3,
       "BAL": 3,
       "COL": 3,
       "MIA": 3,
@@ -2291,9 +2289,7 @@ const scoring = {
       "ATH": 2,
       "MIL": 2,
       "CLE": 2,
-      "MIN": 2,
       "KC": 2,
-      "PIT": 2,
       "BAL": 2,
       "COL": 2,
       "MIA": 2,
@@ -2314,7 +2310,7 @@ const scoring = {
     },
     "5": {
       "NYY": 3,
-      "LAD": 3,
+      "LAD": 2,
       "NYM": 3,
       "SD": 3,
       "HOU": 3,
@@ -2327,7 +2323,7 @@ const scoring = {
   },
   "mlb_q10": {
     "A": {
-      "CIN": 2,
+      "CIN": 3,
       "NYY": 3,
       "SF": 2
     },
@@ -2335,7 +2331,8 @@ const scoring = {
       "LAD": 2,
       "ATL": 2,
       "BAL": 2,
-      "STL": 2
+      "STL": 2,
+      "SF": 2
     },
     "C": {
       "CHC": 2,
@@ -2418,7 +2415,7 @@ const scoring = {
       "MIN": 3
     },
     "B": {
-      "PIT": 3,
+      "PIT": 2,
       "DET": 3,
       "PHI": 3,
       "CLE": 3,
@@ -2443,7 +2440,7 @@ const scoring = {
     },
     "E": {
       "NYY": 3,
-      "LAD": 3,
+      "LAD": 2,
       "HOU": 3,
       "ATL": 3,
       "SF": 3,
