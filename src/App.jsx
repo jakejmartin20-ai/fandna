@@ -548,7 +548,7 @@ function AppInner(){
       {/* Ambient glow, changes with phase */}
       <div style={{
         position:"fixed",inset:0,zIndex:0,pointerEvents:"none",
-        background:`radial-gradient(ellipse at 30% 40%, ${result&&teams[result]?teams[result].color+"08":"#ffffff08"} 0%, transparent 65%)`,
+        background:`radial-gradient(ellipse at 30% 40%, ${screen==="compare"?"transparent":(result&&teams[result]?teams[result].color+"08":"#ffffff08")} 0%, transparent 65%)`,
         transition:"background 1s ease",
       }}/>
 
