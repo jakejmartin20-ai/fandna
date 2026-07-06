@@ -75,8 +75,10 @@ export function GenomeHome({
   coreProfile,       // the user's 7-dim core; drives the hero strip
   onOpenResult,      // (code) => void
   onStartSport,      // (code) => void
+  onReset,           // () => void : wipe all saved results and return to a fresh first run
 }){
   const [copied,setCopied]=useState(false);
+  const [confirmClear,setConfirmClear]=useState(false);  // two-step guard on the destructive reset
 
   // Group the genome sequence by family for a decluttered, split share readout (display-only).
   const SHARE = (()=>{
@@ -337,7 +339,29 @@ export function GenomeHome({
             onMouseEnter={e=>e.currentTarget.style.color="#d0ccc6"}
             onMouseLeave={e=>e.currentTarget.style.color="#9898b8"}
           >Feedback or a bug?</a>
+          {/* Clear my results: only for a returning user (a core has been sequenced), and only in the resting state. */}
+          {coreSequenced&&!confirmClear&&(
+            <button type="button" onClick={()=>setConfirmClear(true)}
+              style={{color:"#9898b8",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",background:"none",border:"none",cursor:"pointer",padding:0,transition:"color .15s"}}
+              onMouseEnter={e=>e.currentTarget.style.color="#d0ccc6"}
+              onMouseLeave={e=>e.currentTarget.style.color="#9898b8"}
+            >Clear my results</button>
+          )}
         </div>
+        {/* Confirm step for the destructive reset: an explicit "can't be undone" message with a deliberate second tap. */}
+        {coreSequenced&&confirmClear&&(
+          <div style={{marginTop:16,textAlign:"center"}}>
+            <p style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#b8b4c4",lineHeight:1.6,margin:"0 auto 12px",maxWidth:320,letterSpacing:"0.02em"}}>This permanently clears your results and can't be undone.</p>
+            <div style={{display:"flex",gap:22,justifyContent:"center",alignItems:"center"}}>
+              <button type="button" onClick={()=>{setConfirmClear(false);onReset&&onReset();}}
+                style={{color:"#d4a44e",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",background:"none",border:"none",cursor:"pointer",padding:"4px 4px"}}
+              >Clear everything</button>
+              <button type="button" onClick={()=>setConfirmClear(false)}
+                style={{color:"#7f7f9f",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",background:"none",border:"none",cursor:"pointer",padding:"4px 4px"}}
+              >Cancel</button>
+            </div>
+          </div>
+        )}
         <p style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#7f7f9f",lineHeight:1.6,margin:"16px auto 0",maxWidth:360,letterSpacing:"0.02em"}}>FanDNA is an independent project. Not affiliated with, endorsed by, or associated with any club, league, or governing body.</p>
       </div>
 
