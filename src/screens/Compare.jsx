@@ -155,7 +155,7 @@ function ReasonsBlock({ topDim, youClub, themClub, youSport, themSport, sameArch
 }
 
 // ---- the screen -------------------------------------------------------------
-export function Compare({ friend, me, onStartSport, onReshare, onExit }) {
+export function Compare({ friend, me, onStartSport, onReshare, onExit, onRestore }) {
   const wrap = (inner) => (
     <div style={{ width: "100%", maxWidth: 560 }}>
       <Header />
@@ -207,6 +207,13 @@ export function Compare({ friend, me, onStartSport, onReshare, onExit }) {
         </div>
         <div style={{ marginTop: 22 }}><GoldButton onClick={() => onStartSport(firstLive)}>Find my FanDNA</GoldButton></div>
         <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: "0.06em", color: "#7f7f9c", marginTop: 16 }}>about 3 minutes&nbsp;&nbsp;·&nbsp;&nbsp;no signup, no email</div>
+        {/* Restore: opened your own link on a new device. Self-selecting copy; reversible via Clear. */}
+        <div style={{ marginTop: 20, paddingTop: 16, borderTop: "1px solid #23232f" }}>
+          <button type="button" onClick={() => onRestore && onRestore()}
+            style={{ background: "none", border: "none", cursor: "pointer", fontFamily: MONO, fontSize: 12, letterSpacing: "0.05em", color: GOLD, padding: "6px 6px" }}>
+            Coming back on a new device? Restore your results
+          </button>
+        </div>
       </div>
     );
   }
