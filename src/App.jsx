@@ -14,6 +14,8 @@ import { MatchEvidence } from "./components/MatchEvidence";
 import { CrossMatch } from "./components/CrossMatch";
 import { SPORTS, FAMILIES } from "./lib/manifest";
 import { REGISTER, regOf } from "./lib/register";
+import { Compare } from "./screens/Compare";
+import { encodeGenome, decodeCode } from "./lib/compareCode";
 
 // Per-sport voice (noun, tail, cross-match labels) now lives in one shared source: ./lib/register.
 // The result screen, the share card, and any future sport all read REGISTER/regOf from there, so
@@ -170,6 +172,8 @@ function AppInner(){
   const [screen,setScreen]=useState("home");     // "home" | "quiz" | "result" - the genome home is the landing page
   const [genome,setGenome]=useState({});         // saved results map { PL:{club} } - drives the home strands + share string
   const [activeSport,setActiveSport]=useState("PL"); // which sport's quiz/result/card is in play
+  const [compareFriend,setCompareFriend]=useState(null);  // decoded friend genome for the /c/ compare route
+  const [pendingCompare,setPendingCompare]=useState(null); // friend genome held while a recruit takes the quiz
   const containerRef=useRef(null);
 
   // NFL/MLB ship behind live:false. Hidden ?nfl=1 / ?mlb=1 in the URL unlock the strand on
@@ -233,6 +237,18 @@ function AppInner(){
     }
   },[]);
 
+  // On load, a /c/<code> link carries a friend's packed genome. Decode it and route to Compare;
+  // recruit / self / broken are all decided inside the Compare screen from this plus storage.
+  useEffect(()=>{
+    if(typeof window==="undefined") return;
+    const m=window.location.pathname.match(/^\/c\/(.+)$/);
+    if(!m) return;
+    let code=m[1];
+    try{ code=decodeURIComponent(code); }catch(e){}
+    setCompareFriend(decodeCode(code));
+    setScreen("compare");
+  },[]);
+
   // Keyboard handler
   useEffect(()=>{
     const h=(e)=>{
@@ -284,6 +300,7 @@ function AppInner(){
       setGenome(g=>({...g,[activeSport]:{club}}));
       track("quiz_completed",{sport:activeSport,club});
       saveResult(activeSport,{coreAnswers,coreProfile,club,moduleAnswers,scores:s});
+      if(pendingCompare){ setCompareFriend(pendingCompare); setPendingCompare(null); setScreen("compare"); }
     }
   }
 
@@ -445,9 +462,10 @@ function AppInner(){
 
   // Build the share card (the user's core feeds the strip), then either open the share sheet
   // or save the image. Download always saves. Both fall back to copying the caption.
+  function genomeCode(){ return encodeGenome({coreProfile, results: genome}); }
   function cardCaption(){
     const noun=regOf(activeSport).noun;
-    return `Which ${noun} are you, really? Turns out I'm ${team.name}, ${archetypes[result]}. ${shareString}. Find yours: fandna.vercel.app`;
+    return `Which ${noun} are you, really? Turns out I'm ${team.name}, ${archetypes[result]}. ${shareString}. Find yours: fandna.vercel.app/c/${genomeCode()}`;
   }
   function saveBlob(blob){
     const url=URL.createObjectURL(blob);
@@ -455,6 +473,21 @@ function AppInner(){
     document.body.appendChild(a);a.click();a.remove();
     setTimeout(()=>URL.revokeObjectURL(url),1500);
   }
+  // ── Compare wiring ─────────────────────────────────────────────────────
+  // A cross-invite / recruit CTA starts a sport but remembers we were mid-compare, so finishing
+  // the quiz drops back into the compare (now filled in) rather than the normal result.
+  function startSportFromCompare(code){ setPendingCompare(compareFriend); startSport(code); }
+  function exitCompare(){ setCompareFriend(null); setScreen("home"); }
+  async function shareCompareLink(){
+    const st=loadState();
+    const code=encodeGenome({coreProfile:st.coreProfile, results:st.results||{}});
+    const url=`https://fandna.vercel.app/c/${code}`;
+    const noun=regOf(activeSport).noun;
+    const caption=`Which ${noun} are you, really? Compare your FanDNA with mine: ${url}`;
+    try{ if(navigator.share){ await navigator.share({text:caption}); return; } }catch(e){ if(e&&e.name==="AbortError") return; }
+    navigator.clipboard?.writeText(caption).then(()=>alert("Link copied.")).catch(()=>alert(caption));
+  }
+
   async function shareCard(){
     const caption=cardCaption();
     let blob=null;
@@ -478,6 +511,10 @@ function AppInner(){
     const caption=cardCaption();
     navigator.clipboard?.writeText(caption).then(()=>alert("Card couldn't render here. Caption copied.")).catch(()=>alert(caption));
   }
+
+  // The recipient's OWN genome, read fresh from storage for the compare route (refreshes after a
+  // recruit finishes the quiz). Kept out of JSX per the no-logic-in-JSX house rule.
+  const compareMe = useMemo(()=>{ const st=loadState(); return {coreProfile:st.coreProfile, results:st.results||{}}; }, [screen, genome, coreProfile]);
 
   return(
     <div ref={containerRef} className="app-root" style={{
@@ -519,6 +556,17 @@ function AppInner(){
         width:"100%",maxWidth:560,position:"relative",zIndex:1,
         animation:`${phase==="out"?"slideOut":"slideIn"} .22s ease forwards`,
       }}>
+
+        {/* ── COMPARE (arrived on a friend's /c/ link) ── */}
+        {screen==="compare"&&(
+          <Compare
+            friend={compareFriend}
+            me={compareMe}
+            onStartSport={startSportFromCompare}
+            onReshare={shareCompareLink}
+            onExit={exitCompare}
+          />
+        )}
 
         {/* ── GENOME HOME (landing page) ── */}
         {screen==="home"&&(
