@@ -581,6 +581,7 @@ function AppInner(){
             coreProfile={coreProfile}
             onOpenResult={openResult}
             onStartSport={startSport}
+            onReset={startOver}
           />
         )}
 
