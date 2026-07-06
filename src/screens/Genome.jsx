@@ -76,9 +76,13 @@ export function GenomeHome({
   onOpenResult,      // (code) => void
   onStartSport,      // (code) => void
   onReset,           // () => void : wipe all saved results and return to a fresh first run
+  onRestore,         // (text) => bool : restore a saved genome from a pasted share link
 }){
   const [copied,setCopied]=useState(false);
   const [confirmClear,setConfirmClear]=useState(false);  // two-step guard on the destructive reset
+  const [restoreOpen,setRestoreOpen]=useState(false);    // cold-home "restore from a link" disclosure
+  const [restoreText,setRestoreText]=useState("");
+  const [restoreErr,setRestoreErr]=useState(false);
 
   // Group the genome sequence by family for a decluttered, split share readout (display-only).
   const SHARE = (()=>{
@@ -308,6 +312,11 @@ export function GenomeHome({
               <button type="button" onClick={shareLink} style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#8484b0",letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer",background:"none",border:"none",padding:"6px 6px",margin:0}}>Share</button>
             </span>
           </div>
+          {/* Keep-your-link nudge: this share link is also the user's save (no account, no server). */}
+          <div style={{marginTop:12,paddingTop:11,borderTop:"1px solid #222230",textAlign:"center"}}>
+            <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:15,color:"#a6a2bc",lineHeight:1.4}}>Your genome, saved.</div>
+            <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#7f7f9f",letterSpacing:"0.04em",marginTop:3}}>Keep this link to bring it back on any device.</div>
+          </div>
 
         </div>
       )}
@@ -360,6 +369,37 @@ export function GenomeHome({
                 style={{color:"#7f7f9f",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",background:"none",border:"none",cursor:"pointer",padding:"4px 4px"}}
               >Cancel</button>
             </div>
+          </div>
+        )}
+        {/* Restore from a link: cold home only (no genome yet). The share link IS the backup. */}
+        {!coreSequenced&&!restoreOpen&&(
+          <div style={{marginTop:6}}>
+            <button type="button" onClick={()=>setRestoreOpen(true)}
+              style={{color:"#d4a24c",fontSize:11,letterSpacing:"0.1em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",background:"none",border:"none",cursor:"pointer",padding:"6px 6px"}}
+            >Been here before? Restore from a link</button>
+          </div>
+        )}
+        {!coreSequenced&&restoreOpen&&(
+          <div style={{marginTop:10,maxWidth:400,marginLeft:"auto",marginRight:"auto"}}>
+            <input
+              value={restoreText}
+              onChange={e=>{setRestoreText(e.target.value);setRestoreErr(false);}}
+              placeholder="paste your fandna.vercel.app/c/ link"
+              aria-label="Paste your FanDNA restore link"
+              style={{width:"100%",boxSizing:"border-box",background:"#14141c",border:"1px solid "+(restoreErr?"#c46c96":"#33333f"),borderRadius:10,padding:"11px 14px",color:"#d6d6e0",fontFamily:"'DM Mono',monospace",fontSize:12,letterSpacing:"0.02em",outline:"none"}}
+            />
+            <div style={{display:"flex",gap:14,justifyContent:"center",alignItems:"center",marginTop:12}}>
+              <button type="button" onClick={()=>{ const ok=onRestore&&onRestore(restoreText); if(!ok) setRestoreErr(true); }}
+                style={{background:"linear-gradient(180deg,#d4a24c 0%,#c08f34 100%)",border:"none",borderRadius:22,padding:"10px 28px",color:"#241a05",fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:18,fontWeight:600,cursor:"pointer"}}
+              >Restore</button>
+              <button type="button" onClick={()=>{setRestoreOpen(false);setRestoreText("");setRestoreErr(false);}}
+                style={{color:"#7f7f9f",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",background:"none",border:"none",cursor:"pointer",padding:"6px 6px"}}
+              >Cancel</button>
+            </div>
+            {restoreErr&&(
+              <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#c46c96",marginTop:10,letterSpacing:"0.02em"}}>That doesn't look like a FanDNA link.</div>
+            )}
+            <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#7f7f9c",marginTop:10,letterSpacing:"0.02em"}}>No link? A new run starts you fresh.</div>
           </div>
         )}
         <p style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#7f7f9f",lineHeight:1.6,margin:"16px auto 0",maxWidth:360,letterSpacing:"0.02em"}}>FanDNA is an independent project. Not affiliated with, endorsed by, or associated with any club, league, or governing body.</p>
