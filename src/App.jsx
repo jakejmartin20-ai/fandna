@@ -319,6 +319,34 @@ function AppInner(){
       setScreen("home");setPhase("in");
     },160);
   }
+  // Restore a saved genome from a share code: the link IS the backup. Rebuilds local storage by
+  // replaying the packed {core + club-per-sport} through saveResult (no new storage code), then
+  // hydrates state. A restored sport's result-screen match evidence is thinner (the code carries
+  // the genome, not the original answer sheet); openResult already reads scores null-safe.
+  function restoreGenome(g){
+    if(!g || g.future || !g.coreProfile) return false;
+    const entries=Object.entries(g.results||{}).filter(([,r])=>r&&r.club);
+    if(entries.length===0) return false;
+    entries.forEach(([sport,r])=>{ saveResult(sport,{coreProfile:g.coreProfile,club:r.club}); });
+    const st=loadState();
+    setSavedCore(null);setGenome(st.results||{});setCoreProfile(st.coreProfile||null);
+    return true;
+  }
+  // From the compare-recruit screen (opened your own link on a new device): adopt it and land home.
+  function restoreFromCompare(){
+    if(!restoreGenome(compareFriend)) return false;
+    setPhase("out");
+    setTimeout(()=>{ setResult(null);setScores(null);setTab("result");setScreen("home");setPhase("in"); },160);
+    return true;
+  }
+  // From the cold home: parse a pasted link (or bare code) and restore in place. false on a bad link.
+  function restoreFromText(text){
+    const s=String(text||"").trim();
+    if(!s) return false;
+    const m=s.match(/\/c\/([A-Za-z0-9\-_]+)/);
+    const code=m?m[1]:s.replace(/^.*\//,"");
+    return restoreGenome(decodeCode(code));
+  }
   // Redo just the PL module; keep the already-sequenced core. Falls back to a full
   // run if no saved core exists (e.g. a genome saved before this version).
   function retakeModule(){
@@ -565,6 +593,7 @@ function AppInner(){
             onStartSport={startSportFromCompare}
             onReshare={shareCompareLink}
             onExit={exitCompare}
+            onRestore={restoreFromCompare}
           />
         )}
 
@@ -582,6 +611,7 @@ function AppInner(){
             onOpenResult={openResult}
             onStartSport={startSport}
             onReset={startOver}
+            onRestore={restoreFromText}
           />
         )}
 
