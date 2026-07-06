@@ -386,7 +386,7 @@ export function Compare({ friend, me, onStartSport, onReshare, onExit }) {
     const Side = ({ t, sport, club, muted }) => (
       <div style={{ display: "flex", alignItems: "center", gap: 8, flex: 1, minWidth: 0, opacity: muted ? 0.5 : 1 }}>
         {t ? <ClubMark team={t} size={30} /> : <span style={{ fontFamily: CG, fontStyle: "italic", fontSize: 16, color: "#6a6a86" }}>not yet</span>}
-        {t && <span style={{ fontFamily: CG, fontSize: 18, color: "#dcd8d2", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{teamName(sport, club)}</span>}
+        {t && <span style={{ fontFamily: CG, fontSize: 17, color: "#dcd8d2", lineHeight: 1.15 }}>{teamName(sport, club)}</span>}
       </div>
     );
     return (
