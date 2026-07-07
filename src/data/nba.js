@@ -2747,4 +2747,217 @@ const badgeUrls = {
 
 const squadUrls = {};  // no per-team roster links yet; the View squad CTA stays hidden (data-gated)
 
-export { moduleQuestions, teams, archetypes, teamTextColors, archetypeDesc, greats, vitalStats, nearlyGot, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };
+const milestones = {
+  "LAL": [
+    "Seventeen championships, second only to Boston, a legacy from Minneapolis to Showtime to the modern Lakers.",
+    "The Showtime dynasty of the 1980s, Magic Johnson and Kareem winning five titles in a decade.",
+    "Kobe Bryant's twenty years in purple and gold, five rings and an eighty-one-point night.",
+    "The 2020 title in the Florida bubble, LeBron James delivering for a grieving city.",
+    "George Mikan's Minneapolis Lakers, professional basketball's first dynasty in the early 1950s."
+  ],
+  "BOS": [
+    "Eighteen championships, the most in NBA history, a green banner for nearly every era of the league.",
+    "Bill Russell's eleven rings in thirteen seasons, including eight straight from 1959 to 1966.",
+    "The rivalry with the Lakers, met a record twelve times in the Finals across seven decades.",
+    "Larry Bird's 1980s, three titles and a trilogy with Magic Johnson that revived the league.",
+    "Banner 18 in 2024 behind Jayson Tatum and Jaylen Brown, breaking a tie with the Lakers."
+  ],
+  "GSW": [
+    "Seven championships, spanning the Philadelphia origins to the modern Golden State dynasty.",
+    "Four titles in eight years behind Stephen Curry's revolution from beyond the arc.",
+    "A record seventy-three wins in 2016, the best regular season the league has ever seen.",
+    "The 2016 Finals collapse, up three games to one before losing to Cleveland.",
+    "Wilt Chamberlain's hundred-point game in 1962, scored as a Warrior in Philadelphia."
+  ],
+  "CHI": [
+    "Six championships in the 1990s, two three-peats and never a Finals defeat.",
+    "Michael Jordan, six rings and six Finals MVPs, often called the greatest to ever play.",
+    "The 1996 team's seventy-two wins, a record that stood for twenty years.",
+    "Jordan's series-winning shot over Cleveland in 1989, remembered simply as The Shot.",
+    "The last dance in 1998, Jordan's jumper over Utah to clinch a sixth title."
+  ],
+  "SAS": [
+    "Five championships between 1999 and 2014, a quarter-century of quiet excellence.",
+    "Tim Duncan and David Robinson, the Twin Towers, under coach Gregg Popovich for decades.",
+    "The 2014 team's beautiful ball movement, avenging the previous year's loss to Miami.",
+    "Ray Allen's 2013 corner three, seconds from a Spurs title, that broke San Antonio's heart.",
+    "Victor Wembanyama carrying the Spurs back to the Finals in 2026."
+  ],
+  "OKC": [
+    "The 2025 championship, Oklahoma City's first, won in a seven-game Finals over Indiana.",
+    "Shai Gilgeous-Alexander's 2025: regular-season MVP, scoring title, and Finals MVP in a single year.",
+    "A franchise-record sixty-eight wins that season, with the best scoring margin the league had ever seen.",
+    "The 1979 title in Seattle, and the Durant, Westbrook, and Harden Finals run in 2012 that fell to Miami.",
+    "The first major professional sports championship in the state of Oklahoma."
+  ],
+  "PHI": [
+    "Three championships, the last in 1983 behind a dominant Moses Malone.",
+    "Wilt Chamberlain's 1967 team, long ranked among the greatest ever assembled.",
+    "Julius Erving, Doctor J, whose grace above the rim redefined the game.",
+    "Allen Iverson's 2001 run to the Finals, the little man who carried a city.",
+    "The Process, years of tearing down and drafting high in search of the next title."
+  ],
+  "DEN": [
+    "The 2023 championship, Denver's first, in the franchise's forty-seventh NBA season.",
+    "Nikola Jokic, a three-time MVP and Finals MVP who redefined the center position.",
+    "Beating Miami in the 2023 Finals in five games, a coronation for Jokic and Jamal Murray.",
+    "Alex English and the high-scoring Nuggets of the 1980s, all offense and altitude.",
+    "An ABA original from 1967, mile-high basketball that waited decades for its first crown."
+  ],
+  "MIL": [
+    "Two championships, fifty years apart, the first in 1971 and the second in 2021.",
+    "The 1971 title behind Kareem Abdul-Jabbar and Oscar Robertson, in only the third season.",
+    "Giannis Antetokounmpo's fifty-point closeout in Game 6 of the 2021 Finals.",
+    "The Greek Freak, back-to-back MVPs and a Defensive Player of the Year.",
+    "The Deer District, a city that spilled into the streets to celebrate in 2021."
+  ],
+  "IND": [
+    "No NBA championship, but three ABA titles in the early 1970s.",
+    "Reggie Miller, eight points in nine seconds against the Knicks in 1995.",
+    "The 2000 Finals run under coach Larry Bird, falling to the Lakers.",
+    "The 2025 Finals, Tyrese Haliburton's heroics before a Game 7 loss to Oklahoma City.",
+    "Boom Baby, decades of gym-rat basketball in a state that lives for the game."
+  ],
+  "MIN": [
+    "No championship in franchise history, with the deepest runs reaching the conference finals.",
+    "Kevin Garnett's fifteen seasons, the heart of the franchise and its 2004 MVP peak.",
+    "The 2004 team's run to the Western Conference finals, the high-water mark for years.",
+    "Back-to-back conference finals in 2024 and 2025, the franchise's best stretch yet.",
+    "Anthony Edwards, the electric young guard leading a new era in Minnesota."
+  ],
+  "DET": [
+    "Three championships, the Bad Boys of 1989 and 1990 and the 2004 upset.",
+    "The Bad Boys, Isiah Thomas and a defense built to bruise, back-to-back titles.",
+    "The 2004 team beating a favored Lakers superteam nobody thought they could touch.",
+    "Chauncey Billups, Mr. Big Shot, Finals MVP of those 2004 champions.",
+    "A blue-collar city that has always loved its basketball played on the defensive end."
+  ],
+  "MEM": [
+    "No title, with the deepest playoff run reaching the conference finals in 2013.",
+    "Grit and Grind, the tough 2010s teams built on defense and sheer will.",
+    "Zach Randolph, Marc Gasol, Mike Conley, and Tony Allen, the heart of the Grindhouse.",
+    "Ja Morant, whose highlight dunks made Memphis appointment viewing again.",
+    "A franchise born in Vancouver in 1995 before finding a home on Beale Street."
+  ],
+  "UTA": [
+    "No championship, but back-to-back trips to the Finals in 1997 and 1998.",
+    "John Stockton and Karl Malone, the pick-and-roll perfected over eighteen seasons together.",
+    "Stockton's series-winning three to reach the 1997 Finals against Houston.",
+    "Two Finals losses to Michael Jordan's Bulls, so close to the summit.",
+    "Stockton's all-time records for assists and steals, marks that still stand."
+  ],
+  "POR": [
+    "One championship, the 1977 title behind Bill Walton's brilliant MVP season.",
+    "Blazermania, a fanbase that packed the arena for one of the longest sellout streaks in sports.",
+    "Clyde Drexler and the Finals runs of 1990 and 1992.",
+    "Damian Lillard's series-ending buzzer-beater over Oklahoma City in 2019.",
+    "The 1984 draft, taking Sam Bowie one pick before Michael Jordan, a what-if that lingers."
+  ],
+  "NYK": [
+    "Three championships, the 1970 and 1973 title teams and the 2026 breakthrough.",
+    "The 2026 title, ending a fifty-three-year drought with the largest comeback in Finals history.",
+    "Willis Reed limping out for Game 7 in 1970, one of sport's iconic images.",
+    "Patrick Ewing's 1990s Knicks, bruising basketball before a sold-out Garden.",
+    "Jalen Brunson's forty-five points to clinch the 2026 championship in San Antonio."
+  ],
+  "CLE": [
+    "One championship, the 2016 title that broke Cleveland's fifty-two-year sports drought.",
+    "LeBron James delivering on his promise to bring a title home to Ohio.",
+    "Down three games to one to a seventy-three-win Golden State, then three straight wins.",
+    "LeBron's chase-down block and Kyrie Irving's dagger three in Game 7 of 2016.",
+    "Four straight Finals from 2015 to 2018 across two LeBron eras."
+  ],
+  "SAC": [
+    "One championship, all the way back in 1951 as the Rochester Royals.",
+    "The longest title drought in the NBA, unbroken since that Rochester team.",
+    "The early 2000s Kings, Chris Webber and the most entertaining offense of their day.",
+    "The 2002 Western Conference finals against the Lakers, a series still argued over.",
+    "Light the Beam, a roaring return to the playoffs in 2023 after sixteen years away."
+  ],
+  "ATL": [
+    "One championship, in 1958 as the St. Louis Hawks.",
+    "Bob Pettit, the first player in league history to reach twenty thousand career points.",
+    "Dominique Wilkins, the Human Highlight Film, decades of appointment-viewing dunks.",
+    "A franchise that traces from Tri-Cities to St. Louis to Atlanta since 1946.",
+    "The sixty-win 2015 team, the best regular season in Atlanta's history."
+  ],
+  "WAS": [
+    "One championship, the 1978 title won as the Washington Bullets.",
+    "Wes Unseld and Elvin Hayes, the powerful frontcourt of that title team.",
+    "Back-to-back Finals in 1978 and 1979, winning one and losing one to Seattle.",
+    "Gilbert Arenas, Agent Zero, whose buzzer-beaters lit up the mid-2000s.",
+    "A long wait since, the Bullets-to-Wizards decades still chasing a second title."
+  ],
+  "BKN": [
+    "No NBA title, but two ABA championships in 1974 and 1976 behind Julius Erving.",
+    "Back-to-back NBA Finals in 2002 and 2003 as the New Jersey Nets.",
+    "Jason Kidd running the show, the engine of those New Jersey Finals teams.",
+    "The 2021 superteam of Durant, Irving, and Harden that never quite delivered.",
+    "The move to Brooklyn in 2012, big-market ambition on a brand-new stage."
+  ],
+  "LAC": [
+    "No championship, the deepest run reaching the conference finals in 2021.",
+    "Decades as the other Los Angeles team, long the league's hard-luck franchise.",
+    "Lob City, Chris Paul and Blake Griffin bringing the highlight reel to Los Angeles.",
+    "The 2021 run behind Kawhi Leonard and Paul George, the franchise's first conference finals.",
+    "The move into the Intuit Dome in 2024, a home to finally call their own."
+  ],
+  "PHX": [
+    "No championship, but three trips to the Finals in 1976, 1993, and 2021.",
+    "The 1976 Finals and its triple-overtime Game 5, one of the greatest games ever played.",
+    "Charles Barkley's 1993 MVP season and Finals run against Michael Jordan.",
+    "Steve Nash's seven-seconds-or-less offense, back-to-back MVPs that changed the game.",
+    "The 2021 Finals, a two-nothing lead over Milwaukee before falling in six."
+  ],
+  "MIA": [
+    "Three championships, in 2006 and back-to-back in 2012 and 2013.",
+    "Dwyane Wade's 2006 Finals, a comeback from two games down against Dallas.",
+    "The Big Three of LeBron James, Wade, and Chris Bosh, four straight Finals.",
+    "Ray Allen's corner three in Game 6 of 2013, seconds from elimination.",
+    "Heat Culture, an undrafted-and-overlooked identity under Pat Riley and Erik Spoelstra."
+  ],
+  "DAL": [
+    "One championship, the 2011 title over a favored Miami superteam.",
+    "Dirk Nowitzki, twenty-one seasons in a single uniform and a 2011 Finals MVP.",
+    "Avenging the 2006 Finals collapse against the very same Miami Heat.",
+    "Luka Doncic carrying Dallas to the 2024 Finals, then a stunning trade to the Lakers in 2025.",
+    "Mark Cuban's era, a big-personality owner who made the Mavericks matter."
+  ],
+  "HOU": [
+    "Two championships, back-to-back in 1994 and 1995, the franchise's golden age.",
+    "Hakeem Olajuwon, the Dream, whose footwork carried both title teams.",
+    "Winning the 1995 title as a sixth seed, one of the great playoff runs.",
+    "Clutch City, a Houston team that refused to be counted out.",
+    "The James Harden years, MVP scoring and a sixty-five-win near-miss in 2018."
+  ],
+  "TOR": [
+    "One championship, the 2019 title in only the franchise's twenty-fourth season.",
+    "Kawhi Leonard's series-winning bounce over Philadelphia, four rims and in.",
+    "Canada's team, an entire country adopting the Raptors in 2019.",
+    "Beating a Golden State dynasty in six games for the 2019 title.",
+    "Vince Carter, Air Canada, whose dunks put the young franchise on the map."
+  ],
+  "ORL": [
+    "No championship, but two NBA Finals appearances, in 1995 and 2009.",
+    "Shaquille O'Neal and Penny Hardaway, the young 1990s duo that reached the 1995 Finals.",
+    "Dwight Howard anchoring the 2009 Finals team, the franchise's second trip.",
+    "Tracy McGrady's scoring-title years, must-watch basketball in the early 2000s.",
+    "An expansion team from 1989, still chasing its first championship."
+  ],
+  "NOP": [
+    "No NBA Finals yet, the deepest run stopping in the second round.",
+    "Chris Paul's 2008 team pushing the defending-champion Spurs to seven games in the second round.",
+    "Anthony Davis, the top pick in 2012, who became a superstar before forcing a trade to the Lakers.",
+    "Zion Williamson taken first overall in 2019, the face of the franchise's next era.",
+    "Two seasons displaced to Oklahoma City after Hurricane Katrina before the team came home."
+  ],
+  "CHA": [
+    "No championship, and no conference finals appearance in the franchise's history.",
+    "The original Hornets of the late 1980s, teal and purple and instantly beloved.",
+    "Larry Johnson and Alonzo Mourning, the young core that packed the old Coliseum.",
+    "A franchise that reclaimed its Hornets name and history in 2014.",
+    "Still chasing a first trip past the second round, let alone the Finals."
+  ]
+};
+
+export { moduleQuestions, teams, archetypes, teamTextColors, archetypeDesc, greats, vitalStats, milestones, nearlyGot, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };
