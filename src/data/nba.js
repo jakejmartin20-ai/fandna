@@ -1912,7 +1912,6 @@ const scoring = {
       "LAC": 2,
       "PHX": 2,
       "BKN": 2,
-      "DAL": 2,
       "HOU": 2,
       "ATL": 2
     },
@@ -1924,8 +1923,7 @@ const scoring = {
       "PHI": 2,
       "MIN": 2,
       "DEN": 2,
-      "SAC": 2,
-      "WAS": 2
+      "SAC": 2
     }
   },
   "nba_q2": {
@@ -2054,7 +2052,6 @@ const scoring = {
       "BKN": 2,
       "LAC": 2,
       "PHX": 2,
-      "DAL": 2,
       "MIA": 2,
       "NYK": 2
     },
@@ -2083,7 +2080,6 @@ const scoring = {
       "LAC": 2,
       "PHX": 2,
       "HOU": 2,
-      "DAL": 2,
       "LAL": 2,
       "MIA": 2
     },
@@ -2196,7 +2192,6 @@ const scoring = {
     },
     "D": {
       "LAL": 2,
-      "MIA": 2,
       "NYK": 2,
       "CHI": 2,
       "ATL": 2
@@ -2222,8 +2217,7 @@ const scoring = {
       "BKN": 2,
       "LAC": 2,
       "CHI": 2,
-      "BOS": 2,
-      "DAL": 2
+      "BOS": 2
     },
     "C": {
       "DET": 2,
@@ -2238,8 +2232,7 @@ const scoring = {
       "NOP": 2,
       "CHA": 2,
       "ATL": 2,
-      "PHX": 2,
-      "WAS": 2
+      "PHX": 2
     }
   },
   "nba_q9": {
@@ -2328,8 +2321,7 @@ const scoring = {
       "LAL": 2,
       "BOS": 2,
       "CHI": 2,
-      "DEN": 2,
-      "MIA": 2
+      "DEN": 2
     }
   },
   "nba_q11": {
@@ -2399,11 +2391,11 @@ const scoring = {
       "IND": 3,
       "MEM": 3,
       "SAC": 3,
-      "DET": 3
+      "DET": 3,
+      "NOP": 2
     },
     "D": {
       "ORL": 3,
-      "NOP": 3,
       "CHA": 3,
       "WAS": 3,
       "MIN": 3,
