@@ -178,6 +178,13 @@ function AppInner(){
 
   // NFL/MLB ship behind live:false. Hidden ?nfl=1 / ?mlb=1 in the URL unlock the strand on
   // preview (tappable, takeable) while the public still sees "coming soon". Nothing else changes.
+  // Standing test surface: visiting /all (a clean path, no query string) — or ?all=1 as a backup —
+  // unlocks EVERY gated sport at once so held leagues can be tested without stacking flags. It's
+  // OR'd in uniformly at the end of the map below, so any sport added later (e.g. College Football)
+  // is included for free. Preview-only convenience; scoring/gating is untouched.
+  const previewAll = typeof window!=="undefined" &&
+    (window.location.pathname.replace(/\/+$/,"").endsWith("/all")
+     || new URLSearchParams(window.location.search).has("all"));
   const nflUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("nfl");
   const mlbUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("mlb");
   const nbaUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("nba");
@@ -186,15 +193,18 @@ function AppInner(){
   const llUnlocked  = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("ll");
   const l1Unlocked  = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("l1");
   const saUnlocked  = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("sa");
-  const sportsList = SPORTS.map(s=>
-    s.code==="NFL" ? {...s, live: s.live||nflUnlocked} :
-    s.code==="MLB" ? {...s, live: s.live||mlbUnlocked} :
-    s.code==="NBA" ? {...s, live: s.live||nbaUnlocked} :
-    s.code==="NHL" ? {...s, live: s.live||nhlUnlocked} :
-    s.code==="BL"  ? {...s, live: s.live||blUnlocked} :
-    s.code==="LL"  ? {...s, live: s.live||llUnlocked} :
-    s.code==="L1"  ? {...s, live: s.live||l1Unlocked} :
-    s.code==="SA"  ? {...s, live: s.live||saUnlocked} : s);
+  const sportsList = SPORTS.map(s=>{
+    const base =
+      s.code==="NFL" ? s.live||nflUnlocked :
+      s.code==="MLB" ? s.live||mlbUnlocked :
+      s.code==="NBA" ? s.live||nbaUnlocked :
+      s.code==="NHL" ? s.live||nhlUnlocked :
+      s.code==="BL"  ? s.live||blUnlocked :
+      s.code==="LL"  ? s.live||llUnlocked :
+      s.code==="L1"  ? s.live||l1Unlocked :
+      s.code==="SA"  ? s.live||saUnlocked : s.live;
+    return {...s, live: base||previewAll};
+  });
 
   // Active sport's data, bound to the same names the screens already use, so the result
   // screen and quiz read the right sport with no other changes. PL behaves exactly as before.
