@@ -15,6 +15,7 @@ import { moduleQuestions, scoring as plScoring, teams as plTeams, teamDims as pl
 import { moduleQuestions as nflModule, scoring as nflScoring, teamDims as nflDims } from "../data/nfl";
 import { moduleQuestions as mlbModule, scoring as mlbScoring, teamDims as mlbDims } from "../data/mlb";
 import { moduleQuestions as nbaModule, scoring as nbaScoring, teamDims as nbaDims } from "../data/nba";
+import { moduleQuestions as nhlModule, scoring as nhlScoring, teamDims as nhlDims } from "../data/nhl";
 import { moduleQuestions as blModule, scoring as blScoring, teamDims as blDims } from "../data/bundesliga";
 import { moduleQuestions as llModule, scoring as llScoring, teamDims as llDims } from "../data/laliga";
 import { moduleQuestions as l1Module, scoring as l1Scoring, teamDims as l1Dims } from "../data/ligue1";
@@ -152,6 +153,7 @@ const FP_ENGINES = {
   NFL: makeFpEngine(nflDims, nflScoring, nflModule),
   MLB: makeFpEngine(mlbDims, mlbScoring, mlbModule),
   NBA: makeFpEngine(nbaDims, nbaScoring, nbaModule),
+  NHL: makeFpEngine(nhlDims, nhlScoring, nhlModule),
   BL: makeFpEngine(blDims, blScoring, blModule),
   LL: makeFpEngine(llDims, llScoring, llModule),
   L1: makeFpEngine(l1Dims, l1Scoring, l1Module),
