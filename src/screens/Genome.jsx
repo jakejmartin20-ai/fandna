@@ -311,15 +311,13 @@ export function GenomeHome({
                 );
               })}
             </div>
-            {/* Tier 1: compare (primary). Tier 2: share the sequence (weighted, copies as fallback). */}
-            <button type="button" onClick={onCompare}
+            {/* #9: one home share. shareLink carries the strip + de-cluttered sequence + /c/ link,
+                so a single primary CTA does the whole job (no redundant second button). */}
+            <button type="button" onClick={shareLink} aria-live="polite"
               style={{display:"block",width:"100%",textAlign:"center",background:"#6a5ad0",border:"1px solid #6a5ad0",borderRadius:8,padding:"14px 10px",color:"#fff",fontFamily:"'DM Mono',monospace",fontSize:13,letterSpacing:"0.12em",textTransform:"uppercase",cursor:"pointer",fontWeight:600}}
               onMouseEnter={e=>{e.currentTarget.style.filter="brightness(1.08)";}}
               onMouseLeave={e=>{e.currentTarget.style.filter="none";}}
-            >Compare with a friend</button>
-            <button type="button" onClick={shareLink} aria-live="polite"
-              style={{display:"block",width:"100%",textAlign:"center",background:"#1e1c2c",border:"1px solid #3a3654",borderRadius:7,padding:"11px 10px",marginTop:9,color:"#e6e2ea",fontFamily:"'DM Mono',monospace",fontSize:12,letterSpacing:"0.14em",textTransform:"uppercase",cursor:"pointer",fontWeight:500}}
-            >{copied?"Copied":"Share sequence"}</button>
+            >{copied?"Copied":"Compare with a friend"}</button>
           </div>
 
         </div>
