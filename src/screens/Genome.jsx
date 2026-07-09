@@ -313,7 +313,8 @@ export function GenomeHome({
               })}
             </div>
             <span style={{display:"flex",gap:8,flexShrink:0}}>
-              <button type="button" onClick={shareLink} aria-live="polite" style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#8484b0",letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer",background:"none",border:"none",padding:"6px 6px",margin:0}}>{copied?"Copied":"Compare"}</button>
+              <button type="button" onClick={copyShare} aria-live="polite" style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#8484b0",letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer",background:"none",border:"none",padding:"6px 6px",margin:0}}>{copied?"Copied":"Copy"}</button>
+              <button type="button" onClick={shareLink} style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#8484b0",letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer",background:"none",border:"none",padding:"6px 6px",margin:0}}>Share</button>
             </span>
           </div>
           {/* Keep-your-link nudge: this share link is also the user's save (no account, no server). */}
