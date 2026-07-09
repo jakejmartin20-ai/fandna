@@ -16,6 +16,7 @@ import { moduleQuestions as nflModule, scoring as nflScoring, teamDims as nflDim
 import { moduleQuestions as mlbModule, scoring as mlbScoring, teamDims as mlbDims } from "../data/mlb";
 import { moduleQuestions as nbaModule, scoring as nbaScoring, teamDims as nbaDims } from "../data/nba";
 import { moduleQuestions as nhlModule, scoring as nhlScoring, teamDims as nhlDims } from "../data/nhl";
+import { moduleQuestions as cfbModule, scoring as cfbScoring, teamDims as cfbDims } from "../data/cfb";
 import { moduleQuestions as blModule, scoring as blScoring, teamDims as blDims } from "../data/bundesliga";
 import { moduleQuestions as llModule, scoring as llScoring, teamDims as llDims } from "../data/laliga";
 import { moduleQuestions as l1Module, scoring as l1Scoring, teamDims as l1Dims } from "../data/ligue1";
@@ -154,6 +155,7 @@ const FP_ENGINES = {
   MLB: makeFpEngine(mlbDims, mlbScoring, mlbModule),
   NBA: makeFpEngine(nbaDims, nbaScoring, nbaModule),
   NHL: makeFpEngine(nhlDims, nhlScoring, nhlModule),
+  CFB: makeFpEngine(cfbDims, cfbScoring, cfbModule),
   BL: makeFpEngine(blDims, blScoring, blModule),
   LL: makeFpEngine(llDims, llScoring, llModule),
   L1: makeFpEngine(l1Dims, l1Scoring, l1Module),
@@ -406,6 +408,8 @@ for (const q of moduleQuestions) QUESTION_MAP[q.id] = q;
 for (const q of nflModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (nfl_q*), no collision with PL
 for (const q of mlbModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (mlb_q*), no collision with PL
 for (const q of nbaModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (nba_q*), no collision with PL
+for (const q of nhlModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (nhl_q*), no collision with PL
+for (const q of cfbModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (cfb_q*), no collision with PL
 for (const q of blModule)        QUESTION_MAP[q.id] = q;   // namespaced ids (bl_q*), no collision with PL
 for (const q of llModule)        QUESTION_MAP[q.id] = q;   // namespaced ids (ll_q*), no collision with PL
 for (const q of l1Module)        QUESTION_MAP[q.id] = q;   // namespaced ids (l1_q*), no collision with PL
