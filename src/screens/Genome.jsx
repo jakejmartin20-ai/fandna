@@ -75,6 +75,7 @@ export function GenomeHome({
   coreProfile,       // the user's 7-dim core; drives the hero strip
   onOpenResult,      // (code) => void
   onStartSport,      // (code) => void
+  onCompare,         // () => void : share the /c/ genome compare link (tier-1 CTA)
 }){
   const [copied,setCopied]=useState(false);
 
@@ -289,8 +290,8 @@ export function GenomeHome({
             </div>
           )}
           <CoreStrip dims={coreProfile}/>
-          <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginTop:14,paddingTop:11,borderTop:"1px solid #222230",gap:10}}>
-            <div style={{flex:1,minWidth:0,display:"flex",flexDirection:"column",gap:5}}>
+          <div style={{marginTop:14,paddingTop:11,borderTop:"1px solid #222230"}}>
+            <div style={{display:"flex",flexDirection:"column",gap:5,marginBottom:13}}>
               {SHARE.groups.map(g=>{
                 const dim = g.fam.glyph!=="globe";
                 return (
@@ -301,10 +302,15 @@ export function GenomeHome({
                 );
               })}
             </div>
-            <span style={{display:"flex",gap:8,flexShrink:0}}>
-              <button type="button" onClick={copyShare} aria-live="polite" style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#8484b0",letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer",background:"none",border:"none",padding:"6px 6px",margin:0}}>{copied?"Copied":"Copy"}</button>
-              <button type="button" onClick={shareLink} style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#8484b0",letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer",background:"none",border:"none",padding:"6px 6px",margin:0}}>Share</button>
-            </span>
+            {/* Tier 1: compare (primary). Tier 2: share the sequence (weighted, copies as fallback). */}
+            <button type="button" onClick={onCompare}
+              style={{display:"block",width:"100%",textAlign:"center",background:"#6a5ad0",border:"1px solid #6a5ad0",borderRadius:8,padding:"14px 10px",color:"#fff",fontFamily:"'DM Mono',monospace",fontSize:13,letterSpacing:"0.12em",textTransform:"uppercase",cursor:"pointer",fontWeight:600}}
+              onMouseEnter={e=>{e.currentTarget.style.filter="brightness(1.08)";}}
+              onMouseLeave={e=>{e.currentTarget.style.filter="none";}}
+            >Compare with a friend</button>
+            <button type="button" onClick={shareLink} aria-live="polite"
+              style={{display:"block",width:"100%",textAlign:"center",background:"#1e1c2c",border:"1px solid #3a3654",borderRadius:7,padding:"11px 10px",marginTop:9,color:"#e6e2ea",fontFamily:"'DM Mono',monospace",fontSize:12,letterSpacing:"0.14em",textTransform:"uppercase",cursor:"pointer",fontWeight:500}}
+            >{copied?"Copied":"Share sequence"}</button>
           </div>
 
         </div>
