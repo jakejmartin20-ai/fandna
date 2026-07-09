@@ -57,6 +57,20 @@ function pick(arr, profile, salt){
   return arr[h % arr.length];
 }
 
+// Text-native genome visual for shares: each of the 7 dims -> one block character by height,
+// scaled off the SAME population z-score the read uses (raw core-compressed values would hand
+// almost everyone the identical strip, killing the "this is uniquely yours" hook). Fixed dim
+// order so a person's strip is stable and recognizable. Display-only; not in the scoring graph.
+export function coreBlocks(profile){
+  const B = "\u2581\u2582\u2583\u2584\u2585\u2586\u2587\u2588"; // ▁▂▃▄▅▆▇█
+  if(!profile) return "";
+  return DIM_ORDER.map(d=>{
+    const z = (profile[d]!=null && SD[d]) ? (profile[d]-MEAN[d])/SD[d] : 0;
+    const t = Math.max(0, Math.min(1, (z+2)/4)); // clamp z to [-2,2] -> 0..1
+    return B[Math.round(t*(B.length-1))];
+  }).join("");
+}
+
 // coreProfile: { loyalty..rootedness }; mappedCount: number of live leagues the user has mapped.
 // returns { headline, read, closing } - or null when there is no core yet.
 export function generateRead(coreProfile, mappedCount){
