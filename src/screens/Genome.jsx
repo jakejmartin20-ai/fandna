@@ -17,7 +17,8 @@ import { useState } from "react";
 import { ClubMark } from "../components/ClubMark";
 import { CoreStrip } from "../components/CoreStrip";
 import { FAMILIES } from "../lib/manifest";
-import { generateRead } from "../lib/genomeRead";
+import { generateRead, coreBlocks } from "../lib/genomeRead";
+import { encodeGenome } from "../lib/compareCode";
 
 // Structural palette: one quiet "DNA backbone" color for the tree, so the only saturated
 // color on the page comes from the strip and the clubs.
@@ -94,9 +95,13 @@ export function GenomeHome({
     return { groups, seq: groups.flatMap(g=>g.items).join(" · ") };
   })();
   const shareText = SHARE.seq ? ("FanDNA: "+SHARE.seq) : shareString;
+  const _seqClean = (SHARE.seq||"").split(/\s*·\s*/).filter(t=>t&&!/-\?$/.test(t)).join(" · ");
+  const _blk = (coreProfile && Object.keys(coreProfile).length) ? ("\uD83E\uDDEC "+coreBlocks(coreProfile)) : "";
+  const _cmp = "https://fandna.vercel.app/c/"+encodeGenome({coreProfile, results:genome});
+  const shareCaption = [_blk, (_seqClean?("FanDNA: "+_seqClean):shareText), "Compare yours: "+_cmp].filter(Boolean).join("\n");
 
   function copyShare(){
-    const txt = `${shareText}. Find yours: fandna.vercel.app`;
+    const txt = shareCaption;
     if(navigator.clipboard&&navigator.clipboard.writeText){
       navigator.clipboard.writeText(txt).then(()=>{
         setCopied(true);
@@ -107,7 +112,7 @@ export function GenomeHome({
     }
   }
   function shareLink(){
-    const txt = `${shareText}. Find yours: fandna.vercel.app`;
+    const txt = shareCaption;
     if(navigator.share){ navigator.share({text:txt}).catch(()=>{}); }
     else { copyShare(); }
   }
@@ -308,8 +313,7 @@ export function GenomeHome({
               })}
             </div>
             <span style={{display:"flex",gap:8,flexShrink:0}}>
-              <button type="button" onClick={copyShare} aria-live="polite" style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#8484b0",letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer",background:"none",border:"none",padding:"6px 6px",margin:0}}>{copied?"Copied":"Copy"}</button>
-              <button type="button" onClick={shareLink} style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#8484b0",letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer",background:"none",border:"none",padding:"6px 6px",margin:0}}>Share</button>
+              <button type="button" onClick={shareLink} aria-live="polite" style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#8484b0",letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer",background:"none",border:"none",padding:"6px 6px",margin:0}}>{copied?"Copied":"Compare"}</button>
             </span>
           </div>
           {/* Keep-your-link nudge: this share link is also the user's save (no account, no server). */}
