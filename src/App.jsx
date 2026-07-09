@@ -480,7 +480,8 @@ function AppInner(){
   function genomeCode(){ return encodeGenome({coreProfile, results: genome}); }
   function cardCaption(){
     const noun=regOf(activeSport).noun;
-    return `Which ${noun} are you, really? Turns out I'm ${team.name}, ${archetypes[result]}. ${shareString}. Find yours: fandna.vercel.app/c/${genomeCode()}`;
+    const seq="FanDNA: "+shareGroups.flatMap(g=>g.items).join(" · ");
+    return `Which ${noun} are you, really? Turns out I'm ${team.name}, ${archetypes[result]}. ${seq}. Find yours: fandna.vercel.app/c/${genomeCode()}`;
   }
   function saveBlob(blob){
     const url=URL.createObjectURL(blob);
@@ -501,6 +502,16 @@ function AppInner(){
     const caption=`Which ${noun} are you, really? Compare your FanDNA with mine: ${url}`;
     try{ if(navigator.share){ await navigator.share({text:caption}); return; } }catch(e){ if(e&&e.name==="AbortError") return; }
     navigator.clipboard?.writeText(caption).then(()=>alert("Link copied.")).catch(()=>alert(caption));
+  }
+  // Home-screen compare: a genome-level (cross-sport) invite. Sends the /c/ link so a friend
+  // lands straight in a filled-in compare, rather than the bare homepage.
+  async function shareGenomeCompare(){
+    const st=loadState();
+    const code=encodeGenome({coreProfile:st.coreProfile, results:st.results||{}});
+    const url=`https://fandna.vercel.app/c/${code}`;
+    const caption=`Compare your FanDNA with mine: ${url}`;
+    try{ if(navigator.share){ await navigator.share({text:caption}); return; } }catch(e){ if(e&&e.name==="AbortError") return; }
+    navigator.clipboard?.writeText(caption).then(()=>alert("Compare link copied.")).catch(()=>alert(caption));
   }
 
   async function shareCard(){
@@ -596,6 +607,7 @@ function AppInner(){
             coreProfile={coreProfile}
             onOpenResult={openResult}
             onStartSport={startSport}
+            onCompare={shareGenomeCompare}
           />
         )}
 
@@ -746,18 +758,25 @@ function AppInner(){
               </div>
             </div>
 
-            {/* Share + Download */}
-            <div style={{display:"flex",gap:10,marginBottom:18}}>
+            {/* Share hierarchy: Compare (primary) / Share card (weighted secondary) / Download (quiet) */}
+            <div style={{marginBottom:18}}>
+              <button onClick={shareCompareLink}
+                style={{display:"block",width:"100%",textAlign:"center",background:team.color,border:`1px solid ${team.color}`,borderRadius:8,padding:"15px 10px",color:"#fff",fontFamily:"'DM Mono',monospace",fontSize:13,letterSpacing:"0.12em",textTransform:"uppercase",cursor:"pointer",fontWeight:600}}
+                onMouseEnter={e=>{e.currentTarget.style.filter="brightness(1.08)";}}
+                onMouseLeave={e=>{e.currentTarget.style.filter="none";}}
+              >Compare with a friend</button>
               <button onClick={shareCard}
-                style={{flex:1,textAlign:"center",background:`${team.color}26`,border:`1px solid ${team.color}66`,borderRadius:6,padding:"13px 10px",color:"#f1e7e7",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",cursor:"pointer",fontWeight:500}}
-                onMouseEnter={e=>{e.currentTarget.style.background=`${team.color}38`;}}
-                onMouseLeave={e=>{e.currentTarget.style.background=`${team.color}26`;}}
-              >Share</button>
-              <button onClick={downloadCard}
-                style={{flex:1,textAlign:"center",background:"transparent",border:"1px solid #33333f",borderRadius:6,padding:"13px 10px",color:"#bdbdd0",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",cursor:"pointer",fontWeight:500}}
-                onMouseEnter={e=>{e.currentTarget.style.borderColor="#55556a";e.currentTarget.style.color="#d8d4ce";}}
-                onMouseLeave={e=>{e.currentTarget.style.borderColor="#33333f";e.currentTarget.style.color="#bdbdd0";}}
-              >Download</button>
+                style={{display:"block",width:"100%",textAlign:"center",background:`${team.color}1f`,border:`1px solid ${team.color}4d`,borderRadius:7,padding:"11px 10px",marginTop:9,color:"#e6e2ea",fontFamily:"'DM Mono',monospace",fontSize:12,letterSpacing:"0.14em",textTransform:"uppercase",cursor:"pointer",fontWeight:500}}
+                onMouseEnter={e=>{e.currentTarget.style.background=`${team.color}30`;}}
+                onMouseLeave={e=>{e.currentTarget.style.background=`${team.color}1f`;}}
+              >Share card</button>
+              <div style={{textAlign:"center",marginTop:10}}>
+                <button onClick={downloadCard}
+                  style={{background:"none",border:"none",color:"#74748e",fontFamily:"'DM Mono',monospace",fontSize:12,letterSpacing:"0.1em",cursor:"pointer",padding:"4px 8px"}}
+                  onMouseEnter={e=>{e.currentTarget.style.color="#9a9ac0";}}
+                  onMouseLeave={e=>{e.currentTarget.style.color="#74748e";}}
+                >Download image</button>
+              </div>
             </div>
 
             {/* Tabs, fitted to width (no horizontal scroll, no float) */}
