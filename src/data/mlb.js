@@ -15,7 +15,7 @@ const moduleQuestions = [
     "id": "mlb_q1",
     "type": "choice",
     "phase": "The fine print",
-    "question": "It's in your life every single day for half the year, not once a week. That daily presence is:",
+    "question": "It's there every day for half the year, not once a week. That daily presence is:",
     "options": [
       {
         "label": "A comfort. The everyday ritual matters more than any single result.",
@@ -87,7 +87,7 @@ const moduleQuestions = [
     "id": "mlb_q5",
     "type": "choice",
     "phase": "The fine print",
-    "question": "Some waits stretch on for years with no end in sight. The longer it goes, the more you:",
+    "question": "Some waits stretch on for years with no end. The longer it goes, the more you:",
     "options": [
       {
         "label": "Dig in. The loyalty is the identity now, the trophy almost beside the point.",
@@ -143,7 +143,7 @@ const moduleQuestions = [
     "id": "mlb_q7",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "Some hopes outlast the people holding them, handed down like a family name. Waiting for something you might not live to see is:",
+    "question": "Some hopes outlast the people holding them. Waiting for what you might not live to see is:",
     "options": [
       {
         "label": "The most romantic thing there is. The wait itself is almost sacred.",
@@ -171,7 +171,7 @@ const moduleQuestions = [
     "id": "mlb_q8",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "Teams get moved, renamed, sold, gutted. When the thing you love changes underneath you, you:",
+    "question": "Teams get moved, renamed, sold. When the thing you love changes underneath you, you:",
     "options": [
       {
         "label": "Stay loyal to the place and the roots, whatever they rename or relocate.",
@@ -207,7 +207,7 @@ const moduleQuestions = [
     "id": "mlb_q10",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "Baseball drowns in its own history, the records, the ghosts, the old glory. To you that history is:",
+    "question": "Baseball drowns in its own history, the records, the ghosts. To you that history is:",
     "options": [
       {
         "label": "Everything. You measure today against a glorious past and mostly find today wanting.",
@@ -235,7 +235,7 @@ const moduleQuestions = [
     "id": "mlb_q11",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "It all narrows to one person against one person, sixty feet apart, everyone watching. You'd rather be:",
+    "question": "One man against one, sixty feet apart, everyone watching. You'd rather be:",
     "options": [
       {
         "label": "The one expected to win, with everything to lose. Pressure is the price of being good.",
