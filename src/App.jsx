@@ -189,6 +189,7 @@ function AppInner(){
   const mlbUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("mlb");
   const nbaUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("nba");
   const nhlUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("nhl");
+  const cfbUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("cfb");
   const blUnlocked  = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("bl");
   const llUnlocked  = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("ll");
   const l1Unlocked  = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("l1");
@@ -199,6 +200,7 @@ function AppInner(){
       s.code==="MLB" ? s.live||mlbUnlocked :
       s.code==="NBA" ? s.live||nbaUnlocked :
       s.code==="NHL" ? s.live||nhlUnlocked :
+      s.code==="CFB" ? s.live||cfbUnlocked :
       s.code==="BL"  ? s.live||blUnlocked :
       s.code==="LL"  ? s.live||llUnlocked :
       s.code==="L1"  ? s.live||l1Unlocked :
@@ -427,6 +429,7 @@ function AppInner(){
     ["City",       vit.city],
     ["Capacity",   vit.capacity],
     ["Colours",    vit.colors],
+    ["Conference", vit.conference],
     ["Titles",     vit.titles],
     ["Last title", vit.lastTitle],
   ] : [
