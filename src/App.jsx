@@ -470,7 +470,7 @@ function AppInner(){
   // ── Home-screen data, all manifest-driven ─────────────────────────────────
   // The share string lists every sport in the manifest: a completed one shows its club
   // code, every other shows "?". Adding a sport later extends this automatically.
-  const shareString = "FanDNA: " + SPORTS.map(s=>{
+  const shareString = "FanDNA: " + sportsList.filter(s=>s.live).map(s=>{
     const r=genome[s.code];
     const sd=SPORT_DATA[s.code];
     const c3=(r&&r.club)?(((sd&&sd.teams&&sd.teams[r.club]&&sd.teams[r.club].code3))||r.club):"?";
@@ -480,7 +480,7 @@ function AppInner(){
   // Display-only; reads the same manifest the share string does, no new plumbing.
   const shareGroups = FAMILIES.map(f=>({
     fam: f,
-    items: SPORTS.filter(s=>s.group===f.id).map(s=>{
+    items: sportsList.filter(s=>s.live&&s.group===f.id).map(s=>{
       const r=genome[s.code];
       const sd=SPORT_DATA[s.code];
       const c3=(r&&r.club)?(((sd&&sd.teams&&sd.teams[r.club]&&sd.teams[r.club].code3))||r.club):"?";
@@ -730,7 +730,7 @@ function AppInner(){
                 }}
                 onMouseEnter={e=>e.currentTarget.style.color="#ccc"}
                 onMouseLeave={e=>e.currentTarget.style.color="#9898b8"}
-              >← genome</button>
+              >← Your FanDNA</button>
               <span style={{fontSize:11,color:"#8484b0",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>
                 {(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"}
               </span>
