@@ -101,7 +101,7 @@ export function GenomeHome({
   const shareCaption = [_blk, (_seqClean?("FanDNA: "+_seqClean):shareText), "Compare yours: "+_cmp].filter(Boolean).join("\n");
 
   function copyShare(){
-    const txt = shareCaption;
+    const txt = _cmp;   // keep-this-link: just the /c/ link, single line, pastes cleanly into Restore
     if(navigator.clipboard&&navigator.clipboard.writeText){
       navigator.clipboard.writeText(txt).then(()=>{
         setCopied(true);
