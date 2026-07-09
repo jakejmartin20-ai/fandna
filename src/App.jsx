@@ -12,6 +12,7 @@ import { GenomeHome } from "./screens/Genome";
 import { CoreStrip } from "./components/CoreStrip";
 import { MatchEvidence } from "./components/MatchEvidence";
 import { CrossMatch } from "./components/CrossMatch";
+import { coreBlocks } from "./lib/genomeRead";
 import { SPORTS, FAMILIES } from "./lib/manifest";
 import { REGISTER, regOf } from "./lib/register";
 import { Compare } from "./screens/Compare";
@@ -383,6 +384,11 @@ function AppInner(){
   }
 
   const team=result?teams[result]:null;
+  // Text-native genome visual for share captions (Option A). Display-only.
+  const blk=(p)=> (p&&Object.keys(p).length) ? ("\uD83E\uDDEC "+coreBlocks(p)) : "";
+  // #4: legible text color for a SOLID team-color button. Light kits (Koln/Juve/Real, the yellows)
+  // get dark text instead of white-on-white. Deterministic by luminance, so it covers every team.
+  const onTeam=(()=>{ const c=team&&team.color; if(!c) return "#fff"; const h=c.replace("#",""); const r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16); return (0.2126*r+0.7152*g+0.0722*b)>150?"#15151d":"#fff"; })();
   const sortedOthers=scores
     ?Object.entries(scores).sort((a,b)=>b[1]-a[1]).filter(([k])=>k!==result)
     :[];
@@ -472,6 +478,12 @@ function AppInner(){
     })
   })).filter(g=>g.items.length>0);
   const coreSequenced = Object.keys(genome).length>0;
+  // #8 retention: progress + the next takeable league. availSports = whatever this session can
+  // actually take (live + any unlocked), so "X of N" never dead-ends on a gated sport.
+  const availSports = sportsList.filter(s=>s.live);
+  const takenAvail = availSports.filter(s=>genome[s.code]&&genome[s.code].club);
+  const untakenAvail = availSports.filter(s=>!(genome[s.code]&&genome[s.code].club));
+  const nextSport = untakenAvail[0]||null;
   const coreCount = coreQuestions.length;
   const moduleCounts = { PL: SPORT_DATA.PL.moduleQuestions.length, NFL: SPORT_DATA.NFL.moduleQuestions.length, MLB: SPORT_DATA.MLB.moduleQuestions.length, NBA: SPORT_DATA.NBA.moduleQuestions.length, NHL: SPORT_DATA.NHL.moduleQuestions.length, BL: SPORT_DATA.BL.moduleQuestions.length, LL: SPORT_DATA.LL.moduleQuestions.length, L1: SPORT_DATA.L1.moduleQuestions.length, SA: SPORT_DATA.SA.moduleQuestions.length };
 
@@ -480,8 +492,8 @@ function AppInner(){
   function genomeCode(){ return encodeGenome({coreProfile, results: genome}); }
   function cardCaption(){
     const noun=regOf(activeSport).noun;
-    const seq="FanDNA: "+shareGroups.flatMap(g=>g.items).join(" · ");
-    return `Which ${noun} are you, really? Turns out I'm ${team.name}, ${archetypes[result]}. ${seq}. Find yours: fandna.vercel.app/c/${genomeCode()}`;
+    const seq="FanDNA: "+shareGroups.flatMap(g=>g.items).filter(t=>!/-\?$/.test(t)).join(" · ");
+    return [`Which ${noun} are you, really? Turns out I'm ${team.name}, ${archetypes[result]}.`, blk(coreProfile), seq+".", `Find yours: fandna.vercel.app/c/${genomeCode()}`].filter(Boolean).join("\n");
   }
   function saveBlob(blob){
     const url=URL.createObjectURL(blob);
@@ -499,7 +511,7 @@ function AppInner(){
     const code=encodeGenome({coreProfile:st.coreProfile, results:st.results||{}});
     const url=`https://fandna.vercel.app/c/${code}`;
     const noun=regOf(activeSport).noun;
-    const caption=`Which ${noun} are you, really? Compare your FanDNA with mine: ${url}`;
+    const caption=[`Which ${noun} are you, really?`, blk(st.coreProfile), `Compare your FanDNA with mine: ${url}`].filter(Boolean).join("\n");
     try{ if(navigator.share){ await navigator.share({text:caption}); return; } }catch(e){ if(e&&e.name==="AbortError") return; }
     navigator.clipboard?.writeText(caption).then(()=>alert("Link copied.")).catch(()=>alert(caption));
   }
@@ -509,7 +521,7 @@ function AppInner(){
     const st=loadState();
     const code=encodeGenome({coreProfile:st.coreProfile, results:st.results||{}});
     const url=`https://fandna.vercel.app/c/${code}`;
-    const caption=`Compare your FanDNA with mine: ${url}`;
+    const caption=[blk(st.coreProfile), `Compare your FanDNA with mine: ${url}`].filter(Boolean).join("\n");
     try{ if(navigator.share){ await navigator.share({text:caption}); return; } }catch(e){ if(e&&e.name==="AbortError") return; }
     navigator.clipboard?.writeText(caption).then(()=>alert("Compare link copied.")).catch(()=>alert(caption));
   }
@@ -709,7 +721,7 @@ function AppInner(){
                 }}
                 onMouseEnter={e=>e.currentTarget.style.color="#ccc"}
                 onMouseLeave={e=>e.currentTarget.style.color="#9898b8"}
-              >← genome</button>
+              >← Your FanDNA</button>
               <span style={{fontSize:11,color:"#8484b0",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>
                 {(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"}
               </span>
@@ -761,7 +773,7 @@ function AppInner(){
             {/* Share hierarchy: Compare (primary) / Share card (weighted secondary) / Download (quiet) */}
             <div style={{marginBottom:18}}>
               <button onClick={shareCompareLink}
-                style={{display:"block",width:"100%",textAlign:"center",background:team.color,border:`1px solid ${team.color}`,borderRadius:8,padding:"15px 10px",color:"#fff",fontFamily:"'DM Mono',monospace",fontSize:13,letterSpacing:"0.12em",textTransform:"uppercase",cursor:"pointer",fontWeight:600}}
+                style={{display:"block",width:"100%",textAlign:"center",background:team.color,border:`1px solid ${team.color}`,borderRadius:8,padding:"15px 10px",color:onTeam,fontFamily:"'DM Mono',monospace",fontSize:13,letterSpacing:"0.12em",textTransform:"uppercase",cursor:"pointer",fontWeight:600}}
                 onMouseEnter={e=>{e.currentTarget.style.filter="brightness(1.08)";}}
                 onMouseLeave={e=>{e.currentTarget.style.filter="none";}}
               >Compare with a friend</button>
@@ -962,7 +974,7 @@ function AppInner(){
                     </div>
                   );
                 })}
-                <CrossMatch
+                {activeSport!=="CFB" && (<CrossMatch
                   sport={activeSport}
                   input={evidenceInput}
                   teams={teams}
@@ -971,18 +983,44 @@ function AppInner(){
                   matchedName={team.name}
                   matchedColor={teamTextColors[result]||team.color}
                   voice={regOf(activeSport)}
-                />
+                />)}
               </div>
             )}
 
             
+            {/* ── #8 Retention: progress (B) + next-strand CTA (A) + full-genome link (C) ── */}
+            <div style={{marginTop:34,paddingTop:26,borderTop:"1px solid #1e1e2e"}}>
+              <div style={{textAlign:"center",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.28em",textTransform:"uppercase",color:"#8a8ab0",marginBottom:12}}>Same you &middot; every sport</div>
+              <div style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:22,color:"#e8e4de",marginBottom:14}}>{takenAvail.length} of {availSports.length} sequenced</div>
+              <div style={{display:"flex",gap:8,justifyContent:"center",flexWrap:"wrap",marginBottom:24}}>
+                {availSports.map(s=>{ const done=!!(genome[s.code]&&genome[s.code].club); return (
+                  <span key={s.code} title={s.name} style={{width:11,height:11,borderRadius:"50%",boxSizing:"border-box",background:done?((team&&team.color)||"#6a5ad0"):"transparent",border:done?"none":"2px solid #46465c"}}/>
+                ); })}
+              </div>
+              {nextSport ? (
+                <button onClick={()=>startSport(nextSport.code)}
+                  style={{display:"block",width:"100%",textAlign:"left",background:`${(team&&team.color)||"#6a5ad0"}12`,border:`1px solid ${(team&&team.color)||"#6a5ad0"}55`,borderRadius:12,padding:"18px 52px 18px 20px",cursor:"pointer",position:"relative"}}>
+                  <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.24em",textTransform:"uppercase",color:"#9a9ac4",marginBottom:8}}>Next strand</div>
+                  <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:26,color:"#efe9e3",lineHeight:1.1}}>Find your {nextSport.name} team</div>
+                  <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:15,color:"#9898b8",marginTop:6}}>Same core, different game. {SPORT_DATA[nextSport.code].moduleQuestions.length} questions.</div>
+                  <span style={{position:"absolute",right:20,top:"50%",transform:"translateY(-50%)",fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:34,color:"#b9b4c8",lineHeight:1}}>&rsaquo;</span>
+                </button>
+              ) : (
+                <div style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:17,color:"#9898b8"}}>You've sequenced every live league. More sports soon.</div>
+              )}
+              <div style={{textAlign:"center",marginTop:22}}>
+                <button onClick={()=>setScreen("home")}
+                  style={{background:"none",border:"none",color:"#a7a2c0",fontFamily:"'DM Mono',monospace",fontSize:12,letterSpacing:"0.16em",textTransform:"uppercase",cursor:"pointer",padding:"6px"}}>See your full FanDNA &rarr;</button>
+              </div>
+            </div>
+
             <div style={{marginTop:32,textAlign:"center",display:"flex",gap:14,justifyContent:"center",flexWrap:"wrap"}}>
-              <button onClick={retakeModule}
+              <button onClick={()=>{ if(window.confirm(`Retake ${activeSport}? This replaces your current ${activeSport} result.`)) retakeModule(); }}
                 style={{background:"none",border:"1px solid #444",borderRadius:5,padding:"9px 22px",color:"#bbb",fontSize:11,letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",cursor:"pointer",transition:"all .15s"}}
                 onMouseEnter={e=>{e.currentTarget.style.borderColor="#888";e.currentTarget.style.color="#aaa";}}
                 onMouseLeave={e=>{e.currentTarget.style.borderColor="#252535";e.currentTarget.style.color="#818181";}}
               >retake {activeSport}</button>
-              <button onClick={startOver}
+              <button onClick={()=>{ if(window.confirm("Start over? This clears your entire FanDNA. Every league result and your saved core will be erased. This cannot be undone.")) startOver(); }}
                 style={{background:"none",border:"1px solid #444",borderRadius:5,padding:"9px 22px",color:"#bbb",fontSize:11,letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",cursor:"pointer",transition:"all .15s"}}
                 onMouseEnter={e=>{e.currentTarget.style.borderColor="#888";e.currentTarget.style.color="#aaa";}}
                 onMouseLeave={e=>{e.currentTarget.style.borderColor="#252535";e.currentTarget.style.color="#818181";}}
