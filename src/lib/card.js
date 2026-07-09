@@ -3,7 +3,7 @@
 // and the genome sequence shows every completed strand.
 import { GENERIC_EMOJI, DIM_COLORS, DIM_CODES, DIM_ORDER } from "../data/pl";
 import { SPORT_DATA } from "../lib/sportData";
-import { SPORTS } from "../lib/manifest";
+import { SPORTS, FAMILIES } from "../lib/manifest";
 import { REGISTER } from "./register";
 
 function hexToRgb(h){h=h.replace("#","");return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
@@ -71,7 +71,8 @@ async function generateShareCard(sport, key, genome, coreProfile){
     roundRectPath(x,lx+10,by,laneW-20,4,3);x.fillStyle="rgba(255,255,255,0.35)";x.fill();
   });
   const seqY=laneTop+laneH+62;x.textAlign="center";
-  const seq="FanDNA: "+SPORTS.map(s=>{const c=(s.code===sport)?key:((genome&&genome[s.code]&&genome[s.code].club)||"?");return `${s.code}-${c}`;}).join(" · ");
+  const orderedSports=FAMILIES.flatMap(f=>SPORTS.filter(s=>s.group===f.id));
+  const seq="FanDNA: "+orderedSports.map(s=>{const c=(s.code===sport)?key:((genome&&genome[s.code]&&genome[s.code].club)||"?");return `${s.code}-${c}`;}).join(" · ");
   let seqSz=42,seqFont="400 42px 'DM Mono',monospace";
   do{seqFont="400 "+seqSz+"px 'DM Mono',monospace";x.font=seqFont;if(trackedWidth(x,seq,2)<=960)break;seqSz-=2;}while(seqSz>22);
   drawTracked(x,seq,cx,seqY,seqFont,"#d6d2ca",2);
