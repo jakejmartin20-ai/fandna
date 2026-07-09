@@ -19,11 +19,11 @@ const moduleQuestions = [
     "question": "What makes something feel truly yours?",
     "options": [
       {
-        "label": "Something handed down. A legacy you inherited, and carry so it never fades.",
+        "label": "Something handed down. A legacy you inherited and carry on.",
         "value": "A"
       },
       {
-        "label": "Something you built. Made from nothing, owing no one, and no one can take that.",
+        "label": "Something you built. Made from nothing, owing no one.",
         "value": "B"
       }
     ]
@@ -35,11 +35,11 @@ const moduleQuestions = [
     "question": "How do you want to be seen?",
     "options": [
       {
-        "label": "On the big stage. Bright lights, everyone watching, right where you belong.",
+        "label": "On the big stage. Bright lights, everyone watching.",
         "value": "A"
       },
       {
-        "label": "Underestimated. Counted out and overlooked, and proving them wrong is the whole point.",
+        "label": "Underestimated. Overlooked, and out to prove them all wrong.",
         "value": "B"
       }
     ]
@@ -51,11 +51,11 @@ const moduleQuestions = [
     "question": "What earns your respect?",
     "options": [
       {
-        "label": "The grind. Rolling up your sleeves and doing the unglamorous work nobody thanks you for.",
+        "label": "The grind. The unglamorous work nobody thanks you for.",
         "value": "A"
       },
       {
-        "label": "The style. Doing the hard thing and making it look easy, with nobody in doubt.",
+        "label": "The style. Doing the hard thing and making it look easy.",
         "value": "B"
       }
     ]
@@ -75,7 +75,7 @@ const moduleQuestions = [
         "value": "B"
       },
       {
-        "label": "Still ahead, same as they've always been. I'm grinding toward them.",
+        "label": "Still ahead, same as ever. I'm grinding toward them.",
         "value": "C"
       },
       {
@@ -91,19 +91,19 @@ const moduleQuestions = [
     "question": "The thing you love keeps breaking your heart. Inside, you:",
     "options": [
       {
-        "label": "Show up louder. Every heartbreak somehow just pulled more people in.",
+        "label": "Show up louder. Every heartbreak somehow pulled more people in.",
         "value": "A"
       },
       {
-        "label": "Brace for the knife. You made peace with the doom and you cheer anyway.",
+        "label": "Brace for the knife. You made peace with doom and cheer anyway.",
         "value": "B"
       },
       {
-        "label": "Laugh, and believe again next year. Almost always wrong, never once stop being certain.",
+        "label": "Laugh, and believe again next year. Wrong every time, certain anyway.",
         "value": "C"
       },
       {
-        "label": "Stopped keeping score of what it owes you. It's yours, that's the whole deal.",
+        "label": "Stopped keeping score of what it owes you. It's just yours.",
         "value": "D"
       },
       {
@@ -119,11 +119,11 @@ const moduleQuestions = [
     "question": "What you're proudest of comes down to:",
     "options": [
       {
-        "label": "Where I'm from. The place made me and I judge everything by whether it holds up.",
+        "label": "Where I'm from. The place made me, and I judge everything by it.",
         "value": "A"
       },
       {
-        "label": "The standard I keep. Most people can't sustain it, and I've never slowed down to make them comfortable.",
+        "label": "The standard I keep, and I never slow down to make it comfortable.",
         "value": "B"
       },
       {
@@ -135,7 +135,7 @@ const moduleQuestions = [
         "value": "D"
       },
       {
-        "label": "The show. I love the spotlight and I have never once apologized for it.",
+        "label": "The show. I love the spotlight and never once apologize for it.",
         "value": "E"
       }
     ]
@@ -155,7 +155,7 @@ const moduleQuestions = [
         "value": "B"
       },
       {
-        "label": "What we're building. I lost something once and swore I'd build my own.",
+        "label": "What we're building. I lost something once and built my own.",
         "value": "C"
       },
       {
@@ -175,19 +175,19 @@ const moduleQuestions = [
         "value": "A"
       },
       {
-        "label": "They wrote me off, so I quit wanting to be liked and started wanting to be proven right.",
+        "label": "They wrote me off, so I stopped wanting to be liked.",
         "value": "B"
       },
       {
-        "label": "They overlook me, so I dug into exactly where I'm from and got impossible to ignore.",
+        "label": "Overlooked, so I dug into where I'm from till I couldn't be ignored.",
         "value": "C"
       },
       {
-        "label": "They don't think about me much. I have the calm of someone who already won.",
+        "label": "They barely think of me. I have the calm of one who already won.",
         "value": "D"
       },
       {
-        "label": "They pity me. I've turned losing into a personality, and I'm fine with that.",
+        "label": "They pity me. I've turned losing into a whole personality.",
         "value": "E"
       }
     ]
@@ -207,15 +207,15 @@ const moduleQuestions = [
     "question": "There's one that got away. How do you carry it?",
     "options": [
       {
-        "label": "I got so close I could feel it, then it slipped. I've measured everything against that since.",
+        "label": "Got so close I could feel it, then it slipped away.",
         "value": "A"
       },
       {
-        "label": "I had it in hand and watched it get away. I don't trust being ahead anymore.",
+        "label": "I had it in hand and watched it slip. I don't trust a lead anymore.",
         "value": "B"
       },
       {
-        "label": "Close so many times it stopped surprising me. I expect the door to shut now.",
+        "label": "Close so often it stopped surprising me. I expect the door to shut.",
         "value": "C"
       },
       {
@@ -239,7 +239,7 @@ const moduleQuestions = [
         "value": "A"
       },
       {
-        "label": "Fought to keep the name, the colors, the history. Made sure it stayed mine.",
+        "label": "Fought to keep the name, the colors, the history. Kept it mine.",
         "value": "B"
       },
       {
@@ -247,7 +247,7 @@ const moduleQuestions = [
         "value": "C"
       },
       {
-        "label": "Came back from the lowest point imaginable and turned it into the proudest. Don't tell me it wasn't worth it.",
+        "label": "Came back from the lowest point and turned it into the proudest.",
         "value": "D"
       },
       {
@@ -271,23 +271,23 @@ const moduleQuestions = [
     "question": "Deep down, the principle you run on:",
     "options": [
       {
-        "label": "It's never over until it's actually over. I keep fighting long after most people fold.",
+        "label": "It's never over till it's over. I fight long after others fold.",
         "value": "A"
       },
       {
-        "label": "Count me out and I just get more certain. I've never believed the people who said it couldn't be done.",
+        "label": "Count me out and I just get more certain, doubters be damned.",
         "value": "B"
       },
       {
-        "label": "I don't care how it looks or who it upsets. Winning is the only thing that settles it.",
+        "label": "I don't care how it looks or who it upsets. Winning settles it.",
         "value": "C"
       },
       {
-        "label": "I'd rather be respected through gritted teeth than liked. Being feared suits me fine.",
+        "label": "Respected through gritted teeth beats liked. Feared suits me fine.",
         "value": "D"
       },
       {
-        "label": "Whatever can go wrong probably will, and I'll be right back for more anyway.",
+        "label": "Whatever can go wrong will, and I'll be back for more anyway.",
         "value": "E"
       }
     ]
@@ -307,11 +307,11 @@ const moduleQuestions = [
     "question": "When it all comes down to it, what do you trust?",
     "options": [
       {
-        "label": "Brilliance. One genius who can do the impossible, and I brace for the day they're gone.",
+        "label": "Brilliance. One genius, the impossible made routine.",
         "value": "A"
       },
       {
-        "label": "Toughness and preparation. We do the hard things right, every time.",
+        "label": "Toughness and preparation. We do the hard things right.",
         "value": "B"
       },
       {
@@ -319,11 +319,11 @@ const moduleQuestions = [
         "value": "C"
       },
       {
-        "label": "The crowd. The noise, the people, the place. We're not watching, we're in it.",
+        "label": "The crowd. The noise, the people. We're not watching, we're in it.",
         "value": "D"
       },
       {
-        "label": "Swagger. I act like the headline act and dare the results to disagree.",
+        "label": "Swagger. I play the headline act and dare the results to disagree.",
         "value": "E"
       }
     ]
@@ -2046,196 +2046,196 @@ const vitalStats = {
 
 const nearlyGot = {
   "BUF": {
-    "NO": "Both of you took deep wounds and answered with more devotion, not less. New Orleans had a flood and a city told to give up, and replied by winning it all. Buffalo had four finals slip away and replied by getting louder. One got the trophy that redeemed it. The other never needed one.",
-    "MIN": "Both of you reached the edge of the title and were turned away more than once, in cruel ways. What separates you is what the heartbreak did to each of you. Buffalo stayed hopeful and warm. Minnesota learned to brace for the knife.",
-    "CLE": "Both of you are loud, loyal, and long-suffering. Cleveland's wound was external, a team taken in the night, while Buffalo's was self-inflicted heartbreak on the field. Both kept showing up, Cleveland by barking and Buffalo by smashing tables.",
-    "PHI": "Both of you are maximum-volume fanbases that treat the crowd as part of the team. Philadelphia weaponizes being doubted; Buffalo weaponizes being heartbroken. If the chip on the shoulder is what you felt more than the heartbreak, that is Philadelphia."
+    "NO":"Like NO, you took deep wounds and answered with more devotion, not less. New Orleans had a flood and a city told to give up, and replied by winning it all. Buffalo had four finals slip away and replied by getting louder. One got the trophy that redeemed it. The other never needed one.",
+    "MIN":"Start with the overlap. You reached the edge of the title and were turned away more than once, in cruel ways. What separates you is what the heartbreak did to each of you. Buffalo stayed hopeful and warm. Minnesota learned to brace for the knife.",
+    "CLE":"You and CLE are loud, loyal, and long-suffering. Cleveland's wound was external, a team taken in the night, while Buffalo's was self-inflicted heartbreak on the field. Both kept showing up, Cleveland by barking and Buffalo by smashing tables.",
+    "PHI":"You and PHI alike are maximum-volume fanbases that treat the crowd as part of the team. Philadelphia weaponizes being doubted; Buffalo weaponizes being heartbroken. If the chip on the shoulder is what you felt more than the heartbreak, that is Philadelphia."
   },
   "NE": {
-    "LAR": "Both of you are unsentimental and built to win, high on ambition and low on roots. The Rams chase the brightest lights across cities, while New England stayed put and chased the system. The same cold competence, nomadic and flashy for one, rooted and grim for the other.",
-    "IND": "Both of you win the clean, controlled way rather than the ugly way. Indianapolis pinned it on one brilliant passer at a time. New England pinned it on the machine around the passer. One trusted the genius, the other trusted the system.",
-    "SF": "Both of you expect excellence as a baseline. San Francisco's is elegant and offense-first. New England's is ruthless and total. One wants it beautiful. The other only wants it to work.",
-    "KC": "Both of you became the team everyone wants to beat. Kansas City still half-cannot believe its luck and carries it warm; New England never apologized and carried it cold. If you wear the target with a chip and no joy, that is the Patriots."
+    "LAR":"The two of you are unsentimental and built to win, high on ambition and low on roots. The Rams chase the brightest lights across cities, while New England stayed put and chased the system. The same cold competence, nomadic and flashy for one, rooted and grim for the other.",
+    "IND":"There's real kinship here: you win the clean, controlled way rather than the ugly way. Indianapolis pinned it on one brilliant passer at a time. New England pinned it on the machine around the passer. One trusted the genius, the other trusted the system.",
+    "SF":"The resemblance is real. You expect excellence as a baseline. San Francisco's is elegant and offense-first. New England's is ruthless and total. One wants it beautiful. The other only wants it to work.",
+    "KC":"Here's the common ground: you became the team everyone wants to beat. Kansas City still half-cannot believe its luck and carries it warm; New England never apologized and carried it cold. If you wear the target with a chip and no joy, that is the Patriots."
   },
   "GB": {
-    "PIT": "Both of you run on deep roots and blue-collar pride handed down like a surname. Pittsburgh forges its identity in a steel town and judges everything by whether it holds. Green Bay's is stranger, a team the town literally owns. The same working pride, one belonging to a place and the other owned by it.",
-    "CHI": "Both of you are among the oldest, most rooted fanbases in the sport, there when the league was invented. Chicago built its on ferocious defense and doing the hard things the hard way, while Green Bay built its on belonging to everyone in town. Two of the oldest roots in the game, grown from opposite soil.",
-    "DEN": "Both of you are rooted to a whole region, not just a city. Denver draws on the mountains and the mile-high air. Green Bay draws on the cold and an ownership nobody can ever buy out. One grip is geographic, the other a matter of possession.",
-    "DET": "Both of you carry unconditional Midwest loyalty that never asks for a receipt. Detroit's was tested by decades of losing. Green Bay's was tested by the danger of being too small to survive at all. Same refusal, facing a different threat."
+    "PIT":"Same instinct at work. You run on deep roots and blue-collar pride handed down like a surname. Pittsburgh forges its identity in a steel town and judges everything by whether it holds. Green Bay's is stranger, a team the town literally owns. The same working pride, one belonging to a place and the other owned by it.",
+    "CHI":"CHI and you are among the oldest, most rooted fanbases in the sport, there when the league was invented. Chicago built its on ferocious defense and doing the hard things the hard way, while Green Bay built its on belonging to everyone in town. Two of the oldest roots in the game, grown from opposite soil.",
+    "DEN":"You and DEN are rooted to a whole region, not just a city. Denver draws on the mountains and the mile-high air. Green Bay draws on the cold and an ownership nobody can ever buy out. One grip is geographic, the other a matter of possession.",
+    "DET":"The near-miss makes sense: you carry unconditional Midwest loyalty that never asks for a receipt. Detroit's was tested by decades of losing. Green Bay's was tested by the danger of being too small to survive at all. Same refusal, facing a different threat."
   },
   "DAL": {
-    "ATL": "Both of you carry real flair and a taste for the spotlight, the kind that never waits for permission. Atlanta's confidence is haunted by a collapse it cannot shake. Dallas's is haunted by nothing at all. One swagger is bruised, the other bulletproof.",
-    "TB": "Both of you play the game with theater and a bit of show. Tampa earned its swagger by climbing out of being the worst, while Dallas simply assumed its from the start. One flash was earned, the other born with.",
-    "LAR": "Both of you chase the brightest lights and love the spectacle more than the postcode. The Rams will move cities to find the show. Dallas plants its flag and demands the show come to it. The same hunger for the stage, one that travels and one that holds court.",
-    "SF": "Both of you expect to be the main characters of the league. San Francisco backs it with elegant, sustained excellence; Dallas backs it with sheer self-belief through a long drought. If the swagger has to be earned on the field to feel real, that is San Francisco."
+    "ATL":"You've got genuine overlap. You carry real flair and a taste for the spotlight, the kind that never waits for permission. Atlanta's confidence is haunted by a collapse it cannot shake. Dallas's is haunted by nothing at all. One swagger is bruised, the other bulletproof.",
+    "TB":"Cut to what's shared: you play the game with theater and a bit of show. Tampa earned its swagger by climbing out of being the worst, while Dallas simply assumed its from the start. One flash was earned, the other born with.",
+    "LAR":"It's a close call for a reason. You chase the brightest lights and love the spectacle more than the postcode. The Rams will move cities to find the show. Dallas plants its flag and demands the show come to it. The same hunger for the stage, one that travels and one that holds court.",
+    "SF":"You share the core of it. You expect to be the main characters of the league. San Francisco backs it with elegant, sustained excellence; Dallas backs it with sheer self-belief through a long drought. If the swagger has to be earned on the field to feel real, that is San Francisco."
   },
   "PIT": {
     "DEN": "The tightest match in your whole corner of the league, both built on rooted pride and steady expectation. Denver's pride comes from the altitude and the region, while Pittsburgh's comes from the steel and the work. One standard is drawn from the mountains, the other from the mills.",
-    "BAL": "Both of you define yourselves by a feared, suffocating defense and a hard regional identity. Baltimore built its on a wound, a team stolen and replaced with menace. Pittsburgh built its on continuity, the same standard for generations. One toughness was born of grievance, the other of inheritance.",
-    "GB": "Both of you run on deep roots and blue-collar pride. Pittsburgh judges everything by whether it holds, forged in a steel town. Green Bay's twist is ownership, a team the town literally holds. One soul belongs to a place, the other is owned by it.",
-    "NYG": "Both of you carry old, sustained pedigree without much noise. The Giants do it with the calm of old money, while Pittsburgh does it with the grit of a mill town. The same quiet authority, one inherited and one earned shift by shift."
+    "BAL":"You and BAL alike define yourselves by a feared, suffocating defense and a hard regional identity. Baltimore built its on a wound, a team stolen and replaced with menace. Pittsburgh built its on continuity, the same standard for generations. One toughness was born of grievance, the other of inheritance.",
+    "GB":"Set you beside GB and the likeness shows: you run on deep roots and blue-collar pride. Pittsburgh judges everything by whether it holds, forged in a steel town. Green Bay's twist is ownership, a team the town literally holds. One soul belongs to a place, the other is owned by it.",
+    "NYG":"You'd recognize yourself in NYG. You carry old, sustained pedigree without much noise. The Giants do it with the calm of old money, while Pittsburgh does it with the grit of a mill town. The same quiet authority, one inherited and one earned shift by shift."
   },
   "LV": {
-    "LAC": "Both of you carry chaos and heartbreak and hold place loosely. The Chargers wear it as wounded loyalty to a team that keeps leaving. The Raiders wear it as defiant loyalty to colors over any city. One is heartbroken about the rootlessness, the other proud of it.",
-    "TB": "Both of you have a theatrical, chaos-tolerant streak. Tampa dresses as pirates and fires a cannon, while the Raiders dress as the most feared section in football. One costume is a party, the other a threat.",
-    "NYJ": "Both of you run hot, chaotic, and a little doomed. The Jets are comic about it and keep believing. The Raiders are menacing about it and ask nobody's permission. The same disorder, a punchline on one side and a warning on the other.",
-    "CIN": "Both of you carry a chip and a chaotic edge against the establishment. Cincinnati's is the small-market afterthought finally getting respect; the Raiders' is the outlaw who never wanted respect in the first place. If you crave the acknowledgement, that is Cincinnati."
+    "LAC":"There's shared DNA here. You carry chaos and heartbreak and hold place loosely. The Chargers wear it as wounded loyalty to a team that keeps leaving. The Raiders wear it as defiant loyalty to colors over any city. One is heartbroken about the rootlessness, the other proud of it.",
+    "TB":"The overlap runs deep: you have a theatrical, chaos-tolerant streak. Tampa dresses as pirates and fires a cannon, while the Raiders dress as the most feared section in football. One costume is a party, the other a threat.",
+    "NYJ":"First, the kinship. You run hot, chaotic, and a little doomed. The Jets are comic about it and keep believing. The Raiders are menacing about it and ask nobody's permission. The same disorder, a punchline on one side and a warning on the other.",
+    "CIN":"You'd get on with CIN. You carry a chip and a chaotic edge against the establishment. Cincinnati's is the small-market afterthought finally getting respect; the Raiders' is the outlaw who never wanted respect in the first place. If you crave the acknowledgement, that is Cincinnati."
   },
   "NO": {
-    "BUF": "Both of you turned deep wounds into bigger devotion. New Orleans answered a flood by winning it all, while Buffalo answered four lost finals by getting louder. Same defiant warmth, crowned for one and never needing the crown for the other.",
-    "MIN": "Both of you feel everything at full volume and have suffered cruelly, twice from each other. New Orleans came out the other side with a title and kept the faith. Minnesota made peace with the doom. One passion was redeemed, the other resigned.",
-    "CLE": "Both of you are loud, loyal, place-rooted, and well acquainted with heartbreak. Cleveland's loyalty is detached from any payoff. New Orleans's was rewarded once, gloriously, and it changed everything. One is still waiting; one got its moment.",
-    "PHI": "Both of you are maximum-emotion, community-first fanbases. Philadelphia's energy is defiant grievance; New Orleans's is communal faith and joy. If the feeling is anger more than togetherness, that is Philadelphia."
+    "BUF":"The kinship is obvious: you turned deep wounds into bigger devotion. New Orleans answered a flood by winning it all, while Buffalo answered four lost finals by getting louder. Same defiant warmth, crowned for one and never needing the crown for the other.",
+    "MIN":"Close call, and it shows: you feel everything at full volume and have suffered cruelly, twice from each other. New Orleans came out the other side with a title and kept the faith. Minnesota made peace with the doom. One passion was redeemed, the other resigned.",
+    "CLE":"The two of you are loud, loyal, place-rooted, and well acquainted with heartbreak. Cleveland's loyalty is detached from any payoff. New Orleans's was rewarded once, gloriously, and it changed everything. One is still waiting; one got its moment.",
+    "PHI":"PHI and you are maximum-emotion, community-first fanbases. Philadelphia's energy is defiant grievance; New Orleans's is communal faith and joy. If the feeling is anger more than togetherness, that is Philadelphia."
   },
   "DET": {
-    "CHI": "Both of you are old, deeply rooted Midwest fanbases that have loved through long stretches of frustration. Chicago's frustration is the missing quarterback. Detroit's is the missing trophy, full stop. One waits on a position, the other on the prize.",
-    "GB": "Both of you carry unconditional Midwest loyalty. Green Bay's was rewarded with titles and is built on ownership, while Detroit's was rewarded with almost nothing and is built on pure stubbornness. One refusal was answered with everything, the other with almost nothing.",
-    "CLE": "Both of you treat loyalty as unrelated to results. Cleveland's wound is a team taken away. Detroit's is simply the decades of losing. The same patient love, external for one and internal for the other.",
-    "JAX": "Both of you are overlooked fanbases that stay anyway. Jacksonville got loud and defiantly local about it. Detroit just kept quietly showing up every Thanksgiving. One roars, the other endures."
+    "CHI":"You and CHI are old, deeply rooted Midwest fanbases that have loved through long stretches of frustration. Chicago's frustration is the missing quarterback. Detroit's is the missing trophy, full stop. One waits on a position, the other on the prize.",
+    "GB":"The near-miss fits: you carry unconditional Midwest loyalty. Green Bay's was rewarded with titles and is built on ownership, while Detroit's was rewarded with almost nothing and is built on pure stubbornness. One refusal was answered with everything, the other with almost nothing.",
+    "CLE":"Strip it back and you treat loyalty as unrelated to results, just like CLE. Cleveland's wound is a team taken away. Detroit's is simply the decades of losing. The same patient love, external for one and internal for the other.",
+    "JAX":"You and JAX alike are overlooked fanbases that stay anyway. Jacksonville got loud and defiantly local about it. Detroit just kept quietly showing up every Thanksgiving. One roars, the other endures."
   },
   "KC": {
     "SF": "The closest match to you, both capable and used to the big stage. San Francisco expects excellence as old habit. Kansas City still half-cannot believe its arrival. One is entitled to the level, the other grateful for it.",
-    "BAL": "Both of you pair high ambition with a real edge. Baltimore wants to be feared, while Kansas City wants to be loved and loud. The same contender energy, menacing on one side and joyful on the other.",
-    "DEN": "Both of you expect to win and carry a region behind you. Denver's expectation is steady and inherited. Kansas City's is new and a little giddy. One is settled, the other still pinching itself.",
-    "PIT": "Both of you have sustained identities and loud crowds. Pittsburgh's pride is forged in old industrial continuity; Kansas City's is forged in a recent, hard-won rise. If the pride feels generations deep rather than freshly minted, that is Pittsburgh."
+    "BAL":"There's an easy overlap with BAL. You pair high ambition with a real edge. Baltimore wants to be feared, while Kansas City wants to be loved and loud. The same contender energy, menacing on one side and joyful on the other.",
+    "DEN":"It comes from the same place: you expect to win and carry a region behind you. Denver's expectation is steady and inherited. Kansas City's is new and a little giddy. One is settled, the other still pinching itself.",
+    "PIT":"At heart, you have sustained identities and loud crowds, same as PIT. Pittsburgh's pride is forged in old industrial continuity; Kansas City's is forged in a recent, hard-won rise. If the pride feels generations deep rather than freshly minted, that is Pittsburgh."
   },
   "SF": {
     "KC": "The closest match in your corner, both built for January. San Francisco's excellence is elegant and expected, while Kansas City's is loud and still a little disbelieving. One feels entitled to it, the other grateful.",
-    "IND": "Both of you win the clean, precise way behind quality at the top. Indianapolis leans on a single brilliant passer. San Francisco leans on a complete, beautiful system. The same craft, pinned on genius for one and on design for the other.",
-    "NYG": "Both of you carry pedigree and the memory of titles. The Giants do it with unbothered calm. San Francisco does it with the ache of a standard not lately met. One is at peace, the other impatient.",
-    "TEN": "Both of you are defined partly by coming up just short on the biggest stage. The Titans are defined by the one yard; San Francisco by the gold standard everything since has missed. If it is the grind for inches more than the lost luster, that is Tennessee."
+    "IND":"Like IND, you win the clean, precise way behind quality at the top. Indianapolis leans on a single brilliant passer. San Francisco leans on a complete, beautiful system. The same craft, pinned on genius for one and on design for the other.",
+    "NYG":"Start with the overlap. You carry pedigree and the memory of titles. The Giants do it with unbothered calm. San Francisco does it with the ache of a standard not lately met. One is at peace, the other impatient.",
+    "TEN":"The two of you are defined partly by coming up just short on the biggest stage. The Titans are defined by the one yard; San Francisco by the gold standard everything since has missed. If it is the grind for inches more than the lost luster, that is Tennessee."
   },
   "PHI": {
-    "BUF": "Both of you are maximum-volume crowds that treat the stands as part of the team. Buffalo's energy comes from heartbreak, while Philadelphia's comes from grievance and being doubted. One loudness is heartbroken, the other spoiling for a fight.",
-    "MIN": "Both of you feel everything loudly and chant through the pain. Minnesota's mood is fatalist. Philadelphia's is defiant. One is braced for the worst, the other daring it.",
-    "SEA": "Both of you are deafening, community-first home crowds. Seattle's noise is a clean, collective weapon, while Philadelphia's is laced with edge and contempt. The same decibels, pure energy on one side and a snarl on the other.",
-    "NO": "Both of you are loud, rooted, community fanbases that feel it together. New Orleans's feeling is communal faith; Philadelphia's is communal defiance. If togetherness is the note more than anger, that is New Orleans."
+    "BUF":"BUF and you are maximum-volume crowds that treat the stands as part of the team. Buffalo's energy comes from heartbreak, while Philadelphia's comes from grievance and being doubted. One loudness is heartbroken, the other spoiling for a fight.",
+    "MIN":"There's real kinship here: you feel everything loudly and chant through the pain. Minnesota's mood is fatalist. Philadelphia's is defiant. One is braced for the worst, the other daring it.",
+    "SEA":"You and SEA are deafening, community-first home crowds. Seattle's noise is a clean, collective weapon, while Philadelphia's is laced with edge and contempt. The same decibels, pure energy on one side and a snarl on the other.",
+    "NO":"You and NO alike are loud, rooted, community fanbases that feel it together. New Orleans's feeling is communal faith; Philadelphia's is communal defiance. If togetherness is the note more than anger, that is New Orleans."
   },
   "SEA": {
-    "MIN": "Both of you are thunderous, communal home crowds in cold-weather cities. Minnesota's noise carries a fatalist ache. Seattle's carries pure participation and force. One is braced for heartbreak, the other daring you to hear it.",
-    "BAL": "Both of you back a hard, proud identity with a loud house. Baltimore leans on menace and a wound, while Seattle leans on collective noise and belonging. One intensity is feared, the other heard.",
-    "DEN": "Both of you give your team a real home-field weapon. Denver's is the thin air. Seattle's is the sheer sound. The same edge, altitude for one and volume for the other.",
-    "PHI": "Both of you are deafening, all-in crowds. Philadelphia's noise has a snarl of grievance; Seattle's is clean collective energy. If the loudness comes with a chip, that is Philadelphia."
+    "MIN":"The two of you are thunderous, communal home crowds in cold-weather cities. Minnesota's noise carries a fatalist ache. Seattle's carries pure participation and force. One is braced for heartbreak, the other daring you to hear it.",
+    "BAL":"The resemblance is real. You back a hard, proud identity with a loud house. Baltimore leans on menace and a wound, while Seattle leans on collective noise and belonging. One intensity is feared, the other heard.",
+    "DEN":"Here's the common ground: you give your team a real home-field weapon. Denver's is the thin air. Seattle's is the sheer sound. The same edge, altitude for one and volume for the other.",
+    "PHI":"PHI and you are deafening, all-in crowds. Philadelphia's noise has a snarl of grievance; Seattle's is clean collective energy. If the loudness comes with a chip, that is Philadelphia."
   },
   "MIA": {
-    "TEN": "Both of you are defined by a single thing more than a trophy haul. Miami guards a perfect season and needs others to fall short of it. Tennessee guards the opposite, the one that got away by a yard. One protects the peak, the other replays the miss.",
-    "ARI": "Both of you are flat-shaped, identity-over-glory fanbases. Arizona's identity is endurance over more than a century, while Miami's is a single perfect year preserved in amber. The same modest profile, defined by lasting on one side and by a peak on the other.",
-    "IND": "Both of you are clean, controlled, expectation-driven. Indianapolis pins it on brilliant passing it knows will leave. Miami pins it on a perfection it will not let go of. One braces for loss, the other guards a memory.",
-    "CAR": "Both of you are moderate, story-shaped fanbases. Carolina's story is a creed of never quitting; Miami's is a record nobody can take. If it is the fight more than the keepsake, that is Carolina."
+    "TEN":"You and TEN are defined by a single thing more than a trophy haul. Miami guards a perfect season and needs others to fall short of it. Tennessee guards the opposite, the one that got away by a yard. One protects the peak, the other replays the miss.",
+    "ARI":"You and ARI alike are flat-shaped, identity-over-glory fanbases. Arizona's identity is endurance over more than a century, while Miami's is a single perfect year preserved in amber. The same modest profile, defined by lasting on one side and by a peak on the other.",
+    "IND":"The two of you are clean, controlled, expectation-driven. Indianapolis pins it on brilliant passing it knows will leave. Miami pins it on a perfection it will not let go of. One braces for loss, the other guards a memory.",
+    "CAR":"CAR and you are moderate, story-shaped fanbases. Carolina's story is a creed of never quitting; Miami's is a record nobody can take. If it is the fight more than the keepsake, that is Carolina."
   },
   "LAC": {
-    "TB": "Both of you carry chaos and a sense of being the league's hard-luck case. Tampa turned it into a costume party once the wins came. The Chargers are still waiting on the wins. One celebrates now; one braces.",
-    "ATL": "Both of you live with chaos and heartbreak. Atlanta's is one specific collapse it cannot unsee, while the Chargers' is a steady drip of losing the games they should win. One dread is a single scar, the other a pattern.",
-    "LV": "Both of you hold place loosely and run chaotic. The Raiders made rootlessness a proud identity. The Chargers experience it as loss and keep loving anyway. The same restlessness, defiant on one side and heartbroken on the other.",
-    "CAR": "Both of you keep showing up through pain. Carolina frames it as a creed, keep pounding no matter the score; the Chargers frame it as bracing for the next twist. If it is stubborn belief more than dread, that is Carolina."
+    "TB":"Same instinct at work. You carry chaos and a sense of being the league's hard-luck case. Tampa turned it into a costume party once the wins came. The Chargers are still waiting on the wins. One celebrates now; one braces.",
+    "ATL":"The near-miss makes sense: you live with chaos and heartbreak. Atlanta's is one specific collapse it cannot unsee, while the Chargers' is a steady drip of losing the games they should win. One dread is a single scar, the other a pattern.",
+    "LV":"You've got genuine overlap. You hold place loosely and run chaotic. The Raiders made rootlessness a proud identity. The Chargers experience it as loss and keep loving anyway. The same restlessness, defiant on one side and heartbroken on the other.",
+    "CAR":"Cut to what's shared: you keep showing up through pain. Carolina frames it as a creed, keep pounding no matter the score; the Chargers frame it as bracing for the next twist. If it is stubborn belief more than dread, that is Carolina."
   },
   "BAL": {
-    "PIT": "Both of you define yourselves by a hard, feared defense and a tough regional identity. Pittsburgh's is generations of steel-town continuity. Baltimore's is grievance, born from a team that was stolen. One menace is inherited, the other avenged.",
-    "DEN": "Both of you pair a feared identity with sustained expectation. Denver leans on altitude and region, while Baltimore leans on defense and a long memory. One standard is geographic, the other vengeful.",
-    "NYG": "Both of you carry quiet authority and a defensive backbone. The Giants' calm is old money. Baltimore's is the stillness of something that will not forget. The same composure, serene on one side and watchful on the other.",
-    "KC": "Both of you are real contenders with an edge. Kansas City wears it warm and loud; Baltimore wears it cold and feared. If you want to be loved more than feared, that is Kansas City."
+    "PIT":"You and PIT define yourselves by a hard, feared defense and a tough regional identity. Pittsburgh's is generations of steel-town continuity. Baltimore's is grievance, born from a team that was stolen. One menace is inherited, the other avenged.",
+    "DEN":"It's a close call for a reason. You pair a feared identity with sustained expectation. Denver leans on altitude and region, while Baltimore leans on defense and a long memory. One standard is geographic, the other vengeful.",
+    "NYG":"You share the core of it. You carry quiet authority and a defensive backbone. The Giants' calm is old money. Baltimore's is the stillness of something that will not forget. The same composure, serene on one side and watchful on the other.",
+    "KC":"You and KC alike are real contenders with an edge. Kansas City wears it warm and loud; Baltimore wears it cold and feared. If you want to be loved more than feared, that is Kansas City."
   },
   "CLE": {
-    "BUF": "Both of you are loud, loyal, long-suffering crowds. Buffalo's wound is heartbreak on the field, while Cleveland's is a team taken from the city itself. Both kept showing up, Buffalo by smashing tables and Cleveland by barking.",
-    "NYJ": "Both of you are chaotic, devoted, and short on payoff. The Jets keep believing it turns around. Cleveland stopped expecting and stayed anyway. One is hopeful, the other unconditional.",
-    "NO": "Both of you are loud, rooted, well-acquainted with heartbreak. New Orleans got its redemption once. Cleveland is still waiting and loves regardless. One was rewarded; one is patient.",
-    "MIN": "Both of you have suffered and kept the faith. Minnesota's faith is fatalist; Cleveland's is detached from reward entirely, yours because it is yours. If you still expect a payoff someday, that is closer to Minnesota."
+    "BUF":"The two of you are loud, loyal, long-suffering crowds. Buffalo's wound is heartbreak on the field, while Cleveland's is a team taken from the city itself. Both kept showing up, Buffalo by smashing tables and Cleveland by barking.",
+    "NYJ":"NYJ and you are chaotic, devoted, and short on payoff. The Jets keep believing it turns around. Cleveland stopped expecting and stayed anyway. One is hopeful, the other unconditional.",
+    "NO":"You and NO are loud, rooted, well-acquainted with heartbreak. New Orleans got its redemption once. Cleveland is still waiting and loves regardless. One was rewarded; one is patient.",
+    "MIN":"Set you beside MIN and the likeness shows: you have suffered and kept the faith. Minnesota's faith is fatalist; Cleveland's is detached from reward entirely, yours because it is yours. If you still expect a payoff someday, that is closer to Minnesota."
   },
   "NYG": {
-    "WAS": "Both of you are old, rooted fanbases whose loyalty outlasts the standings. Washington's was tested by a long, messy fall and a vanished name. The Giants' just stays quietly steady. One endurance is battered, the other unbothered.",
-    "BAL": "Both of you carry quiet authority and a defensive soul. Baltimore's calm is watchful menace, while the Giants' is the serenity of old success. One is feared, the other secure.",
-    "CHI": "Both of you are charter-era, deeply rooted, defense-proud fanbases. Chicago wears it loud and tough, while the Giants wear it understated. One heritage shouts, the other murmurs.",
-    "DEN": "Both of you expect to be good and carry a broad following. Denver's pull is regional and altitude-fueled; the Giants' is metropolitan and old-money calm. If the identity is a whole region behind you, that is Denver."
+    "WAS":"You and WAS alike are old, rooted fanbases whose loyalty outlasts the standings. Washington's was tested by a long, messy fall and a vanished name. The Giants' just stays quietly steady. One endurance is battered, the other unbothered.",
+    "BAL":"You'd recognize yourself in BAL. You carry quiet authority and a defensive soul. Baltimore's calm is watchful menace, while the Giants' is the serenity of old success. One is feared, the other secure.",
+    "CHI":"The two of you are charter-era, deeply rooted, defense-proud fanbases. Chicago wears it loud and tough, while the Giants wear it understated. One heritage shouts, the other murmurs.",
+    "DEN":"There's shared DNA here. You expect to be good and carry a broad following. Denver's pull is regional and altitude-fueled; the Giants' is metropolitan and old-money calm. If the identity is a whole region behind you, that is Denver."
   },
   "TB": {
-    "ATL": "Both of you carry chaos and a theatrical streak in the same region. Atlanta's mood is haunted by a collapse. Tampa's is a party fueled by remembering the bad years. The same flair, bruised on one side and giddy on the other.",
-    "LAC": "Both of you ride chaos and hard luck. Tampa came out the other side and threw a party, while the Chargers are still waiting on the breakthrough. One celebrates; one braces.",
-    "CAR": "Both of you are moderate, story-shaped fanbases in the Southeast. Carolina's story is a creed of refusing to quit. Tampa's is the underdog who finally robbed the league. One is defiant, the other delighted.",
-    "TEN": "Both of you are flat-profile teams defined by a turn of events. Tennessee's is the heartbreak of a yard; Tampa's is the joy of an unlikely heist. If the defining feeling is loss rather than relief, that is Tennessee."
+    "ATL":"The overlap runs deep: you carry chaos and a theatrical streak in the same region. Atlanta's mood is haunted by a collapse. Tampa's is a party fueled by remembering the bad years. The same flair, bruised on one side and giddy on the other.",
+    "LAC":"First, the kinship. You ride chaos and hard luck. Tampa came out the other side and threw a party, while the Chargers are still waiting on the breakthrough. One celebrates; one braces.",
+    "CAR":"CAR and you are moderate, story-shaped fanbases in the Southeast. Carolina's story is a creed of refusing to quit. Tampa's is the underdog who finally robbed the league. One is defiant, the other delighted.",
+    "TEN":"You and TEN are flat-profile teams defined by a turn of events. Tennessee's is the heartbreak of a yard; Tampa's is the joy of an unlikely heist. If the defining feeling is loss rather than relief, that is Tennessee."
   },
   "MIN": {
-    "BUF": "Both of you reached the edge of the title repeatedly and were turned away, twice from each other. Buffalo stayed warm and hopeful. Minnesota braced for the knife. The same wound, at opposite temperatures.",
-    "NO": "Both of you feel everything at full volume and have hurt cruelly, twice from each other. New Orleans got its redemption, while Minnesota made peace with the doom. One passion is redeemed, one resigned.",
-    "PHI": "Both of you are loud and chant through the pain. Philadelphia's is defiant. Minnesota's is fatalist. One dares fate; one expects it.",
-    "SEA": "Both of you are thunderous cold-weather crowds. Seattle's noise is pure participation; Minnesota's carries an ache of what keeps not happening. If the loudness is joy more than dread, that is Seattle."
+    "BUF":"You'd get on with BUF. You reached the edge of the title repeatedly and were turned away, twice from each other. Buffalo stayed warm and hopeful. Minnesota braced for the knife. The same wound, at opposite temperatures.",
+    "NO":"The kinship is obvious: you feel everything at full volume and have hurt cruelly, twice from each other. New Orleans got its redemption, while Minnesota made peace with the doom. One passion is redeemed, one resigned.",
+    "PHI":"You and PHI alike are loud and chant through the pain. Philadelphia's is defiant. Minnesota's is fatalist. One dares fate; one expects it.",
+    "SEA":"The two of you are thunderous cold-weather crowds. Seattle's noise is pure participation; Minnesota's carries an ache of what keeps not happening. If the loudness is joy more than dread, that is Seattle."
   },
   "CHI": {
-    "WAS": "Both of you are old, rooted, defense-proud fanbases that loved through a long fall. Washington's loyalty outlasted a vanished name. Chicago's outlasts the endless quarterback hunt. One absence is a name, the other a position.",
-    "DEN": "Both of you are deeply rooted and built on toughness. Denver pairs it with sustained expectation and altitude, while Chicago pairs it with a century of grinding and one trophy. One is expectant, the other still waiting.",
-    "NYG": "Both of you are charter-era, defense-first, deeply rooted. The Giants are understated about it, while Chicago is loud and accented about it. The same heritage, at a different volume.",
-    "DET": "Both of you are old Midwest fanbases loving through frustration. Detroit waits on the trophy itself; Chicago waits on the one position it can never seem to draft. If the wait is for any payoff at all, that is Detroit."
+    "WAS":"WAS and you are old, rooted, defense-proud fanbases that loved through a long fall. Washington's loyalty outlasted a vanished name. Chicago's outlasts the endless quarterback hunt. One absence is a name, the other a position.",
+    "DEN":"You and DEN are deeply rooted and built on toughness. Denver pairs it with sustained expectation and altitude, while Chicago pairs it with a century of grinding and one trophy. One is expectant, the other still waiting.",
+    "NYG":"You and NYG alike are charter-era, defense-first, deeply rooted. The Giants are understated about it, while Chicago is loud and accented about it. The same heritage, at a different volume.",
+    "DET":"The two of you are old Midwest fanbases loving through frustration. Detroit waits on the trophy itself; Chicago waits on the one position it can never seem to draft. If the wait is for any payoff at all, that is Detroit."
   },
   "IND": {
-    "MIA": "Both of you are clean, controlled, expectation-driven. Indianapolis braces for brilliance leaving. Miami guards a perfection that already happened. One anticipates loss, the other preserves a peak.",
-    "SF": "Both of you win on craft and quality at the top. San Francisco trusts a complete system, while Indianapolis trusts the one brilliant arm. One wins by design, the other by genius.",
-    "TEN": "Both of you are flat-shaped and once division mates by geography. Tennessee grinds for every yard. Indianapolis wins behind clean brilliance instead. One earns the yard, the other never needs to.",
-    "HOU": "Both of you are newer Southern-adjacent franchises without deep mythology. Houston's identity is restoration after loss; Indianapolis's is precision after a midnight arrival. If it is the fresh-start chip, that is Houston."
+    "MIA":"MIA and you are clean, controlled, expectation-driven. Indianapolis braces for brilliance leaving. Miami guards a perfection that already happened. One anticipates loss, the other preserves a peak.",
+    "SF":"Close call, and it shows: you win on craft and quality at the top. San Francisco trusts a complete system, while Indianapolis trusts the one brilliant arm. One wins by design, the other by genius.",
+    "TEN":"You and TEN are flat-shaped and once division mates by geography. Tennessee grinds for every yard. Indianapolis wins behind clean brilliance instead. One earns the yard, the other never needs to.",
+    "HOU":"You and HOU alike are newer Southern-adjacent franchises without deep mythology. Houston's identity is restoration after loss; Indianapolis's is precision after a midnight arrival. If it is the fresh-start chip, that is Houston."
   },
   "DEN": {
     "PIT": "The tightest match in the whole league, both built on rooted pride and steady expectation. Pittsburgh's comes from steel and the work. Denver's comes from altitude and the region. The same standard, from the mills on one side and the mountains on the other.",
-    "BAL": "Both of you pair a proud identity with sustained expectation. Baltimore leans on a feared defense and a wound, while Denver leans on the region and the air. One level is vengeful, the other geographic.",
-    "CHI": "Both of you are deeply rooted and tough. Chicago has a century of grinding and one trophy. Denver has three and expects more. One is waiting, the other expectant.",
-    "GB": "Both of you carry a whole region and a cold-weather edge. Green Bay's twist is fan ownership nobody can buy; Denver's is the mile-high air. If it is the team-the-town-owns angle, that is Green Bay."
+    "BAL":"The near-miss fits: you pair a proud identity with sustained expectation. Baltimore leans on a feared defense and a wound, while Denver leans on the region and the air. One level is vengeful, the other geographic.",
+    "CHI":"The two of you are deeply rooted and tough. Chicago has a century of grinding and one trophy. Denver has three and expects more. One is waiting, the other expectant.",
+    "GB":"Strip it back and you carry a whole region and a cold-weather edge, just like GB. Green Bay's twist is fan ownership nobody can buy; Denver's is the mile-high air. If it is the team-the-town-owns angle, that is Green Bay."
   },
   "LAR": {
-    "IND": "Both of you win on offense and sharp process. Indianapolis stays put and trusts one passer. The Rams chase the show across cities. The same craft, rooted on one side and nomadic on the other.",
-    "DAL": "Both of you love the spotlight and the spectacle. Dallas plants a flag and demands the show come to it, while the Rams move to wherever the lights are brightest. One holds court, the other travels.",
-    "SF": "Both of you chase elegant, ambitious football in California. San Francisco is rooted and faithful. The Rams are mobile and unsentimental. One is devoted to place, the other to the show.",
-    "NE": "Both of you are cold and built to win. New England trusts the system; the Rams trust the spectacle and the swing. If winning beautifully matters more than winning at all costs, that is the Rams over the Patriots."
+    "IND":"There's an easy overlap with IND. You win on offense and sharp process. Indianapolis stays put and trusts one passer. The Rams chase the show across cities. The same craft, rooted on one side and nomadic on the other.",
+    "DAL":"It comes from the same place: you love the spotlight and the spectacle. Dallas plants a flag and demands the show come to it, while the Rams move to wherever the lights are brightest. One holds court, the other travels.",
+    "SF":"At heart, you chase elegant, ambitious football in California, same as SF. San Francisco is rooted and faithful. The Rams are mobile and unsentimental. One is devoted to place, the other to the show.",
+    "NE":"NE and you are cold and built to win. New England trusts the system; the Rams trust the spectacle and the swing. If winning beautifully matters more than winning at all costs, that is the Rams over the Patriots."
   },
   "CIN": {
-    "NYJ": "Both of you carry chaos and a long wait for respect. The Jets keep it comic and hopeful. Cincinnati keeps it as a chip waiting to be repaid. One laughs; the other settles scores.",
-    "WAS": "Both of you are loyal through institutional frustration. Washington's loyalty is to colors over a name, while Cincinnati's is to a small-market team that earned its swagger late. One waits on a tradition, the other on a slight.",
-    "JAX": "Both of you are overlooked, small-ish markets with a defiant streak. Jacksonville got loud and local. Cincinnati got striped and chip-shouldered. The same underdog energy, at a different outlet.",
-    "CAR": "Both of you are moderate, story-shaped fanbases. Carolina's story is a never-quit creed; Cincinnati's is the afterthought finally getting feared. If it is the creed more than the chip, that is Carolina."
+    "NYJ":"Like NYJ, you carry chaos and a long wait for respect. The Jets keep it comic and hopeful. Cincinnati keeps it as a chip waiting to be repaid. One laughs; the other settles scores.",
+    "WAS":"You and WAS are loyal through institutional frustration. Washington's loyalty is to colors over a name, while Cincinnati's is to a small-market team that earned its swagger late. One waits on a tradition, the other on a slight.",
+    "JAX":"You and JAX alike are overlooked, small-ish markets with a defiant streak. Jacksonville got loud and local. Cincinnati got striped and chip-shouldered. The same underdog energy, at a different outlet.",
+    "CAR":"The two of you are moderate, story-shaped fanbases. Carolina's story is a never-quit creed; Cincinnati's is the afterthought finally getting feared. If it is the creed more than the chip, that is Carolina."
   },
   "ATL": {
-    "TB": "Both of you carry chaos and flair in the same region. Tampa's mood is a party built on remembering the bad days. Atlanta's is haunted by one specific collapse. One is giddy, the other bruised.",
-    "LAC": "Both of you live with heartbreak and chaos. The Chargers' is a steady pattern of losing winnable games, while Atlanta's is a single unforgettable lead that vanished. One dread is chronic, the other acute.",
-    "CAR": "Both of you are Southeastern, story-shaped fanbases. Carolina's story is refusing to quit. Atlanta's is a fall it cannot stop replaying. The same region, with opposite lessons.",
-    "CIN": "Both of you carry chaos and a wound to your reputation. Cincinnati's is being overlooked; Atlanta's is being remembered for a collapse. If the chip is about respect rather than a specific scar, that is Cincinnati."
+    "TB":"Start with the overlap. You carry chaos and flair in the same region. Tampa's mood is a party built on remembering the bad days. Atlanta's is haunted by one specific collapse. One is giddy, the other bruised.",
+    "LAC":"There's real kinship here: you live with heartbreak and chaos. The Chargers' is a steady pattern of losing winnable games, while Atlanta's is a single unforgettable lead that vanished. One dread is chronic, the other acute.",
+    "CAR":"CAR and you are Southeastern, story-shaped fanbases. Carolina's story is refusing to quit. Atlanta's is a fall it cannot stop replaying. The same region, with opposite lessons.",
+    "CIN":"The resemblance is real. You carry chaos and a wound to your reputation. Cincinnati's is being overlooked; Atlanta's is being remembered for a collapse. If the chip is about respect rather than a specific scar, that is Cincinnati."
   },
   "ARI": {
-    "TEN": "Both of you build identity from endurance more than glory. Arizona's is measured across more than a century. Tennessee's is measured in inches. Same stubbornness, on a very different clock.",
-    "MIA": "Both of you are flat-shaped, identity-over-trophies fanbases. Miami preserves one perfect year, while Arizona simply refuses to disappear over a century. One is a peak, the other a long endurance.",
-    "JAX": "Both of you are overlooked and persistent. Jacksonville answers it by getting loud and local. Arizona answers it by simply lasting. One is defiant about the neglect, the other simply durable.",
-    "HOU": "Both of you are quieter identities by reputation. Houston's is a fresh build after loss; Arizona's is ancient endurance. If it is the brand-new chip rather than the long haul, that is Houston."
+    "TEN":"Here's the common ground: you build identity from endurance more than glory. Arizona's is measured across more than a century. Tennessee's is measured in inches. Same stubbornness, on a very different clock.",
+    "MIA":"You and MIA are flat-shaped, identity-over-trophies fanbases. Miami preserves one perfect year, while Arizona simply refuses to disappear over a century. One is a peak, the other a long endurance.",
+    "JAX":"You and JAX alike are overlooked and persistent. Jacksonville answers it by getting loud and local. Arizona answers it by simply lasting. One is defiant about the neglect, the other simply durable.",
+    "HOU":"The two of you are quieter identities by reputation. Houston's is a fresh build after loss; Arizona's is ancient endurance. If it is the brand-new chip rather than the long haul, that is Houston."
   },
   "WAS": {
-    "CHI": "Both of you are old, rooted, defense-proud fanbases that loved through a long decline. Chicago waits on a quarterback, while Washington waited through a vanished name. The same endurance, around a different absence.",
-    "NYG": "Both of you are old-guard, deeply rooted franchises. The Giants' loyalty stays unbothered and steady. Washington's was tested by chaos and held to the colors. One heritage is serene, the other battered.",
-    "DEN": "Both of you pair real pedigree with regional loyalty. Denver's expectation is steady and altitude-backed. Washington's is rebuilding from a long fall. One is expectant, the other recovering.",
-    "JAX": "Both of you have loved through being overlooked or diminished. Jacksonville got loud about it; Washington stayed quietly true to the colors. If the answer is defiant volume, that is Jacksonville."
+    "CHI":"CHI and you are old, rooted, defense-proud fanbases that loved through a long decline. Chicago waits on a quarterback, while Washington waited through a vanished name. The same endurance, around a different absence.",
+    "NYG":"You and NYG are old-guard, deeply rooted franchises. The Giants' loyalty stays unbothered and steady. Washington's was tested by chaos and held to the colors. One heritage is serene, the other battered.",
+    "DEN":"Same instinct at work. You pair real pedigree with regional loyalty. Denver's expectation is steady and altitude-backed. Washington's is rebuilding from a long fall. One is expectant, the other recovering.",
+    "JAX":"The near-miss makes sense: you have loved through being overlooked or diminished. Jacksonville got loud about it; Washington stayed quietly true to the colors. If the answer is defiant volume, that is Jacksonville."
   },
   "NYJ": {
-    "CIN": "Both of you carry chaos and a long wait. The Jets keep it comic and hopeful. Cincinnati keeps it as a chip to repay. One laughs through it; the other settles up.",
-    "CLE": "Both of you are chaotic and devoted with little payoff. Cleveland stopped expecting and loves anyway, while the Jets keep believing it turns around. One is unconditional, the other hopeful.",
-    "MIN": "Both of you suffer loudly and keep showing up. Minnesota braces for the doom. The Jets expect the breakthrough every single year. The same heartbreak, fatalist on one side and comic on the other.",
-    "BUF": "Both of you are loyal, emotional, snakebitten. Buffalo turned the heartbreak into a roaring family; the Jets turned it into stubborn comic faith. If the energy is communal warmth rather than punchline hope, that is Buffalo."
+    "CIN":"You've got genuine overlap. You carry chaos and a long wait. The Jets keep it comic and hopeful. Cincinnati keeps it as a chip to repay. One laughs through it; the other settles up.",
+    "CLE":"You and CLE alike are chaotic and devoted with little payoff. Cleveland stopped expecting and loves anyway, while the Jets keep believing it turns around. One is unconditional, the other hopeful.",
+    "MIN":"Cut to what's shared: you suffer loudly and keep showing up. Minnesota braces for the doom. The Jets expect the breakthrough every single year. The same heartbreak, fatalist on one side and comic on the other.",
+    "BUF":"The two of you are loyal, emotional, snakebitten. Buffalo turned the heartbreak into a roaring family; the Jets turned it into stubborn comic faith. If the energy is communal warmth rather than punchline hope, that is Buffalo."
   },
   "TEN": {
     "CAR": "The closest match in the whole league, the grit identical. Carolina made refusing to quit a creed. Tennessee made it a single yard it came up short of. One faces forward, the other faces the miss.",
-    "HOU": "Both of you carry the chip of a city and a team pulled apart. Your franchise left Houston, the city built the Texans to replace it, and now you meet twice a year. They got the clean slate; you kept the scars. If the fresh-start feeling is yours, that is Houston.",
-    "ARI": "Both of you build identity from endurance more than glory. Arizona's is a century of waiting, while Tennessee's is the inches. One clock runs in years, the other in feet.",
-    "MIA": "Both of you are defined by one thing you cannot put down. Miami guards a perfect season; Tennessee guards the one that got away. One protects perfection, the other replays the miss."
+    "HOU":"It's a close call for a reason. You carry the chip of a city and a team pulled apart. Your franchise left Houston, the city built the Texans to replace it, and now you meet twice a year. They got the clean slate; you kept the scars. If the fresh-start feeling is yours, that is Houston.",
+    "ARI":"You share the core of it. You build identity from endurance more than glory. Arizona's is a century of waiting, while Tennessee's is the inches. One clock runs in years, the other in feet.",
+    "MIA":"MIA and you are defined by one thing you cannot put down. Miami guards a perfect season; Tennessee guards the one that got away. One protects perfection, the other replays the miss."
   },
   "HOU": {
     "TEN": "The two halves of one split, now division rivals. Your franchise left and became the Titans; you are Houston's answer, built from scratch. They kept the history and the scars, you kept the fresh start and the chip.",
-    "CAR": "Both of you are younger, moderate, story-shaped fanbases. Carolina's story is a never-quit creed. Houston's is rebuilding after a city's loss. One is a creed, the other a comeback.",
-    "JAX": "Both of you are 1990s-or-later expansion cities proving you belong. Jacksonville does it by getting loud and local, while Houston does it by building a proud new identity. The same upstart energy, by different proof.",
-    "ARI": "Both of you are quieter identities by reputation. Arizona's is a century of endurance; Houston's is a brand-new build with a chip. If it is the long haul rather than the fresh start, that is Arizona."
+    "CAR":"You and CAR are younger, moderate, story-shaped fanbases. Carolina's story is a never-quit creed. Houston's is rebuilding after a city's loss. One is a creed, the other a comeback.",
+    "JAX":"You and JAX alike are 1990s-or-later expansion cities proving you belong. Jacksonville does it by getting loud and local, while Houston does it by building a proud new identity. The same upstart energy, by different proof.",
+    "ARI":"The two of you are quieter identities by reputation. Arizona's is a century of endurance; Houston's is a brand-new build with a chip. If it is the long haul rather than the fresh start, that is Arizona."
   },
   "CAR": {
     "TEN": "The closest match in the whole league, the grit identical. Carolina made refusing to quit a creed. Tennessee made it a single lost yard. The same engine, facing forward on one side and facing the miss on the other.",
-    "JAX": "Both of you are 90s expansion franchises in overlooked markets. Jacksonville answers it by getting loud and local. Carolina answers it with a creed and a region behind it. One rallies on volume, the other on belief.",
-    "HOU": "Both of you are younger, story-shaped fanbases. Houston's is restoration after loss, while Carolina's is a never-quit creed. One is a comeback, the other a code.",
-    "TB": "Both of you are moderate Southeastern fanbases. Tampa's story is the underdog who finally robbed the league; Carolina's is refusing to quit without the payoff yet. If it is delight over defiance, that is Tampa."
+    "JAX":"JAX and you are 90s expansion franchises in overlooked markets. Jacksonville answers it by getting loud and local. Carolina answers it with a creed and a region behind it. One rallies on volume, the other on belief.",
+    "HOU":"You and HOU are younger, story-shaped fanbases. Houston's is restoration after loss, while Carolina's is a never-quit creed. One is a comeback, the other a code.",
+    "TB":"You and TB alike are moderate Southeastern fanbases. Tampa's story is the underdog who finally robbed the league; Carolina's is refusing to quit without the payoff yet. If it is delight over defiance, that is Tampa."
   },
   "JAX": {
-    "CAR": "Both of you are 90s expansion franchises in overlooked markets. Carolina rallies around a creed and a region. Jacksonville rallies by getting loud and defiantly local. The same upstart spirit, with a different rallying point.",
-    "TEN": "Both of you are flat-profile, story-shaped fanbases. Tennessee's story is the lost yard, while Jacksonville's is being overlooked and roaring back. One is a near-miss, the other a dare.",
-    "WAS": "Both of you have loved through being diminished. Washington stayed quietly true to its colors through a vanished name. Jacksonville got loud about being doubted. One defiance is quiet, the other roaring.",
-    "CIN": "Both of you are overlooked markets with a chip. Cincinnati carries it as a score to settle; Jacksonville carries it as local pride turned up loud. If it is resentment more than hometown roar, that is Cincinnati."
+    "CAR":"The two of you are 90s expansion franchises in overlooked markets. Carolina rallies around a creed and a region. Jacksonville rallies by getting loud and defiantly local. The same upstart spirit, with a different rallying point.",
+    "TEN":"TEN and you are flat-profile, story-shaped fanbases. Tennessee's story is the lost yard, while Jacksonville's is being overlooked and roaring back. One is a near-miss, the other a dare.",
+    "WAS":"Set you beside WAS and the likeness shows: you have loved through being diminished. Washington stayed quietly true to its colors through a vanished name. Jacksonville got loud about being doubted. One defiance is quiet, the other roaring.",
+    "CIN":"You and CIN are overlooked markets with a chip. Cincinnati carries it as a score to settle; Jacksonville carries it as local pride turned up loud. If it is resentment more than hometown roar, that is Cincinnati."
   }
 };
 
