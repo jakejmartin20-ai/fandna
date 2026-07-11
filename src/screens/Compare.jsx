@@ -89,7 +89,7 @@ function ShareFoot({ onReshare }) {
     <div onClick={onReshare} role="button" tabIndex={0}
       onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onReshare(); } }}
       style={{ textAlign: "center", marginTop: 26, cursor: "pointer", fontFamily: MONO, fontSize: 11, letterSpacing: "0.16em", color: "#7f7f9c" }}>
-      tap to share this compare&nbsp;&nbsp;·&nbsp;&nbsp;fandna.vercel.app
+      tap to share this compare&nbsp;&nbsp;·&nbsp;&nbsp;playfandna.com
     </div>
   );
 }

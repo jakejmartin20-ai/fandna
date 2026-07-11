@@ -98,7 +98,7 @@ export function GenomeHome({
   const shareText = SHARE.seq ? ("FanDNA: "+SHARE.seq) : shareString;
   const _seqClean = (SHARE.seq||"").split(/\s*·\s*/).filter(t=>t&&!/-\?$/.test(t)).join(" · ");
   const _blk = (coreProfile && Object.keys(coreProfile).length) ? ("\uD83E\uDDEC "+coreBlocks(coreProfile)) : "";
-  const _cmp = "https://fandna.vercel.app/c/"+encodeGenome({coreProfile, results:genome});
+  const _cmp = "https://playfandna.com/c/"+encodeGenome({coreProfile, results:genome});
   const shareCaption = [_blk, (_seqClean?("FanDNA: "+_seqClean):shareText), "Compare yours: "+_cmp].filter(Boolean).join("\n");
 
   function copyShare(){
@@ -295,7 +295,7 @@ export function GenomeHome({
           <input
             value={restoreText}
             onChange={e=>{setRestoreText(e.target.value);setRestoreErr(false);}}
-            placeholder="paste your fandna.vercel.app/c/ link"
+            placeholder="paste your playfandna.com/c/ link"
             aria-label="Paste your FanDNA restore link"
             style={{width:"100%",boxSizing:"border-box",background:"#14141c",border:"1px solid "+(restoreErr?"#c46c96":"#33333f"),borderRadius:10,padding:"11px 14px",color:"#d6d6e0",fontFamily:"'DM Mono',monospace",fontSize:12,letterSpacing:"0.02em",outline:"none"}}
           />
