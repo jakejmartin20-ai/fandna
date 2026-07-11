@@ -501,7 +501,7 @@ function AppInner(){
   function cardCaption(){
     const noun=regOf(activeSport).noun;
     const seq="FanDNA: "+shareGroups.flatMap(g=>g.items).filter(t=>!/-\?$/.test(t)).join(" · ");
-    return [`Which ${noun} are you, really? Turns out I'm ${team.name}, ${archetypes[result]}.`, blk(coreProfile), seq+".", `Find yours: fandna.vercel.app/c/${genomeCode()}`].filter(Boolean).join("\n");
+    return [`Which ${noun} are you, really? Turns out I'm ${team.name}, ${archetypes[result]}.`, blk(coreProfile), seq+".", `Find yours: playfandna.com/c/${genomeCode()}`].filter(Boolean).join("\n");
   }
   function saveBlob(blob){
     const url=URL.createObjectURL(blob);
@@ -517,7 +517,7 @@ function AppInner(){
   async function shareCompareLink(){
     const st=loadState();
     const code=encodeGenome({coreProfile:st.coreProfile, results:st.results||{}});
-    const url=`https://fandna.vercel.app/c/${code}`;
+    const url=`https://playfandna.com/c/${code}`;
     const noun=regOf(activeSport).noun;
     const caption=[`Which ${noun} are you, really?`, blk(st.coreProfile), `Compare your FanDNA with mine: ${url}`].filter(Boolean).join("\n");
     try{ if(navigator.share){ await navigator.share({text:caption}); return; } }catch(e){ if(e&&e.name==="AbortError") return; }
@@ -526,7 +526,7 @@ function AppInner(){
   async function shareGenomeCompare(){
     const st=loadState();
     const code=encodeGenome({coreProfile:st.coreProfile, results:st.results||{}});
-    const url=`https://fandna.vercel.app/c/${code}`;
+    const url=`https://playfandna.com/c/${code}`;
     const caption=[blk(st.coreProfile), `Compare your FanDNA with mine: ${url}`].filter(Boolean).join("\n");
     try{ if(navigator.share){ await navigator.share({text:caption}); return; } }catch(e){ if(e&&e.name==="AbortError") return; }
     navigator.clipboard?.writeText(caption).then(()=>alert("Compare link copied.")).catch(()=>alert(caption));
@@ -1038,13 +1038,8 @@ function AppInner(){
 
             {/* Support + feedback footer (off the newcomer's critical path) */}
             <div style={{marginTop:28,paddingTop:20,borderTop:"1px solid #1e1e2e",textAlign:"center"}}>
-              <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#7f7f9e",lineHeight:1.6,margin:"0 auto 14px",maxWidth:380}}>Built by one person and far too many spreadsheets. If this made you laugh, argue, or text a friend, you can buy me a pint.</p>
+              <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#7f7f9e",lineHeight:1.6,margin:"0 auto 14px",maxWidth:380}}>Built by one person and far too many spreadsheets. If this made you laugh, argue, or text a friend, it did exactly what it was meant to.</p>
               <div style={{display:"flex",gap:20,justifyContent:"center",alignItems:"center",flexWrap:"wrap"}}>
-                <a href="https://buymeacoffee.com/fandna" target="_blank" rel="noopener noreferrer"
-                  style={{color:"#9898b8",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"color .15s"}}
-                  onMouseEnter={e=>e.currentTarget.style.color="#d0ccc6"}
-                  onMouseLeave={e=>e.currentTarget.style.color="#9898b8"}
-                >🍺 Buy me a pint</a>
                 <a href="https://forms.gle/kAV9KGGUxdcA1dYv6" target="_blank" rel="noopener noreferrer"
                   style={{color:"#9898b8",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"color .15s"}}
                   onMouseEnter={e=>e.currentTarget.style.color="#d0ccc6"}
