@@ -77,7 +77,7 @@ async function generateShareCard(sport, key, genome, coreProfile){
   do{seqFont="400 "+seqSz+"px 'DM Mono',monospace";x.font=seqFont;if(trackedWidth(x,seq,2)<=960)break;seqSz-=2;}while(seqSz>22);
   drawTracked(x,seq,cx,seqY,seqFont,"#d6d2ca",2);
   x.font="italic 40px 'Cormorant Garamond',serif";x.fillStyle="#9898b8";x.fillText(closingLine,cx,seqY+62);
-  drawTracked(x,"fandna.vercel.app",cx,seqY+112,"400 24px 'DM Mono',monospace","#7878a0",3);
+  drawTracked(x,"playfandna.com",cx,seqY+112,"400 24px 'DM Mono',monospace","#7878a0",3);
   return await new Promise(res=>cv.toBlob(res,"image/png"));
 }
 

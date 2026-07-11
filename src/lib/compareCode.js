@@ -1,6 +1,6 @@
 // FanDNA - compare share code. Packs ONE person's genome (their 7 core numbers + the club
 // they matched in each mapped sport + a version tag) into a short, URL-safe string that rides
-// on the share link (fandna.vercel.app/c/<code>). The recipient's phone decodes it, reads its
+// on the share link (playfandna.com/c/<code>). The recipient's phone decodes it, reads its
 // OWN genome from storage, and compares locally. No server, no accounts. The link is a SNAPSHOT
 // (reshare to update). Display-only: this file imports nothing from the scoring path and cannot
 // move a single match.
