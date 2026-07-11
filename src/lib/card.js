@@ -72,7 +72,7 @@ async function generateShareCard(sport, key, genome, coreProfile){
   });
   const seqY=laneTop+laneH+62;x.textAlign="center";
   const orderedSports=FAMILIES.flatMap(f=>SPORTS.filter(s=>s.group===f.id));
-  const seq="FanDNA: "+orderedSports.filter(s=>s.code===sport||(genome&&genome[s.code]&&genome[s.code].club)).map(s=>{const c=(s.code===sport)?key:genome[s.code].club;return `${s.code}-${c}`;}).join(" · ");
+  const seq="FanDNA: "+orderedSports.filter(s=>s.code===sport||(genome&&genome[s.code]&&genome[s.code].club)).map(s=>{const ck=(s.code===sport)?key:genome[s.code].club;const _sd=SPORT_DATA[s.code];const c=(_sd&&_sd.teams&&_sd.teams[ck]&&_sd.teams[ck].code3)||ck;return `${s.code}-${c}`;}).join(" · ");
   let seqSz=42,seqFont="400 42px 'DM Mono',monospace";
   do{seqFont="400 "+seqSz+"px 'DM Mono',monospace";x.font=seqFont;if(trackedWidth(x,seq,2)<=960)break;seqSz-=2;}while(seqSz>22);
   drawTracked(x,seq,cx,seqY,seqFont,"#d6d2ca",2);
