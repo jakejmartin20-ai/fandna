@@ -382,11 +382,6 @@ export function GenomeHome({
       {/* Support + feedback footer */}
       <div style={{paddingTop:20,borderTop:"1px solid #1e1e2e",textAlign:"center",position:"relative",zIndex:1}}>
         <div style={{display:"flex",gap:20,justifyContent:"center",alignItems:"center",flexWrap:"wrap"}}>
-          <a href="https://buymeacoffee.com/fandna" target="_blank" rel="noopener noreferrer"
-            style={{color:"#9898b8",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"color .15s"}}
-            onMouseEnter={e=>e.currentTarget.style.color="#d0ccc6"}
-            onMouseLeave={e=>e.currentTarget.style.color="#9898b8"}
-          >🍺 Buy me a pint</a>
           <a href="https://forms.gle/kAV9KGGUxdcA1dYv6" target="_blank" rel="noopener noreferrer"
             style={{color:"#9898b8",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"color .15s"}}
             onMouseEnter={e=>e.currentTarget.style.color="#d0ccc6"}
