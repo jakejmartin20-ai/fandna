@@ -30,7 +30,7 @@ const PBD  = "#262633";   // panel border
 const COUNT= "#80809d";   // the "x of y mapped" count
 const MAX_ROWS = 3;       // rows shown before a family panel scrolls inside its box
 const ROW_PX = 84;        // approx height of one strand row (card + gap)
-const PEEK = 24;          // extra sliver so the next row peeks when scrollable
+const PEEK = 60;          // half-row sliver so a partial next card is always visible when scrollable (Variant B)
 
 function FamilyGlyph({ kind }){
   if(kind === "globe"){
@@ -283,8 +283,8 @@ export function GenomeHome({
         Your personality already chose your team. Every sport, the same you. We just read it back.
       </p>
 
-      {/* Restore near the top (Variant A): a returning user finds it before scrolling; always shown. */}
-      {!restoreOpen ? (
+      {/* Restore: fresh home only. The returning user who lost their data lands here (no genome yet); someone who already has a genome does not need it. */}
+      {!coreSequenced && (!restoreOpen ? (
         <div style={{textAlign:"center",marginBottom:20,position:"relative",zIndex:1}}>
           <button type="button" onClick={()=>setRestoreOpen(true)}
             style={{background:"#191922",border:"1px solid #2e2a44",borderRadius:9,padding:"9px 16px",color:"#9a96b8",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.1em",textTransform:"uppercase",cursor:"pointer"}}
@@ -311,7 +311,7 @@ export function GenomeHome({
             <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#c46c96",marginTop:10,letterSpacing:"0.02em",textAlign:"center"}}>That doesn't look like a FanDNA link.</div>
           )}
         </div>
-      )}
+      ))}
 
       {/* First-run: no genome yet, lead with Start (the hero + junction stay collapsed). */}
       {!coreSequenced&&(
