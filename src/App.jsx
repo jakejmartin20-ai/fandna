@@ -577,7 +577,7 @@ function AppInner(){
         @keyframes fadeIn   {from{opacity:0}to{opacity:1}}
         @keyframes strandPulse {0%,100%{border-color:#3a3a50}50%{border-color:#6a6a90}}
         html,body{margin:0;overscroll-behavior:none}
-        .app-root{min-height:100vh;min-height:100dvh}
+        .app-root{min-height:100vh;min-height:100svh}
         *{box-sizing:border-box}
         ::-webkit-scrollbar{width:3px}
         ::-webkit-scrollbar-track{background:#16161e}
