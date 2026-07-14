@@ -117,7 +117,11 @@ function CoreCompare({ core, club, clubName="the club", accent="#b8567a", league
       <div style={{position:"relative",flex:1,height:16}}>
         <div style={{position:"absolute",top:7,left:0,right:0,height:2,background:"#1c1c28",borderRadius:2}}/>
         <span style={{position:"absolute",top:2,left:`${xp(r.them)}%`,transform:"translateX(-50%)",width:12,height:12,borderRadius:"50%",background:accent,boxShadow:`0 0 6px ${accent}88`}}/>
-        <span style={{position:"absolute",top:0,left:`${xp(r.you)}%`,transform:"translateX(-50%)",width:16,height:16,borderRadius:"50%",background:"#12121c",border:`2px solid ${YOU}`}}/>
+        {/* The you-ring is TRANSPARENT on purpose. An opaque fill painted over the club dot whenever
+            the two coincided, so a PERFECT match on a trait rendered as a MISSING club dot: the chart
+            deleted its own best evidence. Hollow, the club dot shows through the ring, and "your ring
+            sitting around their dot" reads as exactly what it is. */}
+        <span style={{position:"absolute",top:0,left:`${xp(r.you)}%`,transform:"translateX(-50%)",width:16,height:16,borderRadius:"50%",background:"transparent",border:`2px solid ${YOU}`,boxSizing:"border-box"}}/>
       </div>
     </div>
   );
