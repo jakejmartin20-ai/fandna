@@ -10,6 +10,12 @@ import { useState, useMemo } from "react";
 import { crossMatch, decompressProfile } from "../lib/scoring";
 import { DIM_ORDER, DIM_LABELS } from "../data/core";
 
+// A team's emoji is only usable if it is actually a glyph. The White Sox carried the TEXT badge
+// "SOX", which rendered here as raw letters where a crest should be. Any badge containing a
+// plain-keyboard character is not an emoji: drop it and let the row read as name-only. The four
+// gated leagues have badge data that has never once been rendered, so the guard lives in the code.
+const glyphOnly = (b) => (b && [...b].every(c => c.codePointAt(0) > 127)) ? b : "";
+
 const SERIF = "'Cormorant Garamond',Georgia,serif";
 const MONO = "'DM Mono',monospace";
 
@@ -161,7 +167,7 @@ export function CrossMatch({ sport, input, teams, teamDims = {}, coreProfile, te
 
   const colorOf = (code) => teamTextColors[code] || (teams[code] && teams[code].color) || "#9696b4";
   const clubs = Object.entries(teams)
-    .map(([code,t]) => ({ code, name:t.name, emoji:t.emoji||"", color:colorOf(code) }))
+    .map(([code,t]) => ({ code, name:t.name, emoji:glyphOnly(t.emoji), color:colorOf(code) }))
     .sort((a,b)=>a.name.localeCompare(b.name));
 
   const data = useMemo(
