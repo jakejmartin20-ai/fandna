@@ -8,9 +8,14 @@
 
 import { useState, useEffect } from "react";
 import { DIM_ORDER, DIM_LABELS, DIM_COLORS, DIM_CODES } from "../data/core";
+import { standing, standingWord } from "../lib/genomeRead";
 
+// The caller hands us the RAW core (unchanged everywhere, including the share/save link, which
+// still encodes raw). standing() turns it into where this person sits against everyone else,
+// which is the only claim a band can honestly make: a raw 4.7 in chaos is not "low chaos", it is
+// higher than two thirds of people, because nobody can score above 5.4 on that trait at all.
 export function CoreStrip({ dims, compact=false }){
-  const d = dims || {};
+  const d = standing(dims) || {};
   const [open,setOpen]=useState(false);
   const [shown,setShown]=useState(false);
 
@@ -23,7 +28,7 @@ export function CoreStrip({ dims, compact=false }){
 
   return (
     <div role="button" tabIndex={0} aria-expanded={open}
-      aria-label={open?"Hide your core dimension scores":"Show your core dimension scores"}
+      aria-label={open?"Hide where you stand on each trait":"Show where you stand on each trait"}
       onClick={()=>setOpen(o=>!o)}
       onKeyDown={(e)=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); setOpen(o=>!o); } }}
       style={{cursor:"pointer"}}>
@@ -70,6 +75,7 @@ export function CoreStrip({ dims, compact=false }){
       {/* Full names + values (revealed) */}
       {open&&(
         <div style={{marginTop:13,paddingTop:12,borderTop:"1px solid #242433"}}>
+          <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#8888a6",marginBottom:10}}>How much of each trait you carry, next to everyone else.</div>
           {DIM_ORDER.map(dk=>{
             const col=DIM_COLORS[dk], v=clamp(d[dk]);
             return (
@@ -79,7 +85,7 @@ export function CoreStrip({ dims, compact=false }){
                 <span style={{flex:1,height:4,background:"#1c1c28",borderRadius:2,overflow:"hidden"}}>
                   <span style={{display:"block",height:"100%",width:`${Math.round(v*10)}%`,background:col,borderRadius:2}}/>
                 </span>
-                <span style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#9a9ab4",width:30,textAlign:"right",flexShrink:0}}>{v.toFixed(1)}</span>
+                <span style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#9a9ab4",width:56,textAlign:"right",flexShrink:0}}>{standingWord(v)}</span>
               </div>
             );
           })}
