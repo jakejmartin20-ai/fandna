@@ -382,6 +382,14 @@ export function Compare({ friend, me, onStartSport, onReshare, onExit, onRestore
 
   // ---- LAYOUT: 2+ shared leagues (the ledger) -----------------------------
   const rivalCount = split.shared.filter(s => !s.same).length;
+  // The closeness claim must come from the measurement the strips are drawn from, not from a
+  // hardcoded string. Under the old raw core every pair WAS close (0.4 apart at the widest), so
+  // "Close cores" was true by accident. In standing space it is true for about 4% of pairs.
+  const FAR = 5;                                  // half the scale apart on some trait
+  const gulf = bm.byGap[0] ? String(bm.byGap[0].label).toLowerCase() : "";
+  const near = bm.allLinedUp;                     // genuinely close
+  const far  = !near && bm.maxGap >= FAR;         // genuinely far
+  const leaguesWord = rivalCount === 1 ? "one league" : `${rivalCount} leagues`;
   const rows = [
     ...split.shared.map(s => ({ kind: s.same ? "same" : "split", sport: s.sport, youClub: s.youClub, themClub: s.themClub })),
     ...split.onlyYou.map(s => ({ kind: "onlyYou", sport: s.sport, youClub: s.club })),
@@ -419,14 +427,24 @@ export function Compare({ friend, me, onStartSport, onReshare, onExit, onRestore
         <span style={{ fontFamily: CG, fontStyle: "italic", color: "#6a6a86" }}>vs</span>
         <span style={{ fontFamily: MONO, fontSize: 11, letterSpacing: "0.14em", color: "#7f9fd0" }}><span style={{ color: "#8f8fb2", fontFamily: CG, fontStyle: "italic", fontSize: 15 }}>{aOrThe(themArchL)}</span>&nbsp;THEM</span>
       </div>
-      <Hero>{sameArch ? <>One core, a different jersey in every league.</> : <>Close cores, a rival crest down the line.</>}</Hero>
+      <Hero>{near
+        ? (sameArch ? <>One core, a different jersey in every league.</> : <>Close cores, a rival crest down the line.</>)
+        : far
+          ? (sameArch ? <>The same read, and two very different people underneath.</> : <>Two different cores, and the crests say so.</>)
+          : (sameArch ? <>The same read, and then you part on {gulf}.</> : <>Two cores that hold together, then part on {gulf}.</>)}</Hero>
       <Rule label={`${split.shared.length + split.onlyYou.length + split.onlyThem.length} leagues sequenced`} />
       {rows.map((r, i) => <LedgerRow key={i} r={r} />)}
       <Rule label="One core, the jerseys" />
       {strips}
       <div style={{ textAlign: "center", margin: "22px 0 6px" }}>
         <Sub>{sameArch ? <>A pair of {plural(youArch)}.</> : <>A {aOrThe(youArch)} and {/^[AEIOU]/.test(aOrThe(themArchL)) ? "an" : "a"} {aOrThe(themArchL)}.</>}</Sub>
-        <Sub dim>{rivalCount > 0 ? <>Close cores, and yet a rival crest in {rivalCount === 1 ? "one league" : `${rivalCount} leagues`}.</> : <>Same jerseys, the whole way down.</>}</Sub>
+        <Sub dim>{rivalCount === 0
+          ? <>Same jerseys, the whole way down.</>
+          : near
+            ? <>Close cores, and yet a rival crest in {leaguesWord}.</>
+            : far || bm.twinCount === 0
+              ? <>You part ways on {gulf}, and it shows up as a rival crest in {leaguesWord}.</>
+              : <>You share {bm.twinCount} traits of seven, and still land on a rival crest in {leaguesWord}.</>}</Sub>
       </div>
       {crossInvite}
       <ShareFoot onReshare={onReshare} />
