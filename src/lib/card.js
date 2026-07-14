@@ -5,6 +5,7 @@ import { GENERIC_EMOJI, DIM_COLORS, DIM_CODES, DIM_ORDER } from "../data/pl";
 import { SPORT_DATA } from "../lib/sportData";
 import { SPORTS, FAMILIES } from "../lib/manifest";
 import { REGISTER } from "./register";
+import { standing } from "./genomeRead";
 
 function hexToRgb(h){h=h.replace("#","");return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
 function relLum(rgb){const f=v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);};return 0.2126*f(rgb[0])+0.7152*f(rgb[1])+0.0722*f(rgb[2]);}
@@ -24,7 +25,10 @@ async function generateShareCard(sport, key, genome, coreProfile){
   const topLabel="YOUR "+noun.toUpperCase();
   const closingLine="Which "+noun+" are you, really?";
   const W=1080,H=1350,cv=document.createElement("canvas");cv.width=W;cv.height=H;
-  const x=cv.getContext("2d"),team=teams[key],col=team.color,dims=coreProfile||teamDims[key]||{},cx=W/2;
+  // The strip is the USER's core, drawn as where they stand against everyone else (see standing()
+  // in genomeRead). Raw values would print a near-identical barcode on every card ever shared.
+  // The teamDims fallback is a legacy path with no user core; it is already raw 0-10, leave it.
+  const x=cv.getContext("2d"),team=teams[key],col=team.color,dims=(coreProfile?standing(coreProfile):(teamDims[key]||{})),cx=W/2;
   try{await Promise.all([
     document.fonts.load("600 100px 'Cormorant Garamond'"),
     document.fonts.load("italic 42px 'Cormorant Garamond'"),

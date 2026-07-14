@@ -12,6 +12,44 @@ const DIM_ORDER = ["loyalty","emotion","ambition","process","community","chaos",
 const MEAN = { loyalty:6.451, emotion:6.552, ambition:6.677, process:5.466, community:6.165, chaos:4.620, rootedness:6.502 };
 const SD   = { loyalty:0.271, emotion:0.286, ambition:0.194, process:0.358, community:0.256, chaos:0.181, rootedness:0.264 };
 
+// -- Population standing: the ONLY honest thing a drawn band can mean -------------------------
+// The raw core is an AVERAGE of 24 answers, so it is heavily compressed, AND every trait rests on
+// its own shelf: chaos can never climb above 5.4, ambition can never fall below 5.9. Drawing raw
+// values side by side draws the shelves, not the person (chaos came out the shortest band for 94%
+// of all takers, and the trait the read NAMES you for was your tallest only 36% of the time).
+// So every DISPLAY of the core - the gel strip, the share card, the compare strips, the text
+// blocks - runs through standing(): where you sit against the same population the read itself
+// ranks on. It is monotone in z, so the tallest band is ALWAYS the trait the read names you for.
+// Display-only: this file is not imported by scoring.js and cannot move a single match.
+// The MATCH uses a different transform (decompressProfile, in scoring.js) because a club has to
+// be met in the units it was authored in. Same reading, different ruler. /how owns that.
+function erf(x){
+  const s = x<0 ? -1 : 1; x = Math.abs(x);
+  const t = 1/(1+0.3275911*x);
+  const y = 1 - (((((1.061405429*t - 1.453152027)*t) + 1.421413741)*t - 0.284496736)*t + 0.254829592)*t*Math.exp(-x*x);
+  return s*y;
+}
+export function standing(profile){
+  const out = {};
+  if(!profile) return out;
+  for(const d of DIM_ORDER){
+    const sd = SD[d] || 1;
+    const z  = ((profile[d]||0) - (MEAN[d]||0)) / sd;
+    const p  = 0.5 * (1 + erf(z/Math.SQRT2));   // share of the population you sit above
+    out[d]   = Math.max(0, Math.min(10, p*10));
+  }
+  return out;
+}
+// The word beneath a band. Even fifths of the population, so the ladder is honest by construction.
+export function standingWord(v){
+  const x = v||0;
+  if(x>=8) return "high";
+  if(x>=6) return "above";
+  if(x>=4) return "typical";
+  if(x>=2) return "below";
+  return "low";
+}
+
 // your strongest trait names you
 const TYPE = {
   loyalty:"The Lifer", emotion:"The Believer", ambition:"The Chaser",
@@ -58,15 +96,15 @@ function pick(arr, profile, salt){
 }
 
 // Text-native genome visual for shares: each of the 7 dims -> one block character by height,
-// scaled off the SAME population z-score the read uses (raw core-compressed values would hand
-// almost everyone the identical strip, killing the "this is uniquely yours" hook). Fixed dim
-// order so a person's strip is stable and recognizable. Display-only; not in the scoring graph.
+// drawn off standing() - the SAME transform the gel strip and the share card now use, so the text
+// strip and the drawn strip are the same picture in two alphabets. Fixed dim order so a person's
+// strip is stable and recognizable. Display-only; not in the scoring graph.
 export function coreBlocks(profile){
   const B = "\u2581\u2582\u2583\u2584\u2585\u2586\u2587\u2588"; // ▁▂▃▄▅▆▇█
   if(!profile) return "";
+  const st = standing(profile);
   return DIM_ORDER.map(d=>{
-    const z = (profile[d]!=null && SD[d]) ? (profile[d]-MEAN[d])/SD[d] : 0;
-    const t = Math.max(0, Math.min(1, (z+2)/4)); // clamp z to [-2,2] -> 0..1
+    const t = Math.max(0, Math.min(1, (st[d]||0)/10));
     return B[Math.round(t*(B.length-1))];
   }).join("");
 }
