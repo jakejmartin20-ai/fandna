@@ -7,7 +7,8 @@
 // the noun (club / franchise / ballclub) come from the per-sport voice; renders nothing without an answer set.
 
 import { useState, useMemo } from "react";
-import { crossMatch } from "../lib/scoring";
+import { crossMatch, decompressProfile } from "../lib/scoring";
+import { DIM_ORDER, DIM_LABELS } from "../data/core";
 
 const SERIF = "'Cormorant Garamond',Georgia,serif";
 const MONO = "'DM Mono',monospace";
@@ -74,6 +75,66 @@ function TipGroup({ title, color, tips }){
   );
 }
 
+// The three-dot split. ENGINE-SPACE, the only space in which a comparative claim between two
+// clubs is honest: the user's core after decompressProfile() (the stretch the matcher applies)
+// against each club's RAW 0-10 teamDims, all on one shared 0-10 axis. "Nearer dot = nearer club"
+// is then true by construction, because it IS the measurement.
+//
+// Rows are sorted by where the two CLUBS disagree most (|matched - supported|, descending), so
+// the chart tells the story unaided: here are the traits these two are nothing alike on, and look
+// which one your dot is standing beside. The connector bar spans the two club dots, so the size of
+// their argument is visible and your ring shows which end of it you are at.
+//
+// Deliberately NO align/diverge split (with three dots "aligned" is ambiguous: aligned with whom?)
+// and deliberately NO "nearer on N of 7" count. A row count is a DIFFERENT statistic from the
+// Euclidean distance the engine actually minimises, and over 22,861 measured pairs it declared the
+// supported club nearer while the engine matched the other one 4.8% of the time. Ties are also the
+// norm, not the exception (67.2% of pairs have at least one dead-level trait), and a count either
+// swallows them or rounds them in the match's favour. The engine's own facts (where it placed, how
+// many answers would flip it) carry the verdict; the chart carries the shape. Display-only.
+function SplitChart({ you, matched, supported, matchedName, supportedName, matchedColor, supportedColor, teamsWord="clubs" }){
+  if (!you || !matched || !supported) return null;
+  const YOU = "#e8e4de";
+  const rows = DIM_ORDER.map(k => ({
+    k, label: DIM_LABELS[k],
+    you: +you[k] || 0, m: +matched[k] || 0, s: +supported[k] || 0,
+    gap: Math.abs((+matched[k] || 0) - (+supported[k] || 0)),
+  })).sort((a,b) => b.gap - a.gap);
+
+  const xp = (v) => 3 + (Math.max(0, Math.min(10, +v || 0)) / 10) * 94;
+
+  return (
+    <Card>
+      <Eyebrow>Where the two {"" + (supportedName ? "clubs" : "clubs")} split</Eyebrow>
+      <div style={{fontFamily:SERIF,fontSize:15,fontStyle:"italic",color:"#8a8ab0",margin:"-6px 0 12px"}}>and which one you are standing next to</div>
+      <div style={{display:"flex",gap:16,flexWrap:"wrap",fontFamily:MONO,fontSize:10,color:"#9696b4",marginBottom:12}}>
+        <span><i style={{display:"inline-block",width:11,height:11,borderRadius:"50%",background:"#12121c",border:`2px solid ${YOU}`,marginRight:6,verticalAlign:"-2px"}}/>you</span>
+        <span><i style={{display:"inline-block",width:11,height:11,borderRadius:"50%",background:matchedColor,marginRight:6,verticalAlign:"-2px"}}/>{matchedName}</span>
+        <span><i style={{display:"inline-block",width:11,height:11,borderRadius:"50%",background:supportedColor,marginRight:6,verticalAlign:"-2px"}}/>{supportedName}</span>
+      </div>
+      <div style={{display:"flex",alignItems:"center",gap:12,margin:"0 0 2px"}}>
+        <span style={{width:104,flexShrink:0}}/>
+        <div style={{flex:1,display:"flex",justifyContent:"space-between",fontFamily:MONO,fontSize:9,letterSpacing:"0.08em",color:"#7e7e9f"}}><span>0</span><span>10</span></div>
+      </div>
+      {rows.map(r => {
+        const lo = Math.min(xp(r.m), xp(r.s)), hi = Math.max(xp(r.m), xp(r.s));
+        return (
+          <div key={r.k} style={{display:"flex",alignItems:"center",gap:12,padding:"10px 0"}}>
+            <span style={{fontFamily:SERIF,fontSize:15,color:"#d8d4ce",width:104,flexShrink:0,lineHeight:1.2}}>{r.label}</span>
+            <div style={{position:"relative",flex:1,height:16}}>
+              <div style={{position:"absolute",top:7,left:0,right:0,height:2,background:"#1c1c28",borderRadius:2}}/>
+              <div style={{position:"absolute",top:7,left:`${lo}%`,width:`${hi-lo}%`,height:2,background:"#3a3a50",borderRadius:2}}/>
+              <span style={{position:"absolute",top:2,left:`${xp(r.s)}%`,transform:"translateX(-50%)",width:12,height:12,borderRadius:"50%",background:supportedColor,boxShadow:`0 0 6px ${supportedColor}88`}}/>
+              <span style={{position:"absolute",top:2,left:`${xp(r.m)}%`,transform:"translateX(-50%)",width:12,height:12,borderRadius:"50%",background:matchedColor,boxShadow:`0 0 6px ${matchedColor}88`}}/>
+              <span style={{position:"absolute",top:0,left:`${xp(r.you)}%`,transform:"translateX(-50%)",width:16,height:16,borderRadius:"50%",background:"#12121c",border:`2px solid ${YOU}`}}/>
+            </div>
+          </div>
+        );
+      })}
+    </Card>
+  );
+}
+
 function Card({ children }){
   return <div style={{background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:14,padding:"18px 16px",marginTop:18}}>{children}</div>;
 }
@@ -81,7 +142,7 @@ function Eyebrow({ children }){
   return <div style={{fontFamily:MONO,fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#8484b0",marginBottom:13}}>{children}</div>;
 }
 
-export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCode, matchedName, matchedColor = "#b8567a", voice }){
+export function CrossMatch({ sport, input, teams, teamDims = {}, coreProfile, teamTextColors = {}, matchedCode, matchedName, matchedColor = "#b8567a", voice }){
   const [supported, setSupported] = useState(null); // club code, "NONE", or null
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -181,6 +242,17 @@ export function CrossMatch({ sport, input, teams, teamTextColors = {}, matchedCo
                 <span style={{color:matchedColor}}>{matchedName}</span> in the DNA.
               </div>
               <p style={{fontSize:14.5,color:"#c8c4be",lineHeight:1.55,margin:"14px 0 0"}}>You support {chosen ? chosen.name : data.supported}, but the way you actually follow the game reads as {matchedName}.</p>
+              {(coreProfile && teamDims[matchedCode] && teamDims[data.supported]) && (
+                <SplitChart
+                  you={decompressProfile(coreProfile)}
+                  matched={teamDims[matchedCode]}
+                  supported={teamDims[data.supported]}
+                  matchedName={matchedName}
+                  supportedName={chosen ? chosen.name : data.supported}
+                  matchedColor={matchedColor}
+                  supportedColor={supAccent}
+                />
+              )}
               <Card>
                 <Eyebrow>How close it came</Eyebrow>
                 <p style={{fontFamily:SERIF,fontSize:21,color:"#efe9e3",lineHeight:1.3,margin:"0 0 10px"}}>{chosen ? chosen.name : data.supported} was {placeWord(data.rank)}.</p>
