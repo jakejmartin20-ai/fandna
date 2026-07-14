@@ -100,8 +100,21 @@ function CoreCompare({ core, club, clubName="the club", accent="#b8567a", league
   const diverge= byAgree.slice(cut).sort((a,b)=>b.dz-a.dz);
 
   // Map a within-profile z to a shared track position (same axis for you and the club).
-  const ZLO=-2.2, ZHI=1.5;
-  const xp=(z)=>Math.max(3,Math.min(97, ((z-ZLO)/(ZHI-ZLO))*100 ));
+  // The axis is SCALED TO THE DOTS ACTUALLY ON SCREEN, not fixed. A fixed axis (the old
+  // -2.2..1.5) clamped any outlier onto the edge, so a club with one towering trait (Milan's
+  // ambition, z=2.18) had that dot pinned at the wall next to yours. The two then LOOKED nearly
+  // identical while the numbers said it was one of the widest gaps, and the picture contradicted
+  // the "where you diverge" heading above it. Scaling to the data means nothing is ever pinned,
+  // so the drawn gap is always proportional to the real gap, and every diverge row is drawn wider
+  // than every align row (they are cut from the same dz sort). MIN_SPAN stops a very flat pair
+  // from being stretched into false drama. Display-only: never read by the scoring path.
+  const MIN_SPAN=2.6;
+  const zAll=rows.reduce((a,r)=>{a.push(r.zy,r.zt);return a;},[]);
+  let ZLO=Math.min(...zAll), ZHI=Math.max(...zAll);
+  const padZ=(ZHI-ZLO)*0.10||0.5;
+  ZLO-=padZ; ZHI+=padZ;
+  if(ZHI-ZLO<MIN_SPAN){ const mid=(ZHI+ZLO)/2; ZLO=mid-MIN_SPAN/2; ZHI=mid+MIN_SPAN/2; }
+  const xp=(z)=>Math.max(3,Math.min(97, 3 + ((z-ZLO)/(ZHI-ZLO))*94 ));
 
   const Row=({r})=>(
     <div style={{display:"flex",alignItems:"center",gap:12,padding:"10px 0"}}>
