@@ -7,6 +7,12 @@ import { SPORTS, FAMILIES } from "../lib/manifest";
 import { REGISTER } from "./register";
 import { standing } from "./genomeRead";
 
+// A badge is only a badge if it is actually a glyph. "SOX" (the White Sox carried a TEXT badge)
+// took the emoji branch and got drawn at 110px in an emoji font stack, i.e. as giant sans-serif
+// letters blowing out of the crest disc. Any badge containing a plain-keyboard character is not an
+// emoji and must fall back to the 3-letter code disc. Four gated leagues have badge data that has
+// never once been rendered; the code refuses a bad badge rather than trusting them to be clean.
+function isGlyph(b){ return !!b && [...b].every(c => c.codePointAt(0) > 127); }
 function hexToRgb(h){h=h.replace("#","");return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
 function relLum(rgb){const f=v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);};return 0.2126*f(rgb[0])+0.7152*f(rgb[1])+0.0722*f(rgb[2]);}
 function onColorText(hex){return relLum(hexToRgb(hex))>0.5?"#0c0c12":"#f4f1ec";}
@@ -45,7 +51,7 @@ async function generateShareCard(sport, key, genome, coreProfile){
   if(ringBlend(col)){x.beginPath();x.arc(cx,ry,R-1.5,0,Math.PI*2);x.lineWidth=3;x.strokeStyle="#8b8b99";x.stroke();}
   const badge=CARD_BADGES[key];
   x.textBaseline="middle";
-  if(badge&&!GENERIC_EMOJI.has(badge)){
+  if(isGlyph(badge)&&!GENERIC_EMOJI.has(badge)){
     x.font="110px 'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif";
     x.textAlign="left";const ew=x.measureText(badge).width;x.fillText(badge,cx-ew/2,ry+4);x.textAlign="center";
   }else{
