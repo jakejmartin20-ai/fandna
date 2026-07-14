@@ -553,7 +553,7 @@ const teams = {
   "CWS": {
     "code3": "CWS", "kitType": "duo", "secondaryColor": "#000000",
     "name": "Chicago White Sox",
-    "emoji": "SOX",
+    "emoji": "⚪",
     "color": "#A6AEB2",
     "tagline": "You're the South Side the postcards skip, blue collar and still here through the worst of it.",
     "desc": "You are the South Side, the half of Chicago the postcards skip, blue collar and proud of the chip on your shoulder. You broke an eighty-eight-year drought of your own in 2005 and barely got the attention for it. Then in 2024 you lost more games in a season than any team in the modern history of the sport, an almost unthinkable low, fans chanting at ownership to sell. Still you show up, because South Side loyalty was never about the standings. It was about not being the other team in town.",
@@ -2744,7 +2744,7 @@ const CARD_BADGES = {
   "KC": "👑",
   "PHI": "🔔",
   "DET": "🐯",
-  "CWS": "SOX",
+  "CWS": "⚪",
   "BAL": "🟠",
   "NYM": "🍎",
   "MIA": "🐟",
