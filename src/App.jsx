@@ -16,6 +16,7 @@ import { CrossMatch } from "./components/CrossMatch";
 import { SPORTS, FAMILIES } from "./lib/manifest";
 import { REGISTER, regOf } from "./lib/register";
 import { Compare } from "./screens/Compare";
+import { HowItWorks } from "./screens/HowItWorks";
 import { encodeGenome, decodeCode } from "./lib/compareCode";
 
 // Per-sport voice (noun, tail, cross-match labels) now lives in one shared source: ./lib/register.
@@ -170,7 +171,8 @@ function AppInner(){
   const [mode,setMode]=useState("full");        // "full" = core+module ; "module" = PL module only
   const [savedCore,setSavedCore]=useState(null); // cached {coreAnswers,coreProfile} for module-only retakes
   const [coreProfile,setCoreProfile]=useState(null); // the user's 7-dim core; drives the strip everywhere
-  const [screen,setScreen]=useState("home");     // "home" | "quiz" | "result" - the genome home is the landing page
+  const [screen,setScreen]=useState("home");     // "home" | "quiz" | "result" | "compare" | "how" - the genome home is the landing page
+  const [howFrom,setHowFrom]=useState("home");   // which screen the explainer was opened from, so Back returns there
   const [genome,setGenome]=useState({});         // saved results map { PL:{club} } - drives the home strands + share string
   const [activeSport,setActiveSport]=useState("PL"); // which sport's quiz/result/card is in play
   const [compareFriend,setCompareFriend]=useState(null);  // decoded friend genome for the /c/ compare route
@@ -249,6 +251,38 @@ function AppInner(){
     setCompareFriend(decodeCode(code));
     setScreen("compare");
   },[]);
+
+  // On load, /how opens the explainer directly (so it can be linked to from anywhere).
+  useEffect(()=>{
+    if(typeof window==="undefined") return;
+    if(window.location.pathname.replace(/\/+$/,"")==="/how"){ setHowFrom("home"); setScreen("how"); }
+  },[]);
+
+  // The explainer is the only screen with its own address, so it is the only one that touches
+  // history. Opening it pushes /how; Back (button or browser) returns to wherever we came from.
+  useEffect(()=>{
+    if(typeof window==="undefined") return;
+    const onPop=()=>{ setScreen(s=>s==="how"?howFrom:s); };
+    window.addEventListener("popstate",onPop);
+    return ()=>window.removeEventListener("popstate",onPop);
+  },[howFrom]);
+
+  function openHow(){
+    setHowFrom(screen==="how"?howFrom:screen);
+    try{ if(window.location.pathname!=="/how") window.history.pushState({fdna:"how"},"","/how"); }catch(e){}
+    setScreen("how");
+    try{ window.scrollTo(0,0); }catch(e){}
+  }
+  function goHomeFromHow(){
+    try{ if(window.location.pathname.replace(/\/+$/,"")==="/how") window.history.pushState({},"","/"); }catch(e){}
+    setScreen("home"); setPhase("in");
+    try{ window.scrollTo(0,0); }catch(e){}
+  }
+  function closeHow(){
+    try{ if(window.location.pathname.replace(/\/+$/,"")==="/how") window.history.pushState({},"","/"); }catch(e){}
+    setScreen(howFrom);
+    try{ window.scrollTo(0,0); }catch(e){}
+  }
 
   // Keyboard handler
   useEffect(()=>{
@@ -614,6 +648,14 @@ function AppInner(){
         )}
 
         {/* ── GENOME HOME (landing page) ── */}
+        {screen==="how"&&(
+          <HowItWorks
+            onStart={goHomeFromHow}
+            onBack={closeHow}
+            hasGenome={coreSequenced}
+          />
+        )}
+
         {screen==="home"&&(
           <GenomeHome
             sports={sportsList}
@@ -629,6 +671,7 @@ function AppInner(){
             onReset={startOver}
             onRestore={restoreFromText}
             onCompare={shareGenomeCompare}
+            onHow={openHow}
           />
         )}
 
@@ -1040,6 +1083,11 @@ function AppInner(){
             <div style={{marginTop:28,paddingTop:20,borderTop:"1px solid #1e1e2e",textAlign:"center"}}>
               <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#7f7f9e",lineHeight:1.6,margin:"0 auto 14px",maxWidth:380}}>Built by one person and far too many spreadsheets. If this made you laugh, argue, or text a friend, it did exactly what it was meant to.</p>
               <div style={{display:"flex",gap:20,justifyContent:"center",alignItems:"center",flexWrap:"wrap"}}>
+                <button type="button" onClick={openHow}
+                  style={{color:"#9898b8",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",background:"none",border:"none",cursor:"pointer",padding:0,transition:"color .15s"}}
+                  onMouseEnter={e=>e.currentTarget.style.color="#d0ccc6"}
+                  onMouseLeave={e=>e.currentTarget.style.color="#9898b8"}
+                >How this works</button>
                 <a href="https://forms.gle/kAV9KGGUxdcA1dYv6" target="_blank" rel="noopener noreferrer"
                   style={{color:"#9898b8",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"color .15s"}}
                   onMouseEnter={e=>e.currentTarget.style.color="#d0ccc6"}
