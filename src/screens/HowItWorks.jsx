@@ -6,8 +6,10 @@
 // page moves with it instead of quietly going stale.
 //
 // Honesty notes baked into the copy:
-//  - the strip shown on the home screen / card is the RAW core; the stretch happens only inside
-//    matching. The page says so, because a sharp user would otherwise read it as a bug.
+//  - the core is read against the population TWICE, in two different units, and the page owns it:
+//    standing() (genomeRead) is what the home strip / card / compare strips DRAW, and it answers
+//    "which traits define you". decompressProfile() (scoring) is what the MATCH uses, because a
+//    club was authored on a raw 0-10 scale and has to be met there. Same reading, different ruler.
 //  - PL is the matrix engine (the seven are only a tie-break there). The page owns that.
 //
 // The worked example is Bundesliga because BL is a true fingerprint league, so the seven-vs-seven
@@ -18,6 +20,7 @@
 import { useState, useEffect } from "react";
 import { coreQuestions, coreDimScoring, DIM_ORDER, DIM_COLORS, DIM_CODES } from "../data/core";
 import { scoreCore, scoreModule, decompressProfile } from "../lib/scoring";
+import { standing } from "../lib/genomeRead";
 import { SPORT_DATA } from "../lib/sportData";
 
 const CG   = "'Cormorant Garamond',Georgia,serif";
@@ -125,7 +128,8 @@ export function HowItWorks({ onStart, onBack, hasGenome=false }){
   const labelOf=(v)=>((q1&&q1.options||[]).find(o=>o.value===v)||{}).label||"";
 
   const rawCore   = scoreCore(EX_CORE);
-  const stretched = decompressProfile(rawCore);
+  const stood     = standing(rawCore);        // what the home strip / card actually draw
+  const stretched = decompressProfile(rawCore); // what the club match actually compares
 
   const res   = scoreModule(EX_SPORT,{coreProfile:rawCore,coreAnswers:EX_CORE,moduleAnswers:EX_MODULE});
   const match = res.club;
@@ -183,18 +187,22 @@ export function HowItWorks({ onStart, onBack, hasGenome=false }){
         <div aria-hidden="true" style={{display:"flex",justifyContent:"center",margin:"10px 0 16px"}}>
           <svg width="10" height="26" viewBox="0 0 10 26"><path d="M5 0 L5 20" stroke="#3a3a50" strokeWidth="1"/><path d="M1.5 19 L5 25 L8.5 19 Z" fill="#3a3a50"/></svg>
         </div>
-        <Gel dims={rawCore} label="Your core" note="the strip on your home screen" accent="#7d7d9c" muted height={76} delay={420}/>
+        <Gel dims={rawCore} label="Your core" note="the raw average" accent="#7d7d9c" muted height={76} delay={420}/>
         <Note>Seven traits. Loyalty, emotion, ambition, process, community, chaos, rootedness. That's the part of you that doesn't move when the sport does.</Note>
       </Section>
 
       <Section>
         <Title>Everyone crowds the middle.</Title>
-        <P>Average two dozen answers and almost nobody comes out extreme. Read that flat and every person alive would land on the same safe, middling club.</P>
-        <P>So before we compare, we read you against everybody else. Your quiet 7 is a roar if the rest of the world sits at 6.4.</P>
+        <P>Average two dozen answers and almost nobody comes out extreme. Worse, the seven don't share a scale. Nobody alive can score above 5.4 in chaos, and nobody can fall below 5.9 in ambition. Read those raw, side by side, and you are not reading a person. You are reading the questions.</P>
+        <P>So before anything else, we read you against everybody else. Your quiet 7 is a roar if the rest of the world sits at 6.4. Your 4.7 in chaos is not low. It is higher than two thirds of people.</P>
         <div style={{marginTop:24}}>
-          <Gel dims={stretched} label="What we actually compare" note="your shape, stretched" accent="#d4a44e" height={86}/>
+          <Gel dims={stood} label="Where you stand" note="the strip on your home screen" accent="#d4a44e" height={86}/>
         </div>
-        <Note>Same person. Nothing added, nothing invented. Just measured against everyone else instead of against zero. Matched on shape, not raw score.</Note>
+        <Note>Same person. Nothing added, nothing invented. Every band is now how much more of that trait you carry than everyone else, which is the only thing a band can honestly mean.</Note>
+        <div style={{marginTop:28}}>
+          <Gel dims={stretched} label="What we hand the clubs" note="the same read, in the clubs' units" accent="#7d7d9c" muted height={86}/>
+        </div>
+        <Note color="#74748c">A club was written down on a plain 0 to 10 scale, so to stand you next to one we have to put you back on that scale. Same reading, different ruler.</Note>
       </Section>
 
       <Section>

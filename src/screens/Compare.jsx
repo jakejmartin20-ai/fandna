@@ -342,10 +342,14 @@ export function Compare({ friend, me, onStartSport, onReshare, onExit, onRestore
       sub2 = <>The split is {DIM_SHORT[topDim.dim]}: for you {poleFor(topDim, "you")}, for them {poleFor(topDim, "them")}.</>;
       showReasons = true;
     } else if (!sameTeam && sameArch) {
-      const twinCount = 7 - Math.max(1, bm.splitCount);
+      const twinCount = bm.twinCount;
       hero = <>Two {plural(youArch)}. Different jerseys.</>;
-      sub1 = <>Same read, twins on {twinCount} of seven.</>;
-      sub2 = <>The one split is {DIM_SHORT[topDim.dim]}: for you {poleFor(topDim, "you")}, for them {poleFor(topDim, "them")}.</>;
+      sub1 = twinCount > 0
+        ? <>Same read, twins on {twinCount} of seven.</>
+        : <>Same read, and not one trait in common.</>;
+      sub2 = bm.splitCount === 1
+        ? <>The one split is {DIM_SHORT[topDim.dim]}: for you {poleFor(topDim, "you")}, for them {poleFor(topDim, "them")}.</>
+        : <>The widest split is {DIM_SHORT[topDim.dim]}: for you {poleFor(topDim, "you")}, for them {poleFor(topDim, "them")}.</>;
       showReasons = true;
     } else {
       hero = <>The {aOrThe(youArch)}, meet the {aOrThe(themArchL)}.</>;
