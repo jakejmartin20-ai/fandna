@@ -559,4 +559,4 @@ function crossMatch(sport, input, supportedClub){
   };
 }
 
-export { scoreCore, scoreModule, nearestInDimSpace, matchEvidence, crossMatch, SPORT_ENGINES };
+export { scoreCore, scoreModule, decompressProfile, nearestInDimSpace, matchEvidence, crossMatch, SPORT_ENGINES };
