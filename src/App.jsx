@@ -3,7 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { track } from "@vercel/analytics";
 import { coreQuestions, DIM_ORDER, DIM_LABELS } from "./data/core";
 import { SPORT_DATA } from "./lib/sportData";
-import { scoreCore, scoreModule, matchEvidence } from "./lib/scoring";
+import { scoreCore, scoreModule, matchEvidence, decompressProfile } from "./lib/scoring";
 import { loadState, saveResult, clearAll } from "./lib/storage";
 import { generateShareCard } from "./lib/card";
 import { ChoiceQ, BinaryQ, SliderQ } from "./components/quiz";
@@ -74,55 +74,50 @@ class ErrorBoundary extends Component {
   }
 }
 
-// CoreCompare - the honest "why you" readout on the result. Compares the SHAPE of the user's
-// core against the club's teamDims (which traits DEFINE each of them), not raw score, because
-// the core sits in a compressed band while teamDims use the full 0-10 scale. A dim reads as
-// "aligned" when it is relatively high (or low) for BOTH, even if the numbers differ.
+// CoreCompare - the "why you" readout on the result. It measures in ENGINE-SPACE: the user's
+// core after decompressProfile() (the very same stretch the matcher applies) against the club's
+// raw 0-10 teamDims, on one shared 0-10 axis per trait. That IS the quantity the engine minimised
+// to pick this club, so "nearer dot = better-fitting trait" is true by construction.
+//
+// It used to z-normalise each profile WITHIN ITSELF, keeping shape and discarding magnitude. That
+// asked a different question ("is this trait high FOR YOU and high FOR THE CLUB?") than the engine
+// asked ("is your number close to the club's number?"). On traits whose population dial rests
+// unusually low or high, the two answers came out BACKWARDS. Measured over 24,000 real takers:
+// "Where you align" contained one of the two WORST-matching traits 75.5% of the time, and "Where
+// you diverge" contained one of the two BEST-matching traits 58.7% of the time. Worked case: a
+// taker matched to Genoa sat on chaos 6.0 against Genoa's 6 (the identical number) and was told
+// chaos was where they part ways. Engine-space cannot produce that: the rows ARE the gaps.
+//
+// Note there is no clamping here and none is possible: both dots live in a bounded 0-10 space, so
+// nothing can pin to an edge and the drawn gap is always the real gap. The user's dots are NOT a
+// self-ranking any more (each row is its own trait scale, and a 7 in chaos is extraordinary while
+// a 7 in loyalty is average) - the genome read on the home screen owns that job, on population z.
 // Display-only: never read by the scoring path.
 function CoreCompare({ core, club, clubName="the club", accent="#b8567a", leagueIn="the league", noun="club", edge={} }){
   if(!core || !club) return null;
   const YOU="#e8e4de";
-  const zof=(prof)=>{
-    const v=DIM_ORDER.map(d=>+prof[d]||0);
-    const m=v.reduce((a,b)=>a+b,0)/v.length;
-    const sd=Math.sqrt(v.reduce((a,b)=>a+(b-m)*(b-m),0)/v.length) || 1;
-    const z={}; DIM_ORDER.forEach((d,i)=>{ z[d]=(v[i]-m)/sd; }); return z;
-  };
-  const zy=zof(core), zt=zof(club);
-  const rows=DIM_ORDER.map(k=>({ k, label:DIM_LABELS[k], zy:zy[k], zt:zt[k],
-    dz:Math.abs(zy[k]-zt[k]), you:+core[k]||0, them:+club[k]||0 }));
-  // Split by shape agreement: order by how differently each trait defines you vs the club,
-  // then cut at the widest natural gap that keeps 3-5 traits in "align" (so both groups fill).
+  const you=decompressProfile(core);
+  const rows=DIM_ORDER.map(k=>({ k, label:DIM_LABELS[k],
+    you:+you[k]||0, them:+club[k]||0, dz:Math.abs((+you[k]||0)-(+club[k]||0)) }));
+  // Same cut rule as before, now applied to the REAL per-trait gap: order by gap, cut at the
+  // widest natural break that keeps 3-5 traits in "align" (so both groups fill).
   const byAgree=[...rows].sort((a,b)=>a.dz-b.dz);
   let cut=5, best=-1;
   for(const c of [3,4,5]){ const g=byAgree[c].dz-byAgree[c-1].dz; if(g>best){ best=g; cut=c; } }
   const align  = byAgree.slice(0,cut);
   const diverge= byAgree.slice(cut).sort((a,b)=>b.dz-a.dz);
 
-  // Map a within-profile z to a shared track position (same axis for you and the club).
-  // The axis is SCALED TO THE DOTS ACTUALLY ON SCREEN, not fixed. A fixed axis (the old
-  // -2.2..1.5) clamped any outlier onto the edge, so a club with one towering trait (Milan's
-  // ambition, z=2.18) had that dot pinned at the wall next to yours. The two then LOOKED nearly
-  // identical while the numbers said it was one of the widest gaps, and the picture contradicted
-  // the "where you diverge" heading above it. Scaling to the data means nothing is ever pinned,
-  // so the drawn gap is always proportional to the real gap, and every diverge row is drawn wider
-  // than every align row (they are cut from the same dz sort). MIN_SPAN stops a very flat pair
-  // from being stretched into false drama. Display-only: never read by the scoring path.
-  const MIN_SPAN=2.6;
-  const zAll=rows.reduce((a,r)=>{a.push(r.zy,r.zt);return a;},[]);
-  let ZLO=Math.min(...zAll), ZHI=Math.max(...zAll);
-  const padZ=(ZHI-ZLO)*0.10||0.5;
-  ZLO-=padZ; ZHI+=padZ;
-  if(ZHI-ZLO<MIN_SPAN){ const mid=(ZHI+ZLO)/2; ZLO=mid-MIN_SPAN/2; ZHI=mid+MIN_SPAN/2; }
-  const xp=(z)=>Math.max(3,Math.min(97, 3 + ((z-ZLO)/(ZHI-ZLO))*94 ));
+  // The shared axis IS the clubs' own 0-10 trait scale. Fixed by definition; no real value can
+  // leave it, so unlike the old z-axis it needs no pad, no minimum span and no clamp.
+  const xp=(v)=>3 + (Math.max(0,Math.min(10,+v||0))/10)*94;
 
   const Row=({r})=>(
     <div style={{display:"flex",alignItems:"center",gap:12,padding:"10px 0"}}>
       <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:16,color:"#d8d4ce",width:112,flexShrink:0}}>{r.label}</span>
       <div style={{position:"relative",flex:1,height:16}}>
         <div style={{position:"absolute",top:7,left:0,right:0,height:2,background:"#1c1c28",borderRadius:2}}/>
-        <span style={{position:"absolute",top:2,left:`${xp(r.zt)}%`,transform:"translateX(-50%)",width:12,height:12,borderRadius:"50%",background:accent,boxShadow:`0 0 6px ${accent}88`}}/>
-        <span style={{position:"absolute",top:0,left:`${xp(r.zy)}%`,transform:"translateX(-50%)",width:16,height:16,borderRadius:"50%",background:"#12121c",border:`2px solid ${YOU}`}}/>
+        <span style={{position:"absolute",top:2,left:`${xp(r.them)}%`,transform:"translateX(-50%)",width:12,height:12,borderRadius:"50%",background:accent,boxShadow:`0 0 6px ${accent}88`}}/>
+        <span style={{position:"absolute",top:0,left:`${xp(r.you)}%`,transform:"translateX(-50%)",width:16,height:16,borderRadius:"50%",background:"#12121c",border:`2px solid ${YOU}`}}/>
       </div>
     </div>
   );
@@ -134,22 +129,36 @@ function CoreCompare({ core, club, clubName="the club", accent="#b8567a", league
   const alignList=human(align.slice(0,3));
   const divUp=diverge.filter(r=>r.them>r.you);
   const d0=divUp[0]||diverge[0];
-  const leans = d0 ? d0.them>d0.you : false;
-  const edgeClause=(d0 && leans && edge && edge[d0.k]) ? `, ${edge[d0.k]}` : "";
+  // The verb has to key off the club's ABSOLUTE level, not just the direction of the gap. In
+  // engine-space a stretched taker can land at 1.5 on ambition, and a club on 3 is then "higher"
+  // than them - but a club on 3 does not "lean into ambition far more than you do". The `edge`
+  // phrases are authored to describe the club's own STANCE on a trait (high ones are proud, low
+  // ones are content: "modest by choice", "calm rather than dramatic"), so one only reads right
+  // when the club genuinely sits at that end. Every edge phrase in the six live leagues sits on a
+  // dim of >=6 or <=4 or exactly 5; the 5s are ambiguous, so they attach nothing.
+  const up  = d0 ? d0.them>d0.you : false;
+  const lbl = d0 ? d0.label.toLowerCase() : "";
+  const strongUp   = d0 ? ( up && d0.them>=6) : false;
+  const strongDown = d0 ? (!up && d0.them<=4) : false;
+  const edgeClause = (d0 && (strongUp||strongDown) && edge && edge[d0.k]) ? `, ${edge[d0.k]}` : "";
+  const partWays = strongUp   ? `it leans into ${lbl} far more than you do`
+                 : up         ? `it carries more ${lbl} than you do, though neither of you leans on it`
+                 : strongDown ? `it plays down ${lbl} more than you do`
+                 :              `it carries less ${lbl} than you do`;
   const explainer = d0
-    ? `No ${noun} in ${leagueIn} is an exact copy of you. ${clubName} is the closest overall fit, matched on the shape of your character rather than raw score. You line up on ${alignList}, and where you part ways it ${leans?"leans into":"plays down"} ${d0.label.toLowerCase()} ${leans?"far more":"more"} than you do${edgeClause}. The match is the whole shape, not any single line.`
-    : `You and ${clubName} share the same shape across the board. That is an unusually clean match: no single trait pulls against it.`;
+    ? `No ${noun} in ${leagueIn} is an exact copy of you. ${clubName} is the closest fit across all seven traits at once. You line up on ${alignList}, and where you part ways ${partWays}${edgeClause}. The match is all seven together, not any single line.`
+    : `You and ${clubName} land on the same number across all seven. That is an unusually clean match: no single trait pulls against it.`;
 
   const H=(t)=>(<div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.25em",textTransform:"uppercase",color:"#8484b0",margin:"0 0 4px"}}>{t}</div>);
   const axis=(<div style={{display:"flex",alignItems:"center",gap:12,margin:"0 0 2px"}}>
       <span style={{width:112,flexShrink:0}}/>
-      <div style={{flex:1,display:"flex",justifyContent:"space-between",fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.08em",color:"#7e7e9f"}}><span>less defining</span><span>more defining</span></div>
+      <div style={{flex:1,display:"flex",justifyContent:"space-between",fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.08em",color:"#7e7e9f"}}><span>0</span><span>10</span></div>
     </div>);
 
   return (
     <div>
       <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.22em",textTransform:"uppercase",color:"#9696b4",marginBottom:6}}>Your core vs {clubName}</div>
-      <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:15,fontStyle:"italic",color:"#8a8ab0",marginBottom:12}}>matched on shape, not raw score</div>
+      <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:15,fontStyle:"italic",color:"#8a8ab0",marginBottom:12}}>the seven traits that decided it</div>
       <div style={{display:"flex",gap:18,fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",marginBottom:14}}>
         <span><i style={{display:"inline-block",width:11,height:11,borderRadius:"50%",background:"#12121c",border:`2px solid ${YOU}`,marginRight:6,verticalAlign:"-2px"}}/>you</span>
         <span><i style={{display:"inline-block",width:11,height:11,borderRadius:"50%",background:accent,marginRight:6,verticalAlign:"-2px"}}/>{clubName}</span>
@@ -1043,6 +1052,8 @@ function AppInner(){
                   sport={activeSport}
                   input={evidenceInput}
                   teams={teams}
+                  teamDims={D.teamDims}
+                  coreProfile={coreProfile}
                   teamTextColors={teamTextColors}
                   matchedCode={result}
                   matchedName={team.name}
