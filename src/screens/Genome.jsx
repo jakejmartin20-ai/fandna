@@ -78,6 +78,7 @@ export function GenomeHome({
   onStartSport,      // (code) => void
   onReset,           // () => void : wipe all saved results and return to a fresh first run
   onRestore,         // (text) => bool : restore a saved genome from a pasted share link
+  onHow,             // () => void : open the "How this works" explainer
   onCompare,         // () => void : share the /c/ compare link (home primary CTA)
 }){
   const [copied,setCopied]=useState(false);
@@ -382,6 +383,11 @@ export function GenomeHome({
       {/* Support + feedback footer */}
       <div style={{paddingTop:20,borderTop:"1px solid #1e1e2e",textAlign:"center",position:"relative",zIndex:1}}>
         <div style={{display:"flex",gap:20,justifyContent:"center",alignItems:"center",flexWrap:"wrap"}}>
+          <button type="button" onClick={onHow}
+            style={{color:"#9898b8",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",background:"none",border:"none",cursor:"pointer",padding:0,transition:"color .15s"}}
+            onMouseEnter={e=>e.currentTarget.style.color="#d0ccc6"}
+            onMouseLeave={e=>e.currentTarget.style.color="#9898b8"}
+          >How this works</button>
           <a href="https://forms.gle/kAV9KGGUxdcA1dYv6" target="_blank" rel="noopener noreferrer"
             style={{color:"#9898b8",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"color .15s"}}
             onMouseEnter={e=>e.currentTarget.style.color="#d0ccc6"}
