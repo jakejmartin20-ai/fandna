@@ -124,9 +124,18 @@ function SplitChart({ you, matched, supported, matchedName, supportedName, match
             <div style={{position:"relative",flex:1,height:16}}>
               <div style={{position:"absolute",top:7,left:0,right:0,height:2,background:"#1c1c28",borderRadius:2}}/>
               <div style={{position:"absolute",top:7,left:`${lo}%`,width:`${hi-lo}%`,height:2,background:"#3a3a50",borderRadius:2}}/>
-              <span style={{position:"absolute",top:2,left:`${xp(r.s)}%`,transform:"translateX(-50%)",width:12,height:12,borderRadius:"50%",background:supportedColor,boxShadow:`0 0 6px ${supportedColor}88`}}/>
-              <span style={{position:"absolute",top:2,left:`${xp(r.m)}%`,transform:"translateX(-50%)",width:12,height:12,borderRadius:"50%",background:matchedColor,boxShadow:`0 0 6px ${matchedColor}88`}}/>
-              <span style={{position:"absolute",top:0,left:`${xp(r.you)}%`,transform:"translateX(-50%)",width:16,height:16,borderRadius:"50%",background:"#12121c",border:`2px solid ${YOU}`}}/>
+              {/* When the two clubs land on the SAME number they have no argument here, and drawing
+                  one opaque dot over the other simply deleted the club underneath. One split dot,
+                  half each colour, says "these two agree" without hiding either of them. */}
+              {r.m===r.s ? (
+                <span style={{position:"absolute",top:2,left:`${xp(r.m)}%`,transform:"translateX(-50%)",width:12,height:12,borderRadius:"50%",background:`linear-gradient(90deg, ${supportedColor} 0 50%, ${matchedColor} 50% 100%)`,boxShadow:`0 0 6px ${matchedColor}66`}}/>
+              ) : (<>
+                <span style={{position:"absolute",top:2,left:`${xp(r.s)}%`,transform:"translateX(-50%)",width:12,height:12,borderRadius:"50%",background:supportedColor,boxShadow:`0 0 6px ${supportedColor}88`}}/>
+                <span style={{position:"absolute",top:2,left:`${xp(r.m)}%`,transform:"translateX(-50%)",width:12,height:12,borderRadius:"50%",background:matchedColor,boxShadow:`0 0 6px ${matchedColor}88`}}/>
+              </>)}
+              {/* Transparent ring: an opaque one painted over a club dot sitting at the same value,
+                  so a dead-exact trait match rendered as a vanished dot. */}
+              <span style={{position:"absolute",top:0,left:`${xp(r.you)}%`,transform:"translateX(-50%)",width:16,height:16,borderRadius:"50%",background:"transparent",border:`2px solid ${YOU}`,boxSizing:"border-box"}}/>
             </div>
           </div>
         );
