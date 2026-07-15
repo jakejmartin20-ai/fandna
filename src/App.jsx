@@ -93,7 +93,7 @@ class ErrorBoundary extends Component {
 // self-ranking any more (each row is its own trait scale, and a 7 in chaos is extraordinary while
 // a 7 in loyalty is average) - the genome read on the home screen owns that job, on population z.
 // Display-only: never read by the scoring path.
-function CoreCompare({ core, club, clubName="the club", accent="#b8567a", leagueIn="the league", noun="club", edge={} }){
+function CoreCompare({ core, club, clubName="the club", accent="#b8567a", leagueIn="the league", noun="club", edge={}, matrixDecided=false }){
   if(!core || !club) return null;
   const YOU="#e8e4de";
   const you=decompressProfile(core);
@@ -149,9 +149,13 @@ function CoreCompare({ core, club, clubName="the club", accent="#b8567a", league
                  : up         ? `it carries more ${lbl} than you do, though neither of you leans on it`
                  : strongDown ? `it plays down ${lbl} more than you do`
                  :              `it carries less ${lbl} than you do`;
-  const explainer = d0
-    ? `No ${noun} in ${leagueIn} is an exact copy of you. ${clubName} is the closest fit across all seven traits at once. You line up on ${alignList}, and where you part ways ${partWays}${edgeClause}. The match is all seven together, not any single line.`
-    : `You and ${clubName} land on the same number across all seven. That is an unusually clean match: no single trait pulls against it.`;
+  const explainer = matrixDecided
+    ? (d0
+      ? `No ${noun} in ${leagueIn} is an exact copy of you. This is how you and ${clubName} line up across the seven traits: you match on ${alignList}, and where you part ways ${partWays}${edgeClause}. Your ${noun} comes from your full set of answers, these traits among them.`
+      : `You and ${clubName} land on the same number across all seven traits. Your ${noun} comes from your full set of answers, these traits among them.`)
+    : (d0
+      ? `No ${noun} in ${leagueIn} is an exact copy of you. ${clubName} is the closest fit across all seven traits at once. You line up on ${alignList}, and where you part ways ${partWays}${edgeClause}. The match is all seven together, not any single line.`
+      : `You and ${clubName} land on the same number across all seven. That is an unusually clean match: no single trait pulls against it.`);
 
   const H=(t)=>(<div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.25em",textTransform:"uppercase",color:"#8484b0",margin:"0 0 4px"}}>{t}</div>);
   const axis=(<div style={{display:"flex",alignItems:"center",gap:12,margin:"0 0 2px"}}>
@@ -162,7 +166,7 @@ function CoreCompare({ core, club, clubName="the club", accent="#b8567a", league
   return (
     <div>
       <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.22em",textTransform:"uppercase",color:"#9696b4",marginBottom:6}}>Your core vs {clubName}</div>
-      <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:15,fontStyle:"italic",color:"#8a8ab0",marginBottom:12}}>the seven traits that decided it</div>
+      <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:15,fontStyle:"italic",color:"#8a8ab0",marginBottom:12}}>{matrixDecided ? `how you and ${clubName} line up on the seven traits` : "the seven traits that decided it"}</div>
       <div style={{display:"flex",gap:18,fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",marginBottom:14}}>
         <span><i style={{display:"inline-block",width:11,height:11,borderRadius:"50%",background:"#12121c",border:`2px solid ${YOU}`,marginRight:6,verticalAlign:"-2px"}}/>you</span>
         <span><i style={{display:"inline-block",width:11,height:11,borderRadius:"50%",background:accent,marginRight:6,verticalAlign:"-2px"}}/>{clubName}</span>
@@ -918,7 +922,7 @@ function AppInner(){
                 {coreProfile ? (
                   <CoreCompare core={coreProfile} club={D.teamDims[result]} clubName={team.name}
                     accent={teamTextColors[result]||team.color}
-                    leagueIn={regOf(activeSport).leagueIn} noun={regOf(activeSport).noun} edge={team.edge}/>
+                    leagueIn={regOf(activeSport).leagueIn} noun={regOf(activeSport).noun} edge={team.edge} matrixDecided={activeSport==='PL'}/>
                 ) : (
                   <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:16,fontStyle:"italic",color:"#9a9ac4",lineHeight:1.6,margin:"0 0 8px"}}>Retake this {regOf(activeSport).noun} to map your core against {team.name}.</p>
                 )}
