@@ -163,6 +163,19 @@ export function Compare({ friend, me, onStartSport, onReshare, onExit, onRestore
     </div>
   );
 
+  // STALE (pre-update link: old-engine genome, would render wrong) -----------
+  if (friend && friend.stale) {
+    return wrap(
+      <div style={{ textAlign: "center", padding: "40px 10px" }}>
+        <Hero>This link's from before an update.</Hero>
+        <Sub dim>Ask your friend to share it again. A fresh link will read straight through.</Sub>
+        <div style={{ marginTop: 26 }}>
+          <button onClick={onExit} style={{ border: "1px solid #33333f", background: "transparent", borderRadius: 6, padding: "12px 26px", color: "#bdbdd0", fontFamily: MONO, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", cursor: "pointer" }}>Go to FanDNA</button>
+        </div>
+      </div>
+    );
+  }
+
   // BROKEN / FUTURE ----------------------------------------------------------
   if (!friend || friend.future || !friend.coreProfile) {
     return wrap(
@@ -384,8 +397,8 @@ export function Compare({ friend, me, onStartSport, onReshare, onExit, onRestore
   const rivalCount = split.shared.filter(s => !s.same).length;
   // The closeness claim must come from the measurement the strips are drawn from, not from a
   // hardcoded string. Under the old raw core every pair WAS close (0.4 apart at the widest), so
-  // "Close cores" was true by accident. In standing space it is true for about 4% of pairs.
-  const FAR = 5;                                  // half the scale apart on some trait
+  // "Close cores" was true by accident. With the traits now independent it is true for ~0.1% of pairs.
+  const FAR = 6.5;                                // well past the median pair (~7 apart); genuinely far now
   const gulf = bm.byGap[0] ? String(bm.byGap[0].label).toLowerCase() : "";
   const near = bm.allLinedUp;                     // genuinely close
   const far  = !near && bm.maxGap >= FAR;         // genuinely far

@@ -162,8 +162,8 @@ export function HowItWorks({ onStart, onBack, hasGenome=false }){
       </Section>
 
       <Section>
-        <Title>One answer, one shape.</Title>
-        <P>You aren't adding a point to a tally. Every answer you can give is already a shape of its own, across all seven.</P>
+        <Title>One question, one thing.</Title>
+        <P>You aren't adding a point to a tally. Each question measures one thing and one thing only. Loyalty. Nerve. The pull toward chaos. Your answer places you on that single scale.</P>
         <div style={{background:"#1a1a25",border:"1px solid #28283a",borderRadius:10,padding:"18px 16px 16px",marginTop:18}}>
           <p style={{fontFamily:CG,fontSize:18,color:"#d0ccc6",lineHeight:1.45,margin:"0 0 16px"}}>{q1?q1.question:""}</p>
           <div style={{display:"flex",gap:16}}>
@@ -175,12 +175,12 @@ export function HowItWorks({ onStart, onBack, hasGenome=false }){
             ))}
           </div>
         </div>
-        <Note>Same question. Two people. Two completely different reads, before a ball is kicked.</Note>
+        <Note>Same question, opposite ends of it, before a ball is kicked.</Note>
       </Section>
 
       <Section>
         <Title>Your core is the average.</Title>
-        <P>Every shape you cast gets laid on top of the last. No single answer can drag you somewhere you aren't.</P>
+        <P>Every answer you cast gets laid on top of the last. No single one can drag you somewhere you aren't.</P>
         <div style={{display:"flex",gap:10,margin:"20px 0 6px"}}>
           {stack.map((v,i)=>(<div key={i} style={{flex:1,minWidth:0}}><MiniGel dims={v} faint height={42} delay={i*90}/></div>))}
         </div>
@@ -193,8 +193,8 @@ export function HowItWorks({ onStart, onBack, hasGenome=false }){
 
       <Section>
         <Title>Everyone crowds the middle.</Title>
-        <P>Average two dozen answers and almost nobody comes out extreme. Worse, the seven don't share a scale. Nobody alive can score above 5.4 in chaos, and nobody can fall below 5.9 in ambition. Read those raw, side by side, and you are not reading a person. You are reading the questions.</P>
-        <P>So before anything else, we read you against everybody else. Your quiet 7 is a roar if the rest of the world sits at 6.4. Your 4.7 in chaos is not low. It is higher than two thirds of people.</P>
+        <P>Average two dozen answers and almost nobody comes out extreme. Line up a raw core band for band and mostly you're looking at that bunching, not at a person.</P>
+        <P>So before anything else, we read you against everybody else. A score that looks quiet can be a roar if most people sit below it. How much more of a trait you carry than the room is the band you actually see.</P>
         <div style={{marginTop:24}}>
           <Gel dims={stood} label="Where you stand" note="the strip on your home screen" accent="#d4a44e" height={86}/>
         </div>
@@ -210,12 +210,12 @@ export function HowItWorks({ onStart, onBack, hasGenome=false }){
         <P>Every club is scored on the same seven traits. Not on how good they are. On how they are. A club that wins everything and a club that hasn't won in forty years can sit right next to each other. Temperament isn't trophies.</P>
         <div style={{marginTop:24}}>
           <Gel dims={dims[match]} label={matchName} note="your read" accent="#78c8a0" height={86}/>
-          <Note color="#8f9a93">Loyalty and community pinned to the ceiling. Ambition and process on the floor. It tracks you the whole way across.</Note>
+          <Note color="#8f9a93">Loyalty and community pinned to the ceiling, ambition and chaos down low. That's the spine of the match, the same warm, rooted corner you sit in.</Note>
         </div>
         <div style={{marginTop:28}}>
           <Gel dims={dims[ANTI]} label={antiName} note="not you" accent="#70708e" muted height={86}/>
           <Note color="#74748c">
-            Tall exactly where you're short. {antiRank>0?`${ord(antiRank)} of ${fieldSize}`:"Bottom of the pile"} for this person, and no amount of money changes that.
+            Tall on ambition where you sit low, cold on loyalty and belonging where you run warm. {antiRank>0?`${ord(antiRank)} of ${fieldSize}`:"Bottom of the pile"} for this person, and no money changes that.
           </Note>
         </div>
       </Section>
