@@ -1,10 +1,10 @@
-// FanDNA — CORE (sport-agnostic personality layer). Phase 2.
-// This is the SHARED layer of the genome: the 24 personality questions and the
-// 7 dimensions, identical for every sport. Each sport adds its own module on top.
+// FanDNA - CORE (sport-agnostic personality layer). Phase 2 - v2 GENOME (one-trait key).
+// The SHARED layer: 24 personality questions and the 7 dimensions, identical for every sport.
 //
-// coreQuestions  : the 24 personality questions (phases 1-4), unchanged from v1.
-// coreDimScoring : each core answer's pull across the 7 dimensions. Used to build
-//                  the portable coreProfile (NOT a club). Derived from the live data.
+// coreQuestions  : the 24 personality questions.
+// coreDimScoring : each ANSWER carries a single value (0-10) on the ONE trait its question
+//                  measures. scoreCore averages each trait over only its own questions, so a
+//                  question can no longer smear across dimensions it does not ask about.
 // DIM_*          : the canonical 7-dimension vocabulary, shared by every sport's card.
 
 const coreQuestions = [
@@ -99,11 +99,11 @@ const coreQuestions = [
         "value": "C"
       },
       {
-        "label": "Structured. I like having a plan.",
+        "label": "A small handful, somewhere low-key.",
         "value": "D"
       },
       {
-        "label": "Whatever feels right that morning.",
+        "label": "Solo. That's when I recharge.",
         "value": "E"
       }
     ]
@@ -112,34 +112,34 @@ const coreQuestions = [
     "id": "q6",
     "type": "binary",
     "phase": "Who are you?",
-    "question": "In a group:",
-    "left": "I lead from the front, visibly",
-    "right": "I shape things from behind the scenes"
+    "question": "A day with no plan, everything changing around you:",
+    "left": "Drains me. I need structure to function.",
+    "right": "Energises me. I'm at my best improvising."
   },
   {
     "id": "q7",
     "type": "choice",
     "phase": "Where do you belong?",
-    "question": "What do people underestimate about you?",
+    "question": "When you commit to something, how easily do you walk away?",
     "options": [
       {
-        "label": "How competitive I actually am.",
+        "label": "Almost never. I stay long past when I should.",
         "value": "A"
       },
       {
-        "label": "How deeply I care.",
+        "label": "Leaving feels like failing someone.",
         "value": "B"
       },
       {
-        "label": "How patiently I can wait.",
+        "label": "I'll stay through a lot, but I have a line.",
         "value": "C"
       },
       {
-        "label": "How analytically I think.",
+        "label": "If it stops working, I move on cleanly.",
         "value": "D"
       },
       {
-        "label": "How stubborn I become once I've decided.",
+        "label": "Easily. I don't get attached to things.",
         "value": "E"
       }
     ]
@@ -442,7 +442,6 @@ const coreQuestions = [
   }
 ];
 
-// The order the 7 dimensions are always read/drawn in.
 const DIM_ORDER  = ["loyalty","emotion","ambition","process","community","chaos","rootedness"];
 const DIM_LABELS = {
   loyalty:"Loyalty",emotion:"Emotional intensity",ambition:"Ambition",
@@ -453,972 +452,157 @@ const DIM_COLORS = {loyalty:"#d4a44e",emotion:"#d6685c",ambition:"#c46c96",proce
 const DIM_CODES  = {loyalty:"LOY",emotion:"EMO",ambition:"AMB",process:"PRO",community:"COM",chaos:"CHA",rootedness:"ROO"};
 
 // Each core answer's contribution to the 7 dims (0-10 space, same scale as teamDims).
+
 const coreDimScoring = {
   "q1": {
-    "A": {
-      "loyalty": 8.1,
-      "emotion": 8.3,
-      "ambition": 6.5,
-      "process": 3.7,
-      "community": 8.3,
-      "chaos": 5.3,
-      "rootedness": 8.7
-    },
-    "B": {
-      "loyalty": 5.3,
-      "emotion": 4.3,
-      "ambition": 7.1,
-      "process": 7.7,
-      "community": 5,
-      "chaos": 3.2,
-      "rootedness": 5.5
-    },
-    "C": {
-      "loyalty": 6.8,
-      "emotion": 7.6,
-      "ambition": 5.3,
-      "process": 3.4,
-      "community": 7.2,
-      "chaos": 6.4,
-      "rootedness": 8
-    },
-    "D": {
-      "loyalty": 4.1,
-      "emotion": 3.9,
-      "ambition": 7.4,
-      "process": 8.9,
-      "community": 4.6,
-      "chaos": 3.4,
-      "rootedness": 4.8
-    },
-    "E": {
-      "loyalty": 6.1,
-      "emotion": 6.1,
-      "ambition": 5.5,
-      "process": 5,
-      "community": 5.9,
-      "chaos": 4.9,
-      "rootedness": 6.4
-    }
+    "A": { "emotion": 9 },
+    "B": { "emotion": 4 },
+    "C": { "emotion": 8 },
+    "D": { "emotion": 1 },
+    "E": { "emotion": 5 }
   },
   "q2": {
-    "left": {
-      "loyalty": 6.8,
-      "emotion": 7.3,
-      "ambition": 8.1,
-      "process": 5.6,
-      "community": 6.3,
-      "chaos": 4.2,
-      "rootedness": 6.3
-    },
-    "right": {
-      "loyalty": 7.2,
-      "emotion": 7,
-      "ambition": 5.3,
-      "process": 3.9,
-      "community": 6.3,
-      "chaos": 5.4,
-      "rootedness": 6.7
-    }
+    "left": { "ambition": 9 },
+    "right": { "ambition": 2 }
   },
   "q3": {
-    "A": {
-      "loyalty": 4.3,
-      "emotion": 3.8,
-      "ambition": 7.3,
-      "process": 8.8,
-      "community": 4.3,
-      "chaos": 3.1,
-      "rootedness": 4.6
-    },
-    "B": {
-      "loyalty": 6,
-      "emotion": 5.5,
-      "ambition": 5.4,
-      "process": 6.2,
-      "community": 6.1,
-      "chaos": 4.1,
-      "rootedness": 7
-    },
-    "C": {
-      "loyalty": 7.5,
-      "emotion": 8,
-      "ambition": 6.8,
-      "process": 3.5,
-      "community": 6,
-      "chaos": 5.4,
-      "rootedness": 5.8
-    },
-    "D": {
-      "loyalty": 5.3,
-      "emotion": 6.1,
-      "ambition": 6.8,
-      "process": 5.5,
-      "community": 5.4,
-      "chaos": 5,
-      "rootedness": 5.6
-    },
-    "E": {
-      "loyalty": 8.8,
-      "emotion": 8.8,
-      "ambition": 6.5,
-      "process": 3.5,
-      "community": 8.3,
-      "chaos": 5,
-      "rootedness": 8.4
-    }
+    "A": { "emotion": 3 },
+    "B": { "emotion": 4 },
+    "C": { "emotion": 8 },
+    "D": { "emotion": 1 },
+    "E": { "emotion": 9 }
   },
   "q4": {
-    "1": {
-      "loyalty": 4.1,
-      "emotion": 4.3,
-      "ambition": 7.9,
-      "process": 8.6,
-      "community": 4,
-      "chaos": 3,
-      "rootedness": 4.3
-    },
-    "2": {
-      "loyalty": 4.4,
-      "emotion": 5.1,
-      "ambition": 7.4,
-      "process": 8.3,
-      "community": 4.6,
-      "chaos": 3.3,
-      "rootedness": 4.7
-    },
-    "3": {
-      "loyalty": 5.8,
-      "emotion": 6,
-      "ambition": 5.8,
-      "process": 5.4,
-      "community": 6.3,
-      "chaos": 4.2,
-      "rootedness": 6.6
-    },
-    "4": {
-      "loyalty": 7.7,
-      "emotion": 8.1,
-      "ambition": 7,
-      "process": 4,
-      "community": 7.7,
-      "chaos": 5.1,
-      "rootedness": 7.8
-    },
-    "5": {
-      "loyalty": 6.7,
-      "emotion": 7.6,
-      "ambition": 5.7,
-      "process": 3.7,
-      "community": 6.3,
-      "chaos": 7,
-      "rootedness": 7.5
-    }
+    "1": { "chaos": 1 },
+    "2": { "chaos": 3 },
+    "3": { "chaos": 5 },
+    "4": { "chaos": 7 },
+    "5": { "chaos": 10 }
   },
   "q5": {
-    "A": {
-      "loyalty": 8.1,
-      "emotion": 8.6,
-      "ambition": 6.6,
-      "process": 3.7,
-      "community": 8.6,
-      "chaos": 5.1,
-      "rootedness": 8.9
-    },
-    "B": {
-      "loyalty": 7.5,
-      "emotion": 6.4,
-      "ambition": 5.3,
-      "process": 4.6,
-      "community": 6.3,
-      "chaos": 4.9,
-      "rootedness": 7.2
-    },
-    "C": {
-      "loyalty": 4.3,
-      "emotion": 3.4,
-      "ambition": 7,
-      "process": 8.7,
-      "community": 4.3,
-      "chaos": 3.3,
-      "rootedness": 4.7
-    },
-    "D": {
-      "loyalty": 4.1,
-      "emotion": 4.1,
-      "ambition": 8.6,
-      "process": 8.7,
-      "community": 4.3,
-      "chaos": 3.1,
-      "rootedness": 4.4
-    },
-    "E": {
-      "loyalty": 5.3,
-      "emotion": 6.1,
-      "ambition": 5.6,
-      "process": 5.3,
-      "community": 5.6,
-      "chaos": 5.1,
-      "rootedness": 5.8
-    }
+    "A": { "community": 10 },
+    "B": { "community": 7 },
+    "C": { "community": 2 },
+    "D": { "community": 6 },
+    "E": { "community": 1 }
   },
   "q6": {
-    "left": {
-      "loyalty": 7.8,
-      "emotion": 8.3,
-      "ambition": 7.1,
-      "process": 4.1,
-      "community": 7.8,
-      "chaos": 5,
-      "rootedness": 7.9
-    },
-    "right": {
-      "loyalty": 4.9,
-      "emotion": 4.9,
-      "ambition": 7.1,
-      "process": 7.5,
-      "community": 4.9,
-      "chaos": 4.1,
-      "rootedness": 5.4
-    }
+    "left": { "chaos": 1 },
+    "right": { "chaos": 10 }
   },
   "q7": {
-    "A": {
-      "loyalty": 6.6,
-      "emotion": 7,
-      "ambition": 8.2,
-      "process": 5.4,
-      "community": 6.2,
-      "chaos": 4.2,
-      "rootedness": 6.4
-    },
-    "B": {
-      "loyalty": 8.3,
-      "emotion": 8.1,
-      "ambition": 5.8,
-      "process": 3.4,
-      "community": 7.5,
-      "chaos": 5.7,
-      "rootedness": 7.6
-    },
-    "C": {
-      "loyalty": 7.1,
-      "emotion": 6.3,
-      "ambition": 5.8,
-      "process": 5,
-      "community": 6.1,
-      "chaos": 4.8,
-      "rootedness": 7.1
-    },
-    "D": {
-      "loyalty": 4.2,
-      "emotion": 4.4,
-      "ambition": 7.3,
-      "process": 8.7,
-      "community": 4.9,
-      "chaos": 3.6,
-      "rootedness": 4.9
-    },
-    "E": {
-      "loyalty": 7.9,
-      "emotion": 7.1,
-      "ambition": 5.9,
-      "process": 4.1,
-      "community": 6.4,
-      "chaos": 5.1,
-      "rootedness": 7.4
-    }
+    "A": { "loyalty": 10 },
+    "B": { "loyalty": 8 },
+    "C": { "loyalty": 6 },
+    "D": { "loyalty": 3 },
+    "E": { "loyalty": 1 }
   },
   "q8": {
-    "1": {
-      "loyalty": 4.7,
-      "emotion": 4.6,
-      "ambition": 7.7,
-      "process": 7.9,
-      "community": 4.3,
-      "chaos": 3.2,
-      "rootedness": 4.4
-    },
-    "2": {
-      "loyalty": 5,
-      "emotion": 6.2,
-      "ambition": 6.4,
-      "process": 5.9,
-      "community": 5,
-      "chaos": 5.2,
-      "rootedness": 5.2
-    },
-    "3": {
-      "loyalty": 6.6,
-      "emotion": 6.6,
-      "ambition": 6.3,
-      "process": 5.1,
-      "community": 6.2,
-      "chaos": 4.4,
-      "rootedness": 7.2
-    },
-    "4": {
-      "loyalty": 8,
-      "emotion": 7.3,
-      "ambition": 5.2,
-      "process": 3.6,
-      "community": 7.5,
-      "chaos": 5.5,
-      "rootedness": 8.3
-    },
-    "5": {
-      "loyalty": 8.2,
-      "emotion": 8.2,
-      "ambition": 6.1,
-      "process": 3.6,
-      "community": 8.4,
-      "chaos": 5.5,
-      "rootedness": 9.1
-    }
+    "1": { "rootedness": 1 },
+    "2": { "rootedness": 3 },
+    "3": { "rootedness": 5 },
+    "4": { "rootedness": 8 },
+    "5": { "rootedness": 10 }
   },
   "q9": {
-    "A": {
-      "loyalty": 8.5,
-      "emotion": 7.7,
-      "ambition": 5.8,
-      "process": 3.9,
-      "community": 8,
-      "chaos": 4.9,
-      "rootedness": 8.7
-    },
-    "B": {
-      "loyalty": 7,
-      "emotion": 7.6,
-      "ambition": 6.9,
-      "process": 4,
-      "community": 6.1,
-      "chaos": 5.3,
-      "rootedness": 6.5
-    },
-    "C": {
-      "loyalty": 5.5,
-      "emotion": 6.2,
-      "ambition": 7.6,
-      "process": 6.7,
-      "community": 5.1,
-      "chaos": 4.6,
-      "rootedness": 5.8
-    },
-    "D": {
-      "loyalty": 5.1,
-      "emotion": 6.3,
-      "ambition": 6.7,
-      "process": 5.4,
-      "community": 5.4,
-      "chaos": 4.7,
-      "rootedness": 4.6
-    },
-    "E": {
-      "loyalty": 7.1,
-      "emotion": 7.7,
-      "ambition": 5.9,
-      "process": 3.7,
-      "community": 7.1,
-      "chaos": 6.1,
-      "rootedness": 6.6
-    }
+    "A": { "loyalty": 10 },
+    "B": { "loyalty": 8 },
+    "C": { "loyalty": 6 },
+    "D": { "loyalty": 2 },
+    "E": { "loyalty": 7 }
   },
   "q10": {
-    "left": {
-      "loyalty": 7.6,
-      "emotion": 7.8,
-      "ambition": 6.6,
-      "process": 4,
-      "community": 7.9,
-      "chaos": 4.6,
-      "rootedness": 8.1
-    },
-    "right": {
-      "loyalty": 4.4,
-      "emotion": 4.3,
-      "ambition": 7.2,
-      "process": 8.5,
-      "community": 4.5,
-      "chaos": 3.4,
-      "rootedness": 4.7
-    }
+    "left": { "community": 9 },
+    "right": { "community": 2 }
   },
   "q11": {
-    "A": {
-      "loyalty": 8.2,
-      "emotion": 7.7,
-      "ambition": 6.1,
-      "process": 3.8,
-      "community": 7.6,
-      "chaos": 5.2,
-      "rootedness": 7.9
-    },
-    "B": {
-      "loyalty": 7.7,
-      "emotion": 7.8,
-      "ambition": 6.8,
-      "process": 3.7,
-      "community": 6,
-      "chaos": 5,
-      "rootedness": 5.9
-    },
-    "C": {
-      "loyalty": 7.8,
-      "emotion": 7.7,
-      "ambition": 6.8,
-      "process": 3.9,
-      "community": 6.8,
-      "chaos": 5.1,
-      "rootedness": 7.1
-    },
-    "D": {
-      "loyalty": 5,
-      "emotion": 5.1,
-      "ambition": 6.3,
-      "process": 7.4,
-      "community": 5.2,
-      "chaos": 3.7,
-      "rootedness": 5.8
-    },
-    "E": {
-      "loyalty": 5.8,
-      "emotion": 6.3,
-      "ambition": 7.2,
-      "process": 6.2,
-      "community": 6.3,
-      "chaos": 4.1,
-      "rootedness": 6.1
-    }
+    "A": { "rootedness": 8 },
+    "B": { "rootedness": 9 },
+    "C": { "rootedness": 7 },
+    "D": { "rootedness": 3 },
+    "E": { "rootedness": 2 }
   },
   "q12": {
-    "1": {
-      "loyalty": 4.3,
-      "emotion": 3.8,
-      "ambition": 7.3,
-      "process": 8.8,
-      "community": 4.3,
-      "chaos": 3.1,
-      "rootedness": 4.6
-    },
-    "2": {
-      "loyalty": 5.7,
-      "emotion": 5.1,
-      "ambition": 5.3,
-      "process": 6.4,
-      "community": 5.4,
-      "chaos": 3.4,
-      "rootedness": 6.6
-    },
-    "3": {
-      "loyalty": 5.5,
-      "emotion": 6,
-      "ambition": 6.1,
-      "process": 5.6,
-      "community": 5.5,
-      "chaos": 4.8,
-      "rootedness": 6
-    },
-    "4": {
-      "loyalty": 8.7,
-      "emotion": 8,
-      "ambition": 6.1,
-      "process": 3.3,
-      "community": 7.9,
-      "chaos": 4.9,
-      "rootedness": 8
-    },
-    "5": {
-      "loyalty": 7.9,
-      "emotion": 8.6,
-      "ambition": 6.4,
-      "process": 3.6,
-      "community": 8.5,
-      "chaos": 5.4,
-      "rootedness": 8.9
-    }
+    "1": { "emotion": 1 },
+    "2": { "emotion": 3 },
+    "3": { "emotion": 5 },
+    "4": { "emotion": 8 },
+    "5": { "emotion": 10 }
   },
   "q13": {
-    "A": {
-      "loyalty": 5.7,
-      "emotion": 6.1,
-      "ambition": 9.1,
-      "process": 6.4,
-      "community": 4.8,
-      "chaos": 4,
-      "rootedness": 4.8
-    },
-    "B": {
-      "loyalty": 6.1,
-      "emotion": 6.4,
-      "ambition": 6.7,
-      "process": 6.5,
-      "community": 6,
-      "chaos": 3.9,
-      "rootedness": 6.6
-    },
-    "C": {
-      "loyalty": 8,
-      "emotion": 8,
-      "ambition": 5.6,
-      "process": 3.4,
-      "community": 7.3,
-      "chaos": 5.9,
-      "rootedness": 7.8
-    },
-    "D": {
-      "loyalty": 4.4,
-      "emotion": 4.3,
-      "ambition": 7.8,
-      "process": 8.6,
-      "community": 4.9,
-      "chaos": 3.5,
-      "rootedness": 5
-    },
-    "E": {
-      "loyalty": 6.7,
-      "emotion": 7,
-      "ambition": 8.7,
-      "process": 5.7,
-      "community": 6,
-      "chaos": 4,
-      "rootedness": 6.1
-    }
+    "A": { "ambition": 10 },
+    "B": { "ambition": 6 },
+    "C": { "ambition": 7 },
+    "D": { "ambition": 7 },
+    "E": { "ambition": 8 }
   },
   "q14": {
-    "left": {
-      "loyalty": 7,
-      "emotion": 6.7,
-      "ambition": 5.2,
-      "process": 4.5,
-      "community": 6.7,
-      "chaos": 5.7,
-      "rootedness": 7.3
-    },
-    "right": {
-      "loyalty": 6.5,
-      "emotion": 6.9,
-      "ambition": 8.2,
-      "process": 5.5,
-      "community": 5.8,
-      "chaos": 4.3,
-      "rootedness": 5.9
-    }
+    "left": { "rootedness": 9 },
+    "right": { "rootedness": 3 }
   },
   "q15": {
-    "A": {
-      "loyalty": 4,
-      "emotion": 3.8,
-      "ambition": 7.9,
-      "process": 8.9,
-      "community": 4,
-      "chaos": 3,
-      "rootedness": 4.3
-    },
-    "B": {
-      "loyalty": 5.6,
-      "emotion": 5.4,
-      "ambition": 5.6,
-      "process": 6.8,
-      "community": 5.6,
-      "chaos": 3.6,
-      "rootedness": 6.4
-    },
-    "C": {
-      "loyalty": 7.3,
-      "emotion": 7,
-      "ambition": 6,
-      "process": 4.5,
-      "community": 7.2,
-      "chaos": 4.7,
-      "rootedness": 7.5
-    },
-    "D": {
-      "loyalty": 5.1,
-      "emotion": 5.4,
-      "ambition": 6.4,
-      "process": 6.9,
-      "community": 5.4,
-      "chaos": 5.3,
-      "rootedness": 5.6
-    },
-    "E": {
-      "loyalty": 6.5,
-      "emotion": 7.7,
-      "ambition": 5.7,
-      "process": 3.6,
-      "community": 6.4,
-      "chaos": 7.1,
-      "rootedness": 7.6
-    }
+    "A": { "chaos": 0 },
+    "B": { "chaos": 2 },
+    "C": { "chaos": 5 },
+    "D": { "chaos": 8 },
+    "E": { "chaos": 10 }
   },
   "q16": {
-    "1": {
-      "loyalty": 6,
-      "emotion": 6.6,
-      "ambition": 9,
-      "process": 5.9,
-      "community": 5,
-      "chaos": 4.2,
-      "rootedness": 4.9
-    },
-    "2": {
-      "loyalty": 7.3,
-      "emotion": 7.7,
-      "ambition": 7.8,
-      "process": 5.1,
-      "community": 6.5,
-      "chaos": 4.1,
-      "rootedness": 6.6
-    },
-    "3": {
-      "loyalty": 7.5,
-      "emotion": 8.7,
-      "ambition": 6.7,
-      "process": 3.6,
-      "community": 7.7,
-      "chaos": 5.7,
-      "rootedness": 7.7
-    },
-    "4": {
-      "loyalty": 7.2,
-      "emotion": 6.8,
-      "ambition": 4.7,
-      "process": 3.8,
-      "community": 7.1,
-      "chaos": 6,
-      "rootedness": 7.6
-    },
-    "5": {
-      "loyalty": 5,
-      "emotion": 5.1,
-      "ambition": 6,
-      "process": 7.3,
-      "community": 5.1,
-      "chaos": 4.3,
-      "rootedness": 5.4
-    }
+    "1": { "ambition": 10 },
+    "2": { "ambition": 8 },
+    "3": { "ambition": 5 },
+    "4": { "ambition": 3 },
+    "5": { "ambition": 1 }
   },
   "q17": {
-    "A": {
-      "loyalty": 7.9,
-      "emotion": 8,
-      "ambition": 6.6,
-      "process": 4,
-      "community": 7.4,
-      "chaos": 5,
-      "rootedness": 7.8
-    },
-    "B": {
-      "loyalty": 4.7,
-      "emotion": 4.9,
-      "ambition": 6.4,
-      "process": 7.8,
-      "community": 5,
-      "chaos": 3.7,
-      "rootedness": 5.4
-    },
-    "C": {
-      "loyalty": 7.9,
-      "emotion": 8,
-      "ambition": 6.1,
-      "process": 3.9,
-      "community": 8.4,
-      "chaos": 4.9,
-      "rootedness": 8.2
-    },
-    "D": {
-      "loyalty": 7.9,
-      "emotion": 7.9,
-      "ambition": 7.4,
-      "process": 4.1,
-      "community": 6.5,
-      "chaos": 5.1,
-      "rootedness": 6.6
-    },
-    "E": {
-      "loyalty": 5.8,
-      "emotion": 6,
-      "ambition": 9.5,
-      "process": 7.2,
-      "community": 5.3,
-      "chaos": 3,
-      "rootedness": 4.8
-    }
+    "A": { "process": 3 },
+    "B": { "process": 10 },
+    "C": { "process": 2 },
+    "D": { "process": 5 },
+    "E": { "process": 2 }
   },
   "q18": {
-    "left": {
-      "loyalty": 6.9,
-      "emotion": 6.9,
-      "ambition": 5.7,
-      "process": 4.7,
-      "community": 6.5,
-      "chaos": 5.3,
-      "rootedness": 7.1
-    },
-    "right": {
-      "loyalty": 6.7,
-      "emotion": 6.7,
-      "ambition": 8.1,
-      "process": 5.6,
-      "community": 5.8,
-      "chaos": 4.1,
-      "rootedness": 6.1
-    }
+    "left": { "process": 9 },
+    "right": { "process": 2 }
   },
   "q19": {
-    "A": {
-      "loyalty": 8.1,
-      "emotion": 8.6,
-      "ambition": 6.6,
-      "process": 3.7,
-      "community": 8.6,
-      "chaos": 5.1,
-      "rootedness": 8.9
-    },
-    "B": {
-      "loyalty": 7.6,
-      "emotion": 6,
-      "ambition": 4.7,
-      "process": 4.4,
-      "community": 6.5,
-      "chaos": 4.9,
-      "rootedness": 7.9
-    },
-    "C": {
-      "loyalty": 4.7,
-      "emotion": 4.9,
-      "ambition": 6.6,
-      "process": 8,
-      "community": 4.9,
-      "chaos": 3.7,
-      "rootedness": 5.1
-    },
-    "D": {
-      "loyalty": 5,
-      "emotion": 5.8,
-      "ambition": 8,
-      "process": 7.4,
-      "community": 4.8,
-      "chaos": 3.9,
-      "rootedness": 5.2
-    },
-    "E": {
-      "loyalty": 7.6,
-      "emotion": 8,
-      "ambition": 6.4,
-      "process": 3.5,
-      "community": 6.1,
-      "chaos": 5.4,
-      "rootedness": 6
-    }
+    "A": { "emotion": 9 },
+    "B": { "emotion": 6 },
+    "C": { "emotion": 3 },
+    "D": { "emotion": 4 },
+    "E": { "emotion": 4 }
   },
   "q20": {
-    "1": {
-      "loyalty": 8.1,
-      "emotion": 7.2,
-      "ambition": 5.2,
-      "process": 3.5,
-      "community": 7.4,
-      "chaos": 5,
-      "rootedness": 8.6
-    },
-    "2": {
-      "loyalty": 8,
-      "emotion": 8.7,
-      "ambition": 7,
-      "process": 3.7,
-      "community": 9,
-      "chaos": 4.7,
-      "rootedness": 8.7
-    },
-    "3": {
-      "loyalty": 6.2,
-      "emotion": 6.3,
-      "ambition": 6.7,
-      "process": 6.4,
-      "community": 6.1,
-      "chaos": 3.9,
-      "rootedness": 6.8
-    },
-    "4": {
-      "loyalty": 4.1,
-      "emotion": 3.9,
-      "ambition": 7.6,
-      "process": 8.7,
-      "community": 4.1,
-      "chaos": 3.1,
-      "rootedness": 4.4
-    },
-    "5": {
-      "loyalty": 4.3,
-      "emotion": 4.3,
-      "ambition": 7.5,
-      "process": 8.1,
-      "community": 4.3,
-      "chaos": 4.1,
-      "rootedness": 4.8
-    }
+    "1": { "process": 1 },
+    "2": { "process": 3 },
+    "3": { "process": 5 },
+    "4": { "process": 8 },
+    "5": { "process": 10 }
   },
   "q21": {
-    "A": {
-      "loyalty": 8.1,
-      "emotion": 8.6,
-      "ambition": 6.6,
-      "process": 3.7,
-      "community": 8.6,
-      "chaos": 5.1,
-      "rootedness": 8.9
-    },
-    "B": {
-      "loyalty": 8.2,
-      "emotion": 7.5,
-      "ambition": 5.8,
-      "process": 3.6,
-      "community": 6.5,
-      "chaos": 5.6,
-      "rootedness": 7
-    },
-    "C": {
-      "loyalty": 7.7,
-      "emotion": 7.6,
-      "ambition": 6.6,
-      "process": 3.6,
-      "community": 6.3,
-      "chaos": 5,
-      "rootedness": 6.3
-    },
-    "D": {
-      "loyalty": 5.8,
-      "emotion": 6.8,
-      "ambition": 6.4,
-      "process": 5.4,
-      "community": 5.9,
-      "chaos": 5.3,
-      "rootedness": 6
-    },
-    "E": {
-      "loyalty": 4.6,
-      "emotion": 3.7,
-      "ambition": 7.3,
-      "process": 8.4,
-      "community": 4.6,
-      "chaos": 3.1,
-      "rootedness": 5
-    }
+    "A": { "emotion": 9 },
+    "B": { "emotion": 10 },
+    "C": { "emotion": 7 },
+    "D": { "emotion": 4 },
+    "E": { "emotion": 2 }
   },
   "q22": {
-    "left": {
-      "loyalty": 6.3,
-      "emotion": 5.6,
-      "ambition": 6.1,
-      "process": 6.1,
-      "community": 5.3,
-      "chaos": 4.1,
-      "rootedness": 6.3
-    },
-    "right": {
-      "loyalty": 7.5,
-      "emotion": 8.1,
-      "ambition": 5.9,
-      "process": 3.6,
-      "community": 7.3,
-      "chaos": 6,
-      "rootedness": 7.8
-    }
+    "left": { "community": 2 },
+    "right": { "community": 9 }
   },
   "q23": {
-    "A": {
-      "loyalty": 4.3,
-      "emotion": 4.3,
-      "ambition": 7.3,
-      "process": 8.5,
-      "community": 4.5,
-      "chaos": 3.4,
-      "rootedness": 4.7
-    },
-    "B": {
-      "loyalty": 8.1,
-      "emotion": 8.1,
-      "ambition": 5.8,
-      "process": 3,
-      "community": 6.4,
-      "chaos": 6,
-      "rootedness": 6.6
-    },
-    "C": {
-      "loyalty": 7.9,
-      "emotion": 8.2,
-      "ambition": 6.3,
-      "process": 3.8,
-      "community": 8.6,
-      "chaos": 4.8,
-      "rootedness": 8
-    },
-    "D": {
-      "loyalty": 4.6,
-      "emotion": 5.4,
-      "ambition": 9,
-      "process": 7.4,
-      "community": 4.2,
-      "chaos": 3.2,
-      "rootedness": 3.8
-    },
-    "E": {
-      "loyalty": 6.5,
-      "emotion": 7.4,
-      "ambition": 6.4,
-      "process": 4.4,
-      "community": 5.9,
-      "chaos": 6,
-      "rootedness": 6.4
-    }
+    "A": { "ambition": 9 },
+    "B": { "ambition": 5 },
+    "C": { "ambition": 4 },
+    "D": { "ambition": 10 },
+    "E": { "ambition": 4 }
   },
   "q24": {
-    "1": {
-      "loyalty": 4.1,
-      "emotion": 3.9,
-      "ambition": 7.4,
-      "process": 8.9,
-      "community": 4.6,
-      "chaos": 3.4,
-      "rootedness": 4.8
-    },
-    "2": {
-      "loyalty": 5,
-      "emotion": 5.8,
-      "ambition": 6.3,
-      "process": 6.5,
-      "community": 4.8,
-      "chaos": 4.5,
-      "rootedness": 5.8
-    },
-    "3": {
-      "loyalty": 6.3,
-      "emotion": 6.6,
-      "ambition": 6.3,
-      "process": 5.2,
-      "community": 6.3,
-      "chaos": 5,
-      "rootedness": 6.5
-    },
-    "4": {
-      "loyalty": 8.1,
-      "emotion": 8.4,
-      "ambition": 6.2,
-      "process": 3.6,
-      "community": 7.6,
-      "chaos": 5.7,
-      "rootedness": 7.7
-    },
-    "5": {
-      "loyalty": 8.5,
-      "emotion": 8.4,
-      "ambition": 6.3,
-      "process": 3.3,
-      "community": 6.9,
-      "chaos": 5.5,
-      "rootedness": 7
-    }
+    "1": { "loyalty": 1 },
+    "2": { "loyalty": 3 },
+    "3": { "loyalty": 5 },
+    "4": { "loyalty": 8 },
+    "5": { "loyalty": 10 }
   }
 };
 

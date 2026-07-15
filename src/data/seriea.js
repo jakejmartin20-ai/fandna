@@ -555,8 +555,6 @@ const moduleQuestions = [
     right:"Take the better thing. Sentiment is nice, but you owe it to yourself." },
   { id:"sa_q11", type:"choice", phase:"What it comes down to", question:"When a big decision goes against you, you:",
     options:[ {label:"See the hand of something bigger. The big clubs get the calls, don't kid yourself.", value:"A"}, {label:"Rage in the moment, then let it go. Furious, but you don't make a religion of it.", value:"B"}, {label:"Stay coldly above it. Complaining is for people who lose.", value:"C"}, {label:"Half-suspect you'd get the calls if you were bigger. You'd take the favor gladly.", value:"D"}, ] },
-  { id:"sa_q13", type:"choice", phase:"The fine print", question:"Where does your intensity really come from?",
-    options:[ {label:"From standing somewhere that matters, history behind you, at the center of things.", value:"A"}, {label:"From being written off. Belief and defiance are how you answer being counted out.", value:"B"}, ] },
   { id:"sa_q12", type:"choice", phase:"What it comes down to", question:"When something you love wins or loses, you:",
     options:[ {label:"Live it completely. Tears, roars, arms to the sky. No apology for any of it.", value:"A"}, {label:"Feel it hard but hold the surface. The storm is inside, not on show.", value:"B"}, {label:"Stay measured. You enjoy the highs without losing your head.", value:"C"}, {label:"Keep a wry distance. You love it, but you won't weep over a ball game.", value:"D"}, ] },
 ];
@@ -565,8 +563,6 @@ const P = 2;
 function cell(list){ const o={}; for (const k of list) o[k]=P; return o; }
 
 const scoring = {
-  sa_q13: { A: cell(["JUV","INT","MIL","ROM","TOR","GEN","FIO","LAZ"]),
-            B: cell(["NAP","ATA","CAG","LEC","FRO","SAS","MON","VEN","COM","UDI","PAR","BOL"]) },
   sa_q1: { A: cell(["JUV","INT","ATA","UDI","BOL"]),
            B: cell(["NAP","ROM","FIO","MIL","LAZ"]),
            C: cell(["COM","MON","VEN","SAS","LEC"]),
@@ -576,7 +572,7 @@ const scoring = {
            C: cell(["ROM","LAZ","NAP","MIL","COM","MON"]),
            D: cell(["LEC","SAS","VEN","PAR"]) },
   sa_q3: { A: cell(["GEN","CAG","FIO","TOR","FRO","LEC"]),
-           B: { ...cell(["BOL","VEN","PAR","NAP"]), NAP: 4 },
+           B: cell(["BOL","VEN","PAR","NAP"]),
            C: cell(["ATA","LAZ","ROM"]),
            D: cell(["JUV","INT","MIL","COM","UDI","SAS","MON"]) },
   sa_q4: { A: cell(["JUV","UDI","ATA","BOL","SAS","COM"]),
