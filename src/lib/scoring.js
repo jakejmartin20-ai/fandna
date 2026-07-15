@@ -27,7 +27,7 @@ function scoreCore(coreAnswers){
   for (const [qId,ans] of Object.entries(coreAnswers||{})){
     const vec = coreDimScoring[qId]?.[ans];
     if (!vec) continue;
-    for (const d of DIM_ORDER){ sum[d]+=vec[d]; cnt[d]++; }
+    for (const d of DIM_ORDER){ if (d in vec){ sum[d]+=vec[d]; cnt[d]++; } }
   }
   const profile = {};
   for (const d of DIM_ORDER) profile[d] = cnt[d]>0 ? Math.round((sum[d]/cnt[d])*10)/10 : 5;
@@ -166,8 +166,8 @@ const FP_ENGINES = {
 // re-express on the club-dim centre, so RELATIVE shape drives the cluster. Applied
 // ONLY in the fingerprint path (below); PL, the displayed strip, the card, the genome
 // read and the why-you comparison all keep the raw coreProfile untouched.
-const CORE_POP_MEAN = {"loyalty":6.449,"emotion":6.55,"ambition":6.678,"process":5.469,"community":6.164,"chaos":4.619,"rootedness":6.5};
-const CORE_POP_SD   = {"loyalty":0.272,"emotion":0.286,"ambition":0.194,"process":0.358,"community":0.256,"chaos":0.181,"rootedness":0.264};
+const CORE_POP_MEAN = {"loyalty":5.868,"emotion":5.479,"ambition":6.251,"process":5.096,"community":5.399,"chaos":5.235,"rootedness":5.729};
+const CORE_POP_SD   = {"loyalty":1.774,"emotion":1.292,"ambition":1.402,"process":1.88,"community":1.981,"chaos":2.197,"rootedness":1.745};
 const CORE_TGT_MEAN = {"loyalty":7.423,"emotion":6.679,"ambition":6.518,"process":5.923,"community":6.423,"chaos":5.226,"rootedness":6.982};
 const CORE_STRETCH  = 1.7;
 function decompressProfile(profile){

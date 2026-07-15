@@ -41,8 +41,8 @@ export function bandModel(youProfile, themProfile) {
   const maxGap = byGap[0] ? byGap[0].gap : 0;
 
   // Thresholds are in standing points out of 10, re-derived for this space (the old 0.55 / 0.5
-  // were within-profile z units and mean nothing here). LINED_UP fires for about 4% of pairs now,
-  // and when it fires it is true. SPLIT_FLOOR is 2.5 on purpose: the pole rungs below are 2 points
+  // were within-profile z units and mean nothing here). With the traits independent now, LINED_UP
+  // fires for ~0.1% of pairs, and when it fires it is true. SPLIT_FLOOR is 2.5 on purpose: the pole rungs below are 2 points
   // wide, so a gap of 2.5 GUARANTEES the two people land on different rungs and the split sentence
   // can never say the same thing about both of them.
   const SPLIT_FLOOR = 2.5;

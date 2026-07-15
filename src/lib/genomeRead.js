@@ -9,14 +9,13 @@
 const DIM_ORDER = ["loyalty","emotion","ambition","process","community","chaos","rootedness"];
 
 // baked population stats (see header). Drives per-dim z-scores.
-const MEAN = { loyalty:6.451, emotion:6.552, ambition:6.677, process:5.466, community:6.165, chaos:4.620, rootedness:6.502 };
-const SD   = { loyalty:0.271, emotion:0.286, ambition:0.194, process:0.358, community:0.256, chaos:0.181, rootedness:0.264 };
+const MEAN = { loyalty:5.868, emotion:5.479, ambition:6.251, process:5.096, community:5.399, chaos:5.235, rootedness:5.729 };
+const SD   = { loyalty:1.774, emotion:1.292, ambition:1.402, process:1.88, community:1.981, chaos:2.197, rootedness:1.745 };
 
 // -- Population standing: the ONLY honest thing a drawn band can mean -------------------------
-// The raw core is an AVERAGE of 24 answers, so it is heavily compressed, AND every trait rests on
-// its own shelf: chaos can never climb above 5.4, ambition can never fall below 5.9. Drawing raw
-// values side by side draws the shelves, not the person (chaos came out the shortest band for 94%
-// of all takers, and the trait the read NAMES you for was your tallest only 36% of the time).
+// The raw core is an AVERAGE of each trait's own answers, so it still bunches toward the middle,
+// and the seven traits do not share a mean: your raw 7 in one trait is not a raw 7 in another.
+// Drawing raw values side by side draws those between-trait offsets, not the person.
 // So every DISPLAY of the core - the gel strip, the share card, the compare strips, the text
 // blocks - runs through standing(): where you sit against the same population the read itself
 // ranks on. It is monotone in z, so the tallest band is ALWAYS the trait the read names you for.
@@ -64,7 +63,7 @@ const HIGH = {
   ambition:["a hunger for the very top","only the summit will do"],
   process:["faith in the plan over the moment","trust the system, not the spark","the long game, always"],
   community:["it only counts when it's shared","belonging is the whole point"],
-  chaos:["a pull toward the drama"],
+  chaos:["a pull toward the drama","you live for the swing","the messier the better"],
   rootedness:["roots that run deep","home is the whole story"],
 };
 
@@ -72,7 +71,7 @@ const HIGH = {
 const LOW = {
   loyalty:["no debt owed to any badge","you'll walk when it's earned"],
   emotion:["ice in the veins","a cool head when it counts"],
-  ambition:["the trophy was never the point"],
+  ambition:["the trophy was never the point","you'd take the club over the cup","no itch for the top of the table"],
   process:["instinct over instruction","you go on the gut"],
   community:["you need no one's blessing","alone is fine by you"],
   chaos:["a craving for the steady hand","calm over carnage","spare you the theatrics"],

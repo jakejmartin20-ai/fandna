@@ -19,7 +19,7 @@
 
 import { DIM_ORDER } from "../data/core";
 
-const VERSION = 1;
+const VERSION = 2;
 
 // APPEND-ONLY. Never reorder or remove. New leagues get the next free index.
 const SPORT_CODES = ["PL", "NFL", "MLB", "NBA", "BL", "LL", "L1", "SA"];
@@ -72,7 +72,8 @@ export function encodeGenome({ coreProfile, results } = {}) {
   return bytesToCode(bytes);
 }
 
-// code string -> { version, coreProfile, results } | null (broken) | { future:true } (newer link).
+// code string -> { version, coreProfile, results } | null (broken) | { future:true } (newer link)
+// | { stale:true } (pre-rebuild link, old measurement space).
 // An unknown sport index inside a KNOWN version is skipped (a newer link may carry a league this
 // build doesn't have yet); a newer VERSION byte is the hard "reshare / broken" case.
 export function decodeCode(code) {
@@ -81,6 +82,7 @@ export function decodeCode(code) {
   const version = bytes[0];
   if (version > VERSION) return { future: true };
   if (version < 1) return null;
+  if (version < VERSION) return { stale: true };   // pre-rebuild link: its raw core is in the old measurement space, so decoding it would draw a wrong genome. Send them to reshare.
 
   let p = 1;
   const coreProfile = {};
