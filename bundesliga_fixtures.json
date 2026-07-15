@@ -1,6 +1,6 @@
 {
   "sport": "BL",
-  "note": "FanDNA Bundesliga regression baseline. Replay through real scoreCore + scoreModule; expected club must not change unless intentionally re-baselined. ideal[] use coreProfile directly (reachability lock); random[] are seeded full answer-sheets | s42: re-baselined after TSG ambition 6->4 and RBL community/rootedness 2->3 (magnet calibration); 2 random flips (seeds 3,92) off TSG, 2 ideal coreProfiles re-pinned. | s49: re-baselined after Bayern bl_q6 re-key (B->C); 12 random flips (onto BAY seeds 65,86,157; off BAY seeds 4,11,16,103,109,125,155,182,190); BAY ideal sheet bl_q6 B->C (still self-lands). | re-baselined for core decompression (stretch 1.7)",
+  "note": "FanDNA Bundesliga regression baseline. Replay through real scoreCore + scoreModule; expected club must not change unless intentionally re-baselined. ideal[] use coreProfile directly (reachability lock); random[] are seeded full answer-sheets | s42: re-baselined after TSG ambition 6->4 and RBL community/rootedness 2->3 (magnet calibration); 2 random flips (seeds 3,92) off TSG, 2 ideal coreProfiles re-pinned. | s49: re-baselined after Bayern bl_q6 re-key (B->C); 12 random flips (onto BAY seeds 65,86,157; off BAY seeds 4,11,16,103,109,125,155,182,190); BAY ideal sheet bl_q6 B->C (still self-lands). | re-baselined for core decompression (stretch 1.7) | re-baselined 2026-07-15 on post-rebuild engine (core 5838d3b3 / scoring 4411d2ad); random winners re-recorded, reference personas that shifted regenerated as coreProfile-direct reachability locks.",
   "engine": {
     "clubs": 18,
     "moduleQuestions": 12
@@ -860,7 +860,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "ELV"
+      "expected": "BMG"
     },
     {
       "seed": 2,
@@ -1036,7 +1036,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "HSV"
+      "expected": "M05"
     },
     {
       "seed": 6,
@@ -1124,7 +1124,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "SCP"
+      "expected": "FCA"
     },
     {
       "seed": 8,
@@ -1388,7 +1388,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "VFB"
+      "expected": "SCF"
     },
     {
       "seed": 14,
@@ -1476,7 +1476,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "S04"
+      "expected": "KOE"
     },
     {
       "seed": 16,
@@ -1520,7 +1520,7 @@
         "bl_q11": "right",
         "bl_q12": "B"
       },
-      "expected": "BMG"
+      "expected": "BAY"
     },
     {
       "seed": 17,
@@ -1564,7 +1564,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "ELV"
+      "expected": "FCU"
     },
     {
       "seed": 18,
@@ -1608,7 +1608,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "S04"
+      "expected": "ELV"
     },
     {
       "seed": 19,
@@ -1740,7 +1740,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "SGE"
+      "expected": "SCP"
     },
     {
       "seed": 22,
@@ -1784,7 +1784,7 @@
         "bl_q11": "right",
         "bl_q12": "A"
       },
-      "expected": "SCP"
+      "expected": "SVW"
     },
     {
       "seed": 23,
@@ -1828,7 +1828,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "VFB"
+      "expected": "B04"
     },
     {
       "seed": 24,
@@ -1916,7 +1916,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "S04"
+      "expected": "SVW"
     },
     {
       "seed": 26,
@@ -2092,7 +2092,7 @@
         "bl_q11": "right",
         "bl_q12": "B"
       },
-      "expected": "SGE"
+      "expected": "B04"
     },
     {
       "seed": 30,
@@ -2180,7 +2180,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "HSV"
+      "expected": "S04"
     },
     {
       "seed": 32,
@@ -2268,7 +2268,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "VFB"
+      "expected": "M05"
     },
     {
       "seed": 34,
@@ -2400,7 +2400,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "SGE"
+      "expected": "SVW"
     },
     {
       "seed": 37,
@@ -2488,7 +2488,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "SGE"
+      "expected": "VFB"
     },
     {
       "seed": 39,
@@ -2708,7 +2708,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "B04"
+      "expected": "BVB"
     },
     {
       "seed": 44,
@@ -2840,7 +2840,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "B04"
+      "expected": "BMG"
     },
     {
       "seed": 47,
@@ -2928,7 +2928,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "RBL"
+      "expected": "ELV"
     },
     {
       "seed": 49,
@@ -3192,7 +3192,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "BMG"
+      "expected": "BAY"
     },
     {
       "seed": 55,
@@ -3324,7 +3324,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "M05"
+      "expected": "SCF"
     },
     {
       "seed": 58,
@@ -3368,7 +3368,7 @@
         "bl_q11": "right",
         "bl_q12": "B"
       },
-      "expected": "HSV"
+      "expected": "BAY"
     },
     {
       "seed": 59,
@@ -3412,7 +3412,7 @@
         "bl_q11": "right",
         "bl_q12": "A"
       },
-      "expected": "RBL"
+      "expected": "SGE"
     },
     {
       "seed": 60,
@@ -3544,7 +3544,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "VFB"
+      "expected": "SGE"
     },
     {
       "seed": 63,
@@ -3588,7 +3588,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "M05"
+      "expected": "SCF"
     },
     {
       "seed": 64,
@@ -3632,7 +3632,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "KOE"
+      "expected": "M05"
     },
     {
       "seed": 65,
@@ -3676,7 +3676,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "BAY"
+      "expected": "SGE"
     },
     {
       "seed": 66,
@@ -3720,7 +3720,7 @@
         "bl_q11": "right",
         "bl_q12": "B"
       },
-      "expected": "B04"
+      "expected": "S04"
     },
     {
       "seed": 67,
@@ -3764,7 +3764,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "SVW"
+      "expected": "VFB"
     },
     {
       "seed": 68,
@@ -4072,7 +4072,7 @@
         "bl_q11": "right",
         "bl_q12": "A"
       },
-      "expected": "KOE"
+      "expected": "SGE"
     },
     {
       "seed": 75,
@@ -4160,7 +4160,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "B04"
+      "expected": "VFB"
     },
     {
       "seed": 77,
@@ -4248,7 +4248,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "KOE"
+      "expected": "VFB"
     },
     {
       "seed": 79,
@@ -4292,7 +4292,7 @@
         "bl_q11": "right",
         "bl_q12": "B"
       },
-      "expected": "BAY"
+      "expected": "HSV"
     },
     {
       "seed": 80,
@@ -4336,7 +4336,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "ELV"
+      "expected": "M05"
     },
     {
       "seed": 81,
@@ -4424,7 +4424,7 @@
         "bl_q11": "right",
         "bl_q12": "A"
       },
-      "expected": "HSV"
+      "expected": "ELV"
     },
     {
       "seed": 83,
@@ -4468,7 +4468,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "RBL"
+      "expected": "SCP"
     },
     {
       "seed": 84,
@@ -4556,7 +4556,7 @@
         "bl_q11": "right",
         "bl_q12": "B"
       },
-      "expected": "RBL"
+      "expected": "B04"
     },
     {
       "seed": 86,
@@ -4600,7 +4600,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "BAY"
+      "expected": "SVW"
     },
     {
       "seed": 87,
@@ -4688,7 +4688,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "SGE"
+      "expected": "FCA"
     },
     {
       "seed": 89,
@@ -4732,7 +4732,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "VFB"
+      "expected": "ELV"
     },
     {
       "seed": 90,
@@ -4908,7 +4908,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "ELV"
+      "expected": "SCF"
     },
     {
       "seed": 94,
@@ -5040,7 +5040,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "KOE"
+      "expected": "ELV"
     },
     {
       "seed": 97,
@@ -5084,7 +5084,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "KOE"
+      "expected": "HSV"
     },
     {
       "seed": 98,
@@ -5392,7 +5392,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "KOE"
+      "expected": "BVB"
     },
     {
       "seed": 105,
@@ -5436,7 +5436,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "TSG"
+      "expected": "VFB"
     },
     {
       "seed": 106,
@@ -5480,7 +5480,7 @@
         "bl_q11": "right",
         "bl_q12": "A"
       },
-      "expected": "SGE"
+      "expected": "SVW"
     },
     {
       "seed": 107,
@@ -5524,7 +5524,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "SGE"
+      "expected": "M05"
     },
     {
       "seed": 108,
@@ -5568,7 +5568,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "SGE"
+      "expected": "BVB"
     },
     {
       "seed": 109,
@@ -5612,7 +5612,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "KOE"
+      "expected": "HSV"
     },
     {
       "seed": 110,
@@ -5700,7 +5700,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "SCP"
+      "expected": "FCU"
     },
     {
       "seed": 112,
@@ -5788,7 +5788,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "KOE"
+      "expected": "M05"
     },
     {
       "seed": 114,
@@ -5832,7 +5832,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "KOE"
+      "expected": "SVW"
     },
     {
       "seed": 115,
@@ -5876,7 +5876,7 @@
         "bl_q11": "right",
         "bl_q12": "B"
       },
-      "expected": "VFB"
+      "expected": "BMG"
     },
     {
       "seed": 116,
@@ -6008,7 +6008,7 @@
         "bl_q11": "right",
         "bl_q12": "B"
       },
-      "expected": "KOE"
+      "expected": "SGE"
     },
     {
       "seed": 119,
@@ -6184,7 +6184,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "TSG"
+      "expected": "BMG"
     },
     {
       "seed": 123,
@@ -6228,7 +6228,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "M05"
+      "expected": "BAY"
     },
     {
       "seed": 124,
@@ -6316,7 +6316,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "BMG"
+      "expected": "SGE"
     },
     {
       "seed": 126,
@@ -6404,7 +6404,7 @@
         "bl_q11": "right",
         "bl_q12": "A"
       },
-      "expected": "M05"
+      "expected": "ELV"
     },
     {
       "seed": 128,
@@ -6492,7 +6492,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "B04"
+      "expected": "BVB"
     },
     {
       "seed": 130,
@@ -6580,7 +6580,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "VFB"
+      "expected": "FCU"
     },
     {
       "seed": 132,
@@ -6624,7 +6624,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "SGE"
+      "expected": "S04"
     },
     {
       "seed": 133,
@@ -6668,7 +6668,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "FCU"
+      "expected": "FCA"
     },
     {
       "seed": 134,
@@ -6800,7 +6800,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "SVW"
+      "expected": "SCF"
     },
     {
       "seed": 137,
@@ -6932,7 +6932,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "RBL"
+      "expected": "HSV"
     },
     {
       "seed": 140,
@@ -7020,7 +7020,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "B04"
+      "expected": "SCP"
     },
     {
       "seed": 142,
@@ -7064,7 +7064,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "BVB"
+      "expected": "FCA"
     },
     {
       "seed": 143,
@@ -7108,7 +7108,7 @@
         "bl_q11": "right",
         "bl_q12": "A"
       },
-      "expected": "HSV"
+      "expected": "BVB"
     },
     {
       "seed": 144,
@@ -7284,7 +7284,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "S04"
+      "expected": "SCP"
     },
     {
       "seed": 148,
@@ -7328,7 +7328,7 @@
         "bl_q11": "right",
         "bl_q12": "A"
       },
-      "expected": "FCU"
+      "expected": "SVW"
     },
     {
       "seed": 149,
@@ -7416,7 +7416,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "S04"
+      "expected": "SCP"
     },
     {
       "seed": 151,
@@ -7460,7 +7460,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "KOE"
+      "expected": "BMG"
     },
     {
       "seed": 152,
@@ -7504,7 +7504,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "BMG"
+      "expected": "ELV"
     },
     {
       "seed": 153,
@@ -7724,7 +7724,7 @@
         "bl_q11": "right",
         "bl_q12": "B"
       },
-      "expected": "B04"
+      "expected": "BAY"
     },
     {
       "seed": 158,
@@ -7768,7 +7768,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "ELV"
+      "expected": "KOE"
     },
     {
       "seed": 159,
@@ -7812,7 +7812,7 @@
         "bl_q11": "left",
         "bl_q12": "A"
       },
-      "expected": "FCU"
+      "expected": "M05"
     },
     {
       "seed": 160,
@@ -7944,7 +7944,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "SVW"
+      "expected": "BAY"
     },
     {
       "seed": 163,
@@ -7988,7 +7988,7 @@
         "bl_q11": "right",
         "bl_q12": "A"
       },
-      "expected": "HSV"
+      "expected": "B04"
     },
     {
       "seed": 164,
@@ -8032,7 +8032,7 @@
         "bl_q11": "right",
         "bl_q12": "A"
       },
-      "expected": "SVW"
+      "expected": "BVB"
     },
     {
       "seed": 165,
@@ -8076,7 +8076,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "ELV"
+      "expected": "SGE"
     },
     {
       "seed": 166,
@@ -8164,7 +8164,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "SGE"
+      "expected": "BMG"
     },
     {
       "seed": 168,
@@ -8252,7 +8252,7 @@
         "bl_q11": "right",
         "bl_q12": "A"
       },
-      "expected": "KOE"
+      "expected": "ELV"
     },
     {
       "seed": 170,
@@ -8384,7 +8384,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "SCP"
+      "expected": "RBL"
     },
     {
       "seed": 173,
@@ -8692,7 +8692,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "B04"
+      "expected": "BMG"
     },
     {
       "seed": 180,
@@ -8736,7 +8736,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "SCP"
+      "expected": "SCF"
     },
     {
       "seed": 181,
@@ -8824,7 +8824,7 @@
         "bl_q11": "right",
         "bl_q12": "A"
       },
-      "expected": "SGE"
+      "expected": "M05"
     },
     {
       "seed": 183,
@@ -8956,7 +8956,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "SVW"
+      "expected": "M05"
     },
     {
       "seed": 186,
@@ -9000,7 +9000,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "HSV"
+      "expected": "M05"
     },
     {
       "seed": 187,
@@ -9044,7 +9044,7 @@
         "bl_q11": "right",
         "bl_q12": "A"
       },
-      "expected": "M05"
+      "expected": "BMG"
     },
     {
       "seed": 188,
@@ -9088,7 +9088,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "BVB"
+      "expected": "SGE"
     },
     {
       "seed": 189,
@@ -9176,7 +9176,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "RBL"
+      "expected": "SCP"
     },
     {
       "seed": 191,
@@ -9308,7 +9308,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "BMG"
+      "expected": "M05"
     },
     {
       "seed": 194,
@@ -9352,7 +9352,7 @@
         "bl_q11": "left",
         "bl_q12": "B"
       },
-      "expected": "S04"
+      "expected": "FCU"
     },
     {
       "seed": 195,
@@ -9440,7 +9440,7 @@
         "bl_q11": "right",
         "bl_q12": "A"
       },
-      "expected": "ELV"
+      "expected": "HSV"
     },
     {
       "seed": 197,
@@ -9484,7 +9484,7 @@
         "bl_q11": "right",
         "bl_q12": "B"
       },
-      "expected": "SGE"
+      "expected": "ELV"
     },
     {
       "seed": 198,
@@ -9616,7 +9616,7 @@
         "bl_q11": "right",
         "bl_q12": "C"
       },
-      "expected": "KOE"
+      "expected": "ELV"
     }
   ]
 }

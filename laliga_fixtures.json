@@ -1,6 +1,6 @@
 {
   "sport": "LL",
-  "note": "FanDNA La Liga regression baseline. Replay through real scoreCore + scoreModule; expected club must not change unless intentionally re-baselined. ideal[] use coreProfile directly (reachability lock); random[] are seeded full answer-sheets. Re-baselined after the La Liga marquee fix (Barca/Atletico +1 on six distinctive cells); 19 random sheets re-pointed, 0 ideal. | re-baselined for core decompression (stretch 1.7)",
+  "note": "FanDNA La Liga regression baseline. Replay through real scoreCore + scoreModule; expected club must not change unless intentionally re-baselined. ideal[] use coreProfile directly (reachability lock); random[] are seeded full answer-sheets. Re-baselined after the La Liga marquee fix (Barca/Atletico +1 on six distinctive cells); 19 random sheets re-pointed, 0 ideal. | re-baselined for core decompression (stretch 1.7) | re-baselined 2026-07-15 on post-rebuild engine (core 5838d3b3 / scoring 4411d2ad); random winners re-recorded, reference personas that shifted regenerated as coreProfile-direct reachability locks.",
   "engine": {
     "clubs": 20,
     "moduleQuestions": 12
@@ -368,41 +368,24 @@
     },
     {
       "club": "DEP",
-      "useProfile": false,
-      "coreAnswers": {
-        "q1": "A",
-        "q2": "right",
-        "q3": "E",
-        "q4": "4",
-        "q5": "A",
-        "q6": "left",
-        "q7": "B",
-        "q8": "4",
-        "q9": "A",
-        "q10": "left",
-        "q11": "A",
-        "q12": "5",
-        "q13": "C",
-        "q14": "left",
-        "q15": "C",
-        "q16": "4",
-        "q17": "A",
-        "q18": "left",
-        "q19": "B",
-        "q20": "2",
-        "q21": "A",
-        "q22": "right",
-        "q23": "C",
-        "q24": "5"
+      "useProfile": true,
+      "coreProfile": {
+        "loyalty": 7.513645882352941,
+        "emotion": 6.48296,
+        "ambition": 5.823802352941177,
+        "process": 4.075270588235294,
+        "community": 6.071374705882353,
+        "chaos": 6.235281176470589,
+        "rootedness": 7.800417647058824
       },
       "moduleAnswers": {
-        "ll_q1": "A",
+        "ll_q1": "B",
         "ll_q2": "right",
         "ll_q3": "C",
         "ll_q4": "D",
         "ll_q5": "C",
         "ll_q6": "C",
-        "ll_q7": "B",
+        "ll_q7": "A",
         "ll_q8": "left",
         "ll_q9": "left",
         "ll_q10": "B",
@@ -458,32 +441,15 @@
     },
     {
       "club": "MAL",
-      "useProfile": false,
-      "coreAnswers": {
-        "q1": "C",
-        "q2": "right",
-        "q3": "C",
-        "q4": "5",
-        "q5": "B",
-        "q6": "left",
-        "q7": "B",
-        "q8": "4",
-        "q9": "E",
-        "q10": "left",
-        "q11": "B",
-        "q12": "4",
-        "q13": "C",
-        "q14": "left",
-        "q15": "E",
-        "q16": "3",
-        "q17": "A",
-        "q18": "left",
-        "q19": "E",
-        "q20": "1",
-        "q21": "B",
-        "q22": "right",
-        "q23": "B",
-        "q24": "4"
+      "useProfile": true,
+      "coreProfile": {
+        "loyalty": 7.513645882352941,
+        "emotion": 6.48296,
+        "ambition": 5.823802352941177,
+        "process": 2.9693882352941174,
+        "community": 4.9060805882352945,
+        "chaos": 8.81998705882353,
+        "rootedness": 5.747476470588235
       },
       "moduleAnswers": {
         "ll_q1": "B",
@@ -491,11 +457,11 @@
         "ll_q3": "A",
         "ll_q4": "C",
         "ll_q5": "A",
-        "ll_q6": "C",
+        "ll_q6": "D",
         "ll_q7": "A",
-        "ll_q8": "left",
+        "ll_q8": "right",
         "ll_q9": "left",
-        "ll_q10": "B",
+        "ll_q10": "C",
         "ll_q11": "B",
         "ll_q12": "left"
       },
@@ -728,44 +694,27 @@
     },
     {
       "club": "ESP",
-      "useProfile": false,
-      "coreAnswers": {
-        "q1": "E",
-        "q2": "right",
-        "q3": "B",
-        "q4": "5",
-        "q5": "B",
-        "q6": "left",
-        "q7": "C",
-        "q8": "4",
-        "q9": "A",
-        "q10": "left",
-        "q11": "A",
-        "q12": "5",
-        "q13": "C",
-        "q14": "left",
-        "q15": "C",
-        "q16": "4",
-        "q17": "A",
-        "q18": "left",
-        "q19": "B",
-        "q20": "1",
-        "q21": "B",
-        "q22": "right",
-        "q23": "B",
-        "q24": "5"
+      "useProfile": true,
+      "coreProfile": {
+        "loyalty": 7.513645882352941,
+        "emotion": 5.72296,
+        "ambition": 4.174390588235294,
+        "process": 4.075270588235294,
+        "community": 4.9060805882352945,
+        "chaos": 6.235281176470589,
+        "rootedness": 6.77394705882353
       },
       "moduleAnswers": {
         "ll_q1": "A",
         "ll_q2": "right",
-        "ll_q3": "C",
-        "ll_q4": "C",
+        "ll_q3": "D",
+        "ll_q4": "A",
         "ll_q5": "C",
         "ll_q6": "C",
         "ll_q7": "B",
         "ll_q8": "left",
         "ll_q9": "right",
-        "ll_q10": "B",
+        "ll_q10": "D",
         "ll_q11": "B",
         "ll_q12": "left"
       },
@@ -994,7 +943,7 @@
         "ll_q11": "C",
         "ll_q12": "left"
       },
-      "expected": "LEV"
+      "expected": "OSA"
     },
     {
       "seed": 3,
@@ -1126,7 +1075,7 @@
         "ll_q11": "C",
         "ll_q12": "left"
       },
-      "expected": "BAR"
+      "expected": "ESP"
     },
     {
       "seed": 6,
@@ -1170,7 +1119,7 @@
         "ll_q11": "C",
         "ll_q12": "left"
       },
-      "expected": "DEP"
+      "expected": "ALA"
     },
     {
       "seed": 7,
@@ -1214,7 +1163,7 @@
         "ll_q11": "C",
         "ll_q12": "left"
       },
-      "expected": "ESP"
+      "expected": "CEL"
     },
     {
       "seed": 8,
@@ -1258,7 +1207,7 @@
         "ll_q11": "D",
         "ll_q12": "right"
       },
-      "expected": "OSA"
+      "expected": "RMA"
     },
     {
       "seed": 9,
@@ -1302,7 +1251,7 @@
         "ll_q11": "A",
         "ll_q12": "right"
       },
-      "expected": "RSO"
+      "expected": "ELC"
     },
     {
       "seed": 10,
@@ -1346,7 +1295,7 @@
         "ll_q11": "B",
         "ll_q12": "left"
       },
-      "expected": "VIL"
+      "expected": "SEV"
     },
     {
       "seed": 11,
@@ -1390,7 +1339,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "ATM"
+      "expected": "RAY"
     },
     {
       "seed": 12,
@@ -1434,7 +1383,7 @@
         "ll_q11": "C",
         "ll_q12": "left"
       },
-      "expected": "RAC"
+      "expected": "LEV"
     },
     {
       "seed": 13,
@@ -1610,7 +1559,7 @@
         "ll_q11": "A",
         "ll_q12": "right"
       },
-      "expected": "RAY"
+      "expected": "RMA"
     },
     {
       "seed": 17,
@@ -1654,7 +1603,7 @@
         "ll_q11": "D",
         "ll_q12": "right"
       },
-      "expected": "BAR"
+      "expected": "ATH"
     },
     {
       "seed": 18,
@@ -1698,7 +1647,7 @@
         "ll_q11": "C",
         "ll_q12": "left"
       },
-      "expected": "DEP"
+      "expected": "ALA"
     },
     {
       "seed": 19,
@@ -1830,7 +1779,7 @@
         "ll_q11": "A",
         "ll_q12": "right"
       },
-      "expected": "ATM"
+      "expected": "VIL"
     },
     {
       "seed": 22,
@@ -1918,7 +1867,7 @@
         "ll_q11": "A",
         "ll_q12": "right"
       },
-      "expected": "BAR"
+      "expected": "ATM"
     },
     {
       "seed": 24,
@@ -2006,7 +1955,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "DEP"
+      "expected": "RAC"
     },
     {
       "seed": 26,
@@ -2050,7 +1999,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "ATM"
+      "expected": "VIL"
     },
     {
       "seed": 27,
@@ -2094,7 +2043,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "RMA"
+      "expected": "GET"
     },
     {
       "seed": 28,
@@ -2138,7 +2087,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "ATM"
+      "expected": "RSO"
     },
     {
       "seed": 29,
@@ -2182,7 +2131,7 @@
         "ll_q11": "D",
         "ll_q12": "left"
       },
-      "expected": "ATM"
+      "expected": "ALA"
     },
     {
       "seed": 30,
@@ -2270,7 +2219,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "ATM"
+      "expected": "DEP"
     },
     {
       "seed": 32,
@@ -2534,7 +2483,7 @@
         "ll_q11": "A",
         "ll_q12": "right"
       },
-      "expected": "RSO"
+      "expected": "RAC"
     },
     {
       "seed": 38,
@@ -2666,7 +2615,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "RAC"
+      "expected": "BET"
     },
     {
       "seed": 41,
@@ -2754,7 +2703,7 @@
         "ll_q11": "B",
         "ll_q12": "left"
       },
-      "expected": "RMA"
+      "expected": "SEV"
     },
     {
       "seed": 43,
@@ -2842,7 +2791,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "SEV"
+      "expected": "VIL"
     },
     {
       "seed": 45,
@@ -2886,7 +2835,7 @@
         "ll_q11": "A",
         "ll_q12": "right"
       },
-      "expected": "VAL"
+      "expected": "SEV"
     },
     {
       "seed": 46,
@@ -3018,7 +2967,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "BAR"
+      "expected": "ALA"
     },
     {
       "seed": 49,
@@ -3106,7 +3055,7 @@
         "ll_q11": "A",
         "ll_q12": "right"
       },
-      "expected": "VIL"
+      "expected": "ELC"
     },
     {
       "seed": 51,
@@ -3150,7 +3099,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "ATM"
+      "expected": "OSA"
     },
     {
       "seed": 52,
@@ -3282,7 +3231,7 @@
         "ll_q11": "D",
         "ll_q12": "left"
       },
-      "expected": "DEP"
+      "expected": "RAC"
     },
     {
       "seed": 55,
@@ -3414,7 +3363,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "ALA"
+      "expected": "VAL"
     },
     {
       "seed": 58,
@@ -3502,7 +3451,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "VIL"
+      "expected": "SEV"
     },
     {
       "seed": 60,
@@ -3546,7 +3495,7 @@
         "ll_q11": "A",
         "ll_q12": "right"
       },
-      "expected": "ELC"
+      "expected": "RMA"
     },
     {
       "seed": 61,
@@ -3634,7 +3583,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "VIL"
+      "expected": "OSA"
     },
     {
       "seed": 63,
@@ -3678,7 +3627,7 @@
         "ll_q11": "D",
         "ll_q12": "right"
       },
-      "expected": "GET"
+      "expected": "SEV"
     },
     {
       "seed": 64,
@@ -3722,7 +3671,7 @@
         "ll_q11": "B",
         "ll_q12": "left"
       },
-      "expected": "BET"
+      "expected": "DEP"
     },
     {
       "seed": 65,
@@ -3810,7 +3759,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "DEP"
+      "expected": "RAC"
     },
     {
       "seed": 67,
@@ -3854,7 +3803,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "BET"
+      "expected": "SEV"
     },
     {
       "seed": 68,
@@ -4206,7 +4155,7 @@
         "ll_q11": "D",
         "ll_q12": "right"
       },
-      "expected": "MAL"
+      "expected": "ELC"
     },
     {
       "seed": 76,
@@ -4338,7 +4287,7 @@
         "ll_q11": "D",
         "ll_q12": "left"
       },
-      "expected": "DEP"
+      "expected": "RSO"
     },
     {
       "seed": 79,
@@ -4778,7 +4727,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "RAY"
+      "expected": "OSA"
     },
     {
       "seed": 89,
@@ -4822,7 +4771,7 @@
         "ll_q11": "C",
         "ll_q12": "left"
       },
-      "expected": "MAL"
+      "expected": "LEV"
     },
     {
       "seed": 90,
@@ -4998,7 +4947,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "RAY"
+      "expected": "MAL"
     },
     {
       "seed": 94,
@@ -5086,7 +5035,7 @@
         "ll_q11": "A",
         "ll_q12": "right"
       },
-      "expected": "DEP"
+      "expected": "SEV"
     },
     {
       "seed": 96,
@@ -5174,7 +5123,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "VAL"
+      "expected": "MAL"
     },
     {
       "seed": 98,
@@ -5306,7 +5255,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "ATM"
+      "expected": "DEP"
     },
     {
       "seed": 101,
@@ -5350,7 +5299,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "ATM"
+      "expected": "MAL"
     },
     {
       "seed": 102,
@@ -5438,7 +5387,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "DEP"
+      "expected": "RAC"
     },
     {
       "seed": 104,
@@ -5482,7 +5431,7 @@
         "ll_q11": "D",
         "ll_q12": "left"
       },
-      "expected": "DEP"
+      "expected": "RAC"
     },
     {
       "seed": 105,
@@ -5614,7 +5563,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "OSA"
+      "expected": "VIL"
     },
     {
       "seed": 108,
@@ -5702,7 +5651,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "RAY"
+      "expected": "MAL"
     },
     {
       "seed": 110,
@@ -5922,7 +5871,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "VAL"
+      "expected": "RAC"
     },
     {
       "seed": 115,
@@ -6142,7 +6091,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "ATM"
+      "expected": "RMA"
     },
     {
       "seed": 120,
@@ -6186,7 +6135,7 @@
         "ll_q11": "D",
         "ll_q12": "right"
       },
-      "expected": "VIL"
+      "expected": "OSA"
     },
     {
       "seed": 121,
@@ -6318,7 +6267,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "BAR"
+      "expected": "RSO"
     },
     {
       "seed": 124,
@@ -6406,7 +6355,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "VAL"
+      "expected": "SEV"
     },
     {
       "seed": 126,
@@ -6626,7 +6575,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "ATM"
+      "expected": "RAY"
     },
     {
       "seed": 131,
@@ -6670,7 +6619,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "RMA"
+      "expected": "RAC"
     },
     {
       "seed": 132,
@@ -6714,7 +6663,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "OSA"
+      "expected": "RSO"
     },
     {
       "seed": 133,
@@ -6758,7 +6707,7 @@
         "ll_q11": "B",
         "ll_q12": "left"
       },
-      "expected": "BET"
+      "expected": "DEP"
     },
     {
       "seed": 134,
@@ -6846,7 +6795,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "DEP"
+      "expected": "ATM"
     },
     {
       "seed": 136,
@@ -6890,7 +6839,7 @@
         "ll_q11": "A",
         "ll_q12": "right"
       },
-      "expected": "CEL"
+      "expected": "VIL"
     },
     {
       "seed": 137,
@@ -7022,7 +6971,7 @@
         "ll_q11": "B",
         "ll_q12": "left"
       },
-      "expected": "VIL"
+      "expected": "MAL"
     },
     {
       "seed": 140,
@@ -7066,7 +7015,7 @@
         "ll_q11": "B",
         "ll_q12": "left"
       },
-      "expected": "ESP"
+      "expected": "BAR"
     },
     {
       "seed": 141,
@@ -7110,7 +7059,7 @@
         "ll_q11": "D",
         "ll_q12": "left"
       },
-      "expected": "GET"
+      "expected": "ESP"
     },
     {
       "seed": 142,
@@ -7154,7 +7103,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "OSA"
+      "expected": "ELC"
     },
     {
       "seed": 143,
@@ -7198,7 +7147,7 @@
         "ll_q11": "A",
         "ll_q12": "right"
       },
-      "expected": "ATM"
+      "expected": "ELC"
     },
     {
       "seed": 144,
@@ -7330,7 +7279,7 @@
         "ll_q11": "A",
         "ll_q12": "right"
       },
-      "expected": "BAR"
+      "expected": "ATM"
     },
     {
       "seed": 147,
@@ -7506,7 +7455,7 @@
         "ll_q11": "C",
         "ll_q12": "left"
       },
-      "expected": "RAY"
+      "expected": "ALA"
     },
     {
       "seed": 151,
@@ -7550,7 +7499,7 @@
         "ll_q11": "D",
         "ll_q12": "left"
       },
-      "expected": "BET"
+      "expected": "CEL"
     },
     {
       "seed": 152,
@@ -7594,7 +7543,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "RSO"
+      "expected": "VIL"
     },
     {
       "seed": 153,
@@ -7682,7 +7631,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "GET"
+      "expected": "ELC"
     },
     {
       "seed": 155,
@@ -7770,7 +7719,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "SEV"
+      "expected": "RMA"
     },
     {
       "seed": 157,
@@ -7814,7 +7763,7 @@
         "ll_q11": "D",
         "ll_q12": "left"
       },
-      "expected": "GET"
+      "expected": "MAL"
     },
     {
       "seed": 158,
@@ -7946,7 +7895,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "VIL"
+      "expected": "SEV"
     },
     {
       "seed": 161,
@@ -7990,7 +7939,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "DEP"
+      "expected": "RSO"
     },
     {
       "seed": 162,
@@ -8122,7 +8071,7 @@
         "ll_q11": "B",
         "ll_q12": "left"
       },
-      "expected": "CEL"
+      "expected": "RSO"
     },
     {
       "seed": 165,
@@ -8166,7 +8115,7 @@
         "ll_q11": "A",
         "ll_q12": "right"
       },
-      "expected": "ESP"
+      "expected": "VAL"
     },
     {
       "seed": 166,
@@ -8254,7 +8203,7 @@
         "ll_q11": "D",
         "ll_q12": "left"
       },
-      "expected": "BET"
+      "expected": "ESP"
     },
     {
       "seed": 168,
@@ -8298,7 +8247,7 @@
         "ll_q11": "B",
         "ll_q12": "left"
       },
-      "expected": "DEP"
+      "expected": "OSA"
     },
     {
       "seed": 169,
@@ -8430,7 +8379,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "VAL"
+      "expected": "BAR"
     },
     {
       "seed": 172,
@@ -8474,7 +8423,7 @@
         "ll_q11": "C",
         "ll_q12": "left"
       },
-      "expected": "GET"
+      "expected": "RMA"
     },
     {
       "seed": 173,
@@ -8518,7 +8467,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "VAL"
+      "expected": "RSO"
     },
     {
       "seed": 174,
@@ -8606,7 +8555,7 @@
         "ll_q11": "D",
         "ll_q12": "left"
       },
-      "expected": "ELC"
+      "expected": "RSO"
     },
     {
       "seed": 176,
@@ -8782,7 +8731,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "VIL"
+      "expected": "ELC"
     },
     {
       "seed": 180,
@@ -8826,7 +8775,7 @@
         "ll_q11": "B",
         "ll_q12": "left"
       },
-      "expected": "DEP"
+      "expected": "ALA"
     },
     {
       "seed": 181,
@@ -8914,7 +8863,7 @@
         "ll_q11": "A",
         "ll_q12": "right"
       },
-      "expected": "BET"
+      "expected": "ELC"
     },
     {
       "seed": 183,
@@ -8958,7 +8907,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "VAL"
+      "expected": "RSO"
     },
     {
       "seed": 184,
@@ -9046,7 +8995,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "DEP"
+      "expected": "ALA"
     },
     {
       "seed": 186,
@@ -9090,7 +9039,7 @@
         "ll_q11": "D",
         "ll_q12": "right"
       },
-      "expected": "DEP"
+      "expected": "ALA"
     },
     {
       "seed": 187,
@@ -9134,7 +9083,7 @@
         "ll_q11": "B",
         "ll_q12": "left"
       },
-      "expected": "GET"
+      "expected": "VIL"
     },
     {
       "seed": 188,
@@ -9442,7 +9391,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "SEV"
+      "expected": "ELC"
     },
     {
       "seed": 195,
@@ -9574,7 +9523,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "ATM"
+      "expected": "OSA"
     },
     {
       "seed": 198,
@@ -9618,7 +9567,7 @@
         "ll_q11": "A",
         "ll_q12": "left"
       },
-      "expected": "VIL"
+      "expected": "SEV"
     },
     {
       "seed": 199,
@@ -9706,7 +9655,7 @@
         "ll_q11": "A",
         "ll_q12": "right"
       },
-      "expected": "DEP"
+      "expected": "RSO"
     }
   ]
 }

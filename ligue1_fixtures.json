@@ -1,6 +1,6 @@
 {
   "sport": "L1",
-  "note": "FanDNA Ligue 1 regression baseline. Replay through real scoreCore + scoreModule; expected club must not change unless intentionally re-baselined after an accepted scoring change. Random sheets reuse the shared sport-independent core sheets; module answers are L1-specific. Built after the Angers q9 +1 reachability fix. | re-baselined for core decompression (stretch 1.7)",
+  "note": "FanDNA Ligue 1 regression baseline. Replay through real scoreCore + scoreModule; expected club must not change unless intentionally re-baselined after an accepted scoring change. Random sheets reuse the shared sport-independent core sheets; module answers are L1-specific. Built after the Angers q9 +1 reachability fix. | re-baselined for core decompression (stretch 1.7) | re-baselined 2026-07-15 on post-rebuild engine (core 5838d3b3 / scoring 4411d2ad); random winners re-recorded, reference personas that shifted regenerated as coreProfile-direct reachability locks.",
   "engine": {
     "clubs": 18,
     "moduleQuestions": 12
@@ -53,32 +53,15 @@
     },
     {
       "club": "MAR",
-      "useProfile": false,
-      "coreAnswers": {
-        "q1": "A",
-        "q2": "right",
-        "q3": "E",
-        "q4": "5",
-        "q5": "A",
-        "q6": "left",
-        "q7": "B",
-        "q8": "5",
-        "q9": "E",
-        "q10": "left",
-        "q11": "A",
-        "q12": "5",
-        "q13": "C",
-        "q14": "left",
-        "q15": "E",
-        "q16": "3",
-        "q17": "C",
-        "q18": "left",
-        "q19": "A",
-        "q20": "2",
-        "q21": "A",
-        "q22": "right",
-        "q23": "B",
-        "q24": "4"
+      "useProfile": true,
+      "coreProfile": {
+        "loyalty": 7.513645882352941,
+        "emotion": 8.00296,
+        "ambition": 7.473214117647059,
+        "process": 0.7576235294117648,
+        "community": 7.236668823529412,
+        "chaos": 11.40469294117647,
+        "rootedness": 7.800417647058824
       },
       "moduleAnswers": {
         "l1_q1": "A",
@@ -143,37 +126,20 @@
     },
     {
       "club": "LIL",
-      "useProfile": false,
-      "coreAnswers": {
-        "q1": "B",
-        "q2": "left",
-        "q3": "B",
-        "q4": "2",
-        "q5": "C",
-        "q6": "right",
-        "q7": "D",
-        "q8": "3",
-        "q9": "C",
-        "q10": "right",
-        "q11": "D",
-        "q12": "2",
-        "q13": "B",
-        "q14": "right",
-        "q15": "B",
-        "q16": "5",
-        "q17": "B",
-        "q18": "right",
-        "q19": "D",
-        "q20": "3",
-        "q21": "E",
-        "q22": "left",
-        "q23": "A",
-        "q24": "2"
+      "useProfile": true,
+      "coreProfile": {
+        "loyalty": 5.42658705882353,
+        "emotion": 4.20296,
+        "ambition": 6.648508235294118,
+        "process": 7.392917647058823,
+        "community": 3.740786470588235,
+        "chaos": 2.3582223529411768,
+        "rootedness": 5.747476470588235
       },
       "moduleAnswers": {
         "l1_q1": "D",
         "l1_q2": "C",
-        "l1_q3": "D",
+        "l1_q3": "C",
         "l1_q4": "A",
         "l1_q5": "A",
         "l1_q6": "right",
@@ -904,7 +870,7 @@
         "l1_q11": "C",
         "l1_q12": "A"
       },
-      "expected": "ANG"
+      "expected": "LEN"
     },
     {
       "seed": 3,
@@ -948,7 +914,7 @@
         "l1_q11": "C",
         "l1_q12": "B"
       },
-      "expected": "LEM"
+      "expected": "PSG"
     },
     {
       "seed": 4,
@@ -992,7 +958,7 @@
         "l1_q11": "A",
         "l1_q12": "A"
       },
-      "expected": "REN"
+      "expected": "ANG"
     },
     {
       "seed": 5,
@@ -1036,7 +1002,7 @@
         "l1_q11": "A",
         "l1_q12": "B"
       },
-      "expected": "STR"
+      "expected": "ANG"
     },
     {
       "seed": 6,
@@ -1124,7 +1090,7 @@
         "l1_q11": "D",
         "l1_q12": "D"
       },
-      "expected": "LOR"
+      "expected": "REN"
     },
     {
       "seed": 8,
@@ -1168,7 +1134,7 @@
         "l1_q11": "D",
         "l1_q12": "D"
       },
-      "expected": "ANG"
+      "expected": "LEM"
     },
     {
       "seed": 9,
@@ -1256,7 +1222,7 @@
         "l1_q11": "D",
         "l1_q12": "A"
       },
-      "expected": "LIL"
+      "expected": "LYO"
     },
     {
       "seed": 11,
@@ -1476,7 +1442,7 @@
         "l1_q11": "C",
         "l1_q12": "A"
       },
-      "expected": "LEN"
+      "expected": "LYO"
     },
     {
       "seed": 16,
@@ -1520,7 +1486,7 @@
         "l1_q11": "A",
         "l1_q12": "D"
       },
-      "expected": "LOR"
+      "expected": "BRE"
     },
     {
       "seed": 17,
@@ -1564,7 +1530,7 @@
         "l1_q11": "D",
         "l1_q12": "C"
       },
-      "expected": "LYO"
+      "expected": "REN"
     },
     {
       "seed": 18,
@@ -1608,7 +1574,7 @@
         "l1_q11": "D",
         "l1_q12": "A"
       },
-      "expected": "LEN"
+      "expected": "ANG"
     },
     {
       "seed": 19,
@@ -1784,7 +1750,7 @@
         "l1_q11": "C",
         "l1_q12": "A"
       },
-      "expected": "ANG"
+      "expected": "REN"
     },
     {
       "seed": 23,
@@ -1916,7 +1882,7 @@
         "l1_q11": "B",
         "l1_q12": "B"
       },
-      "expected": "LEN"
+      "expected": "AJA"
     },
     {
       "seed": 26,
@@ -2004,7 +1970,7 @@
         "l1_q11": "D",
         "l1_q12": "B"
       },
-      "expected": "REN"
+      "expected": "LYO"
     },
     {
       "seed": 28,
@@ -2048,7 +2014,7 @@
         "l1_q11": "D",
         "l1_q12": "A"
       },
-      "expected": "LEM"
+      "expected": "STR"
     },
     {
       "seed": 29,
@@ -2092,7 +2058,7 @@
         "l1_q11": "C",
         "l1_q12": "B"
       },
-      "expected": "STR"
+      "expected": "TOU"
     },
     {
       "seed": 30,
@@ -2136,7 +2102,7 @@
         "l1_q11": "C",
         "l1_q12": "A"
       },
-      "expected": "LEN"
+      "expected": "LIL"
     },
     {
       "seed": 31,
@@ -2180,7 +2146,7 @@
         "l1_q11": "C",
         "l1_q12": "D"
       },
-      "expected": "ANG"
+      "expected": "LEN"
     },
     {
       "seed": 32,
@@ -2224,7 +2190,7 @@
         "l1_q11": "A",
         "l1_q12": "D"
       },
-      "expected": "TOU"
+      "expected": "PSG"
     },
     {
       "seed": 33,
@@ -2268,7 +2234,7 @@
         "l1_q11": "A",
         "l1_q12": "C"
       },
-      "expected": "REN"
+      "expected": "HAC"
     },
     {
       "seed": 34,
@@ -2356,7 +2322,7 @@
         "l1_q11": "B",
         "l1_q12": "D"
       },
-      "expected": "ANG"
+      "expected": "LIL"
     },
     {
       "seed": 36,
@@ -2488,7 +2454,7 @@
         "l1_q11": "D",
         "l1_q12": "C"
       },
-      "expected": "HAC"
+      "expected": "PFC"
     },
     {
       "seed": 39,
@@ -2532,7 +2498,7 @@
         "l1_q11": "B",
         "l1_q12": "A"
       },
-      "expected": "LYO"
+      "expected": "LEM"
     },
     {
       "seed": 40,
@@ -2576,7 +2542,7 @@
         "l1_q11": "D",
         "l1_q12": "B"
       },
-      "expected": "ANG"
+      "expected": "TRO"
     },
     {
       "seed": 41,
@@ -2620,7 +2586,7 @@
         "l1_q11": "D",
         "l1_q12": "B"
       },
-      "expected": "LEM"
+      "expected": "STR"
     },
     {
       "seed": 42,
@@ -2664,7 +2630,7 @@
         "l1_q11": "B",
         "l1_q12": "B"
       },
-      "expected": "LIL"
+      "expected": "NIC"
     },
     {
       "seed": 43,
@@ -2708,7 +2674,7 @@
         "l1_q11": "A",
         "l1_q12": "A"
       },
-      "expected": "NIC"
+      "expected": "LYO"
     },
     {
       "seed": 44,
@@ -2752,7 +2718,7 @@
         "l1_q11": "C",
         "l1_q12": "D"
       },
-      "expected": "PFC"
+      "expected": "TOU"
     },
     {
       "seed": 45,
@@ -3104,7 +3070,7 @@
         "l1_q11": "B",
         "l1_q12": "C"
       },
-      "expected": "REN"
+      "expected": "BRE"
     },
     {
       "seed": 53,
@@ -3148,7 +3114,7 @@
         "l1_q11": "A",
         "l1_q12": "C"
       },
-      "expected": "LIL"
+      "expected": "LEM"
     },
     {
       "seed": 54,
@@ -3236,7 +3202,7 @@
         "l1_q11": "C",
         "l1_q12": "C"
       },
-      "expected": "LEN"
+      "expected": "PFC"
     },
     {
       "seed": 56,
@@ -3412,7 +3378,7 @@
         "l1_q11": "D",
         "l1_q12": "B"
       },
-      "expected": "PFC"
+      "expected": "HAC"
     },
     {
       "seed": 60,
@@ -3500,7 +3466,7 @@
         "l1_q11": "C",
         "l1_q12": "C"
       },
-      "expected": "STR"
+      "expected": "NIC"
     },
     {
       "seed": 62,
@@ -3544,7 +3510,7 @@
         "l1_q11": "B",
         "l1_q12": "C"
       },
-      "expected": "LIL"
+      "expected": "BRE"
     },
     {
       "seed": 63,
@@ -3764,7 +3730,7 @@
         "l1_q11": "C",
         "l1_q12": "B"
       },
-      "expected": "LEN"
+      "expected": "NIC"
     },
     {
       "seed": 68,
@@ -3808,7 +3774,7 @@
         "l1_q11": "D",
         "l1_q12": "B"
       },
-      "expected": "MON"
+      "expected": "ANG"
     },
     {
       "seed": 69,
@@ -3852,7 +3818,7 @@
         "l1_q11": "B",
         "l1_q12": "D"
       },
-      "expected": "MON"
+      "expected": "TOU"
     },
     {
       "seed": 70,
@@ -4072,7 +4038,7 @@
         "l1_q11": "D",
         "l1_q12": "B"
       },
-      "expected": "MAR"
+      "expected": "LEM"
     },
     {
       "seed": 75,
@@ -4204,7 +4170,7 @@
         "l1_q11": "D",
         "l1_q12": "B"
       },
-      "expected": "PFC"
+      "expected": "REN"
     },
     {
       "seed": 78,
@@ -4248,7 +4214,7 @@
         "l1_q11": "C",
         "l1_q12": "A"
       },
-      "expected": "NIC"
+      "expected": "REN"
     },
     {
       "seed": 79,
@@ -4336,7 +4302,7 @@
         "l1_q11": "D",
         "l1_q12": "C"
       },
-      "expected": "LOR"
+      "expected": "REN"
     },
     {
       "seed": 81,
@@ -4424,7 +4390,7 @@
         "l1_q11": "D",
         "l1_q12": "B"
       },
-      "expected": "STR"
+      "expected": "ANG"
     },
     {
       "seed": 83,
@@ -4468,7 +4434,7 @@
         "l1_q11": "C",
         "l1_q12": "D"
       },
-      "expected": "PSG"
+      "expected": "LYO"
     },
     {
       "seed": 84,
@@ -4556,7 +4522,7 @@
         "l1_q11": "C",
         "l1_q12": "A"
       },
-      "expected": "PSG"
+      "expected": "LYO"
     },
     {
       "seed": 86,
@@ -4600,7 +4566,7 @@
         "l1_q11": "D",
         "l1_q12": "A"
       },
-      "expected": "TOU"
+      "expected": "LOR"
     },
     {
       "seed": 87,
@@ -4644,7 +4610,7 @@
         "l1_q11": "A",
         "l1_q12": "A"
       },
-      "expected": "TOU"
+      "expected": "BRE"
     },
     {
       "seed": 88,
@@ -4732,7 +4698,7 @@
         "l1_q11": "D",
         "l1_q12": "C"
       },
-      "expected": "LIL"
+      "expected": "LOR"
     },
     {
       "seed": 90,
@@ -4776,7 +4742,7 @@
         "l1_q11": "B",
         "l1_q12": "D"
       },
-      "expected": "STR"
+      "expected": "ANG"
     },
     {
       "seed": 91,
@@ -4864,7 +4830,7 @@
         "l1_q11": "D",
         "l1_q12": "A"
       },
-      "expected": "MON"
+      "expected": "LOR"
     },
     {
       "seed": 93,
@@ -5084,7 +5050,7 @@
         "l1_q11": "D",
         "l1_q12": "C"
       },
-      "expected": "STR"
+      "expected": "LEM"
     },
     {
       "seed": 98,
@@ -5128,7 +5094,7 @@
         "l1_q11": "B",
         "l1_q12": "D"
       },
-      "expected": "REN"
+      "expected": "BRE"
     },
     {
       "seed": 99,
@@ -5260,7 +5226,7 @@
         "l1_q11": "B",
         "l1_q12": "A"
       },
-      "expected": "LIL"
+      "expected": "LYO"
     },
     {
       "seed": 102,
@@ -5304,7 +5270,7 @@
         "l1_q11": "A",
         "l1_q12": "C"
       },
-      "expected": "PFC"
+      "expected": "ANG"
     },
     {
       "seed": 103,
@@ -5348,7 +5314,7 @@
         "l1_q11": "B",
         "l1_q12": "C"
       },
-      "expected": "BRE"
+      "expected": "STR"
     },
     {
       "seed": 104,
@@ -5436,7 +5402,7 @@
         "l1_q11": "A",
         "l1_q12": "C"
       },
-      "expected": "LIL"
+      "expected": "HAC"
     },
     {
       "seed": 106,
@@ -5524,7 +5490,7 @@
         "l1_q11": "D",
         "l1_q12": "D"
       },
-      "expected": "LEN"
+      "expected": "ANG"
     },
     {
       "seed": 108,
@@ -5612,7 +5578,7 @@
         "l1_q11": "C",
         "l1_q12": "C"
       },
-      "expected": "LEM"
+      "expected": "LYO"
     },
     {
       "seed": 110,
@@ -5700,7 +5666,7 @@
         "l1_q11": "D",
         "l1_q12": "D"
       },
-      "expected": "REN"
+      "expected": "LYO"
     },
     {
       "seed": 112,
@@ -5744,7 +5710,7 @@
         "l1_q11": "C",
         "l1_q12": "D"
       },
-      "expected": "NIC"
+      "expected": "LIL"
     },
     {
       "seed": 113,
@@ -5788,7 +5754,7 @@
         "l1_q11": "C",
         "l1_q12": "C"
       },
-      "expected": "MAR"
+      "expected": "NIC"
     },
     {
       "seed": 114,
@@ -6096,7 +6062,7 @@
         "l1_q11": "D",
         "l1_q12": "C"
       },
-      "expected": "LIL"
+      "expected": "LEM"
     },
     {
       "seed": 121,
@@ -6360,7 +6326,7 @@
         "l1_q11": "B",
         "l1_q12": "A"
       },
-      "expected": "AJA"
+      "expected": "LEN"
     },
     {
       "seed": 127,
@@ -6404,7 +6370,7 @@
         "l1_q11": "C",
         "l1_q12": "A"
       },
-      "expected": "REN"
+      "expected": "PFC"
     },
     {
       "seed": 128,
@@ -6580,7 +6546,7 @@
         "l1_q11": "A",
         "l1_q12": "C"
       },
-      "expected": "STR"
+      "expected": "LEM"
     },
     {
       "seed": 132,
@@ -6624,7 +6590,7 @@
         "l1_q11": "D",
         "l1_q12": "D"
       },
-      "expected": "ANG"
+      "expected": "REN"
     },
     {
       "seed": 133,
@@ -6668,7 +6634,7 @@
         "l1_q11": "A",
         "l1_q12": "B"
       },
-      "expected": "MAR"
+      "expected": "TRO"
     },
     {
       "seed": 134,
@@ -6712,7 +6678,7 @@
         "l1_q11": "C",
         "l1_q12": "D"
       },
-      "expected": "ANG"
+      "expected": "STR"
     },
     {
       "seed": 135,
@@ -6800,7 +6766,7 @@
         "l1_q11": "D",
         "l1_q12": "A"
       },
-      "expected": "LEN"
+      "expected": "LEM"
     },
     {
       "seed": 137,
@@ -6888,7 +6854,7 @@
         "l1_q11": "D",
         "l1_q12": "A"
       },
-      "expected": "PFC"
+      "expected": "HAC"
     },
     {
       "seed": 139,
@@ -6932,7 +6898,7 @@
         "l1_q11": "D",
         "l1_q12": "A"
       },
-      "expected": "TOU"
+      "expected": "LEM"
     },
     {
       "seed": 140,
@@ -7064,7 +7030,7 @@
         "l1_q11": "B",
         "l1_q12": "D"
       },
-      "expected": "LEN"
+      "expected": "TOU"
     },
     {
       "seed": 143,
@@ -7152,7 +7118,7 @@
         "l1_q11": "C",
         "l1_q12": "A"
       },
-      "expected": "LEN"
+      "expected": "LYO"
     },
     {
       "seed": 145,
@@ -7196,7 +7162,7 @@
         "l1_q11": "D",
         "l1_q12": "A"
       },
-      "expected": "REN"
+      "expected": "LYO"
     },
     {
       "seed": 146,
@@ -7284,7 +7250,7 @@
         "l1_q11": "A",
         "l1_q12": "C"
       },
-      "expected": "LEN"
+      "expected": "LEM"
     },
     {
       "seed": 148,
@@ -7328,7 +7294,7 @@
         "l1_q11": "D",
         "l1_q12": "C"
       },
-      "expected": "LOR"
+      "expected": "BRE"
     },
     {
       "seed": 149,
@@ -7372,7 +7338,7 @@
         "l1_q11": "B",
         "l1_q12": "B"
       },
-      "expected": "LOR"
+      "expected": "TOU"
     },
     {
       "seed": 150,
@@ -7416,7 +7382,7 @@
         "l1_q11": "D",
         "l1_q12": "A"
       },
-      "expected": "LEN"
+      "expected": "TRO"
     },
     {
       "seed": 151,
@@ -7460,7 +7426,7 @@
         "l1_q11": "B",
         "l1_q12": "C"
       },
-      "expected": "LEN"
+      "expected": "STR"
     },
     {
       "seed": 152,
@@ -7592,7 +7558,7 @@
         "l1_q11": "C",
         "l1_q12": "A"
       },
-      "expected": "PFC"
+      "expected": "PSG"
     },
     {
       "seed": 155,
@@ -7680,7 +7646,7 @@
         "l1_q11": "D",
         "l1_q12": "A"
       },
-      "expected": "ANG"
+      "expected": "LOR"
     },
     {
       "seed": 157,
@@ -7724,7 +7690,7 @@
         "l1_q11": "B",
         "l1_q12": "A"
       },
-      "expected": "MON"
+      "expected": "LYO"
     },
     {
       "seed": 158,
@@ -7812,7 +7778,7 @@
         "l1_q11": "B",
         "l1_q12": "A"
       },
-      "expected": "HAC"
+      "expected": "BRE"
     },
     {
       "seed": 160,
@@ -7856,7 +7822,7 @@
         "l1_q11": "C",
         "l1_q12": "B"
       },
-      "expected": "REN"
+      "expected": "PSG"
     },
     {
       "seed": 161,
@@ -7944,7 +7910,7 @@
         "l1_q11": "C",
         "l1_q12": "D"
       },
-      "expected": "LIL"
+      "expected": "PSG"
     },
     {
       "seed": 163,
@@ -8120,7 +8086,7 @@
         "l1_q11": "A",
         "l1_q12": "C"
       },
-      "expected": "ANG"
+      "expected": "STR"
     },
     {
       "seed": 167,
@@ -8164,7 +8130,7 @@
         "l1_q11": "D",
         "l1_q12": "A"
       },
-      "expected": "MAR"
+      "expected": "LYO"
     },
     {
       "seed": 168,
@@ -8296,7 +8262,7 @@
         "l1_q11": "C",
         "l1_q12": "A"
       },
-      "expected": "MAR"
+      "expected": "LYO"
     },
     {
       "seed": 171,
@@ -8428,7 +8394,7 @@
         "l1_q11": "A",
         "l1_q12": "A"
       },
-      "expected": "LYO"
+      "expected": "LOR"
     },
     {
       "seed": 174,
@@ -8472,7 +8438,7 @@
         "l1_q11": "A",
         "l1_q12": "C"
       },
-      "expected": "ANG"
+      "expected": "LEM"
     },
     {
       "seed": 175,
@@ -8560,7 +8526,7 @@
         "l1_q11": "C",
         "l1_q12": "A"
       },
-      "expected": "LEN"
+      "expected": "LYO"
     },
     {
       "seed": 177,
@@ -8824,7 +8790,7 @@
         "l1_q11": "A",
         "l1_q12": "C"
       },
-      "expected": "LEN"
+      "expected": "STR"
     },
     {
       "seed": 183,
@@ -8868,7 +8834,7 @@
         "l1_q11": "D",
         "l1_q12": "D"
       },
-      "expected": "ANG"
+      "expected": "LOR"
     },
     {
       "seed": 184,
@@ -8956,7 +8922,7 @@
         "l1_q11": "D",
         "l1_q12": "D"
       },
-      "expected": "LEN"
+      "expected": "LEM"
     },
     {
       "seed": 186,
@@ -9396,7 +9362,7 @@
         "l1_q11": "D",
         "l1_q12": "D"
       },
-      "expected": "LIL"
+      "expected": "NIC"
     },
     {
       "seed": 196,
@@ -9440,7 +9406,7 @@
         "l1_q11": "A",
         "l1_q12": "D"
       },
-      "expected": "LIL"
+      "expected": "ANG"
     },
     {
       "seed": 197,
@@ -9484,7 +9450,7 @@
         "l1_q11": "C",
         "l1_q12": "B"
       },
-      "expected": "REN"
+      "expected": "NIC"
     },
     {
       "seed": 198,

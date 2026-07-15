@@ -1,6 +1,6 @@
 {
   "sport": "SA",
-  "note": "FanDNA Serie A regression baseline. Replay through real scoreCore + scoreModule; expected club must not change unless intentionally re-baselined after an accepted scoring change. Random sheets reuse the shared sport-independent core sheets; module answers are SA-specific. Built from the fixed data file after the Napoli sa_q3 +2 reachability fix. | re-baselined for core decompression (stretch 1.7) + sa_q13",
+  "note": "FanDNA Serie A regression baseline. Replay through real scoreCore + scoreModule; expected club must not change unless intentionally re-baselined after an accepted scoring change. Random sheets reuse the shared sport-independent core sheets; module answers are SA-specific. Built from the fixed data file after the Napoli sa_q3 +2 reachability fix. | re-baselined for core decompression (stretch 1.7) + sa_q13 | re-baselined 2026-07-15 on post-rebuild engine (core 5838d3b3 / scoring 4411d2ad); random winners re-recorded, reference personas that shifted regenerated as coreProfile-direct reachability locks.",
   "engine": {
     "clubs": 20,
     "moduleQuestions": 13
@@ -971,7 +971,7 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "LEC"
+      "expected": "PAR"
     },
     {
       "seed": 2,
@@ -1061,7 +1061,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "LAZ"
+      "expected": "MON"
     },
     {
       "seed": 4,
@@ -1106,7 +1106,7 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "MON"
+      "expected": "LAZ"
     },
     {
       "seed": 5,
@@ -1241,7 +1241,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "INT"
+      "expected": "BOL"
     },
     {
       "seed": 8,
@@ -1556,7 +1556,7 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "GEN"
+      "expected": "PAR"
     },
     {
       "seed": 15,
@@ -1646,7 +1646,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "LEC"
+      "expected": "FIO"
     },
     {
       "seed": 17,
@@ -1781,7 +1781,7 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "UDI"
+      "expected": "GEN"
     },
     {
       "seed": 20,
@@ -1826,7 +1826,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "FRO"
     },
     {
       "seed": 21,
@@ -1871,7 +1871,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "ATA"
+      "expected": "MON"
     },
     {
       "seed": 22,
@@ -1916,7 +1916,7 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "LEC"
+      "expected": "MON"
     },
     {
       "seed": 23,
@@ -2096,7 +2096,7 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "CAG"
+      "expected": "GEN"
     },
     {
       "seed": 27,
@@ -2141,7 +2141,7 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "BOL"
+      "expected": "PAR"
     },
     {
       "seed": 28,
@@ -2186,7 +2186,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "LAZ"
+      "expected": "ATA"
     },
     {
       "seed": 29,
@@ -2411,7 +2411,7 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "JUV"
+      "expected": "SAS"
     },
     {
       "seed": 34,
@@ -2456,7 +2456,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "NAP"
+      "expected": "COM"
     },
     {
       "seed": 35,
@@ -2501,7 +2501,7 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "NAP"
+      "expected": "LAZ"
     },
     {
       "seed": 36,
@@ -2546,7 +2546,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "FIO"
+      "expected": "CAG"
     },
     {
       "seed": 37,
@@ -2726,7 +2726,7 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "VEN"
+      "expected": "MON"
     },
     {
       "seed": 41,
@@ -2771,7 +2771,7 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "ROM"
+      "expected": "TOR"
     },
     {
       "seed": 42,
@@ -2816,7 +2816,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "MIL"
+      "expected": "MON"
     },
     {
       "seed": 43,
@@ -2861,7 +2861,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "BOL"
+      "expected": "ATA"
     },
     {
       "seed": 44,
@@ -2906,7 +2906,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "MON"
+      "expected": "FRO"
     },
     {
       "seed": 45,
@@ -2951,7 +2951,7 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "NAP"
+      "expected": "PAR"
     },
     {
       "seed": 46,
@@ -2996,7 +2996,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "UDI"
+      "expected": "BOL"
     },
     {
       "seed": 47,
@@ -3131,7 +3131,7 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "BOL"
+      "expected": "VEN"
     },
     {
       "seed": 50,
@@ -3266,7 +3266,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "VEN"
+      "expected": "MIL"
     },
     {
       "seed": 53,
@@ -3311,7 +3311,7 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "ROM"
+      "expected": "LEC"
     },
     {
       "seed": 54,
@@ -3401,7 +3401,7 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "ROM"
+      "expected": "LEC"
     },
     {
       "seed": 56,
@@ -3446,7 +3446,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "FRO"
     },
     {
       "seed": 57,
@@ -3491,7 +3491,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "LEC"
+      "expected": "BOL"
     },
     {
       "seed": 58,
@@ -3671,7 +3671,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "LAZ"
+      "expected": "VEN"
     },
     {
       "seed": 62,
@@ -3716,7 +3716,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "ATA"
+      "expected": "CAG"
     },
     {
       "seed": 63,
@@ -3941,7 +3941,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "FIO"
+      "expected": "LAZ"
     },
     {
       "seed": 68,
@@ -3986,7 +3986,7 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "FRO"
+      "expected": "PAR"
     },
     {
       "seed": 69,
@@ -4076,7 +4076,7 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "MON"
+      "expected": "FIO"
     },
     {
       "seed": 71,
@@ -4211,7 +4211,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "FRO"
+      "expected": "BOL"
     },
     {
       "seed": 74,
@@ -4256,7 +4256,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "ROM"
+      "expected": "PAR"
     },
     {
       "seed": 75,
@@ -4301,7 +4301,7 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "MIL"
+      "expected": "PAR"
     },
     {
       "seed": 76,
@@ -4391,7 +4391,7 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "INT"
+      "expected": "ATA"
     },
     {
       "seed": 78,
@@ -4436,7 +4436,7 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "TOR"
+      "expected": "ATA"
     },
     {
       "seed": 79,
@@ -4661,7 +4661,7 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "JUV"
+      "expected": "MON"
     },
     {
       "seed": 84,
@@ -4751,7 +4751,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "UDI"
+      "expected": "MON"
     },
     {
       "seed": 86,
@@ -4796,7 +4796,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "VEN"
+      "expected": "CAG"
     },
     {
       "seed": 87,
@@ -4841,7 +4841,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "COM"
+      "expected": "BOL"
     },
     {
       "seed": 88,
@@ -4931,7 +4931,7 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "ROM"
+      "expected": "LAZ"
     },
     {
       "seed": 90,
@@ -5021,7 +5021,7 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "LAZ"
+      "expected": "ATA"
     },
     {
       "seed": 92,
@@ -5066,7 +5066,7 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "SAS"
+      "expected": "GEN"
     },
     {
       "seed": 93,
@@ -5111,7 +5111,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "FRO"
+      "expected": "MIL"
     },
     {
       "seed": 94,
@@ -5201,7 +5201,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "BOL"
+      "expected": "FRO"
     },
     {
       "seed": 96,
@@ -5246,7 +5246,7 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "FIO"
+      "expected": "FRO"
     },
     {
       "seed": 97,
@@ -5336,7 +5336,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "MON"
+      "expected": "ATA"
     },
     {
       "seed": 99,
@@ -5381,7 +5381,7 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "GEN"
+      "expected": "UDI"
     },
     {
       "seed": 100,
@@ -5471,7 +5471,7 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "UDI"
+      "expected": "JUV"
     },
     {
       "seed": 102,
@@ -5606,7 +5606,7 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "ROM"
+      "expected": "MIL"
     },
     {
       "seed": 105,
@@ -5651,7 +5651,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "MON"
+      "expected": "FIO"
     },
     {
       "seed": 106,
@@ -5786,7 +5786,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "ROM"
     },
     {
       "seed": 109,
@@ -5831,7 +5831,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "TOR"
+      "expected": "ROM"
     },
     {
       "seed": 110,
@@ -6011,7 +6011,7 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "ROM"
+      "expected": "MIL"
     },
     {
       "seed": 114,
@@ -6056,7 +6056,7 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "TOR"
+      "expected": "GEN"
     },
     {
       "seed": 115,
@@ -6101,7 +6101,7 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "MON"
+      "expected": "LEC"
     },
     {
       "seed": 116,
@@ -6146,7 +6146,7 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "LAZ"
+      "expected": "ATA"
     },
     {
       "seed": 117,
@@ -6326,7 +6326,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "UDI"
+      "expected": "VEN"
     },
     {
       "seed": 121,
@@ -6641,7 +6641,7 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "MON"
+      "expected": "LAZ"
     },
     {
       "seed": 128,
@@ -6731,7 +6731,7 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "ATA"
+      "expected": "PAR"
     },
     {
       "seed": 130,
@@ -6776,7 +6776,7 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "INT"
+      "expected": "BOL"
     },
     {
       "seed": 131,
@@ -6911,7 +6911,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "NAP"
+      "expected": "MON"
     },
     {
       "seed": 134,
@@ -7046,7 +7046,7 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "INT"
+      "expected": "COM"
     },
     {
       "seed": 137,
@@ -7091,7 +7091,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "VEN"
+      "expected": "LEC"
     },
     {
       "seed": 138,
@@ -7136,7 +7136,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "INT"
+      "expected": "MIL"
     },
     {
       "seed": 139,
@@ -7226,7 +7226,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "FIO"
     },
     {
       "seed": 141,
@@ -7361,7 +7361,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "GEN"
+      "expected": "BOL"
     },
     {
       "seed": 144,
@@ -7406,7 +7406,7 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "VEN"
+      "expected": "MON"
     },
     {
       "seed": 145,
@@ -7451,7 +7451,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "COM"
+      "expected": "BOL"
     },
     {
       "seed": 146,
@@ -7541,7 +7541,7 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "LEC"
+      "expected": "BOL"
     },
     {
       "seed": 148,
@@ -7586,7 +7586,7 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "TOR"
+      "expected": "LEC"
     },
     {
       "seed": 149,
@@ -7721,7 +7721,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "VEN"
     },
     {
       "seed": 152,
@@ -7946,7 +7946,7 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "GEN"
     },
     {
       "seed": 157,
@@ -7991,7 +7991,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "INT"
+      "expected": "FRO"
     },
     {
       "seed": 158,
@@ -8216,7 +8216,7 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "MON"
+      "expected": "JUV"
     },
     {
       "seed": 163,
@@ -8351,7 +8351,7 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "CAG"
+      "expected": "FIO"
     },
     {
       "seed": 166,
@@ -8396,7 +8396,7 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "INT"
+      "expected": "FIO"
     },
     {
       "seed": 167,
@@ -8441,7 +8441,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "NAP"
+      "expected": "ROM"
     },
     {
       "seed": 168,
@@ -8486,7 +8486,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "LEC"
+      "expected": "TOR"
     },
     {
       "seed": 169,
@@ -8576,7 +8576,7 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "FIO"
+      "expected": "PAR"
     },
     {
       "seed": 171,
@@ -8666,7 +8666,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "ATA"
     },
     {
       "seed": 173,
@@ -8711,7 +8711,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "CAG"
     },
     {
       "seed": 174,
@@ -8756,7 +8756,7 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "UDI"
+      "expected": "FIO"
     },
     {
       "seed": 175,
@@ -8846,7 +8846,7 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "LEC"
+      "expected": "VEN"
     },
     {
       "seed": 177,
@@ -8891,7 +8891,7 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "ROM"
+      "expected": "PAR"
     },
     {
       "seed": 178,
@@ -9026,7 +9026,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "FRO"
+      "expected": "GEN"
     },
     {
       "seed": 181,
@@ -9071,7 +9071,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "TOR"
     },
     {
       "seed": 182,
@@ -9161,7 +9161,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "INT"
+      "expected": "MON"
     },
     {
       "seed": 184,
@@ -9341,7 +9341,7 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "SAS"
+      "expected": "LEC"
     },
     {
       "seed": 188,
@@ -9386,7 +9386,7 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "TOR"
+      "expected": "CAG"
     },
     {
       "seed": 189,
@@ -9611,7 +9611,7 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "FRO"
+      "expected": "FIO"
     },
     {
       "seed": 194,
@@ -9656,7 +9656,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "MIL"
+      "expected": "LAZ"
     },
     {
       "seed": 195,
