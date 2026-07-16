@@ -901,7 +901,7 @@ function AppInner(){
                 {team.note&&(<p style={{fontSize:14,color:"#bbb",lineHeight:1.75,margin:"0 0 24px",borderLeft:`1px solid #252535`,paddingLeft:14,fontFamily:"'DM Mono',monospace"}}>{team.note}</p>)}
                 {/* Fandom vs FanDNA reframe (per 1b) - sport-aware */}
                 <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(15px,3.4vw,18px)",fontStyle:"italic",color:"#9898b8",lineHeight:1.6,margin:"6px 0 22px"}}>This is your {regOf(activeSport).noun} by DNA. {regOf(activeSport).tail}</p>
-                <MatchEvidence evidence={evidence} clubName={team.name} color={teamTextColors[result]||team.color} noun={regOf(activeSport).noun}/>
+                <MatchEvidence evidence={evidence} clubName={team.name} color={teamTextColors[result]||team.color} noun={regOf(activeSport).noun} section="stability"/>
                 <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:28}}>
                   {team.kit&&(<a href={team.kit} target="_blank" rel="noopener noreferrer"
                     style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
@@ -919,6 +919,8 @@ function AppInner(){
             {/* ── Tab: Analysis ── */}
             {tab==="analysis"&&(
               <div style={{animation:"fadeIn .3s ease"}}>
+                <MatchEvidence evidence={evidence} clubName={team.name} color={teamTextColors[result]||team.color} noun={regOf(activeSport).noun} section="why"/>
+                <div style={{marginTop:28,paddingTop:24,borderTop:"1px solid #1e1e2e"}}>
                 {coreProfile ? (
                   <CoreCompare core={coreProfile} club={D.teamDims[result]} clubName={team.name}
                     accent={teamTextColors[result]||team.color}
@@ -926,6 +928,7 @@ function AppInner(){
                 ) : (
                   <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:16,fontStyle:"italic",color:"#9a9ac4",lineHeight:1.6,margin:"0 0 8px"}}>Retake this {regOf(activeSport).noun} to map your core against {team.name}.</p>
                 )}
+                </div>
                 {/* ── CTAs ── */}
                 <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:24,paddingTop:20,borderTop:"1px solid #2a2a3a"}}>
                   {team.kit&&(<a href={team.kit} target="_blank" rel="noopener noreferrer"
