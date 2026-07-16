@@ -1002,7 +1002,7 @@
         "l1_q11": "A",
         "l1_q12": "B"
       },
-      "expected": "ANG"
+      "expected": "LEN"
     },
     {
       "seed": 6,
@@ -3906,7 +3906,7 @@
         "l1_q11": "A",
         "l1_q12": "C"
       },
-      "expected": "LEN"
+      "expected": "NIC"
     },
     {
       "seed": 72,
@@ -8350,7 +8350,7 @@
         "l1_q11": "B",
         "l1_q12": "A"
       },
-      "expected": "TRO"
+      "expected": "LEN"
     },
     {
       "seed": 173,

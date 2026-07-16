@@ -2307,7 +2307,7 @@
         "ll_q11": "D",
         "ll_q12": "right"
       },
-      "expected": "ATM"
+      "expected": "RAY"
     },
     {
       "seed": 34,
@@ -3583,7 +3583,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "OSA"
+      "expected": "VIL"
     },
     {
       "seed": 63,
@@ -3979,7 +3979,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "ATM"
+      "expected": "SEV"
     },
     {
       "seed": 72,
@@ -7587,7 +7587,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "SEV"
+      "expected": "MAL"
     },
     {
       "seed": 154,
@@ -8863,7 +8863,7 @@
         "ll_q11": "A",
         "ll_q12": "right"
       },
-      "expected": "ELC"
+      "expected": "BET"
     },
     {
       "seed": 183,

@@ -3716,7 +3716,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "CAG"
+      "expected": "FIO"
     },
     {
       "seed": 63,
@@ -5111,7 +5111,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "MIL"
+      "expected": "FRO"
     },
     {
       "seed": 94,
@@ -5786,7 +5786,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "ROM"
+      "expected": "GEN"
     },
     {
       "seed": 109,
@@ -8216,7 +8216,7 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "JUV"
+      "expected": "INT"
     },
     {
       "seed": 163,

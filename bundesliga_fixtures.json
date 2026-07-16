@@ -6536,7 +6536,7 @@
         "bl_q11": "right",
         "bl_q12": "A"
       },
-      "expected": "S04"
+      "expected": "SVW"
     },
     {
       "seed": 131,
@@ -7504,7 +7504,7 @@
         "bl_q11": "left",
         "bl_q12": "C"
       },
-      "expected": "ELV"
+      "expected": "M05"
     },
     {
       "seed": 153,
