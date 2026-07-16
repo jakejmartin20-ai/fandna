@@ -99,7 +99,7 @@ const coreQuestions = [
         "value": "C"
       },
       {
-        "label": "A small handful, somewhere low-key.",
+        "label": "A few familiar faces, low-key and undemanding.",
         "value": "D"
       },
       {
@@ -483,7 +483,7 @@ const coreDimScoring = {
     "A": { "community": 10 },
     "B": { "community": 7 },
     "C": { "community": 2 },
-    "D": { "community": 6 },
+    "D": { "community": 4 },
     "E": { "community": 1 }
   },
   "q6": {
