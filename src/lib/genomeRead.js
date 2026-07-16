@@ -9,7 +9,7 @@
 const DIM_ORDER = ["loyalty","emotion","ambition","process","community","chaos","rootedness"];
 
 // baked population stats (see header). Drives per-dim z-scores.
-const MEAN = { loyalty:5.868, emotion:5.479, ambition:6.251, process:5.096, community:5.399, chaos:5.235, rootedness:5.729 };
+const MEAN = { loyalty:5.868, emotion:5.479, ambition:6.251, process:5.096, community:5.266, chaos:5.235, rootedness:5.729 };
 const SD   = { loyalty:1.774, emotion:1.292, ambition:1.402, process:1.88, community:1.981, chaos:2.197, rootedness:1.745 };
 
 // -- Population standing: the ONLY honest thing a drawn band can mean -------------------------
