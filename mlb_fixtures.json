@@ -1,14 +1,14 @@
 {
   "meta": {
     "purpose": "MLB regression gate. Each fixture is an input the live MLB engine maps to a team. Any future change to src/data/mlb.js scoring (or the shared fingerprint engine in src/lib/scoring.js) must reproduce every winner here, or the diff must be reviewed and accepted.",
-    "generated": "2026-06-15",
+    "generated": "2026-07-16",
     "source": "Generated from the live MLB fingerprint matrix at the session-20 convergence build (30 teams, 12 module questions); re-baselined in the depth/resonance pass (2026-06-15) after an accepted matrix change (TEX added to q5/C, STL trimmed from q10/A). One random winner moved on the accepted matrix: rnd_009 TOR -> TEX (a near-tie tip in the intended direction); all 30 signatures still self-land, zero decisive flips on a 200k uniform sweep. MLB is a fingerprint sport like NFL: coreProfile vs teamDims plus module-point tiebreakers.",
     "synthetic_caveat": "Signatures pin coreProfile to each team's own teamDims (the perfectly matched taker) with its best module answers; randoms are uniform synthetic inputs. These verify engine reproducibility and per-team reachability ONLY. They are NOT real-taker rates and say nothing about how often a real person lands on a team.",
     "counts": {
       "signatures": 30,
       "random": 40
     },
-    "note": "re-baselined 2026-07-15 on post-rebuild engine (core 5838d3b3 / scoring 4411d2ad); random winners re-recorded, reference personas that shifted regenerated as coreProfile-direct reachability locks."
+    "note": "re-recorded 2026-07-16 on the shipped post-rebuild engine (core ffe8b26f / scoring 60f1ec66, community mean 5.266). The prior baseline's random winners predated the Jul-15 core rebuild and were never re-recorded through it (they reproduced only 19/40 on the shipped engine); all 30 signatures self-land unchanged. Randoms re-recorded here; 21 random winners moved (genuine post-rebuild re-derivations, not fixture rot or a q5 effect). Signatures unchanged."
   },
   "fixtures": [
     {
@@ -1001,8 +1001,8 @@
         "mlb_q11": "A",
         "mlb_q12": "E"
       },
-      "winner": "LAA",
-      "winnerName": "Los Angeles Angels"
+      "winner": "MIL",
+      "winnerName": "Milwaukee Brewers"
     },
     {
       "id": "rnd_003",
@@ -1048,8 +1048,8 @@
         "mlb_q11": "C",
         "mlb_q12": "C"
       },
-      "winner": "BAL",
-      "winnerName": "Baltimore Orioles"
+      "winner": "CLE",
+      "winnerName": "Cleveland Guardians"
     },
     {
       "id": "rnd_004",
@@ -1095,8 +1095,8 @@
         "mlb_q11": "D",
         "mlb_q12": "B"
       },
-      "winner": "WSH",
-      "winnerName": "Washington Nationals"
+      "winner": "PHI",
+      "winnerName": "Philadelphia Phillies"
     },
     {
       "id": "rnd_005",
@@ -1142,8 +1142,8 @@
         "mlb_q11": "C",
         "mlb_q12": "A"
       },
-      "winner": "LAA",
-      "winnerName": "Los Angeles Angels"
+      "winner": "NYM",
+      "winnerName": "New York Mets"
     },
     {
       "id": "rnd_006",
@@ -1189,8 +1189,8 @@
         "mlb_q11": "C",
         "mlb_q12": "D"
       },
-      "winner": "WSH",
-      "winnerName": "Washington Nationals"
+      "winner": "TEX",
+      "winnerName": "Texas Rangers"
     },
     {
       "id": "rnd_007",
@@ -1283,8 +1283,8 @@
         "mlb_q11": "A",
         "mlb_q12": "A"
       },
-      "winner": "ATH",
-      "winnerName": "Athletics"
+      "winner": "MIL",
+      "winnerName": "Milwaukee Brewers"
     },
     {
       "id": "rnd_009",
@@ -1330,8 +1330,8 @@
         "mlb_q11": "E",
         "mlb_q12": "D"
       },
-      "winner": "BOS",
-      "winnerName": "Boston Red Sox"
+      "winner": "AZ",
+      "winnerName": "Arizona Diamondbacks"
     },
     {
       "id": "rnd_010",
@@ -1377,8 +1377,8 @@
         "mlb_q11": "C",
         "mlb_q12": "E"
       },
-      "winner": "LAA",
-      "winnerName": "Los Angeles Angels"
+      "winner": "CLE",
+      "winnerName": "Cleveland Guardians"
     },
     {
       "id": "rnd_011",
@@ -1471,8 +1471,8 @@
         "mlb_q11": "A",
         "mlb_q12": "D"
       },
-      "winner": "LAA",
-      "winnerName": "Los Angeles Angels"
+      "winner": "TOR",
+      "winnerName": "Toronto Blue Jays"
     },
     {
       "id": "rnd_013",
@@ -1518,8 +1518,8 @@
         "mlb_q11": "D",
         "mlb_q12": "C"
       },
-      "winner": "COL",
-      "winnerName": "Colorado Rockies"
+      "winner": "SEA",
+      "winnerName": "Seattle Mariners"
     },
     {
       "id": "rnd_014",
@@ -1565,8 +1565,8 @@
         "mlb_q11": "C",
         "mlb_q12": "E"
       },
-      "winner": "SF",
-      "winnerName": "San Francisco Giants"
+      "winner": "CLE",
+      "winnerName": "Cleveland Guardians"
     },
     {
       "id": "rnd_015",
@@ -1612,8 +1612,8 @@
         "mlb_q11": "D",
         "mlb_q12": "C"
       },
-      "winner": "MIA",
-      "winnerName": "Miami Marlins"
+      "winner": "COL",
+      "winnerName": "Colorado Rockies"
     },
     {
       "id": "rnd_016",
@@ -1706,8 +1706,8 @@
         "mlb_q11": "C",
         "mlb_q12": "C"
       },
-      "winner": "MIA",
-      "winnerName": "Miami Marlins"
+      "winner": "SEA",
+      "winnerName": "Seattle Mariners"
     },
     {
       "id": "rnd_018",
@@ -1800,8 +1800,8 @@
         "mlb_q11": "B",
         "mlb_q12": "C"
       },
-      "winner": "TB",
-      "winnerName": "Tampa Bay Rays"
+      "winner": "MIL",
+      "winnerName": "Milwaukee Brewers"
     },
     {
       "id": "rnd_020",
@@ -1941,8 +1941,8 @@
         "mlb_q11": "A",
         "mlb_q12": "E"
       },
-      "winner": "HOU",
-      "winnerName": "Houston Astros"
+      "winner": "TEX",
+      "winnerName": "Texas Rangers"
     },
     {
       "id": "rnd_023",
@@ -2458,8 +2458,8 @@
         "mlb_q11": "D",
         "mlb_q12": "C"
       },
-      "winner": "TB",
-      "winnerName": "Tampa Bay Rays"
+      "winner": "MIL",
+      "winnerName": "Milwaukee Brewers"
     },
     {
       "id": "rnd_034",
@@ -2505,8 +2505,8 @@
         "mlb_q11": "B",
         "mlb_q12": "B"
       },
-      "winner": "MIA",
-      "winnerName": "Miami Marlins"
+      "winner": "CLE",
+      "winnerName": "Cleveland Guardians"
     },
     {
       "id": "rnd_035",
@@ -2552,8 +2552,8 @@
         "mlb_q11": "D",
         "mlb_q12": "E"
       },
-      "winner": "BAL",
-      "winnerName": "Baltimore Orioles"
+      "winner": "SF",
+      "winnerName": "San Francisco Giants"
     },
     {
       "id": "rnd_036",
@@ -2646,8 +2646,8 @@
         "mlb_q11": "E",
         "mlb_q12": "C"
       },
-      "winner": "MIA",
-      "winnerName": "Miami Marlins"
+      "winner": "SD",
+      "winnerName": "San Diego Padres"
     },
     {
       "id": "rnd_038",
@@ -2693,8 +2693,8 @@
         "mlb_q11": "E",
         "mlb_q12": "E"
       },
-      "winner": "CLE",
-      "winnerName": "Cleveland Guardians"
+      "winner": "HOU",
+      "winnerName": "Houston Astros"
     },
     {
       "id": "rnd_039",
@@ -2740,8 +2740,8 @@
         "mlb_q11": "B",
         "mlb_q12": "A"
       },
-      "winner": "BOS",
-      "winnerName": "Boston Red Sox"
+      "winner": "KC",
+      "winnerName": "Kansas City Royals"
     },
     {
       "id": "rnd_040",
