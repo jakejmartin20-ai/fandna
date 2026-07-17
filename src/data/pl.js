@@ -1801,10 +1801,10 @@ const scoring = {
       "SP": 3,
       "NF": 2,
       "FU": 2,
-      "BO": 2,
+      "BO": 3,
       "LE": 2,
       "CV": 2,
-      "IT": 2,
+      "IT": 1,
       "CH": 1
     }
   },
@@ -1818,7 +1818,7 @@ const scoring = {
     "B": {
       "AR": 3,
       "BH": 2,
-      "FU": 3,
+      "FU": 4,
       "BR": 1,
       "IT": 2,
       "HU": 2
@@ -2221,7 +2221,7 @@ const scoring = {
       "NF": 3,
       "BR": 2,
       "LE": 3,
-      "BO": 2,
+      "BO": 3,
       "FU": 2,
       "BH": 1,
       "SU": 2,
@@ -2254,7 +2254,7 @@ const scoring = {
       "AR": 2,
       "BH": 2,
       "WO": 2,
-      "FU": 2,
+      "FU": 3,
       "IT": 2
     },
     "C": {
@@ -2309,7 +2309,7 @@ const scoring = {
     "4": {
       "NF": 2,
       "LE": 2,
-      "BO": 2,
+      "BO": 3,
       "WH": 1,
       "IT": 2,
       "CV": 2,
@@ -2345,9 +2345,9 @@ const scoring = {
       "LI": 3,
       "WH": 2,
       "NC": 2,
-      "BO": 2,
+      "BO": 3,
       "SU": 2,
-      "IT": 2,
+      "IT": 1,
       "LU": 1,
       "HU": 1
     },
@@ -2371,7 +2371,7 @@ const scoring = {
       "AR": 3,
       "NF": 3,
       "FU": 3,
-      "BO": 2,
+      "BO": 3,
       "BH": 2,
       "SP": 2,
       "AV": 2,
@@ -2406,7 +2406,7 @@ const scoring = {
       "NF": 2,
       "FU": 3,
       "WO": 1,
-      "IT": 2,
+      "IT": 1,
       "CV": 2,
       "HU": 2,
       "BO": 2
@@ -2577,10 +2577,10 @@ const scoring = {
     },
     "3": {
       "AV": 3,
-      "BO": 2,
+      "BO": 3,
       "BH": 1,
       "LE": 2,
-      "IT": 2,
+      "IT": 1,
       "CH": 1
     },
     "4": {
@@ -2678,7 +2678,7 @@ const scoring = {
       "BO": 2,
       "AR": 2,
       "BH": 1,
-      "IT": 2
+      "IT": 1
     },
     "3": {
       "AV": 2,
@@ -2756,12 +2756,12 @@ const scoring = {
       "NF": 3,
       "SP": 3,
       "WH": 2,
-      "BO": 2,
+      "BO": 3,
       "CP": 1,
       "AV": 1,
       "SU": 2,
       "LU": 2,
-      "IT": 2,
+      "IT": 1,
       "CV": 2,
       "HU": 2
     },
@@ -2826,7 +2826,7 @@ const scoring = {
       "IT": 3,
       "BH": 2,
       "MC": 1,
-      "BO": 2
+      "BO": 3
     },
     "right": {
       "NC": 2,
@@ -2883,7 +2883,7 @@ const scoring = {
       "WH": 3,
       "CV": 3,
       "IT": 3,
-      "FU": 2,
+      "FU": 3,
       "WO": 2,
       "BR": 2,
       "BO": 2,
@@ -3023,8 +3023,8 @@ const scoring = {
   "pl_q14": {
     "A": {
       "BO": 2,
-      "FU": 2,
-      "IT": 2,
+      "FU": 3,
+      "IT": 1,
       "NC": 1
     },
     "B": {
