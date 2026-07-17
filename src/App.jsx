@@ -198,8 +198,10 @@ function AppInner(){
   const [evidenceInput,setEvidenceInput]=useState(null); // {coreAnswers,moduleAnswers} for the cross-match compare
   const [phase,setPhase]=useState("in");
   const [tab,setTab]=useState("result");
-  const [mode,setMode]=useState("full");        // "full" = core+module ; "module" = PL module only
+  const [mode,setMode]=useState("full");        // "full" = core+module ; "module" = league module only ; "core" = re-sequence the shared core
   const [savedCore,setSavedCore]=useState(null); // cached {coreAnswers,coreProfile} for module-only retakes
+  const [resequenceConfirm,setResequenceConfirm]=useState(false); // the "re-sequence core?" confirm modal
+  const [resequenceDelta,setResequenceDelta]=useState(null);      // {moved:[{sport,from,to}],stale:[...]} shown once after a re-sequence
   const [coreProfile,setCoreProfile]=useState(null); // the user's 7-dim core; drives the strip everywhere
   const [screen,setScreen]=useState("home");     // "home" | "quiz" | "result" | "compare" | "how" - the genome home is the landing page
   const [howFrom,setHowFrom]=useState("home");   // which screen the explainer was opened from, so Back returns there
@@ -239,10 +241,13 @@ function AppInner(){
   // The active question run. First time: 24 core + 14 PL module = 38, in the v1 order.
   // Module-only retake: just the 14 PL questions (the core is already sequenced).
   const sequence=useMemo(
-    ()=> mode==="module" ? moduleQuestions : [...coreQuestions, ...moduleQuestions],
+    ()=> mode==="module" ? moduleQuestions : mode==="core" ? coreQuestions : [...coreQuestions, ...moduleQuestions],
     [mode,activeSport]
   );
   const coreIds=useMemo(()=>new Set(coreQuestions.map(p=>p.id)),[]);
+  // Which phases belong to the shared core (vs a league module). Data-derived, so the
+  // progress bar can colour + group core-purple then league-gold in any mode.
+  const CORE_PHASES=useMemo(()=>new Set(coreQuestions.map(p=>p.phase)),[]);
 
   const q=sequence[cur];
   const pct=Math.round((cur/sequence.length)*100);
@@ -253,6 +258,9 @@ function AppInner(){
   const phaseIdx=phaseOrder.indexOf(currentPhase);
   const phaseStart=sequence.findIndex(p=>p.phase===currentPhase);
   const phaseLen=sequence.filter(p=>p.phase===currentPhase).length;
+  const coreInSeq=phaseOrder.filter(p=>CORE_PHASES.has(p)).length; // core segments in this run
+  const modInSeq=phaseOrder.length-coreInSeq;                       // league segments in this run
+  const seqLeagueName=(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League";
 
   // Resume a previously completed PL genome. The result is PRELOADED so the completed
   // strand on the home screen is tappable straight to it, but we stay on the home screen
@@ -343,6 +351,38 @@ function AppInner(){
       if(nextPhase!==q.phase) track("quiz_phase",{phase:nextPhase});
       setPhase("out");
       setTimeout(()=>{setCur(c=>c+1);setPhase("in");},220);
+    } else if(mode==="core"){
+      // Re-sequence: the 24 core answers ARE the whole run. Recompute every taken league
+      // from its stored module answers against the new core, through the same engine, so a
+      // club only moves if the new core honestly lands somewhere else. A league restored
+      // from a share link has no stored answers to re-read, so we keep its club and flag it.
+      const newCoreAnswers=na;
+      const newCore=scoreCore(newCoreAnswers);
+      const st=loadState();
+      const moved=[]; const stale=[];
+      for(const [sport,r] of Object.entries(st.results||{})){
+        if(!r||!r.club) continue;
+        const modAns=r.answers||{};
+        if(Object.keys(modAns).length===0){
+          stale.push(sport);
+          saveResult(sport,{coreAnswers:newCoreAnswers,coreProfile:newCore,club:r.club});
+          continue;
+        }
+        const { club:newClub, scores:ns }=scoreModule(sport,{coreProfile:newCore,coreAnswers:newCoreAnswers,moduleAnswers:modAns});
+        if(newClub!==r.club) moved.push({sport,from:r.club,to:newClub});
+        saveResult(sport,{coreAnswers:newCoreAnswers,coreProfile:newCore,club:newClub,moduleAnswers:modAns,scores:ns});
+      }
+      const stg=loadState();
+      setCoreProfile(newCore);
+      setGenome(stg.results||{});
+      setResequenceDelta({moved,stale});
+      track("core_resequenced",{moved:moved.length,stale:stale.length});
+      setMode("full");
+      setPhase("out");
+      setTimeout(()=>{
+        setCur(0);setAnswers({});setResult(null);setScores(null);setTab("result");
+        setScreen("home");setPhase("in");
+      },160);
     } else {
       // Two-stage scoring. Split the answers into the shared core and the PL module.
       // On a module-only retake the core comes from the already-saved genome.
@@ -425,6 +465,19 @@ function AppInner(){
       setScreen("quiz");setPhase("in");
     },160);
   }
+  // Re-sequence the shared core: re-answer the 24 about-you questions. On finish, every taken
+  // league recomputes from its saved answers against the new core (see the mode==="core" branch).
+  function resequenceCore(){
+    setResequenceConfirm(false);
+    setResequenceDelta(null);
+    setSavedCore(null);
+    setMode("core");
+    setPhase("out");
+    setTimeout(()=>{
+      setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");
+      setScreen("quiz");setPhase("in");
+    },160);
+  }
   // Start a sport from the home screen (a live, untaken strand). Sets it active.
   // If the shared core is already sequenced, run just that sport's module; else run the full set.
   function startSport(code){
@@ -463,6 +516,14 @@ function AppInner(){
 
   const team=result?teams[result]:null;
   const blk=(p)=> (p&&Object.keys(p).length) ? ("\uD83E\uDDEC "+coreBlocks(p)) : "";
+  // Names of any restored-from-link leagues (no saved answers), for the re-sequence confirm note.
+  const staleLeagueNames=useMemo(()=>{
+    if(!resequenceConfirm) return [];
+    const st=loadState();
+    return Object.entries(st.results||{})
+      .filter(([,r])=>r&&r.club&&Object.keys(r.answers||{}).length===0)
+      .map(([code])=>(SPORTS.find(s=>s.code===code)||{}).name||code);
+  },[resequenceConfirm]);
   const onTeam=(()=>{ const c=team&&team.color; if(!c) return "#fff"; const h=c.replace("#",""); const r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16); return (0.2126*r+0.7152*g+0.0722*b)>150?"#15151d":"#fff"; })();
   const sortedOthers=scores
     ?Object.entries(scores).sort((a,b)=>b[1]-a[1]).filter(([k])=>k!==result)
@@ -660,6 +721,30 @@ function AppInner(){
         transition:"background 1s ease",
       }}/>
 
+      {/* Re-sequence core confirm: re-answering the core can move clubs, so set that expectation. */}
+      {resequenceConfirm&&(
+        <div role="dialog" aria-modal="true" aria-label="Re-sequence your core"
+          style={{position:"fixed",inset:0,zIndex:50,display:"flex",alignItems:"center",justifyContent:"center",padding:"24px",background:"rgba(10,10,16,0.72)",animation:"fadeIn .18s ease"}}
+          onClick={()=>setResequenceConfirm(false)}>
+          <div onClick={e=>e.stopPropagation()}
+            style={{width:"100%",maxWidth:420,background:"#1c1c28",border:"1px solid #2a2a3a",borderRadius:14,padding:"26px 24px",animation:"popIn .2s ease"}}>
+            <div style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:500,fontSize:25,color:"#e8e4de",marginBottom:12}}>Re-sequence your core?</div>
+            <p style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:16,color:"#9e9eba",lineHeight:1.5,margin:"0 0 12px"}}>Your core is the same you across every sport. Re-answering it may change the clubs you have already been matched to. That is the mirror working, not a glitch.</p>
+            <p style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:16,color:"#9e9eba",lineHeight:1.5,margin:"0 0 16px"}}>Your league answers are kept. We just re-read them against your new core.</p>
+            {staleLeagueNames.length>0&&(
+              <div style={{display:"flex",gap:10,alignItems:"flex-start",background:"#282420",border:"1px solid #5a4a2a",borderRadius:7,padding:"10px 12px",marginBottom:18}}>
+                <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#ccaa6a",letterSpacing:"0.2em",marginTop:2,flexShrink:0}}>NOTE</span>
+                <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#bea878",lineHeight:1.4}}>{staleLeagueNames.join(" and ")} {staleLeagueNames.length>1?"were":"was"} restored from a link, so {staleLeagueNames.length>1?"they have":"it has"} no saved answers, so {staleLeagueNames.length>1?"they will":"it will"} need a fresh retake.</span>
+              </div>
+            )}
+            <div style={{display:"flex",gap:12,justifyContent:"center"}}>
+              <button onClick={resequenceCore} style={{background:"#6a5ad0",border:"none",borderRadius:6,padding:"11px 22px",color:"#f0eefb",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.18em",textTransform:"uppercase",cursor:"pointer"}}>Re-sequence</button>
+              <button onClick={()=>setResequenceConfirm(false)} style={{background:"none",border:"1px solid #4a4a6a",borderRadius:6,padding:"11px 22px",color:"#9898b8",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.18em",textTransform:"uppercase",cursor:"pointer"}}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div style={{
         width:"100%",maxWidth:560,position:"relative",zIndex:1,
         animation:`${phase==="out"?"slideOut":"slideIn"} .22s ease forwards`,
@@ -702,6 +787,9 @@ function AppInner(){
             onRestore={restoreFromText}
             onCompare={shareGenomeCompare}
             onHow={openHow}
+            onResequence={()=>setResequenceConfirm(true)}
+            resequenceDelta={resequenceDelta}
+            onDismissDelta={()=>setResequenceDelta(null)}
           />
         )}
 
@@ -718,16 +806,25 @@ function AppInner(){
             <div style={{textAlign:"center",marginBottom:14,fontSize:11,color:"#8484b0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>
               {(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"}
             </div>
-            {/* Progress: six-segment phase tracker (in-flow, not jammed to viewport top) */}
-            <div style={{display:"flex",gap:3,height:4,marginBottom:24}}>
-              {phaseOrder.map((ph,i)=>{
-                const frac=i<phaseIdx?1:i>phaseIdx?0:Math.min(1,Math.max(0,(cur-phaseStart+1)/phaseLen));
-                return(
-                  <div key={ph} style={{flex:1,height:"100%",background:"#1e1e2e",borderRadius:2,overflow:"hidden"}}>
-                    <div style={{height:"100%",width:`${frac*100}%`,background:"#6a6a90",borderRadius:2,transition:"width .3s ease"}}/>
-                  </div>
-                );
-              })}
+            {/* Progress: the shared core (purple) then the league (gold), grouped and labelled,
+                so the about-you layer and the sport layer read as distinct at a glance. */}
+            <div style={{marginBottom:24}}>
+              <div style={{display:"flex",gap:3,height:5}}>
+                {phaseOrder.map((ph,i)=>{
+                  const isCore=CORE_PHASES.has(ph);
+                  const seam=i>0&&CORE_PHASES.has(phaseOrder[i-1])&&!isCore; // first league seg after the core
+                  const frac=i<phaseIdx?1:i>phaseIdx?0:Math.min(1,Math.max(0,(cur-phaseStart+1)/phaseLen));
+                  return(
+                    <div key={ph} style={{flex:1,height:"100%",background:"#1e1e2e",borderRadius:2,overflow:"hidden",marginLeft:seam?18:0}}>
+                      <div style={{height:"100%",width:`${frac*100}%`,background:isCore?"#7f7fb0":"#c9b27a",borderRadius:2,transition:"width .3s ease"}}/>
+                    </div>
+                  );
+                })}
+              </div>
+              <div style={{display:"flex",marginTop:7,fontFamily:"'DM Mono',monospace",fontSize:8,letterSpacing:"0.18em",textTransform:"uppercase"}}>
+                {coreInSeq>0&&<span style={{flex:coreInSeq,color:"#8a8ac0",marginRight:modInSeq>0?18:0}}>Your core</span>}
+                {modInSeq>0&&<span style={{flex:modInSeq,color:"#c9b27a",textAlign:coreInSeq>0?"right":"left"}}>{seqLeagueName}</span>}
+              </div>
             </div>
 
             {/* Nav row */}
@@ -769,8 +866,8 @@ function AppInner(){
             {/* Entry framing, first question only (per 1b) */}
             {cur===0&&(
               <div style={{textAlign:"center",marginBottom:26}}>
-                <div style={{fontSize:11,color:"#8484b0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:10}}>Which team are you, really?</div>
-                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(14px,3.4vw,17px)",color:"#9898b8",lineHeight:1.55,margin:0}}>{mode==="module"?`Your core DNA is already sequenced. ${moduleQuestions.length} questions to remap your ${(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"} strand.`:"Answer honestly, not how you wish you were. New to the league or loyal for life, this is the club in your DNA."}</p>
+                <div style={{fontSize:11,color:"#8484b0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:10}}>{mode==="core"?"Re-sequencing your core":"Which team are you, really?"}</div>
+                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(14px,3.4vw,17px)",color:"#9898b8",lineHeight:1.55,margin:0}}>{mode==="core"?"Answer honestly, not how you wish you were. When you finish, every league you have taken re-reads against the new you.":mode==="module"?`Your core is already sequenced. ${moduleQuestions.length} questions to remap your ${(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"} strand.`:"Answer honestly, not how you wish you were. New to the league or loyal for life, this is the club in your DNA."}</p>
               </div>
             )}
 
@@ -1107,6 +1204,11 @@ function AppInner(){
                 onMouseEnter={e=>{e.currentTarget.style.borderColor="#888";e.currentTarget.style.color="#aaa";}}
                 onMouseLeave={e=>{e.currentTarget.style.borderColor="#252535";e.currentTarget.style.color="#818181";}}
               >retake {activeSport}</button>
+              <button onClick={()=>setResequenceConfirm(true)}
+                style={{background:"none",border:"1px solid #444",borderRadius:5,padding:"9px 22px",color:"#bbb",fontSize:11,letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",cursor:"pointer",transition:"all .15s"}}
+                onMouseEnter={e=>{e.currentTarget.style.borderColor="#888";e.currentTarget.style.color="#aaa";}}
+                onMouseLeave={e=>{e.currentTarget.style.borderColor="#252535";e.currentTarget.style.color="#818181";}}
+              >re-sequence core</button>
               <button onClick={()=>{ if(window.confirm("Start over? This clears your entire FanDNA. Every league result and your saved core will be erased. This cannot be undone.")) startOver(); }}
                 style={{background:"none",border:"1px solid #444",borderRadius:5,padding:"9px 22px",color:"#bbb",fontSize:11,letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",cursor:"pointer",transition:"all .15s"}}
                 onMouseEnter={e=>{e.currentTarget.style.borderColor="#888";e.currentTarget.style.color="#aaa";}}
