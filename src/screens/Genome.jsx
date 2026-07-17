@@ -80,7 +80,13 @@ export function GenomeHome({
   onRestore,         // (text) => bool : restore a saved genome from a pasted share link
   onHow,             // () => void : open the "How this works" explainer
   onCompare,         // () => void : share the /c/ compare link (home primary CTA)
+  onResequence,      // () => void : open the "re-sequence core?" confirm
+  resequenceDelta,   // {moved:[{sport,from,to}],stale:[code]} shown once after a re-sequence, or null
+  onDismissDelta,    // () => void : clear the delta banner
 }){
+  // Human names for the delta banner.
+  const leagueName=(code)=>{ const s=sports.find(y=>y.code===code); return s?s.name:code; };
+  const clubName=(code,club)=>{ const t=sportData&&sportData[code]&&sportData[code].teams&&sportData[code].teams[club]; return t&&t.name?t.name:club; };
   const [copied,setCopied]=useState(false);
   const [confirmClear,setConfirmClear]=useState(false);  // two-step guard on the destructive reset
   const [restoreOpen,setRestoreOpen]=useState(false);    // cold-home "restore from a link" disclosure
@@ -284,6 +290,26 @@ export function GenomeHome({
         Your personality already chose your team. Every sport, the same you. We just read it back.
       </p>
 
+      {/* Light delta: after a re-sequence, name only the leagues that actually moved. Shown once. */}
+      {resequenceDelta&&(
+        <div style={{position:"relative",zIndex:1,maxWidth:430,margin:"0 auto 16px",background:"#171722",border:"1px solid #2c2c40",borderRadius:10,padding:"13px 15px"}}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8}}>
+            <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9a9ac4",letterSpacing:"0.22em",textTransform:"uppercase"}}>Core re-sequenced</span>
+            <button type="button" onClick={onDismissDelta}
+              style={{background:"none",border:"none",cursor:"pointer",padding:0,fontFamily:"'DM Mono',monospace",fontSize:9,color:"#7f7f9f",letterSpacing:"0.14em",textTransform:"uppercase"}}>Dismiss</button>
+          </div>
+          {resequenceDelta.moved.map(m=>(
+            <div key={m.sport} style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:15,color:"#c9c5cf",lineHeight:1.45}}>{leagueName(m.sport)} re-read: {clubName(m.sport,m.from)} &rarr; <span style={{color:"#c9b27a"}}>{clubName(m.sport,m.to)}</span></div>
+          ))}
+          {resequenceDelta.moved.length===0&&resequenceDelta.stale.length===0&&(
+            <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:15,color:"#9898b8",lineHeight:1.45}}>Every club held. Same you, same teams.</div>
+          )}
+          {resequenceDelta.stale.map(code=>(
+            <div key={code} style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#9a9270",lineHeight:1.4,marginTop:4}}>{leagueName(code)} needs a retake to update.</div>
+          ))}
+        </div>
+      )}
+
       {/* Restore: fresh home only. The returning user who lost their data lands here (no genome yet); someone who already has a genome does not need it. */}
       {!coreSequenced && (!restoreOpen ? (
         <div style={{textAlign:"center",marginBottom:20,position:"relative",zIndex:1}}>
@@ -332,6 +358,17 @@ export function GenomeHome({
             </div>
           )}
           <CoreStrip dims={coreProfile}/>
+          {/* Re-sequence core: re-answer the shared 24, every league recomputes. Lives with the
+              genome (the core IS the genome), quiet so it never competes with Compare. */}
+          {onResequence&&(
+            <button type="button" onClick={onResequence}
+              style={{display:"flex",width:"100%",alignItems:"center",justifyContent:"space-between",gap:10,background:"rgba(120,120,160,0.05)",border:"1px solid #2c2c40",borderRadius:8,padding:"10px 13px",marginTop:13,cursor:"pointer"}}
+              onMouseEnter={e=>{e.currentTarget.style.borderColor="#4a4a6a";}}
+              onMouseLeave={e=>{e.currentTarget.style.borderColor="#2c2c40";}}>
+              <span style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#a7a2c0",letterSpacing:"0.18em",textTransform:"uppercase",flexShrink:0}}>Re-sequence core</span>
+              <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:13,color:"#8888a6",textAlign:"right",lineHeight:1.3}}>re-answer the 24, your leagues recompute</span>
+            </button>
+          )}
           {/* readout, full width */}
           <div style={{display:"flex",flexDirection:"column",gap:5,marginTop:14,paddingTop:11,borderTop:"1px solid #222230"}}>
             {SHARE.groups.map(g=>{
