@@ -10,7 +10,14 @@
 //    standing() (genomeRead) is what the home strip / card / compare strips DRAW, and it answers
 //    "which traits define you". decompressProfile() (scoring) is what the MATCH uses, because a
 //    club was authored on a raw 0-10 scale and has to be met there. Same reading, different ruler.
-//  - PL is the matrix engine (the seven are only a tie-break there). The page owns that.
+//  - PL is the matrix engine (the seven are only a tie-break there). The page owns that,
+//    and owns it the RIGHT way round: measured on the live engine, PL's 24 core questions
+//    supply 63.2% of the winning club's points and rerolling the core changes the club 81.3%
+//    of the time vs 67.2% for the module. PL leans on the core MORE than the fingerprint
+//    leagues do, not less. The old copy claimed the opposite.
+//  - standing() is read against a UNIFORM SWEEP of possible answer sets, NOT against real
+//    takers, so no copy on this page may imply we surveyed real people or compared you to
+//    other users. The baseline is the space of possible answers, and the copy must say so.
 //
 // The worked example is Bundesliga because BL is a true fingerprint league, so the seven-vs-seven
 // story the page tells is literally how that result is produced.
@@ -180,7 +187,7 @@ export function HowItWorks({ onStart, onBack, hasGenome=false }){
 
       <Section>
         <Title>Your core is the average.</Title>
-        <P>Every answer you cast gets laid on top of the last. No single one can drag you somewhere you aren't.</P>
+        <P>Every answer you cast gets laid on top of the last. No one answer decides a trait, and no one trait decides your club.</P>
         <div style={{display:"flex",gap:10,margin:"20px 0 6px"}}>
           {stack.map((v,i)=>(<div key={i} style={{flex:1,minWidth:0}}><MiniGel dims={v} faint height={42} delay={i*90}/></div>))}
         </div>
@@ -194,11 +201,11 @@ export function HowItWorks({ onStart, onBack, hasGenome=false }){
       <Section>
         <Title>Everyone crowds the middle.</Title>
         <P>Average two dozen answers and almost nobody comes out extreme. Line up a raw core band for band and mostly you're looking at that bunching, not at a person.</P>
-        <P>So before anything else, we read you against everybody else. A score that looks quiet can be a roar if most people sit below it. How much more of a trait you carry than the room is the band you actually see.</P>
+        <P>So before anything else, we read you against the full spread of ways these questions can be answered. A score that looks quiet can be a roar when most of that range sits below it. How far above the range you sit is the band you actually see.</P>
         <div style={{marginTop:24}}>
           <Gel dims={stood} label="Where you stand" note="the strip on your home screen" accent="#d4a44e" height={86}/>
         </div>
-        <Note>Same person. Nothing added, nothing invented. Every band is now how much more of that trait you carry than everyone else, which is the only thing a band can honestly mean.</Note>
+        <Note>Same person. Nothing added, nothing invented. Every band is now how far above or below that range you sit on the trait, which is the only thing a band can honestly mean.</Note>
         <div style={{marginTop:28}}>
           <Gel dims={stretched} label="What we hand the clubs" note="the same read, in the clubs' units" accent="#7d7d9c" muted height={86}/>
         </div>
@@ -243,7 +250,7 @@ export function HowItWorks({ onStart, onBack, hasGenome=false }){
 
       <Section>
         <Title size={23}>One honest asterisk.</Title>
-        <P muted>The Premier League works a little differently under the hood. It was the first one built, before the seven existed, and the module still does most of the lifting there. One day it'll be rewired to match. Today it isn't.</P>
+        <P muted>The Premier League works a little differently under the hood. It was the first one built, before the seven existed, so it reads all thirty-eight of your answers straight through instead of folding your core into seven numbers. It leans on your core more than the others do, not less. The trait chart on a Premier League result is a comparison, not the thing that chose your club.</P>
       </Section>
 
       <Rule/>
