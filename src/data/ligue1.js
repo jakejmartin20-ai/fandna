@@ -27,7 +27,7 @@ const teams = {
     tagline:"You win like a beautifully run business: eight titles, a tax haven's fortune, a stadium that never fills.",
     desc:"You are a club of the rich and the few, and you have made an art of it. There is a tiny principality on the Mediterranean, forty thousand people and a tax rate that draws fortunes, and its football team operates like a beautifully run business: spot the best young talent in the world, sign it, polish it, and sell it on for a fortune when the giants come calling. The stadium is half-empty and the noise is thin, but the trophies are real and the model works. You do not need a roaring crowd to know your worth.",
     why:[
-      "Your trust in the system is at the ceiling. You are run like a smart machine, recruitment and development before romance, and it delivers.",
+      "Your trust in the system is at the ceiling. You back method over romance, development before flash, and you have watched it pay off.",
       "Your sense of community is near the floor. There is no roaring terrace, no neighborhood behind you, and you have made peace with that.",
       "Your emotion runs cool. You do things the clever, measured way, not the theatrical one, and the calm is a strength.",
     ],
@@ -97,7 +97,7 @@ const teams = {
     tagline:"You play football in a rugby city, run it smart, and stunned France with the 2023 cup.",
     desc:"You play football in a city that worships rugby, and you have learned to make a virtue of being the other game. Toulouse is the south's rugby capital, the oval ball comes first here, and that has freed you to do things your own way: run smart, recruit cleverly on a data-driven model, and every so often stun everyone, the way you did winning the 2023 cup. You do not have the noise of a football-mad town behind you, but you have a sharp operation and a violet shirt that nobody else wears, and you are quietly proud of both.",
     why:[
-      "Your trust in the system is high. You are run on a smart, modern, recruitment-led model and it gives you an edge above your means.",
+      "Your trust in the system is high. You back a smart, modern, method-led approach, and it gives you an edge above your means.",
       "Your emotion runs cool. In a rugby city the football noise is muted, and you have built an identity that does not depend on a roar.",
       "Your ambition is measured. You aim to overachieve through cleverness, not to outspend anyone, and the 2023 cup proved it works.",
     ],
@@ -168,8 +168,8 @@ const teams = {
     desc:"You are Champagne's elevator club, forever between the divisions, and a small cog in a very large global machine. Part of the network that owns Manchester City, you are a development outpost as much as a club in your own right, a place talent passes through on the way somewhere bigger. The pattern of your life is the rise and the fall, up to the top flight and back down again, never quite settling in one place long enough to put down roots. You take the churn in stride, because the churn is simply what you are.",
     why:[
       "Your tolerance for chaos is high. The constant up-and-down between divisions is your normal, and you have stopped being unsettled by it.",
-      "Your trust in the system is solid. As part of a global ownership group, you are run on a structured, development-led model.",
-      "Your ambition is moderate. Promotion is the goal, but as a node in a bigger empire you are rarely the whole story yourself.",
+      "Your trust in the system is solid. You favor structure and patient development over the grand gesture.",
+      "Your ambition is moderate. Promotion is the goal, but you are happy to be one part of a bigger whole, not the whole story yourself.",
     ],
     note:"No league title, but the 2001 Intertoto Cup and a famous win over Newcastle. Part of the City Football Group since 2020, a development club in Champagne. Stade de l'Aube holds around twenty thousand.",
     kit:"https://store.estac.fr" },

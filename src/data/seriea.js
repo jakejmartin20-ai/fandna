@@ -68,7 +68,7 @@ const teams = {
     tagline:"You develop what richer clubs buy, and in 2024 little Bergamo's academy won a European trophy anyway.",
     desc:"You win by being smarter and braver than clubs with far more money, and a whole provincial city has fallen in love with the way you do it. There is a town in the foothills that built the best youth academy in the country, hired a coach who plays the most fearless attacking football in Italy, and turned all of it into a European trophy nobody outside Bergamo saw coming. You are the model overachiever, proof that intelligence and nerve can beat a chequebook. You never needed anyone's permission to be good, and the whole place knows it.",
     why:[
-      "Your trust in the system is at the top. You are beautifully built and run, the academy and the system before any shortcut.",
+      "Your trust in the system is at the top. You believe in building it right, the patient way before any shortcut.",
       "Your ambition is high and earned. You climbed from mid-table to Europe on merit, and you intend to stay there.",
       "Your community is strong. A provincial city sees itself in you, fierce and proud and entirely behind the project.",
     ],
@@ -118,7 +118,7 @@ const teams = {
     tagline:"No title to your name, but you've outlasted almost everyone: buy low, sell high, and never go away.",
     desc:"You do this the clever, sustainable way, and you have outlasted clubs ten times your size by being smarter than all of them. A quiet corner of the northeast, an ownership that runs the place like a well-built business, a scouting network that finds talent before anyone else and sells it on for a fortune when the giants come calling: that is the model, and it works year after year after year. Chasing glory you can't afford was never the point; you stay solvent, stay sharp, and stay up, decade after decade, while flashier clubs come and go around you.",
     why:[
-      "Your trust in the system is at the top. You are run like a smart, sustainable business, recruitment and discipline before romance.",
+      "Your trust in the system is at the top. You favor the smart, sustainable way, discipline and method before romance.",
       "Your emotion runs cool. You do things measured and clever, and you do not lose your head over any single result.",
       "Your ambition is realistic. You aim to endure and overachieve rather than to win the lot, and you are at peace with that.",
     ],
