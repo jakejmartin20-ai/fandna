@@ -213,6 +213,23 @@ function CoreCompare({ core, club, clubName="the club", accent="#b8567a", league
   );
 }
 
+// ChapterHead - a prominent section divider for the single-scroll result. Replaces the old tab
+// labels: a numbered eyebrow + team-colour rule + big serif title, so every section announces
+// itself as you scroll and nothing hides behind a control. Display-only. No em dashes.
+function ChapterHead({ n, title, sub, color="#b8567a", textColor="#b8567a", first=false }){
+  return (
+    <div style={{margin: first ? "0 0 22px" : "52px 0 22px"}}>
+      <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:12}}>
+        <span style={{fontFamily:"'DM Mono',monospace",fontSize:12,letterSpacing:"0.14em",color:textColor,flexShrink:0}}>{n} / 04</span>
+        <span style={{flex:1,height:1,background:"#242438"}}/>
+      </div>
+      <div style={{width:44,height:3,background:color,borderRadius:2,marginBottom:12}}/>
+      <h2 style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(30px,8vw,38px)",fontWeight:400,color:"#efe9e3",letterSpacing:"-0.01em",lineHeight:1.02,margin:0}}>{title}</h2>
+      <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:15,fontStyle:"italic",color:"#9a9ac4",margin:"6px 0 0"}}>{sub}</div>
+    </div>
+  );
+}
+
 function AppInner(){
   const [cur,setCur]=useState(0);
   const [answers,setAnswers]=useState({});
@@ -828,7 +845,7 @@ function AppInner(){
             </div>
             {/* League indicator: which sequence you're taking, always visible */}
             <div style={{textAlign:"center",marginBottom:14,fontSize:11,color:"#8484b0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>
-              {(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"}
+              {mode==="core" ? "Your core" : ((SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League")}
             </div>
             {/* Progress: the shared core (purple) then the league (gold), grouped and labelled,
                 so the about-you layer and the sport layer read as distinct at a glance. */}
@@ -994,52 +1011,16 @@ function AppInner(){
               </div>
             </div>
 
-            {/* Tabs, fitted to width (no horizontal scroll, no float) */}
-            <div style={{marginBottom:22}}>
-              <div style={{display:"flex",gap:0,marginBottom:0,borderBottom:"1px solid #0f0f1a"}}>
-              {[["result","Match"],["analysis","Why you"],["stats","Vitals"],["nearly","Almost"]].map(([id,label])=>(
-                <button key={id} onClick={()=>setTab(id)}
-                  style={{
-                    flex:1,background:"none",border:"none",
-                    borderBottom:`2px solid ${tab===id?team.color:"transparent"}`,
-                    padding:"9px 4px 10px",marginBottom:-1,whiteSpace:"nowrap",textAlign:"center",
-                    color:tab===id?"#e8e4de":"#818181",
-                    fontSize:11.5,letterSpacing:"0.06em",textTransform:"uppercase",
-                    fontFamily:"'DM Mono',monospace",cursor:"pointer",
-                    transition:"all .15s ease",
-                    fontWeight:tab===id?"500":"400",
-                  }}
-                >{label}</button>
-              ))}
-              </div>
-            </div>
-
-            {/* ── Tab: Match ── */}
-            {tab==="result"&&(
-              <div style={{animation:"fadeIn .3s ease"}}>
+            {/* Result, single scroll: four sections stacked, no tabs. Each ChapterHead is a
+                prominent divider so nothing hides behind a control (was: 4-tab bar). */}
+            <ChapterHead n="01" title="Your match" sub="why this club is you" color={team.color} textColor={teamTextColors[result]||team.color} first/>
                 <div style={{width:28,height:2,background:team.color,marginBottom:18,borderRadius:2}}/>
                 <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(19px,4vw,22px)",fontWeight:300,color:"#d8d4ce",lineHeight:1.85,margin:"0 0 20px",fontStyle:"italic"}}>{team.desc}</p>
                 {team.note&&(<p style={{fontSize:14,color:"#bbb",lineHeight:1.75,margin:"0 0 24px",borderLeft:`1px solid #252535`,paddingLeft:14,fontFamily:"'DM Mono',monospace"}}>{team.note}</p>)}
                 {/* Fandom vs FanDNA reframe (per 1b) - sport-aware */}
                 <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(15px,3.4vw,18px)",fontStyle:"italic",color:"#9898b8",lineHeight:1.6,margin:"6px 0 22px"}}>This is your {regOf(activeSport).noun} by DNA. {regOf(activeSport).tail}</p>
                 <MatchEvidence evidence={evidence} clubName={team.name} color={teamTextColors[result]||team.color} noun={regOf(activeSport).noun} section="stability"/>
-                <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:28}}>
-                  {team.kit&&(<a href={team.kit} target="_blank" rel="noopener noreferrer"
-                    style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
-                    <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> Buy the kit
-                  </a>)}
-                  {squadUrls[result]&&(
-                    <a href={squadUrls[result]} target="_blank" rel="noopener noreferrer"
-                      style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
-                      <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> View squad
-                    </a>
-                  )}
-                </div>
-              </div>
-            )}
-            {/* ── Tab: Analysis ── */}
-            {tab==="analysis"&&(
-              <div style={{animation:"fadeIn .3s ease"}}>
+            <ChapterHead n="02" title="Why you" sub="the answers and traits behind it" color={team.color} textColor={teamTextColors[result]||team.color}/>
                 <MatchEvidence evidence={evidence} clubName={team.name} color={teamTextColors[result]||team.color} noun={regOf(activeSport).noun} section="why"/>
                 <div style={{marginTop:28,paddingTop:24,borderTop:"1px solid #1e1e2e"}}>
                 {coreProfile ? (
@@ -1050,24 +1031,7 @@ function AppInner(){
                   <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:16,fontStyle:"italic",color:"#9a9ac4",lineHeight:1.6,margin:"0 0 8px"}}>Retake this {regOf(activeSport).noun} to map your core against {team.name}.</p>
                 )}
                 </div>
-                {/* ── CTAs ── */}
-                <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:24,paddingTop:20,borderTop:"1px solid #2a2a3a"}}>
-                  {team.kit&&(<a href={team.kit} target="_blank" rel="noopener noreferrer"
-                    style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
-                    <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> Buy the kit
-                  </a>)}
-                  {squadUrls[result]&&(
-                    <a href={squadUrls[result]} target="_blank" rel="noopener noreferrer"
-                      style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
-                      <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> View squad
-                    </a>
-                  )}
-                </div>
-              </div>
-            )}
-            {/* ── Tab: Club Stats ── */}
-            {tab==="stats"&&(
-              <div style={{animation:"fadeIn .3s ease"}}>
+            <ChapterHead n="03" title="Vitals" sub="the club itself" color={team.color} textColor={teamTextColors[result]||team.color}/>
                 <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:18}}>Club Info</div>
                 {statsData.length>0?(
                   <>
@@ -1111,30 +1075,11 @@ function AppInner(){
                         ))}
                       </div>
                     )}
-                    <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:8}}>
-                      {team.kit&&(<a href={team.kit} target="_blank" rel="noopener noreferrer"
-                        style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
-                        <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> Buy the kit
-                      </a>)}
-                      {squadUrls[result]&&(
-                        <a href={squadUrls[result]} target="_blank" rel="noopener noreferrer"
-                          style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
-                          <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> View squad
-                        </a>
-                      )}
-                    </div>
                   </>
                 ):(
                   <p style={{fontSize:13,color:"#aaa",fontStyle:"italic",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>Stats not available for this club yet.</p>
                 )}
-              </div>
-            )}
-
-                        
-            {/* ── Tab: Nearly Got ── */}
-            {tab==="nearly"&&(
-              <div style={{animation:"fadeIn .3s ease"}}>
-                <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:6}}>Almost you...</div>
+            <ChapterHead n="04" title="Almost" sub="who else came close" color={team.color} textColor={teamTextColors[result]||team.color}/>
                 <p style={{fontSize:13,color:"#aaa",margin:"0 0 20px",fontFamily:"'DM Mono',monospace",lineHeight:1.6}}>
                   These clubs scored closest to you. Here's what you share, and what separates you.
                 </p>
@@ -1192,8 +1137,19 @@ function AppInner(){
                   matchedColor={teamTextColors[result]||team.color}
                   voice={regOf(activeSport)}
                 />
-              </div>
-            )}
+            {/* one kit/squad CTA set for the whole result (was repeated in three tabs) */}
+            <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:34,paddingTop:24,borderTop:"1px solid #2a2a3a"}}>
+                  {team.kit&&(<a href={team.kit} target="_blank" rel="noopener noreferrer"
+                    style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
+                    <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> Buy the kit
+                  </a>)}
+                  {squadUrls[result]&&(
+                    <a href={squadUrls[result]} target="_blank" rel="noopener noreferrer"
+                      style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
+                      <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> View squad
+                    </a>
+                  )}
+            </div>
 
             
             {/* #8 Retention: progress (B) + next-strand (A) + full-genome link (C) */}
