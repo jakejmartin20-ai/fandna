@@ -478,7 +478,7 @@ const teams = {
     why:[
       "Your optimism is grounded, not naive, you back projects before they're proven because you can read the signs early.",
       "Your balanced relationship with the past: it informs but doesn't anchor. Villa Park is history and momentum simultaneously.",
-      "You score high on ambition with patience, the rarest combination, and the one that makes this particular rebuild so compelling.",
+      "You score high on ambition with patience, the rarest combination, and the one that makes this particular climb so compelling.",
     ],
     note:"European Cup winners 1982. Villa Park has hosted more England games than any ground outside Wembley. The current project under Emery is the most credible top-four push the club has mounted in a generation.",
     kit:"https://shop.avfc.co.uk",

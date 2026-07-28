@@ -494,7 +494,7 @@ const teams = {
     "desc": "You are proof a small city with a small budget can simply refuse to lose. You ship your best players to richer teams every winter and keep right on winning the division, building contenders out of pitching, development, and stubbornness. And you do it with more joy than almost anyone, a mascot who slides into a giant beer mug and a race of costumed sausages in the middle of every game. Cheap teams are supposed to rebuild and wait. You just keep showing up good.",
     "why": [
       "You make a virtue of resourcefulness, building winners out of what richer teams discard and taking real pride in it.",
-      "You refuse to let small-market reality lower your expectations. Rebuilding and waiting is for other people.",
+      "You refuse to let a small-market reality lower your expectations. Sitting back and waiting is for other people.",
       "You carry your success lightly and joyfully. Winning is supposed to be fun, and you make sure it is."
     ]
   },
