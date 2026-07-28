@@ -10,6 +10,30 @@ import { ChoiceQ, BinaryQ, SliderQ } from "./components/quiz";
 import { ClubMark } from "./components/ClubMark";
 import { GenomeHome } from "./screens/Genome";
 import { coreBlocks } from "./lib/genomeRead";
+
+// Recompute every stored league from its saved module answers against a freshly
+// scored core, writing the results back to storage. Returns what moved and which
+// share-link leagues had no answers to re-read. Shared by the re-sequence button
+// and the silent stale-core auto-heal on load. This runs the LIVE engine over
+// already-stored answers, so it is a deterministic recompute, never a scoring change.
+function recomputeAllFromCore(newCoreAnswers){
+  const newCore = scoreCore(newCoreAnswers);
+  const st = loadState();
+  const moved = []; const stale = [];
+  for(const [sport,r] of Object.entries(st.results||{})){
+    if(!r||!r.club) continue;
+    const modAns = r.answers||{};
+    if(Object.keys(modAns).length===0){
+      stale.push(sport);
+      saveResult(sport,{coreAnswers:newCoreAnswers,coreProfile:newCore,club:r.club});
+      continue;
+    }
+    const { club:newClub, scores:ns } = scoreModule(sport,{coreProfile:newCore,coreAnswers:newCoreAnswers,moduleAnswers:modAns});
+    if(newClub!==r.club) moved.push({sport,from:r.club,to:newClub});
+    saveResult(sport,{coreAnswers:newCoreAnswers,coreProfile:newCore,club:newClub,moduleAnswers:modAns,scores:ns});
+  }
+  return { newCore, moved, stale };
+}
 import { CoreStrip } from "./components/CoreStrip";
 import { MatchEvidence } from "./components/MatchEvidence";
 import { CrossMatch } from "./components/CrossMatch";
@@ -266,7 +290,21 @@ function AppInner(){
   // strand on the home screen is tappable straight to it, but we stay on the home screen
   // (the landing page) rather than jumping into the result. First-timers are unaffected.
   useEffect(()=>{
-    const st=loadState();
+    let st=loadState();
+    // Silent stale-core auto-heal. A core saved before an engine change carries a
+    // profile the current engine would no longer produce from the same answers. Detect
+    // it by re-scoring the stored answers: if the fresh profile differs, recompute every
+    // league on the live engine so no one keeps a stale core. Invisible to current users,
+    // for whom the fresh score is byte-identical to the stored profile (0 drift, verified).
+    if(st.coreAnswers && st.coreProfile){
+      const fresh=scoreCore(st.coreAnswers);
+      const drift=DIM_ORDER.some(k=>fresh[k]!==st.coreProfile[k]);
+      if(drift){
+        const { moved, stale } = recomputeAllFromCore(st.coreAnswers);
+        track("core_auto_healed",{moved:moved.length,stale:stale.length});
+        st=loadState();
+      }
+    }
     setGenome(st.results||{});
     setCoreProfile(st.coreProfile||null);
     if(st.results&&st.results.PL&&st.results.PL.club){
@@ -357,21 +395,7 @@ function AppInner(){
       // club only moves if the new core honestly lands somewhere else. A league restored
       // from a share link has no stored answers to re-read, so we keep its club and flag it.
       const newCoreAnswers=na;
-      const newCore=scoreCore(newCoreAnswers);
-      const st=loadState();
-      const moved=[]; const stale=[];
-      for(const [sport,r] of Object.entries(st.results||{})){
-        if(!r||!r.club) continue;
-        const modAns=r.answers||{};
-        if(Object.keys(modAns).length===0){
-          stale.push(sport);
-          saveResult(sport,{coreAnswers:newCoreAnswers,coreProfile:newCore,club:r.club});
-          continue;
-        }
-        const { club:newClub, scores:ns }=scoreModule(sport,{coreProfile:newCore,coreAnswers:newCoreAnswers,moduleAnswers:modAns});
-        if(newClub!==r.club) moved.push({sport,from:r.club,to:newClub});
-        saveResult(sport,{coreAnswers:newCoreAnswers,coreProfile:newCore,club:newClub,moduleAnswers:modAns,scores:ns});
-      }
+      const { newCore, moved, stale } = recomputeAllFromCore(newCoreAnswers);
       const stg=loadState();
       setCoreProfile(newCore);
       setGenome(stg.results||{});
