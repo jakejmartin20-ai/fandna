@@ -225,6 +225,7 @@ export function HowItWorks({ onStart, onBack, hasGenome=false }){
             Tall on ambition where you sit low, cold on loyalty and belonging where you run warm. {antiRank>0?`${ord(antiRank)} of ${fieldSize}`:"Bottom of the pile"} for this person, and no money changes that.
           </Note>
         </div>
+        <P>The seven traits get you to the clubs that share your temperament. Then your answers about this sport, how you actually follow it, decide which one of them is yours.</P>
       </Section>
 
       <Rule/>
