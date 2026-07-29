@@ -298,7 +298,7 @@ const teams = {
     "tagline": "Twenty-seven titles. Anything short of the twenty-eighth still reads to you as failure.",
     "desc": "Winning is not the goal, it is the floor. You hold twenty-seven titles, more than anyone in the sport, and somehow that only raised the bar instead of settling it. The pinstripes have meant the same thing in the Bronx for a hundred years, and you wear them like a standard everyone else is measured against. Half the sport copies you and the other half roots against you, and you have never once mistaken either for a reason to apologize. A great season without a parade is just a longer way to come up short.",
     "why": [
-      "Your ambition sits at the ceiling and does not move. The target is the title, and a near miss is just a loss with extra steps.",
+      "The target is the title and it does not move. A near miss is just a loss with extra steps.",
       "Standards, not magic. A century of winning got built on repetition, and you trust the machine over the moment.",
       "Being everyone's villain costs you nothing. The contempt is just the rest of the league measuring itself against you."
     ]
@@ -622,7 +622,7 @@ const teams = {
     "tagline": "Twice one strike away in a single night. Fifty years later you finally finished it.",
     "desc": "For half a century you waited, and the cruelest part came in 2011, when you stood one strike away from the title, twice in the same night, and lost it anyway, the kind of heartbreak that scars a fanbase for a decade. Then in 2023 you went out and finished it, winning the whole thing on the road, the wait finally over. You are Texas-sized in everything, the hurt and the redemption both. You know exactly what the wait costs and exactly what it is worth.",
     "why": [
-      "Delayed gratification is something you understand in your bones, having waited longer and more painfully than almost anyone.",
+      "Delayed gratification is something you understand in your bones. The wait was long and it was not gentle.",
       "You feel it all at full Texas scale, the heartbreak and the triumph both, and you will never take the payoff for granted."
     ]
   },
