@@ -8,7 +8,7 @@ const teams = {
     tagline:"Thirty-four titles in, you treat the Meisterschale as property, not a prize.",
     desc:"You do not romanticize the chase. Winning is the baseline you start from, and a season that ends in anything less reads as a failure to be reviewed, not a near-miss to be cherished. People mistake that for arrogance. You call it standards. You came to see something done to the limit of how well it can be done, and then done again the next year, and the year after that. Bayern is the closest thing German football has to a permanent verdict, and you have never apologized for being on the right side of it.",
     why:[
-      "A year gets measured by what you won. Not by how interesting the journey was, and you have never felt the need to apologize for that.",
+      "A year gets measured by what you won. Not by how interesting the journey was, and you stopped explaining that to people a long time ago.",
       "Dominance is something you engineer and then maintain. Sentiment does not come into it much.",
       "Given the choice between being the expected outcome and being the romantic story, you take the expected outcome every time.",
     ],

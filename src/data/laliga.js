@@ -150,7 +150,7 @@ const teams = {
       "This is a region's club, in a place with a fierce sense of its own identity.",
       "You want it to be the truest version of itself more than you want it to win something.",
     ],
-    note:"Osasuna are owned by their own members, one of the few socios clubs left in Spain, rooted in Navarra. They turned El Sadar into one of the most hostile grounds in the country, a fortress that belongs to the people who fill it.",
+    note:"Osasuna are owned by their own members, one of the few socios clubs left in Spain, rooted in Navarra. They turned El Sadar into one of the most hostile grounds in the country, a fortress held by its own membership.",
     kit:"https://tienda.osasuna.es/es" },
   RAY: { code3:"RAY", kitType:"sash", secondaryColor:"#E53027", name:"Rayo Vallecano", emoji:"⚡", color:"#FFFFFF",
     tagline:"You are the poorest, loudest corner of Madrid, with more soul than the clubs across town can buy.",
@@ -254,7 +254,7 @@ const archetypes = {
 };
 
 const archetypeDesc = {
-  RMA:"You start from winning and treat anything less as a fault to fix. Los Blancos, the whites, are the standard the rest of Spain measures itself against, and you have never apologized for being it.",
+  RMA:"Silverware is the only measure you accept. Los Blancos, the whites, hold fifteen European Cups and set the bar the rest of Spain is judged against.",
   BAR:"You want the trophy and the philosophy in the same hand. Més que un club, more than a club, is Barcelona's promise that how you win, and with whom, matters as much as the winning.",
   ATM:"You trust the win you bled for over the one handed to you. Cholismo, the creed Simeone built, turns grit and suffering into an identity, the proud hard way in a city of glamour.",
   ATH:"You would rather lose pure than win borrowed. Los Leones, the Lions, field only their own Basque sons, and you carry that creed as the thing that makes every win actually mean something.",

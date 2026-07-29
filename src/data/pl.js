@@ -554,7 +554,7 @@ const teams = {
       "The place is not a detail of who you support. It is the entire point.",
       "Bad seasons never tested your loyalty. What tested it was someone trying to change what the club fundamentally is.",
       "You held the line.",
-      "A club belongs to the people who fill it rather than the people who own it, and you have the receipts to prove you mean that.",
+      "Ownership is a paperwork question. Whose club it is was settled long ago by the people in the stands, and you have the receipts to prove you mean that.",
     ],
     note:"In 2014, the FA blocked an owner's bid to rename the club Hull Tigers, after the fans refused it first. A name standing since 1904 never moved, and the owner eventually sold up. Some clubs win trophies. This one won the right to stay itself.",
     kit:"https://www.tigerleisure.com",
@@ -586,7 +586,7 @@ const teamEdge = {
   CH: {chaos:"an identity that has shifted repeatedly, and having moved through all of it", emotion:"the complicated grief of the Abramovich era, mourned in a way hard to explain to outsiders", rootedness:"Stamford Bridge still there and the old guard still in the seats, some things surviving the money and the chaos"},
   IT: {community:"Suffolk, Portman Road and the Bobby Robson mythology, not global, not branded, real", ambition:"high, undefensive self-knowledge, not a big club and never pretending otherwise"},
   CV: {loyalty:"explicitly unconditional in the face of active institutional failure, tested directly rather than quietly", emotion:"an institutional grief earned by being genuinely abandoned by its own club"},
-  HU: {rootedness:"the place as the entire point, and never letting anyone treat it as negotiable", loyalty:"load-bearing rather than sentimental, tested when someone tried to change what the club fundamentally is, and holding the line", community:"the kind that organises, a club belonging to the people who fill it, not the people who own it"},
+  HU: {rootedness:"the place as the entire point, and never letting anyone treat it as negotiable", loyalty:"load-bearing rather than sentimental, tested when someone tried to change what the club fundamentally is, and holding the line", community:"the kind that organises, a fanbase that has already proved the point once"},
 };
 Object.keys(teamEdge).forEach(k=>{ if(teams[k]) teams[k].edge = teamEdge[k]; });
 
@@ -1506,7 +1506,7 @@ const nearlyGot = {
     CV:"Loyal Midlands fanbases that have been through genuinely difficult periods, both of you. Coventry's was more prolonged and more structural; Villa's shorter and the recovery more dramatic. Each knows what it means to support a club that should be bigger than its current circumstances. Villa's circumstances have dramatically improved.",
   },
   SU:{
-    HU:"You've got genuine overlap. You stayed through the kind of collapse that empties other grounds. You stayed out of heartbreak, filling 46,000 seats in the third tier because leaving was never a thought. Hull stayed out of stubbornness, refusing to be rebranded out of its own identity. Both loyalties were proven in the bad years. Yours is grief carried with pride. Hull's is defiance.",
+    HU:"You've got genuine overlap. You stayed through the kind of collapse that empties other grounds. You stayed out of heartbreak, filling 46,000 seats in the third tier when nobody would have blamed you for drifting off. Hull stayed out of stubbornness, refusing to be rebranded out of its own identity. Both loyalties were proven in the bad years. Yours is grief carried with pride. Hull's is defiance.",
     NC:"Northern, communal, place-rooted, both, with painful institutional histories followed by genuine optimism. Newcastle's fanbase is larger and the trajectory further along; Sunderland's story rawer, the fall deeper and the comeback still being written.",
     EV:"Defined by loyalty through difficulty and communal suffering, both of you. Everton's is quieter and more private; Sunderland's was documented publicly, which gave it a different quality, the whole world watched the pain and the comeback.",
     LU:"Intensely passionate northern fanbases that have been through genuine darkness and come back, both of you. Leeds' identity is more operatic and volatile; Sunderland's more communal and specifically rooted in a city that lost more than just its football club.",
