@@ -295,12 +295,12 @@ const teams = {
     "name": "New York Yankees",
     "emoji": "🎩",
     "color": "#0C2340",
-    "tagline": "Twenty-seven titles, and you still count anything short of the next one as a failure.",
+    "tagline": "Twenty-seven titles. Anything short of the twenty-eighth still reads to you as failure.",
     "desc": "Winning is not the goal, it is the floor. You hold twenty-seven titles, more than anyone in the sport, and somehow that only raised the bar instead of settling it. The pinstripes have meant the same thing in the Bronx for a hundred years, and you wear them like a standard everyone else is measured against. Half the sport copies you and the other half roots against you, and you have never once mistaken either for a reason to apologize. A great season without a parade is just a longer way to come up short.",
     "why": [
-      "Your ambition sits at the ceiling and never moves. The target is the title, full stop, and a near miss reads to you as a loss with extra steps.",
-      "You trust the machine over the moment. A century of winning got built on standards and repetition, not on hoping the magic shows up.",
-      "You are at peace being the team everyone wants to beat. The contempt is just the sound of the rest of the league measuring itself against you."
+      "Your ambition sits at the ceiling and does not move. The target is the title, and a near miss is just a loss with extra steps.",
+      "Standards, not magic. A century of winning got built on repetition, and you trust the machine over the moment.",
+      "Being everyone's villain costs you nothing. The contempt is just the rest of the league measuring itself against you."
     ]
   },
   "LAD": {
@@ -311,9 +311,8 @@ const teams = {
     "tagline": "You won it all, did it again the next year, and never apologized for what it cost.",
     "desc": "You buy the best and you win, and you have made your peace with everyone hating you for it. The latest titles came back to back, the first repeat in a quarter century, and the writers called it inevitable like it was an insult, so you took it as a compliment. Underneath the money is an older nerve, a team that broke a borough's heart by leaving Brooklyn and carried the number forty-two west as a promise. You do not pretend it was close. You stacked the deck, said so out loud, and collected the trophy anyway.",
     "why": [
-      "Your ambition is total and your spending is shameless, and you see no contradiction between the two. If the best is for sale, you buy it.",
-      "You back want with process. The richest roster still has to be built right, and you trust the system that turns money into rings.",
-      "You carry history as fuel without letting it slow you down. The past matters, but the next title matters more."
+      "Your ambition is total and your spending is shameless, and you see no contradiction in that. If the best is for sale, you buy it.",
+      "Money still has to be built into something. You trust the process that turns a payroll into rings, and you carry the Brooklyn history as fuel rather than ballast."
     ]
   },
   "STL": {
@@ -321,12 +320,12 @@ const teams = {
     "name": "St. Louis Cardinals",
     "emoji": "🐦",
     "color": "#C41E3A",
-    "tagline": "Eleven titles, almost no noise, and you believe there's only one right way to win.",
+    "tagline": "Eleven titles and almost no noise. There is one right way to win and you were raised on it.",
     "desc": "You win the quiet way, and you believe the quiet way is the only one that counts. Eleven championships sit in your history, more than any team outside New York, and you collected them without theatrics, without a villain era, without ever needing to be the loudest team in the room. There is even a name for it, a way of carrying yourself that prizes fundamentals, class, and no drama. From your patch of the Midwest, that restraint is not modesty, it is the whole identity. Do it right, do it again, and let the trophies speak.",
     "why": [
-      "You trust doing things properly more than doing them flashily. The craft and the standard are the point, and the result follows from them.",
-      "Your loyalty runs through a place and a way of doing things, not through a marquee name. The institution is bigger than any one season.",
-      "You have almost no appetite for chaos. Calm, fundamentals, and quiet confidence are how you were taught to win."
+      "Done properly beats done flashily. The craft and the standard are the point, and the result follows from them.",
+      "Your loyalty runs through a place and a way of doing things, not through a marquee name. The institution outlives any one season.",
+      "Chaos holds almost no appeal for you. Calm, fundamentals, quiet confidence: that is how you were taught this game."
     ]
   },
   "ATL": {
@@ -338,8 +337,9 @@ const teams = {
     "desc": "You were great for so long it became its own kind of heartbreak. Fourteen straight division titles, an unmatched run of regular-season dominance, and for years a lone championship at the end of it, the cruelty hiding inside the success. Beamed across the country on cable, you became a team adopted by people who had never been to Georgia, the closest thing the sport had to a national side. The wait for a second title stretched out long enough to ache, and then, when most fanbases would have stopped believing, you went out and got it.",
     "why": [
       "You hold a high standard over a long horizon. One season never defines you; the decade-long body of work does.",
-      "You carry the particular ache of being very good for a very long time without the trophies to match. You know the gap between great and champion intimately.",
-      "Your reach is national, not local. Belonging, for you, was always something broadcast to a whole country rather than rooted in one block."
+      "Fourteen straight division titles, one trophy at the end of them. You know the exact distance between great and champion.",
+      "Belonging, for you, arrived by broadcast. Your people are scattered across a country rather than packed into one neighborhood.",
+      "And you kept believing past the point most would have stopped, which is the only reason the second one ever came."
     ]
   },
   "SF": {
@@ -350,9 +350,9 @@ const teams = {
     "tagline": "Champions in two cities, with a strange run of titles that only ever came in even years.",
     "desc": "Yours is the oldest kind of greatness, the kind that lives in the bones whether or not the current team can find it. You won titles in New York and then again by the bay, including a strange charmed run that arrived only in even-numbered years, the sort of thing that should not mean anything and somehow does. Your park sits on cold water where kayakers wait for home runs to splash down, and statues of legends ring the gates. The present can sputter, the way it has lately. The lineage does not need it to. The show was always in the blood.",
     "why": [
-      "You lean on pedigree more than on present-day hunger. The history is so rich it carries the identity even through lean years.",
-      "You have a soft spot for fate and pattern, the romance of a thing that cannot be explained but keeps coming true.",
-      "Your sense of place is total: a specific cold, a specific water, a specific lineage that no relocation ever fully erased."
+      "Pedigree carries you further than present-day hunger does. The history is rich enough to hold the identity through lean years.",
+      "You have a soft spot for fate and pattern, for a thing that cannot be explained and keeps coming true anyway.",
+      "A specific cold, a specific water, a specific lineage. No relocation ever fully erased any of it."
     ]
   },
   "CIN": {
@@ -363,9 +363,8 @@ const teams = {
     "tagline": "The first professional team there ever was, still playing like every grounder's a fight.",
     "desc": "You were here before anyone. The first team to ever pay its players, the oldest roots in the entire sport, a heritage that predates almost everything else baseball calls tradition. Out of that came a style with no patience for coasting, an all-out, head-first way of playing where effort is the whole creed and a routine grounder is treated like a collision worth winning. The dynasty they called the Machine ran on it. The present-day team drifts in and out of contention, the way old franchises do. The intensity in the blood never drifts anywhere.",
     "why": [
-      "Your roots run deeper than almost anyone's, and that history is load-bearing for your whole identity.",
-      "You play and live at full effort. Half-speed is the one unforgivable thing, on the field or off it.",
-      "You carry real emotional heat. The intensity is the point, win or lose, and everyone near you feels it."
+      "Your roots run deeper than anyone's in the sport, and that history is load-bearing for the whole identity.",
+      "Full effort or nothing. Half-speed is the one unforgivable thing here, on the field or off it, and everyone near you feels the heat."
     ]
   },
   "CHC": {
@@ -376,9 +375,9 @@ const teams = {
     "tagline": "A hundred and eight years, a goat to blame, and the extra-innings night you finally ended it.",
     "desc": "Your devotion was measured in generations, not seasons. A hundred and eight years passed between titles, the longest wait the sport has ever seen, long enough that fans blamed a billy goat turned away at the gate and half meant it. You loved an ivy-walled ballpark in the afternoon sun and kept showing up for a team that broke your heart on a loop. Then, after a rain delay and extra innings, a city that had long since stopped expecting it came completely undone.",
     "why": [
-      "Your loyalty is generational and unconditional. You stayed through a wait most people would not believe, because leaving was never once on the table.",
-      "You belong to a place as much as a team. An ivy ballpark and its neighborhood are half the reason you show up at all.",
-      "You hold heartbreak with humor and romance instead of bitterness. The long wait became a love story rather than a grievance."
+      "Your loyalty is generational. You stayed through a wait most people would not believe, because leaving was never once on the table.",
+      "The ballpark is half of it. Ivy, an afternoon, a neighborhood you would go to even if the team were unwatchable, which it often was.",
+      "Heartbreak became a love story rather than a grievance. Humor and romance got you through where bitterness would have finished it."
     ]
   },
   "BOS": {
@@ -389,9 +388,10 @@ const teams = {
     "tagline": "Eighty-six years cursed, then four straight from down 0-3 to break it against your rival.",
     "desc": "Your faith was forged in the longest grudge the sport has. For eighty-six years you went without a title, blamed a long-ago sale that handed your best player to the team you hate most, and watched that rival stack up rings while you lost in ever crueler ways. Then came the autumn you fell behind them three games to none, a single loss from elimination, and won four in a row, the only team in history to do it, before taking the championship. The curse and the grudge broke in one run, and three more titles followed.",
     "why": [
-      "Your loyalty runs hot and is bound up with a rivalry that defines you nearly as much as your own team does.",
-      "Your emotional intensity is high and entirely public. Here, baseball is argued year-round and felt at full volume.",
-      "You carry a long history of suffering that finally paid off, and the memory of the wait still sharpens every single win."
+      "Your loyalty runs hot, and a rivalry defines you nearly as much as your own team does.",
+      "Nothing is felt privately here. Baseball is argued year-round and lived at full volume.",
+      "Eighty-six years of suffering finally paid, and the memory of the wait still sharpens every win.",
+      "Down three games to none to them, and then four straight. That night is load-bearing for the whole identity."
     ]
   },
   "CLE": {
@@ -399,12 +399,12 @@ const teams = {
     "name": "Cleveland Guardians",
     "emoji": "🛡️",
     "color": "#E31937",
-    "tagline": "The longest title wait of any team that's ever won one, and still you keep waiting.",
+    "tagline": "The last title came in 1948. No team that has ever won one has waited this long since.",
     "desc": "Yours is the longest wait of any team that has actually won one. The last title came in 1948, and the closest you have come since was a World Series you led three games to one before it slipped away in extra innings. You even changed your name, to one drawn from the giant statues guarding a bridge downtown. Through it all you run a thrifty, clever machine that develops stars and then watches them leave for richer teams. The drought outlasts every star who passes through.",
     "why": [
-      "You stay loyal through the longest wait in the sport without once threatening to leave. The drought is part of who you are now.",
-      "You respect the smart, resourceful way of doing things, building and developing rather than buying. You take pride in outthinking richer teams.",
-      "You hold near misses with a stoic patience rather than rage. You learned to absorb the heartbreak and keep going."
+      "Nineteen forty-eight, and not once have you threatened to leave over it. The drought is part of who you are now.",
+      "Patience is your default rather than resignation. You absorbed a three-games-to-one collapse in extra innings and went back to work the next spring.",
+      "You like a thing built carefully and run well, and you would never make a speech about it."
     ]
   },
   "SEA": {
@@ -412,12 +412,13 @@ const teams = {
     "name": "Seattle Mariners",
     "emoji": "⚓",
     "color": "#005C5C",
-    "tagline": "The only team never to reach a World Series, and you're still sure next year's the one.",
+    "tagline": "The only team never to reach a World Series. Next year is still the one, and you mean it.",
     "desc": "You are the only team in the entire sport that has never once reached the World Series, the lone holdout after half a century of trying. You once won more games in a season than almost any team ever and still missed, and last fall you came nine outs from finally breaking through before a Game 7 ripped it away. None of it stops you. In the far corner of the map by the water, you show up every spring anyway, faithful past all reason.",
     "why": [
-      "Your loyalty is almost stubborn. You keep believing through the single longest drought of its kind, with nothing yet to reward it.",
-      "You feel the near misses deeply, last fall as sharp as any of it, and you carry the ache into the next season anyway.",
-      "You belong to a specific, far-flung place, a corner of the map that makes the devotion feel like its own quiet pact."
+      "Fifty years, no World Series, and not once have you gone looking for another team.",
+      "Nine outs. That is how close last fall came, and you will be back in April like it never happened.",
+      "The ache is not a side effect. For you it is most of the feeling, and indifference would be worse.",
+      "It is tied to a place, too. The far corner of the map by the water, which makes the devotion feel less like habit and more like a pact you keep on purpose."
     ]
   },
   "PIT": {
@@ -425,12 +426,12 @@ const teams = {
     "name": "Pittsburgh Pirates",
     "emoji": "🏴‍☠️",
     "color": "#FDB827",
-    "tagline": "A record run of losing seasons, and you watched every one from the prettiest ballpark in the game.",
+    "tagline": "Twenty straight losing seasons, the longest run in American sport. You watched every one from the prettiest ballpark in it.",
     "desc": "Your loyalty was tested like almost no other: twenty straight losing seasons, a record across all of American sport, and an ownership that long seemed to treat not spending as the plan. You answer it by showing up anyway, to a ballpark on the river so lovely that visitors come just to see it. You carry a number twenty-one once worn by a man who died bringing relief to strangers, and a song about being family. Even when a generational arm finally arrived, the wallet stayed shut. You stayed too.",
     "why": [
-      "Your loyalty is close to unconditional, tested by the longest stretch of losing in American sport and unbroken by it.",
-      "You belong to a place and a ballpark as much as a team. The river, the city, the view are half of why you keep coming.",
-      "You separate love for the team from trust in the people who run it. You can adore the one while having no faith in the other."
+      "Twenty losing seasons in a row did not break it, which tells you most of what your loyalty is.",
+      "You belong to a place and a ballpark as much as to a team. The river, the bridge, the view are half of why you keep coming.",
+      "Loving the team and trusting the people who run it are two different accounts for you, and only one of them is full."
     ]
   },
   "SD": {
@@ -438,12 +439,12 @@ const teams = {
     "name": "San Diego Padres",
     "emoji": "⛪",
     "color": "#4E2A1E",
-    "tagline": "A small market that spends like a superpower, and you're still chasing a first ring.",
+    "tagline": "A small market that spends like a superpower. Still no ring, and still swinging for it.",
     "desc": "You are a small-market team that spends like a superpower, not out of arrogance but out of pure, undisguised want. You wear brown and gold like nobody else and you have chased a first championship harder than teams with three times your history, and twice you have reached the very last stage and come away with nothing. The man who pushed that ambition hardest did not live to see it finished. So you keep swinging for it all, every winter, burning everything you have and betting the want will finally be enough.",
     "why": [
-      "Your ambition is huge and a little reckless, the kind that bets everything on a chance rather than playing it safe.",
-      "You feel the want intensely. The chase itself is emotional for you, not a cold calculation.",
-      "You carry a streak of glorious chaos, willing to gamble big and live with the swings, because the dream is worth it."
+      "Your ambition is huge and a little reckless, the kind that bets everything on the chance rather than playing it safe.",
+      "The want is emotional for you, not a calculation. The chase itself is most of the feeling.",
+      "Brown and gold, all in, every winter. You will take the swings and live with the wreckage because the dream is worth it."
     ]
   },
   "COL": {
@@ -451,12 +452,11 @@ const teams = {
     "name": "Colorado Rockies",
     "emoji": "🏔️",
     "color": "#4E4191",
-    "tagline": "You play a mile up where the ball flies, and you've never once solved your own thin air.",
+    "tagline": "A mile up, where the ball flies and the rules bend. You have never once solved your own air.",
     "desc": "You play a mile above everyone else, where the thin air makes baseballs fly and bends the basic rules of the game in ways no other team has to reckon with. It is a beautiful, brutal puzzle, and in all your years you have never solved it. You reached the World Series exactly once, on a charmed October run, and were swept once you arrived. Mostly you have lived far from contention. But the mountains are yours, the altitude is yours, and nobody else plays the game in air like this.",
     "why": [
-      "You are shaped by a circumstance no one else shares, and you have made peace with how strange and hard it is.",
-      "Your sense of place is elemental: the mountains, the altitude, a setting that defines you more than any trophy.",
-      "You hold modest expectations without bitterness. You know the deck is oddly stacked and you show up anyway."
+      "You are shaped by a circumstance nobody else shares, and you have made peace with how strange and hard it is.",
+      "The mountains and the altitude define you more than any trophy could. You know the deck is oddly stacked, and you show up without bitterness."
     ]
   },
   "ATH": {
@@ -467,9 +467,9 @@ const teams = {
     "tagline": "You wrote the book on winning with no money, then they took your city's name.",
     "desc": "You are the original underdog with a calculator, the team that learned to beat the richest clubs in the sport without the money to match them, and you did it in green and gold for a city that adored you. The method you invented gets copied everywhere now. Then ownership pulled the team out of that city entirely, dropped the place-name, and sent you to play in a borrowed minor-league park while a new home rises somewhere you never chose. The colors stay. So does the grudge.",
     "why": [
-      "You take real pride in outthinking people with deeper pockets. Doing more with less is not a constraint to you, it is the whole sport.",
-      "Your loyalty is to the colors and the idea more than to whoever owns the team. You can love the badge and resent the people moving it.",
-      "You carry a genuine grievance under the scrappiness. Something that was yours got taken, and you have not made peace with it."
+      "You take real pride in outthinking people with deeper pockets. Doing more with less is not a constraint, it is the whole sport to you.",
+      "Your loyalty is to the colors and the idea, not to whoever holds the deed. You can love the badge and resent the people moving it.",
+      "Something that was yours got taken. The grudge sits under the scrappiness and you have not made peace with it."
     ]
   },
   "TB": {
@@ -477,12 +477,12 @@ const teams = {
     "name": "Tampa Bay Rays",
     "emoji": "☀️",
     "color": "#092C5C",
-    "tagline": "One of the smallest budgets in the game, and you beat teams that spend five times more.",
+    "tagline": "You solved baseball like a math problem. Then a hurricane took your roof and you kept solving it.",
     "desc": "You have spent your whole existence proving money is not the same as brains. On one of the lowest payrolls in the sport, in the toughest division it has, you keep churning out contenders and have reached the last stage twice on a budget that should not allow it. You have never drawn big crowds, and a hurricane once tore the roof off your home and sent you to play a full season in someone else's park. None of it slows the machine. You reload and beat the rich teams again.",
     "why": [
-      "You believe brains beat budget, and you have the receipts. Outsmarting wealthier rivals is your default setting.",
-      "You are unsentimental and adaptable. Upheaval that would rattle other teams, even losing your own building, you simply route around.",
-      "You quietly expect to compete every single year despite every reason not to, and you are usually right."
+      "Cold math over sentiment, every time. You would trade a beloved player for a better one on a Tuesday and sleep fine.",
+      "You are unsentimental and adaptable. Upheaval that would rattle other clubs, even losing your own building, you route around.",
+      "Expecting to contend is not optimism for you, it is arithmetic. You quietly assume it every year and you are usually right."
     ]
   },
   "MIL": {
@@ -490,12 +490,12 @@ const teams = {
     "name": "Milwaukee Brewers",
     "emoji": "🍺",
     "color": "#FFC52F",
-    "tagline": "A small city, a small budget, and you just refuse to stop winning, beer in hand.",
-    "desc": "You are proof a small city with a small budget can simply refuse to lose. You ship your best players to richer teams every winter and keep right on winning the division, building contenders out of pitching, development, and stubbornness. And you do it with more joy than almost anyone, a mascot who slides into a giant beer mug and a race of costumed sausages in the middle of every game. Cheap teams are supposed to rebuild and wait. You just keep showing up good.",
+    "tagline": "You ship your best players away every winter, and somehow the party never stops.",
+    "desc": "You are proof a small city with a small budget can simply refuse to lose. You ship your best players to richer teams every winter and keep right on winning the division, building contenders out of pitching, development, and stubbornness. And you do it with more joy than almost anyone, a mascot with his own slide above left field and a race of costumed sausages in the middle of every game. Cheap teams are supposed to rebuild and wait. You just keep showing up good.",
     "why": [
-      "You make a virtue of resourcefulness, building winners out of what richer teams discard and taking real pride in it.",
-      "You refuse to let a small-market reality lower your expectations. Sitting back and waiting is for other people.",
-      "You carry your success lightly and joyfully. Winning is supposed to be fun, and you make sure it is."
+      "Small city, high expectations, no apology for either. Sitting back and waiting is for other people.",
+      "You take real pride in what you can make out of what you have, and none of it has ever felt like settling.",
+      "Winning is supposed to be fun and you make sure it is. The joy is not a consolation prize here, it is most of the point."
     ]
   },
   "MIN": {
@@ -506,9 +506,9 @@ const teams = {
     "tagline": "Two dramatic titles under a roaring dome, and then a record run of Octobers that broke you.",
     "desc": "You won two of the most dramatic World Series the sport has staged, both at home in a deafening indoor dome with thousands of white hankies spinning in the air, one ending on a tenth-inning Game 7 they still call the best ever. Then the other side took over: eighteen straight playoff losses across two decades, a record nobody wanted, the October futility becoming its own grim joke, until at last you broke it. Stoic, northern, and patient, you take the cold and the heartbreak in stride.",
     "why": [
-      "You hold both glory and grief without much drama. Stoicism is your native setting, in good times and bad.",
-      "Your roots run deep into a specific northern place, its cold, its understatement, its quiet pride.",
-      "You have learned to absorb heartbreak and keep showing up, the long October futility never quite killing the faith."
+      "Glory and grief both get held without much drama. Stoicism is your native setting, in good times and bad.",
+      "Your roots run deep into a specific northern place: its cold, its understatement, its quiet pride.",
+      "Eighteen straight October losses never quite killed the faith. You absorbed it and kept showing up, which is the whole northern trick."
     ]
   },
   "KC": {
@@ -519,9 +519,8 @@ const teams = {
     "tagline": "You built a title on speed and contact, under the only fountains in the game.",
     "desc": "You proved a thing the sport had half forgotten: that you can win it all on speed, contact, defense, and a bullpen that simply shut the door, without the home runs and the payroll everyone else chased. You did it in a blue unchanged in half a century, under the only fountains in the game, in a ballpark people travel to just to see the water. There was a long drought before that ring and struggle since. But the way you won, small-ball and relentless and team-first, only you can really claim it.",
     "why": [
-      "You believe in the team-first, fundamentals-first way of winning, the unglamorous craft over the highlight reel.",
-      "You take pride in a distinctive identity and a look that has stayed loyal to itself for fifty years.",
-      "You hold modest, patient expectations shaped by long droughts, and you savor the rare summit all the more for it."
+      "The unglamorous craft beats the highlight reel for you. Speed, contact, defense, a bullpen that shuts the door.",
+      "You take pride in a look and an identity that have stayed loyal to themselves for fifty years, and long droughts taught you to savor the rare summit."
     ]
   },
   "PHI": {
@@ -529,12 +528,12 @@ const teams = {
     "name": "Philadelphia Phillies",
     "emoji": "🔔",
     "color": "#E81828",
-    "tagline": "The toughest crowd in the sport, and you booed Santa and meant it as love.",
+    "tagline": "The toughest crowd in the sport. You booed Santa Claus and meant it as love.",
     "desc": "You are the most honest crowd in the sport, and honest here means brutal. This is the fanbase that once booed Santa Claus and has booed its own stars ever since, not from cruelty but from a refusal to pretend. You love loud and you boo loud, and you expect the effort to match the feeling in the stands. When it all comes together, the noise at home is something opponents dread. Holding your heroes to account is just another way you love them.",
     "why": [
-      "Your emotion runs loud and unfiltered. You feel every game at full volume and you do not hide it.",
-      "You hold the people you love to a high standard, and you treat honesty, even harsh honesty, as a form of devotion.",
-      "You belong to a fierce collective. The crowd, the noise, the shared intensity are central to how you experience the game."
+      "Loud, unfiltered, and impossible to hide. You feel every game at full volume and you have never once pretended otherwise.",
+      "You hold the people you love to a high standard, and honesty, even harsh honesty, is how you show it.",
+      "The crowd is not background for you. The noise and the shared intensity are central to how the game gets experienced at all."
     ]
   },
   "DET": {
@@ -542,12 +541,12 @@ const teams = {
     "name": "Detroit Tigers",
     "emoji": "🐯",
     "color": "#0C2340",
-    "tagline": "The city that put the world on wheels, and you wear an old English D that means grind.",
+    "tagline": "The city that put the world on wheels. The same old English D your grandparents wore, through every boom and every bust.",
     "desc": "You come from the city that built the American car and then took the worst of its collapse, and your baseball carries all of it: the grind, the toughness, the refusal to be counted out. You wear an old English letter unchanged in a century, the same one your grandparents wore through the good decades and the brutal ones. You have won it all and you have also lost a hundred and nineteen games in a single year. What stays constant is the work. In Detroit, you do not quit on the team or the town.",
     "why": [
-      "You define yourself by grit and the willingness to grind through hard times rather than by glamour.",
-      "Your loyalty is bound up with a place and its working-class character, through booms and busts alike.",
-      "You hold steady when things go wrong. Getting knocked down is just the setup for getting back up."
+      "The same letter on the chest for a century, worn through the good decades and the brutal ones.",
+      "You hold steady when things go wrong. A hundred and nineteen losses in a single year did not produce a crisis of faith, just a longer winter.",
+      "Your loyalty is bound up with a place and its working life, through booms and busts alike."
     ]
   },
   "CWS": {
@@ -558,9 +557,9 @@ const teams = {
     "tagline": "You're the South Side the postcards skip, blue collar and still here through the worst of it.",
     "desc": "You are the South Side, the half of Chicago the postcards skip, blue collar and proud of the chip on your shoulder. You broke an eighty-eight-year drought of your own in 2005 and barely got the attention for it. Then in 2024 you lost more games in a season than any team in the modern history of the sport, an almost unthinkable low, fans chanting at ownership to sell. Still you show up, because South Side loyalty was never about the standings. It was about not being the other team in town.",
     "why": [
-      "You carry a chip on your shoulder and a little defiance, the pride of the overlooked half of a divided town.",
-      "Your loyalty has nothing to do with winning. You stay through historic lows because the badge is identity, not entertainment.",
-      "You hold a blue-collar toughness that absorbs even rock bottom and shows up again the next day."
+      "A chip on the shoulder is standard issue here, the pride of the overlooked half of a divided town.",
+      "Your loyalty has nothing to do with the standings. You stayed through the most losses any modern team has ever taken, because the badge is identity and not entertainment.",
+      "You are not tidy about any of it. The defiance is loud, the grudge against the other side of town is permanent, and neither is going anywhere."
     ]
   },
   "BAL": {
@@ -571,9 +570,8 @@ const teams = {
     "tagline": "You do the small things right every day, under the warehouse everyone else copied.",
     "desc": "You believe in the fundamentals as a creed, the small things done right, and in a kind of relentless reliability, the same spirit as the hometown legend who once played a record two thousand six hundred straight games without ever taking a day. Your ballpark, with its old brick warehouse looming over right field, was so beautiful it set off a wave of imitators across the sport. You have had brilliant runs and lean stretches both. The orange does not waver. Birdland shows up either way.",
     "why": [
-      "You value craft and consistency, the unglamorous discipline of doing the basics right, over and over.",
-      "You take pride in reliability and showing up, the quiet virtue of being someone people can count on.",
-      "Your loyalty is steady and even-keeled, holding through the good years and the lean ones without much drama."
+      "Craft and consistency, the unglamorous discipline of doing the basics right, over and over.",
+      "You are steady and even-keeled through good years and lean ones, the kind people can count on without ever being told to."
     ]
   },
   "NYM": {
@@ -584,9 +582,10 @@ const teams = {
     "tagline": "You're New York's other team, lovable and heartbroken, and nobody's little brother.",
     "desc": "You are New York's second team and you have built an identity out of it, lovable and luckless and self-aware, the home of miracle runs and slow-motion collapses. For decades you lived in the long shadow of the team across town. Then ownership decided enough was enough and signed the single biggest contract in the history of professional sports, pulling a superstar straight out of the Bronx, just to prove you would not be anyone's little brother. However it ends, glory or heartbreak, it will at least be loud.",
     "why": [
-      "You wear underdog identity with humor and self-awareness, finding something lovable even in the heartbreak.",
-      "Your emotions run high and public, the agony and the ecstasy both lived at full New York volume.",
-      "You will go all in to prove a point. When it matters, you would rather swing big and risk the fall than settle for the shadow."
+      "Underdog identity worn with humor and self-awareness. You find something lovable in the heartbreak, which is lucky, because there is a lot of it.",
+      "Your emotions run high and public, agony and ecstasy both lived at full New York volume.",
+      "You will go all in to prove a point. Given the choice between the safe thing and the enormous swing, you take the swing.",
+      "Second team in town is a label, not a verdict. You have never once accepted being anyone's little brother."
     ]
   },
   "MIA": {
@@ -597,9 +596,9 @@ const teams = {
     "tagline": "Two titles as a young upstart, both sold for parts before your confetti settled.",
     "desc": "You are the team that proved you can win it all and still get torn down to the studs. Twice you came out of nowhere as a young upstart and won the World Series, and twice, almost before the parade ended, the roster got sold off for parts. You play in teal under the Miami sun, a city of beautiful temporary things, in front of crowds that learned the hard way not to get attached. The flash is real. So is the heartbreak baked into it. Nothing you build is quite allowed to last.",
     "why": [
-      "You know glory and loss are often the same story, and you hold success loosely because you have seen it vanish fast.",
-      "You have a flair for the sudden and spectacular, the out-of-nowhere run nobody saw coming.",
-      "You guard your heart a little. Experience taught you not to get too attached to anything that looks permanent."
+      "Glory and loss are often the same story to you, so you hold success loosely. You have watched it vanish inside a single winter.",
+      "You have a flair for the sudden and spectacular, the run out of nowhere that nobody saw coming.",
+      "Guarding your heart is not cynicism, it is experience. Nothing here has ever been allowed to last."
     ]
   },
   "TOR": {
@@ -610,9 +609,9 @@ const teams = {
     "tagline": "You're not a city's team but a country's, back to back once on a walk-off home run.",
     "desc": "You belong to an entire country, the only team a whole nation gets to claim, which makes every season a coast-to-coast affair from Vancouver to the Maritimes. You won it all twice in a row in the early nineties, the second sealed by a walk-off home run a whole country still remembers watching. Last fall you roared back to the brink, then lost a Game 7 in extra innings with the trophy almost in hand. The wait resumes, but it resumes for an entire nation at once.",
     "why": [
-      "Your sense of belonging is huge in scale, tied to a whole country rather than a single city.",
-      "You take real pride in being singular, the only one of your kind, representing something bigger than a hometown.",
-      "You hold recent heartbreak close, last fall still raw, and you channel it into next year's hope."
+      "Your sense of belonging is enormous in scale, tied to a whole country rather than one city.",
+      "Being the only one of your kind matters to you. There is real pride in representing something bigger than a hometown.",
+      "Last fall is still raw, a Game 7 in extra innings with the trophy almost in hand, and you will carry it straight into next April."
     ]
   },
   "TEX": {
@@ -620,12 +619,11 @@ const teams = {
     "name": "Texas Rangers",
     "emoji": "🤠",
     "color": "#C0111F",
-    "tagline": "Fifty years, twice one strike away in a single night, and finally you got the whole thing.",
+    "tagline": "Twice one strike away in a single night. Fifty years later you finally finished it.",
     "desc": "For half a century you waited, and the cruelest part came in 2011, when you stood one strike away from the title, twice in the same night, and lost it anyway, the kind of heartbreak that scars a fanbase for a decade. Then in 2023 you went out and finished it, winning the whole thing on the road, the wait finally over. You are Texas-sized in everything, the hurt and the redemption both. You know exactly what the wait costs and exactly what it is worth.",
     "why": [
-      "You understand delayed gratification deeply, having waited longer and more painfully than almost anyone before the payoff.",
-      "You feel things big, the heartbreak and the triumph both lived at full Texas scale.",
-      "You carry the hard-won wisdom of a fanbase that finally got its reward and will never take it for granted."
+      "Delayed gratification is something you understand in your bones, having waited longer and more painfully than almost anyone.",
+      "You feel it all at full Texas scale, the heartbreak and the triumph both, and you will never take the payoff for granted."
     ]
   },
   "AZ": {
@@ -636,9 +634,9 @@ const teams = {
     "tagline": "Barely four years old when you beat the sport's most storied team on a Game 7 hit.",
     "desc": "You are the desert upstart who crashed the party fast. Barely four years into your existence, you beat the most storied franchise in the sport in a Game 7 decided in the final at-bat, a championship before most expansion teams find their feet. You play under a roof against the heat with a snake on your chest, and you have stayed scrappy and dangerous since, reaching the big stage again on nerve more than payroll. Nobody hands you anything in the desert. You take it.",
     "why": [
-      "You move fast and fearlessly, willing to crash the establishment's party before anyone thinks you are ready.",
-      "You take pride in punching above your weight, doing damage on nerve and smarts rather than resources.",
-      "You carry an upstart's edge, the scrappy confidence of a team that has shocked the biggest names before."
+      "You move fast and fearlessly, willing to crash the party before anyone thinks you are ready.",
+      "Nerve and preparation do the work. Punching above your weight is not a slogan for you, it is the record.",
+      "You carry an upstart's swagger, the confidence of a team that already shocked the biggest name in the sport and knows it can happen again."
     ]
   },
   "WSH": {
@@ -646,12 +644,12 @@ const teams = {
     "name": "Washington Nationals",
     "emoji": "🏛️",
     "color": "#14225A",
-    "tagline": "Born in Montreal, moved to the capital, and you ran from nineteen and thirty-one to a title.",
+    "tagline": "Born in Montreal, uprooted to the capital. You started one season nineteen and thirty-one and won the whole thing.",
     "desc": "Your story starts in another country. You were born as the Expos in Montreal, the team that gave Canada baseball before being uprooted to the nation's capital, leaving a city heartbroken behind you. For years in Washington you were good and never quite enough. Then came 2019, a season that opened nineteen and thirty-one, looked finished by May, and became a charmed run to the capital's first championship in nearly a century. You learned the hard way that the season is long and nothing is over until it is.",
     "why": [
-      "You carry a relocated history and the resilience of a fanbase that has been through real upheaval and kept going.",
-      "You never count anything as finished. A terrible start is just the first act, and you believe in the long comeback.",
-      "You hold a hard-won patience, the knowledge that the worst beginnings can still turn into the best endings."
+      "A relocated history sits underneath all of it, and a fanbase that went through real upheaval and kept going.",
+      "You never count anything as finished. A terrible start is just the first act.",
+      "Patience here was hard-won. You learned that the worst beginning can still turn into the best ending."
     ]
   },
   "HOU": {
@@ -662,9 +660,9 @@ const teams = {
     "tagline": "You're the most relentless winning machine in the game, and the most hated for it.",
     "desc": "You turned baseball into a machine and stopped apologizing for being good at it. A title in 2017 that the rest of the sport will forever stamp with an asterisk, after a sign-stealing scheme came to light, then another won clean in 2022 with the whole world rooting against you. For most of a decade you reached the final four almost every year, the most relentless run of contention in the game. You are the team everyone loves to hate, and somewhere along the way you decided that was just fine.",
     "why": [
-      "You are relentlessly driven to win and unbothered by the resentment that comes with it.",
-      "You trust the system over sentiment, the cold efficiency of a machine built to keep contending.",
-      "You have made peace with being the villain. Outside hatred does not rattle you, it almost fuels you."
+      "You are relentlessly driven and completely unbothered by the resentment that comes with it.",
+      "System over sentiment. The cold efficiency of a machine built to keep contending is the thing you actually trust.",
+      "Being the villain stopped bothering you a long time ago. The outside hatred does not rattle you, it very nearly fuels you."
     ]
   },
   "LAA": {
@@ -672,12 +670,12 @@ const teams = {
     "name": "Los Angeles Angels",
     "emoji": "😇",
     "color": "#BA0021",
-    "tagline": "Two of the greatest alive at once, and you have not one October win to show for them.",
+    "tagline": "Two of the greatest who ever lived, at the same time. Not one October win to show for it.",
     "desc": "You have spent a generation watching greatness go to waste. You rostered two of the finest players the sport ever produced, at the same time, and never won a single playoff game with them. You have not been to October in over a decade. Then one of those talents left for the team up the freeway and immediately won it all, twice, a gut-punch almost too cruel to script. You have a title, back in 2002, and the lit halo still stands. Mostly you wait, loyal to a team that broke your heart with riches it could not use.",
     "why": [
-      "Your loyalty is remarkable and a little tragic, staying devoted through a long drought and squandered greatness.",
-      "You know the particular pain of wasted potential, of having everything you needed and still coming up empty.",
-      "You keep the faith anyway, holding onto hope and a single old championship through years that tested both."
+      "Your loyalty is remarkable and a little tragic, held through a long drought and a generation of squandered greatness.",
+      "You know the specific pain of wasted potential, of having everything you needed and still coming up empty.",
+      "The faith holds anyway. One old championship and a lit halo, and you are still here."
     ]
   }
 };
@@ -764,7 +762,7 @@ const archetypeDesc = {
   "COL": "You play a mile above everyone else, where the thin air makes baseballs fly and bends the basic rules of the game in ways no other team has to reckon with. It is a beautiful, brutal puzzle, and in all your years you have never solved it. You reached the World Series exactly once, on a charmed October run, and were swept once you arrived. Mostly you have lived far from contention. But the mountains are yours, the altitude is yours, and nobody else plays the game in air like this.",
   "ATH": "You are the original underdog with a calculator, the team that learned to beat the richest clubs in the sport without the money to match them, and you did it in green and gold for a city that adored you. The method you invented gets copied everywhere now. Then ownership pulled the team out of that city entirely, dropped the place-name, and sent you to play in a borrowed minor-league park while a new home rises somewhere you never chose. The colors stay. So does the grudge.",
   "TB": "You have spent your whole existence proving money is not the same as brains. On one of the lowest payrolls in the sport, in the toughest division it has, you keep churning out contenders and have reached the last stage twice on a budget that should not allow it. You have never drawn big crowds, and a hurricane once tore the roof off your home and sent you to play a full season in someone else's park. None of it slows the machine. You reload and beat the rich teams again.",
-  "MIL": "You are proof a small city with a small budget can simply refuse to lose. You ship your best players to richer teams every winter and keep right on winning the division, building contenders out of pitching, development, and stubbornness. And you do it with more joy than almost anyone, a mascot who slides into a giant beer mug and a race of costumed sausages in the middle of every game. Cheap teams are supposed to rebuild and wait. You just keep showing up good.",
+  "MIL": "You are proof a small city with a small budget can simply refuse to lose. You ship your best players to richer teams every winter and keep right on winning the division, building contenders out of pitching, development, and stubbornness. And you do it with more joy than almost anyone, a mascot with his own slide above left field and a race of costumed sausages in the middle of every game. Cheap teams are supposed to rebuild and wait. You just keep showing up good.",
   "MIN": "You won two of the most dramatic World Series the sport has staged, both at home in a deafening indoor dome with thousands of white hankies spinning in the air, one ending on a tenth-inning Game 7 they still call the best ever. Then the other side took over: eighteen straight playoff losses across two decades, a record nobody wanted, the October futility becoming its own grim joke, until at last you broke it. Stoic, northern, and patient, you take the cold and the heartbreak in stride.",
   "KC": "You proved a thing the sport had half forgotten: that you can win it all on speed, contact, defense, and a bullpen that simply shut the door, without the home runs and the payroll everyone else chased. You did it in a blue unchanged in half a century, under the only fountains in the game, in a ballpark people travel to just to see the water. There was a long drought before that ring and struggle since. But the way you won, small-ball and relentless and team-first, only you can really claim it.",
   "PHI": "You are the most honest crowd in the sport, and honest here means brutal. This is the fanbase that once booed Santa Claus and has booed its own stars ever since, not from cruelty but from a refusal to pretend. You love loud and you boo loud, and you expect the effort to match the feeling in the stands. When it all comes together, the noise at home is something opponents dread. Holding your heroes to account is just another way you love them.",
