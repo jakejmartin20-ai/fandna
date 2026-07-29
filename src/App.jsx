@@ -838,7 +838,7 @@ function AppInner(){
         {screen==="quiz"&&(
           <>
             <h1 style={{position:"absolute",width:1,height:1,padding:0,margin:-1,overflow:"hidden",clip:"rect(0,0,0,0)",whiteSpace:"nowrap",border:0}}>
-              FanDNA quiz: {(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"}
+              FanDNA quiz: {mode==="core" ? "Your core" : ((SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League")}
             </h1>
             <div aria-live="polite" style={{position:"absolute",width:1,height:1,padding:0,margin:-1,overflow:"hidden",clip:"rect(0,0,0,0)",whiteSpace:"nowrap",border:0}}>
               Question {cur+1} of {sequence.length}
