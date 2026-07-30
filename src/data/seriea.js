@@ -133,7 +133,7 @@ const teams = {
       "You are backed to climb and you fully intend to, with the resources to make the rise real.",
       "Shallow roots, and you have never pretended otherwise. A new build where trajectory matters more than heritage, and the climb is the whole story.",
     ],
-    note:"A return to Serie A backed by one of the wealthiest ownerships in world football, on the shore of Lake Como. The lariani, glamorous and rising fast on serious money.",
+    note:"A return to Serie A backed by one of the wealthiest ownerships in world football, on the shore of Lake Como. The lariani, the lake people, glamorous and rising fast on serious money.",
     kit:"https://shop.comofootball.com" },
   CAG: { code3:"CAG", kitType:"stripes", secondaryColor:"#0A2156", name:"Cagliari", emoji:"🏝️", color:"#A4172B",
     tagline:"Gigi Riva gave you 1970 and never left the island, and no mainlander has ever understood your pride.",
