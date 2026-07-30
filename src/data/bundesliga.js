@@ -6,7 +6,7 @@
 const teams = {
   BAY: { code3:"BAY", kitType:"solid", secondaryColor:null, name:"Bayern Munich", emoji:"🔴", color:"#DC052D",
     tagline:"Thirty-four titles in, you treat the Meisterschale as property, not a prize.",
-    desc:"You do not romanticize the chase. Winning is the baseline you start from, and a season that ends in anything less reads as a failure to be reviewed, not a near-miss to be cherished. People mistake that for arrogance. You call it standards. You came to see something done to the limit of how well it can be done, and then done again the next year, and the year after that. Bayern is the closest thing German football has to a permanent verdict, and you have never apologized for being on the right side of it.",
+    desc:"You do not romanticize the chase. Winning is the baseline you start from, and a season that ends in anything less reads as a failure to be reviewed, not a near-miss to be cherished. People mistake that for arrogance. You call it standards. You came to see something done to the limit of how well it can be done, and then held right there, season upon season. Bayern is the closest thing German football has to a permanent verdict, and standing on the right side of it has never required an explanation.",
     why:[
       "A year gets measured by what you won. Not by how interesting the journey was, and you stopped explaining that to people a long time ago.",
       "Dominance is something you engineer and then maintain. Sentiment does not come into it much.",
@@ -52,7 +52,7 @@ const teams = {
     desc:"You are loyal in the quiet, undramatic way that does not make headlines. No reinvention, no chasing the fashion, no leaving when it got hard. Green and white, the same as it ever was, through the good years and the long stretches of mid-table that would have peeled away a less committed fan. You do not need the club to be glamorous. You need it to be yours, and it has been, every season, without you ever having to think twice about it.",
     why:[
       "Green and white is not a preference you hold. It is a fact about you.",
-      "The colors, the city, the continuity. All of it matters more to you than a trophy would.",
+      "The colors, the city, the continuity. You would take all of that over a trophy.",
       "The spotlight has never appealed. Steady and yours is exactly enough.",
     ],
     note:"Werder won four German championships and the 2004 double under Thomas Schaaf, playing some of the most attacking football the league has seen. Lebenslang Gruen-Weiss, lifelong green and white, is the motto, and Bremen fans mean it literally.",

@@ -8,7 +8,7 @@ const teams = {
     tagline:"The only Italian treble ever won was yours, in 2010, and you never had to be from here to belong.",
     desc:"You were born out of a breakaway, founded by people who wanted to be open to the whole world when others wanted to close the doors, and that outward, cosmopolitan streak has never left you. You carry yourself like one of the great institutions because you are one, twenty-one titles and a treble to your name, the established big club that expects to be in the conversation every single season. That outward, cosmopolitan confidence is the whole of you: a side that knows what it is and means to keep winning.",
     why:[
-      "A season gets measured in trophies. Anything short of contention reads to you as a year gone wrong.",
+      "A season gets measured in trophies. A year without contention counts, for you, as a year wasted.",
       "You would rather back a plan than a feeling, and you trust a thing that has been put together properly.",
       "The roots are real without being parochial. Open to the world by design, and never only a neighborhood.",
     ],
@@ -66,7 +66,7 @@ const teams = {
     kit:"https://laziostylestore.com" },
   ATA: { code3:"ATA", kitType:"stripes", secondaryColor:"#000000", name:"Atalanta", emoji:"⛰️", color:"#1B61A8",
     tagline:"You develop what richer clubs buy, and in 2024 little Bergamo's academy won a European trophy anyway.",
-    desc:"You win by being smarter and braver than clubs with far more money, and a whole provincial city has fallen in love with the way you do it. There is a town in the foothills that built the best youth academy in the country, hired a coach who plays the most fearless attacking football in Italy, and turned all of it into a European trophy nobody outside Bergamo saw coming. You are the model overachiever, proof that intelligence and nerve can beat a chequebook. You never needed anyone's permission to be good, and the whole place knows it.",
+    desc:"You are the club that keeps embarrassing budgets many times your own, and a whole provincial city has fallen in love with the way you do it. There is a town in the foothills that built the best youth academy in the country, hired a coach who plays the most fearless attacking football in Italy, and turned all of it into a European trophy nobody outside Bergamo had even imagined. You are the model overachiever, proof that intelligence and nerve can beat a chequebook. You never needed anyone's permission to be good, and the whole place knows it.",
     why:[
       "You believe in building it right, the patient way before any shortcut.",
       "The climb from mid-table to Europe was earned rather than bought, and you mean to stay up there.",
@@ -97,7 +97,7 @@ const teams = {
     kit:"https://bolognafcstore.com" },
   TOR: { code3:"TOR", kitType:"solid", secondaryColor:null, name:"Torino", emoji:"🐂", color:"#7A1420",
     tagline:"The bull of Turin, the Grande Torino lost at Superga in 1949: loyalty worn as a wound.",
-    desc:"You belong to the team that died and never stopped being loved, and the loyalty in you is the kind that survives anything. The Grande Torino were the greatest side in the country, champions over and over, and in 1949 the whole team was lost in an instant when their plane hit the hill at Superga. The wound never closed, and a working-class city has carried the bull ever since, in the long shadow of the richer, colder club across town. You do not measure yourself in recent trophies. You measure yourself in a faith that nothing has ever been able to break.",
+    desc:"You belong to the team that died and never stopped being loved, and the loyalty in you is the kind that survives anything. The Grande Torino were the greatest side in the country, champions over and over, and in 1949 the whole team was lost in an instant when their plane hit the hill at Superga. The wound never closed, and a working-class city has carried the bull ever since, overshadowed the whole time by the richer, colder club it shares its streets with. You do not measure yourself in recent trophies. You measure yourself in a faith that nothing has ever been able to break.",
     why:[
       "You stay through everything, because for you that is simply what the word means.",
       "The bull, the city, the wound of Superga. None of it is separable from who you are.",
@@ -157,7 +157,7 @@ const teams = {
     kit:"https://usleccestore.it" },
   PAR: { code3:"PAR", kitType:"solid", secondaryColor:"#0A2156", name:"Parma", emoji:"✝️", color:"#F0D000",
     tagline:"You had the nineties, lost it all to bankruptcy, restarted at the fifth level, and climbed home.",
-    desc:"You knew the heights and you knew the absolute bottom, and the climb back is the proudest thing about you. In the nineties you were one of the best sides in Europe, a cabinet full of cups and a team of legends, glamour you had no historic right to and seized anyway. Then it all collapsed, the money gone, the club bankrupt and erased, refounded at the very bottom of the pyramid in front of a few thousand faithful. And you climbed, division by division, all the way home. You are glory and ruin and resurrection, and you carry every part of it.",
+    desc:"You knew the heights and you knew the absolute bottom, and the climb back is the proudest thing about you. In the nineties you were one of the best sides in Europe, a cabinet full of cups and a team of legends, glamour you had no historic right to and seized anyway. Then it all collapsed, the money gone, the club bankrupt and erased, refounded down in the amateur divisions in front of a few thousand faithful. And up you went, one promotion at a time, all the way home. You are glory and ruin and resurrection, and you carry every part of it.",
     why:[
       "The faithful went down with the club and carried it back from nothing.",
       "Glory, collapse, rebirth. You have lived all three, and the turmoil is woven into you.",
@@ -185,11 +185,11 @@ const teams = {
     kit:"https://shop.acmonza.com" },
   FRO: { code3:"FRO", kitType:"solid", secondaryColor:"#0A2156", name:"Frosinone", emoji:"🐤", color:"#F0C81E",
     tagline:"You're the tiny one from the Ciociaria, up among the giants a fourth time and thrilled every single time.",
-    desc:"You are tiny, you are from a provincial town most of the country could not place on a map, and you keep gatecrashing the big time anyway. The Ciociaria is a quiet corner of central Italy, and its club has no business mixing it with the giants, except that you keep finding a way, promoted again and again, happy and unfussed each time you arrive. No pretensions, no grudges, just the simple joy of a small club testing itself against the best, and you enjoy every improbable minute of it.",
+    desc:"You are tiny, you are from a provincial town that barely registers outside its own region, and you keep gatecrashing the big time anyway. The Ciociaria is a quiet corner of central Italy, and its club has no business mixing it with the giants, except that you keep finding a way, promoted again and again, happy and unfussed each time you arrive. No pretensions, no grudges, just the simple joy of a small club testing itself against the best, and you enjoy every improbable minute of it.",
     why:[
       "A small town's club from the Ciociaria, tight-knit and without airs, and the togetherness is the whole edge.",
       "Steady and well run, and the recent rises came from order rather than drama.",
-      "You punch upward without a shred of entitlement, thrilled by the climb itself.",
+      "Nothing here feels owed to you, and the climbing is the part you actually enjoy.",
     ],
     note:"A fourth promotion to Serie A for a small club from the Ciociaria, tiny and thrilled each time to be among the giants. The giallazzurri, the provincial minnow that keeps gatecrashing.",
     kit:"https://store.frosinonecalcio.com" },
@@ -352,7 +352,7 @@ const milestones = {
   ATA:["The 2024 Europa League, the first major European trophy in the club's history, the proudest night Bergamo has ever known."],
   COM:["The return to Serie A under one of the wealthiest ownerships in world football, the start of a fast and glamorous climb on the shore of Lake Como."],
   LEC:["A long history of yo-yo defiance from the heel of Italy, promoted and relegated and always back, faithful to the Salento through every drop."],
-  SAS:["The rise from a town of forty thousand to the top flight, a modern club built cleanly and well by a local company, competence over romance."],
+  SAS:["The rise from a town you could cross in ten minutes to the top flight, a modern club built cleanly and well by a local company, competence over romance."],
   MON:["The first promotion to Serie A in the club's century-long history, won under Berlusconi in 2022, shortly before his death."],
   FRO:["A fourth promotion to Serie A, a tiny provincial club from the Ciociaria gatecrashing the big time and enjoying every improbable minute."],
   VEN:["A club on the islands of Venice, ground reached by boat, wearing a kit the fashion world covets, style and atmosphere as its whole identity."],
@@ -441,7 +441,7 @@ const nearlyGot = {
   UDI:{
     SAS:"Sassuolo and you are calm, well-organized clubs run cleverly and cleanly rather than romantically. The difference is the history: you have a long, famous model and decades in the top flight, while Sassuolo is the modern build from a clean sheet. The competence is the same; yours is proven over decades where Sassuolo's is freshly made.",
     BOL:"You and Bologna are even-tempered northern clubs that do things sensibly and well. The difference is the soul: you are the pure sustainable model, built to endure, while Bologna carries old glory and a renaissance. You run on calm method, Bologna on a bright revival: the same cool intelligence, two moods.",
-    JUV:"You share the core of it. You prize control, discipline, and the clever structured way over romance. The difference is the budget: Juventus is the nationwide machine built to win everything, while you run the same cold intelligence on a fraction of the money simply to survive. Want that cold intelligence spent on winning the lot? That's Juventus. You spend it just to stay alive.",
+    JUV:"You share the core of it. You prize control, discipline, and the clever structured way over romance. The difference is the budget: Juventus is the nationwide machine built to win everything, while you run the same cold intelligence on a shoestring simply to survive. Want that cold intelligence spent on winning the lot? That's Juventus. You spend it just to stay alive.",
   },
   COM:{
     SAS:"You and Sassuolo alike are deliberately built modern projects rather than clubs handed down through generations. The difference is the wealth: you are backed by one of the richest ownerships in the world and climbing fast, while Sassuolo is the clean, well-run small-town build. Same built-from-scratch approach; yours is glamorous, Sassuolo's modest.",

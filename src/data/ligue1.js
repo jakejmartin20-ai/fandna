@@ -77,7 +77,7 @@ const teams = {
     kit:"https://boutique.sb29.com" },
   REN: { code3:"REN", kitType:"duo", secondaryColor:"#000000", name:"Rennes", emoji:"⚫", color:"#E2001A",
     tagline:"You backed Breton ambition with real money and beat Paris on penalties to lift the 2019 cup.",
-    desc:"You are Brittany's capital club, backed by serious money, and you have spent years trying to turn that into something that lasts. There is real ambition here, a fortune behind you, an academy that keeps producing players the giants come to buy, and a fierce Breton support that has never doubted who it is. The breakthrough was the 2019 cup, beating Paris on penalties, the long wait finally over, and ever since you have been chasing the next step up, wanting Europe, wanting more, never quite content to sit still.",
+    desc:"You are Brittany's capital club, wealthy in a way few French clubs are, and you have spent years trying to turn that into something that lasts. There is real ambition here, deep pockets, an academy that keeps producing players the giants come to buy, and a fierce Breton support that has never doubted who it is. The breakthrough was the 2019 cup, beating Paris on penalties, the long wait finally over, and ever since you have been chasing the next step up, wanting Europe, wanting more, never quite content to sit still.",
     why:[
       "You are backed to push for Europe and the top of the table, and you get restless when you are not there.",
       "A famed academy and a serious project sit underneath it, producing talent year after year.",
@@ -353,7 +353,7 @@ const nearlyGot = {
   },
   LIL:{
     REN:"You and Rennes are well-run clubs with smart academies and real ambition. The difference is the budget: you win titles by being sharper than richer clubs, the cool head spending nothing, while Rennes has serious money behind it and the restlessness that comes with it. Rennes has the money and cannot sit still. You have the wit and no need to.",
-    TOU:"You and Toulouse alike are calm, clever operations that overachieve through good recruitment rather than noise. The difference is the trophy room: you are champions of France, proof the smart model can win the lot, while Toulouse aims more modestly, to punch above its means in a rugby city. Toulouse wants to be respected. You wanted the trophy, and you took it.",
+    TOU:"You and Toulouse alike are quiet, clever operations that consistently outperform their budgets. The difference is the trophy room: you are champions of France, proof the smart model can win the lot, while Toulouse aims more modestly, to punch above its means in a rugby city. Toulouse wants to be respected. You wanted the trophy, and you took it.",
     BRE:"The two of you are level-headed, well-run clubs that quietly do more than your resources should allow. The difference is the pedigree: you are an actual champion of France, a serious club with a title, while Brest is the happy little overachiever thrilled simply to be gatecrashing the big time. You have the title that proves it. Brest is just thrilled to have gatecrashed the party.",
   },
   LYO:{
@@ -404,7 +404,7 @@ const nearlyGot = {
   ANG:{
     NIC:"You and Nice are mid-table clubs without a recent golden age, getting on with the present. The difference is the backing: Nice has new money and the hope of climbing, while you are the unfashionable battler with nothing behind you but stubbornness and a black-and-white shirt. Nice has money and hope. You have a shirt and a refusal to go away.",
     TRO:"You and Troyes alike are clubs that live with instability, used to the divisions changing beneath your feet. The difference is the cause: you yo-yo because you are an unfashionable battler scrapping every year to survive, while Troyes churns as a development node in a global empire. Troyes churns because somebody planned it. You churn because nobody is coming to help.",
-    LOR:"The two of you are modest clubs without grand ambition, taking the ups and downs as they come. The difference is the mood: you are the stubborn battler, scrapping and defiant about surviving, while Lorient rides the tide with the even, unbothered calm of a port town. Same realistic horizon, one fighting and one floating.",
+    LOR:"The two of you are modest clubs without grand ambition, content to take good seasons and bad in the same stride. The difference is the mood: you are the stubborn battler, scrapping and defiant about surviving, while Lorient rides the tide with the even, unbothered calm of a port town. Same realistic horizon, one fighting and one floating.",
   },
   LOR:{
     HAC:"Le Havre and you are modest maritime clubs content with a deep local identity and no great hunger for glory. The difference is the history: Le Havre is the oldest club in France, weighed with a century and a half of being first, while you are the easygoing Breton port simply bobbing between the divisions. Le Havre carries a century and a half of being first. You just bob between the divisions, untroubled.",

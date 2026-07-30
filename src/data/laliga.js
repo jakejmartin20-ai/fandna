@@ -89,7 +89,7 @@ const teams = {
     tagline:"Champions of Spain in 2000, then down to the third tier, then all the way back. You don't quit.",
     desc:"You were champions of Spain once, the real thing, beating the giants at their own game and putting a city most people could not place on the map of Europe. Then it all came apart, the money, the level, the years, until you were further down than a club like you should ever be. And you climbed, the whole way back. You do not need permission to believe it can happen again. Falling only ever proved who you are.",
     why:[
-      "You sat through the fall, all the way down, and following somebody else never crossed your mind.",
+      "You stayed all the way down, through every year of it, and changing clubs was never a thought you had.",
       "Being champions of Spain is not nostalgia to you. It is identity, and it still sets the standard.",
       "The climb back landed as hard as the drop did. Possibly harder.",
     ],
@@ -214,7 +214,7 @@ const teamEdge = {
   SEV: {chaos:"the last few years lived brilliant in Europe and brittle at home", ambition:"anchored in a European record almost no one can match", loyalty:"holding through a fall that would have broken a softer support, refusing to surrender"},
   BET: {emotion:"this club felt in the bones, the ache part of the love rather than its price", loyalty:"unconditional and proud of it, there and singing win or lose", community:"the people's club, where belonging matters more than any trophy"},
   VAL: {chaos:"a decade of one long fight with its own boardroom", emotion:"the rage of watching something mishandled that you know should be better", loyalty:"staying and raging, which is harder than leaving and a great deal more devoted", rootedness:"knowing what the club was and should be, and refusing to let anyone forget it"},
-  DEP: {loyalty:"sitting through the fall, all the way down, never once thinking of anyone else", rootedness:"the memory of being champions carried as identity, not nostalgia, setting the standard", emotion:"the climb back felt as keenly as the drop, maybe more"},
+  DEP: {loyalty:"following it down to the bottom and never looking anywhere else", rootedness:"the memory of being champions carried as identity, not nostalgia, setting the standard", emotion:"the climb back felt as keenly as the drop, maybe more"},
   RAC: {rootedness:"one of the oldest stories in Spanish football, that history the whole point", loyalty:"held through fourteen years away, never once stopping being who it is", ambition:"quieter than the giants', where being back where it began means more than the top of the table"},
   MAL: {loyalty:"staying through a fall all the way to the third tier, there for the long road back up", chaos:"earned the hard way, through a boom and a bust most clubs never live through", emotion:"highs and lows both, having felt the full range of what the game can do to a club"},
   VIL: {process:"the well-run, well-built thing, which has taken it further than anyone predicted", chaos:"the smart, steady side rather than the dramatic one", ambition:"real and quietly relentless, never announced, just always back at the top table"},
@@ -262,7 +262,7 @@ const archetypeDesc = {
   SEV:"You own Europe and scrap at home, and never give in. Nunca se rinde, never surrender, is Sevilla's motto, earned across a record seven Europa Leagues and a hard fall in its own league.",
   BET:"You love hardest when it hurts. Manque pierda, even when they lose, is the Betis creed, the romance of a support that sings through every defeat because the love was never about the result.",
   VAL:"You are a giant at war with the people who own you. Los Che carry two European finals and a proud history, and a decade of fighting an owner who let the club slide.",
-  DEP:"You were champions, you lost everything, and you climbed back. Super Depor was the great side that won La Liga in 2000, and the name still carries the pride that survived the fall.",
+  DEP:"You were champions, you lost everything, and you climbed back. Super Depor took La Liga in 2000, and the pride in that name outlived the fall.",
   RAC:"You were here at the very beginning. El Sardinero, your seaside home in Santander, holds a founding member of La Liga, prouder of where it came from than of any trophy.",
   MAL:"Someone bought you the top, then walked away. Los Boquerones, the anchovies of Málaga, lived a borrowed golden age and a crash to the bottom, and dragged themselves back up alone.",
   VIL:"You should not exist at this level, and yet you keep surfacing. El Submarino Amarillo, the Yellow Submarine, is a town of fifty thousand that runs itself smarter than clubs many times its size.",
@@ -420,7 +420,7 @@ const nearlyGot = {
     RSO:"The resemblance is real. You build properly, develop your own, and trust style over the splashy fix. The difference is the scale: you do it as one of the biggest clubs alive, expecting titles from it, while Real Sociedad does the same on a quieter budget and counts a cup as a triumph. Same craft, one at the summit and one a level below.",
   },
   ATM:{
-    BET:"Here's the common ground: you feel this game in your body, all suffering and devotion, the opposite of cold. The difference is the bargain: you choose the grind and want the hard-won trophy at the end of it, while Betis loves regardless of the result, singing through every defeat. You suffer to win. Betis suffers for the love of it.",
+    BET:"Here's the common ground: this game runs through your nerves, all suffering and devotion, the opposite of cold. The difference is the bargain: you choose the grind and want the hard-won trophy at the end of it, while Betis loves regardless of the result, singing through every defeat. You suffer to win. Betis suffers for the love of it.",
     DEP:"You and Deportivo La Coruña alike are fierce, loyal, and forged by hard nights rather than easy ones. The difference is the source: your suffering is chosen, the grind you signed up for, while Deportivo's was imposed by a collapse it had to climb out of. Your grind is a choice, while Deportivo's was forced on it by a fall it never asked for.",
   },
   ATH:{
@@ -461,7 +461,7 @@ const nearlyGot = {
     VAL:"You and Valencia alike are clubs an owner's hands brought low, betrayed by the people meant to build you. The difference is the timing: your collapse already happened, all the way to the third tier, and you climbed back alone, while Valencia is still mid-fight with the owner wrecking it. Valencia is still in the fight. You already know how it ends, and you came back anyway.",
   },
   VIL:{
-    RSO:"The two of you are the calm, well-run side that trusts the build over the noise. The difference is the heritage: Real Sociedad develops its own and carries a Basque city's identity, while you are a young club from a town of fifty thousand that simply outsmarts everyone. Real Sociedad carries a city. You carry a town that has no business being here at all.",
+    RSO:"The two of you are the unflashy, patient side that trusts the build over the noise. The difference is the heritage: Real Sociedad develops its own and carries a Basque city's identity, while you are a young club from a town of fifty thousand that simply outsmarts everyone. Real Sociedad carries a city. You carry a town that has no business being here at all.",
     BAR:"The overlap runs deep: you trust the process, the patient build over the splashy fix, and let it carry you to Europe. The difference is the size: Barcelona does it as a global giant that expects titles, while you do it as a small-town side with no business at the top table. Same faith in the build, one a colossus and one a miracle of good sense.",
   },
   ALA:{

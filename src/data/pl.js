@@ -1031,7 +1031,7 @@ const nearlyGot = {
  
     MC:"Transformed by investment relative to what they were, both of you. City's transformation is total and historic; West Ham's more modest and more contested. West Ham fans have more of the original identity to protect. City fans have more success to justify the change.",
  
-    AR:"You both find value in doing things a certain way. Arsenal's is principled and philosophical; West Ham's rooted in the academy tradition, the idea that the club produces players rather than buys them. Each holds the club to a standard that's about identity as much as results.",
+    AR:"You both find value in doing things a certain way. Arsenal's is principled and philosophical; West Ham's rooted in the academy tradition, the idea that the club produces players rather than buys them. Each holds the club to a standard measured in character, not only in results.",
  
     EV:"Working-class clubs with genuine place-rooted identities and fanbases that carry them regardless of results, both of you. Everton's identity is Merseyside; West Ham's East End and explicitly historical. Each resists the drift toward corporate football. Each has something worth protecting.",
  
