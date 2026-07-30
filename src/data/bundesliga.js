@@ -1,6 +1,6 @@
 // FanDNA Bundesliga (BL) - fingerprint sport. 18 clubs, 2026-27 composition.
 // teamDims (the per-club landing), scoring (the module cells), moduleQuestions are the engine.
-// teams/archetypes/archetypeDesc/teamTextColors/greats/milestones/vitalStats/nearlyGot/CARD_BADGES/
+// teams/archetypes/teamTextColors/greats/milestones/vitalStats/nearlyGot/CARD_BADGES/
 // squadUrls are craft + display. US English, no em-dashes in user-facing copy. Keys = code3.
 
 const teams = {
@@ -234,26 +234,6 @@ const archetypes = {
   ELV:"Die Kaiserlinde", SCP:"Die Ostwestfalen", SGE:"Die Adler",
 };
 
-const archetypeDesc = {
-  BAY:"You start from winning and treat anything less as a fault to fix. Der Rekordmeister, the record champion, is the standard the rest of the country measures itself against, and you have never apologized for being it.",
-  HSV:"Your stability came from a record nobody else could claim, and a fall shook it to the core. Der Dino, the dinosaur, was the league's last ever-present, and like you it refused to let going down be the end.",
-  VFB:"You trust the well-built thing over the lucky one. The Brustring, the red band across the chest, is Stuttgart's century-old mark, worn in the Swabian heartland where doing it with precision is close to a moral code.",
-  BMG:"You carry your best chapter as a light to steer by, not a weight. Die Fohlen, the Foals, were the fearless young side that lit up the seventies, and the name still fits people who know exactly who they were.",
-  SVW:"You stay, quietly and for life, without needing the spotlight. Die Grün-Weißen, the green-and-whites, is less a nickname than a fact about you: lifelong, unglamorous, and entirely loyal.",
-  RBL:"You judge things by whether they work, not by how old they are, and you have a thick skin about the people who resent it. Die Roten Bullen, the Red Bulls, built a winner from nothing and never apologized for the method.",
-  TSG:"You trust the method and the model over the inherited name, and you build rather than wait to be handed one. Der Dorfklub, the village club, put a Bundesliga side where history said there could be none, and you are at peace with how it was done.",
-  B04:"You know what it is to do everything right and still fall short, season after season, until it finally broke. Die Werkself, the works team, were the eternal nearly-men, and you do not let go of what you waited so long to win.",
-  S04:"You take pride in unglamorous, dependable work and you stay through the lean years. Die Knappen means the miners, the men who went down the Gelsenkirchen shafts, and the club carries their creed: loyalty is owed, glory is earned.",
-  BVB:"You go to feel something and you let it out, with the thousands around you. Die Gelbe Wand, the Yellow Wall, is the largest terrace in European football, built for people who believe the feeling is the whole point.",
-  SCF:"You do it the right way and you do not make a fuss about it. Die Breisgauer come from the Black Forest, where patience, continuity, and a sustainable plan beat the splashy shortcut, and somehow keep on working.",
-  FCA:"You have made peace with the club for what it is, and there is freedom in that. Die Fuggerstädter take their name from Augsburg's Renaissance banking dynasty, and they want steady top-flight football, not a rollercoaster.",
-  KOE:"You love it precisely because it never stops putting you through it. Die Geißböcke, the Billy Goats, named for the mascot Hennes, ride the carnival city's mood up and down the divisions and turn up regardless.",
-  M05:"You take the football seriously and yourself not at all. Die Nullfünfer, the 05ers, are the carnival city's club, the place Klopp learned his trade, beating richer sides by being cleverer and a little funnier about it.",
-  FCU:"You believe the club belongs to the people who carry it, because yours would not exist without them. Die Eisernen, the Iron Ones, gave blood and labor to save and rebuild Union, and they count themselves builders, not customers.",
-  ELV:"You love being the team nobody saw coming. Die Kaiserlinde, named for the old lime tree by the ground, is the smallest town ever in the top flight, playing with house money and proving the doubters wrong every week.",
-  SCP:"You are used to being overlooked and you have stopped minding. Die Ostwestfalen, from a corner most of the country could not find on a map, go up and down and keep turning up, unfashionable and unbothered.",
-  SGE:"You do not accept things just because that is how they are. Die Adler, the Eagles, carry one of Germany's most fervent and political supports, traveling in armies and pushing back against whatever modern football decides you should want.",
-};
 
 const teamTextColors = {
   BAY:"#F2607A", HSV:"#6F9BD6", VFB:"#D8D8D8", BMG:"#CFCFCF", SVW:"#5FC58C", RBL:"#F2657F", TSG:"#6BA3E0",
@@ -618,4 +598,4 @@ const scoring = {
 };
 
 
-export { moduleQuestions, teams, archetypes, teamTextColors, archetypeDesc, greats, milestones, vitalStats, nearlyGot, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };
+export { moduleQuestions, teams, archetypes, teamTextColors, greats, milestones, vitalStats, nearlyGot, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };

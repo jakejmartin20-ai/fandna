@@ -223,26 +223,6 @@ const teamTextColors = {
   HAC:"#8FC2E8", ANG:"#BFBFBF", LOR:"#FBC38E", PFC:"#7F95C8", TRO:"#6F9BD6", LEM:"#C9AE3E",
 };
 
-const archetypeDesc = {
-  PSG:"You aim for the very top and accept nothing less. Ici c'est Paris, this is Paris, is stamped on the club, a statement of glamour and entitlement that fits a project built fast and spent big to rule Europe.",
-  MAR:"You feel it harder than anyone and never let it go. À jamais les premiers, forever the first, is the Marseille creed, earned as the only French club ever to win Europe, in 1993, and worn with total Mediterranean defiance ever since.",
-  MON:"You do it cleverly, coolly, and on your own quiet terms. Le Rocher, the Rock, is the principality itself, a tiny tax haven that runs its football like a smart business and lets the trophies, not the crowd, speak for it.",
-  LIL:"You win by being sharper than richer clubs. Les Dogues, the Mastiffs, are the cool, well-run north, the side that took a title off Paris in 2021 on a fraction of the money and never once raised its voice.",
-  LYO:"You measure the present against a golden age you cannot let go. Les Gones, the kids in Lyonnais slang, carry the memory of seven straight titles and the long ache of trying to be that good again.",
-  LEN:"You belong to a region the country forgot, and you wear it as armor. Sang et or, blood and gold, are the colors of the coalfield, a mining town's club whose stadium holds more than the town itself.",
-  BRE:"You are the happy overachiever from the edge of the map. Ti-Zef, the old name for a Brestois, belongs to a tiny Breton club that gatecrashed the Champions League and enjoyed every improbable minute of it.",
-  REN:"You are Brittany's ambitious capital club, backed and restless. Le Roazhon is the Breton heart of the place, the ground and the identity, a serious project that ended its wait by beating Paris for the 2019 cup.",
-  STR:"You are living proof that a club is its people. La Meinau, the fortress ground in Alsace, is where the fans rebuilt a bankrupt, dissolved club from the fifth tier all the way back to the top flight.",
-  TOU:"You are the smart other-game in a rugby city. Les Violets, named for the violet shirt nobody else wears, run a clever, data-led operation in a town that loves the oval ball first, and stunned France for the 2023 cup.",
-  NIC:"You are a Riviera club waiting on the present to match the past. Le Gym, the everyday name for OGC Nice, carries four old titles, the last in 1959, and the patient hope that new money makes you matter again.",
-  AJA:"You believe in building things slowly and properly. Les Bourguignons, the Burgundians, are the patient small-town side that trusted one manager for forty years and won the double in 1996 from a town of forty thousand.",
-  HAC:"You carry the oldest history in the French game. Le Doyen, the dean, is Le Havre, founded in 1872 before any other club here, prouder of being first and lasting than of any trophy it never won.",
-  ANG:"You make a virtue out of refusing to disappear. Les Angevins, the people of Anjou, are the unfashionable battlers who scrap for one more top-flight season every year and lean on stubbornness when nothing else is on offer.",
-  LOR:"You are a small Breton port's club, local to the bone. Les Merlus, the Hakes, named for a fish, ride up and down the divisions like boats on the tide and take a quiet pride in being exactly that.",
-  PFC:"You are a cold, well-funded bid to give Paris a second club. L'autre Paris, the other Paris, spent forty-six years away from the top flight and came back with serious money and a plan to climb much higher.",
-  TRO:"You are Champagne's elevator club, a cog in a global machine. Les Champenois, the people of Champagne, ride between the divisions as a development outpost in a much larger empire, never settling for long.",
-  LEM:"You are a racing city's club that fell to the amateurs and climbed back. Les Manceaux, the people of Le Mans, treasure every top-flight season because they know exactly how close the whole thing came to vanishing.",
-};
 
 // All-time greats. Clubs with none fall back to milestones.
 const greats = {
@@ -543,4 +523,4 @@ const scoring = {
             D: cell(["LIL","BRE","TOU","ANG","LOR"]) },
 };
 
-export { moduleQuestions, teams, archetypes, teamTextColors, archetypeDesc, greats, milestones, vitalStats, nearlyGot, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };
+export { moduleQuestions, teams, archetypes, teamTextColors, greats, milestones, vitalStats, nearlyGot, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };

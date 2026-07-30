@@ -246,28 +246,6 @@ const teamTextColors = {
   FRO:"#F0D040", VEN:"#F0A050",
 };
 
-const archetypeDesc = {
-  INT:"You aim high and win like an institution, not a romance. La Beneamata, the beloved, is the brothers' club born to be open to the world, twenty-one titles and a treble carried with cosmopolitan certainty.",
-  JUV:"You win above all, and you do not need to be loved for it. La Vecchia Signora, the Old Lady, is the nationwide winning machine that was stripped and sent to Serie B in 2006 and climbed straight back to the top.",
-  MIL:"You are European aristocracy that refuses to stay fallen. Il Diavolo, the Devil, carries seven European Cups and a golden age the whole game copied, grandeur worn through every rise and fall.",
-  NAP:"Nobody feels it deeper, and you would not know how to feel it less. I Partenopei are the South under Vesuvius, Maradona's immortal city, a club you live inside rather than merely support.",
-  ROM:"You love completely and a little painfully, and you stay. La Magica is the capital's romance, the she-wolf and the Curva Sud, Totti's one-club faith and a devotion that survives every near-miss.",
-  LAZ:"You are the proud minority who answers to no one. Le Aquile, the Eagles, are the older, defiant half of Rome, sky-blue and certain, never desperate to be the favorite.",
-  ATA:"You beat richer clubs by being smarter and braver. La Dea, the Goddess of Bergamo, built the best academy in Italy and the most fearless football, and turned it into a European trophy.",
-  FIO:"You carry a city's pride in a color nobody else wears. La Viola is Florence itself, certain it is the equal of anyone, adoring its heroes and living the near-miss out loud.",
-  BOL:"You enjoy a renaissance built on brains, not money. I Felsinei carry seven old titles and a clever modern revival, an Emilian club returned to Europe with quiet grace.",
-  TOR:"You make loyalty a thing that survives anything. Il Toro, the bull, carries the Grande Torino lost at Superga in 1949, a working-class faith no tragedy has ever broken.",
-  GEN:"You were here before all of it and you remember. Il Grifone, the Griffin, is the oldest club in Italy, nine titles before the war and a port city's pride that never faded.",
-  UDI:"You endure by being cleverer than clubs your size. I Friulani run the smartest sustainable model in Italy, buying low and selling high and staying up while flashier clubs vanish.",
-  COM:"You are a beautiful idea backed by serious money. I Lariani are the glamorous lake project rising fast, new money done with taste, only just getting started.",
-  CAG:"You are an island that answers to no mainland. Gli Isolani carry Gigi Riva and the 1970 title, a fierce Sardinian pride a long way from everything and proud of the distance.",
-  LEC:"You refuse to disappear, season after season. I Salentini ride the divisions from the heel of Italy, down one year and back the next, faithful to a South the rest of the country forgets.",
-  PAR:"You knew the heights and the absolute bottom, and you climbed back. I Crociati, the crusaders, lived a 1990s golden age, then bankruptcy and erasure, then a climb back through every division to Serie A.",
-  SAS:"You built a Serie A club from a clean sheet, done well. I Neroverdi are the modern small-town project, green and black, competence over romance, proof you can build it properly from nothing.",
-  MON:"You are an old man's last love, realized late and gratefully. I Brianzoli reached Serie A for the first time ever under Berlusconi, lifted higher than the club had ever been.",
-  FRO:"You keep gatecrashing the big time and enjoying it. I Ciociari are the provincial minnow promoted again and again, tiny and thrilled to test themselves against the giants.",
-  VEN:"You turn even a relegation fight into something like art. I Lagunari are Venice on the lagoon, the most beautiful kit in football, style and salt and a sense of place no money could buy.",
-};
 
 const greats = {
   INT:[
@@ -603,4 +581,4 @@ const scoring = {
             D: cell(["MON","FRO","VEN"]) },
 };
 
-export { moduleQuestions, teams, archetypes, teamTextColors, archetypeDesc, greats, milestones, vitalStats, nearlyGot, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };
+export { moduleQuestions, teams, archetypes, teamTextColors, greats, milestones, vitalStats, nearlyGot, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };

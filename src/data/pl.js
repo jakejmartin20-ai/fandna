@@ -615,31 +615,6 @@ const teamTextColors = {
   HU:"#F6A623",
 };
 
-const archetypeDesc = {
-  LI:"You experience belonging at full volume and carry the past as fuel rather than weight. The Kop was built for people who felt things this way: completely, collectively, without apology.",
-  MC:"You set standards others call unrealistic and move straight to the next one when they're met. The Blue Moon was not sung during the good times. It was sung through decades of nothing, by people who refused to lower the bar.",
-  AR:"You care about how things are done, not just whether they work. Gooner started as a Spurs insult and became the most defiant badge of honour in north London, worn by people who would rather do it right and lose than do it wrong and win.",
-  EV:"You stay. Not because things are good, not because leaving would be difficult. Because loyalty without conditions is the only kind you understand. The Toffee Lady has been walking the pitch since the 1890s. So have fans like you.",
-  NC:"Your belonging is inseparable from your place. Being Geordie is a full cultural identity that predates football by centuries: the city, the accent, the pride. The club did not create that. It gave it somewhere to go on Saturdays.",
-  WH:"You carry pride and legitimate grievance simultaneously and refuse to pretend otherwise. The Iron goes back to 1895, Thames Ironworks, hammer and anvil. Working-class identity that no stadium move or corporate rebrand has managed to dissolve.",
-  CP:"You build the thing you want to belong to rather than waiting for it to be handed to you. The Holmesdale Fanatics did not inherit an atmosphere. They created one from scratch, at a club with no trophies and no mythology, purely through organised collective will.",
-  MU:"You carry the weight of what your club has been and refuse to accept anything less. The Red Army earned its name through the travelling support of the 1970s: fans who showed up in every away end in England and made themselves impossible to ignore.",
-  SP:"You hold genuine belief and genuine self-awareness about how unlikely it is, and somehow both are real at the same time. The Spur comes from the fighting cockerel on the badge and the pub where the club was founded in 1882: stubbornness dressed up as optimism, for 143 years.",
-  LE:"One moment of genuine impossibility changed how you see what is possible, and you cannot fully close that door again. The Fox has been the East Midlands identity since 1884. The 5000-to-1 just proved that foxes are harder to catch than people think.",
-  NF:"You are drawn to things that should not have worked but did. The Garibaldi is 161 years old, named at a pub meeting in 1865 after Italian freedom fighters, and worn by a club that won the European Cup twice from the second division. Exactly the kind of story you were always going to end up in.",
-  BR:"You were there before it was easy to be there, because something about the community rootedness felt right before anyone else was paying attention. The Bee has been Brentford's identity since 1894: before the analytics, before the Premier League, long before it was fashionable.",
-  BH:"You think carefully and stay genuinely warm about it, a combination rarer than it sounds. The Seagull was not handed down by the club. It was created on Christmas Eve 1975 outside a pub by fans who had had enough of not having a proper identity. That is very Brighton.",
-  WO:"Your pride does not need broadcasting to be real. The Wanderer has been in the club's name since 1879: purposeful, unhurried, quietly certain of its own direction. Wolverhampton does not need the world's attention to know what it is.",
-  FU:"You know exactly what you are and find it genuinely enough, not as resignation but as the specific confidence of someone who has never needed external validation. Craven Cottage has been there since 1896. The actual cottage is still on the pitch. Some things do not need to be bigger to be right.",
-  BO:"You are genuinely happy to be where you are and you do not perform it or overthink it. The Cherries got their name from the cherry orchards lining the ground in 1910 and the cherry-red shirts that matched them. Simple, warm, south coast. Exactly as advertised.",
-  AV:"You respect what came before without being imprisoned by it. The past informs the hunger rather than replacing it. The Villan emerged in the Victorian era from Aston's streets and Villa Cross chapel, carried through to a European Cup in 1982 and a rebuilt project that genuinely believes the best is still coming.",
-  SU:"You stayed when staying was the hardest thing to do, and the return meant something specific because of what preceded it. Mackem comes from the shipyards of the River Wear: working-class pride distinct from every other city in the northeast. The Stadium of Light held 46,000 in League One because Mackems simply do not leave.",
-  LU:"You experience everything at full range and would not have it any other way. The Peacock comes from the Old Peacock pub at the foot of Elland Road, the oldest thread of Leeds identity: proud, conspicuous, impossible to ignore and entirely unbothered about what anyone thinks of that.",
-  CH:"You know what it felt like when it worked, and that knowledge is both gift and burden. The Shed End was Stamford Bridge's working-class terrace heart long before the money arrived: the original Chelsea, the one that was there before the King's Road glamour and will be there after the current chaos resolves.",
-  IT:"You find genuine meaning in belonging to something real rather than something famous, and you are completely undefensive about the scale of it. Tractor Boy started as an insult about Suffolk's agricultural character and was immediately reclaimed as a badge of honour. That is the whole personality in one origin story.",
-  CV:"You keep showing up for something that keeps making it hard to show up. Jimmy Hill introduced the sky blue kit and the Sky Blue identity in 1961 and it survived Northampton, Birmingham, four stadium owners and 20 years of institutional chaos completely intact. That is not a colour. That is a statement about what kind of fan you are.",
-  HU:"The Diehard's loyalty is load-bearing, not sentimental. You belong to a place that was told it would be worth more if it stopped being itself, and you decided that being itself was the worth. You don't defend what's yours because it's winning, you defend it because it's yours.",
-};
 
 const greats = {
   LI:[
@@ -3122,4 +3097,4 @@ const squadUrls = {
 
 // ─── HELPERS ──────────────────────────────────────────────────────────────────
 
-export { moduleQuestions, teams, archetypes, teamTextColors, archetypeDesc, greats, vitalStats, nearlyGot, scoring, teamDims, DIM_LABELS, DIM_COLORS, DIM_CODES, DIM_ORDER, CARD_BADGES, GENERIC_EMOJI, squadUrls };
+export { moduleQuestions, teams, archetypes, teamTextColors, greats, vitalStats, nearlyGot, scoring, teamDims, DIM_LABELS, DIM_COLORS, DIM_CODES, DIM_ORDER, CARD_BADGES, GENERIC_EMOJI, squadUrls };

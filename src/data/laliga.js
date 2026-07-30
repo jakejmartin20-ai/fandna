@@ -254,28 +254,6 @@ const archetypes = {
   ELC:"Franjiverde",
 };
 
-const archetypeDesc = {
-  RMA:"Silverware is the only measure you accept. Los Blancos, the whites, hold fifteen European Cups and set the bar the rest of Spain is judged against.",
-  BAR:"You want the trophy and the philosophy in the same hand. Més que un club, more than a club, is Barcelona's promise that how you win, and with whom, matters as much as the winning.",
-  ATM:"You trust the win you bled for over the one handed to you. Cholismo, the creed Simeone built, turns grit and suffering into an identity, the proud hard way in a city of glamour.",
-  ATH:"You would rather lose pure than win borrowed. Los Leones, the Lions, field only their own Basque sons, and you carry that creed as the thing that makes every win actually mean something.",
-  RSO:"You do it well and you do it quietly. La Real is the refined Basque club that builds its own and lets the football speak, and surprises everyone outside its city when it lifts a cup.",
-  SEV:"You own Europe and scrap at home, and never give in. Nunca se rinde, never surrender, is Sevilla's motto, earned across a record seven Europa Leagues and a hard fall in its own league.",
-  BET:"You love hardest when it hurts. Manque pierda, even when they lose, is the Betis creed, the romance of a support that sings through every defeat because the love was never about the result.",
-  VAL:"You are a giant at war with the people who own you. Los Che carry two European finals and a proud history, and a decade of fighting an owner who let the club slide.",
-  DEP:"You were champions, you lost everything, and you climbed back. Super Depor took La Liga in 2000, and the pride in that name outlived the fall.",
-  RAC:"You were here at the very beginning. El Sardinero, your seaside home in Santander, holds a founding member of La Liga, prouder of where it came from than of any trophy.",
-  MAL:"Someone bought you the top, then walked away. Los Boquerones, the anchovies of Málaga, lived a borrowed golden age and a crash to the bottom, and dragged themselves back up alone.",
-  VIL:"You should not exist at this level, and yet you keep surfacing. El Submarino Amarillo, the Yellow Submarine, is a town of fifty thousand that runs itself smarter than clubs many times its size.",
-  ALA:"You carry one glorious, heartbreaking night forever. Babazorros, the old Vitoria nickname, belongs to a club whose proudest memory is a European final lost in the cruelest way.",
-  GET:"You exist to ruin the afternoon of clubs that think they are better. Azulones, the big blues, are the Madrid suburb's spoilers, unfashionable and proud of being a problem.",
-  OSA:"You belong to your own people, and your ground proves it. El Sadar, the fortress of Pamplona, is a member-owned club that turns its stadium into the least welcoming place in Spain.",
-  RAY:"You are a neighborhood before you are a club. Vallecas, the poorest and loudest corner of Madrid, gives Rayo its politics, its defiance, and more soul than the rich clubs across town.",
-  ESP:"You wear being the other one like armor. Pericos, the parakeets, are Barcelona's other club, who turned sharing a city with a global giant into the whole point.",
-  CEL:"You belong to Galicia and the Atlantic edge of Spain. Os Celestes, the sky-blues of Vigo, prize their roots and their own local sons over any chase for glamour.",
-  LEV:"You turn survival into an art form. Granota, the frog of Valencia's third club, keeps getting written off and keeps wriggling free, one great escape at a time.",
-  ELC:"You refuse to be a club that disappears. Franjiverde, named for the green sash across the shirt, is a small Alicante side whose whole identity is hanging on.",
-};
 
 const teamTextColors = {
   RMA:"#D8D8D8", BAR:"#6F9BD6", ATM:"#F0686A", ATH:"#F0686A", RSO:"#6F9BD6", SEV:"#D8D8D8", BET:"#5FC58C", VAL:"#CFCFCF", DEP:"#6F9BD6", RAC:"#5FC58C", MAL:"#6F9BD6", VIL:"#F4D93C", ALA:"#6F9BD6", GET:"#6F9BD6", OSA:"#F0686A", RAY:"#D8D8D8", ESP:"#6F9BD6", CEL:"#8FC7EE", LEV:"#6F9BD6", ELC:"#D8D8D8",
@@ -633,4 +611,4 @@ const scoring = {
            right: cell(["RMA", "RSO", "SEV", "VAL", "VIL", "GET", "ELC"]) },
 };
 
-export { moduleQuestions, teams, archetypes, teamTextColors, archetypeDesc, greats, milestones, vitalStats, nearlyGot, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };
+export { moduleQuestions, teams, archetypes, teamTextColors, greats, milestones, vitalStats, nearlyGot, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };
