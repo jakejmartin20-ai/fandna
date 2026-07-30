@@ -109,7 +109,7 @@ const teams = {
     desc:"Someone handed you a seat at the very top once, the bright lights and the big nights, a run nobody from your city had any right to expect. Then the money walked out, Europe was taken away over debts you did not run up, and the club fell, and fell, until you were lower than before any of it. You did not get bought back. You dragged yourselves up, on your own, the slow way. The golden age was borrowed. The climb back is the part that is actually yours.",
     why:[
       "You stayed through a fall that went all the way to the third tier, and you were there for the long road back up.",
-      "A boom and a bust most clubs never live through will teach you to absorb almost anything.",
+      "Having lived a rise and a collapse that most people never see, very little rattles you now.",
       "You have felt the full range of what this game can do to a club, and you feel all of it strongly.",
     ],
     note:"Málaga were ninety seconds from a Champions League semifinal in 2013 before two late Dortmund goals, then were banned from Europe over unpaid debts as the owner's project unraveled. They fell to the third tier and have climbed all the way back to La Liga.",
@@ -147,7 +147,7 @@ const teams = {
     desc:"Your club belongs to the people of your region, literally, owned by its own members rather than some distant investor, and that is not a technicality, it is the soul of the thing. You turned your stadium into a fortress, the kind of place visiting teams dread, loud and tight and utterly yours. You are not chasing the giants and never pretended to. You chase something better: a club that answers to the people who fill its stands, in a proud corner of Spain that does things its own way.",
     why:[
       "The members own the club. That is not a technicality to you, it is the whole basis of belonging.",
-      "This is a region's club, in a place with a fierce sense of its own identity.",
+      "Navarra does things its own way and you would defend that instinct before you defended any result.",
       "You want it to be the truest version of itself more than you want it to win something.",
     ],
     note:"Osasuna are owned by their own members, one of the few socios clubs left in Spain, rooted in Navarra. They turned El Sadar into one of the most hostile grounds in the country, a fortress held by its own membership.",
@@ -177,8 +177,8 @@ const teams = {
     tagline:"Out on Galicia's Atlantic edge, you are carried, season after season, by one of your own sons.",
     desc:"Out on the Atlantic edge of Spain, where Galicia does things its own way, you keep your club close and your identity closer. You have never been one of the powers and you do not measure yourself against them. What you have, again and again, is a local hero, one of your own who could have left for the bright lights and chose to stay, carrying the sky-blue because it meant something. That rootedness in place is the whole story. You are Galicia's club, and that is plenty.",
     why:[
-      "Galicia and the Atlantic edge, with an identity that owes nothing to anyone else.",
-      "The club is woven into the place, carried by people who are of it rather than just paid by it.",
+      "You are from a corner that has never taken its cues from anywhere else, and you like it that way.",
+      "The people who carry it are from there, and that is the part you would never trade away.",
       "Being genuinely Galicia's club matters more to you than climbing the table would.",
     ],
     note:"Celta Vigo are Galicia's club on the Atlantic coast, the celeste, long carried by hometown talent who chose to stay rather than chase bigger stages. Rootedness over glamour, every time.",
@@ -188,7 +188,8 @@ const teams = {
     desc:"You are the third club in your own city, the little frog nobody outside it takes seriously, and you have turned survival into an art form. Every year someone writes you off, and every year you wriggle free, because you have never had the luxury of expecting anything else. There is a stubborn joy in being the side that refuses to go quietly, that turns a relegation scrap into a great escape one more time. You do not dream of trophies. You dream of one more season, and you keep getting it.",
     why:[
       "Survival is dramatic by nature and you have lived through more last-day escapes than most sides ever will.",
-      "The goal is to stay and to endure, and there is real pride in being the side that always does. Third club in town, loved by the people who actually chose it.",
+      "Enduring is the whole goal and you take real pride in being the one that always manages it.",
+      "You were nobody's default choice in that city, which is exactly why it counts.",
     ],
     note:"Levante are Valencia's third club, the granotas, long famous for last-day great escapes and a stubborn refusal to be written off. No money and no expectations, just the little frog that somehow keeps wriggling free.",
     kit:"https://tienda.levanteud.com" },

@@ -527,7 +527,7 @@ const teams = {
     why:[
       "Suffolk, Portman Road, the Bobby Robson mythology. Not global, not branded, just real.",
       "You know you are not a big club and you have never once needed to pretend otherwise. That undefensiveness is the whole posture.",
-      "The McKenna story repeated the lesson the Robson era already taught: the right person, with genuine care for the place, can get more out of it than the resources say is available.",
+      "You believe the right person who actually cares about a place gets more out of it than the budget says is possible.",
     ],
     note:"FA Cup 1978. UEFA Cup 1981. Bobby Robson. Portman Road opened in 1884. League One to Premier League in consecutive seasons under Kieran McKenna. Suffolk's club, genuinely.",
     kit:"https://shop.itfc.co.uk",

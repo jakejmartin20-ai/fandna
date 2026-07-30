@@ -69,7 +69,7 @@ const teams = {
     tagline:"You are Brittany's far edge, sixteen thousand strong, and in 2024 you gatecrashed the Champions League.",
     desc:"You are small, you are out at the very edge of the country, and you have just done something that clubs ten times your size only dream about. Brittany's western tip is a long way from the money and the glamour, and your ground holds barely sixteen thousand, and none of that stopped you from gatecrashing the Champions League. You do not carry yourself like a club with pretensions. You carry yourself like a tight, happy, slightly improbable overachiever who knows exactly how far it has come, and enjoys every minute of it.",
     why:[
-      "A small Breton town's club, close-knit and unpretentious. The togetherness is the actual advantage.",
+      "Being close to the people around you is not a nice extra here. It is the thing that actually works.",
       "The recent rise was built on order rather than drama, which is how you would want it.",
       "You punch upward without grand pretension, thrilled by the climb rather than entitled to it.",
     ],
@@ -89,9 +89,9 @@ const teams = {
     tagline:"You died in the fifth tier in 2011, and your own supporters carried you all the way back.",
     desc:"You were bankrupt, dissolved, dumped to the bottom of the football pyramid, and your own supporters carried you all the way back. In 2011 the club died as a professional entity and started again in the fifth tier, and what happened next is the thing you are proudest of: the fans refused to let it disappear, filled a stadium meant for top-flight football to watch amateur games, and climbed, division by division, back to where you are now. Alsace is a border region with its own fierce identity, and you are its living proof that a club is its people, not its balance sheet.",
     why:[
-      "The fans rebuilt this club from nothing.",
-      "That bond does not break, and everything since has been built on top of it.",
-      "Alsace, the border, La Meinau. The years of crisis only hardened the regional identity rather than wearing it down.",
+      "You did not wait for someone to save it. You went and carried it back up yourselves.",
+      "Nothing formed in those years has come loose since. Everything you have now sits on top of it.",
+      "Alsace sits on a border and knows exactly what it is. The bad years only sharpened that in you.",
       "New ownership wants the top half and Europe now, but the comeback is still the story that defines you.",
     ],
     note:"Bankrupt and refounded in the fifth tier in 2011, then carried back to Ligue 1 by its supporters across a remarkable climb. One league title, in 1979. Stade de la Meinau holds twenty-nine thousand.",
@@ -119,7 +119,7 @@ const teams = {
     tagline:"You kept one manager for forty-four years, and a town of forty thousand won the 1996 double.",
     desc:"You are a small Burgundy town that, through sheer patience, once stood with the giants of French football. The whole story is built on the long view: one manager who stayed for more than forty years, an academy that produced internationals out of nowhere, and a refusal to chase quick fixes when slow and steady had always been the way. The crowning moment, a league and cup double in 1996 from a town of forty thousand, should have been impossible, and it was not, because you trusted the process for as long as it took. You still believe in building things properly, however long it takes.",
     why:[
-      "The patient, academy-led way is not a tactic here, it is the whole identity. It once won everything.",
+      "Patience is not a tactic you switch on. It is how you do everything, and it once won the lot.",
       "A small Burgundy town, l'Abbé-Deschamps, decades of continuity. You belong somewhere and it shows.",
       "You build slowly and you do not panic. History keeps agreeing with you.",
     ],
@@ -129,8 +129,8 @@ const teams = {
     tagline:"You are the oldest of them all, founded in 1872, the dean of the French game.",
     desc:"You are the oldest of them all, and that history is the thing you carry above everything else. Founded in 1872 in a great port city, you are the dean of French football, the club that was here before any of the others, and the academy that has quietly produced some of the finest players the country has made. You are not chasing titles or glamour; survival in the top flight and the steady work of bringing through the next generation is enough. Nobody else can say they were here first, and you have never needed more than that.",
     why:[
-      "The oldest club in France, founded in 1872, carrying a history nothing else here can match.",
-      "A working port city's club with a famous academy feeding the game from its own backyard. Staying up and developing talent is the measure, not chasing the top.",
+      "Your sense of where you come from runs deeper than anyone else's here. Nothing in France predates 1872.",
+      "You would rather bring someone through than sign them, and you measure a good year by still being here.",
     ],
     note:"The oldest football club in France, founded in 1872, le doyen. No league title, but an academy that produced Pogba, Mahrez, Mandanda and Payet. Stade Océane holds around twenty-five thousand.",
     kit:"https://boutique.hac.football" },
@@ -147,8 +147,9 @@ const teams = {
     tagline:"You are the Hakes of a Breton submarine port, forever bobbing between the divisions.",
     desc:"You are the Hakes of a Breton port, named for a fish, and you carry the salt-and-tide identity of the coast with real affection. Lorient is a submarine-base town on the Atlantic, modest and maritime, and your club bobs up and down between the divisions the way the boats ride the swell. You are not chasing greatness; you are a small, likeable, deeply local club that knows the sea and knows itself. The orange shirt and the Merlus nickname are unmistakably yours, and there is a quiet pride in being exactly that and nothing grander.",
     why:[
-      "A small Breton port town's club, local to the bone, with a maritime identity all its own.",
-      "The aim is to stay up and stay yourself, not to climb toward a top you never chased. You take the ups and downs with the even temper of a place that has always lived by the tide.",
+      "Brittany, the water, a town you can walk across. That scale is not a limitation to you, it is the appeal.",
+      "Staying up and staying yourself is the whole ambition, and the top was never something you looked at.",
+      "The ups and downs land evenly with you. Nothing about them has ever felt like a crisis.",
     ],
     note:"No league title, though the 2002 Coupe de France sits in the cabinet. The Merlus, the Hakes, of a Breton submarine port. Stade du Moustoir holds around nineteen thousand.",
     kit:"https://boutique.fclorient.bzh" },

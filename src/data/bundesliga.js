@@ -130,7 +130,7 @@ const teams = {
     desc:"You made peace with what the club is a long time ago, and there is real freedom in it. No glory to chase, no relegation to dread most years, just steady, unbothered top-flight football in a city that was old and wealthy when most of these clubs did not exist. You do not need a trophy to make it worthwhile. You like your team, you like your Saturday, and you have stopped pretending you secretly want the rollercoaster. Content is not a failure setting. For you it is the right one.",
     why:[
       "You are not chasing glory and you are honest about it. Belonging at this level is genuinely enough.",
-      "A calm mid-table season over a dramatic one, every time. The city and the routine matter more to you than silverware ever would.",
+      "You would take an uneventful season without hesitating. The Saturday and the town are worth more to you than a trophy.",
     ],
     note:"Augsburg is one of Germany's oldest cities, home of the Renaissance Fugger banking dynasty. The club reached the top flight for the first time in 2011 and has mostly stayed there without fuss, which is exactly how its fans like it.",
     kit:"https://shop.fcaugsburg.de" },

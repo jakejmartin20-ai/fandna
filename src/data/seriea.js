@@ -149,9 +149,9 @@ const teams = {
     tagline:"You go up, you go down, and you always come back, faithful to the Salento and the heel of Italy.",
     desc:"You are from the very end of the country, the heel of the boot, and you have made an art of refusing to disappear. The Salento is a long way from everything, sun-baked and proud and largely overlooked, and its club rides the divisions like the tide, down one year and back the next, never quite gone. The support stays faithful through every drop because the club is theirs, the South's, an identity worth more than any league position. You keep coming back, season after season, and you always do.",
     why:[
-      "Relegation, promotion, relegation again. You come back every time, because the club is the place and the place is home.",
-      "The deep South's club, the heel of Italy, proud of a corner the rest of the country forgets.",
-      "Belonging and surviving is honest enough for you. The ups and the downs get taken as they come.",
+      "Relegation, promotion, relegation again. Leaving simply never came up for you, in any of those seasons.",
+      "You come from an overlooked corner of the map, and being overlooked has never bothered you for a second.",
+      "Belonging and surviving is honest enough for you. You have never needed the table to justify it.",
     ],
     note:"A famous yo-yo club from the heel of Italy, up and down the divisions and always back, faithful to the Salento. The giallorossi of the deep South, who refuse to vanish.",
     kit:"https://usleccestore.it" },
@@ -159,9 +159,9 @@ const teams = {
     tagline:"You had the nineties, lost it all to bankruptcy, restarted at the fifth level, and climbed home.",
     desc:"You knew the heights and you knew the absolute bottom, and the climb back is the proudest thing about you. In the nineties you were one of the best sides in Europe, a cabinet full of cups and a team of legends, glamour you had no historic right to and seized anyway. Then it all collapsed, the money gone, the club bankrupt and erased, refounded down in the amateur divisions in front of a few thousand faithful. And up you went, one promotion at a time, all the way home. You are glory and ruin and resurrection, and you carry every part of it.",
     why:[
-      "The faithful went down with the club and carried it back from nothing.",
+      "You went down with it and you carried it back up from nothing. Neither part was ever in question.",
       "Glory, collapse, rebirth. You have lived all three, and the turmoil is woven into you.",
-      "The crusader's cross survived bankruptcy and erasure, and it still means everything.",
+      "The cross on the shirt outlasted the bankruptcy and the erasure. That is the part you actually carry.",
     ],
     note:"A 1990s golden age of European trophies, then bankruptcy and erasure, refounded at the fifth level in 2015 and back in Serie A. I crociati, the crusaders, glory and ruin and return.",
     kit:"https://shop.parmacalcio1913.com" },
@@ -169,7 +169,7 @@ const teams = {
     tagline:"You come from forty thousand people and a ceramics fortune, built from nothing and run clean.",
     desc:"You are a modern club with no deep past, and you have made a clean, sensible virtue out of exactly that. A small town of forty thousand, a successful local company that decided to build a football club properly, and a steady, well-organized operation that rose to the top flight on competence rather than romance. There is no ancient history here and no roaring terrace, just a smart project run the right way. You are the neroverdi, green and black, proof that you can build a Serie A club from almost nothing if you simply do it well.",
     why:[
-      "Well run and well organized, built the proper way from a clean sheet.",
+      "You like a thing built properly from the start, with no mess inherited from anyone before you.",
       "You do things sensibly and calmly, and there is no deep past behind you to carry. You wear that lightly.",
     ],
     note:"A modern club out of a ceramics town of barely forty thousand, carried to Serie A by a local company and a well-run plan. The neroverdi, built from nothing and run clean.",
@@ -187,8 +187,8 @@ const teams = {
     tagline:"You're the tiny one from the Ciociaria, up among the giants a fourth time and thrilled every single time.",
     desc:"You are tiny, you are from a provincial town that barely registers outside its own region, and you keep gatecrashing the big time anyway. The Ciociaria is a quiet corner of central Italy, and its club has no business mixing it with the giants, except that you keep finding a way, promoted again and again, happy and unfussed each time you arrive. No pretensions, no grudges, just the simple joy of a small club testing itself against the best, and you enjoy every improbable minute of it.",
     why:[
-      "A small town's club from the Ciociaria, tight-knit and without airs, and the togetherness is the whole edge.",
-      "Steady and well run, and the recent rises came from order rather than drama.",
+      "You are from a small place with no airs about it, and that is exactly where your strength comes from.",
+      "Every step up here was earned in order, not stumbled into, and that suits you exactly.",
       "Nothing here feels owed to you, and the climbing is the part you actually enjoy.",
     ],
     note:"A fourth promotion to Serie A for a small club from the Ciociaria, tiny and thrilled each time to be among the giants. The giallazzurri, the provincial minnow that keeps gatecrashing.",
@@ -197,7 +197,7 @@ const teams = {
     tagline:"You reach your ground by boat, wear the best kit in football, and care about style as much as the score.",
     desc:"You are the most beautiful idea in the league, and you know it. A club on the islands of Venice, a ground you reach by boat across the lagoon, and a kit so striking the fashion world covets it, you turn even a relegation battle into something that looks like art. You are not built to dominate, and you have made peace with that, because what you offer is style, atmosphere, and a sense of place that no fortune could buy. You ride the divisions up and down, salt and orange and green, and you do it all with more grace than clubs twice your size.",
     why:[
-      "Venice itself, a sense of place no money could manufacture, reached by boat across the lagoon.",
+      "You would take arriving by water over arriving anywhere else. Place matters to you more than standing does.",
       "You feel the game keenly and wrap it in atmosphere and beauty rather than raw fury, and belonging with style is enough.",
     ],
     note:"A club on the islands of Venice, its ground reached by boat, wearing a kit the fashion world covets. The lagoon side, the arancioneroverde, all style and salt.",
