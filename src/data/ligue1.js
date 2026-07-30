@@ -107,7 +107,7 @@ const teams = {
     kit:"https://boutique.toulousefc.com" },
   NIC: { code3:"NIC", kitType:"duo", secondaryColor:"#000000", name:"Nice", emoji:"🦅", color:"#C8102E",
     tagline:"You are a Riviera name on four titles, the last in 1959, waiting on new money to matter again.",
-    desc:"You are a Riviera club with a proud old name, waiting for the present to live up to the past. There were titles here once, the last of them long ago, and a glamour that comes with the Côte d'Azur, and now there is new money and the patient hope that it might finally mean something again. You are not the loudest or the most rooted club in France; the coast is a place people pass through as much as belong to. But the eagle on the crest still means something, and you have not given up on mattering.",
+    desc:"You are a Riviera club with a proud old name, waiting for the present to live up to the past. There were titles here once, a very long time ago now, and a glamour that comes with the coast, and now there is new money and the patient hope that it might finally mean something again. You are not the loudest or the most rooted club in France; the coast is a place people pass through as much as belong to. But the eagle on the crest still means something, and you have not given up on mattering.",
     why:[
       "New backing wants Europe and relevance, and you carry yourself as somebody who ought to be more than mid-table.",
       "The Riviera is glamorous and transient at the same time. The belonging here is real without ever being the fierce kind.",
@@ -117,7 +117,7 @@ const teams = {
     kit:"https://boutique.ogcnice.com" },
   AJA: { code3:"AJA", kitType:"solid", secondaryColor:null, name:"Auxerre", emoji:"🍷", color:"#0055A4",
     tagline:"You kept one manager for forty-four years, and a town of forty thousand won the 1996 double.",
-    desc:"You are a small Burgundy town that, through sheer patience, once stood with the giants of French football. The whole story is built on the long view: one manager who stayed for more than forty years, an academy that produced internationals out of nowhere, and a refusal to chase quick fixes when slow and steady had always been the way. The crowning moment, a league and cup double in 1996 from a town of forty thousand, should have been impossible, and it was not, because you trusted the process for as long as it took. You still believe in building things properly, however long it takes.",
+    desc:"You are a small Burgundy town that, through sheer patience, once stood with the giants of French football. The whole story is built on the long view: one manager who simply never left, an academy that turned out internationals from nowhere, and a refusal to chase quick fixes when slow and steady had always been the way. The crowning moment, a league and cup double in 1996 from a town of forty thousand, should have been impossible, and it was not, because you trusted the process for as long as it took. You still believe in building things properly, however long it takes.",
     why:[
       "Patience is not a tactic you switch on. It is how you do everything, and it once won the lot.",
       "A small Burgundy town, l'Abbé-Deschamps, decades of continuity. You belong somewhere and it shows.",
@@ -127,12 +127,12 @@ const teams = {
     kit:"https://boutique.aja.fr" },
   HAC: { code3:"HAC", kitType:"duo", secondaryColor:"#6CACE4", name:"Le Havre", emoji:"⚓", color:"#0A1F3C",
     tagline:"You are the oldest of them all, founded in 1872, the dean of the French game.",
-    desc:"You are the oldest of them all, and that history is the thing you carry above everything else. Founded in 1872 in a great port city, you are the dean of French football, the club that was here before any of the others, and the academy that has quietly produced some of the finest players the country has made. You are not chasing titles or glamour; survival in the top flight and the steady work of bringing through the next generation is enough. Nobody else can say they were here first, and you have never needed more than that.",
+    desc:"No club in France was here before you, and that history is the thing you carry above everything else. You began in a great port city more than a hundred and fifty years ago, and the academy has quietly produced some of the finest players the country has made. You are not chasing titles or glamour; survival in the top flight and the steady work of bringing through the next generation is enough. Nobody else can say they were here first, and you have never needed more than that.",
     why:[
       "Your sense of where you come from runs deeper than anyone else's here. Nothing in France predates 1872.",
       "You would rather bring someone through than sign them, and you measure a good year by still being here.",
     ],
-    note:"The oldest football club in France, founded in 1872, le doyen. No league title, but an academy that produced Pogba, Mahrez, Mandanda and Payet. Stade Océane holds around twenty-five thousand.",
+    note:"France's founding club, established in 1872, le doyen. No league title, but an academy that produced Pogba, Mahrez, Mandanda and Payet. Stade Océane holds around twenty-five thousand.",
     kit:"https://boutique.hac.football" },
   ANG: { code3:"ANG", kitType:"solid", secondaryColor:null, name:"Angers", emoji:"🏰", color:"#1A1A1A",
     tagline:"You are Anjou's stubborn survivor, scrapping every single year for one more season up top.",

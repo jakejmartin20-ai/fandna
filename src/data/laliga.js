@@ -66,7 +66,7 @@ const teams = {
     kit:"https://shop.sevillafc.es" },
   BET: { code3:"BET", kitType:"stripes", secondaryColor:"#FFFFFF", name:"Real Betis", emoji:"🟢", color:"#00954C",
     tagline:"Your first European final ended four-one the wrong way, and you sang anyway. You always do.",
-    desc:"You love this club hardest in the moments it gives you the least, and you have never thought that strange. The whole creed is built on it: long live Betis even when they lose. You reached your first European final and watched it slip away four-one, and you sang anyway, because the love was never a transaction and the result was never the reason. Other people support a team. You belong to one, in your blood, on the good days and the brutal ones alike. Especially the brutal ones.",
+    desc:"You love this club hardest in the moments it gives you the least, and you have never thought that strange. The whole creed is built on it: viva el Betis manque pierda, whatever the scoreline says. You waited a lifetime for a European final, watched it slip away four-one, and sang the whole way home, because the love was never a transaction and the result was never the reason. Other people support a team. You belong to one, in your blood, on the good days and the brutal ones alike. Especially the brutal ones.",
     why:[
       "You feel this club in your bones, and the ache is part of the love rather than the cost of it.",
       "Win or lose, you are there, singing.",
@@ -116,7 +116,7 @@ const teams = {
     kit:"https://tiendamalagacf.com/es" },
   VIL: { code3:"VIL", kitType:"solid", secondaryColor:null, name:"Villarreal", emoji:"🟡", color:"#FFE000",
     tagline:"A town of fifty thousand people with a European trophy in the cabinet. The math never made sense.",
-    desc:"By every rule that is supposed to govern this sport, you should not exist at this level, and yet here you are, again, rubbing shoulders with clubs from cities a hundred times your size. You did not buy your way there with noise and chaos. You built it, carefully, sensibly, a club run like a good business that somehow never lost its soul, and one unforgettable night it delivered a European trophy to a town of fifty thousand people. You trust the plan, the patience, the quiet competence. The submarine keeps surfacing, and it is no accident.",
+    desc:"By every rule that is supposed to govern this sport, you should not exist at this level, and yet here you are, again, rubbing shoulders with clubs from cities a hundred times your size. You did not buy your way there with noise and chaos. You built it, carefully, sensibly, a club run like a good business that somehow never lost its soul, and one unforgettable night it delivered a European trophy to a place that size. You trust the plan, the patience, the quiet competence. The submarine keeps surfacing, and it is no accident.",
     why:[
       "The well-built thing has taken you further than anyone predicted, which is roughly what you expected it to do.",
       "Smart and steady beats dramatic, as far as you are concerned, and the results keep agreeing with you.",
@@ -175,7 +175,7 @@ const teams = {
     kit:"https://shop.rcdespanyol.com" },
   CEL: { code3:"CEL", kitType:"solid", secondaryColor:null, name:"Celta Vigo", emoji:"🔵", color:"#8AC3EE",
     tagline:"Out on Galicia's Atlantic edge, you are carried, season after season, by one of your own sons.",
-    desc:"Out on the Atlantic edge of Spain, where Galicia does things its own way, you keep your club close and your identity closer. You have never been one of the powers and you do not measure yourself against them. What you have, again and again, is a local hero, one of your own who could have left for the bright lights and chose to stay, carrying the sky-blue because it meant something. That rootedness in place is the whole story. You are Galicia's club, and that is plenty.",
+    desc:"Out on Spain's Atlantic edge, where Galicia does things its own way, you keep your club close and your identity closer. You have never been one of the powers and you do not measure yourself against them. What you have, again and again, is a local hero, one of your own who could have gone chasing the bright lights and never did, carrying the sky-blue because it meant something. That rootedness in place is the whole story. You are Galicia's club, and that is plenty.",
     why:[
       "You are from a corner that has never taken its cues from anywhere else, and you like it that way.",
       "The people who carry it are from there, and that is the part you would never trade away.",

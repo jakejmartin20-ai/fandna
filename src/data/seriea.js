@@ -97,14 +97,14 @@ const teams = {
     kit:"https://bolognafcstore.com" },
   TOR: { code3:"TOR", kitType:"solid", secondaryColor:null, name:"Torino", emoji:"🐂", color:"#7A1420",
     tagline:"The bull of Turin, the Grande Torino lost at Superga in 1949: loyalty worn as a wound.",
-    desc:"You belong to the team that died and never stopped being loved, and the loyalty in you is the kind that survives anything. The Grande Torino were the greatest side in the country, champions over and over, and in 1949 the whole team was lost in an instant when their plane hit the hill at Superga. The wound never closed, and a working-class city has carried the bull ever since, overshadowed the whole time by the richer, colder club it shares its streets with. You do not measure yourself in recent trophies. You measure yourself in a faith that nothing has ever been able to break.",
+    desc:"You belong to the team that died and never stopped being loved, and the loyalty in you is the kind that survives anything. That side were the greatest in the country, champions over and over, until the plane carrying them home hit the hill at Superga and the whole team was gone in an instant. The wound never closed, and a working-class city has carried the bull ever since, overshadowed the whole time by the richer, colder club it shares its streets with. You do not measure yourself in recent trophies. You measure yourself in a faith that nothing has ever been able to break.",
     why:[
       "You stay through everything, because for you that is simply what the word means.",
       "The bull, the city, the wound of Superga. None of it is separable from who you are.",
       "Grief and pride get carried together, and both of them show up with you every week.",
       "Winning is not the measure. Belonging is, and it always was.",
     ],
-    note:"Seven league titles, five of them the Grande Torino side lost at Superga in 1949, the defining tragedy of Italian football. Il Toro, the bull, the working-class soul of Turin.",
+    note:"Seven league titles, five of them won by the side wiped out in the 1949 air disaster, the defining tragedy of Italian football. Il Toro, the bull, the working-class soul of Turin.",
     kit:"https://torinofcstore.com" },
   GEN: { code3:"GEN", kitType:"stripes", secondaryColor:"#0A2156", name:"Genoa", emoji:"🦅", color:"#A4172B",
     tagline:"Yours is the oldest club in Italy, born 1893, nine titles won before the war and never once forgotten.",
@@ -137,7 +137,7 @@ const teams = {
     kit:"https://shop.comofootball.com" },
   CAG: { code3:"CAG", kitType:"stripes", secondaryColor:"#0A2156", name:"Cagliari", emoji:"🏝️", color:"#A4172B",
     tagline:"Gigi Riva gave you 1970 and never left the island, and no mainlander has ever understood your pride.",
-    desc:"You are an island unto yourself, and you mean that more literally than almost any club in Europe. Out in the Mediterranean, a long way from the mainland and proud of the distance, you carry a fierce Sardinian identity that owes nothing to anyone over the water. Gigi Riva, the greatest of all, stayed his whole career and dragged a small island club to the title in 1970, and that crown is the soul of the place still. You do not need the mainland's approval or its money. You have your island, your legend, and a pride that nothing can reach.",
+    desc:"You are an island unto yourself, and you mean that more literally than almost any club in Europe. Out in the Mediterranean, a long way from the mainland and proud of the distance, you carry a fierce Sardinian identity that owes nothing to anyone over the water. Gigi Riva, the greatest of all, never pulled on another shirt, and the title he carried a small island club to in 1970 is the soul of the place still. You do not need the mainland's approval or its money. You have your island, your legend, and a pride that nothing can reach.",
     why:[
       "Sardinia's club, an island identity that has never answered to any mainland.",
       "The whole island sees itself in you, close-knit and fiercely protective.",
@@ -176,7 +176,7 @@ const teams = {
     kit:"https://store.sassuolocalcio.it" },
   MON: { code3:"MON", kitType:"solid", secondaryColor:null, name:"Monza", emoji:"🏎️", color:"#C8102E",
     tagline:"You reached Serie A for the first time ever as one old man's last dream, won for Berlusconi before he died.",
-    desc:"You are the final project of a man who loved football all his life, and there is something tender in your whole story. A modest club in the prosperous belt north of Milan, bought by an owner who had already conquered the European game elsewhere and wanted, at the very end, to lift a small side higher than it had ever been. He did it, the first promotion to Serie A in your long history, and then he was gone, leaving you up among the giants with his name all over the achievement. You are an ambitious dream realized late, and you're grateful for every day of it.",
+    desc:"You are the final project of a man who loved football all his life, and there is something tender in your whole story. A modest club in the prosperous belt north of Milan, bought by an owner who had already conquered the European game elsewhere and wanted, at the very end, to lift a small side higher than it had ever been. He did it, ending more than a century of waiting, and then he was gone, leaving you up among the giants with his name all over the achievement. You are an ambitious dream realized late, and you're grateful for every day of it.",
     why:[
       "Backed and lifted higher than ever before, and you carry that aspiration forward.",
       "Deliberate rather than accidental. You sit between the giants and the strugglers and get on with the business of belonging.",
@@ -195,7 +195,7 @@ const teams = {
     kit:"https://store.frosinonecalcio.com" },
   VEN: { code3:"VEN", kitType:"solid", secondaryColor:"#00A752", name:"Venezia", emoji:"🚤", color:"#F08000",
     tagline:"You reach your ground by boat, wear the best kit in football, and care about style as much as the score.",
-    desc:"You are the most beautiful idea in the league, and you know it. A club on the islands of Venice, a ground you reach by boat across the lagoon, and a kit so striking the fashion world covets it, you turn even a relegation battle into something that looks like art. You are not built to dominate, and you have made peace with that, because what you offer is style, atmosphere, and a sense of place that no fortune could buy. You ride the divisions up and down, salt and orange and green, and you do it all with more grace than clubs twice your size.",
+    desc:"You are the most beautiful idea in the league, and you know it. Out on the water, in colours so striking they turn up in fashion magazines as often as in match reports, you turn even a relegation battle into something that looks like art. You are not built to dominate, and you stopped minding a long time ago, because what you offer is style, atmosphere, and a sense of place that no fortune could buy. You ride the divisions up and down, salt and orange and green, and you do it all with more grace than clubs twice your size.",
     why:[
       "You would take arriving by water over arriving anywhere else. Place matters to you more than standing does.",
       "You feel the game keenly and wrap it in atmosphere and beauty rather than raw fury, and belonging with style is enough.",
