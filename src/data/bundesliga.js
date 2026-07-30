@@ -6,7 +6,7 @@
 const teams = {
   BAY: { code3:"BAY", kitType:"solid", secondaryColor:null, name:"Bayern Munich", emoji:"🔴", color:"#DC052D",
     tagline:"Thirty-four titles in, you treat the Meisterschale as property, not a prize.",
-    desc:"You do not romanticize the chase. Winning is the baseline you start from, and a season that ends in anything less reads as a failure to be reviewed, not a near-miss to be cherished. People mistake that for arrogance. You call it standards. You came to see something done to the limit of how well it can be done, and then held right there, season upon season. Bayern is the closest thing German football has to a permanent verdict, and standing on the right side of it has never required an explanation.",
+    desc:"You are the fact everyone else's season gets measured against, and there is no embarrassment in it. German football has a single permanent institution and you are it, the record champion, the club whose name goes on the trophy so often that the surprise is a year when it does not. Other clubs get to enjoy a good run. Yours gets audited. That is the trade you made a long time ago, because holding steady while everything around you turns over is its own kind of achievement, and it is harder than it looks from outside.",
     why:[
       "A year gets measured by what you won. Not by how interesting the journey was, and you stopped explaining that to people a long time ago.",
       "Dominance is something you engineer and then maintain. Sentiment does not come into it much.",
