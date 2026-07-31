@@ -659,7 +659,7 @@ function AppInner(){
   const untakenAvail = availSports.filter(s=>!(genome[s.code]&&genome[s.code].club));
   const nextSport = untakenAvail[0]||null;
   const coreCount = coreQuestions.length;
-  const moduleCounts = { PL: SPORT_DATA.PL.moduleQuestions.length, NFL: SPORT_DATA.NFL.moduleQuestions.length, MLB: SPORT_DATA.MLB.moduleQuestions.length, NBA: SPORT_DATA.NBA.moduleQuestions.length, BL: SPORT_DATA.BL.moduleQuestions.length, LL: SPORT_DATA.LL.moduleQuestions.length, L1: SPORT_DATA.L1.moduleQuestions.length, SA: SPORT_DATA.SA.moduleQuestions.length };
+  const moduleCounts = { PL: SPORT_DATA.PL.moduleQuestions.length, NFL: SPORT_DATA.NFL.moduleQuestions.length, MLB: SPORT_DATA.MLB.moduleQuestions.length, NBA: SPORT_DATA.NBA.moduleQuestions.length, BL: SPORT_DATA.BL.moduleQuestions.length, LL: SPORT_DATA.LL.moduleQuestions.length, L1: SPORT_DATA.L1.moduleQuestions.length, SA: SPORT_DATA.SA.moduleQuestions.length, CFB: SPORT_DATA.CFB.moduleQuestions.length };
 
   // Build the share card (the user's core feeds the strip), then either open the share sheet
   // or save the image. Download always saves. Both fall back to copying the caption.
