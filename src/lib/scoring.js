@@ -15,6 +15,7 @@ import { moduleQuestions, scoring as plScoring, teams as plTeams, teamDims as pl
 import { moduleQuestions as nflModule, scoring as nflScoring, teamDims as nflDims } from "../data/nfl";
 import { moduleQuestions as mlbModule, scoring as mlbScoring, teamDims as mlbDims } from "../data/mlb";
 import { moduleQuestions as nbaModule, scoring as nbaScoring, teamDims as nbaDims } from "../data/nba";
+import { moduleQuestions as cfbModule, scoring as cfbScoring, teamDims as cfbDims } from "../data/cfb";
 import { moduleQuestions as blModule, scoring as blScoring, teamDims as blDims } from "../data/bundesliga";
 import { moduleQuestions as llModule, scoring as llScoring, teamDims as llDims } from "../data/laliga";
 import { moduleQuestions as l1Module, scoring as l1Scoring, teamDims as l1Dims } from "../data/ligue1";
@@ -140,18 +141,19 @@ const DIST_REF = 14;     // headroom so the zero-clip rarely fires; does not aff
 // A fingerprint engine is just a sport's data, pre-indexed. Build one per fingerprint sport;
 // nothing in the scorer is hardcoded to a sport, so adding MLB is one entry here. NFL keeps the
 // exact same dims/scoring/keys/weights it always had, so its results are unchanged.
-function makeFpEngine(dims, scoring, module){
+function makeFpEngine(dims, scoring, module, fpw){
   const keys = Object.keys(dims);                 // iteration order = the final tie-break tail
   const idToPhase = {};
   for (const q of coreQuestions) idToPhase[q.id]=q.phase;
   for (const q of module)        idToPhase[q.id]=q.phase;
   const finalPhase = module[module.length-1].phase;
-  return { dims, scoring, keys, idToPhase, finalPhase, FP_W, DIST_REF };
+  return { dims, scoring, keys, idToPhase, finalPhase, FP_W: (fpw===undefined ? FP_W : fpw), DIST_REF };
 }
 const FP_ENGINES = {
   NFL: makeFpEngine(nflDims, nflScoring, nflModule),
   MLB: makeFpEngine(mlbDims, mlbScoring, mlbModule),
   NBA: makeFpEngine(nbaDims, nbaScoring, nbaModule),
+  CFB: makeFpEngine(cfbDims, cfbScoring, cfbModule, 1.6),   // 51+ programs sit closer in dim-space; 1.2 left the core deciding only ~23%
   BL: makeFpEngine(blDims, blScoring, blModule),
   LL: makeFpEngine(llDims, llScoring, llModule),
   L1: makeFpEngine(l1Dims, l1Scoring, l1Module),
@@ -404,6 +406,7 @@ for (const q of moduleQuestions) QUESTION_MAP[q.id] = q;
 for (const q of nflModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (nfl_q*), no collision with PL
 for (const q of mlbModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (mlb_q*), no collision with PL
 for (const q of nbaModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (nba_q*), no collision with PL
+for (const q of cfbModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (cfb_q*), no collision with PL
 for (const q of blModule)        QUESTION_MAP[q.id] = q;   // namespaced ids (bl_q*), no collision with PL
 for (const q of llModule)        QUESTION_MAP[q.id] = q;   // namespaced ids (ll_q*), no collision with PL
 for (const q of l1Module)        QUESTION_MAP[q.id] = q;   // namespaced ids (l1_q*), no collision with PL
