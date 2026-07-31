@@ -613,7 +613,7 @@ function AppInner(){
     ["Stadium",    vit.stadium],
     ["City",       vit.city],
     ["Capacity",   vit.capacity],
-    ["Colours",    vit.colors],
+    ["Colors",     vit.colors],
     ["Titles",     vit.titles],
     ["Last title", vit.lastTitle],
   ] : [
@@ -1015,7 +1015,7 @@ function AppInner(){
 
             {/* Result, single scroll: four sections stacked, no tabs. Each ChapterHead is a
                 prominent divider so nothing hides behind a control (was: 4-tab bar). */}
-            <ChapterHead n="01" title="Your match" sub="why this club is you" color={team.color} textColor={teamTextColors[result]||team.color} first/>
+            <ChapterHead n="01" title="Your match" sub={"why this "+regOf(activeSport).noun+" is you"} color={team.color} textColor={teamTextColors[result]||team.color} first/>
                 <div style={{width:28,height:2,background:team.color,marginBottom:18,borderRadius:2}}/>
                 <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(19px,4vw,22px)",fontWeight:300,color:"#d8d4ce",lineHeight:1.85,margin:"0 0 20px",fontStyle:"italic"}}>{team.desc}</p>
                 {team.note&&(<p style={{fontSize:14,color:"#bbb",lineHeight:1.75,margin:"0 0 24px",borderLeft:`1px solid #252535`,paddingLeft:14,fontFamily:"'DM Mono',monospace"}}>{team.note}</p>)}
@@ -1040,8 +1040,8 @@ function AppInner(){
                   <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:16,fontStyle:"italic",color:"#9a9ac4",lineHeight:1.6,margin:"0 0 8px"}}>Retake this {regOf(activeSport).noun} to map your core against {team.name}.</p>
                 )}
                 </div>
-            <ChapterHead n="03" title="Vitals" sub="the club itself" color={team.color} textColor={teamTextColors[result]||team.color}/>
-                <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:18}}>Club Info</div>
+            <ChapterHead n="03" title="Vitals" sub={"the "+regOf(activeSport).noun+" itself"} color={team.color} textColor={teamTextColors[result]||team.color}/>
+                <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:18}}>{regOf(activeSport).team} Info</div>
                 {statsData.length>0?(
                   <>
                     <div style={{border:"1px solid #1e1e2e",borderRadius:8,overflow:"hidden",marginBottom:20}}>
@@ -1090,7 +1090,7 @@ function AppInner(){
                 )}
             <ChapterHead n="04" title="Almost" sub="who else came close" color={team.color} textColor={teamTextColors[result]||team.color}/>
                 <p style={{fontSize:13,color:"#aaa",margin:"0 0 20px",fontFamily:"'DM Mono',monospace",lineHeight:1.6}}>
-                  These clubs scored closest to you. Here's what you share, and what separates you.
+                  These {regOf(activeSport).teams} scored closest to you. Here's what you share, and what separates you.
                 </p>
                 {nearClubs.length===0&&(
                   <p style={{fontSize:"clamp(15px,3.5vw,17px)",color:"#ccc",fontStyle:"italic",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>
