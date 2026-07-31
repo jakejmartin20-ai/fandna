@@ -2941,309 +2941,309 @@ const nearlyGot = {
   },
   "ALA": {
     "UGA": "The one program that caught you is Georgia, a dynasty built this century specifically to beat you at your own game. Yours is older, with more titles and more decades behind it. If your whole sense of the standard was set after 2020, you are describing Georgia, not Alabama.",
-    "OSU": "Ohio State shares your refusal to call anything but a title a success, except where your version carries Southern gravity, theirs is a Midwestern industrial birthright, a whole region that treats winning as its due. The tell is the accent on the expectation. When it sounds like the Rust Belt rather than the Deep South, that is Ohio State.",
-    "CLM": "Clemson took the machine you built and proved an outsider could run it too, crashing a party you had hosted for a decade. You are the blueprint; they are the proof it copies. If your rise ever felt like an upstart making a point rather than a blueblood defending a throne, Clemson fits you better.",
-    "PSU": "Where you turn heavy process into trophies, Penn State turns the same discipline and loyalty into a standard it holds through the lean years, faith that outlasts the winning. That patience is what sets them apart. If you kept believing without the constant payoff, you belong with Penn State."
+    "OSU": "Ohio State shares your refusal to call anything but a title a success, except where your version carries Southern gravity, theirs is a Midwestern industrial birthright, a whole region that treats winning as its due. Both fanbases consider a ten-win season a failure. Only one of them says so in an Ohio accent.",
+    "CLM": "Clemson took the machine you built and proved an outsider could run it too, crashing a party you had hosted for a decade. You are the blueprint; they are the proof it copies. Alabama's titles defended a throne that already existed. Clemson's were an argument.",
+    "PSU": "Where you turn heavy process into trophies, Penn State turns the same discipline and loyalty into a standard it holds through the lean years, faith that outlasts the winning. Penn State's people did not need the payoff to keep the standard. They held it through decades that gave them very little back."
   },
   "UGA": {
     "ALA": "Alabama is the measuring stick you spent a generation chasing and finally caught, the older standard whose six-title dynasties set the bar you now clear. Theirs came first and runs deeper, yours is the fresher juggernaut. If your version of the standard predates this century, you are describing Alabama.",
-    "OSU": "Ohio State shares your reload-and-contend expectation, only its dominance is a Midwestern industrial inheritance rather than a wait finally rewarded. You know what the drought felt like and they mostly do not. If your confidence never had to survive decades of near-misses, that is Ohio State.",
-    "OKL": "Oklahoma matches your blueblood pedigree and your place as a proud program's whole identity, yet its glory years sit further back while yours are right now. Recency is the divider. If the trophy case is heavy but the last title is a while ago, lean Oklahoma.",
-    "CLM": "Clemson, like you, built a modern machine on culture and total buy-in and crashed the bluebloods' party. The difference is address: Clemson did it from outside the traditional power base, you from deep inside the SEC. If your rise came as an outsider proving it belonged, that is Clemson."
+    "OSU": "Ohio State shares your reload-and-contend expectation, only its dominance is a Midwestern industrial inheritance rather than a wait finally rewarded. You know what the drought felt like. Columbus mostly does not.",
+    "OKL": "Oklahoma matches your blueblood pedigree and your place as a proud program's whole identity, yet its glory years sit further back while yours are right now. Oklahoma's trophy case is heavy, and none of it is recent.",
+    "CLM": "Clemson, like you, built a modern machine on culture and total buy-in and crashed the bluebloods' party. Clemson did it from outside the traditional power base. You did it from deep inside the SEC, where nobody ever had to be convinced you belonged."
   },
   "OSU": {
     "MIC": "Michigan is the team up north, the rival who has taken the last several meetings and gotten under your skin like no one else can. You answer with titles and they answer with wins in The Game. If the rivalry itself matters more to you than the trophy that followed, you may actually be Michigan.",
-    "UGA": "Georgia carries the same reload-and-contend swagger, though its dominance is a recent SEC creation and yours a decades-old Midwestern birthright. Age of the empire is the tell. If your standard was forged in the last five years, that is Georgia.",
-    "OKL": "Oklahoma matches your role as a football-obsessed state's one true team, but its championship glory sits deeper in the past than yours. Recency divides you. If the pride outruns the recent results, lean Oklahoma.",
-    "ALA": "Alabama shares your refusal to count anything but a title as success, wrapped in Southern gravity rather than Rust Belt pride. Same standard, different accent. If the expectation speaks with a drawl, that is Alabama."
+    "UGA": "Georgia carries the same reload-and-contend swagger, though its dominance is a recent SEC creation and yours a decades-old Midwestern birthright. Georgia's empire is new enough that its own fans remember life before it.",
+    "OKL": "Oklahoma matches your role as a football-obsessed state's one true team, but its championship glory sits deeper in the past than yours. In Norman the pride has been running some distance ahead of the results.",
+    "ALA": "Alabama shares your refusal to count anything but a title as success, wrapped in Southern gravity rather than Rust Belt pride. The expectation is identical. It just speaks with a drawl."
   },
   "OKL": {
     "TEX": "Texas is the enemy on the other end of the Red River, the rival you meet every October at a neutral field split down the middle in crimson and orange. You share blueblood pedigree and a giant home-state footprint, and the hatred is what makes you certain. If the swagger reads more brash than proud, that is Texas.",
-    "OSU": "Ohio State mirrors your place as a football-mad state's one true team, only its recent title keeps its glory fresher than yours. Timing separates you. If the last championship came this decade, that is Ohio State.",
-    "UGA": "Georgia matches your reload-and-contend pedigree, but its dynasty is a right-now machine while yours is a deep and decorated history. Recency is the divide. If the dominance is a current event, lean Georgia.",
-    "ALA": "Alabama shares your identity as a decorated dynasty that treats winning as a birthright, with a title count and a modern run even you have to respect. Sustained recency is the tell. If the machine has hummed without pause into the present, that is Alabama."
+    "OSU": "Ohio State mirrors your place as a football-mad state's one true team, only its recent title keeps its glory fresher than yours. Columbus has something from this decade to point at. Norman is still reaching further back than that.",
+    "UGA": "Georgia matches your reload-and-contend pedigree, but its dynasty is a right-now machine while yours is a deep and decorated history. Georgia's case does not require you to know any of the sport's history at all.",
+    "ALA": "Alabama shares your identity as a decorated dynasty that treats winning as a birthright, with a title count and a modern run even you have to respect. Alabama never had the fallow stretch that yours did. It simply kept going."
   },
   "MIC": {
     "OSU": "Ohio State is the team down south, the rival whose games decide your whole season and whose success you measure yourself against most. You trade blows with them like no one else, and they own more recent titles. If the trophy count matters more to you than the rivalry win, you might be Ohio State.",
-    "PSU": "Penn State shares your Big Ten gravity, your stadium-shaking tradition, and your stoic, blue-collar pride. Where yours is backed by the sport's deepest record, theirs still hunts the crown that would validate it. If the tradition is heavy but the title is unfinished business, that is Penn State.",
-    "NDM": "Notre Dame carries the same old-money mystique and refusal to bend to anyone, a program that answers to no conference and trades on history. The split is geography: your pride is rooted in a place, theirs in a national faith. If your following is spread across the whole country rather than one state, lean Notre Dame.",
-    "ALA": "Alabama matches your blueblood pedigree and your habit of setting the standard, though its identity leans on a modern dynasty while yours leans on a century of accumulated wins. Era is the divider. If the pride comes from a recent run of titles rather than the all-time ledger, that is Alabama."
+    "PSU": "Penn State shares your Big Ten gravity, your stadium-shaking tradition, and your stoic, blue-collar pride. Yours has the sport's deepest record behind it. Penn State's has been held up through decades of lean years by nothing but the people who kept showing up.",
+    "NDM": "Notre Dame carries the same old-money mystique and refusal to bend to anyone, a program that answers to no conference and trades on history. Where your pride has an address in Ann Arbor, theirs was assembled out of parishes in cities that never had a campus.",
+    "ALA": "Alabama matches your blueblood pedigree and your habit of setting the standard, though its identity leans on a modern dynasty while yours leans on a century of accumulated wins. A fan whose sense of the sport begins with Saban is holding an Alabama record, not a Michigan one."
   },
   "TEX": {
     "OKL": "Oklahoma is your Red River enemy, the rival you meet at a neutral stadium torn straight down the middle every October. You share blueblood status and a giant footprint, and their pride leans on a deeper trophy case than yours. If the certainty comes from history rather than sheer scale, that is Oklahoma.",
-    "FLA": "Florida matches your flagship-state swagger and high-flying flavor, a program that can dazzle one year and coast the next just like you. The divide is whose golden era ran more recently. If the peak feels more Gainesville than Austin, lean Florida.",
-    "USC": "USC shares your glamour, your brand power, and your sense that the sport should revolve around you. Theirs is Hollywood, yours is the biggest state in the lower forty-eight. If the spotlight is Californian rather than Texan, that is USC.",
-    "UGA": "Georgia carries the same enormous expectations, but it has converted them into a right-now dynasty while yours has more often been potential and promise. Delivery is the tell. If the titles are recent and stacked, you are describing Georgia."
+    "FLA": "Florida matches your flagship-state swagger and high-flying flavor, a program that can dazzle one year and coast the next just like you. Gainesville's best years are more recent than Austin's, and Florida has never let anyone forget it.",
+    "USC": "USC shares your glamour, your brand power, and your sense that the sport should revolve around you. Theirs is Hollywood, yours is the biggest state in the lower forty-eight. USC's stars go on to be famous for something other than football.",
+    "UGA": "Georgia carries the same enormous expectations, but it has converted them into a right-now dynasty while yours has more often been potential and promise. Georgia stopped talking about what it was going to do."
   },
   "NDM": {
     "USC": "USC is your oldest and grandest rival, a program that shares your glamour, your Heisman-stuffed history, and your independent streak of self-regard. Yours is a national faith, theirs is Hollywood cool. If the mystique wears sunglasses, that is USC.",
-    "MIC": "Michigan shares your century of tradition and your refusal to bow to anyone, a fellow keeper of the sport's oldest flames. The split is roots: Michigan's pride is planted in a state, yours in a scattered national following. If your devotion has a home address, lean Michigan.",
-    "ALA": "Alabama matches your loyalty and your mountain of history, but its faithful are a region's people while yours are the whole country's. Geography is the tell. If the passion is Deep South rather than coast-to-coast, that is Alabama.",
-    "PSU": "Penn State, like you, is tradition-first and independent-minded, carrying the same ache of a crown that has not come in a while. The difference is the shape of the following: theirs a devoted regional army, yours a national congregation. If the faithful fill one valley rather than the whole country, you are describing Penn State."
+    "MIC": "Michigan shares your century of tradition and your refusal to bow to anyone, a fellow keeper of the sport's oldest flames. Michigan's pride was planted in one state and has stayed there. Yours went out the door with everyone who ever left home.",
+    "ALA": "Alabama matches your loyalty and your mountain of history, but its faithful are a region's people while yours are the whole country's. Alabama's congregation all lives within a day's drive of Tuscaloosa.",
+    "PSU": "Penn State, like you, is tradition-first and independent-minded, carrying the same ache of a crown that has not come in a while. Penn State's faithful arrive from one valley, in enormous numbers, and go home to the same place afterward."
   },
   "USC": {
     "NDM": "Notre Dame is your oldest intersectional rival, the other program built on glamour, Heismans, and an unshakable sense of destiny. Yours is Hollywood; theirs is a national faith with a Golden Dome. If the mystique feels churchlike rather than sunlit, that is Notre Dame.",
-    "TEX": "Texas matches your brand power and your assumption that the sport should orbit you, only its swagger is fueled by state pride and sheer scale rather than star wattage. Origin of the ego is the tell. If the bigness is about Texas being Texas, that is the Longhorns.",
-    "ORE": "Oregon took your flash and modernized it, all uniforms and speed and Nike shine, but without the mountain of trophies and Heismans you have banked. History is what separates you. If the style is dazzling and the trophy case still light, lean Oregon.",
-    "FSU": "Florida State shares your appetite for flash and star power and playing the villain in prime time. Theirs comes with a garnet chip on the shoulder; yours with West Coast cool. If the swagger carries a grievance, that is Florida State."
+    "TEX": "Texas matches your brand power and your assumption that the sport should orbit you, only its swagger is fueled by state pride and sheer scale rather than star wattage. Texas is enormous because Texas is enormous. It has never needed a single famous name to be.",
+    "ORE": "Oregon took your flash and modernized it, all uniforms and speed and Nike shine, but without the mountain of trophies and Heismans you have banked. Oregon is still dazzling its way toward the things you already own.",
+    "FSU": "Florida State shares your appetite for flash and star power and playing the villain in prime time. Theirs comes with a garnet chip on the shoulder; yours with West Coast cool. Tallahassee plays the villain angrily. Los Angeles plays it for fun."
   },
   "FLA": {
-    "FSU": "Florida State is your bitter in-state enemy, the garnet half of a rivalry that splits families down the middle. You share flash and pride; they carry a grievance where you carry swagger. If the edge is a chip on the shoulder rather than a strut, that is Florida State.",
-    "TEX": "Texas shares your loud, flashy, big-brand personality, but its size and certainty flow from state and wealth while yours were forged in the SEC's weekly gauntlet. Where the swagger comes from is the divide. If it is scale rather than survival, lean Texas.",
+    "FSU": "Florida State is your bitter in-state enemy, the garnet half of a rivalry that splits families down the middle. You share flash and pride; they carry a grievance where you carry swagger. Tallahassee has never stopped believing it is owed something.",
+    "TEX": "Texas shares your loud, flashy, big-brand personality, but its size and certainty flow from state and wealth while yours were forged in the SEC's weekly gauntlet. Texas has never had to survive a schedule to feel enormous.",
     "UGA": "Georgia is the rival you meet every fall in Jacksonville for a game with its own cocktail-party legend. You dazzle in bursts; they grind you down with a machine that reloads. If the identity is relentless rather than electric, that is Georgia.",
-    "USC": "USC matches your flash and your appetite for the spotlight, trading the Swamp's brutal heat for California cool. Climate of the glamour is the tell. If the shine is sunny rather than sweaty, you are describing USC."
+    "USC": "USC matches your flash and your appetite for the spotlight, trading the Swamp's brutal heat for California cool. Their glamour has never had to be earned in ninety-five degrees and full humidity at three in the afternoon."
   },
   "FSU": {
     "FLA": "Florida is your in-state tormentor, the orange-and-blue half of a rivalry with no love in it. They play with swagger; you play with a grudge. If the mood is a strut rather than a score to settle, that is Florida.",
-    "MIA": "Miami is your oldest partner in prime-time chaos, the flash-and-attitude rival from the era when your two programs owned the sport. Theirs is Miami swagger; yours is a garnet chip. If the flash comes with beachfront cool rather than a grievance, lean Miami.",
-    "CLM": "Clemson took the culture-and-recruiting road to an ACC dynasty the way you once did, only its machine hummed while yours cratered and clawed back. Stability is the divide. If the build stayed steady and never broke, that is Clemson.",
-    "USC": "USC shares your love of flash, stars, and playing the villain under the lights. Theirs is West Coast glamour; yours is a program that feels perpetually wronged. If the swagger lacks the grievance, you are describing USC."
+    "MIA": "Miami is your oldest partner in prime-time chaos, the flash-and-attitude rival from the era when your two programs owned the sport. Theirs is Miami swagger; yours is a garnet chip. Nobody in Coral Gables has ever felt cheated out of anything.",
+    "CLM": "Clemson took the culture-and-recruiting road to an ACC dynasty the way you once did, only its machine hummed while yours cratered and clawed back. Clemson has never had to rebuild from the bottom, so its confidence has never been tested the way yours has.",
+    "USC": "USC shares your love of flash, stars, and playing the villain under the lights. Theirs is West Coast glamour; yours is a program that feels perpetually wronged. USC plays the villain because it enjoys the role, not because anyone owes it."
   },
   "PSU": {
     "OSU": "Ohio State is the Big Ten measuring stick you circle every year, the blueblood you have to get past to matter nationally. They collect titles; you hold a standard and keep grinding toward one. If the trophies have actually arrived, that is Ohio State.",
-    "MIC": "Michigan shares your Big Ten weight, your stoic pride, and your tradition-first soul, only its identity rests on the sport's deepest pile of wins. Where yours is honor and process, theirs is the all-time ledger. If the pride comes from history's record book, lean Michigan.",
-    "CLM": "Clemson built the same kind of family-and-culture program you believe in, buy-in over flash, but converted it into recent titles you are still chasing. Payoff is the divide. If the culture already cashed in trophies, that is Clemson.",
-    "NDM": "Notre Dame carries the same tradition-first devotion and the same long title ache, except its faithful are scattered nationwide while yours pack one valley. Address of the faith is the tell. If the following is a coast-to-coast congregation rather than a Happy Valley army, you are describing Notre Dame."
+    "MIC": "Michigan shares your Big Ten weight, your stoic pride, and your tradition-first soul, only its identity rests on the sport's deepest pile of wins. Michigan can settle an argument by opening the record book. Penn State has to point at how it does things.",
+    "CLM": "Clemson built the same kind of family-and-culture program you believe in, buy-in over flash, but converted it into recent titles you are still chasing. Clemson's culture has already been paid for. Yours is still on credit.",
+    "NDM": "Notre Dame carries the same tradition-first devotion and the same long title ache, except its faithful are scattered nationwide while yours pack one valley. Notre Dame's people never have to travel together to feel like a congregation."
   },
   "CLM": {
     "ALA": "Alabama is the empire you dethroned, the standard-setter you beat twice on the sport's biggest stage. Theirs is the blueprint and the deeper dynasty; yours is the program that proved the blueprint could be beaten. If the identity is the king rather than the challenger, that is Alabama.",
-    "UGA": "Georgia built its own culture-and-recruiting juggernaut, only it did so as an SEC insider while you crashed the party from the ACC. Address of the rise is the divide. If the dominance came from inside the establishment, lean Georgia.",
-    "PSU": "Penn State shares your family-first, buy-in-over-flash soul, but its title is still unfinished business while yours are banked and recent. Payoff is the tell. If the culture is deep and the crown still missing, that is Penn State.",
-    "OSU": "Ohio State runs the kind of reload-and-contend machine you built, backed by a century of blueblood pedigree you had to manufacture from scratch. Length of the lineage separates you. If the greatness was inherited rather than constructed, you are describing Ohio State."
+    "UGA": "Georgia built its own culture-and-recruiting juggernaut, only it did so as an SEC insider while you crashed the party from the ACC. Nobody in Athens had to prove they belonged in the room first.",
+    "PSU": "Penn State shares your family-first, buy-in-over-flash soul, but its title is still unfinished business while yours are banked and recent. The culture in State College has been built and rebuilt without the reward ever arriving to justify it.",
+    "OSU": "Ohio State runs the kind of reload-and-contend machine you built, backed by a century of blueblood pedigree you had to manufacture from scratch. Theirs was waiting for them. Yours had to be assembled by a coach who was handed the job on an interim basis."
   },
   "ORE": {
-    "USC": "USC is the older, glossier version of your glamour, the West Coast brand that actually banked the Heismans and titles you are still chasing. Trophies are the divide. If the flash comes with a full case behind it, that is USC.",
-    "MIA": "Miami shares your flash, your speed, and your swagger, trading your Nike-lab futurism for South Beach cool and a chip earned in the 1980s. Flavor of the flash is the tell. If the style is beachfront rather than laboratory, lean Miami.",
-    "TEX": "Texas matches your ambition and your love of a spectacle, but its bigness is rooted in state and money while yours is rooted in style and reinvention. Source of the scale separates you. If the swagger is Texan pride rather than Nike shine, that is Texas.",
-    "FLA": "Florida brings the same brash, high-tempo flash you love, forged in the SEC heat rather than a design studio. Where the edge was tempered is the divide. If the swagger came up through the Swamp, you are describing Florida."
+    "USC": "USC is the older, glossier version of your glamour, the West Coast brand that actually banked the Heismans and titles you are still chasing. If the flash comes with a full case behind it, that is USC.",
+    "MIA": "Miami shares your flash, your speed, and your swagger, trading your Nike-lab futurism for South Beach cool and a chip earned in the 1980s. Both of you are loud on purpose. Oregon's noise is engineered in a design studio; Miami's came up off the street and never needed a budget.",
+    "TEX": "Texas matches your ambition and your love of a spectacle, but its bigness is rooted in state and money while yours is rooted in style and reinvention. Texas has been enormous for a hundred years without once needing a new uniform to prove it.",
+    "FLA": "Florida brings the same brash, high-tempo flash you love, forged in the SEC heat rather than a design studio. Theirs was hardened by a decade of Octobers that punish anyone who is only stylish."
   },
   "LSU": {
-    "AUB": "Auburn shares your SEC fervor and your gift for a delirious home crowd, only it lives in the shadow of a bigger in-state rival while you answer to no one in Louisiana. Freedom from a giant next door is the tell. If the passion carries a chip, that is Auburn.",
+    "AUB": "Auburn shares your SEC fervor and your gift for a delirious home crowd, only it lives in the shadow of a bigger in-state rival while you answer to no one in Louisiana. Auburn measures every season against one other team in its own state, and always has.",
     "TEN": "Tennessee brings the same sea of color and the same wall of noise, wrapped in nostalgia and a beloved song rather than raw Saturday-night menace. Where yours is a night-game eruption, theirs is a tradition sung. If the roar comes with 'Rocky Top' attached, lean Tennessee.",
-    "ALA": "Alabama is the measuring stick you circle every November, the dynasty whose standard your best teams were built to topple. Theirs is cold machine efficiency; yours is heat and chaos. If the identity is the empire rather than the ambush, that is Alabama.",
-    "WVU": "West Virginia loves as loudly and emotionally as you do, an entire state's team pouring everything into every fall. The difference is the trophy case: yours is full, theirs still waits. If the passion has never once been rewarded with a title, you are describing West Virginia."
+    "ALA": "Alabama is the measuring stick you circle every November, the dynasty whose standard your best teams were built to topple. Theirs is cold machine efficiency; yours is heat and chaos. Alabama does not need a night game to feel dangerous.",
+    "WVU": "West Virginia loves as loudly and emotionally as you do, an entire state's team pouring everything into every fall. They have done it without a national title ever arriving to justify any of it."
   },
   "TEN": {
-    "AUB": "Auburn matches your color-drenched crowds and your knack for a wild Saturday, but its whole identity bends around beating one in-state giant while yours is a broader Big Orange nostalgia. Focus of the passion is the tell. If it all comes back to one rival, that is Auburn.",
-    "LSU": "LSU brings the same wall of noise, only its version is a raw night-game eruption where yours is a tradition sung across generations. Flavor of the roar separates you. If the loudest moment is menace rather than melody, lean LSU.",
-    "UGA": "Georgia is the rival that finally turned its passion into trophies while yours still chases the next one. Recent hardware is the divide. If the yearning has actually been rewarded lately, that is Georgia.",
-    "ARK": "Arkansas shares your loyal, loud, whole-region devotion and the same ache of watching the SEC's giants collect the prizes. The tell is the anthem: Arkansas calls the Hogs while you sing Rocky Top. If the sound is a pig call, you are describing Arkansas."
+    "AUB": "Auburn matches your color-drenched crowds and your knack for a wild Saturday, but its whole identity bends around beating one in-state giant while yours is a broader Big Orange nostalgia. If it all comes back to one rival, that is Auburn.",
+    "LSU": "LSU brings the same wall of noise, only its version is a raw night-game eruption where yours is a tradition sung across generations. Theirs is a threat. Yours is a song.",
+    "UGA": "Georgia is the rival that finally turned its passion into trophies while yours still chases the next one. Athens got tired of waiting and did something about it.",
+    "ARK": "Arkansas shares your loyal, loud, whole-region devotion and the same ache of watching the SEC's giants collect the prizes. Where you sing Rocky Top, they call the Hogs, and neither has been rewarded for it in a long while."
   },
   "AUB": {
     "ALA": "Alabama is the giant you were built against, the in-state dynasty whose shadow shaped your entire identity. Theirs is the crown; yours is the chip and the ambush. If you would rather be the empire than the underdog who topples it, that is Alabama.",
-    "LSU": "LSU brings the same delirious SEC atmosphere, only it rules its state unchallenged while you fight for yours. Absence of a bigger rival is the tell. If the passion has no giant to define itself against, lean LSU.",
-    "OLE": "Ole Miss shares your emotion and your love of a wild upset, but its Saturdays revolve around a charmed party under the oaks while yours revolve around a grudge. Mood is the divide. If the vibe is a celebration rather than a score to settle, that is Ole Miss.",
-    "TEN": "Tennessee matches your color and your loyalty, wrapped in a nostalgic tradition rather than a next-door grievance. Source of the fire separates you. If the passion is a song and a memory rather than a chip, you are describing Tennessee."
+    "LSU": "LSU brings the same delirious SEC atmosphere, only it rules its state unchallenged while you fight for yours. Nobody in Louisiana is arguing about who the state belongs to, which means the fury has to find another target.",
+    "OLE": "Ole Miss shares your emotion and your love of a wild upset, but its Saturdays revolve around a charmed party under the oaks while yours revolve around a grudge. The Grove fills up whether or not there is anything at stake.",
+    "TEN": "Tennessee matches your color and your loyalty, wrapped in a nostalgic tradition rather than a next-door grievance. Their orange comes with a fight song and a long memory. Yours comes with a neighbor."
   },
   "OLE": {
-    "LSU": "LSU shares your Deep South passion and your appetite for a wild Saturday, only its Death Valley is raw menace where your Grove is a garden party. Setting of the chaos is the tell. If the wildness is a night-game roar rather than a tailgate, that is LSU.",
+    "LSU": "LSU shares your Deep South passion and your appetite for a wild Saturday, only its Death Valley is raw menace where your Grove is a garden party. Nobody has ever described Baton Rouge on a Saturday night as charming.",
     "SCA": "South Carolina matches your love of the whole experience over the trophy count, pouring devotion into a program light on hardware. Yours has charm and a recent surge; theirs is pure stubborn loyalty. If the faith has almost nothing to show for it and shows up anyway, lean South Carolina.",
-    "AUB": "Auburn brings the same emotion and the same taste for an upset, but it plays with a grudge against a giant while you play for the joy of it. Mood is the divide. If the edge is a chip rather than a celebration, that is Auburn.",
-    "MST": "Mississippi State is your in-state enemy in the Egg Bowl, the cowbell-clanging blue-collar counterweight to your Oxford polish. Class of the setting separates you. If the identity is a grind in the pasture rather than a party in the Grove, you are describing Mississippi State."
+    "AUB": "Auburn brings the same emotion and the same taste for an upset, but it plays with a grudge against a giant while you play for the joy of it. Auburn's best days are all at somebody's expense.",
+    "MST": "Mississippi State is your in-state enemy in the Egg Bowl, the cowbell-clanging blue-collar counterweight to your Oxford polish. Starkville wears the lack of polish on purpose, and rings a cowbell to make sure you noticed."
   },
   "SCA": {
     "CLM": "Clemson is your in-state rival in the Palmetto Bowl, the orange half of a grudge that splits the whole state. They built a title machine; you built undying loyalty without the hardware. If the identity comes with trophies rather than yearning, that is Clemson.",
-    "OLE": "Ole Miss shares your devotion to the whole experience over the win-loss column, pouring in passion regardless of the trophy case. The difference is momentum: Oxford has surged lately while your breakthrough still waits. If the faith has recently been rewarded, lean Ole Miss.",
-    "TEN": "Tennessee matches your loud, loyal, show-up-anyway devotion, only it is chasing its way back to a glory it has actually tasted while you chase a first taste. History of the hunger is the tell. If the yearning is nostalgia for a title once held, that is Tennessee.",
-    "COL": "Colorado knows your kind of long, thankless loyalty, decades of scraping for relevance while the faithful kept showing up. What sets them apart is that Colorado once stood on top of the sport, guarding a former glory rather than still awaiting a first. If the faith is protecting an old title, you are describing Colorado."
+    "OLE": "Ole Miss shares your devotion to the whole experience over the win-loss column, pouring in passion regardless of the trophy case. Oxford has had something to celebrate lately. Columbia is still waiting on its turn.",
+    "TEN": "Tennessee matches your loud, loyal, show-up-anyway devotion, only it is chasing its way back to a glory it has actually tasted while you chase a first taste. Tennessee knows exactly what it is missing. You are still imagining it.",
+    "COL": "Colorado knows your kind of long, thankless loyalty, decades of scraping for relevance while the faithful kept showing up. Colorado once stood on top of the sport, so its long wait has been about guarding something rather than earning it."
   },
   "IOW": {
     "KSU": "Kansas State is your process twin on the plains, another program that wins with discipline and grit over talent. Theirs is a from-nothing turnaround story; yours is quiet Midwestern consistency. If the identity is the underdog overachiever rather than the steady standard-bearer, that is Kansas State.",
-    "WIS": "Wisconsin shares your Big Ten, fundamentals-first, no-nonsense soul, only it grinds you down by running the ball instead of playing complementary defense. Method is the tell. If the toughness shows up as a bruising ground game, lean Wisconsin.",
-    "NEB": "Nebraska matches your Midwestern decency and your loyal, rooted following, wrapped around a fallen dynasty yours never was. History is the divide. If the faith is nursing five old national titles, you are describing Nebraska.",
-    "AIR": "Air Force runs the same maxed-out precision and discipline you live by, aimed at a military mission rather than a Saturday grind. The difference is the register: theirs is service-academy pageantry, yours is heartland fundamentals. If the precision comes with flyovers, that is Air Force."
+    "WIS": "Wisconsin shares your Big Ten, fundamentals-first, no-nonsense soul, only it grinds you down by running the ball instead of playing complementary defense. Wisconsin's answer to a hard afternoon is to hand it off again.",
+    "NEB": "Nebraska matches your Midwestern decency and your loyal, rooted following, wrapped around a fallen dynasty yours never was. Nebraska is still holding five national titles, all of them from the last century.",
+    "AIR": "Air Force runs the same maxed-out precision and discipline you live by, aimed at a military mission rather than a Saturday grind. Their pregame involves a flyover and a formation. Yours involves a bus from Iowa City."
   },
   "KSU": {
     "IOW": "Iowa is your process kin, another program that beats better talent with discipline and structure. Theirs is polished, decades-deep consistency; yours is the scrappy climb out of nothing. If the fundamentals come without the underdog chip, that is Iowa.",
-    "WIS": "Wisconsin shares your belief in the honest, physical, well-drilled build, only on a bigger stage with more hardware. Scale of the success separates you. If the toughness comes with Rose Bowls and a national brand, lean Wisconsin.",
+    "WIS": "Wisconsin shares your belief in the honest, physical, well-drilled build, only on a bigger stage with more hardware. Wisconsin has been to Pasadena often enough that it stopped feeling like a miracle.",
     "IND": "Snyder's rebuild took seventeen years of recruiting players nobody wanted and coaching them up. Indiana's took two, a transfer portal, and a coach who told everyone in advance exactly what would happen. Same miracle, opposite method. Indiana is the version where the waiting was short.",
-    "TCU": "TCU matches your identity as the overachiever who was never supposed to make it, clawing from mid-major roots into the big time. Flavor is the tell. If the rise is Texas swagger rather than purple family, that is TCU."
+    "TCU": "TCU matches your identity as the overachiever who was never supposed to make it, clawing from mid-major roots into the big time. Their climb came with Fort Worth swagger rather than the word family, which Manhattan uses about a football program without irony."
   },
   "WIS": {
-    "IOW": "Iowa is your Big Ten neighbor in toughness and discipline, only it leans on complementary defense where you lean on the run. Method separates you. If the grind is fundamentals and field position rather than a pounding ground game, that is Iowa.",
-    "KSU": "Kansas State shares your belief in the physical, well-coached, no-shortcuts build, without your national brand or bowl pedigree. Stage is the tell. If the toughness is a purple underdog climb rather than a proven bruiser, lean Kansas State.",
+    "IOW": "Iowa is your Big Ten neighbor in toughness and discipline, only it leans on complementary defense where you lean on the run. Iowa would rather win a game seventeen to ten by never once making a mistake.",
+    "KSU": "Kansas State shares your belief in the physical, well-coached, no-shortcuts build, without your national brand or bowl pedigree. Kansas State is still climbing toward the position you have held for thirty years.",
     "IND": "Wisconsin built its identity slowly, out of offensive lines and cold Novembers, a program that earned every inch of it. Indiana skipped the whole process, arrived from nowhere and took the trophy in a single perfect season. Same conference, opposite route.",
     "PSU": "Penn State runs the same disciplined, physical, tradition-rich program you do, with a bigger name and a louder national profile. If the blue-collar identity comes with a Northeastern blueblood's shine, that is Penn State."
   },
   "NEB": {
     "TAM": "Texas A&M matches your bottomless fan loyalty and your sense of the team as a community's shared possession. Theirs is the standing 12th Man and the Corps; yours is the Sea of Red and a sellout streak nobody can touch. If the tradition is military pageantry rather than heartland faith, that is Texas A&M.",
-    "PSU": "Penn State shares your massive, devoted following and your belief in the disciplined, honest build. Where yours is prairie decency, theirs is Happy Valley blue-collar. If the huge fanbase packs a Northeastern valley rather than a plains capital, lean Penn State.",
-    "WIS": "Wisconsin runs the same kind of workmanlike, ground-it-out, no-nonsense program you love, on a slightly smaller stage. Scale of the tradition is the divide. If the identity is solid and steady without the five banners, that is Wisconsin.",
-    "IOW": "Iowa knows your brand of loyal, patient, defense-first football and Midwestern decency. The difference is the ceiling: your history holds titles theirs does not. If the faith has never quite reached the mountaintop, you are describing Iowa."
+    "PSU": "Penn State shares your massive, devoted following and your belief in the disciplined, honest build. Where yours is prairie decency, theirs is Happy Valley blue-collar. A hundred thousand people fill that valley too, and none of them drove in across open plains.",
+    "WIS": "Wisconsin runs the same kind of workmanlike, ground-it-out, no-nonsense program you love, on a slightly smaller stage. Wisconsin has never had banners to live up to, which makes a solid ten-win season feel like a good year rather than a disappointment.",
+    "IOW": "Iowa knows your brand of loyal, patient, defense-first football and Midwestern decency. Iowa's faithful have never had a national title to remember, so nothing they watch is ever measured against one."
   },
   "TAM": {
     "NEB": "Nebraska is your mirror in fan loyalty, another program where the whole community treats the team as its own. Yours is a standing, military-tradition 12th Man; theirs is a Sea of Red and a record sellout streak. If the devotion runs through the heartland rather than the Corps, that is Nebraska.",
-    "TEX": "Texas is your renewed in-state rival, the Longhorn giant to your maroon. They lead with swagger and star power; you lead with unity and tradition. If the identity is bravado rather than brotherhood, lean Texas.",
-    "PSU": "Penn State shares your belief in the collective over the individual, the plain-jersey ethos to your standing 12th Man. Flavor of the tradition is the tell. If the discipline reads Northeastern blue-collar rather than Texas military, that is Penn State.",
-    "UGA": "Georgia runs the same kind of deep-community, process-driven program you admire, only it converted that culture into recent national titles. Trophies are the divide. If the loyalty comes with a stack of rings, you are describing Georgia."
+    "TEX": "Texas is your renewed in-state rival, the Longhorn giant to your maroon. They lead with swagger and star power; you lead with unity and tradition. Texas has never needed anybody to stand up for it.",
+    "PSU": "Penn State shares your belief in the collective over the individual, the plain-jersey ethos to your standing 12th Man. Their version leaves the names off the jerseys. Yours puts the whole student body on its feet.",
+    "UGA": "Georgia runs the same kind of deep-community, process-driven program you admire, only it converted that culture into recent national titles. Athens got the rings out of it."
   },
   "MAR": {
     "WVU": "West Virginia is your kin in the mountains, another emotional, rooted, whole-state program that pours its heart into the team. Theirs runs wild and rowdy; yours runs deep and resilient. If the passion is a party rather than a promise, that is West Virginia.",
-    "HAW": "Hawaii shares your maxed-out community and roots, a beloved local team that means everything to the place it represents. Setting is the tell. If the devotion belongs to an island rather than a river valley, lean Hawaii.",
-    "ECU": "East Carolina knows your kind of underdog love, an emotional, tight-knit fanbase that shows up regardless of the standings. The difference is the story: yours is forged by tragedy and rebuilding, theirs by pure grassroots loyalty. If the heart comes without the history, you are describing East Carolina.",
-    "APP": "Appalachian State matches your small-school passion and your rooted, mountain-town identity, with a giant-slaying streak instead of a resurrection tale. If the underdog pride is about upsets rather than endurance, that is Appalachian State."
+    "HAW": "Hawaii shares your maxed-out community and roots, a beloved local team that means everything to the place it represents. Their place happens to be an island in the middle of the Pacific, which makes every road trip a genuine expedition.",
+    "ECU": "East Carolina knows your kind of underdog love, an emotional, tight-knit fanbase that shows up regardless of the standings. Greenville's loyalty was never forged by anything in particular. It just grew.",
+    "APP": "Appalachian State matches your small-school passion and your rooted, mountain-town identity, with a giant-slaying streak instead of a resurrection tale. Their proudest day is one they went out and took. Yours is one the town survived."
   },
   "HAW": {
     "MAR": "Marshall shares your maxed-out community and roots, a beloved local team woven completely into the place it plays. Yours is island isolation and aloha; theirs is a river-valley resurrection. If the devotion belongs to Appalachia rather than the Pacific, that is Marshall.",
-    "ARK": "Arkansas knows what it means to be the one program a whole state rallies behind, its emotional centre of gravity. Terrain is the tell. If the only-team-for-miles pride belongs to a state calling the Hogs rather than an island, lean Arkansas.",
-    "WVU": "West Virginia matches your isolated, fiercely loyal, emotional fanbase that pours everything into its team. The difference is the flavor: yours is warm and wide-open, theirs is rowdy and hard-edged. If the passion runs mountain-wild, you are describing West Virginia.",
-    "BOI": "Boise State shares your mid-major magic, the outsider that shocked the sport with a dream season and a wide-open style. If the underdog run happened on blue turf in the high desert rather than an island, that is Boise State."
+    "ARK": "Arkansas knows what it means to be the one program a whole state rallies behind, its emotional center of gravity. Their isolation is a matter of state lines rather than ocean, and they announce it with a hog call.",
+    "WVU": "West Virginia matches your isolated, fiercely loyal, emotional fanbase that pours everything into its team. Yours is warm and wide open. Morgantown's is hard-edged, and it gets louder the worse things go.",
+    "BOI": "Boise State shares your mid-major magic, the outsider that shocked the sport with a dream season and a wide-open style. Theirs played out on blue turf in the high desert, in front of a country that had to look up where Boise was."
   },
   "ARM": {
     "NAV": "Navy is your other half, the academy rival you measure your whole year against. You carry the tradition of the Long Gray Line; they carry the swagger of a proven winner. If the identity leans on being undeniable rather than being faithful to the line, that is Navy.",
-    "AIR": "Air Force completes the service-academy trio, sharing your discipline, your option offense, and your code of duty. Branch is the tell. If the precision comes with flyovers and parachutes rather than the Hudson and the Corps, lean Air Force.",
-    "BYU": "BYU matches your values-first, disciplined, deeply communal identity, only its code is faith rather than the uniform. Source of the discipline separates you. If the honor comes from a church rather than an oath of service, you are describing BYU.",
-    "TAM": "Texas A&M shares your Corps of Cadets, your military tradition, and your standing-all-game devotion, on a far bigger stage. If the discipline is Texas pageantry rather than West Point duty, that is Texas A&M."
+    "AIR": "Air Force completes the service-academy trio, sharing your discipline, your option offense, and your code of duty. Their cadets march under a flyover in Colorado Springs, with the Rockies standing behind the stadium.",
+    "BYU": "BYU matches your values-first, disciplined, deeply communal identity, only its code is faith rather than the uniform. Nobody at BYU swore an oath to the country. They signed an honor code, and they keep it just as tightly.",
+    "TAM": "Texas A&M shares your Corps of Cadets, your military tradition, and your standing-all-game devotion, on a far bigger stage. Theirs is a Corps inside an enormous state university, marching for a crowd of a hundred thousand rather than a battalion."
   },
   "NAV": {
-    "ARM": "Army is the mirror across the field: the same iron discipline, the same brotherhood, an entire service behind eleven players. What separates the two of you is the scoreboard between you, and there you hold the edge and never let it rest. If your pride lives in the Long Gray Line and the tradition carried forward more than in the record, you are Army.",
+    "ARM": "Army is the mirror across the field: the same iron discipline, the same brotherhood, an entire service behind eleven players. The scoreboard between you has mostly gone your way, and you have never let it rest. Army's pride does not depend on that column at all. It lives in the Long Gray Line.",
     "AIR": "Air Force runs on the same precision and service and the same ruthless option, but it is the youngest of the three academies, still a step outside the oldest rivalry you sit dead center of. Age and place are the tell. When the discipline flies instead of sails, that is Air Force.",
-    "BYU": "BYU shares your faith, your community, and a code that comes before any game, except the belief underneath it is a religious mission carried nationwide rather than a military one. Church, not fleet. If the shared creed gathers in a chapel instead of a wardroom, you belong with BYU.",
-    "KSU": "Kansas State wins the way you do, out-executing rather than out-recruiting and trusting the system over the stars, only its identity grew from the family and grind of the plains instead of the brigade and the fleet. If the discipline is agricultural rather than martial, Kansas State is your match."
+    "BYU": "BYU shares your faith, your community, and a code that comes before any game, except the belief underneath it is a religious mission carried nationwide rather than a military one. Their creed gathers in a chapel and follows people out into the world. Yours gathers in a wardroom and follows them to sea.",
+    "KSU": "Kansas State wins the way you do, out-executing rather than out-recruiting and trusting the system over the stars, only its identity grew from the family and grind of the plains instead of the brigade and the fleet. Nobody in Manhattan enlisted. They just showed up, and kept showing up."
   },
   "AIR": {
-    "NAV": "Navy is a fellow service academy that runs your option and shares your code, only it leans on a proven-winner swagger where you lean on precision. Attitude is the tell. If the identity is undeniable rather than exact, that is Navy.",
-    "ARM": "Army completes the academy trio, matching your discipline, duty, and option offense from the banks of the Hudson. Branch separates you. If the tradition is the Corps and the Long Gray Line rather than the sky, lean Army.",
-    "IOW": "Iowa shares your maxed-out precision and your win-with-execution soul, aimed at a Saturday grind instead of a military mission. The difference is the setting: yours has flyovers, theirs has cornfields. If the discipline is heartland fundamentals, you are describing Iowa.",
+    "NAV": "Navy is a fellow service academy that runs your option and shares your code, only it leans on a proven-winner swagger where you lean on precision. Air Force wants the play run correctly. Navy simply expects to win, and carries itself that way before the ball is snapped.",
+    "ARM": "Army completes the academy trio, matching your discipline, duty, and option offense from the banks of the Hudson. Where your traditions point upward into the sky, Army's run down a gray hill above the river and into the Long Gray Line.",
+    "IOW": "Iowa shares your maxed-out precision and your win-with-execution soul, aimed at a Saturday grind instead of a military mission. Discipline learned in a weight room in Iowa City carries no oath behind it, just the belief that fundamentals win in November.",
     "GAT": "Georgia Tech runs the same exacting, engineering-minded, scheme-over-talent style you pride yourself on. If the precision is academic rather than military, that is Georgia Tech."
   },
   "BYU": {
     "NDM": "Notre Dame is your closest cousin in spirit, a faith-rooted program with a national following, a proud history, and real championship ambition. Yours is a Latter-day Saint community in the mountains; theirs is Catholic and independent. If the faith and the fame skew Fighting Irish, that is Notre Dame.",
-    "TAM": "Texas A&M shares your maxed-out loyalty and community and your love of tradition and ambition. Source of the bond is the tell. If the togetherness comes from the Corps and Texas rather than faith and Provo, lean Texas A&M.",
-    "NAV": "Navy matches your values-first discipline and your tight, principled community, only its code is service rather than religion. If the standard is an oath and a uniform instead of an honor code, you are describing Navy.",
-    "NEB": "Nebraska knows your kind of huge, devoted, wholesome fanbase and your belief in the honest build. The difference is the anchor: yours is faith, theirs is the heartland. If the loyalty is a Sea of Red rather than a Cougar nation, that is Nebraska."
+    "TAM": "Texas A&M shares your maxed-out loyalty and community and your love of tradition and ambition. What holds them together is the Corps, the state, and a set of rituals that predate almost everyone in the stadium.",
+    "NAV": "Navy matches your values-first discipline and your tight, principled community, only its code is service rather than religion. At Navy the standard is sworn to, in uniform, with the whole brigade standing there when you do it.",
+    "NEB": "Nebraska knows your kind of huge, devoted, wholesome fanbase and your belief in the honest build. Their devotion is not portable the way yours is. It belongs to one state, and it fills one stadium in red every fall."
   },
   "WVU": {
     "ARK": "Arkansas is the other whole-state team with no pro rival for its heart, just as loud and loyal and a little wild as you are. They call the Hogs; you sing the crowd home. If the passion beats through the SEC instead of the mountains, that is Arkansas.",
-    "ECU": "Like you, East Carolina loves hardest from the outside, defiant and proud of a place the bluebloods keep overlooking. They wear the underdog as a purple badge; you carry an entire state on your back. If you are mostly proving the little guy belongs, lean East Carolina.",
+    "ECU": "Like you, East Carolina loves hardest from the outside, defiant and proud of a place the bluebloods keep overlooking. They wear the underdog as a purple badge. You carry an entire state on your back, which is a heavier thing to be asked to do.",
     "TTU": "Texas Tech matches your chaos and your volume and apologizes for neither, guns up into the West Texas night while you light up the hills. Same wildness, different country. When the noise rolls across the plains rather than down a holler, you are describing Texas Tech.",
-    "COL": "Colorado has loved through the same kind of long, thankless drought you know, decades of scrapping for relevance without quitting. What sets you apart is that you never had a second option, the whole state only ever had you. If that stubborn faith was forged out West, it is Colorado."
+    "COL": "Colorado has loved through the same kind of long, thankless drought you know, decades of scrapping for relevance without quitting. Colorado's people had other places to look and stayed anyway. Yours never had anywhere else to look."
   },
   "ARK": {
     "WVU": "West Virginia is your kindred spirit, another whole-state program pouring emotion into the biggest thing its state has. They carry a wilder, rowdier edge and no national title; you have the 1964 crown and the hog call. If the devotion runs a little more untamed, that is West Virginia.",
-    "MST": "Mississippi State shares your loyal, rooted, scrappy SEC-underdog soul, trading your hog call for a wall of cowbells. Sound of the faith is the tell. If the noise clangs rather than squeals, lean Mississippi State.",
-    "TEN": "Tennessee brings the same loud, loyal, whole-region passion, only its identity leans on nostalgia for old national glory while yours leans on simply being all of Arkansas. Source of the pride separates you. If the yearning is for a bygone dynasty, that is Tennessee.",
-    "LSU": "LSU matches your Deep South emotion and your packed, deafening Saturdays, but it rules its state as a title-winning power while you rally as the loyal underdog. Standing is the divide. If the passion comes with recent trophies, you are describing LSU."
+    "MST": "Mississippi State shares your loyal, rooted, scrappy SEC-underdog soul, trading your hog call for a wall of cowbells. Both of you have made a whole identity out of a noise. Theirs is metal, and it does not stop.",
+    "TEN": "Tennessee brings the same loud, loyal, whole-region passion, only its identity leans on nostalgia for old national glory while yours leans on simply being all of Arkansas. Tennessee is still measuring itself against a version of itself from the 1990s.",
+    "LSU": "LSU matches your Deep South emotion and your packed, deafening Saturdays, but it rules its state as a title-winning power while you rally as the loyal underdog. In Baton Rouge the noise is the sound of people who expect to still be playing in January."
   },
   "ECU": {
     "WAZ": "Washington State is your spiritual match on the other coast, another rowdy, emotional underdog that pours everything into a wide-open, unpredictable brand of football. Yours is pirate swagger; theirs is high-desert isolation and self-deprecating humor. If the passion comes from the middle of nowhere, that is Washington State.",
-    "WVU": "West Virginia knows your rowdy, chaotic, whole-region devotion, only cranked up a notch wilder. Intensity is the tell. If the celebration involves burning couches rather than raising flags, lean West Virginia.",
-    "APP": "Appalachian State is your neighbor up in the mountains, a plucky North Carolina underdog with the same giant-killer instinct. The difference is the resume: theirs is built on the biggest upset ever, yours on rowdy nights in Greenville. If the identity leans mountain fortress, that is Appalachian State.",
-    "ARK": "Arkansas shares your loud, loyal, emotional soul and your love of being the whole area's team. If the rowdiness trades a pirate flag for a hog call and a bigger stage, you are describing Arkansas."
+    "WVU": "West Virginia knows your rowdy, chaotic, whole-region devotion, only cranked up a notch wilder. You raise a flag. Morgantown sets furniture on fire.",
+    "APP": "Appalachian State is your neighbor up in the mountains, a plucky North Carolina underdog with the same giant-killer instinct. Their reputation rests on one September afternoon in Michigan Stadium that people have not stopped bringing up since 2007.",
+    "ARK": "Arkansas shares your loud, loyal, emotional soul and your love of being the whole area's team. Same instinct, wider territory: a hog call instead of a pirate flag, and an entire state rather than one corner of one."
   },
   "WAZ": {
     "ECU": "East Carolina is your kindred rowdy underdog across the country, all emotion and wide-open, unpredictable football. Theirs is a pirate crew in the Carolina flatlands; yours is a crimson faithful on the Palouse. If the passion wears a skull-and-crossbones, that is East Carolina.",
-    "HAW": "Hawaii shares your defining trait of glorious isolation, a beloved team a long way from everyone that its fans follow to the ends of the earth. Setting is the tell. If the remoteness is an island paradise rather than a wheat field, lean Hawaii.",
-    "WVU": "West Virginia matches your emotional, loyal, whole-region devotion, with a rowdier and more intense edge. If the heartbreak runs hotter and the fans run wilder, you are describing West Virginia.",
-    "ARK": "Arkansas knows your kind of loyal, emotional, we-are-all-there-is fandom, only on a bigger SEC stage with a title in the trophy case. If the devotion comes with a hog call and more history, that is Arkansas."
+    "HAW": "Hawaii shares your defining trait of glorious isolation, a beloved team a long way from everyone that its fans follow to the ends of the earth. Their isolation is an island in the Pacific. Yours looks like wheat, in every direction, for a very long way.",
+    "WVU": "West Virginia matches your emotional, loyal, whole-region devotion, with a rowdier and more intense edge. Morgantown takes its heartbreak considerably less quietly than Pullman does.",
+    "ARK": "Arkansas knows your kind of loyal, emotional, we-are-all-there-is fandom, only on a bigger SEC stage with a title in the trophy case. Arkansas has something in that cabinet to keep the faith warm. Pullman has the faith and nothing else."
   },
   "APP": {
     "BOI": "Boise State is your fellow Cinderella, the mid-major everyone remembers for one impossible upset. Theirs came on blue turf against Oklahoma; yours came in the Big House against Michigan. If the giant-killing grew into a genuine national power, that is Boise State.",
-    "MAR": "Marshall shares your identity as a beloved mountain school with a fierce, tight-knit following and a habit of punching up. The difference is the story: theirs is forged by tragedy and rebuilding, yours by upsets and titles. If the heart runs to resilience over giant-killing, lean Marshall.",
-    "ECU": "East Carolina is your rowdy neighbor down the mountain, another North Carolina underdog that loves knocking off the big names. If the fortress trades elevation for a pirate flag, you are describing East Carolina.",
-    "WVU": "West Virginia knows your mountain-town loyalty and your emotional, rooted fanbase, on a bigger stage with a wilder streak. If the identity is Appalachia at full, rowdy volume, that is West Virginia."
+    "MAR": "Marshall shares your identity as a beloved mountain school with a fierce, tight-knit following and a habit of punching up. Yours is a story of upsets and titles. Marshall's begins with a plane crash in 1970 and everything the town rebuilt afterward.",
+    "ECU": "East Carolina is your rowdy neighbor down the mountain, another North Carolina underdog that loves knocking off the big names. They do it at sea level, under a pirate flag, in a town that treats a Saturday upset as an excuse to keep going until Sunday.",
+    "WVU": "West Virginia knows your mountain-town loyalty and your emotional, rooted fanbase, on a bigger stage with a wilder streak. Same mountains, same stubbornness, considerably less restraint."
   },
   "VAT": {
     "WVU": "West Virginia is your old border rival, another emotional, loyal, mountain fanbase that lives and dies with its team. Theirs runs rowdier and wilder; yours channels the passion into an earthquake entrance and a lunch-pail defense. If the intensity tips into chaos, that is West Virginia.",
-    "COL": "Colorado shares your emotional, ambitious, loyal-through-the-lean-years soul and a fanbase that never gave up on faded glory. Backdrop is the tell. If the mountains are the Rockies and the tradition is a live buffalo, lean Colorado.",
-    "APP": "Appalachian State knows your kind of loud, rooted, mountain-fortress home-field devotion, on a smaller scale with a giant-killer streak. If the identity is the plucky upstart rather than the established power, you are describing Appalachian State.",
-    "BOI": "Boise State matches your ambition and your knack for tough, well-coached, us-against-the-big-boys football. If the chip on the shoulder comes on blue turf instead of maroon and orange, that is Boise State."
+    "COL": "Colorado shares your emotional, ambitious, loyal-through-the-lean-years soul and a fanbase that never gave up on faded glory. Their mountains are the Rockies, and their tradition runs a live buffalo around the field before kickoff.",
+    "APP": "Appalachian State knows your kind of loud, rooted, mountain-fortress home-field devotion, on a smaller scale with a giant-killer streak. They are still the upstart in the story, and they like it that way.",
+    "BOI": "Boise State matches your ambition and your knack for tough, well-coached, us-against-the-big-boys football. Boise carries the same chip on a blue field two thousand miles west of Blacksburg."
   },
   "MST": {
     "OLE": "Ole Miss is your in-state enemy in the Egg Bowl, the Oxford polish to your Starkville grit. They throw the sport's fanciest party; you ring cowbells and grind. If the identity is silver platters rather than a wall of clanging noise, that is Ole Miss.",
-    "ARK": "Arkansas shares your rooted, loyal, scrappy SEC-underdog heart, only its rallying sound is a hog call and its history holds a national title. Trophy case is the tell. If the faith comes with a 1964 crown and a squeal, lean Arkansas.",
-    "WVU": "West Virginia knows your blue-collar toughness and your loyal, rooted fanbase, wrapped in a rowdier, more emotional edge. Temperature of the passion separates you. If the grit runs hotter and wilder, that is West Virginia.",
-    "KSU": "Kansas State runs the same kind of unglamorous, hard-nosed, grind-it-out program you respect, built on toughness over talent. The difference is the register: theirs is quiet Plains discipline, yours is a deafening cowbell roar. If the grind is silent rather than clanging, you are describing Kansas State."
+    "ARK": "Arkansas shares your rooted, loyal, scrappy SEC-underdog heart, only its rallying sound is a hog call and its history holds a national title. Arkansas has a 1964 crown to point at on the bad days. Starkville has the cowbells and not much else.",
+    "WVU": "West Virginia knows your blue-collar toughness and your loyal, rooted fanbase, wrapped in a rowdier, more emotional edge. West Virginia's loyalty runs hotter, and it does not stay quiet when things go wrong.",
+    "KSU": "Kansas State runs the same kind of unglamorous, hard-nosed, grind-it-out program you respect, built on toughness over talent. Manhattan does its grinding quietly. Starkville does it at a volume you can hear from the parking lot."
   },
   "COL": {
     "NEB": "Nebraska is your old Big Eight blood rival and your mirror in faded glory, a proud program whose faithful never left through a long fall from the top. Theirs is a Sea of Red and five titles; yours is Ralphie and one. If the fallen-giant devotion runs heartland rather than mile-high, that is Nebraska.",
-    "VAT": "Virginia Tech shares your emotional, ambitious, loyal-through-the-lean-years spirit and a passionate, all-in fanbase. Setting is the tell. If the mountains are Appalachian and the entrance is Enter Sandman, lean Virginia Tech.",
-    "WVU": "West Virginia knows your kind of stubborn, emotional loyalty to a team through thick and thin, with a rowdier, wilder streak. If the passion runs hotter and the wins matter more than the history, you are describing West Virginia.",
-    "ARK": "Arkansas matches your loyal, emotional devotion and the long wait between big moments, poured into being a whole region's team. If the faithful call the Hogs instead of running a buffalo, that is Arkansas."
+    "VAT": "Virginia Tech shares your emotional, ambitious, loyal-through-the-lean-years spirit and a passionate, all-in fanbase. Their mountains are Appalachian, and their stadium loses its mind to Enter Sandman before anyone has touched the ball.",
+    "WVU": "West Virginia knows your kind of stubborn, emotional loyalty to a team through thick and thin, with a rowdier, wilder streak. In Morgantown the history matters less than what happened last Saturday, and the reaction to last Saturday tends to be audible across the whole state.",
+    "ARK": "Arkansas matches your loyal, emotional devotion and the long wait between big moments, poured into being a whole region's team. Instead of a buffalo running the sideline, there is a call the entire stadium makes together."
   },
   "BOI": {
     "APP": "Appalachian State is your fellow giant-killer, the mid-major everyone knows for one legendary upset. Theirs stunned Michigan in the Big House; yours stunned Oklahoma on blue turf. If the Cinderella story stayed a mountain underdog rather than a national power, that is Appalachian State.",
-    "TCU": "TCU shares your arc exactly, the outsider that clawed from mid-major roots all the way to the big time and a playoff. Region is the tell. If the rise is Texas rather than the blue turf of Idaho, lean TCU.",
+    "TCU": "TCU shares your arc exactly, the outsider that clawed from mid-major roots all the way to the big time and a playoff. They did it in Fort Worth, in a conference full of Texas money, without a field anyone could pick out from a plane.",
     "IND": "You spent two decades as the outsider who kept nearly breaking through and never quite did. Indiana was not even outside the door, it was in a different building, and then it walked in and won the whole thing. Indiana is what happens when the knocking finally works.",
-    "KSU": "Kansas State matches your disciplined, well-coached, overachieving build, the program that wins by out-preparing bigger names. If the smart underdog plays on purple in the plains instead of blue in the mountains, that is Kansas State."
+    "KSU": "Kansas State matches your disciplined, well-coached, overachieving build, the program that wins by out-preparing bigger names. Their version happened in purple, on the Kansas plains, over decades rather than in a single famous night."
   },
   "MIA": {
     "FSU": "Florida State is your archrival and your equal in swagger, the other Florida power built on speed, flash, and championship attitude. Yours is the turnover chain and The U; theirs is the tomahawk chop and the spear. If the bravado wears garnet and gold, that is Florida State.",
-    "UCF": "UCF is the brash upstart down the road that wants exactly what you have, crowning itself and daring the sport to argue. Pedigree is the tell. If the confidence comes without the five rings to back it, lean UCF.",
-    "FLA": "Florida shares your emotional, star-studded, Sunshine State ambition, only with a broader, more mainstream fan empire. If the flash is Gainesville orange and blue rather than Miami orange and green, you are describing Florida.",
-    "SMU": "SMU matches your ambition, flash, and love of the big stage, wrapped in Dallas money instead of South Florida heat. If the swagger is a redemption story rather than a dynasty, that is SMU."
+    "UCF": "UCF is the brash upstart down the road that wants exactly what you have, crowning itself and daring the sport to argue. They made the claim first and went looking for the evidence afterward.",
+    "FLA": "Florida shares your emotional, star-studded, Sunshine State ambition, only with a broader, more mainstream fan empire. Florida's reach covers the whole state. Yours has always been a city.",
+    "SMU": "SMU matches your ambition, flash, and love of the big stage, wrapped in Dallas money instead of South Florida heat. SMU spent decades climbing back from a punishment that nearly ended the program for good."
   },
   "UCF": {
     "SMU": "SMU is your fellow ambitious upstart, a brash program that clawed its way into the big time and dares the bluebloods to notice. Theirs is a redemption story from the death penalty; yours is a self-made crown. If the audacity comes with Dallas money, that is SMU.",
-    "MIA": "Miami is the in-state swagger you are chasing, the flashy program with the pedigree and the rings you crowned yourself without. The difference is the resume. If the confidence is backed by five actual titles, lean Miami.",
-    "BOI": "Boise State knows your kind of mid-major defiance, the outsider that beat the big boys and refused to stay in its lane. If the breakthrough happened on blue turf rather than at a Disney parade, you are describing Boise State.",
-    "TTU": "Texas Tech shares your wide-open, high-scoring, chip-on-the-shoulder energy on a bigger conference stage. If the brashness is West Texas rather than Orlando, that is Texas Tech."
+    "MIA": "Miami is the in-state swagger you are chasing, the flashy program with the pedigree and the rings you crowned yourself without. Miami never had to declare anything. The trophies did the talking.",
+    "BOI": "Boise State knows your kind of mid-major defiance, the outsider that beat the big boys and refused to stay in its lane. Boise made its case on blue turf rather than at a parade in Orlando.",
+    "TTU": "Texas Tech shares your wide-open, high-scoring, chip-on-the-shoulder energy on a bigger conference stage. Lubbock has been brash for a lot longer, and against considerably better company."
   },
   "SMU": {
     "UCF": "UCF is your kindred upstart, another ambitious program elbowing its way to the big table and daring the establishment to stop it. Theirs is a self-declared crown; yours is a comeback from the dead. If the audacity is Orlando new money rather than Dallas old money, that is UCF.",
-    "TCU": "TCU is your Dallas-Fort Worth rival and your parallel, the metroplex program that broke through to the big time first. Timing is the tell. If the mid-major rise wears purple and got there ahead of you, lean TCU.",
-    "MIA": "Miami shares your flash, ambition, and love of the spotlight, backed by a dynasty you are still chasing. If the swagger comes with five rings instead of a resurrection, you are describing Miami.",
-    "BOI": "Boise State matches your climb from the outside into genuine national relevance, the program that refused to stay small. If the rise is blue turf and mountain grit rather than a booster-fueled Dallas comeback, that is Boise State."
+    "TCU": "TCU is your Dallas-Fort Worth rival and your parallel, the metroplex program that broke through to the big time first. They got there in purple, and they got there before you did.",
+    "MIA": "Miami shares your flash, ambition, and love of the spotlight, backed by a dynasty you are still chasing. Miami's swagger is backed by five rings. Yours had to be rebuilt from a program that was shut down.",
+    "BOI": "Boise State matches your climb from the outside into genuine national relevance, the program that refused to stay small. Theirs was done on blue turf with mountain grit, and without a single Dallas booster involved."
   },
   "STA": {
-    "GAT": "Georgia Tech is your East Coast counterpart, the elite engineering school that wins with brains, scheme, and discipline over raw recruiting. Region and flavor are the tell. If the smarts come with a Ramblin' Wreck and an option offense, that is Georgia Tech.",
+    "GAT": "Georgia Tech is your East Coast counterpart, the elite engineering school that wins with brains, scheme, and discipline over raw recruiting. Their smarts arrive in a 1930 Ford driving onto the field before kickoff.",
     "VAN": "Vanderbilt shares your identity as the academic outlier that competes with preparation over talent, only as a scrappy SEC underdog. If the brains play David to the sport's Goliaths rather than a physical power, lean Vanderbilt.",
-    "IOW": "Iowa matches your disciplined, physical, run-it-and-win-the-trenches approach, minus the elite-university branding. If the process is heartland fundamentals rather than West Coast intellect, you are describing Iowa.",
-    "WIS": "Wisconsin knows your love of a punishing ground game and a well-built offensive line, on a louder, more traditional stage. If the physicality comes without the academic edge and the goofy Tree, that is Wisconsin."
+    "IOW": "Iowa matches your disciplined, physical, run-it-and-win-the-trenches approach, minus the elite-university branding. Iowa wins the trenches without anybody ever calling it intellectual.",
+    "WIS": "Wisconsin knows your love of a punishing ground game and a well-built offensive line, on a louder, more traditional stage. Wisconsin does the same thing you do, with a marching band instead of a tree."
   },
   "GAT": {
-    "STA": "Stanford is your West Coast twin, the elite tech-and-brains school that wins football with scheme and discipline. Setting is the tell. If the intellect comes with a goofy Tree and a bruising West Coast run game, that is Stanford.",
+    "STA": "Stanford is your West Coast twin, the elite tech-and-brains school that wins football with scheme and discipline. Stanford does it with a bruising run game and a mascot that is a tree with a face on it.",
     "VAN": "Vanderbilt shares your academic pride and your identity as the smart underdog in a league of giants. If the brains play in the SEC without the option offense and the Ramblin' Wreck, lean Vanderbilt.",
-    "NAV": "Navy matches your disciplined, precise, option-running, tradition-bound soul, only its code is military rather than engineering. If the precision comes with a service academy instead of a slide rule, you are describing Navy.",
-    "IOW": "Iowa knows your kind of process-first, scheme-over-talent, fundamentally-sound football. If the discipline is heartland grind rather than Atlanta engineering, that is Iowa."
+    "NAV": "Navy matches your disciplined, precise, option-running, tradition-bound soul, only its code is military rather than engineering. At Navy the fundamentals are not a coaching philosophy. They are the same thing the whole institution runs on.",
+    "IOW": "Iowa knows your kind of process-first, scheme-over-talent, fundamentally-sound football. Nobody in Iowa City would ever describe it as engineering. They would just call it doing your job."
   },
   "VAN": {
     "STA": "Stanford is your West Coast twin, the other elite academic school playing big-time football with brains over brawn. Yours is a Southern giant-slayer story; theirs is a Silicon Valley one. If the campus trades Nashville for Palo Alto, that is Stanford.",
-    "GAT": "Georgia Tech shares your identity as the engineer in a league of athletes, winning with scheme and smarts more than raw recruiting. Location of the brains is the tell. If the academic pride is built on engineering in Atlanta, lean Georgia Tech.",
-    "IOW": "Iowa matches your patient, disciplined, wear-them-down style, the workmanlike approach that punches above its talent. The difference is the flavor: theirs is Midwestern grind, yours is academic underdog. If the method is blue-collar rather than brainy, that is Iowa.",
-    "TEN": "Tennessee is your in-state giant, the orange behemoth you stunned on its own field in 2025. Everything about scale separates you: they are passion and tradition at full volume, you are the clever David. If the identity is the big brother rather than the upstart, you are describing Tennessee."
+    "GAT": "Georgia Tech shares your identity as the engineer in a league of athletes, winning with scheme and smarts more than raw recruiting. Their smart kids study engineering, in Atlanta, and they are not shy about it.",
+    "IOW": "Iowa matches your patient, disciplined, wear-them-down style, the workmanlike approach that punches above its talent. Iowa's version of that same patience has never once wanted to be called clever.",
+    "TEN": "Tennessee is your in-state giant, the orange behemoth you stunned on its own field in 2025. They are passion and tradition at full volume. You are the one who has to be clever about it."
   },
   "WAS": {
-    "TCU": "TCU is your balanced-riser counterpart, the loyal, all-around program that punched its way to the national title game as an underdog. Pedigree separates you. If the run to the final came without the championship history, lean TCU.",
+    "TCU": "TCU is your balanced-riser counterpart, the loyal, all-around program that punched its way to the national title game as an underdog. TCU arrived at that game with nothing behind it. You arrived with a title already in the cabinet.",
     "ORE": "Oregon is your old Northwest rival, sharing your ambition and stage with a flashier, faster, more modern edge. If the identity leans neon and speed rather than tradition and a lakeside stadium, that is Oregon.",
-    "OKS": "Oklahoma State matches your loyalty and steady ambition, rooted in a smaller town with a fierce local pride. If the devotion is Stillwater orange rather than Seattle purple, you are describing Oklahoma State.",
-    "MSU": "Michigan State shares your Big Ten toughness and loyal, blue-collar following. If the pride comes with a chip against a blueblood next door rather than a scenic championship pedigree, that is Michigan State."
+    "OKS": "Oklahoma State matches your loyalty and steady ambition, rooted in a smaller town with a fierce local pride. Stillwater is the whole world to Oklahoma State. Seattle has a good deal else going on.",
+    "MSU": "Michigan State shares your Big Ten toughness and loyal, blue-collar following. Their pride is sharpened by a blueblood an hour down the road, which is a very different thing from a stadium on a lake."
   },
   "TCU": {
-    "WAS": "Washington is your balanced counterpart out west, the loyal all-around program that also ran to a national title game. History is the tell. If the run came with championship pedigree and a lakeside stadium, lean Washington.",
+    "WAS": "Washington is your balanced counterpart out west, the loyal all-around program that also ran to a national title game. Theirs came with a championship already in the cabinet and a stadium people arrive at by boat.",
     "SMU": "SMU is your Dallas-Fort Worth rival, the metroplex program on a parallel climb back to the big time. Yours is a horned-frog gatecrash; theirs is a resurrection from the death penalty. If the rise is booster-fueled and red-and-blue, that is SMU.",
-    "OKS": "Oklahoma State shares your loyal, balanced, Big 12 identity, only rooted more deeply in one proud small town. If the devotion is Stillwater orange rather than a purple gatecrash, you are describing Oklahoma State.",
-    "BOI": "Boise State knows your mid-major defiance, the outsider that beat the big boys and refused to accept its assigned place. If the breakthrough happened on blue turf rather than in a horned-frog Rose Bowl, that is Boise State."
+    "OKS": "Oklahoma State shares your loyal, balanced, Big 12 identity, only rooted more deeply in one proud small town. Stillwater's devotion never had to crash a gate. It was always just there.",
+    "BOI": "Boise State knows your mid-major defiance, the outsider that beat the big boys and refused to accept its assigned place. Their breakthrough happened on blue turf. Yours happened in Pasadena."
   },
   "OKS": {
     "TCU": "TCU is your Big 12 counterpart, the loyal, balanced program that keeps punching above its weight. If the pride comes with a horned-frog gatecrash of the national stage rather than Stillwater roots, lean TCU.",
-    "OKL": "Oklahoma is the blueblood big brother you have measured yourself against for a century, sharing your state but not your underdog's chip. If the identity is crimson entitlement rather than orange defiance, that is Oklahoma.",
-    "NEB": "Nebraska matches your loyal, rooted, heartland devotion, only on a bigger and more nostalgic scale. If the faith is red and tied to a bygone dynasty rather than orange and Barry Sanders, you are describing Nebraska.",
-    "TTU": "Texas Tech shares your Big 12 identity and loyal regional passion with a wilder, higher-scoring streak. If the fun runs to tortillas and the Air Raid rather than quiet Cowboy pride, that is Texas Tech."
+    "OKL": "Oklahoma is the blueblood big brother you have measured yourself against for a century, sharing your state but not your underdog's chip. Nothing about Oklahoma's sense of itself depends on you at all.",
+    "NEB": "Nebraska matches your loyal, rooted, heartland devotion, only on a bigger and more nostalgic scale. Their red is tied to a dynasty that ended in the last century. Yours is tied to Barry Sanders.",
+    "TTU": "Texas Tech shares your Big 12 identity and loyal regional passion with a wilder, higher-scoring streak. Lubbock throws tortillas and scores forty. Stillwater keeps its pride a good deal quieter than that."
   },
   "MSU": {
     "IND": "Down the road in Bloomington they did the thing you have chased for years, and they did it having earned none of it first. You have Rose Bowls and a tradition to defend. Indiana had a losing record and nothing at all to lose.",
     "NEB": "Nebraska shares your loyal, blue-collar, Big Ten heartland faith through lean years. If the devotion is tied to a proud red past rather than a chip against the school next door, that is Nebraska.",
-    "IOW": "Iowa matches your defense-first, disciplined, unglamorous Big Ten identity. If the toughness is heartland process without the little-brother edge, you are describing Iowa.",
-    "WIS": "Wisconsin shares your physical, blue-collar Big Ten soul on a bigger, more established stage. If the grit comes without the underdog's grudge, that is Wisconsin."
+    "IOW": "Iowa matches your defense-first, disciplined, unglamorous Big Ten identity. Iowa has nobody in its own state to resent, so the chip you carry is simply missing from theirs.",
+    "WIS": "Wisconsin shares your physical, blue-collar Big Ten soul on a bigger, more established stage. Wisconsin has never had to prove it belongs to anyone, least of all a neighbor."
   },
   "TTU": {
-    "CST": "Coastal Carolina matches your quirky, chaotic, fun-first spirit, a program that revels in doing football differently. Scale is the tell. If the wildness is teal turf and mullets rather than tortillas and the Air Raid, lean Coastal Carolina.",
+    "CST": "Coastal Carolina matches your quirky, chaotic, fun-first spirit, a program that revels in doing football differently. Theirs runs to teal turf and mullets, on a much smaller stage and with far less to lose.",
     "WVU": "West Virginia knows your loud, emotional, love-my-isolated-corner passion. If the chaos pours out of Appalachia rather than West Texas, you are describing West Virginia.",
-    "OLE": "Ole Miss shares your fun-loving, high-scoring, big-personality streak, wrapped in Southern tradition. If the party is the Grove rather than Lubbock on a Saturday night, that is Ole Miss.",
-    "OKS": "Oklahoma State shares your Big 12 roots and loyal regional pride, only calmer and more grounded. If the devotion is quiet Cowboy orange rather than raucous scarlet, that is Oklahoma State."
+    "OLE": "Ole Miss shares your fun-loving, high-scoring, big-personality streak, wrapped in Southern tradition. Their party happens under oak trees in bow ties. Yours happens in Lubbock.",
+    "OKS": "Oklahoma State shares your Big 12 roots and loyal regional pride, only calmer and more grounded. Stillwater's loyalty does not need to be heard from the next county."
   },
   "TUL": {
     "VAN": "Vanderbilt is your academic kin, the elite private university that competes with brains and heart against bigger programs. If the classroom prestige plays in the SEC rather than New Orleans, lean Vanderbilt.",
-    "STA": "Stanford shares your rare mix of top-tier academics and real football. If the brains come with a bruising West Coast run game rather than Gulf Coast resilience, you are describing Stanford.",
-    "ECU": "East Carolina matches your tight-knit, community-first, regional devotion. If the loyalty is small-town Greenville rather than the rhythm of New Orleans, that is East Carolina.",
-    "MAR": "Marshall knows your identity built on resilience, a program that has risen from being knocked down. If the comeback story is Appalachian rather than tied to a great American city, that is Marshall."
+    "STA": "Stanford shares your rare mix of top-tier academics and real football. Stanford's version wins by running through people in Palo Alto, with no hurricane anywhere in the story.",
+    "ECU": "East Carolina matches your tight-knit, community-first, regional devotion. Greenville gives its team everything it has, and it does it without a brass band.",
+    "MAR": "Marshall knows your identity built on resilience, a program that has risen from being knocked down. Huntington rebuilt after a plane crash. New Orleans rebuilt after a city went under."
   },
   "CST": {
     "BOI": "Boise State is your colored-turf twin, the mid-major that beat the big boys on a field the whole sport recognizes. If the magic happens on blue turf with a longer track record, lean Boise State.",
-    "APP": "Appalachian State shares your Sun Belt giant-killer spirit, the upstart that loves knocking off the establishment. If the fun is mountain grit rather than teal turf and mullets, you are describing Appalachian State.",
-    "TTU": "Texas Tech matches your quirky, chaotic, do-it-our-own-way joy on a bigger conference stage. If the wildness is tortillas and the Air Raid rather than a teal Cinderella run, that is Texas Tech.",
-    "ECU": "East Carolina knows your fun-loving, close-knit, underdog Group of Five heart. If the loyalty is Greenville purple rather than Conway teal, that is East Carolina."
+    "APP": "Appalachian State shares your Sun Belt giant-killer spirit, the upstart that loves knocking off the establishment. For them it is mountain grit and one famous afternoon in Ann Arbor, with no teal turf and no mullets anywhere in it.",
+    "TTU": "Texas Tech matches your quirky, chaotic, do-it-our-own-way joy on a bigger conference stage. Theirs comes with the Air Raid, a stadium in the middle of West Texas, and tortillas coming down out of the stands.",
+    "ECU": "East Carolina knows your fun-loving, close-knit, underdog Group of Five heart. Their whole town turns purple on a Saturday and has been doing it a lot longer than Conway has."
   }
 };
 
