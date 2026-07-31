@@ -126,7 +126,7 @@ const moduleQuestions = [
   {
     "id": "cfb_q7",
     "type": "choice",
-    "phase": "The fine print",
+    "phase": "What it comes down to",
     "question": "The kind of respect you actually want:",
     "options": [
       {
@@ -150,7 +150,7 @@ const moduleQuestions = [
   {
     "id": "cfb_q8",
     "type": "choice",
-    "phase": "The fine print",
+    "phase": "What it comes down to",
     "question": "How much does one single rival define you?",
     "options": [
       {
@@ -174,7 +174,7 @@ const moduleQuestions = [
   {
     "id": "cfb_q9",
     "type": "slider",
-    "phase": "The fine print",
+    "phase": "What it comes down to",
     "question": "Which is more you:",
     "left": "It's the whole of us, the crowd, the place, all of it together",
     "right": "I'm drawn to the standout, the one who carries the moment"
@@ -182,7 +182,7 @@ const moduleQuestions = [
   {
     "id": "cfb_q10",
     "type": "choice",
-    "phase": "The fine print",
+    "phase": "What it comes down to",
     "question": "On the biggest day, the energy you bring is:",
     "options": [
       {
@@ -206,7 +206,7 @@ const moduleQuestions = [
   {
     "id": "cfb_q11",
     "type": "choice",
-    "phase": "The fine print",
+    "phase": "What it comes down to",
     "question": "Where you're from and what you're part of:",
     "options": [
       {
@@ -230,7 +230,7 @@ const moduleQuestions = [
   {
     "id": "cfb_q12",
     "type": "choice",
-    "phase": "The fine print",
+    "phase": "What it comes down to",
     "question": "Through a long stretch where nothing went right, you were the one who:",
     "options": [
       {
