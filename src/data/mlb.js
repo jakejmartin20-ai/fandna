@@ -1961,6 +1961,20 @@ const scoring = {
       "PHI": 2,
       "TOR": 2
     },
+    "3": {
+      "NYY": 2,
+      "LAD": 2,
+      "STL": 2,
+      "ATL": 2,
+      "SF": 2,
+      "CIN": 2,
+      "SD": 2,
+      "TB": 2,
+      "MIL": 2,
+      "DET": 2,
+      "BAL": 2,
+      "HOU": 2
+    },
     "4": {
       "PIT": 2,
       "SEA": 2,
@@ -2046,6 +2060,22 @@ const scoring = {
       "TOR": 2,
       "KC": 2,
       "CIN": 2
+    },
+    "3": {
+      "NYY": 2,
+      "ATL": 2,
+      "SF": 2,
+      "SEA": 2,
+      "SD": 2,
+      "COL": 2,
+      "MIN": 2,
+      "DET": 2,
+      "CWS": 2,
+      "MIA": 2,
+      "TEX": 2,
+      "AZ": 2,
+      "WSH": 2,
+      "LAA": 2
     },
     "4": {
       "TB": 2,
@@ -2260,6 +2290,16 @@ const scoring = {
       "MIA": 2,
       "WSH": 2,
       "DET": 2
+    },
+    "3": {
+      "STL": 2,
+      "SF": 2,
+      "CIN": 2,
+      "CHC": 2,
+      "BOS": 2,
+      "SEA": 2,
+      "CWS": 2,
+      "AZ": 2
     },
     "4": {
       "NYY": 2,
