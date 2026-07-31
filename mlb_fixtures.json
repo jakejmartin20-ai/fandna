@@ -8,7 +8,7 @@
       "signatures": 30,
       "random": 40
     },
-    "note": "re-recorded 2026-07-16 on the shipped post-rebuild engine (core ffe8b26f / scoring 60f1ec66, community mean 5.266). The prior baseline's random winners predated the Jul-15 core rebuild and were never re-recorded through it (they reproduced only 19/40 on the shipped engine); all 30 signatures self-land unchanged. Randoms re-recorded here; 21 random winners moved (genuine post-rebuild re-derivations, not fixture rot or a q5 effect). Signatures unchanged."
+    "note": "re-recorded 2026-07-16 on the shipped post-rebuild engine (core ffe8b26f / scoring 60f1ec66, community mean 5.266). The prior baseline's random winners predated the Jul-15 core rebuild and were never re-recorded through it (they reproduced only 19/40 on the shipped engine); all 30 signatures self-land unchanged. Randoms re-recorded here; 21 random winners moved (genuine post-rebuild re-derivations, not fixture rot or a q5 effect). Signatures unchanged. | re-recorded 2026-07-31 after authoring the middle band on the three MLB sliders (mlb_q2, mlb_q4, mlb_q9): value 3 now awards 2 points to the teams whose own signature answers 3, camps unchanged. 8 random winners moved; all 30 signatures self-land unchanged."
   },
   "fixtures": [
     {
@@ -1095,8 +1095,8 @@
         "mlb_q11": "D",
         "mlb_q12": "B"
       },
-      "winner": "PHI",
-      "winnerName": "Philadelphia Phillies"
+      "winner": "SEA",
+      "winnerName": "Seattle Mariners"
     },
     {
       "id": "rnd_005",
@@ -1142,8 +1142,8 @@
         "mlb_q11": "C",
         "mlb_q12": "A"
       },
-      "winner": "NYM",
-      "winnerName": "New York Mets"
+      "winner": "CIN",
+      "winnerName": "Cincinnati Reds"
     },
     {
       "id": "rnd_006",
@@ -1471,8 +1471,8 @@
         "mlb_q11": "A",
         "mlb_q12": "D"
       },
-      "winner": "TOR",
-      "winnerName": "Toronto Blue Jays"
+      "winner": "MIL",
+      "winnerName": "Milwaukee Brewers"
     },
     {
       "id": "rnd_013",
@@ -1800,8 +1800,8 @@
         "mlb_q11": "B",
         "mlb_q12": "C"
       },
-      "winner": "MIL",
-      "winnerName": "Milwaukee Brewers"
+      "winner": "AZ",
+      "winnerName": "Arizona Diamondbacks"
     },
     {
       "id": "rnd_020",
@@ -1941,8 +1941,8 @@
         "mlb_q11": "A",
         "mlb_q12": "E"
       },
-      "winner": "TEX",
-      "winnerName": "Texas Rangers"
+      "winner": "HOU",
+      "winnerName": "Houston Astros"
     },
     {
       "id": "rnd_023",
@@ -2411,8 +2411,8 @@
         "mlb_q11": "C",
         "mlb_q12": "E"
       },
-      "winner": "CLE",
-      "winnerName": "Cleveland Guardians"
+      "winner": "CWS",
+      "winnerName": "Chicago White Sox"
     },
     {
       "id": "rnd_033",
@@ -2505,8 +2505,8 @@
         "mlb_q11": "B",
         "mlb_q12": "B"
       },
-      "winner": "CLE",
-      "winnerName": "Cleveland Guardians"
+      "winner": "DET",
+      "winnerName": "Detroit Tigers"
     },
     {
       "id": "rnd_035",
@@ -2599,8 +2599,8 @@
         "mlb_q11": "B",
         "mlb_q12": "B"
       },
-      "winner": "ATH",
-      "winnerName": "Athletics"
+      "winner": "MIL",
+      "winnerName": "Milwaukee Brewers"
     },
     {
       "id": "rnd_037",
