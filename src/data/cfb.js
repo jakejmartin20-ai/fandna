@@ -3804,7 +3804,7 @@ const scoring = {
     }
   },
   "cfb_q3": {
-      "3": { "BOI": 2, "VAT": 2, "OKS": 2, "TCU": 2, "MSU": 2, "TAM": 2, "WAS": 2, "MSS": 2, "NEB": 2, "ARK": 2, "FLA": 2, "TUL": 2, "MAR": 2 },
+      "3": { "BOI": 2, "VAT": 2, "OKS": 2, "TCU": 2, "MSU": 2, "TAM": 2, "WAS": 2, "MST": 2, "NEB": 2, "ARK": 2, "FLA": 2, "TUL": 2, "MAR": 2 },
     "1": {
       "TEX": 3,
       "USC": 3,
