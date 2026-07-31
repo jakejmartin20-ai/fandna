@@ -572,8 +572,8 @@ const teams = {
     "color": "#E41C38",
     "code3": "NEB",
     "kitType": "solid",
-    "tagline": "You have sold out every game since 1962 and cheered the other team off the field, win or lose.",
-    "desc": "You are the most loyal fanbase in America and one of the most decent. Memorial Stadium has sold out every single game since 1962, a record no sport in the NCAA can match, and on game day it becomes the third-largest city in the state. You built five national titles on in-state walk-ons and a defense so proud it earned its own name, the Blackshirts. And when the game ends, win or lose, the Sea of Red applauds the visiting team as it walks off, because that is who you are. The glory years are a while back now, and the wait has been long and hard. But the faith never breaks. Nobody leaves. Nobody ever has.",
+    "tagline": "You applaud the team that just beat you, every time, and you have never once thought that was strange.",
+    "desc": "You are the most loyal fanbase in America and one of the most decent. Memorial Stadium has sold out every single game since 1962, and on game day it becomes the third-largest city in the state. No program in any NCAA sport has a longer streak. You built five national titles on in-state walk-ons and a defense so proud it earned its own name, the Blackshirts. And when the game ends, win or lose, the Sea of Red applauds the visiting team as it walks off, because that is who you are. The glory years are a while back now, and the wait has been long and hard. But the faith never breaks. Nobody leaves. Nobody ever has.",
     "why": [
       "Your loyalty, community, and roots are all maxed out. This is an entire state's team, and the devotion is total and unconditional.",
       "You value decency as much as winning. Applauding the opponent off the field is a point of pride, not a gimmick.",
@@ -782,7 +782,7 @@ const teams = {
     "color": "#000000",
     "code3": "COL",
     "kitType": "solid",
-    "tagline": "You watched Ralphie thunder onto the field through the lean years and never stopped believing.",
+    "tagline": "Twenty years of bad football did not move you an inch. You never once considered leaving.",
     "desc": "You are loyalty tested by two long decades and never broken. Colorado won it all in 1990, a national title capped by Kordell Stewart's Miracle at Michigan and a live buffalo named Ralphie thundering onto the field before every half, one of the great traditions in sports. Then came the lean years, a slow slide into irrelevance that stretched on and on. Most fanbases would have drifted away. You did not. You kept filling mile-high Folsom Field, kept running Ralphie, kept believing, and lately the faith has been rewarded with a genuine resurgence and a 2024 Heisman winner. Yours is not front-running love. It is the deep, stubborn, black-and-gold kind that waits through the worst and shows up anyway. That is the Buffs.",
     "why": [
       "Your loyalty is the real story. You held on through twenty thankless years without ever walking away, and that devotion defines you.",
@@ -908,7 +908,7 @@ const teams = {
     "color": "#4D1979",
     "code3": "TCU",
     "kitType": "solid",
-    "tagline": "You root for a horned lizard, and twice you crashed the sport's biggest stage as the team nobody invited.",
+    "tagline": "Nobody picks you, nobody plans for you, and twice now you have wrecked the ending anyway.",
     "desc": "You are the little program that keeps gatecrashing the big party, and you do it rooting for a horned lizard. TCU spent decades as a mid-major nobody took seriously, then Gary Patterson built a defensive machine in Fort Worth that went undefeated and won the 2010 Rose Bowl, proof the establishment could not keep you out. You did it again in 2022, running the table and charging all the way to the national championship game as the team no one saw coming. You are purple through and through, loyal and balanced and quietly relentless, with the Riff Ram cheer echoing through Amon Carter Stadium. You do not have the bluebloods' resources or their respect. You just keep showing up where you are not supposed to be. Go Frogs.",
     "why": [
       "You blend loyalty, ambition, and balance. No single trait dominates, which is exactly how you sneak up on bigger programs.",
@@ -950,7 +950,7 @@ const teams = {
     "color": "#CC0000",
     "code3": "TTU",
     "kitType": "solid",
-    "tagline": "You throw tortillas onto the field, sling the ball all over West Texas, and charge out behind a masked rider.",
+    "tagline": "You turn scoreboards into nonsense and treat every Saturday night like a dare.",
     "desc": "You are the wildest show in West Texas, a program that does everything loud, fast, and a little bit crazy. Texas Tech is where the Air Raid was born, an offense built to sling the ball forty times a night and light up scoreboards until the numbers stop making sense. Your fans throw tortillas onto the field, your team charges out of the tunnel behind a Masked Rider on a black horse, and Lubbock on a Saturday night feels like nowhere else in the sport. You gave the world Patrick Mahomes and a pile of record-setting quarterbacks. You are passionate, quirky, chaotic, and fiercely loyal to a corner of Texas everyone else forgets. Wreck 'Em. Guns Up.",
     "why": [
       "Your chaos and emotion are maxed. You play fast, score in bunches, and thrive on the beautiful mess of it all.",
@@ -978,7 +978,7 @@ const teams = {
     "color": "#007377",
     "code3": "CST",
     "kitType": "solid",
-    "tagline": "You play on teal turf, grew mullets for the cameras, and crashed the rankings as football's feel-good team.",
+    "tagline": "Your mascot is a rooster from a medieval poem, and your whole identity is refusing to take yourself seriously.",
     "desc": "You are the most fun story in college football, a program that turned quirk into an identity and rode it all the way onto the national stage. You root for a Chanticleer, a proud, fierce rooster lifted straight out of Chaucer, and you play on bright teal turf near the beach in Conway, South Carolina. Your football program is barely two decades old, but in 2020 the Chants went undefeated, grew mullets and mustaches, hosted College GameDay for the Mormons versus Mullets showdown with BYU, and became the feel-good team of a hard year. You are not chasing anybody's pedigree. You are a young, loud, joyful upstart having the time of your life and inviting everyone along. Chants Up.",
     "why": [
       "Your chaos and joy are maxed out. You play loose, have fun, and turn every home game into a party.",
@@ -1503,7 +1503,7 @@ const greats = {
     {
       "name": "Doug Atkins",
       "years": "1950-1952",
-      "note": "the Hall of Fame defensive end"
+      "note": "a Hall of Famer at 6-foot-8 who arrived in Knoxville on a basketball scholarship"
     },
     {
       "name": "Eric Berry",
