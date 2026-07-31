@@ -445,6 +445,7 @@ function AppInner(){
       setEvidence(matchEvidence(activeSport,{coreAnswers,moduleAnswers,coreProfile}));
       setEvidenceInput({coreAnswers,moduleAnswers,coreProfile});
       setScreen("result");
+      try{ window.scrollTo(0,0); }catch(e){}
       setGenome(g=>({...g,[activeSport]:{club}}));
       track("quiz_completed",{sport:activeSport,club});
       saveResult(activeSport,{coreAnswers,coreProfile,club,moduleAnswers,scores:s});
@@ -555,6 +556,7 @@ function AppInner(){
     }
     setTab("result");
     setScreen("result");
+    try{ window.scrollTo(0,0); }catch(e){}
   }
 
   const team=result?teams[result]:null;
