@@ -261,6 +261,7 @@ function AppInner(){
   const llUnlocked  = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("ll");
   const l1Unlocked  = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("l1");
   const saUnlocked  = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("sa");
+  const cfbUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("cfb");
   const sportsList = SPORTS.map(s=>
     s.code==="NFL" ? {...s, live: s.live||nflUnlocked} :
     s.code==="MLB" ? {...s, live: s.live||mlbUnlocked} :
@@ -268,7 +269,8 @@ function AppInner(){
     s.code==="BL"  ? {...s, live: s.live||blUnlocked} :
     s.code==="LL"  ? {...s, live: s.live||llUnlocked} :
     s.code==="L1"  ? {...s, live: s.live||l1Unlocked} :
-    s.code==="SA"  ? {...s, live: s.live||saUnlocked} : s);
+    s.code==="SA"  ? {...s, live: s.live||saUnlocked} :
+    s.code==="CFB" ? {...s, live: s.live||cfbUnlocked} : s);
 
   // Active sport's data, bound to the same names the screens already use, so the result
   // screen and quiz read the right sport with no other changes. PL behaves exactly as before.
