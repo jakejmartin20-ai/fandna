@@ -277,7 +277,7 @@ function AppInner(){
   const D = SPORT_DATA[activeSport] || SPORT_DATA.PL;
   const moduleQuestions = D.moduleQuestions;
   const teams = D.teams, archetypes = D.archetypes, teamTextColors = D.teamTextColors;
-  const greats = D.greats, vitalStats = D.vitalStats, nearlyGot = D.nearlyGot;
+  const greats = D.greats, vitalStats = D.vitalStats; // nearlyGot retired from the result screen (chapter 04 is THE READOUT)
   const squadUrls = D.squadUrls;
   const milestones = D.milestones || {};
 
@@ -630,12 +630,24 @@ function AppInner(){
     ["Last title",  vit.lastTitle],
   ]).filter(([,v])=>v!=null&&v!=="") : [];
 
-  const ng = result ? (nearlyGot[result]||{}) : {};
-  // PL shows the four highest-scoring runners-up (dynamic). NFL shows the four matchups the
-  // craft authored for this team (the deliberate near-misses), which always carry a written line.
-  const nearClubs = activeSport!=="PL"
-    ? Object.keys(ng).filter(k=>teams[k]).sort((a,b)=>((scores||{})[b]||0)-((scores||{})[a]||0))
-    : sortedOthers.slice(0,4).map(([k])=>k).filter(k=>teams[k]);
+  // THE READOUT (chapter 04): the true chase pack, straight from the scores. The authored
+  // nearlyGot corpus is retired from the result screen; every runner gets the same anatomy.
+  // PL shows no named runners (a matrix runner-up is answer-cell accumulation, not a
+  // personality read) and carries the margin verdict and stress test only.
+  const READOUT_K = { MLB: 4, CFB: 4 };
+  const readoutRows = (activeSport!=="PL" && result)
+    ? sortedOthers.slice(0, READOUT_K[activeSport]||3).filter(([k])=>teams[k])
+    : [];
+  const topGap = sortedOthers.length ? (maxScore - sortedOthers[0][1]) : null;
+  // Margin bands, measured on live main (10k answer-space takers per league):
+  // fingerprint six share close<0.5 / clear>2.2 (pooled p25/p75); PL integer margins close<=1 / clear>=4.
+  const readoutVerdict = (topGap==null || !team) ? null : (()=>{
+    const close = activeSport==="PL" ? topGap<=1 : topGap<0.5;
+    const clear = activeSport==="PL" ? topGap>=4 : topGap>2.2;
+    if (close) return "A close read, but a read all the same. "+team.name+" is the call.";
+    if (clear) return "A clean read. "+team.name+", with room to spare.";
+    return team.name+" is the call.";
+  })();
 
   // ── Home-screen data, all manifest-driven ─────────────────────────────────
   // The share string lists every sport in the manifest: a completed one shows its club
@@ -1023,7 +1035,6 @@ function AppInner(){
                 {team.note&&(<p style={{fontSize:14,color:"#bbb",lineHeight:1.75,margin:"0 0 24px",borderLeft:`1px solid #252535`,paddingLeft:14,fontFamily:"'DM Mono',monospace"}}>{team.note}</p>)}
                 {/* Fandom vs FanDNA reframe (per 1b) - sport-aware */}
                 <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(15px,3.4vw,18px)",fontStyle:"italic",color:"#9898b8",lineHeight:1.6,margin:"6px 0 22px"}}>This is your {regOf(activeSport).noun} by DNA. {regOf(activeSport).tail}</p>
-                <MatchEvidence evidence={evidence} clubName={team.name} color={teamTextColors[result]||team.color} noun={regOf(activeSport).noun} section="stability"/>
             <ChapterHead n="02" title="Why you" sub="the answers and traits behind it" color={team.color} textColor={teamTextColors[result]||team.color}/>
                 {Array.isArray(team.why)&&team.why.length>0&&(
                   <div style={{borderLeft:`2px solid ${teamTextColors[result]||team.color}`,paddingLeft:14,margin:"0 0 22px"}}>
@@ -1090,52 +1101,43 @@ function AppInner(){
                 ):(
                   <p style={{fontSize:13,color:"#aaa",fontStyle:"italic",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>Stats not available for this club yet.</p>
                 )}
-            <ChapterHead n="04" title="Almost" sub="who else came close" color={team.color} textColor={teamTextColors[result]||team.color}/>
-                <p style={{fontSize:13,color:"#aaa",margin:"0 0 20px",fontFamily:"'DM Mono',monospace",lineHeight:1.6}}>
-                  These {regOf(activeSport).teams} scored closest to you. Here's what you share, and what separates you.
-                </p>
-                {nearClubs.length===0&&(
-                  <p style={{fontSize:"clamp(15px,3.5vw,17px)",color:"#ccc",fontStyle:"italic",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>
-                    Your match was clear, no close runners-up.
-                  </p>
-                )}
-                {nearClubs.map((k)=>{
-                  const nt=teams[k];
-                  if(!nt) return null;
-                  const rawPct=maxScore>0?Math.min(99,Math.round(((scores||{})[k]||0)/maxScore*100)):0;
-                  return(
-                    <div key={k} style={{marginBottom:20,border:"1px solid #1e1e2e",borderRadius:8,overflow:"hidden"}}>
-                      <div style={{height:2,background:nt.color}}/>
-                      <div style={{padding:"14px 16px"}}>
-                        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}>
-                          <div style={{display:"flex",alignItems:"center",gap:10}}>
-                            <ClubMark team={nt} size={40}/>
-                            <div>
-                              <div style={{fontSize:15,color:"#ddd",fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:400}}>{nt.name}</div>
-                              <div style={{fontSize:12,color:(teamTextColors[k]||nt.color),fontStyle:"italic",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>{archetypes[k]||""}</div>
-                            </div>
+            <ChapterHead n="04" title="The Readout" sub="your match, measured against the field" color={team.color} textColor={teamTextColors[result]||team.color}/>
+                {/* the strongest signal */}
+                <div style={{marginBottom:24}}>
+                  <div style={{display:"flex",alignItems:"baseline",gap:10,flexWrap:"wrap"}}>
+                    <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(24px,6vw,30px)",fontWeight:600,color:"#efe9e3"}}>{team.name}</span>
+                    <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:15,color:"#9898b8"}}>{archetypes[result]||""}</span>
+                  </div>
+                  <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.12em",color:(teamTextColors[result]||team.color),marginTop:8}}>the strongest signal in your sample</div>
+                </div>
+                {readoutRows.length>0&&(<>
+                  <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#8484b0",marginBottom:16}}>Nearest to your sequence</div>
+                  {readoutRows.map(([k,pts])=>{
+                    const nt=teams[k];
+                    const gap=maxScore-pts;
+                    const frac=maxScore>0?Math.max(0,Math.min(1,pts/maxScore)):0;
+                    return(
+                      <div key={k} style={{marginBottom:18}}>
+                        <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",marginBottom:8}}>
+                          <div style={{display:"flex",alignItems:"baseline",gap:8,minWidth:0}}>
+                            <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:17,color:"#ddd"}}>{nt.name}</span>
+                            <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:12.5,color:"#77779c",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{archetypes[k]||""}</span>
                           </div>
-                          <div style={{textAlign:"right"}}>
-                            <div style={{fontSize:18,color:"#ddd",fontFamily:"'DM Mono',monospace",fontWeight:300}}>{rawPct}%</div>
-                            <div style={{fontSize:11,color:"#aaa",fontFamily:"'DM Mono',monospace",letterSpacing:"0.1em"}}>of your score</div>
-                          </div>
+                          <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",whiteSpace:"nowrap",marginLeft:10}}>within {gap.toFixed(1)}</span>
                         </div>
-                        <div style={{height:2,background:"#141420",borderRadius:2,marginBottom:12,overflow:"hidden"}}>
-                          <div style={{height:"100%",width:`${rawPct}%`,background:nt.color,borderRadius:2}}/>
+                        <div style={{height:3,background:"#141420",borderRadius:2,overflow:"hidden"}}>
+                          <div style={{height:"100%",width:`${(frac*100).toFixed(1)}%`,background:"#4a4a6a",borderRadius:2}}/>
                         </div>
-                        {ng[k]?(
-                          <p style={{margin:0,fontSize:"clamp(15px,3.5vw,17px)",color:"#ccc",lineHeight:1.8,fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic"}}>
-                            {ng[k]}
-                          </p>
-                        ):(
-                          <p style={{margin:0,fontSize:13,color:"#ccc",lineHeight:1.7,fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic"}}>
-                            {nt.tagline}
-                          </p>
-                        )}
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </>)}
+                {readoutVerdict&&(
+                  <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(15px,3.5vw,17px)",color:"#9a9ac4",lineHeight:1.6,margin:"8px 0 22px"}}>{readoutVerdict}</p>
+                )}
+                <div style={{marginBottom:24}}>
+                  <MatchEvidence evidence={evidence} clubName={team.name} color={teamTextColors[result]||team.color} noun={regOf(activeSport).noun} moduleLabel={regOf(activeSport).leagueAbbr.toLowerCase()} section="stability"/>
+                </div>
                 <CrossMatch
                   sport={activeSport}
                   input={evidenceInput}
