@@ -1,85 +1,46 @@
-// FanDNA - MatchEvidence: the proof block on the PL result. Two honest pieces.
-//  1) Stability: how many of your answers you could change and still land this club.
-//     The big number and the cell strip are the SAME fact. A locked cell means changing
-//     that answer on its own does not move you off the club; an empty cell could have
-//     tipped it. This is the proof, and it calibrates itself: decisive results fill the
-//     strip, close ones leave gaps and say so.
-//  2) What tipped it: the three answers that pulled most distinctively toward the club.
-//     Texture, not proof. They never claim exclusivity, so they can never overclaim it.
+// FanDNA - MatchEvidence: the proof block on the result. Two honest pieces.
+//  1) Stress test (section="stability"): the same per-answer fact as ever, told as the
+//     test it is. Every answer is swapped for every alternative, one at a time; "held"
+//     counts the answers where no single change moves you off the team. Rendered inside
+//     THE READOUT (chapter 04). The old cell strip and verdict line retired with the
+//     Almost chapter; the readout's banded verdict (App.jsx) reads the margin instead.
+//  2) What tipped it (section="why"): the three answers that pulled most distinctively
+//     toward the team. Texture, not proof. They never claim exclusivity, so they can
+//     never overclaim it.
 // All copy here is user-facing, so: no em dashes. The structural noun (club / franchise /
-// ballclub) comes from the per-sport voice; evidence.safe is null for any sport not yet wired,
-// and we render nothing in that case.
+// ballclub) comes from the per-sport voice; evidence.safe is null for any sport not yet
+// wired, and we render nothing in that case.
 
-import { useState, useEffect } from "react";
+const CORE_N = 24; // the shared core is 24 questions in every sport
 
-function verdictLine(safe, total, club){
-  if (total > 0 && safe === total)
-    return "Every answer holds. Change any single answer, one at a time, and you still land " + club + ".";
-  const r = total > 0 ? safe / total : 0;
-  if (r >= 0.84) return "Rock solid. Nearly every answer holds. You land " + club + " from almost any version of your answers.";
-  if (r >= 0.60) return club + " came out on top. Most of your answers are locked, and a few could have tipped it.";
-  return "A close call. " + club + " edged it, and a good share of your answers could have sent you somewhere else.";
-}
-
-export function MatchEvidence({ evidence, clubName, color = "#b8567a", noun = "club", section }){
-  const [shown, setShown] = useState(false);
-  useEffect(() => { const t = setTimeout(() => setShown(true), 150); return () => clearTimeout(t); }, []);
-
+export function MatchEvidence({ evidence, clubName, color = "#b8567a", noun = "club", moduleLabel = "", section }){
   if (!evidence || evidence.safe == null) return null;
   const { safe, total, tips = [] } = evidence;
   const club = clubName || "your club";
-
-  // The cell strip mirrors the real per-answer pattern: locks[i] is true when that answer is
-  // locked (no single change moves you off the club). Evidence without a locks array falls back
-  // to an even spread of the same count, so the number always reads correctly either way.
-  let cells;
-  if (Array.isArray(evidence.locks) && evidence.locks.length === total){
-    cells = evidence.locks.map(Boolean);
-  } else {
-    const k = total - safe;
-    cells = [];
-    for (let i = 0; i < total; i++){
-      const pivotal = Math.floor((i + 1) * k / total) > Math.floor(i * k / total);
-      cells.push(!pivotal); // true = locked
-    }
-  }
   const stripColon = (s) => (s || "").replace(/\s*:\s*$/, "");
+
+  // Split held counts by layer when the real per-answer pattern is present. The evidence
+  // locks array is ordered core-first (24), module after; without it we show the total only.
+  let coreHeld = null, modHeld = null;
+  if (Array.isArray(evidence.locks) && evidence.locks.length === total && total > CORE_N){
+    coreHeld = evidence.locks.slice(0, CORE_N).filter(Boolean).length;
+    modHeld = safe - coreHeld;
+  }
 
   return (
     <div style={{marginTop: section ? 0 : 28}}>
 
       {section !== "why" && (<>
-      {/* STABILITY, the proof */}
+      {/* THE STRESS TEST, the proof */}
       <div style={{background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:14,padding:"18px 16px"}}>
-        <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#8484b0",marginBottom:14}}>How solid is this</div>
-
-        <div style={{display:"flex",alignItems:"baseline",gap:5,lineHeight:1}}>
-          <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:60,fontWeight:600,color:"#efe9e3"}}>{safe}</span>
-          <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:32,color:"#8484b0"}}>/ {total}</span>
+        <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#8484b0",marginBottom:12}}>The match, stress-tested</div>
+        <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(16px,3.6vw,18px)",fontWeight:300,color:"#e4ddd4",lineHeight:1.55,margin:0}}>
+          We went back through all {total} of your answers, changing each one at a time. {club} held through {safe} of them.
+        </p>
+        <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",marginTop:12,letterSpacing:"0.06em"}}>
+          {"held " + safe + " / " + total}
+          {coreHeld != null && (" · core " + coreHeld + " of " + CORE_N + (moduleLabel ? " · " + moduleLabel + " " + modHeld + " of " + (total - CORE_N) : ""))}
         </div>
-        <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",marginTop:5}}>answers locked to this {noun}</div>
-
-        {/* the cell strip: this IS the number, counted out */}
-        <div style={{marginTop:18,paddingTop:16,borderTop:"1px solid #242433"}}>
-          <div style={{display:"flex",flexWrap:"wrap",gap:4,marginBottom:14}}>
-            {cells.map((locked, i) => (
-              <span key={i} style={{
-                width:13,height:13,borderRadius:3,
-                background: locked ? color : "#191922",
-                border: locked ? ("1px solid " + color) : "1px solid #2c2c3c",
-                opacity: shown ? 1 : 0,
-                transform: shown ? "scale(1)" : "scale(0.7)",
-                transition: `opacity .25s ease ${(i * 0.012).toFixed(2)}s, transform .25s ease ${(i * 0.012).toFixed(2)}s`,
-              }}/>
-            ))}
-          </div>
-          <div style={{display:"flex",gap:16,flexWrap:"wrap",fontFamily:"'DM Mono',monospace",fontSize:9,color:"#9696b4"}}>
-            <span><i style={{display:"inline-block",width:10,height:10,borderRadius:2,background:color,marginRight:6,verticalAlign:"-1px"}}/>locked, will not change your {noun}</span>
-            <span><i style={{display:"inline-block",width:10,height:10,borderRadius:2,background:"#191922",border:"1px solid #2c2c3c",marginRight:6,verticalAlign:"-1px"}}/>could have tipped it</span>
-          </div>
-        </div>
-
-        <p style={{fontSize:14,color:"#c8c4be",lineHeight:1.55,margin:"14px 0 0"}}>{verdictLine(safe, total, club)}</p>
       </div>
       </>)}
 
