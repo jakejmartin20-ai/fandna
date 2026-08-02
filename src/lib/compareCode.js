@@ -22,7 +22,7 @@ import { DIM_ORDER } from "../data/core";
 const VERSION = 2;
 
 // APPEND-ONLY. Never reorder or remove. New leagues get the next free index.
-const SPORT_CODES = ["PL", "NFL", "MLB", "NBA", "BL", "LL", "L1", "SA"];
+const SPORT_CODES = ["PL", "NFL", "MLB", "NBA", "BL", "LL", "L1", "SA", "CFB"];
 const SPORT_IDX = Object.fromEntries(SPORT_CODES.map((c, i) => [c, i]));
 
 const clamp = (n, lo, hi) => Math.max(lo, Math.min(hi, n));
