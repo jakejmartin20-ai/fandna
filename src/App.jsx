@@ -1125,7 +1125,7 @@ function AppInner(){
                           </div>
                           <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",whiteSpace:"nowrap",marginLeft:10}}>within {gap.toFixed(1)}</span>
                         </div>
-                        <div style={{height:3,background:"#141420",borderRadius:2,overflow:"hidden"}}>
+                        <div style={{height:3,background:"#252533",borderRadius:2,overflow:"hidden"}}>
                           <div style={{height:"100%",width:`${(frac*100).toFixed(1)}%`,background:"#4a4a6a",borderRadius:2}}/>
                         </div>
                       </div>
