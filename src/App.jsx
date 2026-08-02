@@ -632,18 +632,30 @@ function AppInner(){
 
   // THE READOUT (chapter 04): the true chase pack, straight from the scores. The authored
   // nearlyGot corpus is retired from the result screen; every runner gets the same anatomy.
-  // PL shows no named runners (a matrix runner-up is answer-cell accumulation, not a
-  // personality read) and carries the margin verdict and stress test only.
-  const READOUT_K = { MLB: 4, CFB: 4 };
-  const readoutRows = (activeSport!=="PL" && result)
+  // PL RULE: matrix runners may be NAMED with score framing ("The closest readings"), but
+  // never with personality framing. No "nearest to your sequence", no similarity copy, no
+  // "what you share". A matrix score that finished close is a fact; a close identity is a
+  // claim the matrix cannot back. PL gaps are integer matrix points and display as integers.
+  const READOUT_K = { MLB: 4, CFB: 4, PL: 3 };
+  const readoutRows = result
     ? sortedOthers.slice(0, READOUT_K[activeSport]||3).filter(([k])=>teams[k])
     : [];
   const topGap = sortedOthers.length ? (maxScore - sortedOthers[0][1]) : null;
   // Margin bands, measured on live main (10k answer-space takers per league):
   // fingerprint six share close<0.5 / clear>2.2 (pooled p25/p75); PL integer margins close<=1 / clear>=4.
   const readoutVerdict = (topGap==null || !team) ? null : (()=>{
-    const close = activeSport==="PL" ? topGap<=1 : topGap<0.5;
-    const clear = activeSport==="PL" ? topGap>=4 : topGap>2.2;
+    if (activeSport==="PL"){
+      // PL margins are integer matrix points; the verdict carries the number in words.
+      const g = Math.round(topGap);
+      const WORDS = ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve"];
+      const n = g < WORDS.length ? WORDS[g] : String(g);
+      if (g === 0) return "Level at the top of the field. The tie-break made the call: "+team.name+".";
+      if (g === 1) return "A close read, but a read all the same. "+team.name+" is the call, a single point clear.";
+      if (g >= 4) return "A clean read. "+team.name+", "+n+" points clear of the field.";
+      return team.name+" is the call, "+n+" points clear of the field.";
+    }
+    const close = topGap<0.5;
+    const clear = topGap>2.2;
     if (close) return "A close read, but a read all the same. "+team.name+" is the call.";
     if (clear) return "A clean read. "+team.name+", with room to spare.";
     return team.name+" is the call.";
@@ -1111,7 +1123,7 @@ function AppInner(){
                   <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.12em",color:(teamTextColors[result]||team.color),marginTop:8}}>the strongest signal in your sample</div>
                 </div>
                 {readoutRows.length>0&&(<>
-                  <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#8484b0",marginBottom:16}}>Nearest to your sequence</div>
+                  <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#8484b0",marginBottom:16}}>{activeSport==="PL" ? "The closest readings" : "Nearest to your sequence"}</div>
                   {readoutRows.map(([k,pts])=>{
                     const nt=teams[k];
                     const gap=maxScore-pts;
@@ -1123,7 +1135,7 @@ function AppInner(){
                             <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:17,color:"#ddd"}}>{nt.name}</span>
                             <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:12.5,color:"#77779c",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{archetypes[k]||""}</span>
                           </div>
-                          <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",whiteSpace:"nowrap",marginLeft:10}}>within {gap.toFixed(1)}</span>
+                          <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",whiteSpace:"nowrap",marginLeft:10}}>within {activeSport==="PL" ? String(Math.round(gap)) : gap.toFixed(1)}</span>
                         </div>
                         <div style={{height:3,background:"#252533",borderRadius:2,overflow:"hidden"}}>
                           <div style={{height:"100%",width:`${(frac*100).toFixed(1)}%`,background:"#4a4a6a",borderRadius:2}}/>
