@@ -164,7 +164,7 @@ const teams = {
     note:"Rayo Vallecano are the club of Vallecas, a working-class Madrid barrio with fierce politics and the famously committed Bukaneros behind the goal. No money, no glamour, and more soul than the clubs across town.",
     kit:"https://tiendarayovallecano.es" },
   ESP: { code3:"ESP", kitType:"stripes", secondaryColor:"#FFFFFF", name:"Espanyol", emoji:"🔵", color:"#0078D0",
-    tagline:"You share a city with the most famous club on earth, and wear being the other one like armor.",
+    tagline:"The other team in Barcelona, and you have never once wished you were the first.",
     desc:"You share a city with the most famous club on the planet, and you have made being the other one into an identity all your own. It would be easy to disappear in that shadow, but you do the opposite: you dig in, you wear it with defiance, you take a strange pride in being the harder, less fashionable choice. You have your own history, your own people, and you support this club precisely because it is not the easy one. You wear the shadow like a choice, not a fate.",
     why:[
       "You chose the harder club in your own city, and you stay out of conviction rather than convenience.",

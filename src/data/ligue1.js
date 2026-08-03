@@ -86,7 +86,7 @@ const teams = {
     note:"No league title yet, but the 2019 Coupe de France, won on penalties against Paris Saint-Germain, ended a long wait. Pinault-backed, with an academy that produced Dembélé and Camavinga. Roazhon Park holds thirty thousand.",
     kit:"https://boutique.staderennais.com" },
   STR: { code3:"STR", kitType:"solid", secondaryColor:null, name:"Strasbourg", emoji:"🥨", color:"#0090D4",
-    tagline:"You died in the fifth tier in 2011, and your own supporters carried you all the way back.",
+    tagline:"Alsace built its club back from nothing, one division at a time.",
     desc:"You were bankrupt, dissolved, dumped to the bottom of the football pyramid, and your own supporters carried you all the way back. In 2011 the club died as a professional entity and started again in the fifth tier, and what happened next is the thing you are proudest of: the fans refused to let it disappear, filled a stadium meant for top-flight football to watch amateur games, and climbed, division by division, back to where you are now. Alsace is a border region with its own fierce identity, and you are its living proof that a club is its people, not its balance sheet.",
     why:[
       "You did not wait for someone to save it. You went and carried it back up yourselves.",
@@ -144,7 +144,7 @@ const teams = {
     note:"No league title, a club that yo-yos between the divisions and fights each year to stay up. Plays at Stade Raymond-Kopa, named for the France great.",
     kit:"https://boutique.angers-sco.fr" },
   LOR: { code3:"LOR", kitType:"duo", secondaryColor:"#000000", name:"Lorient", emoji:"🐟", color:"#F57E20",
-    tagline:"You are the Hakes of a Breton submarine port, forever bobbing between the divisions.",
+    tagline:"An orange shirt, an Atlantic port town, and no wish to be anything grander.",
     desc:"You are the Hakes of a Breton port, named for a fish, and you carry the salt-and-tide identity of the coast with real affection. Lorient is a submarine-base town on the Atlantic, modest and maritime, and your club bobs up and down between the divisions the way the boats ride the swell. You are not chasing greatness; you are a small, likeable, deeply local club that knows the sea and knows itself. The orange shirt and the Merlus nickname are unmistakably yours, and there is a quiet pride in being exactly that and nothing grander.",
     why:[
       "Brittany, the water, a town you can walk across. That scale is not a limitation to you, it is the appeal.",
@@ -154,7 +154,7 @@ const teams = {
     note:"No league title, though the 2002 Coupe de France sits in the cabinet. The Merlus, the Hakes, of a Breton submarine port.",
     kit:"https://boutique.fclorient.bzh" },
   PFC: { code3:"PFC", kitType:"solid", secondaryColor:null, name:"Paris FC", emoji:"🌃", color:"#001B4E",
-    tagline:"You waited forty-six years to climb back, the billionaires' bid to give Paris a second club.",
+    tagline:"Serious money, no history to answer to, and every intention of climbing.",
     desc:"You are the new ambition in a city that already has a giant, and you mean to give Paris a second club whether anyone asked for one or not. For decades you were the forgotten half of the capital, forty-six years out of the top flight, while the other Paris side became a global superpower. Now serious money has arrived, a project to build something real and fast, and you are back among the elite with a plan to climb much higher. You are not weighed down by history or sentiment. You are a clean, cold, well-funded bid to matter, and you are only getting started.",
     why:[
       "Serious money and an explicit plan to rise sit behind you, and you carry yourself as something on the way up.",

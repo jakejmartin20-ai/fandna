@@ -136,7 +136,7 @@ const teams = {
     kit:"https://shop.fcaugsburg.de" },
 
   KOE: { code3:"KOE", kitType:"duo", secondaryColor:"#E2261F", name:"1. FC Köln", emoji:"🐐", color:"#FFFFFF",
-    tagline:"Up, down, up again, and you would not swap the chaos. Hennes the goat watches every fall.",
+    tagline:"Up, down, up again. Hennes the goat has watched every fall and never once looked away.",
     desc:"You love it precisely because it never stops putting you through it. Promoted, relegated, promoted again, a club that cannot sit still, and you would not swap the chaos for a stable mid-table existence if you could. This is a carnival city, and the football matches the temperament: feel everything, laugh through the worst of it, and turn up again next week regardless. Your loyalty does not depend on the league you are in. It is unconditional, and a little unhinged, and entirely the point.",
     why:[
       "The yo-yo years would have broken most people. They bonded you tighter.",

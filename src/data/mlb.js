@@ -399,7 +399,7 @@ const teams = {
     "name": "Cleveland Guardians",
     "emoji": "🛡️",
     "color": "#E31937",
-    "tagline": "The last title came in 1948. No team that has ever won one has waited this long since.",
+    "tagline": "Seventy-eight years and counting, and not once has that been a reason to leave.",
     "desc": "Yours is the longest wait of any team that has actually won one. The last title came in 1948, and the closest you have come since was a World Series you led three games to one before it slipped away in extra innings. You even changed your name, to one drawn from the giant statues guarding a bridge downtown. Through it all you run a thrifty, clever machine that develops stars and then watches them leave for richer teams. The drought outlasts every star who passes through.",
     "why": [
       "Nineteen forty-eight, and not once have you threatened to leave over it. The drought is part of who you are now.",
@@ -418,7 +418,7 @@ const teams = {
       "Fifty years, no World Series, and not once have you gone looking for another team.",
       "Nine outs. That is how close last fall came, and you will be back in April like it never happened.",
       "The ache is not a side effect. For you it is most of the feeling, and indifference would be worse.",
-      "It is tied to a place, too. The far corner of the map by the water, which makes the devotion feel less like habit and more like a pact you keep on purpose."
+      "It is tied to a place, too. Nobody drifts into this by accident, which makes the devotion feel less like habit and more like a pact you keep on purpose."
     ]
   },
   "PIT": {
@@ -516,7 +516,7 @@ const teams = {
     "name": "Kansas City Royals",
     "emoji": "👑",
     "color": "#004687",
-    "tagline": "You built a title on speed and contact, under the only fountains in the game.",
+    "tagline": "Two titles, thirty years apart, and neither one bought.",
     "desc": "You proved a thing the sport had half forgotten: that you can win it all on speed, contact, defense, and a bullpen that simply shut the door, without the home runs and the payroll everyone else chased. You did it in a blue unchanged in half a century, under the only fountains in the game, in a ballpark people travel to just to see the water. There was a long drought before that ring and struggle since. But the way you won, small-ball and relentless and team-first, only you can really claim it.",
     "why": [
       "The unglamorous craft beats the highlight reel for you. Speed, contact, defense, a bullpen that shuts the door.",
@@ -544,7 +544,7 @@ const teams = {
     "tagline": "The city that put the world on wheels. The same old English D your grandparents wore, through every boom and every bust.",
     "desc": "You come from the city that built the American car and then took the worst of its collapse, and your baseball carries all of it: the grind, the toughness, the refusal to be counted out. You wear an old English letter unchanged in a century, the same one your grandparents wore through the good decades and the brutal ones. You have won it all and you have also lost a hundred and nineteen games in a single year. What stays constant is the work. In Detroit, you do not quit on the team or the town.",
     "why": [
-      "The same letter on the chest for a century, worn through the good decades and the brutal ones.",
+      "The same letter on the chest for a century. Other clubs freshen the look every few years; you have never once seen the need.",
       "You hold steady when things go wrong. A hundred and nineteen losses in a single year did not produce a crisis of faith, just a longer winter.",
       "Your loyalty is bound up with a place and its working life, through booms and busts alike."
     ]
@@ -554,7 +554,7 @@ const teams = {
     "name": "Chicago White Sox",
     "emoji": "⚪",
     "color": "#A6AEB2",
-    "tagline": "You're the South Side the postcards skip, blue collar and still here through the worst of it.",
+    "tagline": "Chicago's other team, and you would not cross town for anything.",
     "desc": "You are the South Side, the half of Chicago the postcards skip, blue collar and proud of the chip on your shoulder. You broke an eighty-eight-year drought of your own in 2005 and barely got the attention for it. Then in 2024 you lost more games in a season than any team in the modern history of the sport, an almost unthinkable low, fans chanting at ownership to sell. Still you show up, because South Side loyalty was never about the standings. It was about not being the other team in town.",
     "why": [
       "A chip on the shoulder is standard issue here, the pride of the overlooked half of a divided town.",
@@ -611,7 +611,7 @@ const teams = {
     "why": [
       "Your sense of belonging is enormous in scale, tied to a whole country rather than one city.",
       "Being the only one of your kind matters to you. There is real pride in representing something bigger than a hometown.",
-      "Last fall is still raw, a Game 7 in extra innings with the trophy almost in hand, and you will carry it straight into next April."
+      "Last fall is still raw. They clinched it on your field, in front of your people, and you will carry that straight into next April."
     ]
   },
   "TEX": {
