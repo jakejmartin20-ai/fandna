@@ -660,7 +660,7 @@ const teams = {
     "desc": "You are precision made visible, a program where discipline is not a value but the entire point. Air Force runs the triple option with a machinist's exactness, willing smaller, faster teams past bigger ones through timing, technique, and sheer execution. Game day in the Rockies is a spectacle of the sky: the cadets march on in formation, the Wings of Blue parachute team drops the game ball onto the field, fighter jets scream over the mountains, and live falcons soar at halftime. You have won more Commander-in-Chief's Trophies than Army or Navy, and you measure yourself against your own standard, not anyone else's. This is football as a mission: clean, exact, and executed by people who will spend their lives doing exactly that.",
     "why": [
       "Your process orientation is maxed out. You win through precision, technique, and flawless execution, not brute force.",
-      "You measure yourself against your own standard. Your pride is in doing the mission right, not in chasing anyone else.",
+      "You hold yourself to a bar nobody handed you. The Academy runs on an honor code, not just a rulebook, and the football team lives under it like everyone else.",
       "You value discipline and service. The option, the flyovers, and the parachutes are all one thing: exactness with a purpose."
     ]
   },
@@ -717,7 +717,7 @@ const teams = {
     "why": [
       "Your emotion and chaos run high. You are unpredictable, rowdy, and dangerous, exactly the kind of team nobody wants to visit.",
       "Your loyalty and roots are deep. Pirate Nation is Greenville's team, and the devotion never wavers with the standings.",
-      "You live for the upset. Being the underdog with a giant-killer streak is the whole identity, and you wear it proudly."
+      "You live for the upset. In 1999 a hurricane pushed you out of your own stadium, and you still took down ninth-ranked Miami on a borrowed field."
     ]
   },
   "WAZ": {
@@ -954,7 +954,7 @@ const teams = {
     "desc": "You are the wildest show in West Texas, a program that does everything loud, fast, and a little bit crazy. Texas Tech is where the Air Raid was born, an offense built to sling the ball forty times a night and light up scoreboards until the numbers stop making sense. Your fans throw tortillas onto the field, your team charges out of the tunnel behind a Masked Rider on a black horse, and Lubbock on a Saturday night feels like nowhere else in the sport. You gave the world Patrick Mahomes and a pile of record-setting quarterbacks. You are passionate, quirky, chaotic, and fiercely loyal to a corner of Texas everyone else forgets. Wreck 'Em. Guns Up.",
     "why": [
       "Your chaos and emotion are maxed. You play fast, score in bunches, and thrive on the beautiful mess of it all.",
-      "You do things your own way. Tortillas, the Air Raid, and a masked rider on a horse are pure, unfiltered Texas Tech.",
+      "You do things your own way. Michael Crabtree tiptoeing past number one Texas with a second left is still the most Texas Tech play ever run.",
       "You are fiercely loyal to your patch of West Texas. Lubbock is far from everything, and you wear that isolation as pride."
     ]
   },
