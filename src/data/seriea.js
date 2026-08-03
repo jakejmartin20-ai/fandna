@@ -76,7 +76,7 @@ const teams = {
     note:"The 2024 Europa League, the first major European trophy in the club's history and the first won by an Italian side in a quarter of a century. La Dea, the Goddess of Bergamo, built on the best academy in Italy.",
     kit:"https://store.atalanta.it" },
   FIO: { code3:"FIO", kitType:"solid", secondaryColor:null, name:"Fiorentina", emoji:"🪻", color:"#5E2E86",
-    tagline:"You wear a purple no one else in Italy wears, with fierce Florentine pride and the near-miss for a birthright.",
+    tagline:"Florence in football form: certain, proud, and forever a step short of the trophy.",
     desc:"You wear a color no one else in Italy wears, and you carry the pride of one of the most beautiful cities on earth like a birthright. Florence does not do small, and neither do you: the purple, the fierce belief that your city is the equal of anyone's, a support that adores its heroes and never forgets a slight. You have come achingly close, a string of near-misses that would have broken a lesser place, and still you turn up certain that this is the year. You are art and pride and heartbreak, and you would not swap a minute of it.",
     why:[
       "The city is not a backdrop. Florence believes it is the center of the world, and you have never once disagreed.",
