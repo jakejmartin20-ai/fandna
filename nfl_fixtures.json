@@ -2287,8 +2287,8 @@
         "nfl_q11": "2",
         "nfl_q12": "A"
       },
-      "winner": "KC",
-      "winnerName": "Kansas City Chiefs"
+      "winner": "SF",
+      "winnerName": "San Francisco 49ers"
     },
     {
       "id": "nfl_rand_29",
@@ -2837,8 +2837,8 @@
         "nfl_q11": "5",
         "nfl_q12": "A"
       },
-      "winner": "ARI",
-      "winnerName": "Arizona Cardinals"
+      "winner": "BUF",
+      "winnerName": "Buffalo Bills"
     },
     {
       "id": "nfl_rand_40",
