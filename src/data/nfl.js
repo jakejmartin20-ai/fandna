@@ -776,7 +776,7 @@ const archetypes = {
   "CIN": "The Stripes",
   "ATL": "The Dirty Birds",
   "ARI": "Big Red",
-  "WAS": "The Burgundy and Gold",
+  "WAS": "The Hogs",
   "NYJ": "Gang Green",
   "TEN": "Titan Up",
   "HOU": "H-Town",
