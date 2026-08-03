@@ -636,7 +636,7 @@ function AppInner(){
   // never with personality framing. No "nearest to your sequence", no similarity copy, no
   // "what you share". A matrix score that finished close is a fact; a close identity is a
   // claim the matrix cannot back. PL gaps are integer matrix points and display as integers.
-  const READOUT_K = { MLB: 4, CFB: 4, PL: 3 };
+  const READOUT_K = { MLB: 4, CFB: 4, NFL: 4, PL: 3 };
   const readoutRows = result
     ? sortedOthers.slice(0, READOUT_K[activeSport]||3).filter(([k])=>teams[k])
     : [];
@@ -1190,7 +1190,7 @@ function AppInner(){
                 <button onClick={()=>startSport(nextSport.code)}
                   style={{display:"block",width:"100%",textAlign:"left",background:`${(team&&team.color)||"#6a5ad0"}12`,border:`1px solid ${(team&&team.color)||"#6a5ad0"}55`,borderRadius:12,padding:"18px 52px 18px 20px",cursor:"pointer",position:"relative"}}>
                   <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.24em",textTransform:"uppercase",color:"#9a9ac4",marginBottom:8}}>Next strand</div>
-                  <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:26,color:"#efe9e3",lineHeight:1.1}}>Find your {nextSport.name} team</div>
+                  <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:26,color:"#efe9e3",lineHeight:1.1}}>Find your {nextSport.name} {regOf(nextSport.code).noun}</div>
                   <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:15,color:"#9898b8",marginTop:6}}>Same core, different game. {SPORT_DATA[nextSport.code].moduleQuestions.length} questions.</div>
                   <span style={{position:"absolute",right:20,top:"50%",transform:"translateY(-50%)",fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:34,color:"#b9b4c8",lineHeight:1}}>&rsaquo;</span>
                 </button>
