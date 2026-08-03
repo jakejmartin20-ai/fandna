@@ -81,6 +81,10 @@ const moduleQuestions = [
       {
         "label": "Whenever. I expect to be good, and I usually am.",
         "value": "D"
+      },
+      {
+        "label": "So close I could taste them, more than once. I'll get there yet.",
+        "value": "E"
       }
     ]
   },
@@ -161,6 +165,10 @@ const moduleQuestions = [
       {
         "label": "The people in the seats next to me. The rest is decoration.",
         "value": "D"
+      },
+      {
+        "label": "The ride itself. The highs, the gut punches, the whole story.",
+        "value": "E"
       }
     ]
   },
@@ -235,23 +243,23 @@ const moduleQuestions = [
     "question": "Something you loved got taken from you. What did you do?",
     "options": [
       {
-        "label": "Built my own from scratch and never looked back. Worth every bit.",
+        "label": "Started over from scratch and poured myself into the new thing. Worth every bit.",
         "value": "A"
       },
       {
-        "label": "Fought to keep the name, the colors, the history. Kept it mine.",
+        "label": "Held on to what made it mine. You can take a lot from me, but not that.",
         "value": "B"
       },
       {
-        "label": "Built a new one and made sure nobody would enjoy facing it.",
+        "label": "Rebuilt myself into something tougher than what I lost.",
         "value": "C"
       },
       {
-        "label": "Hit bottom once, and built the best chapter from the wreckage.",
+        "label": "Hit rock bottom, then built the best chapter of my life out of the wreckage.",
         "value": "D"
       },
       {
-        "label": "It never happened to me, and I intend to keep it that way.",
+        "label": "It's never happened to me, and I intend to keep it that way.",
         "value": "E"
       }
     ]
@@ -261,8 +269,8 @@ const moduleQuestions = [
     "type": "slider",
     "phase": "What it comes down to",
     "question": "Which is more you:",
-    "left": "I did something once that was flat-out perfect, and no one has matched it since. A small, honest part of me roots for everyone else to keep falling short, so it stays mine alone.",
-    "right": "I just refuse to disappear. Given almost nothing, somehow impossible to get rid of."
+    "left": "Quietly, I root for everyone else to fall short, so my best thing stays mine alone.",
+    "right": "I just refuse to disappear. Given almost nothing, impossible to get rid of."
   },
   {
     "id": "nfl_q10",
@@ -298,7 +306,7 @@ const moduleQuestions = [
     "phase": "What it comes down to",
     "question": "Your volume:",
     "left": "Calm. I don't need to make noise, the results speak.",
-    "right": "Loud enough to move the needle, and on a good day loud enough to move the ground."
+    "right": "Loud. On a good day, loud enough to move the ground."
   },
   {
     "id": "nfl_q12",
@@ -2342,6 +2350,10 @@ const scoring = {
       "SF": 2,
       "BAL": 2,
       "NE": 2
+    },
+    "E": {
+      "MIN": 2,
+      "ATL": 2
     }
   },
   "nfl_q2": {
@@ -2418,6 +2430,10 @@ const scoring = {
       "BUF": 2,
       "SEA": 3,
       "PHI": 2
+    },
+    "E": {
+      "ATL": 2,
+      "MIN": 2
     }
   },
   "nfl_q5": {
