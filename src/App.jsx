@@ -5,6 +5,7 @@ import { coreQuestions, DIM_ORDER, DIM_LABELS } from "./data/core";
 import { SPORT_DATA } from "./lib/sportData";
 import { scoreCore, scoreModule, matchEvidence, decompressProfile } from "./lib/scoring";
 import { loadState, saveResult, clearAll } from "./lib/storage";
+import { pingResult } from "./lib/telemetry";
 import { generateShareCard } from "./lib/card";
 import { ChoiceQ, BinaryQ, SliderQ } from "./components/quiz";
 import { ClubMark } from "./components/ClubMark";
@@ -448,6 +449,7 @@ function AppInner(){
       try{ window.scrollTo(0,0); }catch(e){}
       setGenome(g=>({...g,[activeSport]:{club}}));
       track("quiz_completed",{sport:activeSport,club});
+      pingResult({sport:activeSport,club,scores:s,coreProfile,coreAnswers,retake:!!(genome[activeSport]&&genome[activeSport].club)});
       saveResult(activeSport,{coreAnswers,coreProfile,club,moduleAnswers,scores:s});
       if(pendingCompare){ setCompareFriend(pendingCompare); setPendingCompare(null); setScreen("compare"); }
     }
