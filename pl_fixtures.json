@@ -8,7 +8,8 @@
     "count": 63,
     "rebaseline_note": [
       "s51 PL calibration: rand_19 HU -> EV (Everton +3 pl_q8/B, +2 pl_q9/left, +2 pl_q10/C). Accepted flip; zero signature flips. Crystal Palace + Man Utd cells also re-keyed.",
-      "rand_25: LI -> MU (true tie LI=MU=35 pts; profile closer to MU)"
+      "rand_25: LI -> MU (true tie LI=MU=35 pts; profile closer to MU)",
+      "s20 PL honesty pass (q7-E cluster + Villa q18): removed q7-E \"don't get attached\" from MU/WO/SP/LU/CV; Villa q18 left 2->1 (results-leaning). Zero signature flips. 5 random baselines re-recorded: rand_01 MU->MC, rand_03 CV->BR, rand_12 LU->NF, rand_29 AV->NC, rand_30 MU->LI."
     ]
   },
   "fixtures": [
@@ -1136,8 +1137,8 @@
         "pl_q13": "right",
         "pl_q14": "E"
       },
-      "winner": "MU",
-      "winnerName": "Manchester United"
+      "winner": "MC",
+      "winnerName": "Manchester City"
     },
     {
       "id": "rand_02",
@@ -1228,8 +1229,8 @@
         "pl_q13": "left",
         "pl_q14": "A"
       },
-      "winner": "CV",
-      "winnerName": "Coventry City"
+      "winner": "BR",
+      "winnerName": "Brentford"
     },
     {
       "id": "rand_04",
@@ -1642,8 +1643,8 @@
         "pl_q13": "right",
         "pl_q14": "D"
       },
-      "winner": "LU",
-      "winnerName": "Leeds United"
+      "winner": "NF",
+      "winnerName": "Nottingham Forest"
     },
     {
       "id": "rand_13",
@@ -2424,8 +2425,8 @@
         "pl_q13": "right",
         "pl_q14": "C"
       },
-      "winner": "AV",
-      "winnerName": "Aston Villa"
+      "winner": "NC",
+      "winnerName": "Newcastle United"
     },
     {
       "id": "rand_30",
@@ -2470,8 +2471,8 @@
         "pl_q13": "left",
         "pl_q14": "E"
       },
-      "winner": "MU",
-      "winnerName": "Manchester United"
+      "winner": "LI",
+      "winnerName": "Liverpool"
     },
     {
       "id": "rand_31",
