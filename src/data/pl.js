@@ -223,9 +223,9 @@ const moduleQuestions = [
     "id": "pl_q13",
     "type": "binary",
     "phase": "What it comes down to",
-    "question": "Belonging needs:",
-    "left": "A place, a ground, a street, a city. Geography is the whole thing",
-    "right": "A story, a history, a mythology, something that gives it meaning"
+    "question": "What pulls at you more:",
+    "left": "How it used to be. The past is where the meaning lives",
+    "right": "What's still ahead. The best of it hasn't happened yet"
   },
   {
     "id": "pl_q14",
@@ -1956,7 +1956,6 @@ const scoring = {
       "AR": 1
     },
     "E": {
-      "EV": 2,
       "MU": 2,
       "WO": 2,
       "SP": 1,
@@ -2209,7 +2208,6 @@ const scoring = {
       "LI": 2,
       "MU": 3,
       "AR": 1,
-      "EV": 1,
       "AV": 2,
       "CH": 2,
       "WH": 1,
@@ -2965,27 +2963,25 @@ const scoring = {
   },
   "pl_q13": {
     "left": {
-      "NC": 3,
-      "CP": 3,
-      "WH": 3,
-      "CV": 3,
-      "WO": 2,
+      "SU": 3,
+      "NF": 3,
+      "EV": 3,
+      "LU": 3,
       "IT": 3,
+      "AV": 2,
+      "WH": 2,
+      "MU": 2,
+      "NC": 2,
       "FU": 2,
-      "SU": 2,
-      "BO": 1,
-      "CH": 1,
-      "HU": 3
+      "CV": 2
     },
     "right": {
-      "LI": 2,
-      "NF": 3,
-      "MU": 2,
-      "EV": 2,
-      "LU": 2,
-      "AR": 2,
-      "CH": 1,
-      "SP": 2
+      "MC": 3,
+      "BR": 3,
+      "BH": 3,
+      "BO": 2,
+      "CH": 2,
+      "HU": 2
     }
   },
   "pl_q14": {
