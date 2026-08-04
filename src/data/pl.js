@@ -115,9 +115,9 @@ const moduleQuestions = [
     "id": "pl_q7",
     "type": "binary",
     "phase": "What it comes down to",
-    "question": "When you turn out to be right:",
-    "left": "Knowing it myself is enough",
-    "right": "I need the world to admit it, eventually"
+    "question": "When you've been wronged:",
+    "left": "I let it go. Holding on only weighs me down",
+    "right": "I hold onto it. Some things don't get forgiven"
   },
   {
     "id": "pl_q8",
@@ -2743,7 +2743,6 @@ const scoring = {
       "LI": 2,
       "MU": 2,
       "AR": 2,
-      "EV": 1,
       "NC": 2,
       "AV": 2,
       "CH": 2
@@ -2793,25 +2792,24 @@ const scoring = {
   },
   "pl_q7": {
     "left": {
-      "WO": 3,
-      "BR": 3,
-      "FU": 2,
-      "IT": 3,
-      "BH": 2,
-      "MC": 1,
-      "BO": 3
+      "BO": 3,
+      "FU": 3,
+      "BH": 3,
+      "HU": 3,
+      "CV": 3,
+      "BR": 2,
+      "IT": 2,
+      "AV": 2
     },
     "right": {
-      "NC": 2,
+      "EV": 3,
+      "CP": 3,
+      "WH": 3,
+      "SU": 3,
       "LU": 3,
-      "SU": 2,
       "MU": 2,
-      "CP": 2,
-      "AV": 2,
-      "LI": 1,
-      "CV": 1,
-      "CH": 2,
-      "HU": 1
+      "NC": 2,
+      "WO": 2
     }
   },
   "pl_q8": {
@@ -2868,7 +2866,6 @@ const scoring = {
       "SU": 2,
       "LU": 2,
       "MU": 2,
-      "EV": 1,
       "CH": 2
     }
   },
@@ -2904,9 +2901,7 @@ const scoring = {
     "E": {
       "AR": 2,
       "SP": 2,
-      "LE": 3,
-      "EV": 1
-    }
+      "LE": 3}
   },
   "pl_q11": {
     "left": {
@@ -3026,9 +3021,7 @@ const scoring = {
       "NF": 3,
       "LE": 3,
       "LU": 3,
-      "SP": 2,
-      "EV": 1
-    }
+      "SP": 2}
   }
 };
 
