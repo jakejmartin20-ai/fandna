@@ -9,7 +9,8 @@
     "rebaseline_note": [
       "s51 PL calibration: rand_19 HU -> EV (Everton +3 pl_q8/B, +2 pl_q9/left, +2 pl_q10/C). Accepted flip; zero signature flips. Crystal Palace + Man Utd cells also re-keyed.",
       "rand_25: LI -> MU (true tie LI=MU=35 pts; profile closer to MU)",
-      "s20 PL honesty pass (q7-E cluster + Villa q18): removed q7-E \"don't get attached\" from MU/WO/SP/LU/CV; Villa q18 left 2->1 (results-leaning). Zero signature flips. 5 random baselines re-recorded: rand_01 MU->MC, rand_03 CV->BR, rand_12 LU->NF, rand_29 AV->NC, rand_30 MU->LI."
+      "s20 PL honesty pass (q7-E cluster + Villa q18): removed q7-E \"don't get attached\" from MU/WO/SP/LU/CV; Villa q18 left 2->1 (results-leaning). Zero signature flips. 5 random baselines re-recorded: rand_01 MU->MC, rand_03 CV->BR, rand_12 LU->NF, rand_29 AV->NC, rand_30 MU->LI.",
+      "s20 Hull/Wolves place-honesty: HU q7-E \"don't get attached\" removed (q7.E now empty), HU added to q7-B \"leaving feels like failing someone\" (3); WO moved off q8 \"not defined by place\" onto q8 \"leaning place\" (2). Signature personas re-recorded to answer honestly: HU sig q7 E->B, WO sig q8 1->4. Zero signature winner flips, zero random flips."
     ]
   },
   "fixtures": [
@@ -636,7 +637,7 @@
         "q5": "C",
         "q6": "right",
         "q7": "C",
-        "q8": "1",
+        "q8": "4",
         "q9": "A",
         "q10": "right",
         "q11": "D",
@@ -1058,7 +1059,7 @@
         "q4": "1",
         "q5": "A",
         "q6": "left",
-        "q7": "E",
+        "q7": "B",
         "q8": "5",
         "q9": "A",
         "q10": "left",
