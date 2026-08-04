@@ -245,6 +245,8 @@ function AppInner(){
   const [resequenceConfirm,setResequenceConfirm]=useState(false); // the "re-sequence core?" confirm modal
   const [resequenceDelta,setResequenceDelta]=useState(null);      // {moved:[{sport,from,to}],stale:[...]} shown once after a re-sequence
   const [coreProfile,setCoreProfile]=useState(null); // the user's 7-dim core; drives the strip everywhere
+  const [landed,setLanded]=useState(true);        // result reveal: club-card head hidden until the strip has read, then lands (finish path only)
+  const [revealSeq,setRevealSeq]=useState(false); // true only when arriving at a result straight from finishing the quiz
   const [screen,setScreen]=useState("home");     // "home" | "quiz" | "result" | "compare" | "how" - the genome home is the landing page
   const [howFrom,setHowFrom]=useState("home");   // which screen the explainer was opened from, so Back returns there
   const [genome,setGenome]=useState({});         // saved results map { PL:{club} } - drives the home strands + share string
@@ -445,6 +447,7 @@ function AppInner(){
       setResult(club);
       setEvidence(matchEvidence(activeSport,{coreAnswers,moduleAnswers,coreProfile}));
       setEvidenceInput({coreAnswers,moduleAnswers,coreProfile});
+      { const rm = typeof window!=="undefined" && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; setRevealSeq(!rm); setLanded(rm); }
       setScreen("result");
       try{ window.scrollTo(0,0); }catch(e){}
       setGenome(g=>({...g,[activeSport]:{club}}));
@@ -557,11 +560,27 @@ function AppInner(){
       setEvidenceInput({coreAnswers:st.coreAnswers||{},moduleAnswers:r.answers||{},coreProfile:st.coreProfile||null});
     }
     setTab("result");
+    setRevealSeq(false); setLanded(true);
     setScreen("result");
     try{ window.scrollTo(0,0); }catch(e){}
   }
 
+  // Result reveal (finish path only): after the strip settles (~1.55s), the club's identity lands.
+  // A revisit from home or reduced-motion shows it immediately (landed stays true).
+  useEffect(()=>{
+    if(revealSeq && screen==="result" && result && !landed){
+      const t=setTimeout(()=>setLanded(true),1550);
+      return ()=>clearTimeout(t);
+    }
+  },[revealSeq,screen,result,landed]);
+
   const team=result?teams[result]:null;
+  const rvHead=(d)=> landed
+    ? {opacity:1,transform:"none",transition:`opacity .5s ease ${d}s, transform .55s cubic-bezier(.2,.8,.3,1) ${d}s`}
+    : {opacity:0,transform:"translateY(10px) scale(.99)"};
+  const rvName= landed
+    ? {opacity:1,transform:"none",filter:"blur(0px)",transition:"opacity .5s ease .12s, transform .55s cubic-bezier(.2,.8,.3,1) .12s, filter .6s ease .12s"}
+    : {opacity:0,transform:"translateY(10px) scale(.99)",filter:"blur(6px)"};
   const blk=(p)=> (p&&Object.keys(p).length) ? ("\uD83E\uDDEC "+coreBlocks(p)) : "";
   // Names of any restored-from-link leagues (no saved answers), for the re-sequence confirm note.
   const staleLeagueNames=useMemo(()=>{
@@ -771,6 +790,7 @@ function AppInner(){
         @keyframes slideOut {from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-8px)}}
         @keyframes popIn    {0%{opacity:0;transform:scale(.94)}60%{transform:scale(1.01)}100%{opacity:1;transform:scale(1)}}
         @keyframes fadeIn   {from{opacity:0}to{opacity:1}}
+        @keyframes rvBloom  {0%{transform:scale(.72);opacity:0}28%{opacity:.5}100%{transform:scale(1.8);opacity:0}}
         @keyframes strandPulse {0%,100%{border-color:#3a3a50}50%{border-color:#6a6a90}}
         html,body{margin:0;overscroll-behavior:none}
         .app-root{min-height:100vh;min-height:100svh}
@@ -866,7 +886,7 @@ function AppInner(){
 
         {/* ── QUIZ ── */}
         {screen==="quiz"&&(
-          <>
+          <div style={{minHeight:"calc(100svh - 64px)",display:"flex",flexDirection:"column"}}>
             <h1 style={{position:"absolute",width:1,height:1,padding:0,margin:-1,overflow:"hidden",clip:"rect(0,0,0,0)",whiteSpace:"nowrap",border:0}}>
               FanDNA quiz: {mode==="core" ? "Your core" : ((SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League")}
             </h1>
@@ -934,6 +954,7 @@ function AppInner(){
               </div>
             </div>
 
+            <div style={{flex:1,display:"flex",flexDirection:"column",justifyContent:"center"}}>
             {/* Entry framing, first question only (per 1b) */}
             {cur===0&&(
               <div style={{textAlign:"center",marginBottom:26}}>
@@ -954,7 +975,8 @@ function AppInner(){
             {q.type==="choice"&&<ChoiceQ key={q.id} q={q} onSelect={handleSelect}/>}
             {q.type==="binary"&&<BinaryQ key={q.id} q={q} onSelect={handleSelect}/>}
             {q.type==="slider"&&<SliderQ key={q.id} q={q} onSelect={handleSelect}/>}
-          </>
+            </div>
+          </div>
         )}
 
         {/* ── RESULT ── */}
@@ -982,15 +1004,16 @@ function AppInner(){
             <div style={{border:`1px solid ${team.color}33`,borderRadius:14,overflow:"hidden",background:"#14141c",marginBottom:14}}>
               <div style={{background:`linear-gradient(180deg,${team.color}2e 0%,transparent 70%)`,padding:"22px 18px 4px",textAlign:"center"}}>
                 <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",letterSpacing:"0.34em",textTransform:"uppercase",marginBottom:14}}>your {regOf(activeSport).noun}</div>
-                <div style={{display:"inline-flex"}}>
+                <div style={{display:"inline-flex",position:"relative",...rvHead(0)}}>
                   <ClubMark team={team} size={84}/>
+                  <span aria-hidden="true" style={{position:"absolute",inset:0,borderRadius:"50%",border:`2px solid ${team.color}`,opacity:0,pointerEvents:"none",animation:(revealSeq&&landed)?"rvBloom .8s ease-out":"none"}}/>
                 </div>
-                <h1 style={{fontFamily:"'Cormorant Garamond',Georgia,serif",margin:"14px 0 0",fontSize:"clamp(28px,7vw,38px)",fontWeight:300,color:"#e8e4de",letterSpacing:"-.02em",lineHeight:1}}>{team.name}</h1>
-                <div style={{display:"inline-flex",alignItems:"center",gap:7,background:`${team.color}15`,border:`1px solid ${team.color}30`,borderRadius:5,padding:"4px 11px",marginTop:11}}>
+                <h1 style={{fontFamily:"'Cormorant Garamond',Georgia,serif",margin:"14px 0 0",fontSize:"clamp(28px,7vw,38px)",fontWeight:300,color:"#e8e4de",letterSpacing:"-.02em",lineHeight:1,...rvName}}>{team.name}</h1>
+                <div style={{display:"inline-flex",alignItems:"center",gap:7,background:`${team.color}15`,border:`1px solid ${team.color}30`,borderRadius:5,padding:"4px 11px",marginTop:11,...rvHead(0.24)}}>
                   <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#aaa",letterSpacing:"0.2em",textTransform:"uppercase"}}>type</span>
                   <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:13,color:(teamTextColors[result]||team.color),fontStyle:"italic"}}>{archetypes[result]}</span>
                 </div>
-                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:15,color:"#c9c4bd",fontStyle:"italic",margin:"13px auto 0",maxWidth:300,lineHeight:1.45}}>{team.tagline}</p>
+                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:15,color:"#c9c4bd",fontStyle:"italic",margin:"13px auto 0",maxWidth:300,lineHeight:1.45,...rvHead(0.36)}}>{team.tagline}</p>
               </div>
 
               {coreProfile&&(
@@ -1002,7 +1025,7 @@ function AppInner(){
               {/* Universal genome line: this club is how the user's core shows up in THIS league.
                   Display-only, templated on team.name + the register's articled league phrase
                   (regOf().leagueIn) so it reads true on every league. Periods only, no em dashes. */}
-              <div style={{padding:"0 16px 14px",textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:13,fontStyle:"italic",color:"#9a9ac4",lineHeight:1.45}}>{team.name} is how your genome shows up in {regOf(activeSport).leagueIn}.</div>
+              <div style={{padding:"0 16px 14px",textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:13,fontStyle:"italic",color:"#9a9ac4",lineHeight:1.45,...rvHead(0.46)}}>{team.name} is how your genome shows up in {regOf(activeSport).leagueIn}.</div>
 
               <div style={{padding:"0 16px 16px"}}>
                 <div style={{display:"flex",flexDirection:"column",gap:5,alignItems:"center",marginBottom:6}}>
