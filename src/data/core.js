@@ -163,7 +163,7 @@ const coreQuestions = [
         "value": "A"
       },
       {
-        "label": "Stay, but it costs you more than you show.",
+        "label": "Stay, but it costs me more than I show.",
         "value": "B"
       },
       {
@@ -235,7 +235,7 @@ const coreQuestions = [
         "value": "A"
       },
       {
-        "label": "It matters, but how you win matters too.",
+        "label": "It matters, but winning the right way matters too.",
         "value": "B"
       },
       {
@@ -343,7 +343,7 @@ const coreQuestions = [
         "value": "A"
       },
       {
-        "label": "Share it with one or two people close to you.",
+        "label": "Share it with one or two people close to me.",
         "value": "B"
       },
       {
@@ -355,7 +355,7 @@ const coreQuestions = [
         "value": "D"
       },
       {
-        "label": "Wait for the catch, good news makes you nervous.",
+        "label": "Wait for the catch, good news makes me nervous.",
         "value": "E"
       }
     ]
@@ -391,7 +391,7 @@ const coreQuestions = [
         "value": "D"
       },
       {
-        "label": "Quiet satisfaction. You always knew.",
+        "label": "Quiet satisfaction. I always knew.",
         "value": "E"
       }
     ]
@@ -401,7 +401,7 @@ const coreQuestions = [
     "type": "binary",
     "phase": "How do you feel it?",
     "question": "Your suffering:",
-    "left": "Is private, you feel it alone",
+    "left": "Is private, I feel it alone",
     "right": "Is shared, misery loves company and honesty"
   },
   {
@@ -411,7 +411,7 @@ const coreQuestions = [
     "question": "Something you built from scratch finally pays off. You feel:",
     "options": [
       {
-        "label": "Vindicated. You knew it all along.",
+        "label": "Vindicated. I knew it all along.",
         "value": "A"
       },
       {
@@ -438,7 +438,7 @@ const coreQuestions = [
     "phase": "How do you feel it?",
     "question": "Hope, for you:",
     "left": "Is rational, based on genuine evidence",
-    "right": "Persists regardless of evidence. You can't kill it"
+    "right": "Persists regardless of evidence. It refuses to die"
   }
 ];
 

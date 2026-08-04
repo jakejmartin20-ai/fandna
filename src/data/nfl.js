@@ -19,11 +19,11 @@ const moduleQuestions = [
     "question": "What makes something feel truly yours?",
     "options": [
       {
-        "label": "Something handed down. A legacy you inherited and carry on.",
+        "label": "Something handed down. A legacy I inherited and carry on.",
         "value": "A"
       },
       {
-        "label": "Something you built. Made from nothing, owing no one.",
+        "label": "Something I built myself. Made from nothing, owing no one.",
         "value": "B"
       }
     ]
@@ -51,7 +51,7 @@ const moduleQuestions = [
     "question": "What earns your respect?",
     "options": [
       {
-        "label": "The grind. The unglamorous work nobody thanks you for.",
+        "label": "The grind. The unglamorous work that never gets a thank-you.",
         "value": "A"
       },
       {
@@ -92,26 +92,26 @@ const moduleQuestions = [
     "id": "nfl_q2",
     "type": "choice",
     "phase": "The fine print",
-    "question": "The thing you love keeps breaking your heart. Inside, you:",
+    "question": "The thing you love keeps breaking your heart. What happens inside?",
     "options": [
       {
-        "label": "Show up louder. Every heartbreak somehow pulled more people in.",
+        "label": "I show up louder. Every heartbreak somehow pulls more people in.",
         "value": "A"
       },
       {
-        "label": "Brace for the knife. You made peace with doom and cheer anyway.",
+        "label": "I brace for the knife. I've made peace with doom, and I cheer anyway.",
         "value": "B"
       },
       {
-        "label": "Laugh, and believe again next year. Wrong every time, certain anyway.",
+        "label": "I laugh, and believe again next year. Wrong every time, certain anyway.",
         "value": "C"
       },
       {
-        "label": "Stopped keeping score of what it owes you. It's just yours.",
+        "label": "I stopped keeping score of what it owes me. It's just mine.",
         "value": "D"
       },
       {
-        "label": "Don't have that problem. I expect to win, and mostly I do.",
+        "label": "I don't have that problem. I expect to win, and mostly I do.",
         "value": "E"
       }
     ]
@@ -247,7 +247,7 @@ const moduleQuestions = [
         "value": "A"
       },
       {
-        "label": "Held on to what made it mine. You can take a lot from me, but not that.",
+        "label": "Held on to what made it mine. They can take a lot from me, but not that.",
         "value": "B"
       },
       {
@@ -269,8 +269,8 @@ const moduleQuestions = [
     "type": "slider",
     "phase": "What it comes down to",
     "question": "Which is more you:",
-    "left": "Quietly, I root for everyone else to fall short, so my best thing stays mine alone.",
-    "right": "I just refuse to disappear. Given almost nothing, impossible to get rid of."
+    "left": "One perfect year. I'd trade a lifetime of pretty good for a single untouchable season.",
+    "right": "The long haul. Give me a hundred years of trying over one perfect year."
   },
   {
     "id": "nfl_q10",
