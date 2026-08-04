@@ -1274,8 +1274,8 @@
         "pl_q13": "left",
         "pl_q14": "A"
       },
-      "winner": "AV",
-      "winnerName": "Aston Villa"
+      "winner": "WH",
+      "winnerName": "West Ham"
     },
     {
       "id": "rand_05",
@@ -1412,8 +1412,8 @@
         "pl_q13": "left",
         "pl_q14": "C"
       },
-      "winner": "SP",
-      "winnerName": "Tottenham Hotspur"
+      "winner": "SU",
+      "winnerName": "Sunderland"
     },
     {
       "id": "rand_08",
@@ -1504,8 +1504,8 @@
         "pl_q13": "right",
         "pl_q14": "E"
       },
-      "winner": "EV",
-      "winnerName": "Everton"
+      "winner": "SP",
+      "winnerName": "Tottenham Hotspur"
     },
     {
       "id": "rand_10",
@@ -1780,8 +1780,8 @@
         "pl_q13": "left",
         "pl_q14": "C"
       },
-      "winner": "MC",
-      "winnerName": "Manchester City"
+      "winner": "FU",
+      "winnerName": "Fulham"
     },
     {
       "id": "rand_16",
@@ -1826,8 +1826,8 @@
         "pl_q13": "left",
         "pl_q14": "E"
       },
-      "winner": "AV",
-      "winnerName": "Aston Villa"
+      "winner": "WO",
+      "winnerName": "Wolves"
     },
     {
       "id": "rand_17",
@@ -2378,8 +2378,8 @@
         "pl_q13": "left",
         "pl_q14": "E"
       },
-      "winner": "LI",
-      "winnerName": "Liverpool"
+      "winner": "MC",
+      "winnerName": "Manchester City"
     },
     {
       "id": "rand_29",
@@ -2424,8 +2424,8 @@
         "pl_q13": "right",
         "pl_q14": "C"
       },
-      "winner": "AV",
-      "winnerName": "Aston Villa"
+      "winner": "EV",
+      "winnerName": "Everton"
     },
     {
       "id": "rand_30",
@@ -2654,8 +2654,8 @@
         "pl_q13": "left",
         "pl_q14": "B"
       },
-      "winner": "CV",
-      "winnerName": "Coventry City"
+      "winner": "AR",
+      "winnerName": "Arsenal"
     },
     {
       "id": "rand_35",
