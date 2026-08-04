@@ -886,7 +886,7 @@ function AppInner(){
 
         {/* ── QUIZ ── */}
         {screen==="quiz"&&(
-          <div style={{minHeight:"calc(100svh - 64px)",display:"flex",flexDirection:"column"}}>
+          <>
             <h1 style={{position:"absolute",width:1,height:1,padding:0,margin:-1,overflow:"hidden",clip:"rect(0,0,0,0)",whiteSpace:"nowrap",border:0}}>
               FanDNA quiz: {mode==="core" ? "Your core" : ((SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League")}
             </h1>
@@ -954,7 +954,6 @@ function AppInner(){
               </div>
             </div>
 
-            <div style={{flex:1,display:"flex",flexDirection:"column",justifyContent:"center"}}>
             {/* Entry framing, first question only (per 1b) */}
             {cur===0&&(
               <div style={{textAlign:"center",marginBottom:26}}>
@@ -975,8 +974,7 @@ function AppInner(){
             {q.type==="choice"&&<ChoiceQ key={q.id} q={q} onSelect={handleSelect}/>}
             {q.type==="binary"&&<BinaryQ key={q.id} q={q} onSelect={handleSelect}/>}
             {q.type==="slider"&&<SliderQ key={q.id} q={q} onSelect={handleSelect}/>}
-            </div>
-          </div>
+          </>
         )}
 
         {/* ── RESULT ── */}
