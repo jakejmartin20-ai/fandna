@@ -54,7 +54,7 @@ const moduleQuestions = [
     "question": "Which stings most?",
     "options": [
       {
-        "label": "Being second when you should have won.",
+        "label": "Being second when I should have won.",
         "value": "A"
       },
       {
@@ -66,11 +66,11 @@ const moduleQuestions = [
         "value": "C"
       },
       {
-        "label": "Being let down by someone you trusted completely.",
+        "label": "Being let down by someone I trusted completely.",
         "value": "D"
       },
       {
-        "label": "Watching someone else succeed with your approach.",
+        "label": "Watching someone else succeed with my approach.",
         "value": "E"
       }
     ]
@@ -116,8 +116,8 @@ const moduleQuestions = [
     "type": "binary",
     "phase": "What it comes down to",
     "question": "When you turn out to be right:",
-    "left": "Knowing it yourself is enough",
-    "right": "You need the world to eventually acknowledge it"
+    "left": "Knowing it myself is enough",
+    "right": "I need the world to admit it, eventually"
   },
   {
     "id": "pl_q8",
@@ -134,7 +134,7 @@ const moduleQuestions = [
         "value": "B"
       },
       {
-        "label": "Understand it even if you hate it. Institutions aren't simple.",
+        "label": "Understand it even if I hate it. Institutions aren't simple.",
         "value": "C"
       },
       {
@@ -142,7 +142,7 @@ const moduleQuestions = [
         "value": "D"
       },
       {
-        "label": "Separate the institution from the thing you actually love.",
+        "label": "Separate the institution from the thing I actually love.",
         "value": "E"
       }
     ]
@@ -170,7 +170,7 @@ const moduleQuestions = [
         "value": "B"
       },
       {
-        "label": "Complicated. Depends what you've been through to get there.",
+        "label": "Complicated. Depends what I've been through to get there.",
         "value": "C"
       },
       {

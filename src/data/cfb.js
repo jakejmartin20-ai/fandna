@@ -70,19 +70,19 @@ const moduleQuestions = [
         "value": "A"
       },
       {
-        "label": "The tradition holds, you carried what was handed to you.",
+        "label": "The tradition holds, I carried what was handed to me.",
         "value": "B"
       },
       {
-        "label": "You did it your own unmistakable way.",
+        "label": "I did it my own unmistakable way.",
         "value": "C"
       },
       {
-        "label": "You did it the hard way, when quitting was right there.",
+        "label": "I did it the hard way, when quitting was right there.",
         "value": "D"
       },
       {
-        "label": "You shared it with the exact people you started with.",
+        "label": "I shared it with the exact people I started with.",
         "value": "E"
       }
     ]
@@ -106,11 +106,11 @@ const moduleQuestions = [
         "value": "C"
       },
       {
-        "label": "Let it harden into fuel, and remember exactly who did it to you.",
+        "label": "Let it harden into fuel, and remember exactly who did it to me.",
         "value": "D"
       },
       {
-        "label": "You're already onto the next thing, dwelling isn't you.",
+        "label": "I'm already onto the next thing, dwelling isn't me.",
         "value": "E"
       }
     ]

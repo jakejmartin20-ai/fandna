@@ -22,7 +22,7 @@ const moduleQuestions = [
         "value": "A"
       },
       {
-        "label": "A grind you wouldn't trade, even on the worst nights.",
+        "label": "A grind I wouldn't trade, even on the worst nights.",
         "value": "B"
       },
       {
@@ -34,7 +34,7 @@ const moduleQuestions = [
         "value": "D"
       },
       {
-        "label": "A faith you keep through every long cold spell.",
+        "label": "A faith I keep through every long cold spell.",
         "value": "E"
       }
     ]
@@ -66,11 +66,11 @@ const moduleQuestions = [
         "value": "C"
       },
       {
-        "label": "Loud either way. You feel every pitch, and so does everyone near you.",
+        "label": "Loud either way. I feel every pitch, and so does everyone near me.",
         "value": "D"
       },
       {
-        "label": "Unbothered. You expect to be fine, and you usually are.",
+        "label": "Unbothered. I expect to be fine, and I usually am.",
         "value": "E"
       }
     ]
@@ -94,7 +94,7 @@ const moduleQuestions = [
         "value": "A"
       },
       {
-        "label": "Ache for it. You need it to happen while you're still here to see it.",
+        "label": "Ache for it. I need it to happen while I'm still here to see it.",
         "value": "B"
       },
       {
@@ -106,7 +106,7 @@ const moduleQuestions = [
         "value": "D"
       },
       {
-        "label": "Don't relate. You don't expect to be kept waiting.",
+        "label": "Don't relate. I don't expect to be kept waiting.",
         "value": "E"
       }
     ]
@@ -134,7 +134,7 @@ const moduleQuestions = [
         "value": "D"
       },
       {
-        "label": "However it comes. You're just relieved it finally happened.",
+        "label": "However it comes. I'm just relieved it finally happened.",
         "value": "E"
       }
     ]
@@ -150,19 +150,19 @@ const moduleQuestions = [
         "value": "A"
       },
       {
-        "label": "Something that would break you. You need it within your lifetime.",
+        "label": "Something that would break me. I need it within my lifetime.",
         "value": "B"
       },
       {
-        "label": "Exactly why you'd treasure the one time it finally arrived.",
+        "label": "Exactly why I'd treasure the one time it finally arrived.",
         "value": "C"
       },
       {
-        "label": "A debt the world owes you, and you have stopped expecting it to pay.",
+        "label": "A debt the world owes me, and I have stopped expecting it to pay.",
         "value": "D"
       },
       {
-        "label": "Not a thing you think about. You expect yours sooner than that.",
+        "label": "Not a thing I think about. I expect mine sooner than that.",
         "value": "E"
       }
     ]
@@ -178,7 +178,7 @@ const moduleQuestions = [
         "value": "A"
       },
       {
-        "label": "Build your own from nothing and dare anyone to enjoy facing it.",
+        "label": "Build my own from nothing and dare anyone to enjoy facing it.",
         "value": "B"
       },
       {
@@ -186,11 +186,11 @@ const moduleQuestions = [
         "value": "C"
       },
       {
-        "label": "Came back from the lowest point imaginable and made it your proudest chapter.",
+        "label": "Came back from the lowest point imaginable and made it my proudest chapter.",
         "value": "D"
       },
       {
-        "label": "Never happened to you. What's yours has always been yours.",
+        "label": "Never happened to me. What's mine has always been mine.",
         "value": "E"
       }
     ]
@@ -210,7 +210,7 @@ const moduleQuestions = [
     "question": "Baseball drowns in its own history, the records, the ghosts. To you that history is:",
     "options": [
       {
-        "label": "Everything. You measure today against a glorious past and mostly find today wanting.",
+        "label": "Everything. I measure today against a glorious past and mostly find today wanting.",
         "value": "A"
       },
       {
@@ -218,15 +218,15 @@ const moduleQuestions = [
         "value": "B"
       },
       {
-        "label": "A weight you'd love to finally escape by writing something new.",
+        "label": "A weight I'd love to finally escape by writing something new.",
         "value": "C"
       },
       {
-        "label": "Someone else's. Your story is still being written, fresh.",
+        "label": "Someone else's. My story is still being written, fresh.",
         "value": "D"
       },
       {
-        "label": "Background. You're here for right now, not the museum.",
+        "label": "Background. I'm here for right now, not the museum.",
         "value": "E"
       }
     ]
@@ -266,7 +266,7 @@ const moduleQuestions = [
     "question": "Strip away winning. On a warm night at the park, what you're really there for is:",
     "options": [
       {
-        "label": "The people beside you. It was always about who you share it with.",
+        "label": "The people beside me. It was always about who I share it with.",
         "value": "A"
       },
       {
@@ -274,15 +274,15 @@ const moduleQuestions = [
         "value": "B"
       },
       {
-        "label": "The everyday escape. A few quiet hours that are just yours.",
+        "label": "The everyday escape. A few quiet hours that are just mine.",
         "value": "C"
       },
       {
-        "label": "The chance, however small, to see something you'll tell your grandkids about.",
+        "label": "The chance, however small, to see something I'll tell my grandkids about.",
         "value": "D"
       },
       {
-        "label": "The win. Don't romanticize it, you came to win.",
+        "label": "The win. Don't romanticize it, I came to win.",
         "value": "E"
       }
     ]
