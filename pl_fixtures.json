@@ -1276,8 +1276,8 @@
         "pl_q13": "left",
         "pl_q14": "A"
       },
-      "winner": "AV",
-      "winnerName": "Aston Villa"
+      "winner": "WH",
+      "winnerName": "West Ham"
     },
     {
       "id": "rand_05",
@@ -2196,8 +2196,8 @@
         "pl_q13": "right",
         "pl_q14": "D"
       },
-      "winner": "AR",
-      "winnerName": "Arsenal"
+      "winner": "LI",
+      "winnerName": "Liverpool"
     },
     {
       "id": "rand_25",
