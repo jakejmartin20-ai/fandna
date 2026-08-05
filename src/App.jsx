@@ -265,6 +265,7 @@ function AppInner(){
   const l1Unlocked  = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("l1");
   const saUnlocked  = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("sa");
   const cfbUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("cfb");
+  const nhlUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("nhl");
   const sportsList = SPORTS.map(s=>
     s.code==="NFL" ? {...s, live: s.live||nflUnlocked} :
     s.code==="MLB" ? {...s, live: s.live||mlbUnlocked} :
@@ -273,7 +274,8 @@ function AppInner(){
     s.code==="LL"  ? {...s, live: s.live||llUnlocked} :
     s.code==="L1"  ? {...s, live: s.live||l1Unlocked} :
     s.code==="SA"  ? {...s, live: s.live||saUnlocked} :
-    s.code==="CFB" ? {...s, live: s.live||cfbUnlocked} : s);
+    s.code==="CFB" ? {...s, live: s.live||cfbUnlocked} :
+    s.code==="NHL" ? {...s, live: s.live||nhlUnlocked} : s);
 
   // Active sport's data, bound to the same names the screens already use, so the result
   // screen and quiz read the right sport with no other changes. PL behaves exactly as before.
@@ -657,7 +659,7 @@ function AppInner(){
   // never with personality framing. No "nearest to your sequence", no similarity copy, no
   // "what you share". A matrix score that finished close is a fact; a close identity is a
   // claim the matrix cannot back. PL gaps are integer matrix points and display as integers.
-  const READOUT_K = { MLB: 4, CFB: 4, NFL: 4, PL: 3 };
+  const READOUT_K = { MLB: 4, CFB: 4, NFL: 4, NHL: 4, PL: 3 };
   const readoutRows = result
     ? sortedOthers.slice(0, READOUT_K[activeSport]||3).filter(([k])=>teams[k])
     : [];
@@ -708,7 +710,7 @@ function AppInner(){
   const untakenAvail = availSports.filter(s=>!(genome[s.code]&&genome[s.code].club));
   const nextSport = untakenAvail[0]||null;
   const coreCount = coreQuestions.length;
-  const moduleCounts = { PL: SPORT_DATA.PL.moduleQuestions.length, NFL: SPORT_DATA.NFL.moduleQuestions.length, MLB: SPORT_DATA.MLB.moduleQuestions.length, NBA: SPORT_DATA.NBA.moduleQuestions.length, BL: SPORT_DATA.BL.moduleQuestions.length, LL: SPORT_DATA.LL.moduleQuestions.length, L1: SPORT_DATA.L1.moduleQuestions.length, SA: SPORT_DATA.SA.moduleQuestions.length, CFB: SPORT_DATA.CFB.moduleQuestions.length };
+  const moduleCounts = { PL: SPORT_DATA.PL.moduleQuestions.length, NFL: SPORT_DATA.NFL.moduleQuestions.length, MLB: SPORT_DATA.MLB.moduleQuestions.length, NBA: SPORT_DATA.NBA.moduleQuestions.length, BL: SPORT_DATA.BL.moduleQuestions.length, LL: SPORT_DATA.LL.moduleQuestions.length, L1: SPORT_DATA.L1.moduleQuestions.length, SA: SPORT_DATA.SA.moduleQuestions.length, CFB: SPORT_DATA.CFB.moduleQuestions.length, NHL: SPORT_DATA.NHL.moduleQuestions.length };
 
   // Build the share card (the user's core feeds the strip), then either open the share sheet
   // or save the image. Download always saves. Both fall back to copying the caption.
