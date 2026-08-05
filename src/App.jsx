@@ -248,6 +248,7 @@ function AppInner(){
   const [landed,setLanded]=useState(true);        // result reveal: club-card head hidden until the strip has read, then lands (finish path only)
   const [revealSeq,setRevealSeq]=useState(false); // true only when arriving at a result straight from finishing the quiz
   const [screen,setScreen]=useState("home");     // "home" | "quiz" | "result" | "compare" | "how" - the genome home is the landing page
+  const [showTop,setShowTop]=useState(false);   // back-to-top affordance on the long single-scroll result (display-only)
   const [howFrom,setHowFrom]=useState("home");   // which screen the explainer was opened from, so Back returns there
   const [genome,setGenome]=useState({});         // saved results map { PL:{club} } - drives the home strands + share string
   const [activeSport,setActiveSport]=useState("PL"); // which sport's quiz/result/card is in play
@@ -403,6 +404,15 @@ function AppInner(){
     window.addEventListener("keydown",h);
     return()=>window.removeEventListener("keydown",h);
   },[cur,q,result,screen]);
+
+  // Back-to-top: show a jump-to-top button once the reader is well down the long result scroll.
+  useEffect(()=>{
+    if(screen!=="result"){ setShowTop(false); return; }
+    const onScroll=()=>setShowTop(window.scrollY>640);
+    onScroll();
+    window.addEventListener("scroll",onScroll,{passive:true});
+    return ()=>window.removeEventListener("scroll",onScroll);
+  },[screen]);
 
   function handleSelect(val){
     const na={...answers,[q.id]:val};
@@ -813,6 +823,16 @@ function AppInner(){
         background:`radial-gradient(ellipse at 30% 40%, ${screen==="compare"?"transparent":(result&&teams[result]?teams[result].color+"08":"#ffffff08")} 0%, transparent 65%)`,
         transition:"background 1s ease",
       }}/>
+
+      {/* Back to top: floats over the long single-scroll result once you have scrolled down. Display-only. */}
+      {screen==="result" && showTop && (
+        <button type="button" aria-label="Back to top"
+          onClick={()=>{ const rm = typeof window!=="undefined" && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; try{ window.scrollTo({top:0,behavior:rm?"auto":"smooth"}); }catch(e){ try{ window.scrollTo(0,0); }catch(_){} } }}
+          style={{position:"fixed",right:18,bottom:20,zIndex:40,width:44,height:44,borderRadius:"50%",background:"rgba(30,30,46,0.92)",border:"1px solid #34344a",color:"#c8c4d8",fontSize:19,lineHeight:1,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 4px 16px rgba(0,0,0,0.45)",backdropFilter:"blur(4px)",WebkitBackdropFilter:"blur(4px)",animation:"fadeIn .2s ease"}}
+          onMouseEnter={e=>{e.currentTarget.style.borderColor="#5a5a7a";e.currentTarget.style.color="#efe9e3";}}
+          onMouseLeave={e=>{e.currentTarget.style.borderColor="#34344a";e.currentTarget.style.color="#c8c4d8";}}
+        >{"\u2191"}</button>
+      )}
 
       {/* Re-sequence core confirm: re-answering the core can move clubs, so set that expectation. */}
       {resequenceConfirm&&(
