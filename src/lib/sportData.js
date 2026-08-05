@@ -10,7 +10,8 @@ import * as LL from "../data/laliga";
 import * as L1 from "../data/ligue1";
 import * as SA from "../data/seriea";
 import * as CFB from "../data/cfb";
+import * as NHL from "../data/nhl";
 
-const SPORT_DATA = { PL, NFL, MLB, NBA, BL, LL, L1, SA, CFB };
+const SPORT_DATA = { PL, NFL, MLB, NBA, BL, LL, L1, SA, CFB, NHL };
 
 export { SPORT_DATA };
