@@ -866,12 +866,12 @@ const greats = {
     {
       "name": "Bobby Orr",
       "years": "1966-1976",
-      "note": "reinvented defence; the airborne 1970 Cup goal"
+      "note": "reinvented defense; the airborne 1970 Cup goal"
     },
     {
       "name": "Ray Bourque",
       "years": "1979-2000",
-      "note": "a beloved twenty-one-year captain and Hall of Fame defenceman"
+      "note": "a beloved twenty-one-year captain and Hall of Fame defenseman"
     },
     {
       "name": "Phil Esposito",
@@ -898,7 +898,7 @@ const greats = {
     {
       "name": "Nicklas Lidstrom",
       "years": "1991-2012",
-      "note": "the flawless seven-time Norris-winning defenceman"
+      "note": "the flawless seven-time Norris-winning defenseman"
     },
     {
       "name": "Terry Sawchuk",
@@ -937,7 +937,7 @@ const greats = {
     {
       "name": "Brian Leetch",
       "years": "1988-2004",
-      "note": "the great American defenceman, 1994 Conn Smythe"
+      "note": "the great American defenseman, 1994 Conn Smythe"
     },
     {
       "name": "Rod Gilbert",
@@ -1030,7 +1030,7 @@ const greats = {
     {
       "name": "Dustin Byfuglien",
       "years": "2011-2020",
-      "note": "the mountainous, unforgettable defenceman of the return era"
+      "note": "the mountainous, unforgettable defenseman of the return era"
     },
     {
       "name": "Connor Hellebuyck",
@@ -1052,7 +1052,7 @@ const greats = {
     {
       "name": "Erik Karlsson",
       "years": "2009-2018",
-      "note": "a two-time Norris winner and the most electric defenceman of his era"
+      "note": "a two-time Norris winner and the most electric defenseman of his era"
     },
     {
       "name": "Chris Phillips",
@@ -1118,7 +1118,7 @@ const greats = {
     {
       "name": "Chris Pronger",
       "years": "1995-2004",
-      "note": "the towering Norris and Hart-winning defenceman"
+      "note": "the towering Norris and Hart-winning defenseman"
     },
     {
       "name": "Ryan O'Reilly",
@@ -1135,7 +1135,7 @@ const greats = {
     {
       "name": "Denis Potvin",
       "years": "1973-1988",
-      "note": "the great defenceman and captain of four Cups"
+      "note": "the great defenseman and captain of four Cups"
     },
     {
       "name": "Bryan Trottier",
@@ -1184,7 +1184,7 @@ const greats = {
     {
       "name": "Roman Josi",
       "years": "2011-present",
-      "note": "the Norris-winning defenceman and current captain"
+      "note": "the Norris-winning defenseman and current captain"
     },
     {
       "name": "David Legwand",
@@ -1211,7 +1211,7 @@ const greats = {
     {
       "name": "Zach Werenski",
       "years": "2016-present",
-      "note": "the dynamic modern defenceman and cornerstone"
+      "note": "the dynamic modern defenseman and cornerstone"
     }
   ],
   "NJD": [
@@ -1228,7 +1228,7 @@ const greats = {
     {
       "name": "Scott Niedermayer",
       "years": "1991-2004",
-      "note": "the smooth, elegant Cup-winning defenceman"
+      "note": "the smooth, elegant Cup-winning defenseman"
     },
     {
       "name": "Patrik Elias",
@@ -1272,7 +1272,7 @@ const greats = {
     {
       "name": "Sergei Zubov",
       "years": "1996-2009",
-      "note": "the elegant, underrated puck-moving defenceman"
+      "note": "the elegant, underrated puck-moving defenseman"
     },
     {
       "name": "Jamie Benn",
@@ -1359,7 +1359,7 @@ const greats = {
     },
     {
       "name": "Anze Kopitar",
-      "years": "2006-present",
+      "years": "2006-2026",
       "note": "the two-time Cup-winning captain and franchise center"
     },
     {
@@ -1387,7 +1387,7 @@ const greats = {
     {
       "name": "Victor Hedman",
       "years": "2009-present",
-      "note": "the towering Norris-winning defenceman"
+      "note": "the towering Norris-winning defenseman"
     }
   ],
   "VGK": [
@@ -1448,7 +1448,7 @@ const greats = {
     {
       "name": "Vince Dunn",
       "years": "2021-present",
-      "note": "the breakout offensive defenceman of the early teams"
+      "note": "the breakout offensive defenseman of the early teams"
     },
     {
       "name": "Joey Daccord",
@@ -1475,7 +1475,7 @@ const greats = {
     {
       "name": "Mikhail Sergachev",
       "years": "2024-present",
-      "note": "the veteran top defenceman anchoring the blue line"
+      "note": "the veteran top defenseman anchoring the blue line"
     }
   ],
   "ANA": [
