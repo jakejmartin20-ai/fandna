@@ -27,10 +27,15 @@ const DEFAULT_VOICE = {
   xmEscape: "I don't support a Premier League club",
 };
 
-function placeWord(rank){
+function placeWord(rank, flips){
   if (rank == null) return "";
   if (rank <= 4) return "one of your nearest misses";
   if (rank <= 8) return "close, but not your closest";
+  // Far by the ranking, but the flip-count sentence sits directly below this line: a team a change
+  // or two would flip can never honestly read as "a long way off". Cap the wording by the flips so
+  // the headline and the "changing N answers" sentence can never contradict each other.
+  if (flips != null && flips <= 2) return "closer than the ranking shows";
+  if (flips != null && flips <= 5) return "a way off your match";
   if (rank <= 15) return "a way off your match";
   return "a long way from your match";
 }
@@ -38,10 +43,13 @@ function placeWord(rank){
 // and the verdict ("the X and the DNA ...") always tell one story on every sport. Flip-count is
 // not used for the verdict: it can run small even for a far-placed team, which is what made the
 // headline and the verdict contradict before.
-function rankVerdict(rank, worn){
+function rankVerdict(rank, worn, flips){
   if (rank == null) return "";
   if (rank <= 4) return "The " + worn + " and the DNA nearly agree.";
   if (rank <= 8) return "The " + worn + " and the DNA mostly line up.";
+  // Same cap as placeWord: a couple of changes away is not "says one thing ... says another".
+  if (flips != null && flips <= 2) return "The " + worn + " and the DNA are closer than they look.";
+  if (flips != null && flips <= 5) return "The " + worn + " and the DNA pull different ways.";
   if (rank <= 15) return "The " + worn + " and the DNA pull different ways.";
   return "Your " + worn + " says one thing, your DNA says another.";
 }
@@ -270,13 +278,13 @@ export function CrossMatch({ sport, input, teams, teamDims = {}, coreProfile, te
               )}
               <Card>
                 <Eyebrow>How close it came</Eyebrow>
-                <p style={{fontFamily:SERIF,fontSize:21,color:"#efe9e3",lineHeight:1.3,margin:"0 0 10px"}}>{chosen ? chosen.name : data.supported} was {placeWord(data.rank)}.</p>
+                <p style={{fontFamily:SERIF,fontSize:21,color:"#efe9e3",lineHeight:1.3,margin:"0 0 10px"}}>{chosen ? chosen.name : data.supported} was {placeWord(data.rank, data.changeToLand)}.</p>
                 {data.changeToLand == null ? (
                   <p style={{fontSize:15,color:"#c8c4be",lineHeight:1.6,margin:0}}>Nothing you could change lands {chosen ? chosen.name : data.supported}. The DNA points firmly to {matchedName}.</p>
                 ) : (
                   <p style={{fontSize:15,color:"#c8c4be",lineHeight:1.6,margin:0}}>It would take changing <b style={{color:"#efe9e3",fontWeight:500,fontFamily:SERIF,fontSize:18}}>{data.changeToLand} of your {data.totalAnswers} answers</b> to land {chosen ? chosen.name : data.supported} instead.</p>
                 )}
-                <div style={{fontFamily:MONO,fontSize:11,letterSpacing:"0.04em",color:"#9696b4",marginTop:11}}>{data.changeToLand == null ? "As far apart as the "+v.worn+" and the DNA get." : rankVerdict(data.rank, v.worn)}</div>
+                <div style={{fontFamily:MONO,fontSize:11,letterSpacing:"0.04em",color:"#9696b4",marginTop:11}}>{data.changeToLand == null ? "As far apart as the "+v.worn+" and the DNA get." : rankVerdict(data.rank, v.worn, data.changeToLand)}</div>
               </Card>
               <Card>
                 <Eyebrow>What tipped which way</Eyebrow>
