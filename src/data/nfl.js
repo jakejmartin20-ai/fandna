@@ -99,11 +99,11 @@ const moduleQuestions = [
         "value": "A"
       },
       {
-        "label": "I brace for the knife. I've made peace with doom, and I cheer anyway.",
+        "label": "I brace for the knife. I've made peace with doom, and I stay anyway.",
         "value": "B"
       },
       {
-        "label": "I laugh, and believe again next year. Wrong every time, certain anyway.",
+        "label": "I laugh, and believe again the next time. Wrong every time, certain anyway.",
         "value": "C"
       },
       {
@@ -155,7 +155,7 @@ const moduleQuestions = [
         "value": "A"
       },
       {
-        "label": "The colors and the attitude. I'll wear them in any zip code.",
+        "label": "The attitude, not the address. It comes with me wherever I land.",
         "value": "B"
       },
       {
@@ -163,7 +163,7 @@ const moduleQuestions = [
         "value": "C"
       },
       {
-        "label": "The people in the seats next to me. The rest is decoration.",
+        "label": "The people I'm in it with. The rest is decoration.",
         "value": "D"
       },
       {
@@ -205,7 +205,7 @@ const moduleQuestions = [
     "type": "slider",
     "phase": "The fine print",
     "question": "Which lands closer:",
-    "left": "Three yards, a cloud of dust, and no apologies. The grind is the glory.",
+    "left": "Heads down, no shortcuts, no apologies. The grind is the glory.",
     "right": "Win with style. The spotlight, the spectacle, the show is half the point."
   },
   {
@@ -231,7 +231,7 @@ const moduleQuestions = [
         "value": "D"
       },
       {
-        "label": "I don't dwell. There's always next year, and I mean it.",
+        "label": "I don't dwell. There's always the next shot, and I mean it.",
         "value": "E"
       }
     ]
@@ -327,7 +327,7 @@ const moduleQuestions = [
         "value": "C"
       },
       {
-        "label": "The crowd. The noise, the people. We're not watching, we're in it.",
+        "label": "The people. The noise we make together. I'm not at the edge of it, I'm in it.",
         "value": "D"
       },
       {
@@ -514,7 +514,7 @@ const teams = {
     "emoji": "⚡",
     "color": "#0080C6",
     "tagline": "You expect the heartbreak and show up anyway, even after they left San Diego.",
-    "desc": "You keep bolting up for a team that keeps finding new ways to break your heart. After fifty-six years in San Diego it packed up for Los Angeles in 2017, leaving a fanbase that burned its jerseys in the street, and it now plays home games to crowds wearing the other team's colors. It has never won a title and has a gift for losing the games it should win. You keep coming back, because the curse is yours and so is the hope.",
+    "desc": "You keep bolting up for a team that keeps finding new ways to break your heart. After fifty-six years in San Diego it packed up for Los Angeles in 2017, leaving a fanbase that burned its jerseys in the street, and it now plays home games to crowds wearing the other team's colors. It has never won a Super Bowl and has a gift for losing the games it should win. You keep coming back, because the curse is yours and so is the hope.",
     "why": [
       "Your chaos tolerance is high and your roots are loose, which is a hard combination to live with. The heartbreak arrives annually in a new costume, and annually you renew the season tickets.",
       "Your emotional investment is real and a little masochistic. You have learned to expect the heartbreak and turn up for it anyway.",
