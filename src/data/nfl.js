@@ -111,7 +111,7 @@ const moduleQuestions = [
         "value": "D"
       },
       {
-        "label": "I don't have that problem. I expect to win, and mostly I do.",
+        "label": "I don't have that problem. I expect things to break my way, and mostly they do.",
         "value": "E"
       }
     ]
@@ -131,7 +131,7 @@ const moduleQuestions = [
         "value": "B"
       },
       {
-        "label": "One perfect thing I did that nobody has matched since.",
+        "label": "One singular thing I did that nobody has touched since.",
         "value": "C"
       },
       {
@@ -179,7 +179,7 @@ const moduleQuestions = [
     "question": "How does the world see you, and how do you feel about it?",
     "options": [
       {
-        "label": "They hate me because I win, and I make no apologies for it.",
+        "label": "They resent how often I come out on top, and I don't apologize for it.",
         "value": "A"
       },
       {
@@ -191,7 +191,7 @@ const moduleQuestions = [
         "value": "C"
       },
       {
-        "label": "They barely think of me. I have the calm of one who already won.",
+        "label": "They barely think of me. I have the calm of someone with nothing left to prove.",
         "value": "D"
       },
       {
@@ -206,7 +206,7 @@ const moduleQuestions = [
     "phase": "The fine print",
     "question": "Which lands closer:",
     "left": "Heads down, no shortcuts, no apologies. The grind is the glory.",
-    "right": "Win with style. The spotlight, the spectacle, the show is half the point."
+    "right": "Do it with style. The spotlight, the spectacle, the show is half the point."
   },
   {
     "id": "nfl_q7",
@@ -269,8 +269,8 @@ const moduleQuestions = [
     "type": "slider",
     "phase": "What it comes down to",
     "question": "Which is more you:",
-    "left": "One perfect year. I'd trade a lifetime of pretty good for a single untouchable season.",
-    "right": "The long haul. Give me a hundred years of trying over one perfect year."
+    "left": "The one great peak. I'd trade a lifetime of pretty good for a single untouchable stretch.",
+    "right": "The long haul. A hundred years of trying over one untouchable stretch."
   },
   {
     "id": "nfl_q10",
@@ -287,7 +287,7 @@ const moduleQuestions = [
         "value": "B"
       },
       {
-        "label": "I don't care how it looks or who it upsets. Winning settles it.",
+        "label": "I don't care how it looks or who it upsets. Results settle it.",
         "value": "C"
       },
       {
@@ -2230,11 +2230,11 @@ const scoring = {
       "MIA": 2,
       "BUF": 2,
       "IND": 2,
-      "TEN": 2,
       "ARI": 2,
       "LAR": 2,
       "NYJ": 2,
-      "BAL": 2
+      "CLE": 2,
+      "MIN": 2
     },
     "B": {
       "CAR": 2,
@@ -2244,20 +2244,18 @@ const scoring = {
       "TB": 2,
       "ATL": 2,
       "CIN": 2,
-      "MIN": 2,
       "NO": 2,
-      "CLE": 2,
       "PHI": 2,
-      "LAC": 2
+      "LAC": 2,
+      "BAL": 2,
+      "TEN": 2
     }
   },
   "nfl_q14": {
     "A": {
       "DAL": 2,
       "NYG": 2,
-      "CHI": 2,
       "SF": 2,
-      "PHI": 2,
       "KC": 2,
       "GB": 2,
       "PIT": 2,
@@ -2286,7 +2284,9 @@ const scoring = {
       "NYJ": 2,
       "LAC": 2,
       "BAL": 2,
-      "CAR": 2
+      "CAR": 2,
+      "PHI": 2,
+      "CHI": 2
     }
   },
   "nfl_q15": {
@@ -2307,8 +2307,10 @@ const scoring = {
       "JAX": 2,
       "MIN": 2,
       "WAS": 2,
-      "KC": 2,
-      "NYG": 2
+      "NYG": 2,
+      "CAR": 2,
+      "ARI": 2,
+      "KC": 2
     },
     "B": {
       "DAL": 2,
@@ -2322,9 +2324,7 @@ const scoring = {
       "TB": 2,
       "ATL": 2,
       "NO": 2,
-      "ARI": 2,
-      "LAC": 2,
-      "CAR": 2
+      "LAC": 2
     }
   },
   "nfl_q1": {
