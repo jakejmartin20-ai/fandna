@@ -99,7 +99,7 @@ const moduleQuestions = [
         "value": "A"
       },
       {
-        "label": "I brace for the knife. I've made peace with doom, and I stay anyway.",
+        "label": "I see it coming and brace for it. I've made my peace with it, and I stay anyway.",
         "value": "B"
       },
       {
@@ -159,7 +159,7 @@ const moduleQuestions = [
         "value": "B"
       },
       {
-        "label": "What we're building. I lost something once and built my own.",
+        "label": "What I'm building. I lost something once and built my own.",
         "value": "C"
       },
       {
@@ -243,7 +243,7 @@ const moduleQuestions = [
     "question": "Something you loved got taken from you. What did you do?",
     "options": [
       {
-        "label": "Started over from scratch and poured myself into the new thing. Worth every bit.",
+        "label": "I let it go and built something brand new in its place. No regrets.",
         "value": "A"
       },
       {
@@ -251,11 +251,11 @@ const moduleQuestions = [
         "value": "B"
       },
       {
-        "label": "Rebuilt myself into something tougher than what I lost.",
+        "label": "I came back harder than before, and made sure it couldn't happen again.",
         "value": "C"
       },
       {
-        "label": "Hit rock bottom, then built the best chapter of my life out of the wreckage.",
+        "label": "I hit the absolute bottom, then turned it into the best thing I've done.",
         "value": "D"
       },
       {
@@ -283,7 +283,7 @@ const moduleQuestions = [
         "value": "A"
       },
       {
-        "label": "Count me out and I just get more certain, doubters be damned.",
+        "label": "Count me out and I just get more certain, not less.",
         "value": "B"
       },
       {
@@ -306,7 +306,7 @@ const moduleQuestions = [
     "phase": "What it comes down to",
     "question": "Your volume:",
     "left": "Calm. I don't need to make noise, the results speak.",
-    "right": "Loud. On a good day, loud enough to move the ground."
+    "right": "Loud. On a good day, loud enough that nobody can ignore it."
   },
   {
     "id": "nfl_q12",
@@ -315,11 +315,11 @@ const moduleQuestions = [
     "question": "When it all comes down to it, what do you trust?",
     "options": [
       {
-        "label": "Brilliance. One genius, the impossible made routine.",
+        "label": "Brilliance. One mind that's a step ahead of everyone else.",
         "value": "A"
       },
       {
-        "label": "Toughness and preparation. We do the hard things right.",
+        "label": "Toughness and preparation. Doing the hard things right.",
         "value": "B"
       },
       {
@@ -327,11 +327,11 @@ const moduleQuestions = [
         "value": "C"
       },
       {
-        "label": "The people. The noise we make together. I'm not at the edge of it, I'm in it.",
+        "label": "The people. The noise, the whole crowd. I'm not at the edge of it, I'm in it.",
         "value": "D"
       },
       {
-        "label": "Swagger. I play the headline act and dare the results to disagree.",
+        "label": "Swagger. I carry myself like the main act, and back it up.",
         "value": "E"
       }
     ]

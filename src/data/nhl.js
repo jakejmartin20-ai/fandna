@@ -6,14 +6,14 @@ const moduleQuestions = [
     "id": "nhl_q1",
     "type": "choice",
     "phase": "The fine print",
-    "question": "When it comes to the people you're loyal to, you're the one who:",
+    "question": "When it comes to the people you're loyal to, you:",
     "options": [
       {
-        "label": "There the moment they need me. No hesitation.",
+        "label": "I'm there the moment they need me. No hesitation.",
         "value": "A"
       },
       {
-        "label": "In it for good. I don't leave when it gets hard.",
+        "label": "I'm in it for good. I don't leave when it gets hard.",
         "value": "B"
       },
       {
@@ -21,7 +21,7 @@ const moduleQuestions = [
         "value": "C"
       },
       {
-        "label": "Quiet about it, but it runs deep and never moves.",
+        "label": "I'm quiet about it, but it runs deep and never moves.",
         "value": "D"
       }
     ]
@@ -30,22 +30,22 @@ const moduleQuestions = [
     "id": "nhl_q2",
     "type": "choice",
     "phase": "The fine print",
-    "question": "When a group you're part of is under real pressure, you're the one who:",
+    "question": "When a group you're part of is under real pressure, you:",
     "options": [
       {
-        "label": "Steps up first, before anyone asks. Every time.",
+        "label": "I step up first, before anyone asks. Every time.",
         "value": "A"
       },
       {
-        "label": "Shows up for the people who'd show up for me.",
+        "label": "I show up for the people who'd show up for me.",
         "value": "B"
       },
       {
-        "label": "Leads by example more than by taking the fall.",
+        "label": "I lead by example more than by taking the fall.",
         "value": "C"
       },
       {
-        "label": "Looks after myself first, and I'm honest about it.",
+        "label": "I look after myself first, and I'm honest about it.",
         "value": "D"
       }
     ]
@@ -126,26 +126,26 @@ const moduleQuestions = [
     "id": "nhl_q7",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "Every job has a glamorous half and a grinding, invisible half. You're the one who:",
+    "question": "Every job has a glamorous half and a grinding, invisible half. You:",
     "options": [
       {
-        "label": "Does both halves without being asked. That's the standard.",
+        "label": "I do both halves without being asked. That's the standard.",
         "value": "A"
       },
       {
-        "label": "Honestly prefers the grinding, invisible half.",
+        "label": "I honestly prefer the grinding, invisible half.",
         "value": "B"
       },
       {
-        "label": "Shows up biggest for the glamorous half.",
+        "label": "I show up biggest for the glamorous half.",
         "value": "C"
       },
       {
-        "label": "Covers whatever the group needs covered.",
+        "label": "I cover whatever the group needs covered.",
         "value": "D"
       },
       {
-        "label": "Does it my own way, glamorous or not.",
+        "label": "I do it my own way, glamorous or not.",
         "value": "E"
       }
     ]
@@ -214,26 +214,26 @@ const moduleQuestions = [
     "id": "nhl_q11",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "When the stakes climb, your temperature:",
+    "question": "When the stakes climb, you:",
     "options": [
       {
-        "label": "Runs hot. I feel everything and I let it show.",
+        "label": "I run hot. I feel everything and I let it show.",
         "value": "A"
       },
       {
-        "label": "Goes ice cold. The bigger it gets, the calmer I am.",
+        "label": "I go ice cold. The bigger it gets, the calmer I am.",
         "value": "B"
       },
       {
-        "label": "Sharpens. I get more locked-in and precise.",
+        "label": "I sharpen up. I get more locked-in and precise.",
         "value": "C"
       },
       {
-        "label": "Loosens. I actually get freer when it's big.",
+        "label": "I loosen up. I actually get freer when it's big.",
         "value": "D"
       },
       {
-        "label": "Stays level. Same me, big moment or small.",
+        "label": "I stay level. Same me, big moment or small.",
         "value": "E"
       }
     ]
