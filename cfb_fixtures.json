@@ -8,7 +8,8 @@
     "counts": {
       "signature": 52,
       "random": 40
-    }
+    },
+    "note": "cfb sliders q3/q6/q9 rebuilt as honest per-team footprints (peak by trait value across all 5 positions, NHL method); FLA ambition 9->8 to separate the FLA/TEX module-twin; signatures re-recorded to new peaks."
   },
   "fixtures": [
     {
@@ -33,7 +34,7 @@
         "cfb_q6": "5",
         "cfb_q7": "D",
         "cfb_q8": "C",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "D",
         "cfb_q11": "A",
         "cfb_q12": "D"
@@ -60,10 +61,10 @@
         "cfb_q3": "5",
         "cfb_q4": "A",
         "cfb_q5": "E",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "C",
         "cfb_q8": "B",
-        "cfb_q9": "5",
+        "cfb_q9": "3",
         "cfb_q10": "B",
         "cfb_q11": "B",
         "cfb_q12": "B"
@@ -87,13 +88,13 @@
       "moduleAnswers": {
         "cfb_q1": "B",
         "cfb_q2": "C",
-        "cfb_q3": "5",
+        "cfb_q3": "4",
         "cfb_q4": "A",
         "cfb_q5": "A",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "A",
         "cfb_q8": "B",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "A",
         "cfb_q11": "A",
         "cfb_q12": "B"
@@ -117,13 +118,13 @@
       "moduleAnswers": {
         "cfb_q1": "B",
         "cfb_q2": "B",
-        "cfb_q3": "5",
+        "cfb_q3": "4",
         "cfb_q4": "A",
         "cfb_q5": "A",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "B",
         "cfb_q8": "A",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "A",
         "cfb_q11": "B",
         "cfb_q12": "B"
@@ -147,13 +148,13 @@
       "moduleAnswers": {
         "cfb_q1": "B",
         "cfb_q2": "B",
-        "cfb_q3": "5",
+        "cfb_q3": "4",
         "cfb_q4": "B",
         "cfb_q5": "A",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "A",
         "cfb_q8": "B",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "A",
         "cfb_q11": "A",
         "cfb_q12": "B"
@@ -177,13 +178,13 @@
       "moduleAnswers": {
         "cfb_q1": "B",
         "cfb_q2": "B",
-        "cfb_q3": "5",
+        "cfb_q3": "4",
         "cfb_q4": "B",
         "cfb_q5": "B",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "C",
         "cfb_q8": "A",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "B",
         "cfb_q11": "B",
         "cfb_q12": "B"
@@ -207,13 +208,13 @@
       "moduleAnswers": {
         "cfb_q1": "B",
         "cfb_q2": "B",
-        "cfb_q3": "1",
+        "cfb_q3": "3",
         "cfb_q4": "C",
         "cfb_q5": "A",
-        "cfb_q6": "1",
+        "cfb_q6": "3",
         "cfb_q7": "B",
         "cfb_q8": "B",
-        "cfb_q9": "5",
+        "cfb_q9": "3",
         "cfb_q10": "A",
         "cfb_q11": "A",
         "cfb_q12": "B"
@@ -237,13 +238,13 @@
       "moduleAnswers": {
         "cfb_q1": "B",
         "cfb_q2": "B",
-        "cfb_q3": "5",
+        "cfb_q3": "4",
         "cfb_q4": "B",
         "cfb_q5": "B",
         "cfb_q6": "1",
         "cfb_q7": "C",
         "cfb_q8": "B",
-        "cfb_q9": "1",
+        "cfb_q9": "4",
         "cfb_q10": "B",
         "cfb_q11": "B",
         "cfb_q12": "A"
@@ -267,13 +268,13 @@
       "moduleAnswers": {
         "cfb_q1": "B",
         "cfb_q2": "B",
-        "cfb_q3": "1",
+        "cfb_q3": "3",
         "cfb_q4": "C",
         "cfb_q5": "E",
-        "cfb_q6": "5",
+        "cfb_q6": "4",
         "cfb_q7": "B",
         "cfb_q8": "B",
-        "cfb_q9": "5",
+        "cfb_q9": "4",
         "cfb_q10": "C",
         "cfb_q11": "B",
         "cfb_q12": "E"
@@ -288,7 +289,7 @@
       "coreProfile": {
         "loyalty": 8,
         "emotion": 8,
-        "ambition": 9,
+        "ambition": 8,
         "process": 6,
         "community": 7,
         "chaos": 6,
@@ -297,13 +298,13 @@
       "moduleAnswers": {
         "cfb_q1": "B",
         "cfb_q2": "B",
-        "cfb_q3": "1",
+        "cfb_q3": "3",
         "cfb_q4": "C",
         "cfb_q5": "A",
-        "cfb_q6": "5",
+        "cfb_q6": "3",
         "cfb_q7": "B",
         "cfb_q8": "B",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "A",
         "cfb_q11": "A",
         "cfb_q12": "B"
@@ -327,13 +328,13 @@
       "moduleAnswers": {
         "cfb_q1": "B",
         "cfb_q2": "C",
-        "cfb_q3": "1",
+        "cfb_q3": "3",
         "cfb_q4": "C",
         "cfb_q5": "A",
-        "cfb_q6": "1",
+        "cfb_q6": "3",
         "cfb_q7": "B",
         "cfb_q8": "B",
-        "cfb_q9": "5",
+        "cfb_q9": "4",
         "cfb_q10": "D",
         "cfb_q11": "A",
         "cfb_q12": "B"
@@ -357,13 +358,13 @@
       "moduleAnswers": {
         "cfb_q1": "B",
         "cfb_q2": "A",
-        "cfb_q3": "5",
+        "cfb_q3": "4",
         "cfb_q4": "B",
         "cfb_q5": "B",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "A",
         "cfb_q8": "B",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "A",
         "cfb_q11": "A",
         "cfb_q12": "A"
@@ -387,13 +388,13 @@
       "moduleAnswers": {
         "cfb_q1": "C",
         "cfb_q2": "A",
-        "cfb_q3": "5",
+        "cfb_q3": "4",
         "cfb_q4": "E",
         "cfb_q5": "B",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "C",
         "cfb_q8": "C",
-        "cfb_q9": "1",
+        "cfb_q9": "2",
         "cfb_q10": "C",
         "cfb_q11": "A",
         "cfb_q12": "D"
@@ -417,7 +418,7 @@
       "moduleAnswers": {
         "cfb_q1": "D",
         "cfb_q2": "D",
-        "cfb_q3": "1",
+        "cfb_q3": "2",
         "cfb_q4": "C",
         "cfb_q5": "E",
         "cfb_q6": "5",
@@ -447,13 +448,13 @@
       "moduleAnswers": {
         "cfb_q1": "A",
         "cfb_q2": "B",
-        "cfb_q3": "1",
+        "cfb_q3": "2",
         "cfb_q4": "A",
         "cfb_q5": "A",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "A",
         "cfb_q8": "B",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "A",
         "cfb_q11": "A",
         "cfb_q12": "A"
@@ -477,13 +478,13 @@
       "moduleAnswers": {
         "cfb_q1": "A",
         "cfb_q2": "C",
-        "cfb_q3": "1",
+        "cfb_q3": "2",
         "cfb_q4": "B",
         "cfb_q5": "A",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "A",
         "cfb_q8": "B",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "A",
         "cfb_q11": "A",
         "cfb_q12": "A"
@@ -507,13 +508,13 @@
       "moduleAnswers": {
         "cfb_q1": "A",
         "cfb_q2": "C",
-        "cfb_q3": "1",
+        "cfb_q3": "2",
         "cfb_q4": "D",
         "cfb_q5": "D",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "A",
         "cfb_q8": "A",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "D",
         "cfb_q11": "A",
         "cfb_q12": "A"
@@ -537,13 +538,13 @@
       "moduleAnswers": {
         "cfb_q1": "A",
         "cfb_q2": "D",
-        "cfb_q3": "1",
+        "cfb_q3": "2",
         "cfb_q4": "C",
         "cfb_q5": "C",
-        "cfb_q6": "5",
+        "cfb_q6": "3",
         "cfb_q7": "B",
         "cfb_q8": "B",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "C",
         "cfb_q11": "A",
         "cfb_q12": "C"
@@ -567,13 +568,13 @@
       "moduleAnswers": {
         "cfb_q1": "A",
         "cfb_q2": "D",
-        "cfb_q3": "1",
+        "cfb_q3": "2",
         "cfb_q4": "D",
         "cfb_q5": "C",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "A",
         "cfb_q8": "A",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "A",
         "cfb_q11": "A",
         "cfb_q12": "A"
@@ -600,10 +601,10 @@
         "cfb_q3": "5",
         "cfb_q4": "D",
         "cfb_q5": "B",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "A",
         "cfb_q8": "D",
-        "cfb_q9": "1",
+        "cfb_q9": "2",
         "cfb_q10": "B",
         "cfb_q11": "A",
         "cfb_q12": "A"
@@ -627,13 +628,13 @@
       "moduleAnswers": {
         "cfb_q1": "D",
         "cfb_q2": "D",
-        "cfb_q3": "5",
+        "cfb_q3": "4",
         "cfb_q4": "D",
         "cfb_q5": "B",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "A",
         "cfb_q8": "C",
-        "cfb_q9": "1",
+        "cfb_q9": "2",
         "cfb_q10": "D",
         "cfb_q11": "A",
         "cfb_q12": "D"
@@ -660,10 +661,10 @@
         "cfb_q3": "5",
         "cfb_q4": "D",
         "cfb_q5": "B",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "A",
         "cfb_q8": "D",
-        "cfb_q9": "1",
+        "cfb_q9": "2",
         "cfb_q10": "C",
         "cfb_q11": "A",
         "cfb_q12": "D"
@@ -687,7 +688,7 @@
       "moduleAnswers": {
         "cfb_q1": "A",
         "cfb_q2": "A",
-        "cfb_q3": "5",
+        "cfb_q3": "4",
         "cfb_q4": "E",
         "cfb_q5": "C",
         "cfb_q6": "1",
@@ -717,7 +718,7 @@
       "moduleAnswers": {
         "cfb_q1": "C",
         "cfb_q2": "D",
-        "cfb_q3": "5",
+        "cfb_q3": "4",
         "cfb_q4": "E",
         "cfb_q5": "A",
         "cfb_q6": "1",
@@ -747,7 +748,7 @@
       "moduleAnswers": {
         "cfb_q1": "A",
         "cfb_q2": "D",
-        "cfb_q3": "1",
+        "cfb_q3": "3",
         "cfb_q4": "D",
         "cfb_q5": "A",
         "cfb_q6": "1",
@@ -777,10 +778,10 @@
       "moduleAnswers": {
         "cfb_q1": "A",
         "cfb_q2": "D",
-        "cfb_q3": "1",
+        "cfb_q3": "2",
         "cfb_q4": "E",
         "cfb_q5": "C",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "C",
         "cfb_q8": "D",
         "cfb_q9": "1",
@@ -870,10 +871,10 @@
         "cfb_q3": "5",
         "cfb_q4": "D",
         "cfb_q5": "B",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "C",
         "cfb_q8": "C",
-        "cfb_q9": "1",
+        "cfb_q9": "2",
         "cfb_q10": "B",
         "cfb_q11": "C",
         "cfb_q12": "D"
@@ -897,7 +898,7 @@
       "moduleAnswers": {
         "cfb_q1": "A",
         "cfb_q2": "B",
-        "cfb_q3": "5",
+        "cfb_q3": "4",
         "cfb_q4": "E",
         "cfb_q5": "B",
         "cfb_q6": "1",
@@ -933,7 +934,7 @@
         "cfb_q6": "1",
         "cfb_q7": "A",
         "cfb_q8": "D",
-        "cfb_q9": "1",
+        "cfb_q9": "2",
         "cfb_q10": "A",
         "cfb_q11": "A",
         "cfb_q12": "A"
@@ -957,13 +958,13 @@
       "moduleAnswers": {
         "cfb_q1": "A",
         "cfb_q2": "C",
-        "cfb_q3": "1",
+        "cfb_q3": "2",
         "cfb_q4": "E",
         "cfb_q5": "A",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "A",
         "cfb_q8": "D",
-        "cfb_q9": "1",
+        "cfb_q9": "2",
         "cfb_q10": "A",
         "cfb_q11": "A",
         "cfb_q12": "A"
@@ -987,13 +988,13 @@
       "moduleAnswers": {
         "cfb_q1": "A",
         "cfb_q2": "D",
-        "cfb_q3": "1",
+        "cfb_q3": "2",
         "cfb_q4": "D",
         "cfb_q5": "D",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "D",
         "cfb_q8": "C",
-        "cfb_q9": "1",
+        "cfb_q9": "2",
         "cfb_q10": "D",
         "cfb_q11": "A",
         "cfb_q12": "D"
@@ -1017,13 +1018,13 @@
       "moduleAnswers": {
         "cfb_q1": "A",
         "cfb_q2": "D",
-        "cfb_q3": "1",
+        "cfb_q3": "2",
         "cfb_q4": "D",
         "cfb_q5": "C",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "A",
         "cfb_q8": "C",
-        "cfb_q9": "1",
+        "cfb_q9": "2",
         "cfb_q10": "C",
         "cfb_q11": "A",
         "cfb_q12": "C"
@@ -1047,13 +1048,13 @@
       "moduleAnswers": {
         "cfb_q1": "D",
         "cfb_q2": "D",
-        "cfb_q3": "1",
+        "cfb_q3": "2",
         "cfb_q4": "D",
         "cfb_q5": "D",
-        "cfb_q6": "5",
+        "cfb_q6": "2",
         "cfb_q7": "D",
         "cfb_q8": "C",
-        "cfb_q9": "1",
+        "cfb_q9": "2",
         "cfb_q10": "D",
         "cfb_q11": "A",
         "cfb_q12": "D"
@@ -1077,13 +1078,13 @@
       "moduleAnswers": {
         "cfb_q1": "A",
         "cfb_q2": "C",
-        "cfb_q3": "1",
+        "cfb_q3": "3",
         "cfb_q4": "D",
         "cfb_q5": "A",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "A",
         "cfb_q8": "C",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "A",
         "cfb_q11": "A",
         "cfb_q12": "A"
@@ -1107,13 +1108,13 @@
       "moduleAnswers": {
         "cfb_q1": "A",
         "cfb_q2": "D",
-        "cfb_q3": "5",
+        "cfb_q3": "3",
         "cfb_q4": "D",
         "cfb_q5": "C",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "A",
         "cfb_q8": "A",
-        "cfb_q9": "1",
+        "cfb_q9": "2",
         "cfb_q10": "A",
         "cfb_q11": "A",
         "cfb_q12": "C"
@@ -1137,13 +1138,13 @@
       "moduleAnswers": {
         "cfb_q1": "A",
         "cfb_q2": "D",
-        "cfb_q3": "1",
+        "cfb_q3": "3",
         "cfb_q4": "D",
         "cfb_q5": "C",
-        "cfb_q6": "1",
+        "cfb_q6": "2",
         "cfb_q7": "A",
         "cfb_q8": "C",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "D",
         "cfb_q11": "A",
         "cfb_q12": "A"
@@ -1167,13 +1168,13 @@
       "moduleAnswers": {
         "cfb_q1": "D",
         "cfb_q2": "D",
-        "cfb_q3": "5",
+        "cfb_q3": "3",
         "cfb_q4": "D",
         "cfb_q5": "D",
-        "cfb_q6": "5",
+        "cfb_q6": "2",
         "cfb_q7": "C",
         "cfb_q8": "C",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "D",
         "cfb_q11": "A",
         "cfb_q12": "D"
@@ -1200,10 +1201,10 @@
         "cfb_q3": "1",
         "cfb_q4": "C",
         "cfb_q5": "D",
-        "cfb_q6": "5",
+        "cfb_q6": "4",
         "cfb_q7": "B",
         "cfb_q8": "B",
-        "cfb_q9": "5",
+        "cfb_q9": "4",
         "cfb_q10": "D",
         "cfb_q11": "D",
         "cfb_q12": "E"
@@ -1227,13 +1228,13 @@
       "moduleAnswers": {
         "cfb_q1": "D",
         "cfb_q2": "D",
-        "cfb_q3": "1",
+        "cfb_q3": "2",
         "cfb_q4": "C",
         "cfb_q5": "D",
-        "cfb_q6": "5",
+        "cfb_q6": "4",
         "cfb_q7": "D",
         "cfb_q8": "C",
-        "cfb_q9": "5",
+        "cfb_q9": "4",
         "cfb_q10": "D",
         "cfb_q11": "D",
         "cfb_q12": "D"
@@ -1257,13 +1258,13 @@
       "moduleAnswers": {
         "cfb_q1": "D",
         "cfb_q2": "D",
-        "cfb_q3": "1",
+        "cfb_q3": "2",
         "cfb_q4": "D",
         "cfb_q5": "D",
-        "cfb_q6": "5",
+        "cfb_q6": "4",
         "cfb_q7": "B",
         "cfb_q8": "C",
-        "cfb_q9": "5",
+        "cfb_q9": "4",
         "cfb_q10": "D",
         "cfb_q11": "D",
         "cfb_q12": "D"
@@ -1287,7 +1288,7 @@
       "moduleAnswers": {
         "cfb_q1": "C",
         "cfb_q2": "A",
-        "cfb_q3": "5",
+        "cfb_q3": "4",
         "cfb_q4": "C",
         "cfb_q5": "B",
         "cfb_q6": "5",
@@ -1317,13 +1318,13 @@
       "moduleAnswers": {
         "cfb_q1": "C",
         "cfb_q2": "A",
-        "cfb_q3": "5",
+        "cfb_q3": "4",
         "cfb_q4": "C",
         "cfb_q5": "B",
-        "cfb_q6": "1",
+        "cfb_q6": "4",
         "cfb_q7": "C",
         "cfb_q8": "A",
-        "cfb_q9": "1",
+        "cfb_q9": "4",
         "cfb_q10": "B",
         "cfb_q11": "A",
         "cfb_q12": "D"
@@ -1347,13 +1348,13 @@
       "moduleAnswers": {
         "cfb_q1": "C",
         "cfb_q2": "D",
-        "cfb_q3": "5",
+        "cfb_q3": "3",
         "cfb_q4": "D",
         "cfb_q5": "C",
-        "cfb_q6": "5",
+        "cfb_q6": "4",
         "cfb_q7": "C",
         "cfb_q8": "D",
-        "cfb_q9": "5",
+        "cfb_q9": "4",
         "cfb_q10": "C",
         "cfb_q11": "C",
         "cfb_q12": "C"
@@ -1377,13 +1378,13 @@
       "moduleAnswers": {
         "cfb_q1": "B",
         "cfb_q2": "C",
-        "cfb_q3": "5",
+        "cfb_q3": "3",
         "cfb_q4": "D",
         "cfb_q5": "B",
-        "cfb_q6": "1",
+        "cfb_q6": "3",
         "cfb_q7": "A",
         "cfb_q8": "A",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "A",
         "cfb_q11": "A",
         "cfb_q12": "B"
@@ -1407,13 +1408,13 @@
       "moduleAnswers": {
         "cfb_q1": "D",
         "cfb_q2": "C",
-        "cfb_q3": "1",
+        "cfb_q3": "3",
         "cfb_q4": "D",
         "cfb_q5": "A",
-        "cfb_q6": "1",
+        "cfb_q6": "3",
         "cfb_q7": "D",
         "cfb_q8": "C",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "D",
         "cfb_q11": "A",
         "cfb_q12": "D"
@@ -1437,13 +1438,13 @@
       "moduleAnswers": {
         "cfb_q1": "A",
         "cfb_q2": "D",
-        "cfb_q3": "1",
+        "cfb_q3": "3",
         "cfb_q4": "D",
         "cfb_q5": "D",
-        "cfb_q6": "5",
+        "cfb_q6": "3",
         "cfb_q7": "B",
         "cfb_q8": "A",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "D",
         "cfb_q11": "A",
         "cfb_q12": "D"
@@ -1467,13 +1468,13 @@
       "moduleAnswers": {
         "cfb_q1": "A",
         "cfb_q2": "D",
-        "cfb_q3": "1",
+        "cfb_q3": "3",
         "cfb_q4": "A",
         "cfb_q5": "D",
-        "cfb_q6": "1",
+        "cfb_q6": "3",
         "cfb_q7": "A",
         "cfb_q8": "A",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "D",
         "cfb_q11": "A",
         "cfb_q12": "A"
@@ -1500,10 +1501,10 @@
         "cfb_q3": "1",
         "cfb_q4": "C",
         "cfb_q5": "A",
-        "cfb_q6": "5",
+        "cfb_q6": "3",
         "cfb_q7": "B",
         "cfb_q8": "C",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "A",
         "cfb_q11": "A",
         "cfb_q12": "C"
@@ -1527,13 +1528,13 @@
       "moduleAnswers": {
         "cfb_q1": "A",
         "cfb_q2": "C",
-        "cfb_q3": "1",
+        "cfb_q3": "3",
         "cfb_q4": "D",
         "cfb_q5": "C",
-        "cfb_q6": "5",
+        "cfb_q6": "4",
         "cfb_q7": "C",
         "cfb_q8": "C",
-        "cfb_q9": "1",
+        "cfb_q9": "3",
         "cfb_q10": "C",
         "cfb_q11": "A",
         "cfb_q12": "D"
@@ -1560,10 +1561,10 @@
         "cfb_q3": "1",
         "cfb_q4": "C",
         "cfb_q5": "C",
-        "cfb_q6": "5",
+        "cfb_q6": "4",
         "cfb_q7": "D",
         "cfb_q8": "C",
-        "cfb_q9": "5",
+        "cfb_q9": "3",
         "cfb_q10": "C",
         "cfb_q11": "D",
         "cfb_q12": "C"
@@ -1614,8 +1615,8 @@
         "cfb_q11": "C",
         "cfb_q12": "C"
       },
-      "winner": "OKS",
-      "winnerName": "Oklahoma State"
+      "winner": "ORE",
+      "winnerName": "Oregon"
     },
     {
       "id": "rnd_02",
@@ -1706,8 +1707,8 @@
         "cfb_q11": "B",
         "cfb_q12": "C"
       },
-      "winner": "TCU",
-      "winnerName": "TCU"
+      "winner": "NDM",
+      "winnerName": "Notre Dame"
     },
     {
       "id": "rnd_04",
@@ -1752,8 +1753,8 @@
         "cfb_q11": "D",
         "cfb_q12": "A"
       },
-      "winner": "MSU",
-      "winnerName": "Michigan State"
+      "winner": "TAM",
+      "winnerName": "Texas A&M"
     },
     {
       "id": "rnd_05",
@@ -1798,8 +1799,8 @@
         "cfb_q11": "C",
         "cfb_q12": "A"
       },
-      "winner": "TCU",
-      "winnerName": "TCU"
+      "winner": "WVU",
+      "winnerName": "West Virginia"
     },
     {
       "id": "rnd_06",
@@ -1890,8 +1891,8 @@
         "cfb_q11": "D",
         "cfb_q12": "C"
       },
-      "winner": "SMU",
-      "winnerName": "SMU"
+      "winner": "GAT",
+      "winnerName": "Georgia Tech"
     },
     {
       "id": "rnd_08",
@@ -1982,8 +1983,8 @@
         "cfb_q11": "A",
         "cfb_q12": "B"
       },
-      "winner": "TCU",
-      "winnerName": "TCU"
+      "winner": "APP",
+      "winnerName": "Appalachian State"
     },
     {
       "id": "rnd_10",
@@ -2212,8 +2213,8 @@
         "cfb_q11": "C",
         "cfb_q12": "C"
       },
-      "winner": "WAS",
-      "winnerName": "Washington"
+      "winner": "CLM",
+      "winnerName": "Clemson"
     },
     {
       "id": "rnd_15",
@@ -2258,8 +2259,8 @@
         "cfb_q11": "C",
         "cfb_q12": "B"
       },
-      "winner": "OSU",
-      "winnerName": "Ohio State"
+      "winner": "BYU",
+      "winnerName": "BYU"
     },
     {
       "id": "rnd_16",
@@ -2442,8 +2443,8 @@
         "cfb_q11": "D",
         "cfb_q12": "E"
       },
-      "winner": "APP",
-      "winnerName": "Appalachian State"
+      "winner": "TCU",
+      "winnerName": "TCU"
     },
     {
       "id": "rnd_20",
@@ -2764,8 +2765,8 @@
         "cfb_q11": "B",
         "cfb_q12": "A"
       },
-      "winner": "TUL",
-      "winnerName": "Tulane"
+      "winner": "VAN",
+      "winnerName": "Vanderbilt"
     },
     {
       "id": "rnd_27",
@@ -2810,8 +2811,8 @@
         "cfb_q11": "A",
         "cfb_q12": "D"
       },
-      "winner": "STA",
-      "winnerName": "Stanford"
+      "winner": "GAT",
+      "winnerName": "Georgia Tech"
     },
     {
       "id": "rnd_28",
@@ -2902,8 +2903,8 @@
         "cfb_q11": "D",
         "cfb_q12": "A"
       },
-      "winner": "OLE",
-      "winnerName": "Ole Miss"
+      "winner": "CST",
+      "winnerName": "Coastal Carolina"
     },
     {
       "id": "rnd_30",
@@ -2948,8 +2949,8 @@
         "cfb_q11": "D",
         "cfb_q12": "B"
       },
-      "winner": "FLA",
-      "winnerName": "Florida"
+      "winner": "TUL",
+      "winnerName": "Tulane"
     },
     {
       "id": "rnd_31",
@@ -3040,8 +3041,8 @@
         "cfb_q11": "A",
         "cfb_q12": "D"
       },
-      "winner": "OKS",
-      "winnerName": "Oklahoma State"
+      "winner": "ORE",
+      "winnerName": "Oregon"
     },
     {
       "id": "rnd_33",
@@ -3086,8 +3087,8 @@
         "cfb_q11": "C",
         "cfb_q12": "B"
       },
-      "winner": "WAS",
-      "winnerName": "Washington"
+      "winner": "ARM",
+      "winnerName": "Army"
     },
     {
       "id": "rnd_34",
@@ -3132,8 +3133,8 @@
         "cfb_q11": "A",
         "cfb_q12": "D"
       },
-      "winner": "OKS",
-      "winnerName": "Oklahoma State"
+      "winner": "MSU",
+      "winnerName": "Michigan State"
     },
     {
       "id": "rnd_35",
@@ -3178,8 +3179,8 @@
         "cfb_q11": "D",
         "cfb_q12": "D"
       },
-      "winner": "TCU",
-      "winnerName": "TCU"
+      "winner": "BOI",
+      "winnerName": "Boise State"
     },
     {
       "id": "rnd_36",
@@ -3224,8 +3225,8 @@
         "cfb_q11": "C",
         "cfb_q12": "C"
       },
-      "winner": "VAN",
-      "winnerName": "Vanderbilt"
+      "winner": "USC",
+      "winnerName": "USC"
     },
     {
       "id": "rnd_37",
@@ -3270,8 +3271,8 @@
         "cfb_q11": "A",
         "cfb_q12": "C"
       },
-      "winner": "FSU",
-      "winnerName": "Florida State"
+      "winner": "VAN",
+      "winnerName": "Vanderbilt"
     },
     {
       "id": "rnd_38",
@@ -3362,8 +3363,8 @@
         "cfb_q11": "D",
         "cfb_q12": "E"
       },
-      "winner": "NDM",
-      "winnerName": "Notre Dame"
+      "winner": "MIA",
+      "winnerName": "Miami"
     },
     {
       "id": "rnd_40",
