@@ -1,8 +1,8 @@
 {
   "meta": {
     "purpose": "MLB regression gate. Each fixture is an input the live MLB engine maps to a team. Any future change to src/data/mlb.js scoring (or the shared fingerprint engine in src/lib/scoring.js) must reproduce every winner here, or the diff must be reviewed and accepted.",
-    "generated": "2026-07-16",
-    "source": "Generated from the live MLB fingerprint matrix at the session-20 convergence build (30 teams, 12 module questions); re-baselined in the depth/resonance pass (2026-06-15) after an accepted matrix change (TEX added to q5/C, STL trimmed from q10/A). One random winner moved on the accepted matrix: rnd_009 TOR -> TEX (a near-tie tip in the intended direction); all 30 signatures still self-land, zero decisive flips on a 200k uniform sweep. MLB is a fingerprint sport like NFL: coreProfile vs teamDims plus module-point tiebreakers.",
+    "generated": "2026-08-07",
+    "source": "Generated from the live MLB fingerprint matrix at the session-20 convergence build (30 teams, 12 module questions); re-baselined in the depth/resonance pass (2026-06-15) after an accepted matrix change (TEX added to q5/C, STL trimmed from q10/A). One random winner moved on the accepted matrix: rnd_009 TOR -> TEX (a near-tie tip in the intended direction); all 30 signatures still self-land, zero decisive flips on a 200k uniform sweep. MLB is a fingerprint sport like NFL: coreProfile vs teamDims plus module-point tiebreakers. | Re-baselined at the slider-footprint redesign: mlb_q4/q9 replaced flat pole buckets with honest per-team footprints (peak at trait position, width by purity; q9 keeps MIN/PIT unscored). mlb_q2 is the weak slider (answer does not track a clean trait) so its poles are unchanged and only its flat center was un-flattened. 15 signature answers moved, 10 random winners re-recorded.",
     "synthetic_caveat": "Signatures pin coreProfile to each team's own teamDims (the perfectly matched taker) with its best module answers; randoms are uniform synthetic inputs. These verify engine reproducibility and per-team reachability ONLY. They are NOT real-taker rates and say nothing about how often a real person lands on a team.",
     "counts": {
       "signatures": 30,
@@ -123,7 +123,7 @@
         "mlb_q6": "A",
         "mlb_q7": "E",
         "mlb_q8": "E",
-        "mlb_q9": "5",
+        "mlb_q9": "4",
         "mlb_q10": "B",
         "mlb_q11": "A",
         "mlb_q12": "E"
@@ -268,7 +268,7 @@
         "mlb_q1": "B",
         "mlb_q2": "5",
         "mlb_q3": "C",
-        "mlb_q4": "5",
+        "mlb_q4": "4",
         "mlb_q5": "A",
         "mlb_q6": "A",
         "mlb_q7": "D",
@@ -363,7 +363,7 @@
         "mlb_q6": "B",
         "mlb_q7": "B",
         "mlb_q8": "C",
-        "mlb_q9": "5",
+        "mlb_q9": "4",
         "mlb_q10": "D",
         "mlb_q11": "E",
         "mlb_q12": "C"
@@ -423,7 +423,7 @@
         "mlb_q6": "C",
         "mlb_q7": "D",
         "mlb_q8": "A",
-        "mlb_q9": "1",
+        "mlb_q9": "2",
         "mlb_q10": "E",
         "mlb_q11": "B",
         "mlb_q12": "B"
@@ -453,7 +453,7 @@
         "mlb_q6": "C",
         "mlb_q7": "D",
         "mlb_q8": "B",
-        "mlb_q9": "1",
+        "mlb_q9": "2",
         "mlb_q10": "D",
         "mlb_q11": "B",
         "mlb_q12": "C"
@@ -483,7 +483,7 @@
         "mlb_q6": "A",
         "mlb_q7": "C",
         "mlb_q8": "B",
-        "mlb_q9": "1",
+        "mlb_q9": "2",
         "mlb_q10": "E",
         "mlb_q11": "B",
         "mlb_q12": "A"
@@ -538,12 +538,12 @@
         "mlb_q1": "A",
         "mlb_q2": "1",
         "mlb_q3": "C",
-        "mlb_q4": "1",
+        "mlb_q4": "2",
         "mlb_q5": "C",
         "mlb_q6": "C",
         "mlb_q7": "C",
         "mlb_q8": "D",
-        "mlb_q9": "1",
+        "mlb_q9": "2",
         "mlb_q10": "E",
         "mlb_q11": "B",
         "mlb_q12": "A"
@@ -573,7 +573,7 @@
         "mlb_q6": "C",
         "mlb_q7": "B",
         "mlb_q8": "A",
-        "mlb_q9": "5",
+        "mlb_q9": "4",
         "mlb_q10": "E",
         "mlb_q11": "D",
         "mlb_q12": "B"
@@ -663,7 +663,7 @@
         "mlb_q6": "A",
         "mlb_q7": "D",
         "mlb_q8": "E",
-        "mlb_q9": "1",
+        "mlb_q9": "2",
         "mlb_q10": "B",
         "mlb_q11": "C",
         "mlb_q12": "C"
@@ -693,7 +693,7 @@
         "mlb_q6": "B",
         "mlb_q7": "B",
         "mlb_q8": "C",
-        "mlb_q9": "5",
+        "mlb_q9": "4",
         "mlb_q10": "E",
         "mlb_q11": "D",
         "mlb_q12": "D"
@@ -748,12 +748,12 @@
         "mlb_q1": "C",
         "mlb_q2": "1",
         "mlb_q3": "B",
-        "mlb_q4": "1",
+        "mlb_q4": "2",
         "mlb_q5": "B",
         "mlb_q6": "B",
         "mlb_q7": "B",
         "mlb_q8": "C",
-        "mlb_q9": "5",
+        "mlb_q9": "4",
         "mlb_q10": "D",
         "mlb_q11": "D",
         "mlb_q12": "D"
@@ -782,7 +782,7 @@
         "mlb_q6": "D",
         "mlb_q7": "C",
         "mlb_q8": "D",
-        "mlb_q9": "5",
+        "mlb_q9": "4",
         "mlb_q10": "D",
         "mlb_q11": "E",
         "mlb_q12": "E"
@@ -902,7 +902,7 @@
         "mlb_q6": "D",
         "mlb_q7": "B",
         "mlb_q8": "C",
-        "mlb_q9": "5",
+        "mlb_q9": "4",
         "mlb_q10": "E",
         "mlb_q11": "E",
         "mlb_q12": "E"
@@ -1001,8 +1001,8 @@
         "mlb_q11": "A",
         "mlb_q12": "E"
       },
-      "winner": "MIL",
-      "winnerName": "Milwaukee Brewers"
+      "winner": "NYY",
+      "winnerName": "New York Yankees"
     },
     {
       "id": "rnd_003",
@@ -1189,8 +1189,8 @@
         "mlb_q11": "C",
         "mlb_q12": "D"
       },
-      "winner": "TEX",
-      "winnerName": "Texas Rangers"
+      "winner": "BOS",
+      "winnerName": "Boston Red Sox"
     },
     {
       "id": "rnd_007",
@@ -1377,8 +1377,8 @@
         "mlb_q11": "C",
         "mlb_q12": "E"
       },
-      "winner": "CLE",
-      "winnerName": "Cleveland Guardians"
+      "winner": "SF",
+      "winnerName": "San Francisco Giants"
     },
     {
       "id": "rnd_011",
@@ -1941,8 +1941,8 @@
         "mlb_q11": "A",
         "mlb_q12": "E"
       },
-      "winner": "HOU",
-      "winnerName": "Houston Astros"
+      "winner": "DET",
+      "winnerName": "Detroit Tigers"
     },
     {
       "id": "rnd_023",
@@ -2129,8 +2129,8 @@
         "mlb_q11": "D",
         "mlb_q12": "B"
       },
-      "winner": "CWS",
-      "winnerName": "Chicago White Sox"
+      "winner": "SEA",
+      "winnerName": "Seattle Mariners"
     },
     {
       "id": "rnd_027",
@@ -2270,8 +2270,8 @@
         "mlb_q11": "E",
         "mlb_q12": "D"
       },
-      "winner": "PHI",
-      "winnerName": "Philadelphia Phillies"
+      "winner": "DET",
+      "winnerName": "Detroit Tigers"
     },
     {
       "id": "rnd_030",
@@ -2411,8 +2411,8 @@
         "mlb_q11": "C",
         "mlb_q12": "E"
       },
-      "winner": "CWS",
-      "winnerName": "Chicago White Sox"
+      "winner": "DET",
+      "winnerName": "Detroit Tigers"
     },
     {
       "id": "rnd_033",
@@ -2458,8 +2458,8 @@
         "mlb_q11": "D",
         "mlb_q12": "C"
       },
-      "winner": "MIL",
-      "winnerName": "Milwaukee Brewers"
+      "winner": "DET",
+      "winnerName": "Detroit Tigers"
     },
     {
       "id": "rnd_034",
@@ -2693,8 +2693,8 @@
         "mlb_q11": "E",
         "mlb_q12": "E"
       },
-      "winner": "HOU",
-      "winnerName": "Houston Astros"
+      "winner": "SF",
+      "winnerName": "San Francisco Giants"
     },
     {
       "id": "rnd_039",
@@ -2787,8 +2787,8 @@
         "mlb_q11": "D",
         "mlb_q12": "A"
       },
-      "winner": "TEX",
-      "winnerName": "Texas Rangers"
+      "winner": "CIN",
+      "winnerName": "Cincinnati Reds"
     }
   ]
 }
