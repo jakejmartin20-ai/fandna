@@ -1,8 +1,8 @@
 {
   "meta": {
     "purpose": "NHL regression gate. Each fixture is an input the live NHL engine maps to a team. Any future change to src/data/nhl.js scoring (or the shared fingerprint engine in src/lib/scoring.js) must reproduce every winner here, or the diff must be reviewed and accepted.",
-    "generated": "2026-07-07",
-    "source": "Baselined at the NHL convergence build (32 teams, 12 module questions, sliders nhl_q3/q6/q9). NHL is a fingerprint sport like NFL/MLB/NBA: coreProfile vs teamDims plus module-point tiebreakers. One honest scoring fix during the gate: Boston was swallowed by Philadelphia (near-identical rows); re-keyed BOS q4 E->A ('it lasts') and q7 B->A ('does both halves, the standard') onto genuinely-Boston pedigree cells (BOS self-reach 0%->65%). Post-build HARD Lane gate (anchor-calibrated to Serie A ROM 82.7% / NAP 95.4%): 32/32 signatures self-land, zero swallowed, Lane floor CHI ~36% (bar ~7%), uniform top magnet LAK ~6.2%.",
+    "generated": "2026-08-07",
+    "source": "Baselined at the NHL convergence build (32 teams, 12 module questions, sliders nhl_q3/q6/q9). NHL is a fingerprint sport like NFL/MLB/NBA: coreProfile vs teamDims plus module-point tiebreakers. One honest scoring fix during the gate: Boston was swallowed by Philadelphia (near-identical rows); re-keyed BOS q4 E->A ('it lasts') and q7 B->A ('does both halves, the standard') onto genuinely-Boston pedigree cells (BOS self-reach 0%->65%). Post-build HARD Lane gate (anchor-calibrated to Serie A ROM 82.7% / NAP 95.4%): 32/32 signatures self-land, zero swallowed, Lane floor CHI ~36% (bar ~7%), uniform top magnet LAK ~6.2%. | Re-baselined at the slider-footprint redesign: nhl_q3/q6/q9 replaced 3 flat buckets with honest per-team footprints (peak at the team's trait position, lean by boundary). 17 signature answers moved to new peaks; 12 random winners re-recorded.",
     "synthetic_caveat": "Signatures pin coreProfile to each team's own teamDims and use that team's signature module answers; they measure ENGINE BEHAVIOR (reachability), not real-taker prevalence. Random fixtures are seeded uniform inputs generated and replayed on the CURRENT engine. Reachability is not prevalence.",
     "signature_method": "coreProfile = teamDims; moduleAnswers = the option the team sits in per choice question, strong end (1 or 5) of its slider camp, neutral 3 where the team is off the slider.",
     "counts": {
@@ -33,10 +33,10 @@
         "nhl_q3": "4",
         "nhl_q4": "A",
         "nhl_q5": "A",
-        "nhl_q6": "2",
+        "nhl_q6": "1",
         "nhl_q7": "A",
         "nhl_q8": "B",
-        "nhl_q9": "2",
+        "nhl_q9": "1",
         "nhl_q10": "A",
         "nhl_q11": "C",
         "nhl_q12": "D"
@@ -63,7 +63,7 @@
         "nhl_q3": "3",
         "nhl_q4": "E",
         "nhl_q5": "A",
-        "nhl_q6": "2",
+        "nhl_q6": "1",
         "nhl_q7": "A",
         "nhl_q8": "B",
         "nhl_q9": "2",
@@ -120,7 +120,7 @@
       "moduleAnswers": {
         "nhl_q1": "C",
         "nhl_q2": "C",
-        "nhl_q3": "4",
+        "nhl_q3": "5",
         "nhl_q4": "C",
         "nhl_q5": "B",
         "nhl_q6": "2",
@@ -216,7 +216,7 @@
         "nhl_q6": "2",
         "nhl_q7": "C",
         "nhl_q8": "B",
-        "nhl_q9": "2",
+        "nhl_q9": "1",
         "nhl_q10": "B",
         "nhl_q11": "A",
         "nhl_q12": "B"
@@ -336,7 +336,7 @@
         "nhl_q6": "4",
         "nhl_q7": "D",
         "nhl_q8": "B",
-        "nhl_q9": "4",
+        "nhl_q9": "5",
         "nhl_q10": "A",
         "nhl_q11": "E",
         "nhl_q12": "D"
@@ -360,7 +360,7 @@
       "moduleAnswers": {
         "nhl_q1": "A",
         "nhl_q2": "A",
-        "nhl_q3": "2",
+        "nhl_q3": "1",
         "nhl_q4": "E",
         "nhl_q5": "A",
         "nhl_q6": "2",
@@ -480,7 +480,7 @@
       "moduleAnswers": {
         "nhl_q1": "D",
         "nhl_q2": "B",
-        "nhl_q3": "4",
+        "nhl_q3": "5",
         "nhl_q4": "D",
         "nhl_q5": "B",
         "nhl_q6": "3",
@@ -546,7 +546,7 @@
         "nhl_q6": "4",
         "nhl_q7": "D",
         "nhl_q8": "B",
-        "nhl_q9": "4",
+        "nhl_q9": "5",
         "nhl_q10": "C",
         "nhl_q11": "E",
         "nhl_q12": "D"
@@ -570,7 +570,7 @@
       "moduleAnswers": {
         "nhl_q1": "B",
         "nhl_q2": "D",
-        "nhl_q3": "4",
+        "nhl_q3": "5",
         "nhl_q4": "B",
         "nhl_q5": "D",
         "nhl_q6": "3",
@@ -666,7 +666,7 @@
         "nhl_q6": "3",
         "nhl_q7": "C",
         "nhl_q8": "C",
-        "nhl_q9": "2",
+        "nhl_q9": "1",
         "nhl_q10": "A",
         "nhl_q11": "C",
         "nhl_q12": "C"
@@ -726,7 +726,7 @@
         "nhl_q6": "3",
         "nhl_q7": "C",
         "nhl_q8": "C",
-        "nhl_q9": "2",
+        "nhl_q9": "1",
         "nhl_q10": "D",
         "nhl_q11": "C",
         "nhl_q12": "B"
@@ -786,7 +786,7 @@
         "nhl_q6": "4",
         "nhl_q7": "A",
         "nhl_q8": "C",
-        "nhl_q9": "2",
+        "nhl_q9": "1",
         "nhl_q10": "C",
         "nhl_q11": "C",
         "nhl_q12": "C"
@@ -816,7 +816,7 @@
         "nhl_q6": "4",
         "nhl_q7": "C",
         "nhl_q8": "C",
-        "nhl_q9": "2",
+        "nhl_q9": "1",
         "nhl_q10": "C",
         "nhl_q11": "B",
         "nhl_q12": "E"
@@ -876,7 +876,7 @@
         "nhl_q6": "4",
         "nhl_q7": "D",
         "nhl_q8": "B",
-        "nhl_q9": "4",
+        "nhl_q9": "5",
         "nhl_q10": "C",
         "nhl_q11": "E",
         "nhl_q12": "E"
@@ -903,10 +903,10 @@
         "nhl_q3": "4",
         "nhl_q4": "D",
         "nhl_q5": "D",
-        "nhl_q6": "4",
+        "nhl_q6": "5",
         "nhl_q7": "D",
         "nhl_q8": "B",
-        "nhl_q9": "4",
+        "nhl_q9": "5",
         "nhl_q10": "D",
         "nhl_q11": "E",
         "nhl_q12": "E"
@@ -1112,8 +1112,8 @@
         "nhl_q11": "B",
         "nhl_q12": "E"
       },
-      "winner": "NJD",
-      "winnerName": "New Jersey Devils"
+      "winner": "BUF",
+      "winnerName": "Buffalo Sabres"
     },
     {
       "id": "rnd_004",
@@ -1206,8 +1206,8 @@
         "nhl_q11": "C",
         "nhl_q12": "A"
       },
-      "winner": "CAR",
-      "winnerName": "Carolina Hurricanes"
+      "winner": "NYI",
+      "winnerName": "New York Islanders"
     },
     {
       "id": "rnd_006",
@@ -1300,8 +1300,8 @@
         "nhl_q11": "D",
         "nhl_q12": "E"
       },
-      "winner": "SEA",
-      "winnerName": "Seattle Kraken"
+      "winner": "CGY",
+      "winnerName": "Calgary Flames"
     },
     {
       "id": "rnd_008",
@@ -1394,8 +1394,8 @@
         "nhl_q11": "D",
         "nhl_q12": "C"
       },
-      "winner": "SJS",
-      "winnerName": "San Jose Sharks"
+      "winner": "DET",
+      "winnerName": "Detroit Red Wings"
     },
     {
       "id": "rnd_010",
@@ -1441,8 +1441,8 @@
         "nhl_q11": "C",
         "nhl_q12": "B"
       },
-      "winner": "ANA",
-      "winnerName": "Anaheim Ducks"
+      "winner": "BOS",
+      "winnerName": "Boston Bruins"
     },
     {
       "id": "rnd_011",
@@ -1582,8 +1582,8 @@
         "nhl_q11": "E",
         "nhl_q12": "D"
       },
-      "winner": "MIN",
-      "winnerName": "Minnesota Wild"
+      "winner": "CBJ",
+      "winnerName": "Columbus Blue Jackets"
     },
     {
       "id": "rnd_014",
@@ -1864,8 +1864,8 @@
         "nhl_q11": "A",
         "nhl_q12": "A"
       },
-      "winner": "DET",
-      "winnerName": "Detroit Red Wings"
+      "winner": "NYI",
+      "winnerName": "New York Islanders"
     },
     {
       "id": "rnd_020",
@@ -2240,8 +2240,8 @@
         "nhl_q11": "A",
         "nhl_q12": "B"
       },
-      "winner": "EDM",
-      "winnerName": "Edmonton Oilers"
+      "winner": "WSH",
+      "winnerName": "Washington Capitals"
     },
     {
       "id": "rnd_028",
@@ -2334,8 +2334,8 @@
         "nhl_q11": "D",
         "nhl_q12": "C"
       },
-      "winner": "DET",
-      "winnerName": "Detroit Red Wings"
+      "winner": "SJS",
+      "winnerName": "San Jose Sharks"
     },
     {
       "id": "rnd_030",
@@ -2616,8 +2616,8 @@
         "nhl_q11": "E",
         "nhl_q12": "C"
       },
-      "winner": "TBL",
-      "winnerName": "Tampa Bay Lightning"
+      "winner": "WSH",
+      "winnerName": "Washington Capitals"
     },
     {
       "id": "rnd_036",
@@ -2663,8 +2663,8 @@
         "nhl_q11": "C",
         "nhl_q12": "E"
       },
-      "winner": "CAR",
-      "winnerName": "Carolina Hurricanes"
+      "winner": "VGK",
+      "winnerName": "Vegas Golden Knights"
     },
     {
       "id": "rnd_037",
@@ -2851,8 +2851,8 @@
         "nhl_q11": "C",
         "nhl_q12": "A"
       },
-      "winner": "DAL",
-      "winnerName": "Dallas Stars"
+      "winner": "DET",
+      "winnerName": "Detroit Red Wings"
     }
   ]
 }
