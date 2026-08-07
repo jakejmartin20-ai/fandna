@@ -11,7 +11,7 @@
       "total": 72,
       "signatures_self_land": true
     },
-    "rebaselined": "2026-08-05 session22: re-recorded on live engine (main scoring.js + NHL wiring) after module-question personality pass, q10 option E dropped, archetypeDesc stripped."
+    "rebaselined": "2026-08-06 s25: NHL sliders q3/q6/q9 re-authored to three-position (instinct/center/plan, tradition/center/fresh, responsibility/center/defer) by trait tertiles (chaos/root/ambition). Re-recorded on live main engine."
   },
   "fixtures": [
     {
@@ -30,13 +30,13 @@
       "moduleAnswers": {
         "nhl_q1": "C",
         "nhl_q2": "C",
-        "nhl_q3": "5",
+        "nhl_q3": "4",
         "nhl_q4": "A",
         "nhl_q5": "A",
-        "nhl_q6": "1",
+        "nhl_q6": "2",
         "nhl_q7": "A",
         "nhl_q8": "B",
-        "nhl_q9": "1",
+        "nhl_q9": "2",
         "nhl_q10": "A",
         "nhl_q11": "C",
         "nhl_q12": "D"
@@ -60,13 +60,13 @@
       "moduleAnswers": {
         "nhl_q1": "C",
         "nhl_q2": "B",
-        "nhl_q3": "1",
+        "nhl_q3": "3",
         "nhl_q4": "E",
         "nhl_q5": "A",
-        "nhl_q6": "1",
+        "nhl_q6": "2",
         "nhl_q7": "A",
         "nhl_q8": "B",
-        "nhl_q9": "1",
+        "nhl_q9": "2",
         "nhl_q10": "A",
         "nhl_q11": "A",
         "nhl_q12": "D"
@@ -90,13 +90,13 @@
       "moduleAnswers": {
         "nhl_q1": "A",
         "nhl_q2": "A",
-        "nhl_q3": "1",
+        "nhl_q3": "2",
         "nhl_q4": "A",
         "nhl_q5": "E",
-        "nhl_q6": "1",
+        "nhl_q6": "2",
         "nhl_q7": "A",
         "nhl_q8": "E",
-        "nhl_q9": "1",
+        "nhl_q9": "2",
         "nhl_q10": "A",
         "nhl_q11": "A",
         "nhl_q12": "B"
@@ -120,13 +120,13 @@
       "moduleAnswers": {
         "nhl_q1": "C",
         "nhl_q2": "C",
-        "nhl_q3": "5",
+        "nhl_q3": "4",
         "nhl_q4": "C",
         "nhl_q5": "B",
-        "nhl_q6": "1",
+        "nhl_q6": "2",
         "nhl_q7": "A",
         "nhl_q8": "B",
-        "nhl_q9": "5",
+        "nhl_q9": "3",
         "nhl_q10": "A",
         "nhl_q11": "B",
         "nhl_q12": "A"
@@ -150,13 +150,13 @@
       "moduleAnswers": {
         "nhl_q1": "A",
         "nhl_q2": "B",
-        "nhl_q3": "1",
+        "nhl_q3": "2",
         "nhl_q4": "C",
         "nhl_q5": "A",
-        "nhl_q6": "1",
+        "nhl_q6": "2",
         "nhl_q7": "C",
         "nhl_q8": "E",
-        "nhl_q9": "1",
+        "nhl_q9": "2",
         "nhl_q10": "A",
         "nhl_q11": "A",
         "nhl_q12": "B"
@@ -180,13 +180,13 @@
       "moduleAnswers": {
         "nhl_q1": "C",
         "nhl_q2": "C",
-        "nhl_q3": "1",
+        "nhl_q3": "2",
         "nhl_q4": "A",
         "nhl_q5": "A",
-        "nhl_q6": "1",
+        "nhl_q6": "2",
         "nhl_q7": "C",
         "nhl_q8": "C",
-        "nhl_q9": "1",
+        "nhl_q9": "2",
         "nhl_q10": "B",
         "nhl_q11": "A",
         "nhl_q12": "C"
@@ -210,13 +210,13 @@
       "moduleAnswers": {
         "nhl_q1": "A",
         "nhl_q2": "B",
-        "nhl_q3": "1",
+        "nhl_q3": "2",
         "nhl_q4": "A",
         "nhl_q5": "E",
-        "nhl_q6": "1",
+        "nhl_q6": "2",
         "nhl_q7": "C",
         "nhl_q8": "B",
-        "nhl_q9": "1",
+        "nhl_q9": "2",
         "nhl_q10": "B",
         "nhl_q11": "A",
         "nhl_q12": "B"
@@ -240,13 +240,13 @@
       "moduleAnswers": {
         "nhl_q1": "A",
         "nhl_q2": "B",
-        "nhl_q3": "1",
+        "nhl_q3": "3",
         "nhl_q4": "D",
         "nhl_q5": "A",
-        "nhl_q6": "1",
+        "nhl_q6": "2",
         "nhl_q7": "B",
         "nhl_q8": "B",
-        "nhl_q9": "5",
+        "nhl_q9": "3",
         "nhl_q10": "A",
         "nhl_q11": "A",
         "nhl_q12": "D"
@@ -270,13 +270,13 @@
       "moduleAnswers": {
         "nhl_q1": "A",
         "nhl_q2": "B",
-        "nhl_q3": "1",
+        "nhl_q3": "2",
         "nhl_q4": "B",
         "nhl_q5": "A",
-        "nhl_q6": "1",
+        "nhl_q6": "2",
         "nhl_q7": "C",
         "nhl_q8": "B",
-        "nhl_q9": "1",
+        "nhl_q9": "3",
         "nhl_q10": "A",
         "nhl_q11": "A",
         "nhl_q12": "B"
@@ -300,13 +300,13 @@
       "moduleAnswers": {
         "nhl_q1": "D",
         "nhl_q2": "B",
-        "nhl_q3": "5",
+        "nhl_q3": "4",
         "nhl_q4": "D",
         "nhl_q5": "B",
-        "nhl_q6": "1",
+        "nhl_q6": "3",
         "nhl_q7": "D",
         "nhl_q8": "B",
-        "nhl_q9": "5",
+        "nhl_q9": "4",
         "nhl_q10": "B",
         "nhl_q11": "E",
         "nhl_q12": "D"
@@ -330,13 +330,13 @@
       "moduleAnswers": {
         "nhl_q1": "D",
         "nhl_q2": "B",
-        "nhl_q3": "5",
+        "nhl_q3": "3",
         "nhl_q4": "E",
         "nhl_q5": "B",
-        "nhl_q6": "1",
+        "nhl_q6": "4",
         "nhl_q7": "D",
         "nhl_q8": "B",
-        "nhl_q9": "5",
+        "nhl_q9": "4",
         "nhl_q10": "A",
         "nhl_q11": "E",
         "nhl_q12": "D"
@@ -360,13 +360,13 @@
       "moduleAnswers": {
         "nhl_q1": "A",
         "nhl_q2": "A",
-        "nhl_q3": "1",
+        "nhl_q3": "2",
         "nhl_q4": "E",
         "nhl_q5": "A",
-        "nhl_q6": "1",
+        "nhl_q6": "2",
         "nhl_q7": "B",
         "nhl_q8": "E",
-        "nhl_q9": "1",
+        "nhl_q9": "3",
         "nhl_q10": "A",
         "nhl_q11": "A",
         "nhl_q12": "B"
@@ -390,13 +390,13 @@
       "moduleAnswers": {
         "nhl_q1": "D",
         "nhl_q2": "B",
-        "nhl_q3": "5",
+        "nhl_q3": "3",
         "nhl_q4": "E",
         "nhl_q5": "A",
-        "nhl_q6": "1",
+        "nhl_q6": "2",
         "nhl_q7": "B",
         "nhl_q8": "B",
-        "nhl_q9": "5",
+        "nhl_q9": "4",
         "nhl_q10": "A",
         "nhl_q11": "A",
         "nhl_q12": "D"
@@ -420,13 +420,13 @@
       "moduleAnswers": {
         "nhl_q1": "D",
         "nhl_q2": "B",
-        "nhl_q3": "5",
+        "nhl_q3": "3",
         "nhl_q4": "E",
         "nhl_q5": "C",
-        "nhl_q6": "1",
+        "nhl_q6": "3",
         "nhl_q7": "B",
         "nhl_q8": "B",
-        "nhl_q9": "5",
+        "nhl_q9": "3",
         "nhl_q10": "A",
         "nhl_q11": "C",
         "nhl_q12": "D"
@@ -450,13 +450,13 @@
       "moduleAnswers": {
         "nhl_q1": "D",
         "nhl_q2": "B",
-        "nhl_q3": "5",
+        "nhl_q3": "4",
         "nhl_q4": "A",
         "nhl_q5": "B",
-        "nhl_q6": "1",
+        "nhl_q6": "3",
         "nhl_q7": "A",
         "nhl_q8": "D",
-        "nhl_q9": "5",
+        "nhl_q9": "3",
         "nhl_q10": "A",
         "nhl_q11": "C",
         "nhl_q12": "A"
@@ -480,13 +480,13 @@
       "moduleAnswers": {
         "nhl_q1": "D",
         "nhl_q2": "B",
-        "nhl_q3": "5",
+        "nhl_q3": "4",
         "nhl_q4": "D",
         "nhl_q5": "B",
-        "nhl_q6": "1",
+        "nhl_q6": "3",
         "nhl_q7": "D",
         "nhl_q8": "B",
-        "nhl_q9": "5",
+        "nhl_q9": "4",
         "nhl_q10": "A",
         "nhl_q11": "E",
         "nhl_q12": "D"
@@ -510,13 +510,13 @@
       "moduleAnswers": {
         "nhl_q1": "D",
         "nhl_q2": "B",
-        "nhl_q3": "1",
+        "nhl_q3": "2",
         "nhl_q4": "C",
         "nhl_q5": "A",
-        "nhl_q6": "5",
+        "nhl_q6": "4",
         "nhl_q7": "C",
         "nhl_q8": "E",
-        "nhl_q9": "5",
+        "nhl_q9": "4",
         "nhl_q10": "C",
         "nhl_q11": "D",
         "nhl_q12": "B"
@@ -540,13 +540,13 @@
       "moduleAnswers": {
         "nhl_q1": "D",
         "nhl_q2": "B",
-        "nhl_q3": "5",
+        "nhl_q3": "3",
         "nhl_q4": "E",
         "nhl_q5": "B",
-        "nhl_q6": "5",
+        "nhl_q6": "4",
         "nhl_q7": "D",
         "nhl_q8": "B",
-        "nhl_q9": "5",
+        "nhl_q9": "4",
         "nhl_q10": "C",
         "nhl_q11": "E",
         "nhl_q12": "D"
@@ -570,13 +570,13 @@
       "moduleAnswers": {
         "nhl_q1": "B",
         "nhl_q2": "D",
-        "nhl_q3": "5",
+        "nhl_q3": "4",
         "nhl_q4": "B",
         "nhl_q5": "D",
-        "nhl_q6": "5",
+        "nhl_q6": "3",
         "nhl_q7": "B",
         "nhl_q8": "C",
-        "nhl_q9": "5",
+        "nhl_q9": "3",
         "nhl_q10": "D",
         "nhl_q11": "B",
         "nhl_q12": "A"
@@ -600,13 +600,13 @@
       "moduleAnswers": {
         "nhl_q1": "B",
         "nhl_q2": "A",
-        "nhl_q3": "5",
+        "nhl_q3": "3",
         "nhl_q4": "E",
         "nhl_q5": "C",
-        "nhl_q6": "5",
+        "nhl_q6": "4",
         "nhl_q7": "B",
         "nhl_q8": "B",
-        "nhl_q9": "5",
+        "nhl_q9": "4",
         "nhl_q10": "D",
         "nhl_q11": "C",
         "nhl_q12": "A"
@@ -630,13 +630,13 @@
       "moduleAnswers": {
         "nhl_q1": "B",
         "nhl_q2": "C",
-        "nhl_q3": "5",
+        "nhl_q3": "4",
         "nhl_q4": "E",
         "nhl_q5": "B",
-        "nhl_q6": "5",
+        "nhl_q6": "3",
         "nhl_q7": "B",
         "nhl_q8": "A",
-        "nhl_q9": "5",
+        "nhl_q9": "4",
         "nhl_q10": "D",
         "nhl_q11": "C",
         "nhl_q12": "A"
@@ -660,13 +660,13 @@
       "moduleAnswers": {
         "nhl_q1": "C",
         "nhl_q2": "C",
-        "nhl_q3": "1",
+        "nhl_q3": "2",
         "nhl_q4": "A",
         "nhl_q5": "A",
-        "nhl_q6": "1",
+        "nhl_q6": "3",
         "nhl_q7": "C",
         "nhl_q8": "C",
-        "nhl_q9": "1",
+        "nhl_q9": "2",
         "nhl_q10": "A",
         "nhl_q11": "C",
         "nhl_q12": "C"
@@ -690,13 +690,13 @@
       "moduleAnswers": {
         "nhl_q1": "C",
         "nhl_q2": "C",
-        "nhl_q3": "1",
+        "nhl_q3": "2",
         "nhl_q4": "B",
         "nhl_q5": "A",
-        "nhl_q6": "1",
+        "nhl_q6": "3",
         "nhl_q7": "C",
         "nhl_q8": "B",
-        "nhl_q9": "1",
+        "nhl_q9": "2",
         "nhl_q10": "A",
         "nhl_q11": "A",
         "nhl_q12": "C"
@@ -720,13 +720,13 @@
       "moduleAnswers": {
         "nhl_q1": "C",
         "nhl_q2": "C",
-        "nhl_q3": "1",
+        "nhl_q3": "3",
         "nhl_q4": "A",
         "nhl_q5": "B",
-        "nhl_q6": "5",
+        "nhl_q6": "3",
         "nhl_q7": "C",
         "nhl_q8": "C",
-        "nhl_q9": "1",
+        "nhl_q9": "2",
         "nhl_q10": "D",
         "nhl_q11": "C",
         "nhl_q12": "B"
@@ -750,13 +750,13 @@
       "moduleAnswers": {
         "nhl_q1": "C",
         "nhl_q2": "C",
-        "nhl_q3": "5",
+        "nhl_q3": "3",
         "nhl_q4": "C",
         "nhl_q5": "B",
-        "nhl_q6": "5",
+        "nhl_q6": "3",
         "nhl_q7": "A",
         "nhl_q8": "C",
-        "nhl_q9": "1",
+        "nhl_q9": "3",
         "nhl_q10": "B",
         "nhl_q11": "B",
         "nhl_q12": "C"
@@ -780,13 +780,13 @@
       "moduleAnswers": {
         "nhl_q1": "C",
         "nhl_q2": "C",
-        "nhl_q3": "5",
+        "nhl_q3": "3",
         "nhl_q4": "A",
         "nhl_q5": "C",
-        "nhl_q6": "5",
+        "nhl_q6": "4",
         "nhl_q7": "A",
         "nhl_q8": "C",
-        "nhl_q9": "1",
+        "nhl_q9": "2",
         "nhl_q10": "C",
         "nhl_q11": "C",
         "nhl_q12": "C"
@@ -810,13 +810,13 @@
       "moduleAnswers": {
         "nhl_q1": "B",
         "nhl_q2": "C",
-        "nhl_q3": "1",
+        "nhl_q3": "2",
         "nhl_q4": "B",
         "nhl_q5": "C",
-        "nhl_q6": "5",
+        "nhl_q6": "4",
         "nhl_q7": "C",
         "nhl_q8": "C",
-        "nhl_q9": "1",
+        "nhl_q9": "2",
         "nhl_q10": "C",
         "nhl_q11": "B",
         "nhl_q12": "E"
@@ -840,13 +840,13 @@
       "moduleAnswers": {
         "nhl_q1": "A",
         "nhl_q2": "A",
-        "nhl_q3": "1",
+        "nhl_q3": "2",
         "nhl_q4": "E",
         "nhl_q5": "E",
-        "nhl_q6": "5",
+        "nhl_q6": "4",
         "nhl_q7": "E",
         "nhl_q8": "E",
-        "nhl_q9": "1",
+        "nhl_q9": "3",
         "nhl_q10": "C",
         "nhl_q11": "A",
         "nhl_q12": "B"
@@ -870,13 +870,13 @@
       "moduleAnswers": {
         "nhl_q1": "D",
         "nhl_q2": "B",
-        "nhl_q3": "5",
+        "nhl_q3": "4",
         "nhl_q4": "C",
         "nhl_q5": "D",
-        "nhl_q6": "5",
+        "nhl_q6": "4",
         "nhl_q7": "D",
         "nhl_q8": "B",
-        "nhl_q9": "5",
+        "nhl_q9": "4",
         "nhl_q10": "C",
         "nhl_q11": "E",
         "nhl_q12": "E"
@@ -900,13 +900,13 @@
       "moduleAnswers": {
         "nhl_q1": "D",
         "nhl_q2": "B",
-        "nhl_q3": "5",
+        "nhl_q3": "4",
         "nhl_q4": "D",
         "nhl_q5": "D",
-        "nhl_q6": "5",
+        "nhl_q6": "4",
         "nhl_q7": "D",
         "nhl_q8": "B",
-        "nhl_q9": "5",
+        "nhl_q9": "4",
         "nhl_q10": "D",
         "nhl_q11": "E",
         "nhl_q12": "E"
@@ -930,13 +930,13 @@
       "moduleAnswers": {
         "nhl_q1": "B",
         "nhl_q2": "B",
-        "nhl_q3": "5",
+        "nhl_q3": "4",
         "nhl_q4": "E",
         "nhl_q5": "E",
-        "nhl_q6": "5",
+        "nhl_q6": "4",
         "nhl_q7": "E",
         "nhl_q8": "C",
-        "nhl_q9": "5",
+        "nhl_q9": "4",
         "nhl_q10": "C",
         "nhl_q11": "D",
         "nhl_q12": "B"
@@ -960,13 +960,13 @@
       "moduleAnswers": {
         "nhl_q1": "D",
         "nhl_q2": "B",
-        "nhl_q3": "5",
+        "nhl_q3": "4",
         "nhl_q4": "B",
         "nhl_q5": "A",
-        "nhl_q6": "5",
+        "nhl_q6": "4",
         "nhl_q7": "A",
         "nhl_q8": "B",
-        "nhl_q9": "1",
+        "nhl_q9": "3",
         "nhl_q10": "A",
         "nhl_q11": "A",
         "nhl_q12": "C"
@@ -1018,8 +1018,8 @@
         "nhl_q11": "C",
         "nhl_q12": "A"
       },
-      "winner": "NYI",
-      "winnerName": "New York Islanders"
+      "winner": "DAL",
+      "winnerName": "Dallas Stars"
     },
     {
       "id": "rnd_002",
@@ -1065,8 +1065,8 @@
         "nhl_q11": "E",
         "nhl_q12": "A"
       },
-      "winner": "MIN",
-      "winnerName": "Minnesota Wild"
+      "winner": "NYI",
+      "winnerName": "New York Islanders"
     },
     {
       "id": "rnd_003",
@@ -1159,8 +1159,8 @@
         "nhl_q11": "D",
         "nhl_q12": "D"
       },
-      "winner": "LAK",
-      "winnerName": "Los Angeles Kings"
+      "winner": "MTL",
+      "winnerName": "Montreal Canadiens"
     },
     {
       "id": "rnd_005",
@@ -1206,8 +1206,8 @@
         "nhl_q11": "C",
         "nhl_q12": "A"
       },
-      "winner": "NYI",
-      "winnerName": "New York Islanders"
+      "winner": "CAR",
+      "winnerName": "Carolina Hurricanes"
     },
     {
       "id": "rnd_006",
@@ -1300,8 +1300,8 @@
         "nhl_q11": "D",
         "nhl_q12": "E"
       },
-      "winner": "BUF",
-      "winnerName": "Buffalo Sabres"
+      "winner": "SEA",
+      "winnerName": "Seattle Kraken"
     },
     {
       "id": "rnd_008",
@@ -1347,8 +1347,8 @@
         "nhl_q11": "B",
         "nhl_q12": "A"
       },
-      "winner": "WPG",
-      "winnerName": "Winnipeg Jets"
+      "winner": "OTT",
+      "winnerName": "Ottawa Senators"
     },
     {
       "id": "rnd_009",
@@ -1394,8 +1394,8 @@
         "nhl_q11": "D",
         "nhl_q12": "C"
       },
-      "winner": "WPG",
-      "winnerName": "Winnipeg Jets"
+      "winner": "SJS",
+      "winnerName": "San Jose Sharks"
     },
     {
       "id": "rnd_010",
@@ -1582,8 +1582,8 @@
         "nhl_q11": "E",
         "nhl_q12": "D"
       },
-      "winner": "CHI",
-      "winnerName": "Chicago Blackhawks"
+      "winner": "MIN",
+      "winnerName": "Minnesota Wild"
     },
     {
       "id": "rnd_014",
@@ -1629,8 +1629,8 @@
         "nhl_q11": "D",
         "nhl_q12": "A"
       },
-      "winner": "CBJ",
-      "winnerName": "Columbus Blue Jackets"
+      "winner": "WPG",
+      "winnerName": "Winnipeg Jets"
     },
     {
       "id": "rnd_015",
@@ -1723,8 +1723,8 @@
         "nhl_q11": "B",
         "nhl_q12": "A"
       },
-      "winner": "NYI",
-      "winnerName": "New York Islanders"
+      "winner": "DET",
+      "winnerName": "Detroit Red Wings"
     },
     {
       "id": "rnd_017",
@@ -1770,8 +1770,8 @@
         "nhl_q11": "E",
         "nhl_q12": "D"
       },
-      "winner": "CBJ",
-      "winnerName": "Columbus Blue Jackets"
+      "winner": "OTT",
+      "winnerName": "Ottawa Senators"
     },
     {
       "id": "rnd_018",
@@ -1864,8 +1864,8 @@
         "nhl_q11": "A",
         "nhl_q12": "A"
       },
-      "winner": "NYR",
-      "winnerName": "New York Rangers"
+      "winner": "DET",
+      "winnerName": "Detroit Red Wings"
     },
     {
       "id": "rnd_020",
@@ -1958,8 +1958,8 @@
         "nhl_q11": "E",
         "nhl_q12": "C"
       },
-      "winner": "SJS",
-      "winnerName": "San Jose Sharks"
+      "winner": "WSH",
+      "winnerName": "Washington Capitals"
     },
     {
       "id": "rnd_022",
@@ -2052,8 +2052,8 @@
         "nhl_q11": "E",
         "nhl_q12": "A"
       },
-      "winner": "OTT",
-      "winnerName": "Ottawa Senators"
+      "winner": "NYI",
+      "winnerName": "New York Islanders"
     },
     {
       "id": "rnd_024",
@@ -2099,8 +2099,8 @@
         "nhl_q11": "E",
         "nhl_q12": "A"
       },
-      "winner": "SJS",
-      "winnerName": "San Jose Sharks"
+      "winner": "MIN",
+      "winnerName": "Minnesota Wild"
     },
     {
       "id": "rnd_025",
@@ -2146,8 +2146,8 @@
         "nhl_q11": "B",
         "nhl_q12": "C"
       },
-      "winner": "LAK",
-      "winnerName": "Los Angeles Kings"
+      "winner": "NJD",
+      "winnerName": "New Jersey Devils"
     },
     {
       "id": "rnd_026",
@@ -2428,8 +2428,8 @@
         "nhl_q11": "A",
         "nhl_q12": "E"
       },
-      "winner": "WSH",
-      "winnerName": "Washington Capitals"
+      "winner": "PHI",
+      "winnerName": "Philadelphia Flyers"
     },
     {
       "id": "rnd_032",
@@ -2522,8 +2522,8 @@
         "nhl_q11": "B",
         "nhl_q12": "B"
       },
-      "winner": "VAN",
-      "winnerName": "Vancouver Canucks"
+      "winner": "CHI",
+      "winnerName": "Chicago Blackhawks"
     },
     {
       "id": "rnd_034",
@@ -2663,8 +2663,8 @@
         "nhl_q11": "C",
         "nhl_q12": "E"
       },
-      "winner": "VGK",
-      "winnerName": "Vegas Golden Knights"
+      "winner": "CAR",
+      "winnerName": "Carolina Hurricanes"
     },
     {
       "id": "rnd_037",
@@ -2757,8 +2757,8 @@
         "nhl_q11": "B",
         "nhl_q12": "A"
       },
-      "winner": "DET",
-      "winnerName": "Detroit Red Wings"
+      "winner": "BOS",
+      "winnerName": "Boston Bruins"
     },
     {
       "id": "rnd_039",
@@ -2804,8 +2804,8 @@
         "nhl_q11": "E",
         "nhl_q12": "A"
       },
-      "winner": "NYI",
-      "winnerName": "New York Islanders"
+      "winner": "CAR",
+      "winnerName": "Carolina Hurricanes"
     },
     {
       "id": "rnd_040",

@@ -1,17 +1,19 @@
 {
   "meta": {
     "purpose": "NBA regression gate. Each fixture is an input the live NBA engine maps to a team. Any future change to src/data/nba.js scoring (or the shared fingerprint engine in src/lib/scoring.js) must reproduce every winner here, or the diff must be reviewed and accepted.",
-    "generated": "2026-06-17",
-    "source": "Generated from the live NBA fingerprint matrix at the sport-four convergence build (30 teams, 12 module questions). NBA is a fingerprint sport like NFL and MLB: coreProfile vs teamDims plus module-point tiebreakers. All 30 signatures self-land; centroid gravity well is CLE (not ATL); no magnet on a 60k uniform sweep.",
-    "synthetic_caveat": "Signatures pin coreProfile to each team's own teamDims and use that team's signature module answers; they measure ENGINE BEHAVIOR (reachability), not real-taker prevalence. Random fixtures are seeded uniform draws and are snapshots of engine output, not predictions of how real people answer. Reachability is not prevalence.",
-    "seed": 20260617,
-    "signature_method": "coreProfile = teamDims; moduleAnswers = the option the team sits in per choice question, strong end of its slider camp, neutral 3 where the team is off the slider.",
+    "generated": "2026-07-06",
+    "source": "Re-baselined at the NBA scoring-balance build (30 teams, 12 module questions). Accepted change: 8 magnet trims (DAL x4, WAS x2, MIA x2) + 1 New Orleans re-key (q12 D->C, 'the long shot nobody believed'), fixing the Dallas star-chase magnet that swallowed Phoenix (4.7%->100%) and separating the Orlando/New Orleans near-twins (both now self-land). NBA is a fingerprint sport like NFL and MLB: coreProfile vs teamDims plus module-point tiebreakers. Post-build HARD Lane gate: zero swallowed, floor HOU ~26%, biggest magnet DET ~8.4%, 30/30 signatures self-land.",
+    "synthetic_caveat": "Signatures pin coreProfile to each teams own teamDims and use that teams signature module answers; they measure ENGINE BEHAVIOR (reachability), not real-taker prevalence. Random fixtures reuse the prior baselines uniform inputs, re-baselined on the CURRENT (post-decompression) engine. The prior committed baseline predated core decompression, so raw winner drift vs it is not attributable to this change. Isolating scoring alone on the current engine, the accepted trims moved exactly 3 of 40 random winners (rnd_001, rnd_018, rnd_026), all Dallas/Washington magnet-shedding in the intended direction. All 30 signatures self-land. Reachability is not prevalence.",
+    "signature_method": "coreProfile = teamDims; moduleAnswers = the option the team sits in per choice question, strong end (1 or 5) of its slider camp, neutral 3 where the team is off the slider.",
     "counts": {
       "signature": 30,
       "random": 40,
       "total": 70,
       "signatures_self_land": true
-    }
+    },
+    "rebaselined": "2026-08-06 session25 FINAL: branch base (dead fields stripped) + voice pass (4 labels) + q10-C duplicate re-aim (+6 persona corrections) + slider middles q3/q6/q9. Re-recorded on live main engine f7ecf135.",
+    "dataFile": "nba.js fce4d805",
+    "engine": "src/lib/scoring.js f7ecf135 (NBA fingerprint, FP_W 1.2, DIST_REF 14)"
   },
   "fixtures": [
     {
@@ -307,7 +309,7 @@
         "nba_q7": "A",
         "nba_q8": "A",
         "nba_q9": "5",
-        "nba_q10": "D",
+        "nba_q10": "C",
         "nba_q11": "B",
         "nba_q12": "C"
       },
@@ -337,7 +339,7 @@
         "nba_q7": "C",
         "nba_q8": "A",
         "nba_q9": "1",
-        "nba_q10": "A",
+        "nba_q10": "C",
         "nba_q11": "B",
         "nba_q12": "D"
       },
@@ -598,14 +600,14 @@
         "rootedness": 6
       },
       "moduleAnswers": {
-        "nba_q1": "D",
+        "nba_q1": "A",
         "nba_q2": "A",
         "nba_q3": "5",
         "nba_q4": "A",
         "nba_q5": "D",
         "nba_q6": "1",
         "nba_q7": "C",
-        "nba_q8": "D",
+        "nba_q8": "A",
         "nba_q9": "3",
         "nba_q10": "A",
         "nba_q11": "D",
@@ -637,7 +639,7 @@
         "nba_q7": "B",
         "nba_q8": "B",
         "nba_q9": "3",
-        "nba_q10": "C",
+        "nba_q10": "B",
         "nba_q11": "C",
         "nba_q12": "A"
       },
@@ -724,10 +726,10 @@
         "nba_q4": "C",
         "nba_q5": "B",
         "nba_q6": "1",
-        "nba_q7": "D",
+        "nba_q7": "A",
         "nba_q8": "B",
         "nba_q9": "5",
-        "nba_q10": "D",
+        "nba_q10": "A",
         "nba_q11": "D",
         "nba_q12": "A"
       },
@@ -748,16 +750,16 @@
         "rootedness": 6
       },
       "moduleAnswers": {
-        "nba_q1": "C",
+        "nba_q1": "A",
         "nba_q2": "A",
         "nba_q3": "1",
-        "nba_q4": "C",
-        "nba_q5": "B",
+        "nba_q4": "A",
+        "nba_q5": "A",
         "nba_q6": "5",
         "nba_q7": "B",
-        "nba_q8": "B",
+        "nba_q8": "A",
         "nba_q9": "5",
-        "nba_q10": "C",
+        "nba_q10": "B",
         "nba_q11": "A",
         "nba_q12": "B"
       },
@@ -787,7 +789,7 @@
         "nba_q7": "B",
         "nba_q8": "C",
         "nba_q9": "3",
-        "nba_q10": "C",
+        "nba_q10": "B",
         "nba_q11": "C",
         "nba_q12": "B"
       },
@@ -847,7 +849,7 @@
         "nba_q7": "C",
         "nba_q8": "D",
         "nba_q9": "3",
-        "nba_q10": "A",
+        "nba_q10": "C",
         "nba_q11": "A",
         "nba_q12": "D"
       },
@@ -879,7 +881,7 @@
         "nba_q9": "3",
         "nba_q10": "A",
         "nba_q11": "A",
-        "nba_q12": "D"
+        "nba_q12": "C"
       },
       "winner": "NOP",
       "winnerName": "New Orleans Pelicans"
@@ -958,8 +960,8 @@
         "nba_q11": "A",
         "nba_q12": "D"
       },
-      "winner": "DAL",
-      "winnerName": "Dallas Mavericks"
+      "winner": "IND",
+      "winnerName": "Indiana Pacers"
     },
     {
       "id": "rnd_002",
@@ -1052,8 +1054,8 @@
         "nba_q11": "D",
         "nba_q12": "C"
       },
-      "winner": "GSW",
-      "winnerName": "Golden State Warriors"
+      "winner": "MIL",
+      "winnerName": "Milwaukee Bucks"
     },
     {
       "id": "rnd_004",
@@ -1146,8 +1148,8 @@
         "nba_q11": "B",
         "nba_q12": "C"
       },
-      "winner": "WAS",
-      "winnerName": "Washington Wizards"
+      "winner": "MIN",
+      "winnerName": "Minnesota Timberwolves"
     },
     {
       "id": "rnd_006",
@@ -1381,8 +1383,8 @@
         "nba_q11": "D",
         "nba_q12": "B"
       },
-      "winner": "CLE",
-      "winnerName": "Cleveland Cavaliers"
+      "winner": "HOU",
+      "winnerName": "Houston Rockets"
     },
     {
       "id": "rnd_011",
@@ -1428,8 +1430,8 @@
         "nba_q11": "B",
         "nba_q12": "A"
       },
-      "winner": "OKC",
-      "winnerName": "Oklahoma City Thunder"
+      "winner": "BOS",
+      "winnerName": "Boston Celtics"
     },
     {
       "id": "rnd_012",
@@ -1475,8 +1477,8 @@
         "nba_q11": "C",
         "nba_q12": "A"
       },
-      "winner": "GSW",
-      "winnerName": "Golden State Warriors"
+      "winner": "IND",
+      "winnerName": "Indiana Pacers"
     },
     {
       "id": "rnd_013",
@@ -1569,8 +1571,8 @@
         "nba_q11": "B",
         "nba_q12": "D"
       },
-      "winner": "ATL",
-      "winnerName": "Atlanta Hawks"
+      "winner": "BOS",
+      "winnerName": "Boston Celtics"
     },
     {
       "id": "rnd_015",
@@ -1616,8 +1618,8 @@
         "nba_q11": "B",
         "nba_q12": "D"
       },
-      "winner": "MIA",
-      "winnerName": "Miami Heat"
+      "winner": "BOS",
+      "winnerName": "Boston Celtics"
     },
     {
       "id": "rnd_016",
@@ -1663,8 +1665,8 @@
         "nba_q11": "A",
         "nba_q12": "D"
       },
-      "winner": "CHA",
-      "winnerName": "Charlotte Hornets"
+      "winner": "CLE",
+      "winnerName": "Cleveland Cavaliers"
     },
     {
       "id": "rnd_017",
@@ -1710,8 +1712,8 @@
         "nba_q11": "A",
         "nba_q12": "D"
       },
-      "winner": "DEN",
-      "winnerName": "Denver Nuggets"
+      "winner": "WAS",
+      "winnerName": "Washington Wizards"
     },
     {
       "id": "rnd_018",
@@ -1945,8 +1947,8 @@
         "nba_q11": "D",
         "nba_q12": "C"
       },
-      "winner": "DET",
-      "winnerName": "Detroit Pistons"
+      "winner": "TOR",
+      "winnerName": "Toronto Raptors"
     },
     {
       "id": "rnd_023",
@@ -1992,8 +1994,8 @@
         "nba_q11": "C",
         "nba_q12": "A"
       },
-      "winner": "CHA",
-      "winnerName": "Charlotte Hornets"
+      "winner": "TOR",
+      "winnerName": "Toronto Raptors"
     },
     {
       "id": "rnd_024",
@@ -2086,8 +2088,8 @@
         "nba_q11": "B",
         "nba_q12": "A"
       },
-      "winner": "GSW",
-      "winnerName": "Golden State Warriors"
+      "winner": "CHA",
+      "winnerName": "Charlotte Hornets"
     },
     {
       "id": "rnd_026",
@@ -2133,8 +2135,8 @@
         "nba_q11": "D",
         "nba_q12": "D"
       },
-      "winner": "WAS",
-      "winnerName": "Washington Wizards"
+      "winner": "MIN",
+      "winnerName": "Minnesota Timberwolves"
     },
     {
       "id": "rnd_027",
@@ -2227,8 +2229,8 @@
         "nba_q11": "A",
         "nba_q12": "D"
       },
-      "winner": "DAL",
-      "winnerName": "Dallas Mavericks"
+      "winner": "PHX",
+      "winnerName": "Phoenix Suns"
     },
     {
       "id": "rnd_029",
@@ -2462,8 +2464,8 @@
         "nba_q11": "D",
         "nba_q12": "D"
       },
-      "winner": "WAS",
-      "winnerName": "Washington Wizards"
+      "winner": "SAC",
+      "winnerName": "Sacramento Kings"
     },
     {
       "id": "rnd_034",
@@ -2556,8 +2558,8 @@
         "nba_q11": "C",
         "nba_q12": "B"
       },
-      "winner": "CHA",
-      "winnerName": "Charlotte Hornets"
+      "winner": "HOU",
+      "winnerName": "Houston Rockets"
     },
     {
       "id": "rnd_036",
