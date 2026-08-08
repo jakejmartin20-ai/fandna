@@ -168,9 +168,9 @@ const moduleQuestions = [
     "id": "nba_q9",
     "type": "slider",
     "phase": "What it comes down to",
-    "question": "Through a long haul, you're...?",
-    "left": "steady and disciplined",
-    "right": "flat-out every single day"
+    "question": "Where do you belong?",
+    "left": "the place that made me",
+    "right": "wherever I'm headed next"
   },
   {
     "id": "nba_q10",
@@ -1751,70 +1751,11 @@ const scoring = {
     }
   },
   "nba_q3": {
-    "1": {
-      "LAL": 3,
-      "BOS": 3,
-      "MIA": 3,
-      "NYK": 3,
-      "HOU": 3,
-      "DAL": 3,
-      "PHX": 3,
-      "BKN": 3,
-      "LAC": 3
-    },
-    "2": {
-      "LAL": 2,
-      "BOS": 2,
-      "MIA": 2,
-      "NYK": 2,
-      "HOU": 2,
-      "DAL": 2,
-      "PHX": 2,
-      "BKN": 2,
-      "LAC": 2
-    },
-    "3": {
-      "ATL": 2,
-      "CHI": 2,
-      "CLE": 2,
-      "NOP": 2,
-      "ORL": 2,
-      "TOR": 2
-    },
-    "4": {
-      "SAS": 2,
-      "OKC": 2,
-      "DEN": 2,
-      "PHI": 2,
-      "GSW": 2,
-      "IND": 2,
-      "POR": 2,
-      "SAC": 2,
-      "MIN": 2,
-      "MEM": 2,
-      "UTA": 2,
-      "DET": 2,
-      "MIL": 2,
-      "CHA": 2,
-      "WAS": 2
-    },
-    "5": {
-      "SAS": 3,
-      "OKC": 3,
-      "DEN": 3,
-      "PHI": 3,
-      "GSW": 3,
-      "IND": 3,
-      "POR": 3,
-      "SAC": 3,
-      "MIN": 3,
-      "MEM": 3,
-      "UTA": 3,
-      "DET": 3,
-      "MIL": 3,
-      "CHA": 3,
-      "WAS": 3
-    }
+    "1": { "LAL": 2, "CHI": 1, "ATL": 1, "BKN": 3, "LAC": 2, "PHX": 2, "DAL": 1 },
+    "2": { "LAL": 3, "BOS": 1, "CHI": 3, "DET": 1, "NYK": 3, "CLE": 1, "SAC": 1, "ATL": 3, "WAS": 3, "BKN": 1, "LAC": 3, "PHX": 3, "DAL": 3, "HOU": 3, "TOR": 1, "NOP": 1, "CHA": 3 },
+    "3": { "BOS": 3, "GSW": 2, "CHI": 1, "MIL": 2, "IND": 2, "MIN": 2, "DET": 3, "MEM": 2, "UTA": 1, "POR": 2, "NYK": 2, "CLE": 3, "SAC": 3, "ATL": 1, "WAS": 2, "MIA": 2, "DAL": 1, "HOU": 2, "TOR": 3, "ORL": 2, "NOP": 3, "CHA": 2 },
+    "4": { "BOS": 1, "GSW": 3, "SAS": 1, "OKC": 1, "PHI": 3, "DEN": 3, "MIL": 3, "IND": 3, "MIN": 3, "DET": 1, "MEM": 3, "UTA": 3, "POR": 3, "CLE": 1, "SAC": 1, "MIA": 3, "TOR": 1, "ORL": 3, "NOP": 1 },
+    "5": { "SAS": 3, "OKC": 3, "PHI": 2, "DEN": 2, "UTA": 1 }
   },
   "nba_q4": {
     "A": {
@@ -1895,69 +1836,11 @@ const scoring = {
     }
   },
   "nba_q6": {
-    "1": {
-      "SAS": 3,
-      "DEN": 3,
-      "UTA": 3,
-      "OKC": 3,
-      "GSW": 3,
-      "MIL": 3,
-      "MIN": 3,
-      "WAS": 3,
-      "BOS": 3,
-      "MIA": 3
-    },
-    "2": {
-      "SAS": 2,
-      "DEN": 2,
-      "UTA": 2,
-      "OKC": 2,
-      "GSW": 2,
-      "MIL": 2,
-      "MIN": 2,
-      "WAS": 2,
-      "BOS": 2,
-      "MIA": 2
-    },
-    "3": {
-      "BKN": 2,
-      "HOU": 2,
-      "LAC": 2,
-      "NOP": 2,
-      "ORL": 2,
-      "POR": 2,
-      "TOR": 2
-    },
-    "4": {
-      "NYK": 2,
-      "CLE": 2,
-      "SAC": 2,
-      "PHI": 2,
-      "DAL": 2,
-      "IND": 2,
-      "DET": 2,
-      "MEM": 2,
-      "LAL": 2,
-      "CHI": 2,
-      "ATL": 2,
-      "PHX": 2,
-      "CHA": 2
-    },
-    "5": {
-      "NYK": 3,
-      "CLE": 3,
-      "SAC": 3,
-      "PHI": 3,
-      "DAL": 3,
-      "IND": 3,
-      "DET": 3,
-      "MEM": 3,
-      "LAL": 3,
-      "CHI": 3,
-      "ATL": 3,
-      "PHX": 3,
-      "CHA": 3
-    }
+    "1": { "SAS": 3, "DEN": 1, "UTA": 1 },
+    "2": { "GSW": 2, "SAS": 1, "OKC": 2, "DEN": 3, "MIL": 2, "MIN": 2, "UTA": 3, "WAS": 2, "BKN": 2, "LAC": 2, "HOU": 2, "ORL": 2, "NOP": 2 },
+    "3": { "LAL": 3, "BOS": 3, "GSW": 3, "CHI": 3, "OKC": 3, "PHI": 1, "DEN": 1, "MIL": 3, "IND": 3, "MIN": 3, "DET": 3, "MEM": 3, "UTA": 1, "POR": 3, "CLE": 1, "SAC": 1, "ATL": 3, "WAS": 3, "BKN": 3, "LAC": 3, "PHX": 3, "MIA": 3, "DAL": 1, "HOU": 3, "TOR": 3, "ORL": 3, "NOP": 3, "CHA": 3 },
+    "4": { "LAL": 2, "BOS": 2, "CHI": 2, "PHI": 3, "IND": 2, "DET": 2, "MEM": 2, "POR": 2, "NYK": 1, "CLE": 3, "SAC": 3, "ATL": 2, "PHX": 2, "MIA": 2, "DAL": 3, "TOR": 2, "CHA": 2 },
+    "5": { "PHI": 1, "NYK": 3, "CLE": 1, "SAC": 1, "DAL": 1 }
   },
   "nba_q7": {
     "A": {
@@ -2037,66 +1920,11 @@ const scoring = {
     }
   },
   "nba_q9": {
-    "1": {
-      "SAS": 3,
-      "UTA": 3,
-      "OKC": 3,
-      "DEN": 3,
-      "GSW": 3,
-      "MIL": 3,
-      "BOS": 3,
-      "PHI": 3,
-      "MIN": 3,
-      "TOR": 3
-    },
-    "2": {
-      "SAS": 2,
-      "UTA": 2,
-      "OKC": 2,
-      "DEN": 2,
-      "GSW": 2,
-      "MIL": 2,
-      "BOS": 2,
-      "PHI": 2,
-      "MIN": 2,
-      "TOR": 2
-    },
-    "3": {
-      "ATL": 2,
-      "BKN": 2,
-      "CHI": 2,
-      "HOU": 2,
-      "LAC": 2,
-      "LAL": 2,
-      "NOP": 2,
-      "ORL": 2,
-      "PHX": 2,
-      "WAS": 2
-    },
-    "4": {
-      "DET": 2,
-      "MEM": 2,
-      "IND": 2,
-      "MIA": 2,
-      "POR": 2,
-      "SAC": 2,
-      "NYK": 2,
-      "CLE": 2,
-      "DAL": 2,
-      "CHA": 2
-    },
-    "5": {
-      "DET": 3,
-      "MEM": 3,
-      "IND": 3,
-      "MIA": 3,
-      "POR": 3,
-      "SAC": 3,
-      "NYK": 3,
-      "CLE": 3,
-      "DAL": 3,
-      "CHA": 3
-    }
+    "1": { "LAL": 2, "BOS": 3, "CHI": 1, "SAS": 1, "PHI": 1, "IND": 1, "DET": 1, "NYK": 2 },
+    "2": { "LAL": 3, "BOS": 1, "GSW": 2, "CHI": 3, "SAS": 3, "PHI": 3, "IND": 3, "DET": 3, "UTA": 2, "POR": 2, "NYK": 3, "HOU": 2 },
+    "3": { "GSW": 3, "CHI": 1, "SAS": 1, "OKC": 1, "PHI": 1, "DEN": 3, "MIL": 3, "IND": 1, "DET": 1, "UTA": 3, "POR": 3, "CLE": 3, "SAC": 3, "WAS": 3, "PHX": 3, "MIA": 3, "DAL": 3, "HOU": 3 },
+    "4": { "OKC": 3, "DEN": 2, "MIL": 2, "MIN": 3, "MEM": 3, "CLE": 2, "SAC": 2, "ATL": 1, "WAS": 2, "BKN": 3, "LAC": 3, "PHX": 2, "MIA": 2, "DAL": 2, "TOR": 3, "ORL": 3, "NOP": 1, "CHA": 3 },
+    "5": { "OKC": 1, "MIN": 2, "MEM": 2, "ATL": 3, "BKN": 2, "LAC": 2, "TOR": 2, "ORL": 2, "NOP": 3, "CHA": 2 }
   },
   "nba_q10": {
     "A": {
