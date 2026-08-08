@@ -13,7 +13,8 @@
     },
     "rebaselined": "2026-08-06 session25 FINAL: branch base (dead fields stripped) + voice pass (4 labels) + q10-C duplicate re-aim (+6 persona corrections) + slider middles q3/q6/q9. Re-recorded on live main engine f7ecf135.",
     "dataFile": "nba.js fce4d805",
-    "engine": "src/lib/scoring.js f7ecf135 (NBA fingerprint, FP_W 1.2, DIST_REF 14)"
+    "engine": "src/lib/scoring.js f7ecf135 (NBA fingerprint, FP_W 1.2, DIST_REF 14)",
+    "note": "nba sliders rebuilt as honest per-team footprints; q9 re-aimed from emotion-duplicate to ROOTEDNESS (new wording \"Where do you belong?\"); q3=process, q6=emotion. peak-by-trait across all 5 positions."
   },
   "fixtures": [
     {
@@ -32,13 +33,13 @@
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "D",
-        "nba_q3": "1",
+        "nba_q3": "2",
         "nba_q4": "C",
         "nba_q5": "B",
-        "nba_q6": "5",
+        "nba_q6": "3",
         "nba_q7": "D",
         "nba_q8": "B",
-        "nba_q9": "3",
+        "nba_q9": "2",
         "nba_q10": "D",
         "nba_q11": "A",
         "nba_q12": "A"
@@ -62,10 +63,10 @@
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "C",
-        "nba_q3": "1",
+        "nba_q3": "3",
         "nba_q4": "D",
         "nba_q5": "A",
-        "nba_q6": "1",
+        "nba_q6": "3",
         "nba_q7": "A",
         "nba_q8": "B",
         "nba_q9": "1",
@@ -92,13 +93,13 @@
       "moduleAnswers": {
         "nba_q1": "B",
         "nba_q2": "B",
-        "nba_q3": "5",
+        "nba_q3": "4",
         "nba_q4": "B",
         "nba_q5": "C",
-        "nba_q6": "1",
+        "nba_q6": "3",
         "nba_q7": "A",
         "nba_q8": "A",
-        "nba_q9": "1",
+        "nba_q9": "3",
         "nba_q10": "D",
         "nba_q11": "B",
         "nba_q12": "A"
@@ -122,13 +123,13 @@
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "D",
-        "nba_q3": "3",
+        "nba_q3": "2",
         "nba_q4": "D",
         "nba_q5": "D",
-        "nba_q6": "5",
+        "nba_q6": "3",
         "nba_q7": "D",
         "nba_q8": "B",
-        "nba_q9": "3",
+        "nba_q9": "2",
         "nba_q10": "D",
         "nba_q11": "A",
         "nba_q12": "A"
@@ -158,7 +159,7 @@
         "nba_q6": "1",
         "nba_q7": "A",
         "nba_q8": "A",
-        "nba_q9": "1",
+        "nba_q9": "2",
         "nba_q10": "D",
         "nba_q11": "B",
         "nba_q12": "B"
@@ -185,10 +186,10 @@
         "nba_q3": "5",
         "nba_q4": "A",
         "nba_q5": "C",
-        "nba_q6": "1",
+        "nba_q6": "3",
         "nba_q7": "A",
         "nba_q8": "A",
-        "nba_q9": "1",
+        "nba_q9": "4",
         "nba_q10": "B",
         "nba_q11": "C",
         "nba_q12": "A"
@@ -212,13 +213,13 @@
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "C",
-        "nba_q3": "5",
+        "nba_q3": "4",
         "nba_q4": "A",
         "nba_q5": "C",
-        "nba_q6": "5",
+        "nba_q6": "4",
         "nba_q7": "A",
         "nba_q8": "C",
-        "nba_q9": "1",
+        "nba_q9": "2",
         "nba_q10": "A",
         "nba_q11": "C",
         "nba_q12": "B"
@@ -242,13 +243,13 @@
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "B",
-        "nba_q3": "5",
+        "nba_q3": "4",
         "nba_q4": "B",
         "nba_q5": "C",
-        "nba_q6": "1",
+        "nba_q6": "2",
         "nba_q7": "A",
         "nba_q8": "A",
-        "nba_q9": "1",
+        "nba_q9": "3",
         "nba_q10": "D",
         "nba_q11": "C",
         "nba_q12": "A"
@@ -272,13 +273,13 @@
       "moduleAnswers": {
         "nba_q1": "B",
         "nba_q2": "C",
-        "nba_q3": "5",
+        "nba_q3": "4",
         "nba_q4": "B",
         "nba_q5": "C",
-        "nba_q6": "1",
+        "nba_q6": "3",
         "nba_q7": "A",
         "nba_q8": "A",
-        "nba_q9": "1",
+        "nba_q9": "3",
         "nba_q10": "B",
         "nba_q11": "D",
         "nba_q12": "B"
@@ -302,13 +303,13 @@
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "B",
-        "nba_q3": "5",
+        "nba_q3": "4",
         "nba_q4": "B",
         "nba_q5": "A",
-        "nba_q6": "5",
+        "nba_q6": "3",
         "nba_q7": "A",
         "nba_q8": "A",
-        "nba_q9": "5",
+        "nba_q9": "2",
         "nba_q10": "C",
         "nba_q11": "B",
         "nba_q12": "C"
@@ -332,13 +333,13 @@
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "B",
-        "nba_q3": "5",
+        "nba_q3": "4",
         "nba_q4": "B",
         "nba_q5": "A",
-        "nba_q6": "1",
+        "nba_q6": "3",
         "nba_q7": "C",
         "nba_q8": "A",
-        "nba_q9": "1",
+        "nba_q9": "4",
         "nba_q10": "C",
         "nba_q11": "B",
         "nba_q12": "D"
@@ -362,13 +363,13 @@
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "C",
-        "nba_q3": "5",
+        "nba_q3": "3",
         "nba_q4": "B",
         "nba_q5": "A",
-        "nba_q6": "5",
+        "nba_q6": "3",
         "nba_q7": "C",
         "nba_q8": "C",
-        "nba_q9": "5",
+        "nba_q9": "2",
         "nba_q10": "B",
         "nba_q11": "D",
         "nba_q12": "C"
@@ -392,13 +393,13 @@
       "moduleAnswers": {
         "nba_q1": "B",
         "nba_q2": "C",
-        "nba_q3": "5",
+        "nba_q3": "4",
         "nba_q4": "B",
         "nba_q5": "D",
-        "nba_q6": "5",
+        "nba_q6": "3",
         "nba_q7": "C",
         "nba_q8": "A",
-        "nba_q9": "5",
+        "nba_q9": "4",
         "nba_q10": "B",
         "nba_q11": "D",
         "nba_q12": "C"
@@ -422,13 +423,13 @@
       "moduleAnswers": {
         "nba_q1": "B",
         "nba_q2": "B",
-        "nba_q3": "5",
+        "nba_q3": "4",
         "nba_q4": "B",
         "nba_q5": "A",
-        "nba_q6": "1",
+        "nba_q6": "2",
         "nba_q7": "A",
         "nba_q8": "A",
-        "nba_q9": "1",
+        "nba_q9": "3",
         "nba_q10": "A",
         "nba_q11": "B",
         "nba_q12": "D"
@@ -452,13 +453,13 @@
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "B",
-        "nba_q3": "5",
+        "nba_q3": "4",
         "nba_q4": "B",
         "nba_q5": "A",
         "nba_q6": "3",
         "nba_q7": "A",
         "nba_q8": "C",
-        "nba_q9": "5",
+        "nba_q9": "3",
         "nba_q10": "D",
         "nba_q11": "B",
         "nba_q12": "D"
@@ -482,13 +483,13 @@
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "A",
-        "nba_q3": "1",
+        "nba_q3": "2",
         "nba_q4": "C",
         "nba_q5": "A",
         "nba_q6": "5",
         "nba_q7": "D",
         "nba_q8": "B",
-        "nba_q9": "5",
+        "nba_q9": "2",
         "nba_q10": "A",
         "nba_q11": "A",
         "nba_q12": "A"
@@ -515,10 +516,10 @@
         "nba_q3": "3",
         "nba_q4": "D",
         "nba_q5": "D",
-        "nba_q6": "5",
+        "nba_q6": "4",
         "nba_q7": "C",
         "nba_q8": "C",
-        "nba_q9": "5",
+        "nba_q9": "3",
         "nba_q10": "A",
         "nba_q11": "A",
         "nba_q12": "B"
@@ -542,13 +543,13 @@
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "C",
-        "nba_q3": "5",
+        "nba_q3": "3",
         "nba_q4": "A",
         "nba_q5": "A",
-        "nba_q6": "5",
+        "nba_q6": "4",
         "nba_q7": "C",
         "nba_q8": "A",
-        "nba_q9": "5",
+        "nba_q9": "3",
         "nba_q10": "A",
         "nba_q11": "D",
         "nba_q12": "C"
@@ -572,13 +573,13 @@
       "moduleAnswers": {
         "nba_q1": "C",
         "nba_q2": "D",
-        "nba_q3": "3",
+        "nba_q3": "2",
         "nba_q4": "D",
         "nba_q5": "D",
-        "nba_q6": "5",
+        "nba_q6": "3",
         "nba_q7": "D",
         "nba_q8": "D",
-        "nba_q9": "3",
+        "nba_q9": "5",
         "nba_q10": "B",
         "nba_q11": "A",
         "nba_q12": "D"
@@ -602,10 +603,10 @@
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "A",
-        "nba_q3": "5",
+        "nba_q3": "2",
         "nba_q4": "A",
         "nba_q5": "D",
-        "nba_q6": "1",
+        "nba_q6": "3",
         "nba_q7": "C",
         "nba_q8": "A",
         "nba_q9": "3",
@@ -638,7 +639,7 @@
         "nba_q6": "3",
         "nba_q7": "B",
         "nba_q8": "B",
-        "nba_q9": "3",
+        "nba_q9": "4",
         "nba_q10": "B",
         "nba_q11": "C",
         "nba_q12": "A"
@@ -662,13 +663,13 @@
       "moduleAnswers": {
         "nba_q1": "C",
         "nba_q2": "D",
-        "nba_q3": "1",
+        "nba_q3": "2",
         "nba_q4": "C",
         "nba_q5": "B",
         "nba_q6": "3",
         "nba_q7": "B",
         "nba_q8": "B",
-        "nba_q9": "3",
+        "nba_q9": "4",
         "nba_q10": "C",
         "nba_q11": "C",
         "nba_q12": "B"
@@ -692,10 +693,10 @@
       "moduleAnswers": {
         "nba_q1": "C",
         "nba_q2": "D",
-        "nba_q3": "1",
+        "nba_q3": "2",
         "nba_q4": "C",
         "nba_q5": "B",
-        "nba_q6": "5",
+        "nba_q6": "3",
         "nba_q7": "B",
         "nba_q8": "D",
         "nba_q9": "3",
@@ -722,13 +723,13 @@
       "moduleAnswers": {
         "nba_q1": "C",
         "nba_q2": "C",
-        "nba_q3": "1",
+        "nba_q3": "4",
         "nba_q4": "C",
         "nba_q5": "B",
-        "nba_q6": "1",
+        "nba_q6": "3",
         "nba_q7": "A",
         "nba_q8": "B",
-        "nba_q9": "5",
+        "nba_q9": "3",
         "nba_q10": "A",
         "nba_q11": "D",
         "nba_q12": "A"
@@ -752,13 +753,13 @@
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "A",
-        "nba_q3": "1",
+        "nba_q3": "2",
         "nba_q4": "A",
         "nba_q5": "A",
-        "nba_q6": "5",
+        "nba_q6": "4",
         "nba_q7": "B",
         "nba_q8": "A",
-        "nba_q9": "5",
+        "nba_q9": "3",
         "nba_q10": "B",
         "nba_q11": "A",
         "nba_q12": "B"
@@ -782,7 +783,7 @@
       "moduleAnswers": {
         "nba_q1": "C",
         "nba_q2": "D",
-        "nba_q3": "1",
+        "nba_q3": "2",
         "nba_q4": "A",
         "nba_q5": "B",
         "nba_q6": "3",
@@ -818,7 +819,7 @@
         "nba_q6": "3",
         "nba_q7": "C",
         "nba_q8": "D",
-        "nba_q9": "1",
+        "nba_q9": "4",
         "nba_q10": "B",
         "nba_q11": "A",
         "nba_q12": "C"
@@ -842,13 +843,13 @@
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "A",
-        "nba_q3": "3",
+        "nba_q3": "4",
         "nba_q4": "A",
         "nba_q5": "D",
         "nba_q6": "3",
         "nba_q7": "C",
         "nba_q8": "D",
-        "nba_q9": "3",
+        "nba_q9": "4",
         "nba_q10": "C",
         "nba_q11": "A",
         "nba_q12": "D"
@@ -878,7 +879,7 @@
         "nba_q6": "3",
         "nba_q7": "C",
         "nba_q8": "D",
-        "nba_q9": "3",
+        "nba_q9": "5",
         "nba_q10": "A",
         "nba_q11": "A",
         "nba_q12": "C"
@@ -902,13 +903,13 @@
       "moduleAnswers": {
         "nba_q1": "B",
         "nba_q2": "D",
-        "nba_q3": "5",
+        "nba_q3": "2",
         "nba_q4": "A",
         "nba_q5": "D",
-        "nba_q6": "5",
+        "nba_q6": "3",
         "nba_q7": "C",
         "nba_q8": "D",
-        "nba_q9": "5",
+        "nba_q9": "4",
         "nba_q10": "A",
         "nba_q11": "D",
         "nba_q12": "D"
@@ -960,8 +961,8 @@
         "nba_q11": "A",
         "nba_q12": "D"
       },
-      "winner": "IND",
-      "winnerName": "Indiana Pacers"
+      "winner": "NYK",
+      "winnerName": "New York Knicks"
     },
     {
       "id": "rnd_002",
@@ -1054,8 +1055,8 @@
         "nba_q11": "D",
         "nba_q12": "C"
       },
-      "winner": "MIL",
-      "winnerName": "Milwaukee Bucks"
+      "winner": "IND",
+      "winnerName": "Indiana Pacers"
     },
     {
       "id": "rnd_004",
@@ -1148,8 +1149,8 @@
         "nba_q11": "B",
         "nba_q12": "C"
       },
-      "winner": "MIN",
-      "winnerName": "Minnesota Timberwolves"
+      "winner": "SAC",
+      "winnerName": "Sacramento Kings"
     },
     {
       "id": "rnd_006",
@@ -1242,8 +1243,8 @@
         "nba_q11": "C",
         "nba_q12": "C"
       },
-      "winner": "HOU",
-      "winnerName": "Houston Rockets"
+      "winner": "SAC",
+      "winnerName": "Sacramento Kings"
     },
     {
       "id": "rnd_008",
@@ -1289,8 +1290,8 @@
         "nba_q11": "D",
         "nba_q12": "D"
       },
-      "winner": "TOR",
-      "winnerName": "Toronto Raptors"
+      "winner": "ATL",
+      "winnerName": "Atlanta Hawks"
     },
     {
       "id": "rnd_009",
@@ -1383,8 +1384,8 @@
         "nba_q11": "D",
         "nba_q12": "B"
       },
-      "winner": "HOU",
-      "winnerName": "Houston Rockets"
+      "winner": "CLE",
+      "winnerName": "Cleveland Cavaliers"
     },
     {
       "id": "rnd_011",
@@ -1430,8 +1431,8 @@
         "nba_q11": "B",
         "nba_q12": "A"
       },
-      "winner": "BOS",
-      "winnerName": "Boston Celtics"
+      "winner": "CHI",
+      "winnerName": "Chicago Bulls"
     },
     {
       "id": "rnd_012",
@@ -1477,8 +1478,8 @@
         "nba_q11": "C",
         "nba_q12": "A"
       },
-      "winner": "IND",
-      "winnerName": "Indiana Pacers"
+      "winner": "DEN",
+      "winnerName": "Denver Nuggets"
     },
     {
       "id": "rnd_013",
@@ -1524,8 +1525,8 @@
         "nba_q11": "C",
         "nba_q12": "B"
       },
-      "winner": "MIA",
-      "winnerName": "Miami Heat"
+      "winner": "LAC",
+      "winnerName": "Los Angeles Clippers"
     },
     {
       "id": "rnd_014",
@@ -1618,8 +1619,8 @@
         "nba_q11": "B",
         "nba_q12": "D"
       },
-      "winner": "BOS",
-      "winnerName": "Boston Celtics"
+      "winner": "POR",
+      "winnerName": "Portland Trail Blazers"
     },
     {
       "id": "rnd_016",
@@ -1665,8 +1666,8 @@
         "nba_q11": "A",
         "nba_q12": "D"
       },
-      "winner": "CLE",
-      "winnerName": "Cleveland Cavaliers"
+      "winner": "ORL",
+      "winnerName": "Orlando Magic"
     },
     {
       "id": "rnd_017",
@@ -1712,8 +1713,8 @@
         "nba_q11": "A",
         "nba_q12": "D"
       },
-      "winner": "WAS",
-      "winnerName": "Washington Wizards"
+      "winner": "POR",
+      "winnerName": "Portland Trail Blazers"
     },
     {
       "id": "rnd_018",
@@ -1759,8 +1760,8 @@
         "nba_q11": "A",
         "nba_q12": "A"
       },
-      "winner": "WAS",
-      "winnerName": "Washington Wizards"
+      "winner": "HOU",
+      "winnerName": "Houston Rockets"
     },
     {
       "id": "rnd_019",
@@ -1947,8 +1948,8 @@
         "nba_q11": "D",
         "nba_q12": "C"
       },
-      "winner": "TOR",
-      "winnerName": "Toronto Raptors"
+      "winner": "DET",
+      "winnerName": "Detroit Pistons"
     },
     {
       "id": "rnd_023",
@@ -2041,8 +2042,8 @@
         "nba_q11": "D",
         "nba_q12": "B"
       },
-      "winner": "MIL",
-      "winnerName": "Milwaukee Bucks"
+      "winner": "DET",
+      "winnerName": "Detroit Pistons"
     },
     {
       "id": "rnd_025",
@@ -2088,8 +2089,8 @@
         "nba_q11": "B",
         "nba_q12": "A"
       },
-      "winner": "CHA",
-      "winnerName": "Charlotte Hornets"
+      "winner": "CLE",
+      "winnerName": "Cleveland Cavaliers"
     },
     {
       "id": "rnd_026",
@@ -2182,8 +2183,8 @@
         "nba_q11": "B",
         "nba_q12": "A"
       },
-      "winner": "BOS",
-      "winnerName": "Boston Celtics"
+      "winner": "POR",
+      "winnerName": "Portland Trail Blazers"
     },
     {
       "id": "rnd_028",
@@ -2229,8 +2230,8 @@
         "nba_q11": "A",
         "nba_q12": "D"
       },
-      "winner": "PHX",
-      "winnerName": "Phoenix Suns"
+      "winner": "HOU",
+      "winnerName": "Houston Rockets"
     },
     {
       "id": "rnd_029",
@@ -2276,8 +2277,8 @@
         "nba_q11": "B",
         "nba_q12": "C"
       },
-      "winner": "IND",
-      "winnerName": "Indiana Pacers"
+      "winner": "TOR",
+      "winnerName": "Toronto Raptors"
     },
     {
       "id": "rnd_030",
@@ -2323,8 +2324,8 @@
         "nba_q11": "D",
         "nba_q12": "A"
       },
-      "winner": "WAS",
-      "winnerName": "Washington Wizards"
+      "winner": "NYK",
+      "winnerName": "New York Knicks"
     },
     {
       "id": "rnd_031",
@@ -2370,8 +2371,8 @@
         "nba_q11": "D",
         "nba_q12": "C"
       },
-      "winner": "MIL",
-      "winnerName": "Milwaukee Bucks"
+      "winner": "CHI",
+      "winnerName": "Chicago Bulls"
     },
     {
       "id": "rnd_032",
@@ -2417,8 +2418,8 @@
         "nba_q11": "D",
         "nba_q12": "A"
       },
-      "winner": "DET",
-      "winnerName": "Detroit Pistons"
+      "winner": "ATL",
+      "winnerName": "Atlanta Hawks"
     },
     {
       "id": "rnd_033",
@@ -2464,8 +2465,8 @@
         "nba_q11": "D",
         "nba_q12": "D"
       },
-      "winner": "SAC",
-      "winnerName": "Sacramento Kings"
+      "winner": "ORL",
+      "winnerName": "Orlando Magic"
     },
     {
       "id": "rnd_034",
@@ -2511,8 +2512,8 @@
         "nba_q11": "A",
         "nba_q12": "A"
       },
-      "winner": "IND",
-      "winnerName": "Indiana Pacers"
+      "winner": "GSW",
+      "winnerName": "Golden State Warriors"
     },
     {
       "id": "rnd_035",
@@ -2699,8 +2700,8 @@
         "nba_q11": "B",
         "nba_q12": "B"
       },
-      "winner": "PHI",
-      "winnerName": "Philadelphia 76ers"
+      "winner": "BOS",
+      "winnerName": "Boston Celtics"
     },
     {
       "id": "rnd_039",
@@ -2746,8 +2747,8 @@
         "nba_q11": "C",
         "nba_q12": "D"
       },
-      "winner": "CHA",
-      "winnerName": "Charlotte Hornets"
+      "winner": "ORL",
+      "winnerName": "Orlando Magic"
     },
     {
       "id": "rnd_040",
