@@ -156,7 +156,7 @@ const FP_ENGINES = {
   MLB: makeFpEngine(mlbDims, mlbScoring, mlbModule),
   NBA: makeFpEngine(nbaDims, nbaScoring, nbaModule),
   CFB: makeFpEngine(cfbDims, cfbScoring, cfbModule, 1.6),   // 51+ programs sit closer in dim-space; 1.2 left the core deciding only ~23%
-  NHL: makeFpEngine(nhlDims, nhlScoring, nhlModule),        // 32 teams like NFL; default FP_W 1.2
+  NHL: makeFpEngine(nhlDims, nhlScoring, nhlModule, 1.5),   // 32 teams; FP_W 1.5 (s31 weight tune to the >1% reachability knee; Toronto floor 1.03%, was 1.2)
   BL: makeFpEngine(blDims, blScoring, blModule),
   LL: makeFpEngine(llDims, llScoring, llModule),
   L1: makeFpEngine(l1Dims, l1Scoring, l1Module),
