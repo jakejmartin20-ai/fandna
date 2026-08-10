@@ -9,22 +9,22 @@ const moduleQuestions = [
     "id": "f1_q1",
     "type": "choice",
     "phase": "The fine print",
-    "question": "When a team you were part of won, what made the difference?",
+    "question": "What does success really come down to?",
     "options": [
       {
-        "label": "One person who lifted everyone. The rest of us rose to meet them.",
+        "label": "One person who lifts everyone else to their level.",
         "value": "A"
       },
       {
-        "label": "The whole group clicking. No single name mattered more than the rest.",
+        "label": "The whole group clicking, no single name above the rest.",
         "value": "B"
       },
       {
-        "label": "A way of working we all trusted. Follow it and the wins come.",
+        "label": "A way of working I trust. Follow it and the results come.",
         "value": "C"
       },
       {
-        "label": "Raw ability, plainly. We had more of it, and it showed.",
+        "label": "Raw ability, plainly. Just more of it than most.",
         "value": "D"
       }
     ]
@@ -92,7 +92,7 @@ const moduleQuestions = [
     "question": "When a place stops working for you, what do you do?",
     "options": [
       {
-        "label": "Stay and grind it out. Leaving never crosses my mind.",
+        "label": "Stay, no question. Leaving never crosses my mind.",
         "value": "A"
       },
       {
@@ -100,7 +100,7 @@ const moduleQuestions = [
         "value": "B"
       },
       {
-        "label": "Dig in and force it to change. I make them fix it.",
+        "label": "Refuse to accept it. I push until they fix it.",
         "value": "C"
       },
       {
@@ -113,9 +113,9 @@ const moduleQuestions = [
     "id": "f1_q6",
     "type": "slider",
     "phase": "The fine print",
-    "question": "Everything planned, or read it live?",
-    "left": "measured to the last detail",
-    "right": "feel it and react"
+    "question": "Plan every step, or trust the moment?",
+    "left": "planned to the detail",
+    "right": "run on instinct"
   },
   {
     "id": "f1_q7",
@@ -386,10 +386,10 @@ const teams = {
   "AUD": {
     "name": "Audi",
     "emoji": "⚙️",
-    "color": "#1A1A1A",
+    "color": "#E1000A",
     "code3": "AUD",
     "kitType": "duo",
-    "secondaryColor": "#E1000A",
+    "secondaryColor": "#1A1A1A",
     "tagline": "A German giant with a five-year plan and its own engine, patient enough to build a champion from the ground up.",
     "desc": "You are the patient giant, an engineering colossus that does nothing by halves. You arrived by taking over one of the sport's longest-serving privateers, a proud independent that gave countless drivers their start, and you brought the full weight of a German manufacturer with you. You built your own engine from the ground up, set out a five-year plan to reach the front, and you mean to follow it step by step. You are not here for a quick thrill or a lucky podium. You are here to engineer your way to a championship, methodically, the way you do everything. It will take time and you know it. Patience and precision are not weaknesses to you. They are the whole strategy.",
     "why": [
@@ -439,7 +439,7 @@ const teamTextColors = {
   "ALP": "#91B8DB",
   "HAA": "#DF98A0",
   "RB": "#9FAFD4",
-  "AUD": "#979797",
+  "AUD": "#E8737B",
   "CAD": "#919CAB"
 };
 
