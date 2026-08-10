@@ -228,19 +228,19 @@ const moduleQuestions = [
     "question": "What makes you dangerous?",
     "options": [
       {
-        "label": "I've got the muscle to go all out. Nothing held back.",
+        "label": "I've got the pace to go all out.",
         "value": "A"
       },
       {
-        "label": "I'm a system that rarely slips. Do it right, every time.",
+        "label": "I rarely put a foot wrong. Done right, every time.",
         "value": "B"
       },
       {
-        "label": "I've nothing to lose, so I swing free.",
+        "label": "I've nothing to lose, so I take the risks.",
         "value": "C"
       },
       {
-        "label": "I wring everything from a little. Give me scraps and watch.",
+        "label": "I do more with less than most.",
         "value": "D"
       }
     ]
@@ -596,6 +596,7 @@ const vitalStats = {
     "base": "Maranello, Italy",
     "founded": "1929 (every F1 season since 1950)",
     "powerUnit": "Ferrari",
+    "drivers": "Charles Leclerc & Lewis Hamilton",
     "titles": "16 constructors', 15 drivers'",
     "colours": "Rosso corsa",
     "principal": "Fred Vasseur"
@@ -604,6 +605,7 @@ const vitalStats = {
     "base": "Brackley, England",
     "founded": "1954 (works team since 2010)",
     "powerUnit": "Mercedes",
+    "drivers": "George Russell & Kimi Antonelli",
     "titles": "8 constructors', 9 drivers'",
     "colours": "Silver and black",
     "principal": "Toto Wolff"
@@ -612,6 +614,7 @@ const vitalStats = {
     "base": "Woking, England",
     "founded": "1963 (racing since 1966)",
     "powerUnit": "Mercedes",
+    "drivers": "Lando Norris & Oscar Piastri",
     "titles": "10 constructors', 13 drivers'",
     "colours": "Papaya orange",
     "principal": "Andrea Stella"
@@ -620,6 +623,7 @@ const vitalStats = {
     "base": "Milton Keynes, England",
     "founded": "2005",
     "powerUnit": "Red Bull Ford",
+    "drivers": "Max Verstappen & Isack Hadjar",
     "titles": "6 constructors', 8 drivers'",
     "colours": "Navy, red and yellow",
     "principal": "Laurent Mekies"
@@ -628,6 +632,7 @@ const vitalStats = {
     "base": "Grove, England",
     "founded": "1977",
     "powerUnit": "Mercedes",
+    "drivers": "Alex Albon & Carlos Sainz",
     "titles": "9 constructors', 7 drivers'",
     "colours": "Williams blue",
     "principal": "James Vowles"
@@ -636,6 +641,7 @@ const vitalStats = {
     "base": "Silverstone, England",
     "founded": "1991 as Jordan (Aston Martin since 2021)",
     "powerUnit": "Honda",
+    "drivers": "Fernando Alonso & Lance Stroll",
     "titles": "Best finish: 5th (2023)",
     "colours": "British racing green",
     "principal": "Adrian Newey"
@@ -644,6 +650,7 @@ const vitalStats = {
     "base": "Enstone, England",
     "founded": "1981 as Toleman (Alpine since 2021)",
     "powerUnit": "Mercedes",
+    "drivers": "Pierre Gasly & Franco Colapinto",
     "titles": "3 constructors', 4 drivers' (as Benetton and Renault)",
     "colours": "Alpine blue",
     "principal": "Flavio Briatore (executive advisor)"
@@ -652,6 +659,7 @@ const vitalStats = {
     "base": "Kannapolis, USA",
     "founded": "2016",
     "powerUnit": "Ferrari",
+    "drivers": "Esteban Ocon & Oliver Bearman",
     "titles": "Best finish: 5th (2018)",
     "colours": "White, red and black",
     "principal": "Ayao Komatsu"
@@ -660,6 +668,7 @@ const vitalStats = {
     "base": "Faenza, Italy",
     "founded": "1985 as Minardi (Racing Bulls since 2025)",
     "powerUnit": "Red Bull Ford",
+    "drivers": "Liam Lawson & Arvid Lindblad",
     "titles": "Best finish: 6th (2008, as Toro Rosso)",
     "colours": "Blue, white and red",
     "principal": "Alan Permane"
@@ -668,6 +677,7 @@ const vitalStats = {
     "base": "Hinwil, Switzerland",
     "founded": "1993 as Sauber (Audi works from 2026)",
     "powerUnit": "Audi",
+    "drivers": "Nico Hülkenberg & Gabriel Bortoleto",
     "titles": "Best finish: 2nd (2007, as BMW Sauber)",
     "colours": "Red, black and titanium",
     "principal": "Jonathan Wheatley"
@@ -676,6 +686,7 @@ const vitalStats = {
     "base": "Fishers, USA, and Silverstone, England",
     "founded": "2026",
     "powerUnit": "Ferrari",
+    "drivers": "Sergio Pérez & Valtteri Bottas",
     "titles": "None yet (debut season 2026)",
     "colours": "Navy and gold",
     "principal": "Graeme Lowdon"
