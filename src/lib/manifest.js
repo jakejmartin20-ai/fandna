@@ -25,9 +25,9 @@ const SPORTS = [
 
 // The two branches on the genome home, in display order. `glyph` picks the header mark.
 const FAMILIES = [
-  { id: "global",   label: "Football",         glyph: "globe" },
+  { id: "global",   label: "Football",         glyph: "soccerball" },
   { id: "american", label: "American Sports", glyph: "star" },
-  { id: "world",    label: "World",           glyph: "world" },
+  { id: "world",    label: "World",           glyph: "globe" },
 ];
 
 function liveSports(){ return SPORTS.filter(s=>s.live); }
