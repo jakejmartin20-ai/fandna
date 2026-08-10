@@ -33,21 +33,25 @@ const ROW_PX = 84;        // approx height of one strand row (card + gap)
 const PEEK = 60;          // half-row sliver so a partial next card is always visible when scrollable (Variant B)
 
 function FamilyGlyph({ kind }){
+  if(kind === "soccerball"){
+    return (
+      <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" style={{flexShrink:0}}>
+        <circle cx="8" cy="8" r="6.4" fill="none" stroke={PLBL} strokeWidth="1.2"/>
+        <polygon points="8,5.7 10.19,7.29 9.35,9.86 6.65,9.86 5.81,7.29" fill={PLBL}/>
+        <line x1="8" y1="5.7" x2="8" y2="2.2" stroke={PLBL} strokeWidth="1"/>
+        <line x1="10.19" y1="7.29" x2="13.3" y2="6.2" stroke={PLBL} strokeWidth="1"/>
+        <line x1="9.35" y1="9.86" x2="11.3" y2="12.4" stroke={PLBL} strokeWidth="1"/>
+        <line x1="6.65" y1="9.86" x2="4.7" y2="12.4" stroke={PLBL} strokeWidth="1"/>
+        <line x1="5.81" y1="7.29" x2="2.7" y2="6.2" stroke={PLBL} strokeWidth="1"/>
+      </svg>
+    );
+  }
   if(kind === "globe"){
     return (
       <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" style={{flexShrink:0}}>
         <circle cx="8" cy="8" r="6.4" fill="none" stroke={PLBL} strokeWidth="1.2"/>
         <ellipse cx="8" cy="8" rx="2.9" ry="6.4" fill="none" stroke={PLBL} strokeWidth="1"/>
         <line x1="1.6" y1="8" x2="14.4" y2="8" stroke={PLBL} strokeWidth="1"/>
-      </svg>
-    );
-  }
-  if(kind === "world"){
-    return (
-      <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" style={{flexShrink:0}}>
-        <circle cx="8" cy="8" r="6.4" fill="none" stroke={PLBL} strokeWidth="1.2"/>
-        <ellipse cx="8" cy="8" rx="6.4" ry="2.9" fill="none" stroke={PLBL} strokeWidth="1" transform="rotate(-30 8 8)"/>
-        <circle cx="8" cy="8" r="1.5" fill={PLBL}/>
       </svg>
     );
   }
@@ -425,10 +429,10 @@ export function GenomeHome({
           return (
             <button key={fam.id} type="button"
               onClick={()=>{ const el=(typeof document!=="undefined")&&document.getElementById("fam-"+fam.id); if(el) el.scrollIntoView({behavior:"smooth",block:"start"}); }}
-              style={{display:"flex",alignItems:"center",gap:7,background:gold?"rgba(201,178,122,0.08)":"#171722",
-                border:"1px solid "+(gold?"#5a4c2c":"#2c2c40"),borderRadius:20,padding:"7px 13px",cursor:"pointer"}}>
-              <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.16em",textTransform:"uppercase",color:gold?"#c9b27a":PLBL}}>{pillLabel}</span>
-              <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.04em",color:gold?"#c9b27a":COUNT}}>{doneN}/{total}</span>
+              style={{display:"flex",alignItems:"center",gap:7,background:"#171722",
+                border:"1px solid #2c2c40",borderRadius:20,padding:"7px 13px",cursor:"pointer"}}>
+              <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.16em",textTransform:"uppercase",color:PLBL}}>{pillLabel}</span>
+              <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.04em",color:COUNT}}>{doneN}/{total}</span>
               {isNew&&(
                 <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.14em",color:"#c9b27a",background:"rgba(201,178,122,0.14)",borderRadius:4,padding:"1px 5px"}}>NEW</span>
               )}
