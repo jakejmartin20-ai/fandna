@@ -17,6 +17,7 @@ import { moduleQuestions as mlbModule, scoring as mlbScoring, teamDims as mlbDim
 import { moduleQuestions as nbaModule, scoring as nbaScoring, teamDims as nbaDims } from "../data/nba";
 import { moduleQuestions as cfbModule, scoring as cfbScoring, teamDims as cfbDims } from "../data/cfb";
 import { moduleQuestions as nhlModule, scoring as nhlScoring, teamDims as nhlDims } from "../data/nhl";
+import { moduleQuestions as f1Module, scoring as f1Scoring, teamDims as f1Dims } from "../data/f1";
 import { moduleQuestions as blModule, scoring as blScoring, teamDims as blDims } from "../data/bundesliga";
 import { moduleQuestions as llModule, scoring as llScoring, teamDims as llDims } from "../data/laliga";
 import { moduleQuestions as l1Module, scoring as l1Scoring, teamDims as l1Dims } from "../data/ligue1";
@@ -160,6 +161,7 @@ const FP_ENGINES = {
   LL: makeFpEngine(llDims, llScoring, llModule),
   L1: makeFpEngine(l1Dims, l1Scoring, l1Module),
   SA: makeFpEngine(saDims, saScoring, saModule),
+  F1: makeFpEngine(f1Dims, f1Scoring, f1Module),
 };
 
 
@@ -408,6 +410,7 @@ for (const q of moduleQuestions) QUESTION_MAP[q.id] = q;
 for (const q of nflModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (nfl_q*), no collision with PL
 for (const q of mlbModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (mlb_q*), no collision with PL
 for (const q of nbaModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (nba_q*), no collision with PL
+for (const q of f1Module)        QUESTION_MAP[q.id] = q;   // namespaced ids (f1_q*), no collision with PL
 for (const q of cfbModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (cfb_q*), no collision with PL
 for (const q of nhlModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (nhl_q*), no collision with PL
 for (const q of blModule)        QUESTION_MAP[q.id] = q;   // namespaced ids (bl_q*), no collision with PL

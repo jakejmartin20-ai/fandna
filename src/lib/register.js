@@ -33,6 +33,9 @@ const REGISTER = {
   NHL: { noun: "team",      worn: "sweater", team: "team", teams: "teams", league: "NHL", leagueAbbr: "NHL", leagueIn: "the NHL",
          tail: "Where you spend your winter nights is up to you.",
          xmHeader: "Already have a team?", xmEscape: "I don't follow an NHL team" },
+  F1:  { noun: "team",      worn: "colours", team: "team", teams: "teams", league: "Formula 1", leagueAbbr: "F1", leagueIn: "Formula 1",
+         tail: "Which garage you pull for on Sundays is up to you.",
+         xmHeader: "Already have a team?", xmEscape: "I don't follow Formula 1" },
 };
 function regOf(s){ return REGISTER[s] || REGISTER.PL; }
 

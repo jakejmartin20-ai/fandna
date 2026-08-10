@@ -18,12 +18,16 @@ const SPORTS = [
   { code: "LL",  name: "La Liga",       live: true,  hook: "Which club are you?",      group: "global" },
   { code: "L1",  name: "Ligue 1",       live: true,  hook: "Which club are you?",      group: "global" },
   { code: "SA",  name: "Serie A",       live: true,  hook: "Which club are you?",      group: "global" },
+  { code: "F1",  name: "Formula 1",     live: false, hook: "Which team are you?",       group: "world" },
+  { code: "AFL", name: "AFL",           live: false, hook: "Which club are you?",       group: "world" },
+  { code: "IPL", name: "IPL",           live: false, hook: "Which franchise are you?",  group: "world" },
 ];
 
 // The two branches on the genome home, in display order. `glyph` picks the header mark.
 const FAMILIES = [
-  { id: "global",   label: "The Global Game", glyph: "globe" },
+  { id: "global",   label: "Football",         glyph: "globe" },
   { id: "american", label: "American Sports", glyph: "star" },
+  { id: "world",    label: "World",           glyph: "world" },
 ];
 
 function liveSports(){ return SPORTS.filter(s=>s.live); }
