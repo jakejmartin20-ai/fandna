@@ -3,7 +3,7 @@
   "purpose": "F1 regression gate. Each fixture is an input the live F1 engine maps to a team. Any future change to src/data/f1.js scoring (or the shared fingerprint engine in src/lib/scoring.js) must reproduce every winner here, or the diff must be reviewed and accepted.",
   "generated": "2026-08-10",
   "engine": "fingerprint",
-  "fpW": 1.2,
+  "fpW": 1.6,
   "teams": 11,
   "count": 51
  },
@@ -1040,8 +1040,8 @@
     "f1_q6": "1",
     "f1_q9": "1"
    },
-   "winner": "CAD",
-   "winnerName": "Cadillac"
+   "winner": "MCL",
+   "winnerName": "McLaren"
   },
   {
    "id": "rnd_016",
@@ -1228,8 +1228,8 @@
     "f1_q6": "5",
     "f1_q9": "4"
    },
-   "winner": "CAD",
-   "winnerName": "Cadillac"
+   "winner": "ALP",
+   "winnerName": "Alpine"
   },
   {
    "id": "rnd_020",
