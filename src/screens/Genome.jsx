@@ -28,7 +28,7 @@ const PLBL = "#b6b2cc";   // panel label + glyph
 const PBG  = "#181820";   // panel fill
 const PBD  = "#262633";   // panel border
 const COUNT= "#80809d";   // the "x of y mapped" count
-const MAX_ROWS = 3;       // rows shown before a family panel scrolls inside its box
+const MAX_ROWS = 2;       // rows shown before a family panel scrolls inside its box (session-28 redesign: 3->2)
 const ROW_PX = 84;        // approx height of one strand row (card + gap)
 const PEEK = 60;          // half-row sliver so a partial next card is always visible when scrollable (Variant B)
 
@@ -39,6 +39,15 @@ function FamilyGlyph({ kind }){
         <circle cx="8" cy="8" r="6.4" fill="none" stroke={PLBL} strokeWidth="1.2"/>
         <ellipse cx="8" cy="8" rx="2.9" ry="6.4" fill="none" stroke={PLBL} strokeWidth="1"/>
         <line x1="1.6" y1="8" x2="14.4" y2="8" stroke={PLBL} strokeWidth="1"/>
+      </svg>
+    );
+  }
+  if(kind === "world"){
+    return (
+      <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" style={{flexShrink:0}}>
+        <circle cx="8" cy="8" r="6.4" fill="none" stroke={PLBL} strokeWidth="1.2"/>
+        <ellipse cx="8" cy="8" rx="6.4" ry="2.9" fill="none" stroke={PLBL} strokeWidth="1" transform="rotate(-30 8 8)"/>
+        <circle cx="8" cy="8" r="1.5" fill={PLBL}/>
       </svg>
     );
   }
@@ -216,7 +225,7 @@ export function GenomeHome({
     const maxH = MAX_ROWS*ROW_PX + PEEK;
 
     return(
-      <div style={{marginBottom:last?0:16}}>
+      <div id={"fam-"+fam.id} style={{marginBottom:last?0:16,scrollMarginTop:12}}>
         <div style={{position:"relative",background:PBG,border:`1px solid ${PBD}`,borderRadius:12,overflow:"hidden"}}>
           {/* header */}
           <div style={{display:"flex",alignItems:"center",gap:9,padding:"13px 15px 11px",borderBottom:`1px solid ${PBD}`}}>
@@ -369,18 +378,8 @@ export function GenomeHome({
               <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:13,color:"#8888a6",textAlign:"right",lineHeight:1.3}}>re-answer the 24, your leagues recompute</span>
             </button>
           )}
-          {/* readout, full width */}
-          <div style={{display:"flex",flexDirection:"column",gap:5,marginTop:14,paddingTop:11,borderTop:"1px solid #222230"}}>
-            {SHARE.groups.map(g=>{
-              const dim = g.fam.glyph!=="globe";
-              return (
-                <div key={g.fam.id} style={{display:"flex",gap:8,alignItems:"baseline"}}>
-                  <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.14em",color:dim?"#7f7f9f":"#7d7d9c",flexShrink:0,width:36,paddingTop:1}}>{g.fam.glyph==="globe"?"GLOBAL":"USA"}</span>
-                  <span style={{fontFamily:"'DM Mono',monospace",fontSize:12,color:dim?"#82829a":"#c9c5cf",letterSpacing:"0.03em",wordBreak:"break-word",lineHeight:1.45}}>{g.items.join(" · ")}</span>
-                </div>
-              );
-            })}
-          </div>
+          {/* Hero teams-code strip removed (session-28 redesign): the family panels below are the
+              single source of the league list, so the hero no longer double-prints the groups. */}
           {/* Primary: Compare with a friend (the /c/ genome invite) */}
           <button type="button" onClick={onCompare}
             style={{display:"block",width:"100%",textAlign:"center",background:"#6a5ad0",border:"1px solid #6a5ad0",borderRadius:9,padding:"14px 10px",marginTop:14,color:"#fff",fontFamily:"'DM Mono',monospace",fontSize:13,letterSpacing:"0.12em",textTransform:"uppercase",cursor:"pointer",fontWeight:600}}
@@ -410,8 +409,36 @@ export function GenomeHome({
         </div>
       )}
 
-      {/* The two family panels - the through-line's evidence and the way into each league. */}
-      <div style={{marginTop:22,marginBottom:26}}>
+      {/* Group jump-nav pills: one per family, with its mapped count; a not-yet-live family
+          (World, while its sports are hidden) shows a gold NEW flag. Taps scroll to the panel. */}
+      <div style={{display:"flex",gap:8,justifyContent:"center",flexWrap:"wrap",marginTop:22,marginBottom:6,position:"relative",zIndex:1}}>
+        {FAMILIES.map(fam=>{
+          const inFam = sports.filter(s=>s.group===fam.id);
+          if(inFam.length===0) return null;
+          const liveInFam = inFam.filter(s=>s.live);
+          const isNew = liveInFam.length===0;   // family whose sports are all still hidden (the World teaser)
+          const set = isNew ? inFam : liveInFam; // populated families count live (matches the panel header); an all-hidden family counts its total, so World reads 0/3
+          const total = set.length;
+          const doneN = set.filter(s=>{ const r=genome[s.code]; return !!(r&&r.club); }).length;
+          const gold = isNew;
+          const pillLabel = fam.label.split(" ")[0];                  // FOOTBALL / AMERICAN / WORLD
+          return (
+            <button key={fam.id} type="button"
+              onClick={()=>{ const el=(typeof document!=="undefined")&&document.getElementById("fam-"+fam.id); if(el) el.scrollIntoView({behavior:"smooth",block:"start"}); }}
+              style={{display:"flex",alignItems:"center",gap:7,background:gold?"rgba(201,178,122,0.08)":"#171722",
+                border:"1px solid "+(gold?"#5a4c2c":"#2c2c40"),borderRadius:20,padding:"7px 13px",cursor:"pointer"}}>
+              <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.16em",textTransform:"uppercase",color:gold?"#c9b27a":PLBL}}>{pillLabel}</span>
+              <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.04em",color:gold?"#c9b27a":COUNT}}>{doneN}/{total}</span>
+              {isNew&&(
+                <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.14em",color:"#c9b27a",background:"rgba(201,178,122,0.14)",borderRadius:4,padding:"1px 5px"}}>NEW</span>
+              )}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* The family panels - the through-line's evidence and the way into each league. */}
+      <div style={{marginTop:14,marginBottom:26}}>
         {FAMILIES.map((fam,i)=>(
           <FamilyPanel key={fam.id} fam={fam} last={i===FAMILIES.length-1}/>
         ))}
