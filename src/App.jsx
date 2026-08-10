@@ -648,6 +648,7 @@ function AppInner(){
     ["Base",       vit.base],
     ["Founded",    String(vit.founded)],
     ["Power unit", vit.powerUnit],
+    ["Drivers",    vit.drivers],
     ["Titles",     vit.titles],
     ["Colours",    vit.colours],
     ["Principal",  vit.principal],
