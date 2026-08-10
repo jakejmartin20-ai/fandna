@@ -158,7 +158,7 @@ const FP_ENGINES = {
   CFB: makeFpEngine(cfbDims, cfbScoring, cfbModule, 1.6),   // 51+ programs sit closer in dim-space; 1.2 left the core deciding only ~23%
   NHL: makeFpEngine(nhlDims, nhlScoring, nhlModule, 1.5),   // 32 teams; FP_W 1.5 (s31 weight tune to the >1% reachability knee; Toronto floor 1.03%, was 1.2)
   BL: makeFpEngine(blDims, blScoring, blModule, 1.5),   // 18 teams; FP_W 1.5 (s31 weight tune; magnet-bound knee, Elversberg 13.6% < 13.9% ceiling, Freiburg floor 1.14%, was 1.2)
-  LL: makeFpEngine(llDims, llScoring, llModule),
+  LL: makeFpEngine(llDims, llScoring, llModule, 1.4),   // 20 teams; FP_W 1.4 (s31 weight tune; floor-bound knee, Betis 1.05% > 1%, Sevilla magnet 7.9% well under ceiling, was 1.2)
   L1: makeFpEngine(l1Dims, l1Scoring, l1Module),
   SA: makeFpEngine(saDims, saScoring, saModule),
   F1: makeFpEngine(f1Dims, f1Scoring, f1Module, 1.6),   // small 11-team field: 1.2 let the module override the core by ~3 ranks; 1.6 makes it a tie-breaker (knee before Red Bull drops below reachable)
