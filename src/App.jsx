@@ -1059,7 +1059,7 @@ function AppInner(){
               <div style={{padding:"0 16px 16px"}}>
                 <div style={{display:"flex",flexDirection:"column",gap:5,alignItems:"center",marginBottom:6}}>
                   {shareGroups.map(g=>{
-                    const dim = g.fam.glyph!=="globe";
+                    const dim = g.fam.id!=="global";
                     return (
                       <div key={g.fam.id} style={{display:"flex",gap:8,alignItems:"baseline"}}>
                         <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.14em",color:dim?"#7f7f9f":"#7d7d9c",flexShrink:0,width:36,textAlign:"right"}}>{g.fam.id==="global"?"GLOBAL":g.fam.id==="world"?"WORLD":"USA"}</span>
