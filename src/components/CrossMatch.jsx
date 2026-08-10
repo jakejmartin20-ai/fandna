@@ -70,15 +70,32 @@ function tooClose(a, b){
   const d = Math.sqrt((ra[0]-rb[0])**2 + (ra[1]-rb[1])**2 + (ra[2]-rb[2])**2);
   return d < 120;
 }
+// A vivid, dark-safe colour for the comparison DOTS. teamTextColors is tuned for readable text on a
+// dark panel (often near-white), which washes the dots out; the dots want the team's real colour.
+// A black-primary team would vanish on the dark background, so lift a dark-but-colourful primary
+// (navy) and fall back to a bright secondary for a near-achromatic one (black -> its gold/red).
+function lumOf(rgb){ return (0.299*rgb[0] + 0.587*rgb[1] + 0.114*rgb[2]) / 255; }
+function chromaOf(rgb){ return (Math.max(rgb[0],rgb[1],rgb[2]) - Math.min(rgb[0],rgb[1],rgb[2])) / 255; }
+function lift(rgb, amt){ return "#" + rgb.map(x => Math.round(x + (255-x)*amt).toString(16).padStart(2,"0")).join(""); }
+function dotColor(team){
+  const c = team && team.color ? hexToRgb(team.color) : null;
+  const s = team && team.secondaryColor ? hexToRgb(team.secondaryColor) : null;
+  if (!c) return "#9696b4";
+  if (lumOf(c) >= 0.25) return team.color;                 // bright enough as-is
+  if (chromaOf(c) >= 0.18) return lift(c, 0.4);            // dark but colourful (navy) -> lift the hue
+  if (s && lumOf(s) >= 0.30) return team.secondaryColor;  // near-black -> a bright secondary
+  return lift(c, 0.6);
+}
 
-function TipGroup({ title, color, tips }){
+function TipGroup({ title, color, dot, tips }){
   if (!tips || tips.length === 0) return null;
+  const d = dot || color;
   return (
     <div style={{marginTop:4}}>
       <div style={{fontFamily:MONO,fontSize:10,letterSpacing:"0.12em",textTransform:"uppercase",color,margin:"18px 0 2px"}}>{title}</div>
       {tips.map((t,i)=>(
         <div key={i} style={{display:"flex",gap:11,padding:"11px 0",borderTop:i===0?"none":"1px solid #242433"}}>
-          <span style={{width:7,height:7,borderRadius:"50%",background:color,marginTop:8,flexShrink:0,boxShadow:`0 0 7px ${color}`}}/>
+          <span style={{width:7,height:7,borderRadius:"50%",background:d,marginTop:8,flexShrink:0,boxShadow:`0 0 7px ${d}`}}/>
           <div>
             <div style={{fontFamily:MONO,fontSize:9.5,letterSpacing:"0.08em",textTransform:"uppercase",color:"#8585b4",marginBottom:5,lineHeight:1.4}}>{(t.question||"").replace(/\s*:\s*$/,"")}</div>
             <div style={{fontFamily:SERIF,fontSize:17,lineHeight:1.3,color:"#e4ddd4"}}>{t.answer}</div>
@@ -174,8 +191,9 @@ export function CrossMatch({ sport, input, teams, teamDims = {}, coreProfile, te
   const v = { ...DEFAULT_VOICE, ...(voice || {}) };
 
   const colorOf = (code) => teamTextColors[code] || (teams[code] && teams[code].color) || "#9696b4";
+  const matchedDot = dotColor(teams[matchedCode]);
   const clubs = Object.entries(teams)
-    .map(([code,t]) => ({ code, name:t.name, emoji:glyphOnly(t.emoji), color:colorOf(code) }))
+    .map(([code,t]) => ({ code, name:t.name, emoji:glyphOnly(t.emoji), color:dotColor(t) }))
     .sort((a,b)=>a.name.localeCompare(b.name));
 
   const data = useMemo(
@@ -185,8 +203,8 @@ export function CrossMatch({ sport, input, teams, teamDims = {}, coreProfile, te
 
   // supported side keeps its colour unless it collides with the matched colour, then bone
   const supAccent = (data && !data.isMatch)
-    ? (tooClose(colorOf(data.supported), matchedColor) ? BONE : colorOf(data.supported))
-    : matchedColor;
+    ? (tooClose(dotColor(teams[data.supported]), matchedDot) ? BONE : dotColor(teams[data.supported]))
+    : matchedDot;
 
   const pick = (code) => { setSupported(code); setOpen(false); setQuery(""); };
   const chosen = supported && supported !== "NONE" ? clubs.find(c=>c.code===supported) : null;
@@ -255,7 +273,7 @@ export function CrossMatch({ sport, input, teams, teamDims = {}, coreProfile, te
               </Card>
               <Card>
                 <Eyebrow>What sealed it</Eyebrow>
-                <TipGroup title={`Toward ${matchedName}`} color={matchedColor} tips={data.towardMatch}/>
+                <TipGroup title={`Toward ${matchedName}`} color={matchedColor} dot={matchedDot} tips={data.towardMatch}/>
               </Card>
             </>
           ) : (
@@ -272,7 +290,7 @@ export function CrossMatch({ sport, input, teams, teamDims = {}, coreProfile, te
                   supported={teamDims[data.supported]}
                   matchedName={matchedName}
                   supportedName={chosen ? chosen.name : data.supported}
-                  matchedColor={matchedColor}
+                  matchedColor={matchedDot}
                   supportedColor={supAccent}
                 />
               )}
@@ -297,7 +315,7 @@ export function CrossMatch({ sport, input, teams, teamDims = {}, coreProfile, te
                     </div>
                   )}
                 {(data.towardMatch && data.towardMatch.length > 0)
-                  ? <TipGroup title={`Pulled you to ${matchedName} instead`} color={matchedColor} tips={data.towardMatch}/>
+                  ? <TipGroup title={`Pulled you to ${matchedName} instead`} color={matchedColor} dot={matchedDot} tips={data.towardMatch}/>
                   : (
                     <div style={{marginTop:4}}>
                       <div style={{fontFamily:MONO,fontSize:10,letterSpacing:"0.12em",textTransform:"uppercase",color:matchedColor,margin:"18px 0 2px"}}>Pulled you to {matchedName} instead</div>
