@@ -161,7 +161,7 @@ const FP_ENGINES = {
   LL: makeFpEngine(llDims, llScoring, llModule),
   L1: makeFpEngine(l1Dims, l1Scoring, l1Module),
   SA: makeFpEngine(saDims, saScoring, saModule),
-  F1: makeFpEngine(f1Dims, f1Scoring, f1Module),
+  F1: makeFpEngine(f1Dims, f1Scoring, f1Module, 1.6),   // small 11-team field: 1.2 let the module override the core by ~3 ranks; 1.6 makes it a tie-breaker (knee before Red Bull drops below reachable)
 };
 
 
