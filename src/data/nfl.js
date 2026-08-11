@@ -83,7 +83,7 @@ const moduleQuestions = [
         "value": "D"
       },
       {
-        "label": "So close I could taste them, more than once. I'll get there yet.",
+        "label": "So close I could taste it, more than once. I'll get there.",
         "value": "E"
       }
     ]
@@ -92,18 +92,18 @@ const moduleQuestions = [
     "id": "nfl_q2",
     "type": "choice",
     "phase": "The fine print",
-    "question": "The thing you love keeps breaking your heart. What happens inside?",
+    "question": "When the thing you love lets you down, what happens inside?",
     "options": [
       {
-        "label": "I show up louder. Every heartbreak somehow pulls more people in.",
+        "label": "I show up louder. Every heartbreak pulls more people in.",
         "value": "A"
       },
       {
-        "label": "I see it coming and brace for it. I've made my peace with it, and I stay anyway.",
+        "label": "I saw it coming. Made my peace, and I stay anyway.",
         "value": "B"
       },
       {
-        "label": "I laugh, and believe again the next time. Wrong every time, certain anyway.",
+        "label": "I laugh and believe again. Wrong every time, certain anyway.",
         "value": "C"
       },
       {
@@ -120,14 +120,14 @@ const moduleQuestions = [
     "id": "nfl_q3",
     "type": "choice",
     "phase": "The fine print",
-    "question": "What you're proudest of comes down to:",
+    "question": "What are you proudest of?",
     "options": [
       {
         "label": "Where I'm from. The place made me, and I judge everything by it.",
         "value": "A"
       },
       {
-        "label": "The standard I keep, and I never slow down to make it comfortable.",
+        "label": "The standard I keep. I never slow down to make it comfortable.",
         "value": "B"
       },
       {
@@ -151,7 +151,7 @@ const moduleQuestions = [
     "question": "Strip away the wins. What are you actually loyal to?",
     "options": [
       {
-        "label": "The city. Always the city, win or lose, name or no name.",
+        "label": "The city. Win or lose, always the city.",
         "value": "A"
       },
       {
@@ -176,7 +176,7 @@ const moduleQuestions = [
     "id": "nfl_q5",
     "type": "choice",
     "phase": "The fine print",
-    "question": "How does the world see you, and how do you feel about it?",
+    "question": "How does the world see you?",
     "options": [
       {
         "label": "They resent how often I come out on top, and I don't apologize for it.",
@@ -187,7 +187,7 @@ const moduleQuestions = [
         "value": "B"
       },
       {
-        "label": "Overlooked, so I dug into where I'm from till I couldn't be ignored.",
+        "label": "Overlooked. So I dug into where I'm from till I couldn't be ignored.",
         "value": "C"
       },
       {
@@ -204,9 +204,9 @@ const moduleQuestions = [
     "id": "nfl_q6",
     "type": "slider",
     "phase": "The fine print",
-    "question": "Which lands closer:",
-    "left": "Heads down, no shortcuts, no apologies. The grind is the glory.",
-    "right": "Do it with style. The spotlight, the spectacle, the show is half the point."
+    "question": "The grind, or the glory?",
+    "left": "the grind is the glory",
+    "right": "the show is half the point"
   },
   {
     "id": "nfl_q7",
@@ -240,10 +240,10 @@ const moduleQuestions = [
     "id": "nfl_q8",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "Something you loved got taken from you. What did you do?",
+    "question": "When something you counted on gets taken away, what do you do?",
     "options": [
       {
-        "label": "I let it go and built something brand new in its place. No regrets.",
+        "label": "I let it go and built something new. No regrets.",
         "value": "A"
       },
       {
@@ -255,7 +255,7 @@ const moduleQuestions = [
         "value": "C"
       },
       {
-        "label": "I hit the absolute bottom, then turned it into the best thing I've done.",
+        "label": "Hit the bottom, then turned it into the best thing I've done.",
         "value": "D"
       },
       {
@@ -268,15 +268,15 @@ const moduleQuestions = [
     "id": "nfl_q9",
     "type": "slider",
     "phase": "What it comes down to",
-    "question": "Which is more you:",
-    "left": "The one great peak. I'd trade a lifetime of pretty good for a single untouchable stretch.",
-    "right": "The long haul. A hundred years of trying over one untouchable stretch."
+    "question": "Keep it under control, or let it get wild?",
+    "left": "keep it under control",
+    "right": "let it get wild"
   },
   {
     "id": "nfl_q10",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "Deep down, the principle you run on:",
+    "question": "The principle you run on, deep down?",
     "options": [
       {
         "label": "It's never over till it's over. I fight long after others fold.",
@@ -304,9 +304,9 @@ const moduleQuestions = [
     "id": "nfl_q11",
     "type": "slider",
     "phase": "What it comes down to",
-    "question": "Your volume:",
-    "left": "Calm. I don't need to make noise, the results speak.",
-    "right": "Loud. On a good day, loud enough that nobody can ignore it."
+    "question": "Let the results speak, or make some noise?",
+    "left": "let the results speak",
+    "right": "loud enough to move the ground"
   },
   {
     "id": "nfl_q12",
@@ -2543,21 +2543,92 @@ const scoring = {
   },
   "nfl_q9": {
     "1": {
-      "MIA": 3
+      "NE": 3,
+      "GB": 2,
+      "PIT": 2,
+      "DET": 1,
+      "MIA": 1,
+      "BAL": 1,
+      "NYG": 1,
+      "IND": 1,
+      "DEN": 1,
+      "ARI": 1,
+      "TEN": 1,
+      "HOU": 1
     },
     "2": {
-      "MIA": 2
+      "NE": 1,
+      "GB": 3,
+      "PIT": 3,
+      "DET": 3,
+      "MIA": 3,
+      "BAL": 3,
+      "NYG": 3,
+      "IND": 3,
+      "DEN": 3,
+      "ARI": 3,
+      "TEN": 3,
+      "HOU": 3,
+      "KC": 2,
+      "SF": 2,
+      "CHI": 2,
+      "LAR": 2,
+      "WAS": 2,
+      "CAR": 2,
+      "JAX": 2
     },
     "3": {
-      "ARI": 2
+      "DET": 1,
+      "MIA": 1,
+      "BAL": 1,
+      "NYG": 1,
+      "IND": 1,
+      "DEN": 1,
+      "ARI": 1,
+      "TEN": 1,
+      "HOU": 1,
+      "KC": 3,
+      "SF": 3,
+      "CHI": 3,
+      "LAR": 3,
+      "WAS": 3,
+      "CAR": 3,
+      "JAX": 3,
+      "DAL": 3,
+      "NO": 3,
+      "SEA": 3,
+      "BUF": 1,
+      "TB": 1,
+      "MIN": 1,
+      "CIN": 1,
+      "ATL": 1
     },
     "4": {
-      "ARI": 2,
-      "DET": 2
+      "DAL": 2,
+      "NO": 2,
+      "SEA": 2,
+      "BUF": 3,
+      "TB": 3,
+      "MIN": 3,
+      "CIN": 3,
+      "ATL": 3,
+      "PHI": 3,
+      "LAC": 3,
+      "CLE": 3,
+      "NYJ": 3,
+      "LV": 1
     },
     "5": {
-      "ARI": 3,
-      "DET": 3
+      "BUF": 1,
+      "TB": 1,
+      "MIN": 1,
+      "CIN": 1,
+      "ATL": 1,
+      "PHI": 2,
+      "LAC": 2,
+      "CLE": 2,
+      "NYJ": 2,
+      "LV": 3
     }
   },
   "nfl_q10": {
