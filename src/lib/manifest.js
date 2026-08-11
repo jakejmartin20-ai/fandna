@@ -18,7 +18,7 @@ const SPORTS = [
   { code: "LL",  name: "La Liga",       live: true,  hook: "Which club are you?",      group: "global" },
   { code: "L1",  name: "Ligue 1",       live: true,  hook: "Which club are you?",      group: "global" },
   { code: "SA",  name: "Serie A",       live: true,  hook: "Which club are you?",      group: "global" },
-  { code: "F1",  name: "Formula 1",     live: false, hook: "Which team are you?",       group: "world" },
+  { code: "F1",  name: "Formula 1",     live: true, hook: "Which team are you?",       group: "world" },
   { code: "AFL", name: "AFL",           live: false, hook: "Which club are you?",       group: "world" },
   { code: "IPL", name: "IPL",           live: false, hook: "Which franchise are you?",  group: "world" },
 ];
