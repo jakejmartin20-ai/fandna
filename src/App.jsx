@@ -4,7 +4,7 @@ import { track } from "@vercel/analytics";
 import { coreQuestions, DIM_ORDER, DIM_LABELS } from "./data/core";
 import { SPORT_DATA } from "./lib/sportData";
 import { scoreCore, scoreModule, matchEvidence, decompressProfile } from "./lib/scoring";
-import { loadState, saveResult, clearAll } from "./lib/storage";
+import { loadState, saveResult, clearAll, appendPending, readPending, clearPending } from "./lib/storage";
 import { pingResult } from "./lib/telemetry";
 import { generateShareCard } from "./lib/card";
 import { ChoiceQ, BinaryQ, SliderQ } from "./components/quiz";
@@ -26,12 +26,12 @@ function recomputeAllFromCore(newCoreAnswers){
     const modAns = r.answers||{};
     if(Object.keys(modAns).length===0){
       stale.push(sport);
-      saveResult(sport,{coreAnswers:newCoreAnswers,coreProfile:newCore,club:r.club});
+      saveResult(sport,{coreAnswers:newCoreAnswers,coreProfile:newCore,club:r.club,date:r.date});
       continue;
     }
     const { club:newClub, scores:ns } = scoreModule(sport,{coreProfile:newCore,coreAnswers:newCoreAnswers,moduleAnswers:modAns});
-    if(newClub!==r.club) moved.push({sport,from:r.club,to:newClub});
-    saveResult(sport,{coreAnswers:newCoreAnswers,coreProfile:newCore,club:newClub,moduleAnswers:modAns,scores:ns});
+    if(newClub!==r.club) moved.push({sport,from:r.club,to:newClub,scores:ns});
+    saveResult(sport,{coreAnswers:newCoreAnswers,coreProfile:newCore,club:newClub,moduleAnswers:modAns,scores:ns,date:r.date});
   }
   return { newCore, moved, stale };
 }
@@ -318,20 +318,22 @@ function AppInner(){
   // (the landing page) rather than jumping into the result. First-timers are unaffected.
   useEffect(()=>{
     let st=loadState();
-    // Silent stale-core auto-heal. A core saved before an engine change carries a
-    // profile the current engine would no longer produce from the same answers. Detect
-    // it by re-scoring the stored answers: if the fresh profile differs, recompute every
-    // league on the live engine so no one keeps a stale core. Invisible to current users,
-    // for whom the fresh score is byte-identical to the stored profile (0 drift, verified).
-    if(st.coreAnswers && st.coreProfile){
-      const fresh=scoreCore(st.coreAnswers);
-      const drift=DIM_ORDER.some(k=>fresh[k]!==st.coreProfile[k]);
-      if(drift){
-        const { moved, stale } = recomputeAllFromCore(st.coreAnswers);
-        track("core_auto_healed",{moved:moved.length,stale:stale.length});
-        st=loadState();
+    // On every return, re-run the live engine over the stored answers so every result
+    // tracks the current engine, and surface any team that moved (once) via the delta
+    // banner. Deterministic recompute, never a scoring change; the core is re-derived too,
+    // so a core-scoring change still heals here as it always did. Healed results re-ping
+    // telemetry (flagged as a retake) so live counts follow the current engine.
+    if(st.coreAnswers){
+      const { newCore, moved, stale } = recomputeAllFromCore(st.coreAnswers);
+      if(moved.length){
+        appendPending(moved);
+        moved.forEach(m=>pingResult({sport:m.sport,club:m.to,scores:m.scores,coreProfile:newCore,coreAnswers:st.coreAnswers,retake:true}));
+        track("results_healed",{moved:moved.length,stale:stale.length});
       }
+      st=loadState();
     }
+    const pend=readPending();
+    if(pend.length) setResequenceDelta({moved:pend,stale:[],reason:"heal"});
     setGenome(st.results||{});
     setCoreProfile(st.coreProfile||null);
     if(st.results&&st.results.PL&&st.results.PL.club){
@@ -912,7 +914,7 @@ function AppInner(){
             onHow={openHow}
             onResequence={()=>setResequenceConfirm(true)}
             resequenceDelta={resequenceDelta}
-            onDismissDelta={()=>setResequenceDelta(null)}
+            onDismissDelta={()=>{setResequenceDelta(null);clearPending();}}
           />
         )}
 
