@@ -7,8 +7,8 @@
     "teams": 32,
     "moduleQuestions": 15,
     "recorded": "2026-08-01",
-    "dataFile": "nfl.js 5871262a",
-    "note": "Recorded on the shipped engine (scoring.js e566c7c8) against the 15-question module. 32 signature + 40 random. Signature sheets omit choice questions the team is indifferent to, matching the MLB convention. | s32: module-honesty pass. Carolina de-max (q2.A/q10.A/q12.C ->3) + q10.A broadened to TEN/CIN/CLE; NYG de-max q8.E ->2; Washington restore q2.B +2 & q11 loud +3. Kills CAR (10.1->3.5%) and NYG (7.9->6.6%) magnets, lifts WAS 3.1->9.0%. 6 fixtures re-recorded, 32/32 signatures self-land."
+    "dataFile": "nfl.js 0df354ec",
+    "note": "Recorded on the shipped engine (scoring.js e566c7c8) against the 15-question module. 32 signature + 40 random. Signature sheets omit choice questions the team is indifferent to, matching the MLB convention. | s32: module-honesty pass. Carolina de-max (q2.A/q10.A/q12.C ->3) + q10.A broadened to TEN/CIN/CLE; NYG de-max q8.E ->2; Washington restore q2.B +2 & q11 loud +3. Kills CAR (10.1->3.5%) and NYG (7.9->6.6%) magnets, lifts WAS 3.1->9.0%. 6 fixtures re-recorded, 32/32 signatures self-land. | s32: module-honesty pass. Carolina de-max (q2.A/q10.A/q12.C ->3) + q10.A broadened to TEN/CIN/CLE; NYG de-max q8.E ->2; Washington restore q2.B +2 & q11 loud +3. Kills CAR (10.1->3.5%) and NYG (7.9->6.6%) magnets, lifts WAS 3.1->9.0%. 16 fixtures re-recorded, 32/32 signatures self-land. | s32b: q9 re-aimed slider (perfect-peak/endurance -> CHAOS, peak-by-trait footprints all 32, prompt 'Keep it under control, or let it get wild?'); 16 randoms re-recorded, 32/32 self-land, no twin, no magnet, NE now reachable. Plus a scoring-neutral copy sweep (3 slider prompts+poles, 5 stems, 9 option tightenings) - zero further fixture movement."
   },
   "fixtures": [
     {
@@ -1041,7 +1041,7 @@
         "nfl_q11": "5",
         "nfl_q12": "C"
       },
-      "winner": "JAX",
+      "winner": "NYJ",
       "winnerName": "Jacksonville Jaguars"
     },
     {
@@ -1191,7 +1191,7 @@
         "nfl_q11": "4",
         "nfl_q12": "E"
       },
-      "winner": "DAL",
+      "winner": "KC",
       "winnerName": "Dallas Cowboys"
     },
     {
@@ -1291,7 +1291,7 @@
         "nfl_q11": "1",
         "nfl_q12": "C"
       },
-      "winner": "PIT",
+      "winner": "KC",
       "winnerName": "Pittsburgh Steelers"
     },
     {
@@ -1391,7 +1391,7 @@
         "nfl_q11": "5",
         "nfl_q12": "E"
       },
-      "winner": "KC",
+      "winner": "BAL",
       "winnerName": "Kansas City Chiefs"
     },
     {
@@ -1441,7 +1441,7 @@
         "nfl_q11": "2",
         "nfl_q12": "A"
       },
-      "winner": "DEN",
+      "winner": "CHI",
       "winnerName": "Denver Broncos"
     },
     {
@@ -1491,7 +1491,7 @@
         "nfl_q11": "2",
         "nfl_q12": "C"
       },
-      "winner": "CAR",
+      "winner": "ARI",
       "winnerName": "Carolina Panthers"
     },
     {
@@ -1691,7 +1691,7 @@
         "nfl_q11": "1",
         "nfl_q12": "C"
       },
-      "winner": "ARI",
+      "winner": "TB",
       "winnerName": "Arizona Cardinals"
     },
     {
@@ -1741,7 +1741,7 @@
         "nfl_q11": "5",
         "nfl_q12": "E"
       },
-      "winner": "HOU",
+      "winner": "ATL",
       "winnerName": "Houston Texans"
     },
     {
@@ -1791,7 +1791,7 @@
         "nfl_q11": "1",
         "nfl_q12": "D"
       },
-      "winner": "WAS",
+      "winner": "IND",
       "winnerName": "Indianapolis Colts"
     },
     {
@@ -1891,7 +1891,7 @@
         "nfl_q11": "4",
         "nfl_q12": "E"
       },
-      "winner": "MIA",
+      "winner": "BAL",
       "winnerName": "Miami Dolphins"
     },
     {
@@ -1991,7 +1991,7 @@
         "nfl_q11": "3",
         "nfl_q12": "E"
       },
-      "winner": "KC",
+      "winner": "PIT",
       "winnerName": "New York Giants"
     },
     {
@@ -2241,7 +2241,7 @@
         "nfl_q11": "3",
         "nfl_q12": "A"
       },
-      "winner": "NYG",
+      "winner": "MIN",
       "winnerName": "New York Giants"
     },
     {
@@ -2541,7 +2541,7 @@
         "nfl_q11": "5",
         "nfl_q12": "B"
       },
-      "winner": "WAS",
+      "winner": "CLE",
       "winnerName": "Cleveland Browns"
     },
     {
@@ -2591,7 +2591,7 @@
         "nfl_q11": "4",
         "nfl_q12": "C"
       },
-      "winner": "JAX",
+      "winner": "BAL",
       "winnerName": "Carolina Panthers"
     },
     {
@@ -2691,7 +2691,7 @@
         "nfl_q11": "1",
         "nfl_q12": "D"
       },
-      "winner": "MIA",
+      "winner": "IND",
       "winnerName": "Miami Dolphins"
     },
     {
@@ -2841,7 +2841,7 @@
         "nfl_q11": "5",
         "nfl_q12": "A"
       },
-      "winner": "BUF",
+      "winner": "SEA",
       "winnerName": "Buffalo Bills"
     },
     {
