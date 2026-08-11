@@ -8,7 +8,8 @@
       "signatures": 30,
       "random": 40
     },
-    "note": "re-recorded 2026-07-16 on the shipped post-rebuild engine (core ffe8b26f / scoring 60f1ec66, community mean 5.266). The prior baseline's random winners predated the Jul-15 core rebuild and were never re-recorded through it (they reproduced only 19/40 on the shipped engine); all 30 signatures self-land unchanged. Randoms re-recorded here; 21 random winners moved (genuine post-rebuild re-derivations, not fixture rot or a q5 effect). Signatures unchanged. | re-recorded 2026-07-31 after authoring the middle band on the three MLB sliders (mlb_q2, mlb_q4, mlb_q9): value 3 now awards 2 points to the teams whose own signature answers 3, camps unchanged. 8 random winners moved; all 30 signatures self-land unchanged."
+    "note": "re-recorded 2026-07-16 on the shipped post-rebuild engine (core ffe8b26f / scoring 60f1ec66, community mean 5.266). The prior baseline's random winners predated the Jul-15 core rebuild and were never re-recorded through it (they reproduced only 19/40 on the shipped engine); all 30 signatures self-land unchanged. Randoms re-recorded here; 21 random winners moved (genuine post-rebuild re-derivations, not fixture rot or a q5 effect). Signatures unchanged. | re-recorded 2026-07-31 after authoring the middle band on the three MLB sliders (mlb_q2, mlb_q4, mlb_q9): value 3 now awards 2 points to the teams whose own signature answers 3, camps unchanged. 8 random winners moved; all 30 signatures self-land unchanged.",
+    "rebaselined_s33": "2026-08-11 session33: Class-2 module-honesty coverage fix (ache/love-anger family). Added option F to mlb_q5 and mlb_q7 for the 'won it once after a long drought, then nothing since' degree; routed CHC/CWS/WSH/LAA onto F, de-conflicted each off its old bucket (CHC A, LAA B, WSH C, CWS D on both questions). Scoring-neutral F1-voice copy sweep of the q5/q7 stems and all options. Cohort-nearest aching takers now self-land (CHC 0->100% on the isolated ache answer; 22.9% had leaked to Toronto). No magnet (top SEA ~7.0% < 8.3%), nothing dead (floor PIT ~0.5% > 0.37%), no module-twin, 30/30 signatures self-land, 2 random winners moved (rnd_025 CHC->DET, rnd_028 LAA->SF). MLB live; coreDimScoring unchanged so stored takers are sticky."
   },
   "fixtures": [
     {
@@ -209,9 +210,9 @@
         "mlb_q2": "1",
         "mlb_q3": "C",
         "mlb_q4": "1",
-        "mlb_q5": "A",
+        "mlb_q5": "F",
         "mlb_q6": "E",
-        "mlb_q7": "A",
+        "mlb_q7": "F",
         "mlb_q8": "D",
         "mlb_q9": "3",
         "mlb_q10": "C",
@@ -629,9 +630,9 @@
         "mlb_q2": "5",
         "mlb_q3": "D",
         "mlb_q4": "3",
-        "mlb_q5": "D",
+        "mlb_q5": "F",
         "mlb_q6": "B",
-        "mlb_q7": "D",
+        "mlb_q7": "F",
         "mlb_q8": "A",
         "mlb_q9": "3",
         "mlb_q10": "C",
@@ -838,9 +839,9 @@
         "mlb_q2": "1",
         "mlb_q3": "C",
         "mlb_q4": "3",
-        "mlb_q5": "C",
+        "mlb_q5": "F",
         "mlb_q6": "E",
-        "mlb_q7": "C",
+        "mlb_q7": "F",
         "mlb_q8": "D",
         "mlb_q9": "1",
         "mlb_q10": "D",
@@ -898,9 +899,9 @@
         "mlb_q2": "5",
         "mlb_q3": "D",
         "mlb_q4": "3",
-        "mlb_q5": "B",
+        "mlb_q5": "F",
         "mlb_q6": "D",
-        "mlb_q7": "B",
+        "mlb_q7": "F",
         "mlb_q8": "C",
         "mlb_q9": "4",
         "mlb_q10": "E",
@@ -2082,8 +2083,8 @@
         "mlb_q11": "E",
         "mlb_q12": "D"
       },
-      "winner": "CHC",
-      "winnerName": "Chicago Cubs"
+      "winner": "DET",
+      "winnerName": "Detroit Tigers"
     },
     {
       "id": "rnd_026",
@@ -2223,8 +2224,8 @@
         "mlb_q11": "C",
         "mlb_q12": "A"
       },
-      "winner": "LAA",
-      "winnerName": "Los Angeles Angels"
+      "winner": "SF",
+      "winnerName": "San Francisco Giants"
     },
     {
       "id": "rnd_029",
