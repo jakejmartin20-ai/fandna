@@ -307,10 +307,13 @@ export function GenomeHome({
       {resequenceDelta&&(
         <div style={{position:"relative",zIndex:1,maxWidth:430,margin:"0 auto 16px",background:"#171722",border:"1px solid #2c2c40",borderRadius:10,padding:"13px 15px"}}>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8}}>
-            <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9a9ac4",letterSpacing:"0.22em",textTransform:"uppercase"}}>Core re-sequenced</span>
+            <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9a9ac4",letterSpacing:"0.22em",textTransform:"uppercase"}}>{resequenceDelta.reason==="heal"?"Fit updated":"Core re-sequenced"}</span>
             <button type="button" onClick={onDismissDelta}
               style={{background:"none",border:"none",cursor:"pointer",padding:0,fontFamily:"'DM Mono',monospace",fontSize:9,color:"#7f7f9f",letterSpacing:"0.14em",textTransform:"uppercase"}}>Dismiss</button>
           </div>
+          {resequenceDelta.reason==="heal"&&(
+            <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:13,color:"#8f8fa8",lineHeight:1.4,marginBottom:8}}>We refined the scoring. Your answers didn't change.</div>
+          )}
           {resequenceDelta.moved.map(m=>(
             <div key={m.sport} style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:15,color:"#c9c5cf",lineHeight:1.45}}>{leagueName(m.sport)} re-read: {clubName(m.sport,m.from)} &rarr; <span style={{color:"#c9b27a"}}>{clubName(m.sport,m.to)}</span></div>
           ))}
