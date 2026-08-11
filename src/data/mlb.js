@@ -87,27 +87,31 @@ const moduleQuestions = [
     "id": "mlb_q5",
     "type": "choice",
     "phase": "The fine print",
-    "question": "Some waits stretch on for years with no end. The longer it goes, the more you:",
+    "question": "What does wanting something for years do to you?",
     "options": [
       {
-        "label": "Dig in. The loyalty is the identity now, the trophy almost beside the point.",
+        "label": "I dig in. The loyalty becomes the point, not the prize.",
         "value": "A"
       },
       {
-        "label": "Ache for it. I need it to happen while I'm still here to see it.",
+        "label": "I ache for it. I need it while I'm still here to feel it.",
         "value": "B"
       },
       {
-        "label": "Laugh and believe again anyway, certain as ever, year after year.",
+        "label": "I laugh and believe again, same as every year.",
         "value": "C"
       },
       {
-        "label": "Channel it into showing up every single day, no excuses.",
+        "label": "I put my head down and keep showing up anyway.",
         "value": "D"
       },
       {
-        "label": "Don't relate. I don't expect to be kept waiting.",
+        "label": "Not much. I've never expected to go without for long.",
         "value": "E"
+      },
+      {
+        "label": "I had it once, and losing it hurt worse than never having it.",
+        "value": "F"
       }
     ]
   },
@@ -143,27 +147,31 @@ const moduleQuestions = [
     "id": "mlb_q7",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "Some hopes outlast the people holding them. Waiting for what you might not live to see is:",
+    "question": "How do you hold a hope bigger than your own life?",
     "options": [
       {
-        "label": "The most romantic thing there is. The wait itself is almost sacred.",
+        "label": "As the most romantic thing there is. Holding it is the point.",
         "value": "A"
       },
       {
-        "label": "Something that would break me. I need it within my lifetime.",
+        "label": "Badly. I need it while I'm still here to feel it.",
         "value": "B"
       },
       {
-        "label": "Exactly why I'd treasure the one time it finally arrived.",
+        "label": "Lightly, but I'd treasure the one time it came.",
         "value": "C"
       },
       {
-        "label": "A debt the world owes me, and I have stopped expecting it to pay.",
+        "label": "As a debt I'm owed, and I've stopped expecting it paid.",
         "value": "D"
       },
       {
-        "label": "Not a thing I think about. I expect mine sooner than that.",
+        "label": "I don't. I expect mine long before then.",
         "value": "E"
+      },
+      {
+        "label": "I finally got it, then watched it slip, and I want it back more than ever.",
+        "value": "F"
       }
     ]
   },
@@ -2148,7 +2156,6 @@ const scoring = {
   },
   "mlb_q5": {
     "A": {
-      "CHC": 2,
       "PIT": 2,
       "SEA": 2,
       "CLE": 2,
@@ -2157,7 +2164,6 @@ const scoring = {
     "B": {
       "NYM": 2,
       "PHI": 2,
-      "LAA": 2,
       "SD": 2,
       "TOR": 2
     },
@@ -2165,13 +2171,11 @@ const scoring = {
       "KC": 2,
       "AZ": 2,
       "MIA": 2,
-      "WSH": 2,
       "TEX": 2
     },
     "D": {
       "BAL": 2,
       "DET": 2,
-      "CWS": 2,
       "MIL": 2,
       "MIN": 2,
       "ATH": 2,
@@ -2186,6 +2190,12 @@ const scoring = {
       "SF": 2,
       "CIN": 2,
       "BOS": 2
+    },
+    "F": {
+      "CHC": 2,
+      "CWS": 2,
+      "WSH": 2,
+      "LAA": 2
     }
   },
   "mlb_q6": {
@@ -2232,7 +2242,6 @@ const scoring = {
   },
   "mlb_q7": {
     "A": {
-      "CHC": 2,
       "PIT": 2,
       "SEA": 2,
       "COL": 2,
@@ -2241,7 +2250,6 @@ const scoring = {
     "B": {
       "NYM": 2,
       "PHI": 2,
-      "LAA": 2,
       "SD": 2,
       "TOR": 2
     },
@@ -2249,7 +2257,6 @@ const scoring = {
       "BOS": 2,
       "KC": 2,
       "TEX": 2,
-      "WSH": 2,
       "AZ": 2,
       "STL": 2,
       "MIL": 2,
@@ -2259,7 +2266,6 @@ const scoring = {
       "CLE": 3,
       "ATH": 2,
       "MIA": 2,
-      "CWS": 2,
       "MIN": 2,
       "BAL": 2,
       "TB": 2
@@ -2270,6 +2276,12 @@ const scoring = {
       "ATL": 2,
       "HOU": 2,
       "SF": 2
+    },
+    "F": {
+      "CHC": 2,
+      "CWS": 2,
+      "WSH": 2,
+      "LAA": 2
     }
   },
   "mlb_q8": {
