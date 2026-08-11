@@ -1680,7 +1680,9 @@ const scoring = {
       "LAL": 2,
       "DET": 2,
       "IND": 2,
-      "POR": 2
+      "POR": 2,
+      "DAL": 2,
+      "WAS": 2
     },
     "B": {
       "MEM": 2,
@@ -1786,7 +1788,8 @@ const scoring = {
       "LAC": 2,
       "PHX": 2,
       "MIA": 2,
-      "NYK": 2
+      "NYK": 2,
+      "DAL": 2
     },
     "D": {
       "BOS": 2,
@@ -1806,7 +1809,8 @@ const scoring = {
       "DET": 2,
       "POR": 2,
       "SAC": 2,
-      "MIN": 2
+      "MIN": 2,
+      "DAL": 2
     },
     "B": {
       "BKN": 2,
@@ -1853,7 +1857,8 @@ const scoring = {
       "GSW": 2,
       "BOS": 2,
       "POR": 2,
-      "PHI": 2
+      "PHI": 2,
+      "MIA": 2
     },
     "B": {
       "BKN": 2,
@@ -1948,7 +1953,8 @@ const scoring = {
       "MEM": 2,
       "BKN": 2,
       "DAL": 2,
-      "HOU": 2
+      "HOU": 2,
+      "MIA": 2
     },
     "C": {
       "LAC": 2,
