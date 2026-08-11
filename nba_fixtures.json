@@ -12,9 +12,10 @@
       "signatures_self_land": true
     },
     "rebaselined": "2026-08-06 session25 FINAL: branch base (dead fields stripped) + voice pass (4 labels) + q10-C duplicate re-aim (+6 persona corrections) + slider middles q3/q6/q9. Re-recorded on live main engine f7ecf135.",
-    "dataFile": "nba.js fce4d805",
-    "engine": "src/lib/scoring.js f7ecf135 (NBA fingerprint, FP_W 1.2, DIST_REF 14)",
-    "note": "nba sliders rebuilt as honest per-team footprints; q9 re-aimed from emotion-duplicate to ROOTEDNESS (new wording \"Where do you belong?\"); q3=process, q6=emotion. peak-by-trait across all 5 positions."
+    "dataFile": "nba.js 65815756",
+    "engine": "src/lib/scoring.js ef38619b (NBA fingerprint, FP_W 1.2, DIST_REF 14)",
+    "note": "nba sliders rebuilt as honest per-team footprints; q9 re-aimed from emotion-duplicate to ROOTEDNESS (new wording \"Where do you belong?\"); q3=process, q6=emotion. peak-by-trait across all 5 positions.",
+    "rebaselined_s32": "2026-08-11 session32: module-coding honesty starvation fix. 6 cell restorations (+2 each) returning build-trim-zeroed cells to each team's owned option — DAL q1-A/q5-A/q4-C, MIA q7-A/q10-B, WAS q1-A. Lifts self-capture (DAL 1.8->7.8%, WAS 5.4->8.3%, MIA 6.5->11.4%) with no magnet (max CLE 6.0% < 8.3%), nothing dead (min BKN 0.51% > 0.37%), no module-twin, 30/30 signatures self-land. 3 random winners moved (rnd_018 HOU->DAL, rnd_028 HOU->MIA, rnd_034 GSW->MIA), all starved-team reclamation. NBA remains hidden (?nba)."
   },
   "fixtures": [
     {
@@ -1760,7 +1761,7 @@
         "nba_q11": "A",
         "nba_q12": "A"
       },
-      "winner": "HOU",
+      "winner": "DAL",
       "winnerName": "Houston Rockets"
     },
     {
@@ -2230,7 +2231,7 @@
         "nba_q11": "A",
         "nba_q12": "D"
       },
-      "winner": "HOU",
+      "winner": "MIA",
       "winnerName": "Houston Rockets"
     },
     {
@@ -2512,7 +2513,7 @@
         "nba_q11": "A",
         "nba_q12": "A"
       },
-      "winner": "GSW",
+      "winner": "MIA",
       "winnerName": "Golden State Warriors"
     },
     {
