@@ -2359,13 +2359,14 @@ const scoring = {
   "nfl_q2": {
     "A": {
       "NO": 2,
-      "CAR": 4,
+      "CAR": 3,
       "BUF": 2
     },
     "B": {
       "MIN": 2,
       "LAC": 3,
-      "ATL": 2
+      "ATL": 2,
+      "WAS": 2
     },
     "C": {
       "NYJ": 3,
@@ -2536,7 +2537,7 @@ const scoring = {
     },
     "E": {
       "GB": 2,
-      "NYG": 3,
+      "NYG": 2,
       "ARI": 2
     }
   },
@@ -2561,7 +2562,10 @@ const scoring = {
   },
   "nfl_q10": {
     "A": {
-      "CAR": 5
+      "CAR": 3,
+      "TEN": 2,
+      "CIN": 2,
+      "CLE": 2
     },
     "B": {
       "NO": 3,
@@ -2613,7 +2617,8 @@ const scoring = {
       "CLE": 3,
       "PHI": 3,
       "JAX": 3,
-      "NYJ": 3
+      "NYJ": 3,
+      "WAS": 3
     }
   },
   "nfl_q12": {
@@ -2631,7 +2636,7 @@ const scoring = {
       "NE": 3
     },
     "C": {
-      "CAR": 4,
+      "CAR": 3,
       "LAC": 3
     },
     "D": {
