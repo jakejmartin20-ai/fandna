@@ -15,26 +15,26 @@ const moduleQuestions = [
     "id": "mlb_q1",
     "type": "choice",
     "phase": "The fine print",
-    "question": "It's there every day for half the year, not once a week. That daily presence is:",
+    "question": "When something's there every day, not just for the big moments, that constant presence is:",
     "options": [
       {
-        "label": "A comfort. The everyday ritual matters more than any single result.",
+        "label": "A comfort. The ritual itself matters more than how any one day turns out.",
         "value": "A"
       },
       {
-        "label": "A grind I wouldn't trade, even on the worst nights.",
+        "label": "A grind I wouldn't trade, even on the worst days.",
         "value": "B"
       },
       {
-        "label": "A summer-long romance, win or lose.",
+        "label": "A long, slow romance, the good days and the bad.",
         "value": "C"
       },
       {
-        "label": "Background noise until it's October, and then it's everything.",
+        "label": "Background noise until the moment that actually counts, and then it's everything.",
         "value": "D"
       },
       {
-        "label": "A faith I keep through every long cold spell.",
+        "label": "A faith I keep through every long lean stretch.",
         "value": "E"
       }
     ]
@@ -44,14 +44,14 @@ const moduleQuestions = [
     "type": "slider",
     "phase": "The fine print",
     "question": "Which is more you:",
-    "left": "It is never truly over. No clock to run out, you get the final out or you don't, and I believe in the final out.",
+    "left": "It's never truly over till the very last moment, and I believe right to the end.",
     "right": "Some things are simply decided, and pretending otherwise is denial. I read it early and make my peace."
   },
   {
     "id": "mlb_q3",
     "type": "choice",
     "phase": "The fine print",
-    "question": "It's a long haul, full of hot streaks and brutal slumps. The you that shows up is:",
+    "question": "Over a long haul full of hot streaks and rough patches, the you that shows up is:",
     "options": [
       {
         "label": "Steady. One bad week doesn't move me, the whole body of work is what counts.",
@@ -66,7 +66,7 @@ const moduleQuestions = [
         "value": "C"
       },
       {
-        "label": "Loud either way. I feel every pitch, and so does everyone near me.",
+        "label": "Loud either way. I feel every moment of it, and so does everyone near me.",
         "value": "D"
       },
       {
@@ -119,14 +119,14 @@ const moduleQuestions = [
     "id": "mlb_q6",
     "type": "choice",
     "phase": "The fine print",
-    "question": "There's an old debate about how to carry yourself when you win. You land on:",
+    "question": "When you win, how do you carry it?",
     "options": [
       {
         "label": "Play it straight and humble. Act like you've been there before.",
         "value": "A"
       },
       {
-        "label": "Flip the bat and let them hear it. The joy is the point, no apology.",
+        "label": "Let it all out and let them hear it. The joy is the point, no apology.",
         "value": "B"
       },
       {
@@ -179,14 +179,14 @@ const moduleQuestions = [
     "id": "mlb_q8",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "Teams get moved, renamed, sold. When the thing you love changes underneath you, you:",
+    "question": "When something you've given your loyalty to gets changed out from under you, you:",
     "options": [
       {
-        "label": "Stay loyal to the place and the roots, whatever they rename or relocate.",
+        "label": "Stay loyal to where it came from, whatever they turn it into.",
         "value": "A"
       },
       {
-        "label": "Build my own from nothing and dare anyone to enjoy facing it.",
+        "label": "Build my own thing from nothing, and dare anyone to enjoy taking it on.",
         "value": "B"
       },
       {
@@ -215,7 +215,7 @@ const moduleQuestions = [
     "id": "mlb_q10",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "Baseball drowns in its own history, the records, the ghosts. To you that history is:",
+    "question": "Some things drown in their own history, the records, the ghosts of everyone before. To you all that is:",
     "options": [
       {
         "label": "Everything. I measure today against a glorious past and mostly find today wanting.",
@@ -243,7 +243,7 @@ const moduleQuestions = [
     "id": "mlb_q11",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "One man against one, sixty feet apart, everyone watching. You'd rather be:",
+    "question": "One against one, everyone watching, nowhere to hide. You'd rather be:",
     "options": [
       {
         "label": "The one expected to win, with everything to lose. Pressure is the price of being good.",
@@ -271,14 +271,14 @@ const moduleQuestions = [
     "id": "mlb_q12",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "Strip away winning. On a warm night at the park, what you're really there for is:",
+    "question": "Strip away winning. When you show up, what you're really there for is:",
     "options": [
       {
         "label": "The people beside me. It was always about who I share it with.",
         "value": "A"
       },
       {
-        "label": "The place. This park, this city, this is home.",
+        "label": "The place. This spot, this city, this is home.",
         "value": "B"
       },
       {
@@ -2305,7 +2305,9 @@ const scoring = {
       "SD": 2,
       "TOR": 2,
       "LAA": 2,
-      "MIA": 2
+      "MIA": 2,
+      "ATH": 2,
+      "CWS": 2
     },
     "D": {
       "WSH": 2,

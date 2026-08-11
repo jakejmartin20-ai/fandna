@@ -151,7 +151,7 @@ const moduleQuestions = [
     "question": "Strip away the wins. What are you actually loyal to?",
     "options": [
       {
-        "label": "The city. Win or lose, always the city.",
+        "label": "The city. Through it all, always the city.",
         "value": "A"
       },
       {
@@ -219,7 +219,7 @@ const moduleQuestions = [
         "value": "A"
       },
       {
-        "label": "I had it in hand and watched it slip. I don't trust a lead anymore.",
+        "label": "I had it in hand and watched it slip. I don't trust being ahead anymore.",
         "value": "B"
       },
       {
