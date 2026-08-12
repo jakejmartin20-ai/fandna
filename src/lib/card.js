@@ -66,8 +66,9 @@ async function generateShareCard(sport, key, genome, coreProfile){
   const padX=22,padY=12,tw=trackedWidth(x,arc,3),ph=24+padY*2,pillY=nameY+34;
   roundRectPath(x,cx-tw/2-padX,pillY,tw+padX*2,ph,8);x.fillStyle=col;x.fill();
   drawTracked(x,arc,cx,pillY+padY+24,"400 24px 'DM Mono',monospace",onColorText(col),3);
-  x.font="italic 42px 'Cormorant Garamond',serif";x.fillStyle="#c9c4bd";x.textAlign="center";
-  const tl=wrapCanvasText(x,team.tagline,860).slice(0,2),ty=pillY+ph+52;
+  let tlsz=42,tlall;do{x.font="italic "+tlsz+"px 'Cormorant Garamond',serif";tlall=wrapCanvasText(x,team.tagline,860);if(tlall.length<=2)break;tlsz-=2;}while(tlsz>34);
+  x.fillStyle="#c9c4bd";x.textAlign="center";
+  const tl=tlall.slice(0,2),ty=pillY+ph+52;
   tl.forEach((ln,i)=>x.fillText(ln,cx,ty+i*52));
   const stripTop=ty+(tl.length*52)+20;
   drawTracked(x,"CORE SEQUENCE",cx,stripTop+30,"400 30px 'DM Mono',monospace","#9696b4",16);
