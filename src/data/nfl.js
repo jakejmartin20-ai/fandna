@@ -35,7 +35,7 @@ const moduleQuestions = [
     "question": "How do you want to be seen?",
     "options": [
       {
-        "label": "On the big stage. Bright lights, everyone watching.",
+        "label": "On the biggest stage there is, with everyone watching.",
         "value": "A"
       },
       {
@@ -205,8 +205,8 @@ const moduleQuestions = [
     "type": "slider",
     "phase": "The fine print",
     "question": "The grind, or the glory?",
-    "left": "the grind is the glory",
-    "right": "the show is half the point"
+    "left": "The grind is the glory. The unglamorous work nobody claps for is the whole point.",
+    "right": "The show is half of it. If nobody's watching, why even bother?"
   },
   {
     "id": "nfl_q7",
@@ -268,9 +268,9 @@ const moduleQuestions = [
     "id": "nfl_q9",
     "type": "slider",
     "phase": "What it comes down to",
-    "question": "Keep it under control, or let it get wild?",
-    "left": "keep it under control",
-    "right": "let it get wild"
+    "question": "When the intensity rises, which way do you go?",
+    "left": "Clamp down and keep control. The bigger the moment, the cooler I run.",
+    "right": "Let it loose. I turn the emotion all the way up and let everyone feel it."
   },
   {
     "id": "nfl_q10",
@@ -305,8 +305,8 @@ const moduleQuestions = [
     "type": "slider",
     "phase": "What it comes down to",
     "question": "Let the results speak, or make some noise?",
-    "left": "let the results speak",
-    "right": "loud enough to move the ground"
+    "left": "Let the work speak. I don't need noise, I just deliver.",
+    "right": "Make noise, loud enough to be felt. I want the whole place roaring."
   },
   {
     "id": "nfl_q12",
