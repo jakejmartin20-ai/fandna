@@ -201,7 +201,7 @@ const moduleQuestions = [
         "value": "B"
       },
       {
-        "label": "Love a blank page. No history to live up to.",
+        "label": "Love a fresh start. No history to live up to.",
         "value": "C"
       },
       {
@@ -221,7 +221,7 @@ const moduleQuestions = [
         "value": "A"
       },
       {
-        "label": "I go ice cold. The bigger it gets, the calmer I am.",
+        "label": "I go ice cold. The bigger the moment, the calmer I am.",
         "value": "B"
       },
       {
