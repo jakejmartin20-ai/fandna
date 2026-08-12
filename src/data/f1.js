@@ -9,22 +9,22 @@ const moduleQuestions = [
     "id": "f1_q1",
     "type": "choice",
     "phase": "The fine print",
-    "question": "What does success really come down to?",
+    "question": "Your honest viewpoint on why some things succeed and others don't:",
     "options": [
       {
-        "label": "One person who lifts everyone else to their level.",
+        "label": "One person good enough to drag everyone else up to their level.",
         "value": "A"
       },
       {
-        "label": "The whole group clicking, no single name above the rest.",
+        "label": "No egos. A whole group clicking, nobody bigger than the rest.",
         "value": "B"
       },
       {
-        "label": "A way of working I trust. Follow it and the results come.",
+        "label": "A method I trust. Follow it properly and the results come.",
         "value": "C"
       },
       {
-        "label": "Raw ability, plainly. Just more of it than most.",
+        "label": "Raw ability, plainly. Whoever's got more of it than the rest.",
         "value": "D"
       }
     ]
@@ -33,22 +33,22 @@ const moduleQuestions = [
     "id": "f1_q2",
     "type": "choice",
     "phase": "The fine print",
-    "question": "What pulls you toward something great?",
+    "question": "When you throw yourself into something, the part you're really in it for:",
     "options": [
       {
-        "label": "The winning. I'm not here to come second and dress it up.",
+        "label": "Winning it. I'm not here to come second.",
         "value": "A"
       },
       {
-        "label": "The craft. Getting every detail exactly right is the whole thrill.",
+        "label": "Getting every last detail exactly right. That's the whole thrill.",
         "value": "B"
       },
       {
-        "label": "The drama. The heartbreak is the price, and I pay it gladly.",
+        "label": "The highs and the heartbreaks. I feel every one and pay the price gladly.",
         "value": "C"
       },
       {
-        "label": "The climb. I want the long haul back from nothing.",
+        "label": "The long climb back from nothing. I want the whole experience.",
         "value": "D"
       }
     ]
@@ -57,9 +57,9 @@ const moduleQuestions = [
     "id": "f1_q3",
     "type": "slider",
     "phase": "The fine print",
-    "question": "The trophy, or the hunt?",
-    "left": "the trophy, nothing else",
-    "right": "the hunt is everything"
+    "question": "The prize, or the chase for it?",
+    "left": "Only the result matters. I'm here for the win, not the getting there.",
+    "right": "The chase is the best part. Win it too easily and it's barely worth having."
   },
   {
     "id": "f1_q4",
@@ -121,22 +121,22 @@ const moduleQuestions = [
     "id": "f1_q7",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "When you chase something big, how does it look?",
+    "question": "When you go after something that matters, how do you actually approach it?",
     "options": [
       {
-        "label": "Calm and relentless. I grind it down, no drama.",
+        "label": "Calm and relentless. I grind it down with no theatrics.",
         "value": "A"
       },
       {
-        "label": "One roll of the dice. I put it all on the line.",
+        "label": "Everything on one big move. I'd rather swing hard than chip away.",
         "value": "B"
       },
       {
-        "label": "Scrappy, held together with grit. We make do with less.",
+        "label": "Scrappy, with less than everyone else, and I get there anyway.",
         "value": "C"
       },
       {
-        "label": "I let the raw talent carry it, and get out of its way.",
+        "label": "Get the most talented people around me and stay out of their way.",
         "value": "D"
       }
     ]
@@ -145,22 +145,22 @@ const moduleQuestions = [
     "id": "f1_q8",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "What kind of place feels like home?",
+    "question": "The setting you'd actually thrive in:",
     "options": [
       {
-        "label": "The underdog's corner. I'm at home with something to prove.",
+        "label": "Somewhere with everything to prove and nobody expecting much of me.",
         "value": "A"
       },
       {
-        "label": "The bright lights. I want the biggest stage, all eyes on it.",
+        "label": "The biggest stage there is, all eyes on me. I want to be watched.",
         "value": "B"
       },
       {
-        "label": "The head-down workshop. Real work, no fuss, no show.",
+        "label": "Well out of the spotlight, heads down on the real work.",
         "value": "C"
       },
       {
-        "label": "Somewhere new. A blank page nobody's written on yet.",
+        "label": "Somewhere brand new that nobody's shaped yet, so I can mold it.",
         "value": "D"
       }
     ]
@@ -169,9 +169,9 @@ const moduleQuestions = [
     "id": "f1_q9",
     "type": "slider",
     "phase": "What it comes down to",
-    "question": "Home, or the horizon?",
-    "left": "rooted where I began",
-    "right": "out toward what's next"
+    "question": "Where you started, or wherever's next?",
+    "left": "All in on where I began. I have deep roots in one place and I stay.",
+    "right": "Always onto what's next. Staying put too long feels like standing still."
   },
   {
     "id": "f1_q10",
@@ -225,22 +225,22 @@ const moduleQuestions = [
     "id": "f1_q12",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "What makes you dangerous?",
+    "question": "When you're at your best, the edge you've got that they don't:",
     "options": [
       {
-        "label": "I've got the pace to go all out.",
+        "label": "Flat-out pace. When I open it up, I've simply got more than they do.",
         "value": "A"
       },
       {
-        "label": "I rarely put a foot wrong. Done right, every time.",
+        "label": "I almost never put a foot wrong. Done right, every single time.",
         "value": "B"
       },
       {
-        "label": "I've nothing to lose, so I take the risks.",
+        "label": "Nothing to lose. That's exactly why I'll take the risk they won't.",
         "value": "C"
       },
       {
-        "label": "I do more with less than most.",
+        "label": "I do more with less than anyone. Give me scraps and watch.",
         "value": "D"
       }
     ]
