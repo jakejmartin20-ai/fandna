@@ -6,22 +6,22 @@ const moduleQuestions = [
     "id": "nhl_q1",
     "type": "choice",
     "phase": "The fine print",
-    "question": "When it comes to the people you're loyal to, you:",
+    "question": "When it comes to having someone's back:",
     "options": [
       {
-        "label": "I'm there the moment they need me. No hesitation.",
+        "label": "I'm there the second they need me, no hesitation.",
         "value": "A"
       },
       {
-        "label": "I'm in it for good. I don't leave when it gets hard.",
+        "label": "I'm in it for good. I don't bail when it gets hard.",
         "value": "B"
       },
       {
-        "label": "I remember who was there for me, and I return it.",
+        "label": "I remember who showed up for me, and I pay it back.",
         "value": "C"
       },
       {
-        "label": "I'm quiet about it, but it runs deep and never moves.",
+        "label": "Quiet about it, but it runs deep and never moves.",
         "value": "D"
       }
     ]
@@ -30,7 +30,7 @@ const moduleQuestions = [
     "id": "nhl_q2",
     "type": "choice",
     "phase": "The fine print",
-    "question": "When a group you're part of is under real pressure, you:",
+    "question": "When the team's under real pressure, the version of you that shows up:",
     "options": [
       {
         "label": "I step up first, before anyone asks. Every time.",
@@ -54,22 +54,22 @@ const moduleQuestions = [
     "id": "nhl_q3",
     "type": "slider",
     "phase": "The fine print",
-    "question": "Which is more you:",
-    "left": "When it's coming fast with no time to think, that's when I'm at my best",
-    "right": "Give me a moment to size it up and plan. I'm better prepared than on the fly"
+    "question": "React on instinct, or take a moment to assess?",
+    "left": "When it's flying at me with no time to think, that's when I'm sharpest.",
+    "right": "Give me a moment to read it and set up. I'm better prepared than off the cuff."
   },
   {
     "id": "nhl_q4",
     "type": "choice",
     "phase": "The fine print",
-    "question": "Say you finally pull off the thing you've always wanted. What matters most about it:",
+    "question": "You finally reach the thing you've chased your whole life. What makes it mean the most:",
     "options": [
       {
-        "label": "It lasts. People know my name long after I'm gone.",
+        "label": "It goes down in history. My name remembered long after I'm gone.",
         "value": "A"
       },
       {
-        "label": "Nobody can ever take it back or say I didn't do it.",
+        "label": "Nobody can ever take it back or say I wasn't there.",
         "value": "B"
       },
       {
@@ -77,11 +77,11 @@ const moduleQuestions = [
         "value": "C"
       },
       {
-        "label": "I shared it with the exact people I started with.",
+        "label": "I got to share it with the exact people I started with.",
         "value": "D"
       },
       {
-        "label": "I got there the hard way, when quitting would've been easier.",
+        "label": "I earned it the hard way, when quitting would've been easier.",
         "value": "E"
       }
     ]
@@ -90,26 +90,26 @@ const moduleQuestions = [
     "id": "nhl_q5",
     "type": "choice",
     "phase": "The fine print",
-    "question": "When something you cared about slips away at the worst possible moment, you:",
+    "question": "Something you love slips away in the cruelest way, right at the very end. What happens inside:",
     "options": [
       {
-        "label": "Feel every bit of it, loudly, and don't hide it.",
+        "label": "I feel every bit of it, out loud, and don't hide it.",
         "value": "A"
       },
       {
-        "label": "Go quiet and carry it alone for a while.",
+        "label": "I go quiet and carry it alone for a while.",
         "value": "B"
       },
       {
-        "label": "Pour it straight into the next thing, fast.",
+        "label": "I pour it straight into the next thing, fast.",
         "value": "C"
       },
       {
-        "label": "Shrug it off. That's just how it goes sometimes.",
+        "label": "I shrug it off. Sometimes the bounce just doesn't go my way.",
         "value": "D"
       },
       {
-        "label": "Let it harden into fuel for later.",
+        "label": "I let it harden into fuel for later.",
         "value": "E"
       }
     ]
@@ -118,22 +118,22 @@ const moduleQuestions = [
     "id": "nhl_q6",
     "type": "slider",
     "phase": "The fine print",
-    "question": "Which is more you:",
-    "left": "Some things should stay true to where they came from",
-    "right": "Anything can belong anywhere if it's built right, earn it fresh"
+    "question": "True to where it came from, or at home anywhere?",
+    "left": "Some things should stay true to where they came from.",
+    "right": "Anything can belong anywhere if it's built right. Earn it fresh."
   },
   {
     "id": "nhl_q7",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "Every job has a glamorous half and a grinding, invisible half. You:",
+    "question": "Every effort has a glamorous half and a grinding, unseen half. You:",
     "options": [
       {
-        "label": "I do both halves without being asked. That's the standard.",
+        "label": "I do both without being asked. That's just the standard.",
         "value": "A"
       },
       {
-        "label": "I honestly prefer the grinding, invisible half.",
+        "label": "Honestly, I prefer the grinding, unseen half.",
         "value": "B"
       },
       {
@@ -154,14 +154,14 @@ const moduleQuestions = [
     "id": "nhl_q8",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "Picture the people you'd want around you when it counts. It's:",
+    "question": "The people you'd want around you when it counts:",
     "options": [
       {
-        "label": "A tight, loyal few who've been through everything with me.",
+        "label": "A tight, loyal few who've been through it all with me.",
         "value": "A"
       },
       {
-        "label": "A whole community, thousands strong, all-in together.",
+        "label": "A whole community, thousands strong, all in together.",
         "value": "B"
       },
       {
@@ -182,26 +182,26 @@ const moduleQuestions = [
     "id": "nhl_q9",
     "type": "slider",
     "phase": "What it comes down to",
-    "question": "Which is more you:",
-    "left": "When it matters, put it on me. I want the responsibility",
-    "right": "I do my part, no fuss, and let someone else take the spotlight"
+    "question": "Reach for the big moment, or take pride in a quieter role?",
+    "left": "Put it on me. When it's biggest, I want it in my hands.",
+    "right": "I'll do my part and let someone else have the spotlight. No fuss."
   },
   {
     "id": "nhl_q10",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "When it comes to starting over somewhere brand new, you:",
+    "question": "The idea of packing up and starting fresh somewhere brand new:",
     "options": [
       {
-        "label": "Wouldn't. I'm loyal to where I'm rooted, full stop.",
+        "label": "Not a chance. I'm loyal to where I'm rooted, full stop.",
         "value": "A"
       },
       {
-        "label": "Would, but I'd carry the old place with me forever.",
+        "label": "I could, but I'd carry the old place with me forever.",
         "value": "B"
       },
       {
-        "label": "Love a fresh start. No history to live up to.",
+        "label": "I'd love it. A fresh start, no history to live up to.",
         "value": "C"
       },
       {
@@ -214,22 +214,22 @@ const moduleQuestions = [
     "id": "nhl_q11",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "When the stakes climb, you:",
+    "question": "Everything comes down to one moment, with it all on the line. What happens:",
     "options": [
       {
-        "label": "I run hot. I feel everything and I let it show.",
+        "label": "It all pours out of me. Everyone around me feels it.",
         "value": "A"
       },
       {
-        "label": "I go ice cold. The bigger the moment, the calmer I am.",
+        "label": "I go calm and still. The bigger it gets, the quieter I am inside.",
         "value": "B"
       },
       {
-        "label": "I sharpen up. I get more locked-in and precise.",
+        "label": "I sharpen up, lock in, get precise.",
         "value": "C"
       },
       {
-        "label": "I loosen up. I actually get freer when it's big.",
+        "label": "I loosen up and actually get freer when it's biggest.",
         "value": "D"
       },
       {
@@ -242,14 +242,14 @@ const moduleQuestions = [
     "id": "nhl_q12",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "The situations where you do your best work are:",
+    "question": "The conditions where you do your best work:",
     "options": [
       {
         "label": "Structured and controlled. I like knowing the plan.",
         "value": "A"
       },
       {
-        "label": "Loose and fast. Give me a little mayhem.",
+        "label": "Loose and fast. Give me a little chaos.",
         "value": "B"
       },
       {
@@ -257,7 +257,7 @@ const moduleQuestions = [
         "value": "C"
       },
       {
-        "label": "Steady and familiar. I go where the ground is solid.",
+        "label": "Steady and familiar. I want solid ground under me.",
         "value": "D"
       },
       {
