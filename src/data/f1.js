@@ -9,22 +9,22 @@ const moduleQuestions = [
     "id": "f1_q1",
     "type": "choice",
     "phase": "The fine print",
-    "question": "Your honest viewpoint on why some things succeed and others don't:",
+    "question": "One name takes the trophy and the fame, but hundreds behind the scenes made it happen. When you think about what really wins, you land on:",
     "options": [
       {
-        "label": "One person good enough to drag everyone else up to their level.",
+        "label": "The one out front. A single talent good enough pulls everyone up to them.",
         "value": "A"
       },
       {
-        "label": "No egos. A whole group clicking, nobody bigger than the rest.",
+        "label": "The whole operation, in step. Hundreds of people, nobody bigger than the effort.",
         "value": "B"
       },
       {
-        "label": "A method I trust. Follow it properly and the results come.",
+        "label": "The method. Get every step right and winning takes care of itself.",
         "value": "C"
       },
       {
-        "label": "Raw ability, plainly. Whoever's got more of it than the rest.",
+        "label": "Raw ability. Some simply have more of it than the rest, and it shows.",
         "value": "D"
       }
     ]
@@ -33,14 +33,14 @@ const moduleQuestions = [
     "id": "f1_q2",
     "type": "choice",
     "phase": "The fine print",
-    "question": "When you throw yourself into something, the part you're really in it for:",
+    "question": "You pour years into something. The part that actually keeps you coming back:",
     "options": [
       {
-        "label": "Winning it. I'm not here to come second.",
+        "label": "Winning, plainly. I'm not here to come second.",
         "value": "A"
       },
       {
-        "label": "Getting every last detail exactly right. That's the whole thrill.",
+        "label": "Getting every tiny detail exactly right. The precision is the whole thrill.",
         "value": "B"
       },
       {
@@ -48,7 +48,7 @@ const moduleQuestions = [
         "value": "C"
       },
       {
-        "label": "The long climb back from nothing. I want the whole experience.",
+        "label": "The long climb up from the back. I want the whole grind, not just the top.",
         "value": "D"
       }
     ]
@@ -57,30 +57,30 @@ const moduleQuestions = [
     "id": "f1_q3",
     "type": "slider",
     "phase": "The fine print",
-    "question": "The prize, or the chase for it?",
-    "left": "Only the result matters. I'm here for the win, not the getting there.",
-    "right": "The chase is the best part. Win it too easily and it's barely worth having."
+    "question": "The title, or the pursuit of it?",
+    "left": "The title is everything. I'm here to win it, and nothing else counts.",
+    "right": "The pursuit is the point. A win handed over too easily is hollow."
   },
   {
     "id": "f1_q4",
     "type": "choice",
     "phase": "The fine print",
-    "question": "When you want to reach the top, how do you go about it?",
+    "question": "You're handed something far off the pace and told to make it a winner. Your instinct:",
     "options": [
       {
-        "label": "Tear it down and build it right. I'd rather start clean than patch.",
+        "label": "Tear it down and start clean. I'd rather build right than patch.",
         "value": "A"
       },
       {
-        "label": "Patiently, piece by piece. I trust the slow build to hold.",
+        "label": "Patiently, piece by piece. I trust a slow build to hold.",
         "value": "B"
       },
       {
-        "label": "Everything at once, right now. I'm not built to wait.",
+        "label": "Everything at once, right now. Waiting isn't in me.",
         "value": "C"
       },
       {
-        "label": "Bring in proven names. If it wins, I'll pay for it.",
+        "label": "Bring in proven names. If they win, I'll pay whatever it takes.",
         "value": "D"
       }
     ]
@@ -89,22 +89,22 @@ const moduleQuestions = [
     "id": "f1_q5",
     "type": "choice",
     "phase": "The fine print",
-    "question": "When a place stops working for you, what do you do?",
+    "question": "What you've committed to keeps falling behind, and a faster one is yours if you want it. You:",
     "options": [
       {
-        "label": "Stay, no question. Leaving never crosses my mind.",
+        "label": "Stay. The ones who backed me have my loyalty, win or lose.",
         "value": "A"
       },
       {
-        "label": "Move on to somewhere better. Loyalty shouldn't cost me the win.",
+        "label": "Move on to the faster thing. Loyalty shouldn't cost me the win.",
         "value": "B"
       },
       {
-        "label": "Refuse to accept it. I push until they fix it.",
+        "label": "Refuse to accept it. I push until they give me something that wins.",
         "value": "C"
       },
       {
-        "label": "Follow the people I trust. The place matters less than them.",
+        "label": "Follow the people I trust. Who I'm with matters more than where.",
         "value": "D"
       }
     ]
@@ -114,29 +114,29 @@ const moduleQuestions = [
     "type": "slider",
     "phase": "The fine print",
     "question": "Plan every step, or trust the moment?",
-    "left": "planned to the detail",
-    "right": "run on instinct"
+    "left": "I want every step mapped out beforehand, and I trust the plan when the moment comes.",
+    "right": "I'd rather read the moment live and go with my gut than be locked to a plan."
   },
   {
     "id": "f1_q7",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "When you go after something that matters, how do you actually approach it?",
+    "question": "The win is there for the taking. The way you actually go and get it:",
     "options": [
       {
-        "label": "Calm and relentless. I grind it down with no theatrics.",
+        "label": "Execute cleanly, to the letter. No heroics, no mistakes.",
         "value": "A"
       },
       {
-        "label": "Everything on one big move. I'd rather swing hard than chip away.",
+        "label": "One bold move, all in. I'd gamble for the win over playing safe.",
         "value": "B"
       },
       {
-        "label": "Scrappy, with less than everyone else, and I get there anyway.",
+        "label": "Wring everything out of less than the others have, and finish ahead anyway.",
         "value": "C"
       },
       {
-        "label": "Get the most talented people around me and stay out of their way.",
+        "label": "Put the best people in place and stay out of their way.",
         "value": "D"
       }
     ]
@@ -145,22 +145,22 @@ const moduleQuestions = [
     "id": "f1_q8",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "The setting you'd actually thrive in:",
+    "question": "The situation that actually brings out your best:",
     "options": [
       {
-        "label": "Somewhere with everything to prove and nobody expecting much of me.",
+        "label": "Written off, everything to prove, nobody expecting much of me.",
         "value": "A"
       },
       {
-        "label": "The biggest stage there is, all eyes on me. I want to be watched.",
+        "label": "The biggest stage there is, all eyes on me.",
         "value": "B"
       },
       {
-        "label": "Well out of the spotlight, heads down on the real work.",
+        "label": "Out of the spotlight, heads down on the real work.",
         "value": "C"
       },
       {
-        "label": "Somewhere brand new that nobody's shaped yet, so I can mold it.",
+        "label": "Somewhere brand new nobody's shaped yet, so I can build it.",
         "value": "D"
       }
     ]
@@ -169,30 +169,30 @@ const moduleQuestions = [
     "id": "f1_q9",
     "type": "slider",
     "phase": "What it comes down to",
-    "question": "Where you started, or wherever's next?",
-    "left": "All in on where I began. I have deep roots in one place and I stay.",
-    "right": "Always onto what's next. Staying put too long feels like standing still."
+    "question": "One place for good, or always onto the next?",
+    "left": "One badge, for life. I'd stay through the lean years and never look elsewhere.",
+    "right": "On to the next thing, always. Staying put too long feels like standing still."
   },
   {
     "id": "f1_q10",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "When it all goes wrong, what happens to you?",
+    "question": "You did everything right and still lost, because what you were handed just wasn't good enough on the day. That leaves you:",
     "options": [
       {
-        "label": "Ice cold. Nothing shows on my face.",
+        "label": "Cold and unmoved. Nothing shows on me.",
         "value": "A"
       },
       {
-        "label": "All fire, all feeling. Everyone around me knows it.",
+        "label": "All of it comes out, and everyone around me feels it.",
         "value": "B"
       },
       {
-        "label": "I dig in and refuse to fold. Take it out on the next one.",
+        "label": "I dig in and take it out on the next one.",
         "value": "C"
       },
       {
-        "label": "I shake it off and reset. On to the next before it lands.",
+        "label": "I shake it off and reset before it lands.",
         "value": "D"
       }
     ]
@@ -201,10 +201,10 @@ const moduleQuestions = [
     "id": "f1_q11",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "What would you want said about you?",
+    "question": "When it's all over and they sum you up, the line you'd want:",
     "options": [
       {
-        "label": "That I set the standard, and everyone spent years chasing it.",
+        "label": "That I set the standard, and everyone else spent years chasing it.",
         "value": "A"
       },
       {
@@ -225,10 +225,10 @@ const moduleQuestions = [
     "id": "f1_q12",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "When you're at your best, the edge you've got that they don't:",
+    "question": "At your best, the edge you've got that the rest don't:",
     "options": [
       {
-        "label": "Flat-out pace. When I open it up, I've simply got more than they do.",
+        "label": "Raw, natural talent. When I go all out, I've simply got more than the rest.",
         "value": "A"
       },
       {
@@ -236,7 +236,7 @@ const moduleQuestions = [
         "value": "B"
       },
       {
-        "label": "Nothing to lose. That's exactly why I'll take the risk they won't.",
+        "label": "Nothing to lose, so I'll take the risk they won't.",
         "value": "C"
       },
       {

@@ -8,10 +8,10 @@ const moduleQuestions = [
     "id": "nba_q1",
     "type": "choice",
     "phase": "The fine print",
-    "question": "Where do you feel most like yourself?",
+    "question": "The place you feel most like yourself:",
     "options": [
       {
-        "label": "The place I've always known. I never had to go looking.",
+        "label": "The one I've always known. I never had to go looking.",
         "value": "A"
       },
       {
@@ -19,7 +19,7 @@ const moduleQuestions = [
         "value": "B"
       },
       {
-        "label": "Wherever the best of it is happening. I go where the action is.",
+        "label": "Wherever the action is. The best of everything pulls me in.",
         "value": "C"
       },
       {
@@ -32,22 +32,22 @@ const moduleQuestions = [
     "id": "nba_q2",
     "type": "choice",
     "phase": "The fine print",
-    "question": "When a team you were on succeeded, what do you credit most?",
+    "question": "A team you were part of won big. Looking back, what really carried it:",
     "options": [
       {
-        "label": "One person good enough to lift everyone else up.",
+        "label": "One talent good enough to lift everyone else.",
         "value": "A"
       },
       {
-        "label": "The chemistry. A whole group clicking, no one bigger than the rest.",
+        "label": "Chemistry. A group that just fit, nobody bigger than it.",
         "value": "B"
       },
       {
-        "label": "A way of doing things we all trusted. Follow it and the wins come.",
+        "label": "The culture. A way of doing things everyone bought into.",
         "value": "C"
       },
       {
-        "label": "Raw ability, plainly. Whoever had more of it than the rest.",
+        "label": "Sheer talent, gathered in one place.",
         "value": "D"
       }
     ]
@@ -56,30 +56,30 @@ const moduleQuestions = [
     "id": "nba_q3",
     "type": "slider",
     "phase": "The fine print",
-    "question": "The trophy, or the climb to it?",
-    "left": "Only the trophy counts. I'm not here for the journey, I want the thing at the end.",
-    "right": "The climb is the whole point. The slow build to the top is what I'm here for."
+    "question": "The ring, or the come-up?",
+    "left": "The ring is all that matters. Nobody remembers the climb, only who won.",
+    "right": "The come-up is the best part. The grind to get there means more than the trophy."
   },
   {
     "id": "nba_q4",
     "type": "choice",
     "phase": "The fine print",
-    "question": "How do you get where you're going?",
+    "question": "The way you'd take something to the top, if it were up to you:",
     "options": [
       {
-        "label": "Tear it down and build it right. I'd rather start clean than patch.",
+        "label": "Tear it all down and start clean. Bottom out, then rise the right way.",
         "value": "A"
       },
       {
-        "label": "Patiently, piece by piece. I trust the slow build to hold.",
+        "label": "Slowly, piece by piece. Grow it up from raw talent and let it come good.",
         "value": "B"
       },
       {
-        "label": "Everything at once, right now. I'm not built to wait.",
+        "label": "Everything now. Go all in this year and worry about the bill later.",
         "value": "C"
       },
       {
-        "label": "Bring in proven names. If it wins, I'll pay for it.",
+        "label": "Bring in proven names. If they win, I'll pay for it.",
         "value": "D"
       }
     ]
@@ -88,22 +88,22 @@ const moduleQuestions = [
     "id": "nba_q5",
     "type": "choice",
     "phase": "The fine print",
-    "question": "If a place stops serving you, what do you do?",
+    "question": "Where you are has stopped giving you a real shot. You:",
     "options": [
       {
-        "label": "Stay and grind it out. Leaving never really crosses my mind.",
+        "label": "Stay and build it here. I don't go chasing it, I make it where I am.",
         "value": "A"
       },
       {
-        "label": "Move on to somewhere better. Loyalty shouldn't cost me everything.",
+        "label": "Move to where I can win now. Loyalty doesn't win titles.",
         "value": "B"
       },
       {
-        "label": "Refuse to accept it. I push until they fix it.",
+        "label": "Refuse to accept it. Push them to build something better around me, now.",
         "value": "C"
       },
       {
-        "label": "Follow the people I trust. The place matters less than them.",
+        "label": "Follow my people. The right group matters more than the place.",
         "value": "D"
       }
     ]
@@ -113,29 +113,29 @@ const moduleQuestions = [
     "type": "slider",
     "phase": "The fine print",
     "question": "Under the highest pressure, what happens to you?",
-    "left": "I go ice cold. The bigger the moment, the calmer I run.",
+    "left": "The bigger the moment, the calmer I get.",
     "right": "It's all nerves and feeling. I feel every bit of it, and it shows."
   },
   {
     "id": "nba_q7",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "When you go after something that matters, how do you actually approach it?",
+    "question": "The way you actually succeed:",
     "options": [
       {
-        "label": "Calm and calculated. I grind it down, steady, no drama.",
+        "label": "Grind it out. Disciplined, controlled, no drama.",
         "value": "A"
       },
       {
-        "label": "Everything on one big move. I'd rather swing hard than chip away.",
+        "label": "Put it on one big talent and let them take over.",
         "value": "B"
       },
       {
-        "label": "Scrappy, making it up as I go, and getting there anyway.",
+        "label": "Scrappy and overachieving, making it up and getting there.",
         "value": "C"
       },
       {
-        "label": "Put the most talented people out front and let them carry it.",
+        "label": "Gather the talent and turn them loose.",
         "value": "D"
       }
     ]
@@ -147,19 +147,19 @@ const moduleQuestions = [
     "question": "You're at your best as:",
     "options": [
       {
-        "label": "The underdog with everything to prove, punching up at the big names.",
+        "label": "Part of a deep, well-built group where everyone has a job.",
         "value": "A"
       },
       {
-        "label": "The one in the spotlight, all eyes on me. I want to be watched.",
+        "label": "The marquee name, biggest market, all eyes on me.",
         "value": "B"
       },
       {
-        "label": "The hard-nosed grinder, heads down on the real work.",
+        "label": "The blue-collar one, heads down, no spotlight.",
         "value": "C"
       },
       {
-        "label": "The one working on something new and unwritten, nothing shaped yet.",
+        "label": "The young cornerstone of something still being built.",
         "value": "D"
       }
     ]
@@ -168,18 +168,18 @@ const moduleQuestions = [
     "id": "nba_q9",
     "type": "slider",
     "phase": "What it comes down to",
-    "question": "Where you started, or wherever's next?",
-    "left": "The place that made me. I've got deep roots and I'm not going anywhere.",
-    "right": "Wherever I'm headed next. Staying put too long feels like standing still."
+    "question": "The place that made you, or the next chapter?",
+    "left": "The place that made me. Deep roots, and I'd stay for good.",
+    "right": "Wherever the next chapter is. A jersey's a jersey, I go where I'm headed."
   },
   {
     "id": "nba_q10",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "When you're not there yet, what keeps you going?",
+    "question": "You're not there yet. What keeps you in it:",
     "options": [
       {
-        "label": "Faith that it's coming. I believe it, same as I always have.",
+        "label": "Faith it's coming. I believe it, same as I always have.",
         "value": "A"
       },
       {
@@ -187,7 +187,7 @@ const moduleQuestions = [
         "value": "B"
       },
       {
-        "label": "The sense that one break fixes everything. I'm a moment away.",
+        "label": "The sense one break fixes everything. I'm a moment away.",
         "value": "C"
       },
       {
@@ -200,18 +200,18 @@ const moduleQuestions = [
     "id": "nba_q11",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "What turns things around for you?",
+    "question": "When it's on the line, what do you count on to pull through:",
     "options": [
       {
-        "label": "One extraordinary talent, a level above everyone else.",
+        "label": "One extraordinary talent, a level above everyone.",
         "value": "A"
       },
       {
-        "label": "A tight collective, everyone pulling the same way.",
+        "label": "A tight group all pulling the same way.",
         "value": "B"
       },
       {
-        "label": "A brilliant plan, and the discipline to run it right.",
+        "label": "A brilliant plan, and the discipline to run it.",
         "value": "C"
       },
       {
@@ -224,22 +224,22 @@ const moduleQuestions = [
     "id": "nba_q12",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "The role you're most comfortable in:",
+    "question": "Going in, the position that suits you:",
     "options": [
       {
-        "label": "On top, with a target on my back and everyone gunning for me.",
+        "label": "Out front, the one everyone's chasing.",
         "value": "A"
       },
       {
-        "label": "Chasing hard, with something to prove.",
+        "label": "On the hunt, closing the gap.",
         "value": "B"
       },
       {
-        "label": "The long shot nobody believed in.",
+        "label": "Counted out, and quietly sure they're wrong.",
         "value": "C"
       },
       {
-        "label": "Just thrilled to be in it at all.",
+        "label": "Just glad to be in the mix at all.",
         "value": "D"
       }
     ]
