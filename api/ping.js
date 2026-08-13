@@ -20,6 +20,7 @@ const CLUBS = {
   NFL: new Set(["ARI","ATL","BAL","BUF","CAR","CHI","CIN","CLE","DAL","DEN","DET","GB","HOU","IND","JAX","KC","LAC","LAR","LV","MIA","MIN","NE","NO","NYG","NYJ","PHI","PIT","SEA","SF","TB","TEN","WAS"]),
   NHL: new Set(["MTL","TOR","BOS","DET","CHI","NYR","EDM","CGY","VAN","WPG","OTT","PHI","BUF","STL","NYI","MIN","NSH","CBJ","NJD","CAR","DAL","PIT","WSH","COL","LAK","TBL","VGK","FLA","SEA","UTA","ANA","SJS"]),
   F1: new Set(["FER","MER","MCL","RBR","WIL","AST","ALP","HAA","RB","AUD","CAD"]),
+  AFL: new Set(["CAR","COL","ESS","GEE","HAW","MEL","NTH","RIC","STK","WBD","ADE","PTA","WCE","FRE","SYD","GWS","BRL","GCS"]),
 };
 const BANDS = new Set(["tie", "close", "mid", "clear"]);
 
