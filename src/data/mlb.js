@@ -43,7 +43,7 @@ const moduleQuestions = [
     "id": "mlb_q2",
     "type": "slider",
     "phase": "The fine print",
-    "question": "Which is more you:",
+    "question": "Believe to the very end, or read it early and make peace?",
     "left": "It's never truly over till the very last moment, and I believe right to the end.",
     "right": "Some things are simply decided, and pretending otherwise is denial. I read it early and make my peace."
   },
@@ -79,7 +79,7 @@ const moduleQuestions = [
     "id": "mlb_q4",
     "type": "slider",
     "phase": "The fine print",
-    "question": "Which is more you:",
+    "question": "Keep the faith and the rituals, or trust only what's measured?",
     "left": "I keep little rituals I won't break, even knowing full well they do nothing. The faith is the whole point.",
     "right": "I trust what can actually be measured and let the rest go. Do the work right and the results come."
   },
@@ -207,7 +207,7 @@ const moduleQuestions = [
     "id": "mlb_q9",
     "type": "slider",
     "phase": "What it comes down to",
-    "question": "Which is more you:",
+    "question": "Win on brains and grit, or pay for the best?",
     "left": "Give me nothing and watch me win anyway. Brains and grit beat a fat wallet.",
     "right": "If you want the best, you pay for the best. I spend whatever it takes and I won't apologize."
   },
