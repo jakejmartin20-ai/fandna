@@ -648,7 +648,15 @@ function AppInner(){
 
     // ── Pre-compute tab data (no logic inside JSX) ───────────────────────────
   const vit = result ? vitalStats[result] : null;
-  const statsData = vit ? (activeSport==="F1" ? [
+  const statsData = vit ? (activeSport==="AFL" ? [
+    ["Base",         vit.base],
+    ["Founded",      String(vit.founded)],
+    ["Home ground",  vit.home],
+    ["Colours",      vit.colours],
+    ["Premierships", vit.flags],
+    ["Coach",        vit.coach],
+    ["Captain",      vit.captain],
+  ] : activeSport==="F1" ? [
     ["Base",       vit.base],
     ["Founded",    String(vit.founded)],
     ["Power unit", vit.powerUnit],
