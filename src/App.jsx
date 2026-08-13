@@ -268,6 +268,7 @@ function AppInner(){
   const cfbUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("cfb");
   const nhlUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("nhl");
   const f1Unlocked  = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("f1");
+  const aflUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("afl");
   const sportsList = SPORTS.map(s=>
     s.code==="NFL" ? {...s, live: s.live||nflUnlocked} :
     s.code==="MLB" ? {...s, live: s.live||mlbUnlocked} :
@@ -278,7 +279,8 @@ function AppInner(){
     s.code==="SA"  ? {...s, live: s.live||saUnlocked} :
     s.code==="CFB" ? {...s, live: s.live||cfbUnlocked} :
     s.code==="NHL" ? {...s, live: s.live||nhlUnlocked} :
-    s.code==="F1"  ? {...s, live: s.live||f1Unlocked} : s);
+    s.code==="F1"  ? {...s, live: s.live||f1Unlocked} :
+    s.code==="AFL" ? {...s, live: s.live||aflUnlocked} : s);
 
   // Active sport's data, bound to the same names the screens already use, so the result
   // screen and quiz read the right sport with no other changes. PL behaves exactly as before.
@@ -681,7 +683,7 @@ function AppInner(){
   // never with personality framing. No "nearest to your sequence", no similarity copy, no
   // "what you share". A matrix score that finished close is a fact; a close identity is a
   // claim the matrix cannot back. PL gaps are integer matrix points and display as integers.
-  const READOUT_K = { MLB: 4, CFB: 4, NFL: 4, NHL: 4, F1: 4, PL: 3 };
+  const READOUT_K = { MLB: 4, CFB: 4, NFL: 4, NHL: 4, F1: 4, AFL: 4, PL: 3 };
   const readoutRows = result
     ? sortedOthers.slice(0, READOUT_K[activeSport]||3).filter(([k])=>teams[k])
     : [];
