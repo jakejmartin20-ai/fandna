@@ -55,22 +55,22 @@ const moduleQuestions = [
     "id": "cfb_q3",
     "type": "slider",
     "phase": "The fine print",
-    "question": "Which is more you:",
-    "left": "Give me the wild, roll-the-dice moment, that's when I feel most alive",
-    "right": "Give me the plan run cleanly, I trust the process over the thrill"
+    "question": "The wild gamble, or the clean plan?",
+    "left": "Give me the wild, roll-the-dice moment. That's when I feel most alive.",
+    "right": "Give me the plan, run cleanly. I trust the process over the thrill."
   },
   {
     "id": "cfb_q4",
     "type": "choice",
     "phase": "The fine print",
-    "question": "You finally get the thing you've chased for years. What makes it matter most:",
+    "question": "After years of everyone waiting, you finally get there. What makes it matter most:",
     "options": [
       {
-        "label": "It's undeniable, nobody can ever say we didn't.",
+        "label": "It's undeniable. Nobody can ever say we didn't.",
         "value": "A"
       },
       {
-        "label": "The tradition holds, I carried what was handed to me.",
+        "label": "The tradition holds. I carried what was handed to me.",
         "value": "B"
       },
       {
@@ -91,26 +91,26 @@ const moduleQuestions = [
     "id": "cfb_q5",
     "type": "choice",
     "phase": "The fine print",
-    "question": "Something you cared about slips away at the cruelest possible moment. You:",
+    "question": "It slips away at the cruelest possible moment. What surfaces:",
     "options": [
       {
-        "label": "Feel every bit of it, out loud, no hiding how much it hurt.",
+        "label": "I feel every bit of it, out loud, no hiding how much it hurt.",
         "value": "A"
       },
       {
-        "label": "Go quiet and carry it alone for a while.",
+        "label": "I go quiet and carry it alone for a while.",
         "value": "B"
       },
       {
-        "label": "Laugh it off, of course it happened to us; it always does.",
+        "label": "I laugh it off. Of course it happened, it always does to us.",
         "value": "C"
       },
       {
-        "label": "Let it harden into fuel, and remember exactly who did it to me.",
+        "label": "I let it harden into fuel, and I remember exactly who did it.",
         "value": "D"
       },
       {
-        "label": "I'm already onto the next thing, dwelling isn't me.",
+        "label": "I'm already onto the next thing. Dwelling isn't me.",
         "value": "E"
       }
     ]
@@ -119,9 +119,9 @@ const moduleQuestions = [
     "id": "cfb_q6",
     "type": "slider",
     "phase": "The fine print",
-    "question": "Which is more you:",
-    "left": "Some things should stay exactly as they've always been",
-    "right": "I'd rather tear it up and build something new that's unmistakably mine"
+    "question": "Keep it exactly as it's always been, or tear it up and rebuild it new?",
+    "left": "Some things should stay exactly as they've always been.",
+    "right": "I'd rather tear it up and build something new that's unmistakably mine."
   },
   {
     "id": "cfb_q7",
@@ -175,30 +175,30 @@ const moduleQuestions = [
     "id": "cfb_q9",
     "type": "slider",
     "phase": "What it comes down to",
-    "question": "Which is more you:",
-    "left": "It's the whole of us, the crowd, the place, all of it together",
-    "right": "I'm drawn to the standout, the one who carries the moment"
+    "question": "The whole crowd as one, or the standout who carries it?",
+    "left": "It's the whole of us. The crowd, the place, all of it together.",
+    "right": "I'm drawn to the standout, the one who carries the moment."
   },
   {
     "id": "cfb_q10",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "On the biggest day, the energy you bring is:",
+    "question": "On the biggest day, the energy you bring:",
     "options": [
       {
-        "label": "Deafening, all heart, all volume, nothing held back.",
+        "label": "Deafening. All heart, all volume, nothing held back.",
         "value": "A"
       },
       {
-        "label": "Ice-cold and composed, let everyone else lose their heads.",
+        "label": "Cool and composed. I let everyone else lose their heads.",
         "value": "B"
       },
       {
-        "label": "Pure joy, a party that happens to have a game inside it.",
+        "label": "Pure joy. A party that happens to have a game inside it.",
         "value": "C"
       },
       {
-        "label": "Chip-on-the-shoulder, something to prove, and everyone will hear about it.",
+        "label": "A chip on the shoulder, something to prove, and everyone will hear about it.",
         "value": "D"
       }
     ]
