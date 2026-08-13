@@ -269,8 +269,8 @@ const moduleQuestions = [
     "type": "slider",
     "phase": "What it comes down to",
     "question": "When the intensity rises, which way do you go?",
-    "left": "Clamp down and keep control. The bigger the moment, the cooler I run.",
-    "right": "Let it loose. I turn the emotion all the way up and let everyone feel it."
+    "left": "I clamp down and keep control. The higher it climbs, the steadier I get.",
+    "right": "I let it loose, emotion all the way up, and everyone around me feels it."
   },
   {
     "id": "nfl_q10",
