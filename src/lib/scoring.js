@@ -18,6 +18,7 @@ import { moduleQuestions as nbaModule, scoring as nbaScoring, teamDims as nbaDim
 import { moduleQuestions as cfbModule, scoring as cfbScoring, teamDims as cfbDims } from "../data/cfb";
 import { moduleQuestions as nhlModule, scoring as nhlScoring, teamDims as nhlDims } from "../data/nhl";
 import { moduleQuestions as f1Module, scoring as f1Scoring, teamDims as f1Dims } from "../data/f1";
+import { moduleQuestions as aflModule, scoring as aflScoring, teamDims as aflDims } from "../data/afl";
 import { moduleQuestions as blModule, scoring as blScoring, teamDims as blDims } from "../data/bundesliga";
 import { moduleQuestions as llModule, scoring as llScoring, teamDims as llDims } from "../data/laliga";
 import { moduleQuestions as l1Module, scoring as l1Scoring, teamDims as l1Dims } from "../data/ligue1";
@@ -162,6 +163,7 @@ const FP_ENGINES = {
   L1: makeFpEngine(l1Dims, l1Scoring, l1Module),
   SA: makeFpEngine(saDims, saScoring, saModule),
   F1: makeFpEngine(f1Dims, f1Scoring, f1Module, 1.6),   // small 11-team field: 1.2 let the module override the core by ~3 ranks; 1.6 makes it a tie-breaker (knee before Red Bull drops below reachable)
+  AFL: makeFpEngine(aflDims, aflScoring, aflModule),   // 18-team small-mid field; FP_W 1.2 (no magnet, top pooled ~11.5% under the 13.9% ceiling; higher FP_W lowers the SYD/GWS edge floors)
 };
 
 
