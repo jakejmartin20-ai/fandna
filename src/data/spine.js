@@ -7,13 +7,13 @@
 //
 // Shape mirrors a league's moduleQuestions so the same ChoiceQ / SliderQ render it with no new
 // UI. Ids S1..S7 are collision-free with core ids, PL's q*, and every <sport>_q*.
-// The `phase` here groups the spine as one chapter ("Your instincts") in the quiz progress bar; it
+// The `phase` here groups the spine as one chapter ("Instincts") in the quiz progress bar; it
 // is folded into the genome ("Your core") colouring in App.jsx. The SCORING phase each spine slot
 // occupies per league (for the final-phase tie-break) is separate, set by each league's spinePhase.
 
 export const spineQuestions = [
   {
-    id: "S1", type: "choice", phase: "Your instincts",
+    id: "S1", type: "choice", phase: "Instincts",
     question: "Something you've given years to lets you down, in a way that feels like a betrayal. You:",
     options: [
       { value: "A", label: "Stay. What I'm loyal to was never up for negotiation." },
@@ -23,7 +23,7 @@ export const spineQuestions = [
     ],
   },
   {
-    id: "S2", type: "choice", phase: "Your instincts",
+    id: "S2", type: "choice", phase: "Instincts",
     question: "It all comes down to one moment. Inside, what happens:",
     options: [
       { value: "A", label: "It all pours out. Everyone around me feels it." },
@@ -33,19 +33,19 @@ export const spineQuestions = [
     ],
   },
   {
-    id: "S3", type: "slider", phase: "Your instincts",
+    id: "S3", type: "slider", phase: "Instincts",
     question: "How much does winning it all actually matter to you:",
     left: "Everything. Nothing short of the very top will do.",
     right: "It was never about trophies. The love of it is enough.",
   },
   {
-    id: "S4", type: "slider", phase: "Your instincts",
+    id: "S4", type: "slider", phase: "Instincts",
     question: "Where you feel most like yourself:",
     left: "The place that made me. Deep roots, and I never went looking.",
     right: "Wherever it's happening next. Home is where I decide it is.",
   },
   {
-    id: "S5", type: "choice", phase: "Your instincts",
+    id: "S5", type: "choice", phase: "Instincts",
     question: "When something wins big, what really carried it:",
     options: [
       { value: "A", label: "One standout, good enough to lift everyone." },
@@ -55,7 +55,7 @@ export const spineQuestions = [
     ],
   },
   {
-    id: "S6", type: "choice", phase: "Your instincts",
+    id: "S6", type: "choice", phase: "Instincts",
     question: "If it were up to you, the way to the top:",
     options: [
       { value: "A", label: "Tear it down and build new. No half measures." },
@@ -65,7 +65,7 @@ export const spineQuestions = [
     ],
   },
   {
-    id: "S7", type: "choice", phase: "Your instincts",
+    id: "S7", type: "choice", phase: "Instincts",
     question: "Going in, the position that suits you:",
     options: [
       { value: "A", label: "The favourite, expected to win, everything to lose." },
