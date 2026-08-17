@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useMemo, Component } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import { track } from "@vercel/analytics";
 import { coreQuestions, DIM_ORDER, DIM_LABELS } from "./data/core";
+import { spineQuestions } from "./data/spine";
 import { SPORT_DATA } from "./lib/sportData";
 import { scoreCore, scoreModule, matchEvidence, decompressProfile } from "./lib/scoring";
 import { loadState, saveResult, clearAll, appendPending, readPending, clearPending } from "./lib/storage";
@@ -20,16 +21,20 @@ import { coreBlocks } from "./lib/genomeRead";
 function recomputeAllFromCore(newCoreAnswers){
   const newCore = scoreCore(newCoreAnswers);
   const st = loadState();
+  const spineAnswers = st.spineAnswers || {};
   const moved = []; const stale = [];
   for(const [sport,r] of Object.entries(st.results||{})){
     if(!r||!r.club) continue;
     const modAns = r.answers||{};
-    if(Object.keys(modAns).length===0){
+    // A spine-enabled league scored before the spine existed has no spineAnswers to re-read: keep its
+    // club and flag it stale rather than mis-score it (same treatment as a share-link result).
+    const usesSpine = !!(SPORT_DATA[sport] && SPORT_DATA[sport].spineScoring);
+    if(Object.keys(modAns).length===0 || (usesSpine && Object.keys(spineAnswers).length===0)){
       stale.push(sport);
       saveResult(sport,{coreAnswers:newCoreAnswers,coreProfile:newCore,club:r.club,date:r.date});
       continue;
     }
-    const { club:newClub, scores:ns } = scoreModule(sport,{coreProfile:newCore,coreAnswers:newCoreAnswers,moduleAnswers:modAns});
+    const { club:newClub, scores:ns } = scoreModule(sport,{coreProfile:newCore,coreAnswers:newCoreAnswers,moduleAnswers:modAns,spineAnswers});
     if(newClub!==r.club) moved.push({sport,from:r.club,to:newClub,scores:ns});
     saveResult(sport,{coreAnswers:newCoreAnswers,coreProfile:newCore,club:newClub,moduleAnswers:modAns,scores:ns,date:r.date});
   }
@@ -242,6 +247,7 @@ function AppInner(){
   const [tab,setTab]=useState("result");
   const [mode,setMode]=useState("full");        // "full" = core+module ; "module" = league module only ; "core" = re-sequence the shared core
   const [savedCore,setSavedCore]=useState(null); // cached {coreAnswers,coreProfile} for module-only retakes
+  const [savedSpine,setSavedSpine]=useState(null); // cached shared-spine answers {S1..S7}, answered once
   const [resequenceConfirm,setResequenceConfirm]=useState(false); // the "re-sequence core?" confirm modal
   const [resequenceDelta,setResequenceDelta]=useState(null);      // {moved:[{sport,from,to}],stale:[...]} shown once after a re-sequence
   const [coreProfile,setCoreProfile]=useState(null); // the user's 7-dim core; drives the strip everywhere
@@ -286,6 +292,8 @@ function AppInner(){
   // screen and quiz read the right sport with no other changes. PL behaves exactly as before.
   const D = SPORT_DATA[activeSport] || SPORT_DATA.PL;
   const moduleQuestions = D.moduleQuestions;
+  // Does this sport read the shared cross-sport spine? (Option B leagues export spineScoring.)
+  const usesSpine = !!D.spineScoring;
   const teams = D.teams, archetypes = D.archetypes, teamTextColors = D.teamTextColors;
   const greats = D.greats, vitalStats = D.vitalStats; // nearlyGot retired from the result screen (chapter 04 is THE READOUT)
   const squadUrls = D.squadUrls;
@@ -293,14 +301,22 @@ function AppInner(){
 
   // The active question run. First time: 24 core + 14 PL module = 38, in the v1 order.
   // Module-only retake: just the 14 PL questions (the core is already sequenced).
+  // The 7 shared-spine questions are answered ONCE (like the core). They join the run only when this
+  // sport uses the spine AND it hasn't been answered yet. First play: core + spine + module. A later
+  // spine-league when the spine is already cached: module only. Live (non-spine) sports are unchanged.
+  const needSpine = usesSpine && !savedSpine;
   const sequence=useMemo(
-    ()=> mode==="module" ? moduleQuestions : mode==="core" ? coreQuestions : [...coreQuestions, ...moduleQuestions],
-    [mode,activeSport]
+    ()=> mode==="core" ? coreQuestions
+       : mode==="module" ? (needSpine ? [...spineQuestions, ...moduleQuestions] : moduleQuestions)
+       : [...coreQuestions, ...(needSpine ? spineQuestions : []), ...moduleQuestions],
+    [mode,activeSport,needSpine]
   );
   const coreIds=useMemo(()=>new Set(coreQuestions.map(p=>p.id)),[]);
+  const spineIds=useMemo(()=>new Set(spineQuestions.map(p=>p.id)),[]);
   // Which phases belong to the shared core (vs a league module). Data-derived, so the
   // progress bar can colour + group core-purple then league-gold in any mode.
-  const CORE_PHASES=useMemo(()=>new Set(coreQuestions.map(p=>p.phase)),[]);
+  // The spine chapter ("Your instincts") colours with the genome ("Your core"), not a league.
+  const CORE_PHASES=useMemo(()=>new Set([...coreQuestions.map(p=>p.phase), ...spineQuestions.map(p=>p.phase)]),[]);
 
   const q=sequence[cur];
   const pct=Math.round((cur/sequence.length)*100);
@@ -338,6 +354,7 @@ function AppInner(){
     if(pend.length) setResequenceDelta({moved:pend,stale:[],reason:"heal"});
     setGenome(st.results||{});
     setCoreProfile(st.coreProfile||null);
+    setSavedSpine(st.spineAnswers||null);   // so a later spine-league skips the already-answered spine
     if(st.results&&st.results.PL&&st.results.PL.club){
       setSavedCore({coreAnswers:st.coreAnswers,coreProfile:st.coreProfile});
       setScores(st.results.PL.scores||null);
@@ -453,25 +470,30 @@ function AppInner(){
       const coreAnswers = mode==="module"
         ? (savedCore?savedCore.coreAnswers:{})
         : Object.fromEntries(Object.entries(na).filter(([k])=>coreIds.has(k)));
-      const moduleAnswers = Object.fromEntries(Object.entries(na).filter(([k])=>!coreIds.has(k)));
+      // Shared-spine answers: from THIS run if it included the spine, else the cached copy.
+      const spineFromRun = Object.fromEntries(Object.entries(na).filter(([k])=>spineIds.has(k)));
+      const spineAnswers = Object.keys(spineFromRun).length ? spineFromRun : (savedSpine || {});
+      // League-unique module answers = everything that is neither core nor spine.
+      const moduleAnswers = Object.fromEntries(Object.entries(na).filter(([k])=>!coreIds.has(k) && !spineIds.has(k)));
       const coreProfile = (mode==="module" && savedCore && savedCore.coreProfile)
         ? savedCore.coreProfile
         : scoreCore(coreAnswers);
-      // PL reproduces the exact v1 assignment (full matrix + tie-break); NFL uses the
-      // fingerprint-plus-module path. scoreModule routes on the sport.
-      const { club, scores:s } = scoreModule(activeSport, { coreProfile, coreAnswers, moduleAnswers });
+      // PL reproduces the exact v1 assignment (full matrix + tie-break); fingerprint sports use the
+      // fingerprint-plus-module path, now also folding the shared-spine answers. scoreModule routes on the sport.
+      const { club, scores:s } = scoreModule(activeSport, { coreProfile, coreAnswers, moduleAnswers, spineAnswers });
       setScores(s);
       setCoreProfile(coreProfile);
       setResult(club);
-      setEvidence(matchEvidence(activeSport,{coreAnswers,moduleAnswers,coreProfile}));
-      setEvidenceInput({coreAnswers,moduleAnswers,coreProfile});
+      if(usesSpine && Object.keys(spineAnswers).length) setSavedSpine(spineAnswers);
+      setEvidence(matchEvidence(activeSport,{coreAnswers,moduleAnswers,coreProfile,spineAnswers}));
+      setEvidenceInput({coreAnswers,moduleAnswers,coreProfile,spineAnswers});
       { const rm = typeof window!=="undefined" && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; setRevealSeq(!rm); setLanded(rm); }
       setScreen("result");
       try{ window.scrollTo(0,0); }catch(e){}
       setGenome(g=>({...g,[activeSport]:{club}}));
       track("quiz_completed",{sport:activeSport,club});
       pingResult({sport:activeSport,club,scores:s,coreProfile,coreAnswers,retake:!!(genome[activeSport]&&genome[activeSport].club)});
-      saveResult(activeSport,{coreAnswers,coreProfile,club,moduleAnswers,scores:s});
+      saveResult(activeSport,{coreAnswers,coreProfile,spineAnswers,club,moduleAnswers,scores:s});
       if(pendingCompare){ setCompareFriend(pendingCompare); setPendingCompare(null); setScreen("compare"); }
     }
   }
@@ -525,6 +547,7 @@ function AppInner(){
     const st=loadState();
     if(!st.coreAnswers){ startOver(); return; }
     setSavedCore({coreAnswers:st.coreAnswers,coreProfile:st.coreProfile});
+    setSavedSpine(st.spineAnswers||null);   // keep the shared spine; a module retake never re-asks it
     setMode("module");
     setPhase("out");
     setTimeout(()=>{
@@ -552,6 +575,7 @@ function AppInner(){
     setActiveSport(sport);
     setResult(null); setScores(null); setEvidence(null); setEvidenceInput(null);   // drop any prior sport's result before this one's data loads
     const st=loadState();
+    setSavedSpine(st.spineAnswers||null);   // spine is shared + answered once; a later spine-league skips it
     if(st.coreAnswers){
       setSavedCore({coreAnswers:st.coreAnswers,coreProfile:st.coreProfile});
       setMode("module");
@@ -574,9 +598,10 @@ function AppInner(){
     setCoreProfile(st.coreProfile||null);
     const r=(st.results&&st.results[sport])||{};
     if(r.club){ setResult(r.club); setScores(r.scores||null);
-      setEvidence(matchEvidence(sport,{coreAnswers:st.coreAnswers||{},moduleAnswers:r.answers||{},coreProfile:st.coreProfile||null}));
-      setEvidenceInput({coreAnswers:st.coreAnswers||{},moduleAnswers:r.answers||{},coreProfile:st.coreProfile||null});
+      setEvidence(matchEvidence(sport,{coreAnswers:st.coreAnswers||{},moduleAnswers:r.answers||{},coreProfile:st.coreProfile||null,spineAnswers:st.spineAnswers||{}}));
+      setEvidenceInput({coreAnswers:st.coreAnswers||{},moduleAnswers:r.answers||{},coreProfile:st.coreProfile||null,spineAnswers:st.spineAnswers||{}});
     }
+    setSavedSpine(st.spineAnswers||null);
     setTab("result");
     setRevealSeq(false); setLanded(true);
     setScreen("result");
