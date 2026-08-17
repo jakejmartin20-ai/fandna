@@ -14,7 +14,11 @@ import { coreQuestions, coreDimScoring, DIM_ORDER } from "../data/core";
 import { moduleQuestions, scoring as plScoring, teams as plTeams, teamDims as plTeamDims } from "../data/pl";
 import { moduleQuestions as nflModule, scoring as nflScoring, teamDims as nflDims } from "../data/nfl";
 import { moduleQuestions as mlbModule, scoring as mlbScoring, teamDims as mlbDims } from "../data/mlb";
-import { moduleQuestions as nbaModule, scoring as nbaScoring, teamDims as nbaDims } from "../data/nba";
+import { teamDims as nbaDims } from "../data/nba";
+// NBA's module (its 6 unique questions) + the 7 shared-spine tables live in the small add-on file
+// nba-spine.js, so nba.js itself is untouched. teamDims still comes straight from nba.js above.
+import { moduleQuestions as nbaModule, scoring as nbaScoring, spineScoring as nbaSpine, spinePhase as nbaSpinePhase } from "../data/nba-spine";
+import { spineQuestions } from "../data/spine";
 import { moduleQuestions as cfbModule, scoring as cfbScoring, teamDims as cfbDims } from "../data/cfb";
 import { moduleQuestions as nhlModule, scoring as nhlScoring, teamDims as nhlDims } from "../data/nhl";
 import { moduleQuestions as f1Module, scoring as f1Scoring, teamDims as f1Dims } from "../data/f1";
@@ -144,18 +148,24 @@ const DIST_REF = 14;     // headroom so the zero-clip rarely fires; does not aff
 // A fingerprint engine is just a sport's data, pre-indexed. Build one per fingerprint sport;
 // nothing in the scorer is hardcoded to a sport, so adding MLB is one entry here. NFL keeps the
 // exact same dims/scoring/keys/weights it always had, so its results are unchanged.
-function makeFpEngine(dims, scoring, module, fpw){
+// A sport may pass an optional shared-spine table (spineScoring) + the phase each spine slot held
+// (spinePhase). The spine cells are folded into the sport's matrix (disjoint qId namespaces, so a plain
+// merge), and the spine phases into idToPhase for the final-phase tie-break. A sport with no spine is
+// byte-identical to before (spineScoring undefined -> matrix and idToPhase unchanged).
+function makeFpEngine(dims, scoring, module, fpw, spineScoring, spinePhase){
   const keys = Object.keys(dims);                 // iteration order = the final tie-break tail
   const idToPhase = {};
   for (const q of coreQuestions) idToPhase[q.id]=q.phase;
   for (const q of module)        idToPhase[q.id]=q.phase;
+  if (spinePhase) for (const sid in spinePhase) idToPhase[sid] = spinePhase[sid];
+  const matrix = spineScoring ? { ...spineScoring, ...scoring } : scoring;
   const finalPhase = module[module.length-1].phase;
-  return { dims, scoring, keys, idToPhase, finalPhase, FP_W: (fpw===undefined ? FP_W : fpw), DIST_REF };
+  return { dims, scoring: matrix, keys, idToPhase, finalPhase, FP_W: (fpw===undefined ? FP_W : fpw), DIST_REF };
 }
 const FP_ENGINES = {
   NFL: makeFpEngine(nflDims, nflScoring, nflModule),
   MLB: makeFpEngine(mlbDims, mlbScoring, mlbModule),
-  NBA: makeFpEngine(nbaDims, nbaScoring, nbaModule),
+  NBA: makeFpEngine(nbaDims, nbaScoring, nbaModule, 1.2, nbaSpine, nbaSpinePhase),   // Option B: 7 shared-spine slots + 6 unique module Qs (s40)
   CFB: makeFpEngine(cfbDims, cfbScoring, cfbModule, 1.6),   // 51+ programs sit closer in dim-space; 1.2 left the core deciding only ~23%
   NHL: makeFpEngine(nhlDims, nhlScoring, nhlModule, 1.5),   // 32 teams; FP_W 1.5 (s31 weight tune to the >1% reachability knee; Toronto floor 1.03%, was 1.2)
   BL: makeFpEngine(blDims, blScoring, blModule, 1.5),   // 18 teams; FP_W 1.5 (s31 weight tune; magnet-bound knee, Elversberg 13.6% < 13.9% ceiling, Freiburg floor 1.14%, was 1.2)
@@ -199,8 +209,12 @@ function fpBase(coreProfile, eng){
 }
 function scoreFingerprint(input, eng){
   const fp = fpBase(decompressProfile(input.coreProfile||{}), eng);
-  const mod = allScores(input.moduleAnswers||{}, eng.scoring, eng.keys);
-  const finalPts = phaseScores(input.moduleAnswers||{}, eng.scoring, eng.keys, eng.idToPhase, eng.finalPhase);
+  // Shared-spine answers (S1..S7) are scored alongside the league-unique module answers: one merged
+  // answer set, one matrix (the spine cells were folded into eng.scoring). A sport without a spine
+  // passes no spineAnswers, so this is the old behaviour exactly.
+  const modAns = { ...(input.spineAnswers||{}), ...(input.moduleAnswers||{}) };
+  const mod = allScores(modAns, eng.scoring, eng.keys);
+  const finalPts = phaseScores(modAns, eng.scoring, eng.keys, eng.idToPhase, eng.finalPhase);
   const total={};
   for (const c of eng.keys) total[c] = fp[c].base + (mod[c]||0);
   const max = Math.max(...Object.values(total));
@@ -248,7 +262,7 @@ function fpProfile(input, eng){
 
 function matchEvidenceFp(sport, input, eng){
   const coreAns = input.coreAnswers || {};
-  const modAns  = input.moduleAnswers || {};
+  const modAns  = { ...(input.spineAnswers||{}), ...(input.moduleAnswers||{}) };
   const baseProfile = fpProfile(input, eng);
   const club = scoreFingerprint({ coreProfile: baseProfile, moduleAnswers: modAns }, eng).club;
   const allAns = { ...coreAns, ...modAns };
@@ -378,7 +392,7 @@ function blendCrossTips(modSide, coreSide, n){
 
 function crossMatchFp(sport, input, supportedClub, eng){
   const coreAns = input.coreAnswers || {};
-  const modAns  = input.moduleAnswers || {};
+  const modAns  = { ...(input.spineAnswers||{}), ...(input.moduleAnswers||{}) };
   const baseProfile = fpProfile(input, eng);
   const { club: matched, scores } = scoreFingerprint({ coreProfile: baseProfile, moduleAnswers: modAns }, eng);
   const totalAnswers = fpCoreIds().length + Object.keys(eng.scoring).length;
@@ -419,6 +433,7 @@ for (const q of blModule)        QUESTION_MAP[q.id] = q;   // namespaced ids (bl
 for (const q of llModule)        QUESTION_MAP[q.id] = q;   // namespaced ids (ll_q*), no collision with PL
 for (const q of l1Module)        QUESTION_MAP[q.id] = q;   // namespaced ids (l1_q*), no collision with PL
 for (const q of saModule)        QUESTION_MAP[q.id] = q;   // namespaced ids (sa_q*), no collision with PL
+for (const q of spineQuestions)  QUESTION_MAP[q.id] = q;   // shared-spine ids (S1..S7), no collision
 
 function answerLabel(qId, ans){
   const q = QUESTION_MAP[qId];

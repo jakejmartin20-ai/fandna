@@ -1,23 +1,28 @@
 // FanDNA — saved-progress (localStorage in the deployed app). Versioned from day one.
 //
-// Shape (key "fandna_v1"):
-//   { version, coreAnswers, coreProfile, results: { PL: { club, answers, scores, date } } }
+// Shape (key "fandna_v1", VERSION 2):
+//   { version, coreAnswers, coreProfile, spineAnswers, results: { PL: { club, answers, scores, date } } }
 //
-// Rules: the core is answered ONCE and cached (coreAnswers + coreProfile). Each sport's
-// result is keyed by sport. "Retake" can redo just one sport's module (keep the core) or
-// reset everything. All reads/writes are wrapped so a storage failure never breaks the quiz.
+// Rules: the core is answered ONCE and cached (coreAnswers + coreProfile). The 7 shared-spine
+// answers (S1..S7) are ALSO answered once and cached (spineAnswers), the same way. Each sport's
+// result is keyed by sport and stores only that league's UNIQUE module answers. "Retake" can redo
+// just one sport's module (keep the core + spine) or reset everything. All reads/writes are wrapped
+// so a storage failure never breaks the quiz.
 
-const KEY = "fandna_v1";
-const VERSION = 1;
+const KEY = "fandna_v1";     // localStorage key unchanged (bumping it would drop everyone's genome)
+const VERSION = 2;           // v2 adds spineAnswers
 
-function blank(){ return { version: VERSION, coreAnswers: null, coreProfile: null, results: {}, pending: [] }; }
+function blank(){ return { version: VERSION, coreAnswers: null, coreProfile: null, spineAnswers: null, results: {}, pending: [] }; }
 
 function migrate(state){
   // Single place to bump old shapes forward as the schema evolves.
   if (!state || typeof state!=="object") return blank();
-  if (!state.version) state.version = VERSION;
   if (!state.results) state.results = {};
   if (!Array.isArray(state.pending)) state.pending = [];
+  // v1 -> v2: spineAnswers didn't exist. Old genomes get null; a spine-enabled league they had
+  // already taken is re-derived / re-flagged on recompute (App.jsx), never silently mis-scored.
+  if (!("spineAnswers" in state) || state.spineAnswers === undefined) state.spineAnswers = null;
+  state.version = VERSION;
   return state;
 }
 
@@ -33,11 +38,21 @@ function writeState(state){
   try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e){ /* private mode / full: ignore */ }
 }
 
-// Save a completed sport result, caching the core the first time.
-function saveResult(sport, { coreAnswers, coreProfile, club, moduleAnswers, scores, date }){
+// Cache the shared-spine answers (S1..S7), answered once like the core. Idempotent.
+function saveSpine(spineAnswers){
+  const state = loadState();
+  if (spineAnswers && Object.keys(spineAnswers).length) state.spineAnswers = spineAnswers;
+  writeState(state);
+  return state;
+}
+
+// Save a completed sport result, caching the core (and spine, if supplied) the first time.
+// moduleAnswers = this league's UNIQUE answers only; the shared spine lives in state.spineAnswers.
+function saveResult(sport, { coreAnswers, coreProfile, spineAnswers, club, moduleAnswers, scores, date }){
   const state = loadState();
   if (coreAnswers)  state.coreAnswers  = coreAnswers;
   if (coreProfile)  state.coreProfile  = coreProfile;
+  if (spineAnswers && Object.keys(spineAnswers).length) state.spineAnswers = spineAnswers;
   state.results[sport] = {
     club,
     answers: moduleAnswers || {},
@@ -79,4 +94,4 @@ function appendPending(moved){
 function readPending(){ return loadState().pending || []; }
 function clearPending(){ const state=loadState(); state.pending=[]; writeState(state); return state; }
 
-export { loadState, saveResult, clearModule, clearAll, appendPending, readPending, clearPending, KEY, VERSION };
+export { loadState, saveResult, saveSpine, clearModule, clearAll, appendPending, readPending, clearPending, KEY, VERSION };
