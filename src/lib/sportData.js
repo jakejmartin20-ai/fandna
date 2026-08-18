@@ -12,7 +12,8 @@ import * as L1 from "../data/ligue1";
 import * as SA from "../data/seriea";
 import * as CFB from "../data/cfb";
 import * as NHL from "../data/nhl";
-import * as F1 from "../data/f1";
+import * as F1base from "../data/f1";
+import * as F1spine from "../data/f1-spine";
 import * as AFL from "../data/afl";
 
 // NBA runs the shared cross-sport spine (Option B): the quiz shows its 6 unique questions (from the
@@ -43,6 +44,30 @@ const NBA_RESCENE = {
 };
 const nbaModuleShown = NBAspine.moduleQuestions.map(q => NBA_RESCENE[q.id] ? { ...q, ...NBA_RESCENE[q.id] } : q);
 const NBA = { ...NBAbase, moduleQuestions: nbaModuleShown, spineScoring: NBAspine.spineScoring, spinePhase: NBAspine.spinePhase };
+
+// F1 runs the shared spine (s41): same pattern as NBA. It shows its 7 unique questions and carries
+// the spine tables. Display re-scene: q8 (role) and q10 (pressure) echoed spine slots S7 / S2, so
+// their WORDING is swapped here to a distinct F1 angle. Option values A-D are unchanged, so scoring,
+// self-land and reachability are identical - only what the taker reads changes.
+const F1_RESCENE = {
+  f1_q8: { question: "The win that would mean the most:", options: [
+    { value: "A", label: "Beating a team with far more money and history than mine." },
+    { value: "B", label: "Winning the one race the whole world stops to watch." },
+    { value: "C", label: "A slow climb up the grid that nobody saw coming." },
+    { value: "D", label: "Turning a blank sheet into something that wins." },
+  ] },
+  f1_q10: { question: "A defeat that was never in your hands, the machinery just wasn't good enough. By the next morning:", options: [
+    { value: "A", label: "I give nothing away. Same face as always." },
+    { value: "B", label: "I still can't hide it. Everyone around me knows." },
+    { value: "C", label: "I've turned it into fuel for the next one." },
+    { value: "D", label: "I've already let it go and moved on." },
+  ] },
+};
+// Re-scene only applies once the spine is active; before the flip, F1 shows its questions unchanged.
+const f1ModuleShown = F1spine.spineScoring
+  ? F1spine.moduleQuestions.map(q => F1_RESCENE[q.id] ? { ...q, ...F1_RESCENE[q.id] } : q)
+  : F1spine.moduleQuestions;
+const F1 = { ...F1base, moduleQuestions: f1ModuleShown, spineScoring: F1spine.spineScoring, spinePhase: F1spine.spinePhase };
 
 const SPORT_DATA = { PL, NFL, MLB, NBA, BL, LL, L1, SA, CFB, NHL, F1, AFL };
 
