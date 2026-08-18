@@ -1,11 +1,10 @@
 {
  "meta": {
-  "purpose": "F1 regression gate. Each fixture is an input the live F1 engine maps to a team. Any future change to src/data/f1.js scoring (or the shared fingerprint engine in src/lib/scoring.js) must reproduce every winner here, or the diff must be reviewed and accepted.",
-  "generated": "2026-08-10",
-  "engine": "fingerprint",
-  "fpW": 1.6,
-  "teams": 11,
-  "count": 51
+  "sport": "F1",
+  "engine": "fingerprint-spine",
+  "generated": "2026-08-18",
+  "count": 51,
+  "note": "F1 on the shared spine (config E). Signatures = own-pole self-land; fixtures carry explicit spineAnswers (S1-S7)."
  },
  "fixtures": [
   {
@@ -21,16 +20,20 @@
     "chaos": 7,
     "rootedness": 9
    },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "A",
+    "S3": "2",
+    "S4": "1",
+    "S5": "B",
+    "S6": "C",
+    "S7": "A"
+   },
    "moduleAnswers": {
-    "f1_q1": "B",
     "f1_q2": "C",
-    "f1_q3": "2",
-    "f1_q4": "C",
-    "f1_q5": "C",
     "f1_q6": "4",
     "f1_q7": "D",
     "f1_q8": "B",
-    "f1_q9": "1",
     "f1_q10": "B",
     "f1_q11": "B",
     "f1_q12": "A"
@@ -51,16 +54,20 @@
     "chaos": 2,
     "rootedness": 6
    },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "B",
+    "S3": "2",
+    "S4": "3",
+    "S5": "C",
+    "S6": "D",
+    "S7": "A"
+   },
    "moduleAnswers": {
-    "f1_q1": "C",
     "f1_q2": "A",
-    "f1_q3": "2",
-    "f1_q4": "D",
-    "f1_q5": "C",
     "f1_q6": "1",
     "f1_q7": "A",
     "f1_q8": "B",
-    "f1_q9": "3",
     "f1_q10": "A",
     "f1_q11": "A",
     "f1_q12": "A"
@@ -81,16 +88,20 @@
     "chaos": 3,
     "rootedness": 7
    },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "C",
+    "S3": "2",
+    "S4": "2",
+    "S5": "C",
+    "S6": "D",
+    "S7": "A"
+   },
    "moduleAnswers": {
-    "f1_q1": "C",
     "f1_q2": "B",
-    "f1_q3": "2",
-    "f1_q4": "D",
-    "f1_q5": "A",
     "f1_q6": "1",
     "f1_q7": "D",
     "f1_q8": "B",
-    "f1_q9": "2",
     "f1_q10": "A",
     "f1_q11": "A",
     "f1_q12": "B"
@@ -111,16 +122,20 @@
     "chaos": 5,
     "rootedness": 2
    },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "D",
+    "S3": "1",
+    "S4": "5",
+    "S5": "A",
+    "S6": "C",
+    "S7": "D"
+   },
    "moduleAnswers": {
-    "f1_q1": "A",
     "f1_q2": "A",
-    "f1_q3": "1",
-    "f1_q4": "C",
-    "f1_q5": "B",
     "f1_q6": "2",
     "f1_q7": "B",
     "f1_q8": "B",
-    "f1_q9": "5",
     "f1_q10": "D",
     "f1_q11": "C",
     "f1_q12": "C"
@@ -141,16 +156,20 @@
     "chaos": 3,
     "rootedness": 8
    },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "A",
+    "S3": "4",
+    "S4": "2",
+    "S5": "B",
+    "S6": "B",
+    "S7": "C"
+   },
    "moduleAnswers": {
-    "f1_q1": "B",
     "f1_q2": "D",
-    "f1_q3": "4",
-    "f1_q4": "B",
-    "f1_q5": "A",
     "f1_q6": "3",
     "f1_q7": "C",
     "f1_q8": "A",
-    "f1_q9": "2",
     "f1_q10": "C",
     "f1_q11": "B",
     "f1_q12": "D"
@@ -171,16 +190,20 @@
     "chaos": 3,
     "rootedness": 4
    },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "C",
+    "S3": "2",
+    "S4": "4",
+    "S5": "A",
+    "S6": "D",
+    "S7": "B"
+   },
    "moduleAnswers": {
-    "f1_q1": "A",
     "f1_q2": "A",
-    "f1_q3": "2",
-    "f1_q4": "D",
-    "f1_q5": "C",
     "f1_q6": "2",
     "f1_q7": "B",
     "f1_q8": "D",
-    "f1_q9": "4",
     "f1_q10": "A",
     "f1_q11": "D",
     "f1_q12": "A"
@@ -201,16 +224,20 @@
     "chaos": 8,
     "rootedness": 6
    },
+   "spineAnswers": {
+    "S1": "D",
+    "S2": "D",
+    "S3": "3",
+    "S4": "3",
+    "S5": "B",
+    "S6": "C",
+    "S7": "C"
+   },
    "moduleAnswers": {
-    "f1_q1": "B",
     "f1_q2": "C",
-    "f1_q3": "3",
-    "f1_q4": "C",
-    "f1_q5": "D",
     "f1_q6": "5",
     "f1_q7": "D",
     "f1_q8": "C",
-    "f1_q9": "3",
     "f1_q10": "B",
     "f1_q11": "B",
     "f1_q12": "D"
@@ -231,16 +258,20 @@
     "chaos": 5,
     "rootedness": 3
    },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "B",
+    "S3": "5",
+    "S4": "4",
+    "S5": "C",
+    "S6": "B",
+    "S7": "B"
+   },
    "moduleAnswers": {
-    "f1_q1": "C",
     "f1_q2": "D",
-    "f1_q3": "5",
-    "f1_q4": "B",
-    "f1_q5": "A",
     "f1_q6": "4",
     "f1_q7": "C",
     "f1_q8": "A",
-    "f1_q9": "4",
     "f1_q10": "C",
     "f1_q11": "D",
     "f1_q12": "D"
@@ -261,16 +292,20 @@
     "chaos": 6,
     "rootedness": 5
    },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "D",
+    "S3": "4",
+    "S4": "3",
+    "S5": "D",
+    "S6": "B",
+    "S7": "D"
+   },
    "moduleAnswers": {
-    "f1_q1": "D",
     "f1_q2": "D",
-    "f1_q3": "4",
-    "f1_q4": "B",
-    "f1_q5": "B",
     "f1_q6": "4",
     "f1_q7": "C",
     "f1_q8": "A",
-    "f1_q9": "3",
     "f1_q10": "D",
     "f1_q11": "D",
     "f1_q12": "C"
@@ -291,16 +326,20 @@
     "chaos": 3,
     "rootedness": 6
    },
+   "spineAnswers": {
+    "S1": "D",
+    "S2": "C",
+    "S3": "3",
+    "S4": "3",
+    "S5": "C",
+    "S6": "A",
+    "S7": "D"
+   },
    "moduleAnswers": {
-    "f1_q1": "C",
     "f1_q2": "B",
-    "f1_q3": "3",
-    "f1_q4": "A",
-    "f1_q5": "D",
     "f1_q6": "1",
     "f1_q7": "A",
     "f1_q8": "C",
-    "f1_q9": "3",
     "f1_q10": "A",
     "f1_q11": "D",
     "f1_q12": "B"
@@ -321,16 +360,20 @@
     "chaos": 6,
     "rootedness": 2
    },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "A",
+    "S3": "2",
+    "S4": "5",
+    "S5": "D",
+    "S6": "A",
+    "S7": "D"
+   },
    "moduleAnswers": {
-    "f1_q1": "D",
     "f1_q2": "C",
-    "f1_q3": "2",
-    "f1_q4": "A",
-    "f1_q5": "B",
     "f1_q6": "4",
     "f1_q7": "B",
     "f1_q8": "D",
-    "f1_q9": "5",
     "f1_q10": "D",
     "f1_q11": "C",
     "f1_q12": "C"
@@ -341,7 +384,26 @@
   {
    "id": "rnd_001",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "B",
+    "S3": "4",
+    "S4": "2",
+    "S5": "B",
+    "S6": "A",
+    "S2": "D",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "f1_q2": "D",
+    "f1_q6": "4",
+    "f1_q7": "A",
+    "f1_q8": "B",
+    "f1_q10": "B",
+    "f1_q11": "B",
+    "f1_q12": "B"
+   },
+   "winner": "WIL",
+   "winnerName": "Williams",
    "coreAnswers": {
     "q1": "A",
     "q2": "left",
@@ -367,28 +429,31 @@
     "q22": "right",
     "q23": "E",
     "q24": "4"
-   },
-   "moduleAnswers": {
-    "f1_q1": "B",
-    "f1_q2": "D",
-    "f1_q4": "A",
-    "f1_q5": "B",
-    "f1_q7": "A",
-    "f1_q8": "B",
-    "f1_q10": "B",
-    "f1_q11": "B",
-    "f1_q12": "B",
-    "f1_q3": "4",
-    "f1_q6": "4",
-    "f1_q9": "2"
-   },
-   "winner": "WIL",
-   "winnerName": "Williams"
+   }
   },
   {
    "id": "rnd_002",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "D",
+    "S3": "4",
+    "S4": "2",
+    "S5": "D",
+    "S6": "B",
+    "S2": "D",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "f1_q2": "B",
+    "f1_q6": "4",
+    "f1_q7": "C",
+    "f1_q8": "C",
+    "f1_q10": "C",
+    "f1_q11": "C",
+    "f1_q12": "D"
+   },
+   "winner": "WIL",
+   "winnerName": "Williams",
    "coreAnswers": {
     "q1": "A",
     "q2": "left",
@@ -414,28 +479,31 @@
     "q22": "right",
     "q23": "B",
     "q24": "5"
-   },
-   "moduleAnswers": {
-    "f1_q1": "D",
-    "f1_q2": "B",
-    "f1_q4": "B",
-    "f1_q5": "D",
-    "f1_q7": "C",
-    "f1_q8": "C",
-    "f1_q10": "C",
-    "f1_q11": "C",
-    "f1_q12": "D",
-    "f1_q3": "4",
-    "f1_q6": "4",
-    "f1_q9": "2"
-   },
-   "winner": "WIL",
-   "winnerName": "Williams"
+   }
   },
   {
    "id": "rnd_003",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "B",
+    "S3": "3",
+    "S4": "3",
+    "S5": "C",
+    "S6": "A",
+    "S2": "D",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "f1_q2": "D",
+    "f1_q6": "4",
+    "f1_q7": "D",
+    "f1_q8": "D",
+    "f1_q10": "C",
+    "f1_q11": "D",
+    "f1_q12": "C"
+   },
+   "winner": "RB",
+   "winnerName": "Racing Bulls",
    "coreAnswers": {
     "q1": "D",
     "q2": "right",
@@ -461,28 +529,31 @@
     "q22": "right",
     "q23": "D",
     "q24": "2"
-   },
-   "moduleAnswers": {
-    "f1_q1": "C",
-    "f1_q2": "D",
-    "f1_q4": "A",
-    "f1_q5": "B",
-    "f1_q7": "D",
-    "f1_q8": "D",
-    "f1_q10": "C",
-    "f1_q11": "D",
-    "f1_q12": "C",
-    "f1_q3": "3",
-    "f1_q6": "4",
-    "f1_q9": "3"
-   },
-   "winner": "RB",
-   "winnerName": "Racing Bulls"
+   }
   },
   {
    "id": "rnd_004",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "A",
+    "S3": "1",
+    "S4": "4",
+    "S5": "D",
+    "S6": "A",
+    "S2": "D",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "f1_q2": "B",
+    "f1_q6": "5",
+    "f1_q7": "D",
+    "f1_q8": "D",
+    "f1_q10": "B",
+    "f1_q11": "A",
+    "f1_q12": "B"
+   },
+   "winner": "ALP",
+   "winnerName": "Alpine",
    "coreAnswers": {
     "q1": "D",
     "q2": "left",
@@ -508,28 +579,31 @@
     "q22": "right",
     "q23": "C",
     "q24": "5"
-   },
-   "moduleAnswers": {
-    "f1_q1": "D",
-    "f1_q2": "B",
-    "f1_q4": "A",
-    "f1_q5": "A",
-    "f1_q7": "D",
-    "f1_q8": "D",
-    "f1_q10": "B",
-    "f1_q11": "A",
-    "f1_q12": "B",
-    "f1_q3": "1",
-    "f1_q6": "5",
-    "f1_q9": "4"
-   },
-   "winner": "MCL",
-   "winnerName": "McLaren"
+   }
   },
   {
    "id": "rnd_005",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "C",
+    "S3": "1",
+    "S4": "1",
+    "S5": "D",
+    "S6": "A",
+    "S2": "C",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "f1_q2": "D",
+    "f1_q6": "2",
+    "f1_q7": "A",
+    "f1_q8": "C",
+    "f1_q10": "D",
+    "f1_q11": "B",
+    "f1_q12": "D"
+   },
+   "winner": "FER",
+   "winnerName": "Ferrari",
    "coreAnswers": {
     "q1": "E",
     "q2": "right",
@@ -555,28 +629,31 @@
     "q22": "left",
     "q23": "A",
     "q24": "3"
-   },
-   "moduleAnswers": {
-    "f1_q1": "D",
-    "f1_q2": "D",
-    "f1_q4": "A",
-    "f1_q5": "C",
-    "f1_q7": "A",
-    "f1_q8": "C",
-    "f1_q10": "D",
-    "f1_q11": "B",
-    "f1_q12": "D",
-    "f1_q3": "1",
-    "f1_q6": "2",
-    "f1_q9": "1"
-   },
-   "winner": "FER",
-   "winnerName": "Ferrari"
+   }
   },
   {
    "id": "rnd_006",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "C",
+    "S3": "2",
+    "S4": "3",
+    "S5": "C",
+    "S6": "C",
+    "S2": "B",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "f1_q2": "A",
+    "f1_q6": "5",
+    "f1_q7": "A",
+    "f1_q8": "D",
+    "f1_q10": "C",
+    "f1_q11": "C",
+    "f1_q12": "A"
+   },
+   "winner": "MER",
+   "winnerName": "Mercedes",
    "coreAnswers": {
     "q1": "B",
     "q2": "right",
@@ -602,28 +679,31 @@
     "q22": "left",
     "q23": "E",
     "q24": "5"
-   },
-   "moduleAnswers": {
-    "f1_q1": "C",
-    "f1_q2": "A",
-    "f1_q4": "C",
-    "f1_q5": "C",
-    "f1_q7": "A",
-    "f1_q8": "D",
-    "f1_q10": "C",
-    "f1_q11": "C",
-    "f1_q12": "A",
-    "f1_q3": "2",
-    "f1_q6": "5",
-    "f1_q9": "3"
-   },
-   "winner": "MER",
-   "winnerName": "Mercedes"
+   }
   },
   {
    "id": "rnd_007",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "D",
+    "S3": "4",
+    "S4": "3",
+    "S5": "B",
+    "S6": "C",
+    "S2": "C",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "f1_q2": "A",
+    "f1_q6": "3",
+    "f1_q7": "B",
+    "f1_q8": "D",
+    "f1_q10": "C",
+    "f1_q11": "D",
+    "f1_q12": "A"
+   },
+   "winner": "AST",
+   "winnerName": "Aston Martin",
    "coreAnswers": {
     "q1": "B",
     "q2": "right",
@@ -649,28 +729,31 @@
     "q22": "right",
     "q23": "C",
     "q24": "5"
-   },
-   "moduleAnswers": {
-    "f1_q1": "B",
-    "f1_q2": "A",
-    "f1_q4": "C",
-    "f1_q5": "D",
-    "f1_q7": "B",
-    "f1_q8": "D",
-    "f1_q10": "C",
-    "f1_q11": "D",
-    "f1_q12": "A",
-    "f1_q3": "4",
-    "f1_q6": "3",
-    "f1_q9": "3"
-   },
-   "winner": "AST",
-   "winnerName": "Aston Martin"
+   }
   },
   {
    "id": "rnd_008",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "C",
+    "S3": "5",
+    "S4": "1",
+    "S5": "C",
+    "S6": "D",
+    "S2": "C",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "f1_q2": "C",
+    "f1_q6": "3",
+    "f1_q7": "D",
+    "f1_q8": "A",
+    "f1_q10": "D",
+    "f1_q11": "A",
+    "f1_q12": "C"
+   },
+   "winner": "FER",
+   "winnerName": "Ferrari",
    "coreAnswers": {
     "q1": "A",
     "q2": "right",
@@ -696,28 +779,31 @@
     "q22": "right",
     "q23": "E",
     "q24": "3"
-   },
-   "moduleAnswers": {
-    "f1_q1": "C",
-    "f1_q2": "C",
-    "f1_q4": "D",
-    "f1_q5": "C",
-    "f1_q7": "D",
-    "f1_q8": "A",
-    "f1_q10": "D",
-    "f1_q11": "A",
-    "f1_q12": "C",
-    "f1_q3": "5",
-    "f1_q6": "3",
-    "f1_q9": "1"
-   },
-   "winner": "FER",
-   "winnerName": "Ferrari"
+   }
   },
   {
    "id": "rnd_009",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "A",
+    "S3": "3",
+    "S4": "4",
+    "S5": "A",
+    "S6": "C",
+    "S2": "B",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "f1_q2": "B",
+    "f1_q6": "3",
+    "f1_q7": "A",
+    "f1_q8": "A",
+    "f1_q10": "A",
+    "f1_q11": "A",
+    "f1_q12": "B"
+   },
+   "winner": "AUD",
+   "winnerName": "Audi",
    "coreAnswers": {
     "q1": "D",
     "q2": "left",
@@ -743,28 +829,31 @@
     "q22": "right",
     "q23": "A",
     "q24": "5"
-   },
-   "moduleAnswers": {
-    "f1_q1": "A",
-    "f1_q2": "B",
-    "f1_q4": "C",
-    "f1_q5": "A",
-    "f1_q7": "A",
-    "f1_q8": "A",
-    "f1_q10": "A",
-    "f1_q11": "A",
-    "f1_q12": "B",
-    "f1_q3": "3",
-    "f1_q6": "3",
-    "f1_q9": "4"
-   },
-   "winner": "MCL",
-   "winnerName": "McLaren"
+   }
   },
   {
    "id": "rnd_010",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "D",
+    "S3": "4",
+    "S4": "1",
+    "S5": "D",
+    "S6": "B",
+    "S2": "B",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "f1_q2": "A",
+    "f1_q6": "4",
+    "f1_q7": "C",
+    "f1_q8": "C",
+    "f1_q10": "A",
+    "f1_q11": "D",
+    "f1_q12": "D"
+   },
+   "winner": "WIL",
+   "winnerName": "Williams",
    "coreAnswers": {
     "q1": "E",
     "q2": "left",
@@ -790,28 +879,31 @@
     "q22": "right",
     "q23": "D",
     "q24": "3"
-   },
-   "moduleAnswers": {
-    "f1_q1": "D",
-    "f1_q2": "A",
-    "f1_q4": "B",
-    "f1_q5": "D",
-    "f1_q7": "C",
-    "f1_q8": "C",
-    "f1_q10": "A",
-    "f1_q11": "D",
-    "f1_q12": "D",
-    "f1_q3": "4",
-    "f1_q6": "4",
-    "f1_q9": "1"
-   },
-   "winner": "WIL",
-   "winnerName": "Williams"
+   }
   },
   {
    "id": "rnd_011",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "C",
+    "S3": "2",
+    "S4": "2",
+    "S5": "C",
+    "S6": "D",
+    "S2": "D",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "f1_q2": "A",
+    "f1_q6": "3",
+    "f1_q7": "C",
+    "f1_q8": "B",
+    "f1_q10": "B",
+    "f1_q11": "C",
+    "f1_q12": "B"
+   },
+   "winner": "FER",
+   "winnerName": "Ferrari",
    "coreAnswers": {
     "q1": "A",
     "q2": "right",
@@ -837,28 +929,31 @@
     "q22": "right",
     "q23": "C",
     "q24": "2"
-   },
-   "moduleAnswers": {
-    "f1_q1": "C",
-    "f1_q2": "A",
-    "f1_q4": "D",
-    "f1_q5": "C",
-    "f1_q7": "C",
-    "f1_q8": "B",
-    "f1_q10": "B",
-    "f1_q11": "C",
-    "f1_q12": "B",
-    "f1_q3": "2",
-    "f1_q6": "3",
-    "f1_q9": "2"
-   },
-   "winner": "FER",
-   "winnerName": "Ferrari"
+   }
   },
   {
    "id": "rnd_012",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "B",
+    "S3": "2",
+    "S4": "4",
+    "S5": "A",
+    "S6": "B",
+    "S2": "C",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "f1_q2": "C",
+    "f1_q6": "2",
+    "f1_q7": "D",
+    "f1_q8": "D",
+    "f1_q10": "A",
+    "f1_q11": "D",
+    "f1_q12": "B"
+   },
+   "winner": "AST",
+   "winnerName": "Aston Martin",
    "coreAnswers": {
     "q1": "C",
     "q2": "right",
@@ -884,28 +979,31 @@
     "q22": "right",
     "q23": "E",
     "q24": "5"
-   },
-   "moduleAnswers": {
-    "f1_q1": "A",
-    "f1_q2": "C",
-    "f1_q4": "B",
-    "f1_q5": "B",
-    "f1_q7": "D",
-    "f1_q8": "D",
-    "f1_q10": "A",
-    "f1_q11": "D",
-    "f1_q12": "B",
-    "f1_q3": "2",
-    "f1_q6": "2",
-    "f1_q9": "4"
-   },
-   "winner": "AST",
-   "winnerName": "Aston Martin"
+   }
   },
   {
    "id": "rnd_013",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "A",
+    "S3": "3",
+    "S4": "2",
+    "S5": "B",
+    "S6": "B",
+    "S2": "D",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "f1_q2": "A",
+    "f1_q6": "2",
+    "f1_q7": "C",
+    "f1_q8": "A",
+    "f1_q10": "C",
+    "f1_q11": "D",
+    "f1_q12": "C"
+   },
+   "winner": "RB",
+   "winnerName": "Racing Bulls",
    "coreAnswers": {
     "q1": "C",
     "q2": "left",
@@ -931,28 +1029,31 @@
     "q22": "left",
     "q23": "C",
     "q24": "1"
-   },
-   "moduleAnswers": {
-    "f1_q1": "B",
-    "f1_q2": "A",
-    "f1_q4": "B",
-    "f1_q5": "A",
-    "f1_q7": "C",
-    "f1_q8": "A",
-    "f1_q10": "C",
-    "f1_q11": "D",
-    "f1_q12": "C",
-    "f1_q3": "3",
-    "f1_q6": "2",
-    "f1_q9": "2"
-   },
-   "winner": "RB",
-   "winnerName": "Racing Bulls"
+   }
   },
   {
    "id": "rnd_014",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "A",
+    "S3": "1",
+    "S4": "5",
+    "S5": "B",
+    "S6": "D",
+    "S2": "C",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "f1_q2": "B",
+    "f1_q6": "2",
+    "f1_q7": "B",
+    "f1_q8": "C",
+    "f1_q10": "A",
+    "f1_q11": "A",
+    "f1_q12": "C"
+   },
+   "winner": "MCL",
+   "winnerName": "McLaren",
    "coreAnswers": {
     "q1": "C",
     "q2": "right",
@@ -978,28 +1079,31 @@
     "q22": "right",
     "q23": "D",
     "q24": "2"
-   },
-   "moduleAnswers": {
-    "f1_q1": "B",
-    "f1_q2": "B",
-    "f1_q4": "D",
-    "f1_q5": "A",
-    "f1_q7": "B",
-    "f1_q8": "C",
-    "f1_q10": "A",
-    "f1_q11": "A",
-    "f1_q12": "C",
-    "f1_q3": "1",
-    "f1_q6": "2",
-    "f1_q9": "5"
-   },
-   "winner": "MCL",
-   "winnerName": "McLaren"
+   }
   },
   {
    "id": "rnd_015",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "B",
+    "S3": "3",
+    "S4": "1",
+    "S5": "D",
+    "S6": "B",
+    "S2": "D",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "f1_q2": "A",
+    "f1_q6": "1",
+    "f1_q7": "B",
+    "f1_q8": "D",
+    "f1_q10": "D",
+    "f1_q11": "C",
+    "f1_q12": "B"
+   },
+   "winner": "MCL",
+   "winnerName": "McLaren",
    "coreAnswers": {
     "q1": "B",
     "q2": "right",
@@ -1025,28 +1129,31 @@
     "q22": "right",
     "q23": "B",
     "q24": "2"
-   },
-   "moduleAnswers": {
-    "f1_q1": "D",
-    "f1_q2": "A",
-    "f1_q4": "B",
-    "f1_q5": "B",
-    "f1_q7": "B",
-    "f1_q8": "D",
-    "f1_q10": "D",
-    "f1_q11": "C",
-    "f1_q12": "B",
-    "f1_q3": "3",
-    "f1_q6": "1",
-    "f1_q9": "1"
-   },
-   "winner": "MCL",
-   "winnerName": "McLaren"
+   }
   },
   {
    "id": "rnd_016",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "B",
+    "S3": "4",
+    "S4": "5",
+    "S5": "B",
+    "S6": "A",
+    "S2": "A",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "f1_q2": "C",
+    "f1_q6": "5",
+    "f1_q7": "B",
+    "f1_q8": "B",
+    "f1_q10": "D",
+    "f1_q11": "B",
+    "f1_q12": "B"
+   },
+   "winner": "WIL",
+   "winnerName": "Williams",
    "coreAnswers": {
     "q1": "A",
     "q2": "right",
@@ -1072,28 +1179,31 @@
     "q22": "left",
     "q23": "B",
     "q24": "1"
-   },
-   "moduleAnswers": {
-    "f1_q1": "B",
-    "f1_q2": "C",
-    "f1_q4": "A",
-    "f1_q5": "B",
-    "f1_q7": "B",
-    "f1_q8": "B",
-    "f1_q10": "D",
-    "f1_q11": "B",
-    "f1_q12": "B",
-    "f1_q3": "4",
-    "f1_q6": "5",
-    "f1_q9": "5"
-   },
-   "winner": "CAD",
-   "winnerName": "Cadillac"
+   }
   },
   {
    "id": "rnd_017",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "D",
+    "S3": "1",
+    "S4": "2",
+    "S5": "A",
+    "S6": "B",
+    "S2": "C",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "f1_q2": "C",
+    "f1_q6": "5",
+    "f1_q7": "D",
+    "f1_q8": "B",
+    "f1_q10": "C",
+    "f1_q11": "D",
+    "f1_q12": "C"
+   },
+   "winner": "ALP",
+   "winnerName": "Alpine",
    "coreAnswers": {
     "q1": "C",
     "q2": "right",
@@ -1119,28 +1229,31 @@
     "q22": "right",
     "q23": "B",
     "q24": "4"
-   },
-   "moduleAnswers": {
-    "f1_q1": "A",
-    "f1_q2": "C",
-    "f1_q4": "B",
-    "f1_q5": "D",
-    "f1_q7": "D",
-    "f1_q8": "B",
-    "f1_q10": "C",
-    "f1_q11": "D",
-    "f1_q12": "C",
-    "f1_q3": "1",
-    "f1_q6": "5",
-    "f1_q9": "2"
-   },
-   "winner": "ALP",
-   "winnerName": "Alpine"
+   }
   },
   {
    "id": "rnd_018",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "B",
+    "S3": "3",
+    "S4": "2",
+    "S5": "A",
+    "S6": "B",
+    "S2": "D",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "f1_q2": "A",
+    "f1_q6": "5",
+    "f1_q7": "B",
+    "f1_q8": "C",
+    "f1_q10": "C",
+    "f1_q11": "B",
+    "f1_q12": "A"
+   },
+   "winner": "ALP",
+   "winnerName": "Alpine",
    "coreAnswers": {
     "q1": "E",
     "q2": "right",
@@ -1166,28 +1279,31 @@
     "q22": "right",
     "q23": "E",
     "q24": "3"
-   },
-   "moduleAnswers": {
-    "f1_q1": "A",
-    "f1_q2": "A",
-    "f1_q4": "B",
-    "f1_q5": "B",
-    "f1_q7": "B",
-    "f1_q8": "C",
-    "f1_q10": "C",
-    "f1_q11": "B",
-    "f1_q12": "A",
-    "f1_q3": "3",
-    "f1_q6": "5",
-    "f1_q9": "2"
-   },
-   "winner": "ALP",
-   "winnerName": "Alpine"
+   }
   },
   {
    "id": "rnd_019",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "D",
+    "S3": "1",
+    "S4": "4",
+    "S5": "C",
+    "S6": "A",
+    "S2": "C",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "f1_q2": "A",
+    "f1_q6": "5",
+    "f1_q7": "B",
+    "f1_q8": "B",
+    "f1_q10": "D",
+    "f1_q11": "B",
+    "f1_q12": "A"
+   },
+   "winner": "CAD",
+   "winnerName": "Cadillac",
    "coreAnswers": {
     "q1": "C",
     "q2": "left",
@@ -1213,28 +1329,31 @@
     "q22": "left",
     "q23": "B",
     "q24": "1"
-   },
-   "moduleAnswers": {
-    "f1_q1": "C",
-    "f1_q2": "A",
-    "f1_q4": "A",
-    "f1_q5": "D",
-    "f1_q7": "B",
-    "f1_q8": "B",
-    "f1_q10": "D",
-    "f1_q11": "B",
-    "f1_q12": "A",
-    "f1_q3": "1",
-    "f1_q6": "5",
-    "f1_q9": "4"
-   },
-   "winner": "ALP",
-   "winnerName": "Alpine"
+   }
   },
   {
    "id": "rnd_020",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "C",
+    "S3": "5",
+    "S4": "4",
+    "S5": "D",
+    "S6": "D",
+    "S2": "A",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "f1_q2": "D",
+    "f1_q6": "3",
+    "f1_q7": "A",
+    "f1_q8": "D",
+    "f1_q10": "D",
+    "f1_q11": "C",
+    "f1_q12": "A"
+   },
+   "winner": "WIL",
+   "winnerName": "Williams",
    "coreAnswers": {
     "q1": "B",
     "q2": "right",
@@ -1260,28 +1379,31 @@
     "q22": "right",
     "q23": "B",
     "q24": "2"
-   },
-   "moduleAnswers": {
-    "f1_q1": "D",
-    "f1_q2": "D",
-    "f1_q4": "D",
-    "f1_q5": "C",
-    "f1_q7": "A",
-    "f1_q8": "D",
-    "f1_q10": "D",
-    "f1_q11": "C",
-    "f1_q12": "A",
-    "f1_q3": "5",
-    "f1_q6": "3",
-    "f1_q9": "4"
-   },
-   "winner": "AST",
-   "winnerName": "Aston Martin"
+   }
   },
   {
    "id": "rnd_021",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "A",
+    "S3": "5",
+    "S4": "2",
+    "S5": "C",
+    "S6": "B",
+    "S2": "D",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "f1_q2": "B",
+    "f1_q6": "4",
+    "f1_q7": "B",
+    "f1_q8": "D",
+    "f1_q10": "A",
+    "f1_q11": "B",
+    "f1_q12": "A"
+   },
+   "winner": "MCL",
+   "winnerName": "McLaren",
    "coreAnswers": {
     "q1": "E",
     "q2": "left",
@@ -1307,28 +1429,31 @@
     "q22": "right",
     "q23": "D",
     "q24": "2"
-   },
-   "moduleAnswers": {
-    "f1_q1": "C",
-    "f1_q2": "B",
-    "f1_q4": "B",
-    "f1_q5": "A",
-    "f1_q7": "B",
-    "f1_q8": "D",
-    "f1_q10": "A",
-    "f1_q11": "B",
-    "f1_q12": "A",
-    "f1_q3": "5",
-    "f1_q6": "4",
-    "f1_q9": "2"
-   },
-   "winner": "WIL",
-   "winnerName": "Williams"
+   }
   },
   {
    "id": "rnd_022",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "D",
+    "S3": "1",
+    "S4": "4",
+    "S5": "D",
+    "S6": "A",
+    "S2": "C",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "f1_q2": "D",
+    "f1_q6": "2",
+    "f1_q7": "B",
+    "f1_q8": "B",
+    "f1_q10": "D",
+    "f1_q11": "A",
+    "f1_q12": "B"
+   },
+   "winner": "AST",
+   "winnerName": "Aston Martin",
    "coreAnswers": {
     "q1": "A",
     "q2": "right",
@@ -1354,28 +1479,31 @@
     "q22": "right",
     "q23": "D",
     "q24": "2"
-   },
-   "moduleAnswers": {
-    "f1_q1": "D",
-    "f1_q2": "D",
-    "f1_q4": "A",
-    "f1_q5": "D",
-    "f1_q7": "B",
-    "f1_q8": "B",
-    "f1_q10": "D",
-    "f1_q11": "A",
-    "f1_q12": "B",
-    "f1_q3": "1",
-    "f1_q6": "2",
-    "f1_q9": "4"
-   },
-   "winner": "CAD",
-   "winnerName": "Cadillac"
+   }
   },
   {
    "id": "rnd_023",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "A",
+    "S3": "5",
+    "S4": "2",
+    "S5": "B",
+    "S6": "B",
+    "S2": "A",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "f1_q2": "D",
+    "f1_q6": "5",
+    "f1_q7": "D",
+    "f1_q8": "A",
+    "f1_q10": "A",
+    "f1_q11": "B",
+    "f1_q12": "B"
+   },
+   "winner": "WIL",
+   "winnerName": "Williams",
    "coreAnswers": {
     "q1": "E",
     "q2": "right",
@@ -1401,28 +1529,31 @@
     "q22": "right",
     "q23": "A",
     "q24": "1"
-   },
-   "moduleAnswers": {
-    "f1_q1": "B",
-    "f1_q2": "D",
-    "f1_q4": "B",
-    "f1_q5": "A",
-    "f1_q7": "D",
-    "f1_q8": "A",
-    "f1_q10": "A",
-    "f1_q11": "B",
-    "f1_q12": "B",
-    "f1_q3": "5",
-    "f1_q6": "5",
-    "f1_q9": "2"
-   },
-   "winner": "WIL",
-   "winnerName": "Williams"
+   }
   },
   {
    "id": "rnd_024",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "D",
+    "S3": "5",
+    "S4": "5",
+    "S5": "C",
+    "S6": "A",
+    "S2": "C",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "f1_q2": "C",
+    "f1_q6": "2",
+    "f1_q7": "C",
+    "f1_q8": "B",
+    "f1_q10": "A",
+    "f1_q11": "B",
+    "f1_q12": "B"
+   },
+   "winner": "AUD",
+   "winnerName": "Audi",
    "coreAnswers": {
     "q1": "A",
     "q2": "left",
@@ -1448,28 +1579,31 @@
     "q22": "left",
     "q23": "B",
     "q24": "4"
-   },
-   "moduleAnswers": {
-    "f1_q1": "C",
-    "f1_q2": "C",
-    "f1_q4": "A",
-    "f1_q5": "D",
-    "f1_q7": "C",
-    "f1_q8": "B",
-    "f1_q10": "A",
-    "f1_q11": "B",
-    "f1_q12": "B",
-    "f1_q3": "5",
-    "f1_q6": "2",
-    "f1_q9": "5"
-   },
-   "winner": "AUD",
-   "winnerName": "Audi"
+   }
   },
   {
    "id": "rnd_025",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "D",
+    "S3": "3",
+    "S4": "2",
+    "S5": "A",
+    "S6": "D",
+    "S2": "B",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "f1_q2": "A",
+    "f1_q6": "5",
+    "f1_q7": "A",
+    "f1_q8": "A",
+    "f1_q10": "D",
+    "f1_q11": "A",
+    "f1_q12": "B"
+   },
+   "winner": "MCL",
+   "winnerName": "McLaren",
    "coreAnswers": {
     "q1": "A",
     "q2": "left",
@@ -1495,28 +1629,31 @@
     "q22": "right",
     "q23": "B",
     "q24": "1"
-   },
-   "moduleAnswers": {
-    "f1_q1": "A",
-    "f1_q2": "A",
-    "f1_q4": "D",
-    "f1_q5": "D",
-    "f1_q7": "A",
-    "f1_q8": "A",
-    "f1_q10": "D",
-    "f1_q11": "A",
-    "f1_q12": "B",
-    "f1_q3": "3",
-    "f1_q6": "5",
-    "f1_q9": "2"
-   },
-   "winner": "MCL",
-   "winnerName": "McLaren"
+   }
   },
   {
    "id": "rnd_026",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "D",
+    "S3": "1",
+    "S4": "1",
+    "S5": "D",
+    "S6": "C",
+    "S2": "B",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "f1_q2": "A",
+    "f1_q6": "1",
+    "f1_q7": "D",
+    "f1_q8": "A",
+    "f1_q10": "D",
+    "f1_q11": "D",
+    "f1_q12": "D"
+   },
+   "winner": "ALP",
+   "winnerName": "Alpine",
    "coreAnswers": {
     "q1": "C",
     "q2": "right",
@@ -1542,28 +1679,31 @@
     "q22": "right",
     "q23": "D",
     "q24": "3"
-   },
-   "moduleAnswers": {
-    "f1_q1": "D",
-    "f1_q2": "A",
-    "f1_q4": "C",
-    "f1_q5": "D",
-    "f1_q7": "D",
-    "f1_q8": "A",
-    "f1_q10": "D",
-    "f1_q11": "D",
-    "f1_q12": "D",
-    "f1_q3": "1",
-    "f1_q6": "1",
-    "f1_q9": "1"
-   },
-   "winner": "FER",
-   "winnerName": "Ferrari"
+   }
   },
   {
    "id": "rnd_027",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "C",
+    "S3": "4",
+    "S4": "5",
+    "S5": "A",
+    "S6": "D",
+    "S2": "A",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "f1_q2": "A",
+    "f1_q6": "4",
+    "f1_q7": "D",
+    "f1_q8": "B",
+    "f1_q10": "B",
+    "f1_q11": "A",
+    "f1_q12": "A"
+   },
+   "winner": "FER",
+   "winnerName": "Ferrari",
    "coreAnswers": {
     "q1": "B",
     "q2": "right",
@@ -1589,28 +1729,31 @@
     "q22": "left",
     "q23": "A",
     "q24": "5"
-   },
-   "moduleAnswers": {
-    "f1_q1": "A",
-    "f1_q2": "A",
-    "f1_q4": "D",
-    "f1_q5": "C",
-    "f1_q7": "D",
-    "f1_q8": "B",
-    "f1_q10": "B",
-    "f1_q11": "A",
-    "f1_q12": "A",
-    "f1_q3": "4",
-    "f1_q6": "4",
-    "f1_q9": "5"
-   },
-   "winner": "FER",
-   "winnerName": "Ferrari"
+   }
   },
   {
    "id": "rnd_028",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "C",
+    "S3": "1",
+    "S4": "5",
+    "S5": "A",
+    "S6": "C",
+    "S2": "A",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "f1_q2": "B",
+    "f1_q6": "4",
+    "f1_q7": "C",
+    "f1_q8": "D",
+    "f1_q10": "A",
+    "f1_q11": "C",
+    "f1_q12": "A"
+   },
+   "winner": "FER",
+   "winnerName": "Ferrari",
    "coreAnswers": {
     "q1": "D",
     "q2": "right",
@@ -1636,28 +1779,31 @@
     "q22": "right",
     "q23": "C",
     "q24": "5"
-   },
-   "moduleAnswers": {
-    "f1_q1": "A",
-    "f1_q2": "B",
-    "f1_q4": "C",
-    "f1_q5": "C",
-    "f1_q7": "C",
-    "f1_q8": "D",
-    "f1_q10": "A",
-    "f1_q11": "C",
-    "f1_q12": "A",
-    "f1_q3": "1",
-    "f1_q6": "4",
-    "f1_q9": "5"
-   },
-   "winner": "FER",
-   "winnerName": "Ferrari"
+   }
   },
   {
    "id": "rnd_029",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "D",
+    "S3": "4",
+    "S4": "4",
+    "S5": "B",
+    "S6": "A",
+    "S2": "A",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "f1_q2": "A",
+    "f1_q6": "1",
+    "f1_q7": "C",
+    "f1_q8": "B",
+    "f1_q10": "D",
+    "f1_q11": "B",
+    "f1_q12": "D"
+   },
+   "winner": "WIL",
+   "winnerName": "Williams",
    "coreAnswers": {
     "q1": "E",
     "q2": "left",
@@ -1683,28 +1829,31 @@
     "q22": "left",
     "q23": "D",
     "q24": "4"
-   },
-   "moduleAnswers": {
-    "f1_q1": "B",
-    "f1_q2": "A",
-    "f1_q4": "A",
-    "f1_q5": "D",
-    "f1_q7": "C",
-    "f1_q8": "B",
-    "f1_q10": "D",
-    "f1_q11": "B",
-    "f1_q12": "D",
-    "f1_q3": "4",
-    "f1_q6": "1",
-    "f1_q9": "4"
-   },
-   "winner": "WIL",
-   "winnerName": "Williams"
+   }
   },
   {
    "id": "rnd_030",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "C",
+    "S3": "1",
+    "S4": "3",
+    "S5": "B",
+    "S6": "A",
+    "S2": "C",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "f1_q2": "B",
+    "f1_q6": "1",
+    "f1_q7": "A",
+    "f1_q8": "B",
+    "f1_q10": "B",
+    "f1_q11": "D",
+    "f1_q12": "A"
+   },
+   "winner": "AUD",
+   "winnerName": "Audi",
    "coreAnswers": {
     "q1": "C",
     "q2": "right",
@@ -1730,28 +1879,31 @@
     "q22": "right",
     "q23": "C",
     "q24": "3"
-   },
-   "moduleAnswers": {
-    "f1_q1": "B",
-    "f1_q2": "B",
-    "f1_q4": "A",
-    "f1_q5": "C",
-    "f1_q7": "A",
-    "f1_q8": "B",
-    "f1_q10": "B",
-    "f1_q11": "D",
-    "f1_q12": "A",
-    "f1_q3": "1",
-    "f1_q6": "1",
-    "f1_q9": "3"
-   },
-   "winner": "AUD",
-   "winnerName": "Audi"
+   }
   },
   {
    "id": "rnd_031",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "D",
+    "S3": "1",
+    "S4": "1",
+    "S5": "C",
+    "S6": "C",
+    "S2": "B",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "f1_q2": "D",
+    "f1_q6": "1",
+    "f1_q7": "D",
+    "f1_q8": "A",
+    "f1_q10": "C",
+    "f1_q11": "B",
+    "f1_q12": "D"
+   },
+   "winner": "ALP",
+   "winnerName": "Alpine",
    "coreAnswers": {
     "q1": "A",
     "q2": "left",
@@ -1777,28 +1929,31 @@
     "q22": "right",
     "q23": "C",
     "q24": "3"
-   },
-   "moduleAnswers": {
-    "f1_q1": "C",
-    "f1_q2": "D",
-    "f1_q4": "C",
-    "f1_q5": "D",
-    "f1_q7": "D",
-    "f1_q8": "A",
-    "f1_q10": "C",
-    "f1_q11": "B",
-    "f1_q12": "D",
-    "f1_q3": "1",
-    "f1_q6": "1",
-    "f1_q9": "1"
-   },
-   "winner": "FER",
-   "winnerName": "Ferrari"
+   }
   },
   {
    "id": "rnd_032",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "D",
+    "S3": "5",
+    "S4": "5",
+    "S5": "C",
+    "S6": "C",
+    "S2": "D",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "f1_q2": "A",
+    "f1_q6": "5",
+    "f1_q7": "D",
+    "f1_q8": "B",
+    "f1_q10": "A",
+    "f1_q11": "A",
+    "f1_q12": "D"
+   },
+   "winner": "ALP",
+   "winnerName": "Alpine",
    "coreAnswers": {
     "q1": "A",
     "q2": "right",
@@ -1824,28 +1979,31 @@
     "q22": "right",
     "q23": "D",
     "q24": "5"
-   },
-   "moduleAnswers": {
-    "f1_q1": "C",
-    "f1_q2": "A",
-    "f1_q4": "C",
-    "f1_q5": "D",
-    "f1_q7": "D",
-    "f1_q8": "B",
-    "f1_q10": "A",
-    "f1_q11": "A",
-    "f1_q12": "D",
-    "f1_q3": "5",
-    "f1_q6": "5",
-    "f1_q9": "5"
-   },
-   "winner": "ALP",
-   "winnerName": "Alpine"
+   }
   },
   {
    "id": "rnd_033",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "B",
+    "S3": "1",
+    "S4": "4",
+    "S5": "B",
+    "S6": "B",
+    "S2": "B",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "f1_q2": "A",
+    "f1_q6": "3",
+    "f1_q7": "B",
+    "f1_q8": "A",
+    "f1_q10": "A",
+    "f1_q11": "D",
+    "f1_q12": "D"
+   },
+   "winner": "AST",
+   "winnerName": "Aston Martin",
    "coreAnswers": {
     "q1": "A",
     "q2": "left",
@@ -1871,28 +2029,31 @@
     "q22": "left",
     "q23": "E",
     "q24": "5"
-   },
-   "moduleAnswers": {
-    "f1_q1": "B",
-    "f1_q2": "A",
-    "f1_q4": "B",
-    "f1_q5": "B",
-    "f1_q7": "B",
-    "f1_q8": "A",
-    "f1_q10": "A",
-    "f1_q11": "D",
-    "f1_q12": "D",
-    "f1_q3": "1",
-    "f1_q6": "3",
-    "f1_q9": "4"
-   },
-   "winner": "AST",
-   "winnerName": "Aston Martin"
+   }
   },
   {
    "id": "rnd_034",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "B",
+    "S3": "5",
+    "S4": "4",
+    "S5": "A",
+    "S6": "C",
+    "S2": "D",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "f1_q2": "D",
+    "f1_q6": "4",
+    "f1_q7": "C",
+    "f1_q8": "A",
+    "f1_q10": "C",
+    "f1_q11": "C",
+    "f1_q12": "A"
+   },
+   "winner": "RB",
+   "winnerName": "Racing Bulls",
    "coreAnswers": {
     "q1": "C",
     "q2": "left",
@@ -1918,28 +2079,31 @@
     "q22": "right",
     "q23": "B",
     "q24": "1"
-   },
-   "moduleAnswers": {
-    "f1_q1": "A",
-    "f1_q2": "D",
-    "f1_q4": "C",
-    "f1_q5": "B",
-    "f1_q7": "C",
-    "f1_q8": "A",
-    "f1_q10": "C",
-    "f1_q11": "C",
-    "f1_q12": "A",
-    "f1_q3": "5",
-    "f1_q6": "4",
-    "f1_q9": "4"
-   },
-   "winner": "RB",
-   "winnerName": "Racing Bulls"
+   }
   },
   {
    "id": "rnd_035",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "D",
+    "S3": "3",
+    "S4": "5",
+    "S5": "C",
+    "S6": "A",
+    "S2": "D",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "f1_q2": "D",
+    "f1_q6": "4",
+    "f1_q7": "C",
+    "f1_q8": "B",
+    "f1_q10": "C",
+    "f1_q11": "B",
+    "f1_q12": "C"
+   },
+   "winner": "WIL",
+   "winnerName": "Williams",
    "coreAnswers": {
     "q1": "C",
     "q2": "right",
@@ -1965,28 +2129,31 @@
     "q22": "left",
     "q23": "D",
     "q24": "3"
-   },
-   "moduleAnswers": {
-    "f1_q1": "C",
-    "f1_q2": "D",
-    "f1_q4": "A",
-    "f1_q5": "D",
-    "f1_q7": "C",
-    "f1_q8": "B",
-    "f1_q10": "C",
-    "f1_q11": "B",
-    "f1_q12": "C",
-    "f1_q3": "3",
-    "f1_q6": "4",
-    "f1_q9": "5"
-   },
-   "winner": "WIL",
-   "winnerName": "Williams"
+   }
   },
   {
    "id": "rnd_036",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "B",
+    "S3": "3",
+    "S4": "3",
+    "S5": "C",
+    "S6": "B",
+    "S2": "C",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "f1_q2": "B",
+    "f1_q6": "1",
+    "f1_q7": "D",
+    "f1_q8": "B",
+    "f1_q10": "D",
+    "f1_q11": "A",
+    "f1_q12": "C"
+   },
+   "winner": "MCL",
+   "winnerName": "McLaren",
    "coreAnswers": {
     "q1": "A",
     "q2": "right",
@@ -2012,28 +2179,31 @@
     "q22": "left",
     "q23": "A",
     "q24": "2"
-   },
-   "moduleAnswers": {
-    "f1_q1": "C",
-    "f1_q2": "B",
-    "f1_q4": "B",
-    "f1_q5": "B",
-    "f1_q7": "D",
-    "f1_q8": "B",
-    "f1_q10": "D",
-    "f1_q11": "A",
-    "f1_q12": "C",
-    "f1_q3": "3",
-    "f1_q6": "1",
-    "f1_q9": "3"
-   },
-   "winner": "MCL",
-   "winnerName": "McLaren"
+   }
   },
   {
    "id": "rnd_037",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "A",
+    "S3": "5",
+    "S4": "5",
+    "S5": "A",
+    "S6": "C",
+    "S2": "B",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "f1_q2": "B",
+    "f1_q6": "1",
+    "f1_q7": "B",
+    "f1_q8": "B",
+    "f1_q10": "B",
+    "f1_q11": "C",
+    "f1_q12": "D"
+   },
+   "winner": "ALP",
+   "winnerName": "Alpine",
    "coreAnswers": {
     "q1": "A",
     "q2": "left",
@@ -2059,28 +2229,31 @@
     "q22": "left",
     "q23": "B",
     "q24": "1"
-   },
-   "moduleAnswers": {
-    "f1_q1": "A",
-    "f1_q2": "B",
-    "f1_q4": "C",
-    "f1_q5": "A",
-    "f1_q7": "B",
-    "f1_q8": "B",
-    "f1_q10": "B",
-    "f1_q11": "C",
-    "f1_q12": "D",
-    "f1_q3": "5",
-    "f1_q6": "1",
-    "f1_q9": "5"
-   },
-   "winner": "ALP",
-   "winnerName": "Alpine"
+   }
   },
   {
    "id": "rnd_038",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "D",
+    "S3": "5",
+    "S4": "5",
+    "S5": "B",
+    "S6": "D",
+    "S2": "B",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "f1_q2": "C",
+    "f1_q6": "3",
+    "f1_q7": "A",
+    "f1_q8": "B",
+    "f1_q10": "A",
+    "f1_q11": "A",
+    "f1_q12": "D"
+   },
+   "winner": "WIL",
+   "winnerName": "Williams",
    "coreAnswers": {
     "q1": "A",
     "q2": "right",
@@ -2106,28 +2279,31 @@
     "q22": "right",
     "q23": "C",
     "q24": "4"
-   },
-   "moduleAnswers": {
-    "f1_q1": "B",
-    "f1_q2": "C",
-    "f1_q4": "D",
-    "f1_q5": "D",
-    "f1_q7": "A",
-    "f1_q8": "B",
-    "f1_q10": "A",
-    "f1_q11": "A",
-    "f1_q12": "D",
-    "f1_q3": "5",
-    "f1_q6": "3",
-    "f1_q9": "5"
-   },
-   "winner": "WIL",
-   "winnerName": "Williams"
+   }
   },
   {
    "id": "rnd_039",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "B",
+    "S3": "3",
+    "S4": "2",
+    "S5": "A",
+    "S6": "A",
+    "S2": "D",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "f1_q2": "D",
+    "f1_q6": "5",
+    "f1_q7": "B",
+    "f1_q8": "C",
+    "f1_q10": "D",
+    "f1_q11": "C",
+    "f1_q12": "C"
+   },
+   "winner": "RB",
+   "winnerName": "Racing Bulls",
    "coreAnswers": {
     "q1": "C",
     "q2": "right",
@@ -2153,28 +2329,31 @@
     "q22": "left",
     "q23": "D",
     "q24": "2"
-   },
-   "moduleAnswers": {
-    "f1_q1": "A",
-    "f1_q2": "D",
-    "f1_q4": "A",
-    "f1_q5": "B",
-    "f1_q7": "B",
-    "f1_q8": "C",
-    "f1_q10": "D",
-    "f1_q11": "C",
-    "f1_q12": "C",
-    "f1_q3": "3",
-    "f1_q6": "5",
-    "f1_q9": "2"
-   },
-   "winner": "RB",
-   "winnerName": "Racing Bulls"
+   }
   },
   {
    "id": "rnd_040",
    "kind": "random",
-   "forTeam": null,
+   "spineAnswers": {
+    "S1": "A",
+    "S3": "3",
+    "S4": "5",
+    "S5": "B",
+    "S6": "D",
+    "S2": "D",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "f1_q2": "C",
+    "f1_q6": "4",
+    "f1_q7": "D",
+    "f1_q8": "A",
+    "f1_q10": "A",
+    "f1_q11": "A",
+    "f1_q12": "A"
+   },
+   "winner": "FER",
+   "winnerName": "Ferrari",
    "coreAnswers": {
     "q1": "A",
     "q2": "right",
@@ -2200,23 +2379,7 @@
     "q22": "left",
     "q23": "E",
     "q24": "5"
-   },
-   "moduleAnswers": {
-    "f1_q1": "B",
-    "f1_q2": "C",
-    "f1_q4": "D",
-    "f1_q5": "A",
-    "f1_q7": "D",
-    "f1_q8": "A",
-    "f1_q10": "A",
-    "f1_q11": "A",
-    "f1_q12": "A",
-    "f1_q3": "3",
-    "f1_q6": "4",
-    "f1_q9": "5"
-   },
-   "winner": "FER",
-   "winnerName": "Ferrari"
+   }
   }
  ]
 }
