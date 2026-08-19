@@ -11,7 +11,8 @@ import * as LL from "../data/laliga";
 import * as L1 from "../data/ligue1";
 import * as SA from "../data/seriea";
 import * as CFB from "../data/cfb";
-import * as NHL from "../data/nhl";
+import * as NHLbase from "../data/nhl";
+import * as NHLspine from "../data/nhl-spine";
 import * as F1base from "../data/f1";
 import * as F1spine from "../data/f1-spine";
 import * as AFLbase from "../data/afl";
@@ -74,6 +75,11 @@ const F1 = { ...F1base, moduleQuestions: f1ModuleShown, spineScoring: F1spine.sp
 // carries the spine tables (S1/S3/S4 carry-overs + re-authored S2/S7; S5/S6 not scored). No display
 // re-scene needed - none of the six kept questions echoes a scored spine slot.
 const AFL = { ...AFLbase, moduleQuestions: AFLspine.moduleQuestions, spineScoring: AFLspine.spineScoring, spinePhase: AFLspine.spinePhase };
+
+// NHL runs the shared spine (s42): same pattern as AFL. It shows its 10 unique questions and carries
+// two scored spine tables (S4 roots carry-over, S2 pressure re-author). No display re-scene needed -
+// none of the 10 kept questions introduces a new echo beyond what NHL already showed pre-spine.
+const NHL = { ...NHLbase, moduleQuestions: NHLspine.moduleQuestions, spineScoring: NHLspine.spineScoring, spinePhase: NHLspine.spinePhase };
 
 const SPORT_DATA = { PL, NFL, MLB, NBA, BL, LL, L1, SA, CFB, NHL, F1, AFL };
 

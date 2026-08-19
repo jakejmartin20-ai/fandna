@@ -20,7 +20,10 @@ import { teamDims as nbaDims } from "../data/nba";
 import { moduleQuestions as nbaModule, scoring as nbaScoring, spineScoring as nbaSpine, spinePhase as nbaSpinePhase } from "../data/nba-spine";
 import { spineQuestions } from "../data/spine";
 import { moduleQuestions as cfbModule, scoring as cfbScoring, teamDims as cfbDims } from "../data/cfb";
-import { moduleQuestions as nhlModule, scoring as nhlScoring, teamDims as nhlDims } from "../data/nhl";
+import { teamDims as nhlDims } from "../data/nhl";
+// NHL runs the shared spine (Option B, s42): its 10 unique questions + the two scored spine tables
+// (S4 roots carry-over, S2 pressure re-author) live in the nhl-spine add-on; teamDims stays in nhl.js.
+import { moduleQuestions as nhlModule, scoring as nhlScoring, spineScoring as nhlSpine, spinePhase as nhlSpinePhase } from "../data/nhl-spine";
 import { teamDims as f1Dims } from "../data/f1";
 // F1 runs the shared spine (Option B): its 7 unique questions + the spine tables live in the
 // f1-spine add-on; teamDims still comes from f1.js above.
@@ -173,7 +176,7 @@ const FP_ENGINES = {
   MLB: makeFpEngine(mlbDims, mlbScoring, mlbModule),
   NBA: makeFpEngine(nbaDims, nbaScoring, nbaModule, 1.2, nbaSpine, nbaSpinePhase),   // Option B: 7 shared-spine slots + 6 unique module Qs (s40)
   CFB: makeFpEngine(cfbDims, cfbScoring, cfbModule, 1.6),   // 51+ programs sit closer in dim-space; 1.2 left the core deciding only ~23%
-  NHL: makeFpEngine(nhlDims, nhlScoring, nhlModule, 1.5),   // 32 teams; FP_W 1.5 (s31 weight tune to the >1% reachability knee; Toronto floor 1.03%, was 1.2)
+  NHL: makeFpEngine(nhlDims, nhlScoring, nhlModule, 1.5, nhlSpine, nhlSpinePhase),   // 32 teams; FP_W 1.5 (s31 weight tune to the >1% reachability knee; Toronto floor 1.03%, was 1.2)
   BL: makeFpEngine(blDims, blScoring, blModule, 1.5),   // 18 teams; FP_W 1.5 (s31 weight tune; magnet-bound knee, Elversberg 13.6% < 13.9% ceiling, Freiburg floor 1.14%, was 1.2)
   LL: makeFpEngine(llDims, llScoring, llModule, 1.4),   // 20 teams; FP_W 1.4 (s31 weight tune; floor-bound knee, Betis 1.05% > 1%, Sevilla magnet 7.9% well under ceiling, was 1.2)
   L1: makeFpEngine(l1Dims, l1Scoring, l1Module),
