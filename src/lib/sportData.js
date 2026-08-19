@@ -14,7 +14,8 @@ import * as CFB from "../data/cfb";
 import * as NHL from "../data/nhl";
 import * as F1base from "../data/f1";
 import * as F1spine from "../data/f1-spine";
-import * as AFL from "../data/afl";
+import * as AFLbase from "../data/afl";
+import * as AFLspine from "../data/afl-spine";
 
 // NBA runs the shared cross-sport spine (Option B): the quiz shows its 6 unique questions (from the
 // nba-spine add-on) and carries the spine tables, while every other field still comes from nba.js.
@@ -68,6 +69,11 @@ const f1ModuleShown = F1spine.spineScoring
   ? F1spine.moduleQuestions.map(q => F1_RESCENE[q.id] ? { ...q, ...F1_RESCENE[q.id] } : q)
   : F1spine.moduleQuestions;
 const F1 = { ...F1base, moduleQuestions: f1ModuleShown, spineScoring: F1spine.spineScoring, spinePhase: F1spine.spinePhase };
+
+// AFL runs the shared spine (s41): same pattern as F1 / NBA. It shows its 6 unique questions and
+// carries the spine tables (S1/S3/S4 carry-overs + re-authored S2/S7; S5/S6 not scored). No display
+// re-scene needed - none of the six kept questions echoes a scored spine slot.
+const AFL = { ...AFLbase, moduleQuestions: AFLspine.moduleQuestions, spineScoring: AFLspine.spineScoring, spinePhase: AFLspine.spinePhase };
 
 const SPORT_DATA = { PL, NFL, MLB, NBA, BL, LL, L1, SA, CFB, NHL, F1, AFL };
 
