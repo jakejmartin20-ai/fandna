@@ -16,6 +16,7 @@
 import { useState } from "react";
 import { ClubMark } from "../components/ClubMark";
 import { CoreStrip } from "../components/CoreStrip";
+import { InstinctsLine } from "../components/InstinctsLine";
 import { FAMILIES } from "../lib/manifest";
 import { generateRead, coreBlocks } from "../lib/genomeRead";
 import { encodeGenome } from "../lib/compareCode";
@@ -87,6 +88,7 @@ export function GenomeHome({
   moduleCounts,      // per-sport module question counts: { PL: 14, ... }
   shareString,       // genome sequence string, e.g. "FanDNA: PL-LI . NFL-?"
   coreProfile,       // the user's 7-dim core; drives the hero strip
+  spineAnswers,      // cached shared-spine answers {S1..S7}; drives the "your instincts" line
   onOpenResult,      // (code) => void
   onStartSport,      // (code) => void
   onReset,           // () => void : wipe all saved results and return to a fresh first run
@@ -374,6 +376,7 @@ export function GenomeHome({
             </div>
           )}
           <CoreStrip dims={coreProfile}/>
+          <InstinctsLine spineAnswers={spineAnswers}/>
           {/* Re-sequence core: re-answer the shared 24, every league recomputes. Lives with the
               genome (the core IS the genome), quiet so it never competes with Compare. */}
           {onResequence&&(
