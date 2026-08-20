@@ -1051,7 +1051,7 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "PAR",
+      "expected": "LEC",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -2031,7 +2031,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "MON",
+      "expected": "ATA",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -2668,7 +2668,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "NAP",
+      "expected": "COM",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -2815,7 +2815,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "FRO",
+      "expected": "GEN",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -3599,7 +3599,7 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "LEC",
+      "expected": "CAG",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -4236,7 +4236,7 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "GEN",
+      "expected": "FIO",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -5363,7 +5363,7 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "LAZ",
+      "expected": "ROM",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -6098,7 +6098,7 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "MIL",
+      "expected": "ROM",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -7029,7 +7029,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "BOL",
+      "expected": "JUV",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -7813,7 +7813,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "LAZ",
+      "expected": "ATA",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -8254,7 +8254,7 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "LEC",
+      "expected": "MON",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -8842,7 +8842,7 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "COM",
+      "expected": "ATA",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -9234,7 +9234,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "TOR",
+      "expected": "SAS",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -9430,7 +9430,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "ATA",
+      "expected": "TOR",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -9479,7 +9479,7 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "VEN",
+      "expected": "CAG",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"

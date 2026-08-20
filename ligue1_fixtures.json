@@ -994,7 +994,7 @@
         "l1_q11": "C",
         "l1_q12": "B"
       },
-      "expected": "LEN",
+      "expected": "PSG",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -1042,7 +1042,7 @@
         "l1_q11": "A",
         "l1_q12": "A"
       },
-      "expected": "ANG",
+      "expected": "PFC",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -1234,7 +1234,7 @@
         "l1_q11": "D",
         "l1_q12": "D"
       },
-      "expected": "LIL",
+      "expected": "TRO",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -1618,7 +1618,7 @@
         "l1_q11": "A",
         "l1_q12": "D"
       },
-      "expected": "BRE",
+      "expected": "TOU",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -2146,7 +2146,7 @@
         "l1_q11": "D",
         "l1_q12": "B"
       },
-      "expected": "LYO",
+      "expected": "LEN",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -2194,7 +2194,7 @@
         "l1_q11": "D",
         "l1_q12": "A"
       },
-      "expected": "STR",
+      "expected": "LEM",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -2290,7 +2290,7 @@
         "l1_q11": "C",
         "l1_q12": "A"
       },
-      "expected": "REN",
+      "expected": "AJA",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -2818,7 +2818,7 @@
         "l1_q11": "D",
         "l1_q12": "B"
       },
-      "expected": "STR",
+      "expected": "LEM",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -3058,7 +3058,7 @@
         "l1_q11": "D",
         "l1_q12": "B"
       },
-      "expected": "TRO",
+      "expected": "PSG",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -3538,7 +3538,7 @@
         "l1_q11": "A",
         "l1_q12": "B"
       },
-      "expected": "LIL",
+      "expected": "MON",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -3586,7 +3586,7 @@
         "l1_q11": "C",
         "l1_q12": "D"
       },
-      "expected": "AJA",
+      "expected": "LEN",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -4066,7 +4066,7 @@
         "l1_q11": "C",
         "l1_q12": "B"
       },
-      "expected": "LEN",
+      "expected": "NIC",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -4162,7 +4162,7 @@
         "l1_q11": "B",
         "l1_q12": "D"
       },
-      "expected": "TOU",
+      "expected": "ANG",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -5506,7 +5506,7 @@
         "l1_q11": "D",
         "l1_q12": "C"
       },
-      "expected": "LEM",
+      "expected": "STR",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -5554,7 +5554,7 @@
         "l1_q11": "B",
         "l1_q12": "D"
       },
-      "expected": "BRE",
+      "expected": "TOU",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -5698,7 +5698,7 @@
         "l1_q11": "B",
         "l1_q12": "A"
       },
-      "expected": "LYO",
+      "expected": "LEM",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -5794,7 +5794,7 @@
         "l1_q11": "B",
         "l1_q12": "C"
       },
-      "expected": "STR",
+      "expected": "BRE",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -6034,7 +6034,7 @@
         "l1_q11": "B",
         "l1_q12": "B"
       },
-      "expected": "HAC",
+      "expected": "MON",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -6706,7 +6706,7 @@
         "l1_q11": "A",
         "l1_q12": "D"
       },
-      "expected": "REN",
+      "expected": "HAC",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -6802,7 +6802,7 @@
         "l1_q11": "C",
         "l1_q12": "B"
       },
-      "expected": "NIC",
+      "expected": "LYO",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -6946,7 +6946,7 @@
         "l1_q11": "C",
         "l1_q12": "A"
       },
-      "expected": "REN",
+      "expected": "PFC",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -7138,7 +7138,7 @@
         "l1_q11": "A",
         "l1_q12": "C"
       },
-      "expected": "STR",
+      "expected": "LEN",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -7186,7 +7186,7 @@
         "l1_q11": "D",
         "l1_q12": "D"
       },
-      "expected": "REN",
+      "expected": "ANG",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -7426,7 +7426,7 @@
         "l1_q11": "C",
         "l1_q12": "B"
       },
-      "expected": "LEM",
+      "expected": "PFC",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -7762,7 +7762,7 @@
         "l1_q11": "C",
         "l1_q12": "A"
       },
-      "expected": "LYO",
+      "expected": "PFC",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -7810,7 +7810,7 @@
         "l1_q11": "D",
         "l1_q12": "A"
       },
-      "expected": "BRE",
+      "expected": "LYO",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -8050,7 +8050,7 @@
         "l1_q11": "D",
         "l1_q12": "A"
       },
-      "expected": "LEM",
+      "expected": "TRO",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -8338,7 +8338,7 @@
         "l1_q11": "D",
         "l1_q12": "A"
       },
-      "expected": "LOR",
+      "expected": "ANG",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -8386,7 +8386,7 @@
         "l1_q11": "B",
         "l1_q12": "A"
       },
-      "expected": "LIL",
+      "expected": "LYO",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -8578,7 +8578,7 @@
         "l1_q11": "A",
         "l1_q12": "B"
       },
-      "expected": "STR",
+      "expected": "LEN",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -8722,7 +8722,7 @@
         "l1_q11": "A",
         "l1_q12": "D"
       },
-      "expected": "LEN",
+      "expected": "MAR",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -9154,7 +9154,7 @@
         "l1_q11": "A",
         "l1_q12": "A"
       },
-      "expected": "LOR",
+      "expected": "NIC",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -9778,7 +9778,7 @@
         "l1_q11": "B",
         "l1_q12": "B"
       },
-      "expected": "REN",
+      "expected": "PFC",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -10402,7 +10402,7 @@
         "l1_q11": "C",
         "l1_q12": "B"
       },
-      "expected": "BRE",
+      "expected": "HAC",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"

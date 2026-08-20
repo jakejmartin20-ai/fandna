@@ -1223,8 +1223,8 @@
         "S6": "C",
         "S7": "B"
       },
-      "winner": "MIL",
-      "winnerName": "Milwaukee Brewers"
+      "winner": "SD",
+      "winnerName": "San Diego Padres"
     },
     {
       "id": "rnd_006",
@@ -1566,8 +1566,8 @@
         "S6": "B",
         "S7": "C"
       },
-      "winner": "DET",
-      "winnerName": "Detroit Tigers"
+      "winner": "MIL",
+      "winnerName": "Milwaukee Brewers"
     },
     {
       "id": "rnd_013",
@@ -2007,8 +2007,8 @@
         "S6": "D",
         "S7": "A"
       },
-      "winner": "ATH",
-      "winnerName": "Athletics"
+      "winner": "STL",
+      "winnerName": "St. Louis Cardinals"
     },
     {
       "id": "rnd_022",
@@ -2203,8 +2203,8 @@
         "S6": "C",
         "S7": "C"
       },
-      "winner": "DET",
-      "winnerName": "Detroit Tigers"
+      "winner": "BOS",
+      "winnerName": "Boston Red Sox"
     },
     {
       "id": "rnd_026",
@@ -2350,8 +2350,8 @@
         "S6": "C",
         "S7": "A"
       },
-      "winner": "SD",
-      "winnerName": "San Diego Padres"
+      "winner": "HOU",
+      "winnerName": "Houston Astros"
     },
     {
       "id": "rnd_029",
@@ -2497,8 +2497,8 @@
         "S6": "D",
         "S7": "A"
       },
-      "winner": "TEX",
-      "winnerName": "Texas Rangers"
+      "winner": "TOR",
+      "winnerName": "Toronto Blue Jays"
     },
     {
       "id": "rnd_032",
@@ -2595,8 +2595,8 @@
         "S6": "B",
         "S7": "A"
       },
-      "winner": "AZ",
-      "winnerName": "Arizona Diamondbacks"
+      "winner": "BAL",
+      "winnerName": "Baltimore Orioles"
     },
     {
       "id": "rnd_034",
@@ -2889,8 +2889,8 @@
         "S6": "C",
         "S7": "D"
       },
-      "winner": "WSH",
-      "winnerName": "Washington Nationals"
+      "winner": "TEX",
+      "winnerName": "Texas Rangers"
     },
     {
       "id": "rnd_040",
@@ -2938,8 +2938,8 @@
         "S6": "C",
         "S7": "C"
       },
-      "winner": "CIN",
-      "winnerName": "Cincinnati Reds"
+      "winner": "TEX",
+      "winnerName": "Texas Rangers"
     }
   ]
 }
