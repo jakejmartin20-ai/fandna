@@ -180,14 +180,14 @@ function makeFpEngine(dims, scoring, module, fpw, spineScoring, spinePhase){
 }
 const FP_ENGINES = {
   NFL: makeFpEngine(nflDims, nflScoring, nflModule),
-  MLB: makeFpEngine(mlbDims, mlbScoring, mlbModule, 1.2, mlbSpine, mlbSpinePhase),   // Option B: 2 shared-spine slots (S6 build + S7 role) + 10 unique module Qs
+  MLB: makeFpEngine(mlbDims, mlbScoring, mlbModule, 0.7, mlbSpine, mlbSpinePhase),   // Option B spine + 10 module Qs; FP_W 0.7 (s44 reachability tune: lowered from 1.2 to let the module lift starved clubs; magnet SEA ~6% < ceiling, self-land 30/30; MIA/TB/STL/NYY cleared, LAD ~0.9% + PIT ~0.55% remain a cell-level item)
   NBA: makeFpEngine(nbaDims, nbaScoring, nbaModule, 1.2, nbaSpine, nbaSpinePhase),   // Option B: 7 shared-spine slots + 6 unique module Qs (s40)
   CFB: makeFpEngine(cfbDims, cfbScoring, cfbModule, 1.6),   // 51+ programs sit closer in dim-space; 1.2 left the core deciding only ~23%
   NHL: makeFpEngine(nhlDims, nhlScoring, nhlModule, 1.5, nhlSpine, nhlSpinePhase),   // 32 teams; FP_W 1.5 (s31 weight tune to the >1% reachability knee; Toronto floor 1.03%, was 1.2)
   BL: makeFpEngine(blDims, blScoring, blModule, 1.5, blSpine, blSpinePhase),   // 18 teams; FP_W 1.5 (s31 weight tune; magnet-bound knee, Elversberg 13.6% < 13.9% ceiling, Freiburg floor 1.14%, was 1.2)
   LL: makeFpEngine(llDims, llScoring, llModule, 1.4, llSpine, llSpinePhase),   // 20 teams; FP_W 1.4 (s31 weight tune; floor-bound knee, Betis 1.05% > 1%, Sevilla magnet 7.9% well under ceiling, was 1.2)
-  L1: makeFpEngine(l1Dims, l1Scoring, l1Module, 1.2, l1Spine, l1SpinePhase),
-  SA: makeFpEngine(saDims, saScoring, saModule, 1.2, saSpine, saSpinePhase),
+  L1: makeFpEngine(l1Dims, l1Scoring, l1Module, 0.75, l1Spine, l1SpinePhase),   // FP_W 0.75 (s44 reachability tune: lowered from 1.2 to clear the Monaco floor 0.56% -> ~1.3%; magnet Lens ~10.4% < 13.9% ceiling, self-land 18/18, no club balloons)
+  SA: makeFpEngine(saDims, saScoring, saModule, 0.9, saSpine, saSpinePhase),   // FP_W 0.9 (s44 reachability tune: lowered from 1.2 to clear the Napoli floor 0.74% -> ~1.2%; magnet Milan ~7.9% < 12.5% ceiling, self-land 20/20, no club balloons)
   F1: makeFpEngine(f1Dims, f1Scoring, f1Module, 1.6, f1Spine, f1SpinePhase),   // small 11-team field: 1.2 let the module override the core by ~3 ranks; 1.6 makes it a tie-breaker (knee before Red Bull drops below reachable)
   AFL: makeFpEngine(aflDims, aflScoring, aflModule, 1.2, aflSpine, aflSpinePhase),   // 18-team small-mid field; FP_W 1.2 (no magnet, top pooled ~11.5% under the 13.9% ceiling; higher FP_W lowers the SYD/GWS edge floors)
 };
