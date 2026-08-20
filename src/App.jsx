@@ -41,6 +41,7 @@ function recomputeAllFromCore(newCoreAnswers){
   return { newCore, moved, stale };
 }
 import { CoreStrip } from "./components/CoreStrip";
+import { InstinctsLine } from "./components/InstinctsLine";
 import { MatchEvidence } from "./components/MatchEvidence";
 import { CrossMatch } from "./components/CrossMatch";
 import { SPORTS, FAMILIES } from "./lib/manifest";
@@ -941,6 +942,7 @@ function AppInner(){
             moduleCounts={moduleCounts}
             shareString={shareString}
             coreProfile={coreProfile}
+            spineAnswers={savedSpine}
             onOpenResult={openResult}
             onStartSport={startSport}
             onReset={startOver}
@@ -1086,6 +1088,7 @@ function AppInner(){
               {coreProfile&&(
               <div style={{padding:"16px 16px 15px"}}>
                 <CoreStrip dims={coreProfile} compact/>
+                <InstinctsLine spineAnswers={savedSpine}/>
               </div>
               )}
 
