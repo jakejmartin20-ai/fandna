@@ -3,7 +3,8 @@
 // so turning on a new sport is a data file plus one line here (and its manifest entry).
 import * as PL from "../data/pl";
 import * as NFL from "../data/nfl";
-import * as MLB from "../data/mlb";
+import * as MLBbase from "../data/mlb";
+import * as MLBspine from "../data/mlb-spine";
 import * as NBAbase from "../data/nba";
 import * as NBAspine from "../data/nba-spine";
 import * as BLbase from "../data/bundesliga";
@@ -90,6 +91,10 @@ const LL = { ...LLbase, moduleQuestions: LLspine.moduleQuestions, spineScoring: 
 const L1 = { ...L1base, moduleQuestions: L1spine.moduleQuestions, spineScoring: L1spine.spineScoring, spinePhase: L1spine.spinePhase };
 const SA = { ...SAbase, moduleQuestions: SAspine.moduleQuestions, spineScoring: SAspine.spineScoring, spinePhase: SAspine.spinePhase };
 // soccer S6(build)+S7(role) on the spine (s42); BL drops its q11/q12 sources, LL/L1/SA add slots.
+// MLB runs the shared spine (s43): shows its 10 unique questions and carries the two scored spine
+// tables (S6 build + S7 role, re-authored). Its own role question (q11) is dropped to the spine; no
+// display re-scene is needed (nothing left among the 10 echoes a scored slot).
+const MLB = { ...MLBbase, moduleQuestions: MLBspine.moduleQuestions, spineScoring: MLBspine.spineScoring, spinePhase: MLBspine.spinePhase };
 const SPORT_DATA = { PL, NFL, MLB, NBA, BL, LL, L1, SA, CFB, NHL, F1, AFL };
 
 export { SPORT_DATA };

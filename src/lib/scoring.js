@@ -13,7 +13,10 @@
 import { coreQuestions, coreDimScoring, DIM_ORDER } from "../data/core";
 import { moduleQuestions, scoring as plScoring, teams as plTeams, teamDims as plTeamDims } from "../data/pl";
 import { moduleQuestions as nflModule, scoring as nflScoring, teamDims as nflDims } from "../data/nfl";
-import { moduleQuestions as mlbModule, scoring as mlbScoring, teamDims as mlbDims } from "../data/mlb";
+import { teamDims as mlbDims } from "../data/mlb";
+// MLB runs the shared spine (Option B): its 10 unique questions + the two scored spine tables
+// (S6 build + S7 role, re-authored) live in the mlb-spine add-on; teamDims still comes from mlb.js.
+import { moduleQuestions as mlbModule, scoring as mlbScoring, spineScoring as mlbSpine, spinePhase as mlbSpinePhase } from "../data/mlb-spine";
 import { teamDims as nbaDims } from "../data/nba";
 // NBA's module (its 6 unique questions) + the 7 shared-spine tables live in the small add-on file
 // nba-spine.js, so nba.js itself is untouched. teamDims still comes straight from nba.js above.
@@ -177,7 +180,7 @@ function makeFpEngine(dims, scoring, module, fpw, spineScoring, spinePhase){
 }
 const FP_ENGINES = {
   NFL: makeFpEngine(nflDims, nflScoring, nflModule),
-  MLB: makeFpEngine(mlbDims, mlbScoring, mlbModule),
+  MLB: makeFpEngine(mlbDims, mlbScoring, mlbModule, 1.2, mlbSpine, mlbSpinePhase),   // Option B: 2 shared-spine slots (S6 build + S7 role) + 10 unique module Qs
   NBA: makeFpEngine(nbaDims, nbaScoring, nbaModule, 1.2, nbaSpine, nbaSpinePhase),   // Option B: 7 shared-spine slots + 6 unique module Qs (s40)
   CFB: makeFpEngine(cfbDims, cfbScoring, cfbModule, 1.6),   // 51+ programs sit closer in dim-space; 1.2 left the core deciding only ~23%
   NHL: makeFpEngine(nhlDims, nhlScoring, nhlModule, 1.5, nhlSpine, nhlSpinePhase),   // 32 teams; FP_W 1.5 (s31 weight tune to the >1% reachability knee; Toronto floor 1.03%, was 1.2)
