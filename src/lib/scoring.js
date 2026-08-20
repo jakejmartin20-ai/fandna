@@ -32,10 +32,14 @@ import { teamDims as aflDims } from "../data/afl";
 // AFL runs the shared spine (Option B): its 6 unique questions + the spine tables live in the
 // afl-spine add-on; teamDims still comes from afl.js above.
 import { moduleQuestions as aflModule, scoring as aflScoring, spineScoring as aflSpine, spinePhase as aflSpinePhase } from "../data/afl-spine";
-import { moduleQuestions as blModule, scoring as blScoring, teamDims as blDims } from "../data/bundesliga";
-import { moduleQuestions as llModule, scoring as llScoring, teamDims as llDims } from "../data/laliga";
-import { moduleQuestions as l1Module, scoring as l1Scoring, teamDims as l1Dims } from "../data/ligue1";
-import { moduleQuestions as saModule, scoring as saScoring, teamDims as saDims } from "../data/seriea";
+import { teamDims as blDims } from "../data/bundesliga";
+import { moduleQuestions as blModule, scoring as blScoring, spineScoring as blSpine, spinePhase as blSpinePhase } from "../data/bl-spine";
+import { teamDims as llDims } from "../data/laliga";
+import { moduleQuestions as llModule, scoring as llScoring, spineScoring as llSpine, spinePhase as llSpinePhase } from "../data/ll-spine";
+import { teamDims as l1Dims } from "../data/ligue1";
+import { moduleQuestions as l1Module, scoring as l1Scoring, spineScoring as l1Spine, spinePhase as l1SpinePhase } from "../data/l1-spine";
+import { teamDims as saDims } from "../data/seriea";
+import { moduleQuestions as saModule, scoring as saScoring, spineScoring as saSpine, spinePhase as saSpinePhase } from "../data/sa-spine";
 
 // -- Stage 1: core answers -> coreProfile (7 dims, 0-10) -------------------------
 function scoreCore(coreAnswers){
@@ -177,10 +181,10 @@ const FP_ENGINES = {
   NBA: makeFpEngine(nbaDims, nbaScoring, nbaModule, 1.2, nbaSpine, nbaSpinePhase),   // Option B: 7 shared-spine slots + 6 unique module Qs (s40)
   CFB: makeFpEngine(cfbDims, cfbScoring, cfbModule, 1.6),   // 51+ programs sit closer in dim-space; 1.2 left the core deciding only ~23%
   NHL: makeFpEngine(nhlDims, nhlScoring, nhlModule, 1.5, nhlSpine, nhlSpinePhase),   // 32 teams; FP_W 1.5 (s31 weight tune to the >1% reachability knee; Toronto floor 1.03%, was 1.2)
-  BL: makeFpEngine(blDims, blScoring, blModule, 1.5),   // 18 teams; FP_W 1.5 (s31 weight tune; magnet-bound knee, Elversberg 13.6% < 13.9% ceiling, Freiburg floor 1.14%, was 1.2)
-  LL: makeFpEngine(llDims, llScoring, llModule, 1.4),   // 20 teams; FP_W 1.4 (s31 weight tune; floor-bound knee, Betis 1.05% > 1%, Sevilla magnet 7.9% well under ceiling, was 1.2)
-  L1: makeFpEngine(l1Dims, l1Scoring, l1Module),
-  SA: makeFpEngine(saDims, saScoring, saModule),
+  BL: makeFpEngine(blDims, blScoring, blModule, 1.5, blSpine, blSpinePhase),   // 18 teams; FP_W 1.5 (s31 weight tune; magnet-bound knee, Elversberg 13.6% < 13.9% ceiling, Freiburg floor 1.14%, was 1.2)
+  LL: makeFpEngine(llDims, llScoring, llModule, 1.4, llSpine, llSpinePhase),   // 20 teams; FP_W 1.4 (s31 weight tune; floor-bound knee, Betis 1.05% > 1%, Sevilla magnet 7.9% well under ceiling, was 1.2)
+  L1: makeFpEngine(l1Dims, l1Scoring, l1Module, 1.2, l1Spine, l1SpinePhase),
+  SA: makeFpEngine(saDims, saScoring, saModule, 1.2, saSpine, saSpinePhase),
   F1: makeFpEngine(f1Dims, f1Scoring, f1Module, 1.6, f1Spine, f1SpinePhase),   // small 11-team field: 1.2 let the module override the core by ~3 ranks; 1.6 makes it a tie-breaker (knee before Red Bull drops below reachable)
   AFL: makeFpEngine(aflDims, aflScoring, aflModule, 1.2, aflSpine, aflSpinePhase),   // 18-team small-mid field; FP_W 1.2 (no magnet, top pooled ~11.5% under the 13.9% ceiling; higher FP_W lowers the SYD/GWS edge floors)
 };

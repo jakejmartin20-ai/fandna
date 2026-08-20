@@ -6,10 +6,14 @@ import * as NFL from "../data/nfl";
 import * as MLB from "../data/mlb";
 import * as NBAbase from "../data/nba";
 import * as NBAspine from "../data/nba-spine";
-import * as BL from "../data/bundesliga";
-import * as LL from "../data/laliga";
-import * as L1 from "../data/ligue1";
-import * as SA from "../data/seriea";
+import * as BLbase from "../data/bundesliga";
+import * as BLspine from "../data/bl-spine";
+import * as LLbase from "../data/laliga";
+import * as LLspine from "../data/ll-spine";
+import * as L1base from "../data/ligue1";
+import * as L1spine from "../data/l1-spine";
+import * as SAbase from "../data/seriea";
+import * as SAspine from "../data/sa-spine";
 import * as CFB from "../data/cfb";
 import * as NHLbase from "../data/nhl";
 import * as NHLspine from "../data/nhl-spine";
@@ -81,6 +85,11 @@ const AFL = { ...AFLbase, moduleQuestions: AFLspine.moduleQuestions, spineScorin
 // none of the 10 kept questions introduces a new echo beyond what NHL already showed pre-spine.
 const NHL = { ...NHLbase, moduleQuestions: NHLspine.moduleQuestions, spineScoring: NHLspine.spineScoring, spinePhase: NHLspine.spinePhase };
 
+const BL = { ...BLbase, moduleQuestions: BLspine.moduleQuestions, spineScoring: BLspine.spineScoring, spinePhase: BLspine.spinePhase };
+const LL = { ...LLbase, moduleQuestions: LLspine.moduleQuestions, spineScoring: LLspine.spineScoring, spinePhase: LLspine.spinePhase };
+const L1 = { ...L1base, moduleQuestions: L1spine.moduleQuestions, spineScoring: L1spine.spineScoring, spinePhase: L1spine.spinePhase };
+const SA = { ...SAbase, moduleQuestions: SAspine.moduleQuestions, spineScoring: SAspine.spineScoring, spinePhase: SAspine.spinePhase };
+// soccer S6(build)+S7(role) on the spine (s42); BL drops its q11/q12 sources, LL/L1/SA add slots.
 const SPORT_DATA = { PL, NFL, MLB, NBA, BL, LL, L1, SA, CFB, NHL, F1, AFL };
 
 export { SPORT_DATA };
