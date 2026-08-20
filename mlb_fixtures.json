@@ -1,15 +1,24 @@
 {
   "meta": {
     "purpose": "MLB regression gate. Each fixture is an input the live MLB engine maps to a team. Any future change to src/data/mlb.js scoring (or the shared fingerprint engine in src/lib/scoring.js) must reproduce every winner here, or the diff must be reviewed and accepted.",
-    "generated": "2026-08-07",
+    "generated": "2026-08-19",
     "source": "Generated from the live MLB fingerprint matrix at the session-20 convergence build (30 teams, 12 module questions); re-baselined in the depth/resonance pass (2026-06-15) after an accepted matrix change (TEX added to q5/C, STL trimmed from q10/A). One random winner moved on the accepted matrix: rnd_009 TOR -> TEX (a near-tie tip in the intended direction); all 30 signatures still self-land, zero decisive flips on a 200k uniform sweep. MLB is a fingerprint sport like NFL: coreProfile vs teamDims plus module-point tiebreakers. | Re-baselined at the slider-footprint redesign: mlb_q4/q9 replaced flat pole buckets with honest per-team footprints (peak at trait position, width by purity; q9 keeps MIN/PIT unscored). mlb_q2 is the weak slider (answer does not track a clean trait) so its poles are unchanged and only its flat center was un-flattened. 15 signature answers moved, 10 random winners re-recorded.",
     "synthetic_caveat": "Signatures pin coreProfile to each team's own teamDims (the perfectly matched taker) with its best module answers; randoms are uniform synthetic inputs. These verify engine reproducibility and per-team reachability ONLY. They are NOT real-taker rates and say nothing about how often a real person lands on a team.",
     "counts": {
-      "signatures": 30,
-      "random": 40
+      "signature": 30,
+      "random": 40,
+      "total": 70
     },
     "note": "re-recorded 2026-07-16 on the shipped post-rebuild engine (core ffe8b26f / scoring 60f1ec66, community mean 5.266). The prior baseline's random winners predated the Jul-15 core rebuild and were never re-recorded through it (they reproduced only 19/40 on the shipped engine); all 30 signatures self-land unchanged. Randoms re-recorded here; 21 random winners moved (genuine post-rebuild re-derivations, not fixture rot or a q5 effect). Signatures unchanged. | re-recorded 2026-07-31 after authoring the middle band on the three MLB sliders (mlb_q2, mlb_q4, mlb_q9): value 3 now awards 2 points to the teams whose own signature answers 3, camps unchanged. 8 random winners moved; all 30 signatures self-land unchanged.",
-    "rebaselined_s33": "2026-08-11 session33: Class-2 module-honesty coverage fix (ache/love-anger family). Added option F to mlb_q5 and mlb_q7 for the 'won it once after a long drought, then nothing since' degree; routed CHC/CWS/WSH/LAA onto F, de-conflicted each off its old bucket (CHC A, LAA B, WSH C, CWS D on both questions). Scoring-neutral F1-voice copy sweep of the q5/q7 stems and all options. Cohort-nearest aching takers now self-land (CHC 0->100% on the isolated ache answer; 22.9% had leaked to Toronto). No magnet (top SEA ~7.0% < 8.3%), nothing dead (floor PIT ~0.5% > 0.37%), no module-twin, 30/30 signatures self-land, 2 random winners moved (rnd_025 CHC->DET, rnd_028 LAA->SF). MLB live; coreDimScoring unchanged so stored takers are sticky."
+    "rebaselined_s33": "2026-08-11 session33: Class-2 module-honesty coverage fix (ache/love-anger family). Added option F to mlb_q5 and mlb_q7 for the 'won it once after a long drought, then nothing since' degree; routed CHC/CWS/WSH/LAA onto F, de-conflicted each off its old bucket (CHC A, LAA B, WSH C, CWS D on both questions). Scoring-neutral F1-voice copy sweep of the q5/q7 stems and all options. Cohort-nearest aching takers now self-land (CHC 0->100% on the isolated ache answer; 22.9% had leaked to Toronto). No magnet (top SEA ~7.0% < 8.3%), nothing dead (floor PIT ~0.5% > 0.37%), no module-twin, 30/30 signatures self-land, 2 random winners moved (rnd_025 CHC->DET, rnd_028 LAA->SF). MLB live; coreDimScoring unchanged so stored takers are sticky.",
+    "spine": {
+      "scored_slots": [
+        "S6",
+        "S7"
+      ],
+      "unique": 10,
+      "note": "MLB on the shared spine (s43): S6 build + S7 role re-authored; q11 (role echo) and q5 (inert) dropped. Fixtures carry explicit spineAnswers."
+    }
   },
   "fixtures": [
     {
@@ -30,14 +39,16 @@
         "mlb_q2": "3",
         "mlb_q3": "E",
         "mlb_q4": "3",
-        "mlb_q5": "E",
         "mlb_q6": "D",
         "mlb_q7": "E",
         "mlb_q8": "E",
         "mlb_q9": "5",
         "mlb_q10": "A",
-        "mlb_q11": "A",
         "mlb_q12": "E"
+      },
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "A"
       },
       "winner": "NYY",
       "winnerName": "New York Yankees"
@@ -60,14 +71,16 @@
         "mlb_q2": "3",
         "mlb_q3": "A",
         "mlb_q4": "5",
-        "mlb_q5": "E",
         "mlb_q6": "D",
         "mlb_q7": "E",
         "mlb_q8": "E",
         "mlb_q9": "5",
         "mlb_q10": "B",
-        "mlb_q11": "A",
         "mlb_q12": "E"
+      },
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "A"
       },
       "winner": "LAD",
       "winnerName": "Los Angeles Dodgers"
@@ -90,14 +103,16 @@
         "mlb_q2": "3",
         "mlb_q3": "A",
         "mlb_q4": "5",
-        "mlb_q5": "E",
         "mlb_q6": "A",
         "mlb_q7": "C",
         "mlb_q8": "E",
         "mlb_q9": "3",
-        "mlb_q10": "A",
-        "mlb_q11": "C",
+        "mlb_q10": "B",
         "mlb_q12": "A"
+      },
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "A"
       },
       "winner": "STL",
       "winnerName": "St. Louis Cardinals"
@@ -120,14 +135,16 @@
         "mlb_q2": "3",
         "mlb_q3": "A",
         "mlb_q4": "3",
-        "mlb_q5": "E",
         "mlb_q6": "A",
         "mlb_q7": "E",
         "mlb_q8": "E",
         "mlb_q9": "4",
         "mlb_q10": "B",
-        "mlb_q11": "A",
         "mlb_q12": "E"
+      },
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "A"
       },
       "winner": "ATL",
       "winnerName": "Atlanta Braves"
@@ -150,14 +167,16 @@
         "mlb_q2": "3",
         "mlb_q3": "E",
         "mlb_q4": "3",
-        "mlb_q5": "E",
         "mlb_q6": "A",
         "mlb_q7": "E",
         "mlb_q8": "E",
         "mlb_q9": "3",
         "mlb_q10": "A",
-        "mlb_q11": "C",
         "mlb_q12": "E"
+      },
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "C"
       },
       "winner": "SF",
       "winnerName": "San Francisco Giants"
@@ -180,14 +199,16 @@
         "mlb_q2": "3",
         "mlb_q3": "D",
         "mlb_q4": "1",
-        "mlb_q5": "E",
         "mlb_q6": "D",
         "mlb_q7": "A",
         "mlb_q8": "E",
         "mlb_q9": "3",
         "mlb_q10": "A",
-        "mlb_q11": "E",
         "mlb_q12": "A"
+      },
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "C"
       },
       "winner": "CIN",
       "winnerName": "Cincinnati Reds"
@@ -210,14 +231,16 @@
         "mlb_q2": "1",
         "mlb_q3": "C",
         "mlb_q4": "1",
-        "mlb_q5": "F",
         "mlb_q6": "E",
         "mlb_q7": "F",
         "mlb_q8": "D",
         "mlb_q9": "3",
         "mlb_q10": "C",
-        "mlb_q11": "D",
         "mlb_q12": "D"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
       },
       "winner": "CHC",
       "winnerName": "Chicago Cubs"
@@ -240,14 +263,16 @@
         "mlb_q2": "1",
         "mlb_q3": "D",
         "mlb_q4": "1",
-        "mlb_q5": "E",
         "mlb_q6": "E",
         "mlb_q7": "C",
         "mlb_q8": "D",
         "mlb_q9": "3",
         "mlb_q10": "C",
-        "mlb_q11": "D",
         "mlb_q12": "D"
+      },
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "C"
       },
       "winner": "BOS",
       "winnerName": "Boston Red Sox"
@@ -270,14 +295,16 @@
         "mlb_q2": "5",
         "mlb_q3": "C",
         "mlb_q4": "4",
-        "mlb_q5": "A",
         "mlb_q6": "A",
         "mlb_q7": "D",
         "mlb_q8": "A",
         "mlb_q9": "1",
         "mlb_q10": "C",
-        "mlb_q11": "C",
         "mlb_q12": "B"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "B"
       },
       "winner": "CLE",
       "winnerName": "Cleveland Guardians"
@@ -300,14 +327,16 @@
         "mlb_q2": "5",
         "mlb_q3": "C",
         "mlb_q4": "3",
-        "mlb_q5": "A",
         "mlb_q6": "E",
         "mlb_q7": "A",
         "mlb_q8": "C",
         "mlb_q9": "3",
         "mlb_q10": "C",
-        "mlb_q11": "E",
         "mlb_q12": "C"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
       },
       "winner": "SEA",
       "winnerName": "Seattle Mariners"
@@ -330,14 +359,16 @@
         "mlb_q2": "5",
         "mlb_q3": "D",
         "mlb_q4": "1",
-        "mlb_q5": "A",
         "mlb_q6": "C",
         "mlb_q7": "A",
         "mlb_q8": "A",
         "mlb_q9": "1",
         "mlb_q10": "C",
-        "mlb_q11": "D",
         "mlb_q12": "B"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
       },
       "winner": "PIT",
       "winnerName": "Pittsburgh Pirates"
@@ -360,14 +391,16 @@
         "mlb_q2": "3",
         "mlb_q3": "C",
         "mlb_q4": "3",
-        "mlb_q5": "B",
         "mlb_q6": "B",
         "mlb_q7": "B",
         "mlb_q8": "C",
         "mlb_q9": "4",
         "mlb_q10": "D",
-        "mlb_q11": "E",
         "mlb_q12": "C"
+      },
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "B"
       },
       "winner": "SD",
       "winnerName": "San Diego Padres"
@@ -390,14 +423,16 @@
         "mlb_q2": "5",
         "mlb_q3": "C",
         "mlb_q4": "3",
-        "mlb_q5": "A",
         "mlb_q6": "E",
         "mlb_q7": "A",
         "mlb_q8": "A",
         "mlb_q9": "1",
         "mlb_q10": "D",
-        "mlb_q11": "B",
         "mlb_q12": "C"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
       },
       "winner": "COL",
       "winnerName": "Colorado Rockies"
@@ -420,14 +455,16 @@
         "mlb_q2": "5",
         "mlb_q3": "A",
         "mlb_q4": "5",
-        "mlb_q5": "D",
         "mlb_q6": "C",
         "mlb_q7": "D",
-        "mlb_q8": "C",
+        "mlb_q8": "A",
         "mlb_q9": "2",
         "mlb_q10": "E",
-        "mlb_q11": "B",
         "mlb_q12": "B"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "B"
       },
       "winner": "ATH",
       "winnerName": "Athletics"
@@ -450,14 +487,16 @@
         "mlb_q2": "3",
         "mlb_q3": "A",
         "mlb_q4": "5",
-        "mlb_q5": "D",
         "mlb_q6": "C",
         "mlb_q7": "D",
         "mlb_q8": "B",
         "mlb_q9": "2",
         "mlb_q10": "D",
-        "mlb_q11": "B",
         "mlb_q12": "C"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "B"
       },
       "winner": "TB",
       "winnerName": "Tampa Bay Rays"
@@ -480,14 +519,16 @@
         "mlb_q2": "3",
         "mlb_q3": "A",
         "mlb_q4": "5",
-        "mlb_q5": "D",
         "mlb_q6": "A",
         "mlb_q7": "C",
         "mlb_q8": "B",
         "mlb_q9": "2",
         "mlb_q10": "E",
-        "mlb_q11": "B",
         "mlb_q12": "A"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "B"
       },
       "winner": "MIL",
       "winnerName": "Milwaukee Brewers"
@@ -510,14 +551,16 @@
         "mlb_q2": "5",
         "mlb_q3": "C",
         "mlb_q4": "3",
-        "mlb_q5": "D",
         "mlb_q6": "A",
         "mlb_q7": "D",
         "mlb_q8": "E",
         "mlb_q9": "1",
         "mlb_q10": "E",
-        "mlb_q11": "C",
         "mlb_q12": "A"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
       },
       "winner": "MIN",
       "winnerName": "Minnesota Twins"
@@ -540,14 +583,16 @@
         "mlb_q2": "1",
         "mlb_q3": "C",
         "mlb_q4": "2",
-        "mlb_q5": "C",
         "mlb_q6": "C",
         "mlb_q7": "C",
         "mlb_q8": "D",
         "mlb_q9": "2",
         "mlb_q10": "E",
-        "mlb_q11": "B",
         "mlb_q12": "A"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "B"
       },
       "winner": "KC",
       "winnerName": "Kansas City Royals"
@@ -570,14 +615,16 @@
         "mlb_q2": "1",
         "mlb_q3": "B",
         "mlb_q4": "1",
-        "mlb_q5": "B",
         "mlb_q6": "C",
         "mlb_q7": "B",
         "mlb_q8": "A",
         "mlb_q9": "4",
         "mlb_q10": "E",
-        "mlb_q11": "D",
         "mlb_q12": "B"
+      },
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
       },
       "winner": "PHI",
       "winnerName": "Philadelphia Phillies"
@@ -600,14 +647,16 @@
         "mlb_q2": "3",
         "mlb_q3": "D",
         "mlb_q4": "3",
-        "mlb_q5": "D",
         "mlb_q6": "C",
         "mlb_q7": "C",
         "mlb_q8": "A",
         "mlb_q9": "1",
         "mlb_q10": "E",
-        "mlb_q11": "D",
         "mlb_q12": "B"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
       },
       "winner": "DET",
       "winnerName": "Detroit Tigers"
@@ -630,14 +679,16 @@
         "mlb_q2": "5",
         "mlb_q3": "D",
         "mlb_q4": "3",
-        "mlb_q5": "F",
         "mlb_q6": "B",
         "mlb_q7": "F",
-        "mlb_q8": "C",
+        "mlb_q8": "A",
         "mlb_q9": "3",
         "mlb_q10": "C",
-        "mlb_q11": "D",
         "mlb_q12": "B"
+      },
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "B"
       },
       "winner": "CWS",
       "winnerName": "Chicago White Sox"
@@ -660,14 +711,16 @@
         "mlb_q2": "3",
         "mlb_q3": "A",
         "mlb_q4": "5",
-        "mlb_q5": "D",
         "mlb_q6": "A",
         "mlb_q7": "D",
         "mlb_q8": "E",
         "mlb_q9": "2",
         "mlb_q10": "B",
-        "mlb_q11": "C",
         "mlb_q12": "C"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
       },
       "winner": "BAL",
       "winnerName": "Baltimore Orioles"
@@ -690,14 +743,16 @@
         "mlb_q2": "1",
         "mlb_q3": "B",
         "mlb_q4": "1",
-        "mlb_q5": "B",
         "mlb_q6": "B",
         "mlb_q7": "B",
         "mlb_q8": "C",
         "mlb_q9": "4",
         "mlb_q10": "E",
-        "mlb_q11": "D",
         "mlb_q12": "D"
+      },
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "B"
       },
       "winner": "NYM",
       "winnerName": "New York Mets"
@@ -720,14 +775,16 @@
         "mlb_q2": "5",
         "mlb_q3": "B",
         "mlb_q4": "3",
-        "mlb_q5": "C",
         "mlb_q6": "E",
         "mlb_q7": "D",
         "mlb_q8": "C",
         "mlb_q9": "1",
         "mlb_q10": "D",
-        "mlb_q11": "B",
         "mlb_q12": "C"
+      },
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "D"
       },
       "winner": "MIA",
       "winnerName": "Miami Marlins"
@@ -750,14 +807,16 @@
         "mlb_q2": "1",
         "mlb_q3": "B",
         "mlb_q4": "2",
-        "mlb_q5": "B",
         "mlb_q6": "B",
         "mlb_q7": "B",
         "mlb_q8": "C",
         "mlb_q9": "4",
         "mlb_q10": "D",
-        "mlb_q11": "D",
         "mlb_q12": "D"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
       },
       "winner": "TOR",
       "winnerName": "Toronto Blue Jays"
@@ -785,8 +844,11 @@
         "mlb_q8": "D",
         "mlb_q9": "4",
         "mlb_q10": "D",
-        "mlb_q11": "E",
         "mlb_q12": "E"
+      },
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
       },
       "winner": "TEX",
       "winnerName": "Texas Rangers"
@@ -809,14 +871,16 @@
         "mlb_q2": "1",
         "mlb_q3": "B",
         "mlb_q4": "3",
-        "mlb_q5": "C",
         "mlb_q6": "B",
         "mlb_q7": "C",
         "mlb_q8": "B",
         "mlb_q9": "3",
         "mlb_q10": "D",
-        "mlb_q11": "B",
         "mlb_q12": "D"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
       },
       "winner": "AZ",
       "winnerName": "Arizona Diamondbacks"
@@ -839,14 +903,16 @@
         "mlb_q2": "1",
         "mlb_q3": "C",
         "mlb_q4": "3",
-        "mlb_q5": "F",
         "mlb_q6": "E",
         "mlb_q7": "F",
         "mlb_q8": "D",
         "mlb_q9": "1",
         "mlb_q10": "D",
-        "mlb_q11": "D",
         "mlb_q12": "B"
+      },
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "D"
       },
       "winner": "WSH",
       "winnerName": "Washington Nationals"
@@ -869,14 +935,16 @@
         "mlb_q2": "3",
         "mlb_q3": "E",
         "mlb_q4": "5",
-        "mlb_q5": "E",
         "mlb_q6": "D",
         "mlb_q7": "E",
         "mlb_q8": "D",
         "mlb_q9": "5",
         "mlb_q10": "D",
-        "mlb_q11": "A",
         "mlb_q12": "E"
+      },
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "A"
       },
       "winner": "HOU",
       "winnerName": "Houston Astros"
@@ -899,14 +967,16 @@
         "mlb_q2": "5",
         "mlb_q3": "D",
         "mlb_q4": "3",
-        "mlb_q5": "F",
         "mlb_q6": "D",
         "mlb_q7": "F",
         "mlb_q8": "C",
         "mlb_q9": "4",
         "mlb_q10": "E",
-        "mlb_q11": "E",
         "mlb_q12": "E"
+      },
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "C"
       },
       "winner": "LAA",
       "winnerName": "Los Angeles Angels"
@@ -946,14 +1016,16 @@
         "mlb_q2": "4",
         "mlb_q3": "E",
         "mlb_q4": "1",
-        "mlb_q5": "E",
         "mlb_q6": "B",
         "mlb_q7": "A",
         "mlb_q8": "C",
         "mlb_q9": "4",
         "mlb_q10": "D",
-        "mlb_q11": "A",
         "mlb_q12": "D"
+      },
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "D"
       },
       "winner": "TOR",
       "winnerName": "Toronto Blue Jays"
@@ -993,17 +1065,19 @@
         "mlb_q2": "5",
         "mlb_q3": "D",
         "mlb_q4": "3",
-        "mlb_q5": "A",
         "mlb_q6": "C",
         "mlb_q7": "B",
         "mlb_q8": "B",
         "mlb_q9": "1",
         "mlb_q10": "A",
-        "mlb_q11": "A",
         "mlb_q12": "E"
       },
-      "winner": "NYY",
-      "winnerName": "New York Yankees"
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      },
+      "winner": "DET",
+      "winnerName": "Detroit Tigers"
     },
     {
       "id": "rnd_003",
@@ -1040,14 +1114,16 @@
         "mlb_q2": "5",
         "mlb_q3": "A",
         "mlb_q4": "2",
-        "mlb_q5": "E",
         "mlb_q6": "A",
         "mlb_q7": "E",
         "mlb_q8": "A",
         "mlb_q9": "5",
         "mlb_q10": "C",
-        "mlb_q11": "C",
         "mlb_q12": "C"
+      },
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "B"
       },
       "winner": "CLE",
       "winnerName": "Cleveland Guardians"
@@ -1087,14 +1163,16 @@
         "mlb_q2": "2",
         "mlb_q3": "C",
         "mlb_q4": "3",
-        "mlb_q5": "B",
         "mlb_q6": "E",
         "mlb_q7": "B",
         "mlb_q8": "C",
         "mlb_q9": "3",
         "mlb_q10": "C",
-        "mlb_q11": "D",
         "mlb_q12": "B"
+      },
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "D"
       },
       "winner": "SEA",
       "winnerName": "Seattle Mariners"
@@ -1134,17 +1212,19 @@
         "mlb_q2": "3",
         "mlb_q3": "A",
         "mlb_q4": "1",
-        "mlb_q5": "B",
         "mlb_q6": "D",
         "mlb_q7": "A",
         "mlb_q8": "C",
         "mlb_q9": "5",
         "mlb_q10": "E",
-        "mlb_q11": "C",
         "mlb_q12": "A"
       },
-      "winner": "CIN",
-      "winnerName": "Cincinnati Reds"
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "B"
+      },
+      "winner": "MIL",
+      "winnerName": "Milwaukee Brewers"
     },
     {
       "id": "rnd_006",
@@ -1181,14 +1261,16 @@
         "mlb_q2": "2",
         "mlb_q3": "A",
         "mlb_q4": "1",
-        "mlb_q5": "C",
         "mlb_q6": "D",
         "mlb_q7": "C",
         "mlb_q8": "D",
         "mlb_q9": "4",
         "mlb_q10": "B",
-        "mlb_q11": "C",
         "mlb_q12": "D"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
       },
       "winner": "BOS",
       "winnerName": "Boston Red Sox"
@@ -1228,14 +1310,16 @@
         "mlb_q2": "5",
         "mlb_q3": "B",
         "mlb_q4": "4",
-        "mlb_q5": "D",
         "mlb_q6": "B",
         "mlb_q7": "B",
         "mlb_q8": "E",
         "mlb_q9": "2",
         "mlb_q10": "A",
-        "mlb_q11": "C",
         "mlb_q12": "E"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
       },
       "winner": "CLE",
       "winnerName": "Cleveland Guardians"
@@ -1275,14 +1359,16 @@
         "mlb_q2": "4",
         "mlb_q3": "E",
         "mlb_q4": "4",
-        "mlb_q5": "D",
         "mlb_q6": "B",
         "mlb_q7": "E",
         "mlb_q8": "C",
         "mlb_q9": "2",
         "mlb_q10": "E",
-        "mlb_q11": "A",
         "mlb_q12": "A"
+      },
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "A"
       },
       "winner": "MIL",
       "winnerName": "Milwaukee Brewers"
@@ -1322,17 +1408,19 @@
         "mlb_q2": "3",
         "mlb_q3": "A",
         "mlb_q4": "1",
-        "mlb_q5": "C",
         "mlb_q6": "E",
         "mlb_q7": "C",
         "mlb_q8": "C",
         "mlb_q9": "4",
         "mlb_q10": "C",
-        "mlb_q11": "E",
         "mlb_q12": "D"
       },
-      "winner": "AZ",
-      "winnerName": "Arizona Diamondbacks"
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
+      },
+      "winner": "BOS",
+      "winnerName": "Boston Red Sox"
     },
     {
       "id": "rnd_010",
@@ -1369,17 +1457,19 @@
         "mlb_q2": "5",
         "mlb_q3": "E",
         "mlb_q4": "3",
-        "mlb_q5": "B",
         "mlb_q6": "C",
         "mlb_q7": "D",
         "mlb_q8": "A",
         "mlb_q9": "5",
         "mlb_q10": "B",
-        "mlb_q11": "C",
         "mlb_q12": "E"
       },
-      "winner": "SF",
-      "winnerName": "San Francisco Giants"
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "D"
+      },
+      "winner": "ATL",
+      "winnerName": "Atlanta Braves"
     },
     {
       "id": "rnd_011",
@@ -1416,17 +1506,19 @@
         "mlb_q2": "3",
         "mlb_q3": "E",
         "mlb_q4": "3",
-        "mlb_q5": "B",
         "mlb_q6": "A",
         "mlb_q7": "A",
         "mlb_q8": "D",
         "mlb_q9": "1",
         "mlb_q10": "B",
-        "mlb_q11": "A",
         "mlb_q12": "D"
       },
-      "winner": "ATL",
-      "winnerName": "Atlanta Braves"
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "B"
+      },
+      "winner": "SF",
+      "winnerName": "San Francisco Giants"
     },
     {
       "id": "rnd_012",
@@ -1463,17 +1555,19 @@
         "mlb_q2": "3",
         "mlb_q3": "D",
         "mlb_q4": "4",
-        "mlb_q5": "B",
         "mlb_q6": "D",
         "mlb_q7": "C",
         "mlb_q8": "B",
         "mlb_q9": "4",
         "mlb_q10": "D",
-        "mlb_q11": "A",
         "mlb_q12": "D"
       },
-      "winner": "MIL",
-      "winnerName": "Milwaukee Brewers"
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
+      },
+      "winner": "DET",
+      "winnerName": "Detroit Tigers"
     },
     {
       "id": "rnd_013",
@@ -1510,14 +1604,16 @@
         "mlb_q2": "2",
         "mlb_q3": "C",
         "mlb_q4": "3",
-        "mlb_q5": "E",
         "mlb_q6": "E",
         "mlb_q7": "A",
         "mlb_q8": "A",
         "mlb_q9": "2",
         "mlb_q10": "E",
-        "mlb_q11": "D",
         "mlb_q12": "C"
+      },
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
       },
       "winner": "SEA",
       "winnerName": "Seattle Mariners"
@@ -1557,17 +1653,19 @@
         "mlb_q2": "4",
         "mlb_q3": "C",
         "mlb_q4": "1",
-        "mlb_q5": "A",
         "mlb_q6": "A",
         "mlb_q7": "B",
         "mlb_q8": "B",
         "mlb_q9": "5",
         "mlb_q10": "A",
-        "mlb_q11": "C",
         "mlb_q12": "E"
       },
-      "winner": "CLE",
-      "winnerName": "Cleveland Guardians"
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
+      },
+      "winner": "SF",
+      "winnerName": "San Francisco Giants"
     },
     {
       "id": "rnd_015",
@@ -1604,14 +1702,16 @@
         "mlb_q2": "3",
         "mlb_q3": "C",
         "mlb_q4": "3",
-        "mlb_q5": "A",
         "mlb_q6": "C",
         "mlb_q7": "E",
         "mlb_q8": "C",
         "mlb_q9": "1",
         "mlb_q10": "A",
-        "mlb_q11": "D",
         "mlb_q12": "C"
+      },
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "C"
       },
       "winner": "COL",
       "winnerName": "Colorado Rockies"
@@ -1651,14 +1751,16 @@
         "mlb_q2": "3",
         "mlb_q3": "E",
         "mlb_q4": "4",
-        "mlb_q5": "C",
         "mlb_q6": "C",
         "mlb_q7": "C",
         "mlb_q8": "B",
         "mlb_q9": "2",
         "mlb_q10": "B",
-        "mlb_q11": "D",
         "mlb_q12": "A"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
       },
       "winner": "MIL",
       "winnerName": "Milwaukee Brewers"
@@ -1698,14 +1800,16 @@
         "mlb_q2": "4",
         "mlb_q3": "C",
         "mlb_q4": "1",
-        "mlb_q5": "C",
         "mlb_q6": "E",
         "mlb_q7": "E",
         "mlb_q8": "C",
         "mlb_q9": "3",
         "mlb_q10": "B",
-        "mlb_q11": "C",
         "mlb_q12": "C"
+      },
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "C"
       },
       "winner": "SEA",
       "winnerName": "Seattle Mariners"
@@ -1745,14 +1849,16 @@
         "mlb_q2": "4",
         "mlb_q3": "B",
         "mlb_q4": "1",
-        "mlb_q5": "A",
         "mlb_q6": "E",
         "mlb_q7": "E",
         "mlb_q8": "C",
         "mlb_q9": "5",
         "mlb_q10": "C",
-        "mlb_q11": "D",
         "mlb_q12": "E"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "B"
       },
       "winner": "NYM",
       "winnerName": "New York Mets"
@@ -1792,14 +1898,16 @@
         "mlb_q2": "1",
         "mlb_q3": "A",
         "mlb_q4": "4",
-        "mlb_q5": "D",
         "mlb_q6": "B",
         "mlb_q7": "C",
         "mlb_q8": "A",
         "mlb_q9": "3",
         "mlb_q10": "E",
-        "mlb_q11": "B",
         "mlb_q12": "C"
+      },
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
       },
       "winner": "AZ",
       "winnerName": "Arizona Diamondbacks"
@@ -1839,14 +1947,16 @@
         "mlb_q2": "3",
         "mlb_q3": "E",
         "mlb_q4": "1",
-        "mlb_q5": "B",
         "mlb_q6": "A",
         "mlb_q7": "C",
         "mlb_q8": "D",
         "mlb_q9": "5",
         "mlb_q10": "E",
-        "mlb_q11": "A",
         "mlb_q12": "E"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "A"
       },
       "winner": "HOU",
       "winnerName": "Houston Astros"
@@ -1886,14 +1996,16 @@
         "mlb_q2": "4",
         "mlb_q3": "E",
         "mlb_q4": "5",
-        "mlb_q5": "B",
         "mlb_q6": "E",
         "mlb_q7": "C",
         "mlb_q8": "A",
         "mlb_q9": "3",
         "mlb_q10": "B",
-        "mlb_q11": "A",
         "mlb_q12": "B"
+      },
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "A"
       },
       "winner": "ATH",
       "winnerName": "Athletics"
@@ -1933,14 +2045,16 @@
         "mlb_q2": "3",
         "mlb_q3": "A",
         "mlb_q4": "4",
-        "mlb_q5": "C",
         "mlb_q6": "D",
         "mlb_q7": "A",
         "mlb_q8": "D",
         "mlb_q9": "2",
         "mlb_q10": "E",
-        "mlb_q11": "A",
         "mlb_q12": "E"
+      },
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
       },
       "winner": "DET",
       "winnerName": "Detroit Tigers"
@@ -1980,17 +2094,19 @@
         "mlb_q2": "2",
         "mlb_q3": "B",
         "mlb_q4": "1",
-        "mlb_q5": "A",
         "mlb_q6": "D",
         "mlb_q7": "D",
         "mlb_q8": "B",
         "mlb_q9": "2",
         "mlb_q10": "C",
-        "mlb_q11": "D",
         "mlb_q12": "D"
       },
-      "winner": "CHC",
-      "winnerName": "Chicago Cubs"
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "D"
+      },
+      "winner": "CIN",
+      "winnerName": "Cincinnati Reds"
     },
     {
       "id": "rnd_024",
@@ -2027,17 +2143,19 @@
         "mlb_q2": "2",
         "mlb_q3": "B",
         "mlb_q4": "5",
-        "mlb_q5": "C",
         "mlb_q6": "E",
         "mlb_q7": "A",
         "mlb_q8": "D",
         "mlb_q9": "5",
         "mlb_q10": "C",
-        "mlb_q11": "C",
         "mlb_q12": "E"
       },
-      "winner": "TEX",
-      "winnerName": "Texas Rangers"
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      },
+      "winner": "HOU",
+      "winnerName": "Houston Astros"
     },
     {
       "id": "rnd_025",
@@ -2074,14 +2192,16 @@
         "mlb_q2": "3",
         "mlb_q3": "A",
         "mlb_q4": "2",
-        "mlb_q5": "A",
         "mlb_q6": "E",
         "mlb_q7": "E",
         "mlb_q8": "D",
         "mlb_q9": "1",
         "mlb_q10": "C",
-        "mlb_q11": "E",
         "mlb_q12": "D"
+      },
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
       },
       "winner": "DET",
       "winnerName": "Detroit Tigers"
@@ -2121,17 +2241,19 @@
         "mlb_q2": "5",
         "mlb_q3": "E",
         "mlb_q4": "4",
-        "mlb_q5": "D",
         "mlb_q6": "B",
         "mlb_q7": "A",
         "mlb_q8": "C",
         "mlb_q9": "4",
         "mlb_q10": "B",
-        "mlb_q11": "D",
         "mlb_q12": "B"
       },
-      "winner": "SEA",
-      "winnerName": "Seattle Mariners"
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      },
+      "winner": "CLE",
+      "winnerName": "Cleveland Guardians"
     },
     {
       "id": "rnd_027",
@@ -2168,14 +2290,16 @@
         "mlb_q2": "2",
         "mlb_q3": "C",
         "mlb_q4": "3",
-        "mlb_q5": "A",
         "mlb_q6": "C",
         "mlb_q7": "D",
         "mlb_q8": "A",
         "mlb_q9": "3",
         "mlb_q10": "E",
-        "mlb_q11": "E",
         "mlb_q12": "A"
+      },
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
       },
       "winner": "MIN",
       "winnerName": "Minnesota Twins"
@@ -2215,17 +2339,19 @@
         "mlb_q2": "4",
         "mlb_q3": "E",
         "mlb_q4": "4",
-        "mlb_q5": "B",
         "mlb_q6": "D",
         "mlb_q7": "B",
         "mlb_q8": "E",
         "mlb_q9": "4",
         "mlb_q10": "C",
-        "mlb_q11": "C",
         "mlb_q12": "A"
       },
-      "winner": "SF",
-      "winnerName": "San Francisco Giants"
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "A"
+      },
+      "winner": "SD",
+      "winnerName": "San Diego Padres"
     },
     {
       "id": "rnd_029",
@@ -2262,17 +2388,19 @@
         "mlb_q2": "3",
         "mlb_q3": "C",
         "mlb_q4": "1",
-        "mlb_q5": "D",
         "mlb_q6": "C",
         "mlb_q7": "D",
         "mlb_q8": "A",
         "mlb_q9": "5",
         "mlb_q10": "B",
-        "mlb_q11": "E",
         "mlb_q12": "D"
       },
-      "winner": "DET",
-      "winnerName": "Detroit Tigers"
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "B"
+      },
+      "winner": "PHI",
+      "winnerName": "Philadelphia Phillies"
     },
     {
       "id": "rnd_030",
@@ -2309,14 +2437,16 @@
         "mlb_q2": "2",
         "mlb_q3": "B",
         "mlb_q4": "4",
-        "mlb_q5": "D",
         "mlb_q6": "B",
         "mlb_q7": "E",
         "mlb_q8": "E",
         "mlb_q9": "2",
         "mlb_q10": "E",
-        "mlb_q11": "B",
         "mlb_q12": "A"
+      },
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
       },
       "winner": "MIL",
       "winnerName": "Milwaukee Brewers"
@@ -2356,17 +2486,19 @@
         "mlb_q2": "1",
         "mlb_q3": "B",
         "mlb_q4": "2",
-        "mlb_q5": "B",
         "mlb_q6": "E",
         "mlb_q7": "B",
         "mlb_q8": "B",
         "mlb_q9": "2",
         "mlb_q10": "D",
-        "mlb_q11": "C",
         "mlb_q12": "E"
       },
-      "winner": "TOR",
-      "winnerName": "Toronto Blue Jays"
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "A"
+      },
+      "winner": "TEX",
+      "winnerName": "Texas Rangers"
     },
     {
       "id": "rnd_032",
@@ -2403,14 +2535,16 @@
         "mlb_q2": "4",
         "mlb_q3": "D",
         "mlb_q4": "3",
-        "mlb_q5": "E",
         "mlb_q6": "B",
         "mlb_q7": "E",
         "mlb_q8": "A",
         "mlb_q9": "1",
         "mlb_q10": "C",
-        "mlb_q11": "C",
         "mlb_q12": "E"
+      },
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "C"
       },
       "winner": "DET",
       "winnerName": "Detroit Tigers"
@@ -2450,17 +2584,19 @@
         "mlb_q2": "2",
         "mlb_q3": "D",
         "mlb_q4": "4",
-        "mlb_q5": "D",
         "mlb_q6": "D",
         "mlb_q7": "C",
         "mlb_q8": "B",
         "mlb_q9": "1",
         "mlb_q10": "B",
-        "mlb_q11": "D",
         "mlb_q12": "C"
       },
-      "winner": "DET",
-      "winnerName": "Detroit Tigers"
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "A"
+      },
+      "winner": "AZ",
+      "winnerName": "Arizona Diamondbacks"
     },
     {
       "id": "rnd_034",
@@ -2497,14 +2633,16 @@
         "mlb_q2": "3",
         "mlb_q3": "C",
         "mlb_q4": "1",
-        "mlb_q5": "E",
         "mlb_q6": "E",
         "mlb_q7": "E",
         "mlb_q8": "C",
         "mlb_q9": "1",
         "mlb_q10": "B",
-        "mlb_q11": "B",
         "mlb_q12": "B"
+      },
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "D"
       },
       "winner": "DET",
       "winnerName": "Detroit Tigers"
@@ -2544,14 +2682,16 @@
         "mlb_q2": "3",
         "mlb_q3": "D",
         "mlb_q4": "4",
-        "mlb_q5": "D",
         "mlb_q6": "A",
         "mlb_q7": "D",
         "mlb_q8": "D",
         "mlb_q9": "3",
         "mlb_q10": "B",
-        "mlb_q11": "D",
         "mlb_q12": "E"
+      },
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "D"
       },
       "winner": "SF",
       "winnerName": "San Francisco Giants"
@@ -2591,17 +2731,19 @@
         "mlb_q2": "3",
         "mlb_q3": "D",
         "mlb_q4": "5",
-        "mlb_q5": "E",
         "mlb_q6": "E",
         "mlb_q7": "C",
         "mlb_q8": "A",
         "mlb_q9": "2",
         "mlb_q10": "B",
-        "mlb_q11": "B",
         "mlb_q12": "B"
       },
-      "winner": "MIL",
-      "winnerName": "Milwaukee Brewers"
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "C"
+      },
+      "winner": "DET",
+      "winnerName": "Detroit Tigers"
     },
     {
       "id": "rnd_037",
@@ -2638,17 +2780,19 @@
         "mlb_q2": "3",
         "mlb_q3": "D",
         "mlb_q4": "1",
-        "mlb_q5": "B",
         "mlb_q6": "C",
         "mlb_q7": "D",
         "mlb_q8": "B",
         "mlb_q9": "3",
         "mlb_q10": "B",
-        "mlb_q11": "E",
         "mlb_q12": "C"
       },
-      "winner": "SD",
-      "winnerName": "San Diego Padres"
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "D"
+      },
+      "winner": "CIN",
+      "winnerName": "Cincinnati Reds"
     },
     {
       "id": "rnd_038",
@@ -2685,14 +2829,16 @@
         "mlb_q2": "4",
         "mlb_q3": "E",
         "mlb_q4": "5",
-        "mlb_q5": "D",
         "mlb_q6": "A",
         "mlb_q7": "A",
         "mlb_q8": "A",
         "mlb_q9": "3",
         "mlb_q10": "C",
-        "mlb_q11": "E",
         "mlb_q12": "E"
+      },
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
       },
       "winner": "SF",
       "winnerName": "San Francisco Giants"
@@ -2732,17 +2878,19 @@
         "mlb_q2": "1",
         "mlb_q3": "D",
         "mlb_q4": "3",
-        "mlb_q5": "E",
         "mlb_q6": "C",
         "mlb_q7": "A",
         "mlb_q8": "D",
         "mlb_q9": "5",
         "mlb_q10": "C",
-        "mlb_q11": "B",
         "mlb_q12": "A"
       },
-      "winner": "KC",
-      "winnerName": "Kansas City Royals"
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "D"
+      },
+      "winner": "WSH",
+      "winnerName": "Washington Nationals"
     },
     {
       "id": "rnd_040",
@@ -2779,14 +2927,16 @@
         "mlb_q2": "3",
         "mlb_q3": "A",
         "mlb_q4": "1",
-        "mlb_q5": "C",
         "mlb_q6": "D",
         "mlb_q7": "B",
         "mlb_q8": "D",
         "mlb_q9": "5",
         "mlb_q10": "D",
-        "mlb_q11": "D",
         "mlb_q12": "A"
+      },
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
       },
       "winner": "CIN",
       "winnerName": "Cincinnati Reds"
