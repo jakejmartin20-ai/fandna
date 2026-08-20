@@ -50,7 +50,11 @@
         "sa_q11": "C",
         "sa_q12": "B"
       },
-      "expected": "INT"
+      "expected": "INT",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "A"
+      }
     },
     {
       "club": "JUV",
@@ -96,7 +100,11 @@
         "sa_q11": "C",
         "sa_q12": "C"
       },
-      "expected": "JUV"
+      "expected": "JUV",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "A"
+      }
     },
     {
       "club": "MIL",
@@ -142,7 +150,11 @@
         "sa_q11": "B",
         "sa_q12": "B"
       },
-      "expected": "MIL"
+      "expected": "MIL",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "A"
+      }
     },
     {
       "club": "NAP",
@@ -188,7 +200,11 @@
         "sa_q11": "A",
         "sa_q12": "A"
       },
-      "expected": "NAP"
+      "expected": "NAP",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "A"
+      }
     },
     {
       "club": "ROM",
@@ -234,7 +250,11 @@
         "sa_q11": "A",
         "sa_q12": "A"
       },
-      "expected": "ROM"
+      "expected": "ROM",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "A"
+      }
     },
     {
       "club": "LAZ",
@@ -280,7 +300,11 @@
         "sa_q11": "A",
         "sa_q12": "A"
       },
-      "expected": "LAZ"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "club": "ATA",
@@ -326,7 +350,11 @@
         "sa_q11": "C",
         "sa_q12": "C"
       },
-      "expected": "ATA"
+      "expected": "ATA",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "B"
+      }
     },
     {
       "club": "FIO",
@@ -372,7 +400,11 @@
         "sa_q11": "B",
         "sa_q12": "A"
       },
-      "expected": "FIO"
+      "expected": "FIO",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "B"
+      }
     },
     {
       "club": "BOL",
@@ -418,7 +450,11 @@
         "sa_q11": "D",
         "sa_q12": "B"
       },
-      "expected": "BOL"
+      "expected": "BOL",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "B"
+      }
     },
     {
       "club": "TOR",
@@ -464,7 +500,11 @@
         "sa_q11": "A",
         "sa_q12": "A"
       },
-      "expected": "TOR"
+      "expected": "TOR",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "club": "GEN",
@@ -510,7 +550,11 @@
         "sa_q11": "A",
         "sa_q12": "A"
       },
-      "expected": "GEN"
+      "expected": "GEN",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
+      }
     },
     {
       "club": "UDI",
@@ -556,7 +600,11 @@
         "sa_q11": "C",
         "sa_q12": "C"
       },
-      "expected": "UDI"
+      "expected": "UDI",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
+      }
     },
     {
       "club": "COM",
@@ -602,7 +650,11 @@
         "sa_q11": "C",
         "sa_q12": "C"
       },
-      "expected": "COM"
+      "expected": "COM",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "D"
+      }
     },
     {
       "club": "CAG",
@@ -648,7 +700,11 @@
         "sa_q11": "A",
         "sa_q12": "A"
       },
-      "expected": "CAG"
+      "expected": "CAG",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
+      }
     },
     {
       "club": "LEC",
@@ -694,7 +750,11 @@
         "sa_q11": "B",
         "sa_q12": "B"
       },
-      "expected": "LEC"
+      "expected": "LEC",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "C"
+      }
     },
     {
       "club": "PAR",
@@ -740,7 +800,11 @@
         "sa_q11": "B",
         "sa_q12": "B"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "C"
+      }
     },
     {
       "club": "SAS",
@@ -786,7 +850,11 @@
         "sa_q11": "C",
         "sa_q12": "C"
       },
-      "expected": "SAS"
+      "expected": "SAS",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "D"
+      }
     },
     {
       "club": "MON",
@@ -832,7 +900,11 @@
         "sa_q11": "D",
         "sa_q12": "B"
       },
-      "expected": "MON"
+      "expected": "MON",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "D"
+      }
     },
     {
       "club": "FRO",
@@ -878,7 +950,11 @@
         "sa_q11": "A",
         "sa_q12": "D"
       },
-      "expected": "FRO"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "club": "VEN",
@@ -924,7 +1000,11 @@
         "sa_q11": "D",
         "sa_q12": "D"
       },
-      "expected": "VEN"
+      "expected": "VEN",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     }
   ],
   "random": [
@@ -971,7 +1051,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 2,
@@ -1016,7 +1100,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "FRO"
+      "expected": "CAG",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 3,
@@ -1061,7 +1149,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "MON"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 4,
@@ -1106,7 +1198,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "LAZ"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 5,
@@ -1151,7 +1247,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "MON"
+      "expected": "MON",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 6,
@@ -1196,7 +1296,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "MIL"
+      "expected": "MIL",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 7,
@@ -1241,7 +1345,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "BOL"
+      "expected": "BOL",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 8,
@@ -1286,7 +1394,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "FRO"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 9,
@@ -1331,7 +1443,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "MON"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 10,
@@ -1376,7 +1492,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "COM"
+      "expected": "JUV",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 11,
@@ -1421,7 +1541,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "GEN"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 12,
@@ -1466,7 +1590,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "FIO"
+      "expected": "FIO",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 13,
@@ -1511,7 +1639,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "BOL"
+      "expected": "BOL",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 14,
@@ -1556,7 +1688,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 15,
@@ -1601,7 +1737,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "GEN"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 16,
@@ -1646,7 +1786,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "FIO"
+      "expected": "ROM",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 17,
@@ -1691,7 +1835,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "GEN"
+      "expected": "GEN",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 18,
@@ -1736,7 +1884,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "MIL"
+      "expected": "MIL",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 19,
@@ -1781,7 +1933,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "GEN"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 20,
@@ -1826,7 +1982,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "FRO"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 21,
@@ -1871,7 +2031,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "MON"
+      "expected": "MON",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 22,
@@ -1916,7 +2080,11 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "MON"
+      "expected": "LEC",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 23,
@@ -1961,7 +2129,11 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "VEN"
+      "expected": "VEN",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 24,
@@ -2006,7 +2178,11 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "FIO"
+      "expected": "ROM",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 25,
@@ -2051,7 +2227,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "FIO"
+      "expected": "FIO",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 26,
@@ -2096,7 +2276,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "GEN"
+      "expected": "GEN",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 27,
@@ -2141,7 +2325,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 28,
@@ -2186,7 +2374,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "ATA"
+      "expected": "ATA",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 29,
@@ -2231,7 +2423,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "FRO"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 30,
@@ -2276,7 +2472,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "MIL"
+      "expected": "MIL",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 31,
@@ -2321,7 +2521,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 32,
@@ -2366,7 +2570,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "MIL"
+      "expected": "MIL",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 33,
@@ -2411,7 +2619,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "SAS"
+      "expected": "SAS",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 34,
@@ -2456,7 +2668,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "COM"
+      "expected": "NAP",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 35,
@@ -2501,7 +2717,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "LAZ"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 36,
@@ -2546,7 +2766,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "CAG"
+      "expected": "CAG",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 37,
@@ -2591,7 +2815,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "GEN"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 38,
@@ -2636,7 +2864,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 39,
@@ -2681,7 +2913,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "LAZ"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 40,
@@ -2726,7 +2962,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "MON"
+      "expected": "MON",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 41,
@@ -2771,7 +3011,11 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "TOR"
+      "expected": "CAG",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 42,
@@ -2816,7 +3060,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "MON"
+      "expected": "MIL",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 43,
@@ -2861,7 +3109,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "ATA"
+      "expected": "ATA",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 44,
@@ -2906,7 +3158,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "FRO"
+      "expected": "MON",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 45,
@@ -2951,7 +3207,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 46,
@@ -2996,7 +3256,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "BOL"
+      "expected": "JUV",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 47,
@@ -3041,7 +3305,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "MIL"
+      "expected": "BOL",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 48,
@@ -3086,7 +3354,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "FRO"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 49,
@@ -3131,7 +3403,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "VEN"
+      "expected": "VEN",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 50,
@@ -3176,7 +3452,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "ATA"
+      "expected": "GEN",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 51,
@@ -3221,7 +3501,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "VEN"
+      "expected": "VEN",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 52,
@@ -3266,7 +3550,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "MIL"
+      "expected": "MIL",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 53,
@@ -3311,7 +3599,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "LEC"
+      "expected": "LEC",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 54,
@@ -3356,7 +3648,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "FRO"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 55,
@@ -3401,7 +3697,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "LEC"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 56,
@@ -3446,7 +3746,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "FRO"
+      "expected": "MON",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 57,
@@ -3491,7 +3795,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "BOL"
+      "expected": "VEN",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 58,
@@ -3536,7 +3844,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "MON"
+      "expected": "MON",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 59,
@@ -3581,7 +3893,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "ROM"
+      "expected": "ROM",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 60,
@@ -3626,7 +3942,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 61,
@@ -3671,7 +3991,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "VEN"
+      "expected": "VEN",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 62,
@@ -3716,7 +4040,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "FIO"
+      "expected": "CAG",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 63,
@@ -3761,7 +4089,11 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "VEN"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 64,
@@ -3806,7 +4138,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "VEN"
+      "expected": "VEN",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 65,
@@ -3851,7 +4187,11 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "LAZ"
+      "expected": "GEN",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 66,
@@ -3896,7 +4236,11 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "FIO"
+      "expected": "GEN",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 67,
@@ -3941,7 +4285,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "LAZ"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 68,
@@ -3986,7 +4334,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 69,
@@ -4031,7 +4383,11 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "UDI"
+      "expected": "UDI",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 70,
@@ -4076,7 +4432,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "FIO"
+      "expected": "LEC",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 71,
@@ -4121,7 +4481,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "FIO"
+      "expected": "FIO",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 72,
@@ -4166,7 +4530,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "LEC"
+      "expected": "LEC",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 73,
@@ -4211,7 +4579,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "BOL"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 74,
@@ -4256,7 +4628,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 75,
@@ -4301,7 +4677,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 76,
@@ -4346,7 +4726,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "VEN"
+      "expected": "VEN",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 77,
@@ -4391,7 +4775,11 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "ATA"
+      "expected": "ATA",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 78,
@@ -4436,7 +4824,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "ATA"
+      "expected": "ATA",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 79,
@@ -4481,7 +4873,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 80,
@@ -4526,7 +4922,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "ROM"
+      "expected": "ROM",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 81,
@@ -4571,7 +4971,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "FRO"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 82,
@@ -4616,7 +5020,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "INT"
+      "expected": "INT",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 83,
@@ -4661,7 +5069,11 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "MON"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 84,
@@ -4706,7 +5118,11 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "FIO"
+      "expected": "FIO",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 85,
@@ -4751,7 +5167,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "MON"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 86,
@@ -4796,7 +5216,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "CAG"
+      "expected": "CAG",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 87,
@@ -4841,7 +5265,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "BOL"
+      "expected": "BOL",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 88,
@@ -4886,7 +5314,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "FIO"
+      "expected": "FIO",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 89,
@@ -4931,7 +5363,11 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "LAZ"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 90,
@@ -4976,7 +5412,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "BOL"
+      "expected": "BOL",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 91,
@@ -5021,7 +5461,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "ATA"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 92,
@@ -5066,7 +5510,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "GEN"
+      "expected": "GEN",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 93,
@@ -5111,7 +5559,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "FRO"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 94,
@@ -5156,7 +5608,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 95,
@@ -5201,7 +5657,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "FRO"
+      "expected": "BOL",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 96,
@@ -5246,7 +5706,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "FRO"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 97,
@@ -5291,7 +5755,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "FIO"
+      "expected": "FIO",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 98,
@@ -5336,7 +5804,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "ATA"
+      "expected": "ATA",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 99,
@@ -5381,7 +5853,11 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "UDI"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 100,
@@ -5426,7 +5902,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "MIL"
+      "expected": "MIL",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 101,
@@ -5471,7 +5951,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "JUV"
+      "expected": "COM",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 102,
@@ -5516,7 +6000,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "LAZ"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 103,
@@ -5561,7 +6049,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "LEC"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 104,
@@ -5606,7 +6098,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "MIL"
+      "expected": "MIL",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 105,
@@ -5651,7 +6147,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "FIO"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 106,
@@ -5696,7 +6196,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 107,
@@ -5741,7 +6245,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "INT"
+      "expected": "INT",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 108,
@@ -5786,7 +6294,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "GEN"
+      "expected": "ROM",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 109,
@@ -5831,7 +6343,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "ROM"
+      "expected": "LEC",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 110,
@@ -5876,7 +6392,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "MON"
+      "expected": "MON",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 111,
@@ -5921,7 +6441,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "FRO"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 112,
@@ -5966,7 +6490,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "LAZ"
+      "expected": "MIL",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 113,
@@ -6011,7 +6539,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "MIL"
+      "expected": "MIL",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 114,
@@ -6056,7 +6588,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "GEN"
+      "expected": "GEN",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 115,
@@ -6101,7 +6637,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "LEC"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 116,
@@ -6146,7 +6686,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "ATA"
+      "expected": "ATA",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 117,
@@ -6191,7 +6735,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "GEN"
+      "expected": "GEN",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 118,
@@ -6236,7 +6784,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "INT"
+      "expected": "INT",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 119,
@@ -6281,7 +6833,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "LEC"
+      "expected": "TOR",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 120,
@@ -6326,7 +6882,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "VEN"
+      "expected": "VEN",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 121,
@@ -6371,7 +6931,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "GEN"
+      "expected": "GEN",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 122,
@@ -6416,7 +6980,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "UDI"
+      "expected": "UDI",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 123,
@@ -6461,7 +7029,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "JUV"
+      "expected": "BOL",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 124,
@@ -6506,7 +7078,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "ATA"
+      "expected": "ATA",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 125,
@@ -6551,7 +7127,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "BOL"
+      "expected": "BOL",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 126,
@@ -6596,7 +7176,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "MON"
+      "expected": "MON",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 127,
@@ -6641,7 +7225,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "LAZ"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 128,
@@ -6686,7 +7274,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "LAZ"
+      "expected": "ROM",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 129,
@@ -6731,7 +7323,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "PAR"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 130,
@@ -6776,7 +7372,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "BOL"
+      "expected": "INT",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 131,
@@ -6821,7 +7421,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "ATA"
+      "expected": "ATA",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 132,
@@ -6866,7 +7470,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "INT"
+      "expected": "INT",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 133,
@@ -6911,7 +7519,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "MON"
+      "expected": "MON",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 134,
@@ -6956,7 +7568,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 135,
@@ -7001,7 +7617,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "GEN"
+      "expected": "TOR",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 136,
@@ -7046,7 +7666,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "COM"
+      "expected": "COM",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 137,
@@ -7091,7 +7715,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "LEC"
+      "expected": "VEN",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 138,
@@ -7136,7 +7764,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "MIL"
+      "expected": "MIL",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 139,
@@ -7181,7 +7813,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "COM"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 140,
@@ -7226,7 +7862,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "FIO"
+      "expected": "ROM",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 141,
@@ -7271,7 +7911,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "PAR"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 142,
@@ -7316,7 +7960,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "LEC"
+      "expected": "LEC",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 143,
@@ -7361,7 +8009,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "BOL"
+      "expected": "TOR",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 144,
@@ -7406,7 +8058,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "MON"
+      "expected": "MON",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 145,
@@ -7451,7 +8107,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "BOL"
+      "expected": "BOL",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 146,
@@ -7496,7 +8156,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "LAZ"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 147,
@@ -7541,7 +8205,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "BOL"
+      "expected": "BOL",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 148,
@@ -7586,7 +8254,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "LEC"
+      "expected": "LEC",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 149,
@@ -7631,7 +8303,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "BOL"
+      "expected": "BOL",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 150,
@@ -7676,7 +8352,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "VEN"
+      "expected": "LEC",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 151,
@@ -7721,7 +8401,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "VEN"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 152,
@@ -7766,7 +8450,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "BOL"
+      "expected": "INT",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 153,
@@ -7811,7 +8499,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "ATA"
+      "expected": "ATA",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 154,
@@ -7856,7 +8548,11 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "LEC"
+      "expected": "LEC",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 155,
@@ -7901,7 +8597,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "FRO"
+      "expected": "FIO",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 156,
@@ -7946,7 +8646,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "GEN"
+      "expected": "GEN",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 157,
@@ -7991,7 +8695,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "FRO"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 158,
@@ -8036,7 +8744,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "MON"
+      "expected": "MON",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 159,
@@ -8081,7 +8793,11 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "FIO"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 160,
@@ -8126,7 +8842,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "ATA"
+      "expected": "COM",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 161,
@@ -8171,7 +8891,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "MIL"
+      "expected": "MIL",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 162,
@@ -8216,7 +8940,11 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "INT"
+      "expected": "INT",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 163,
@@ -8261,7 +8989,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 164,
@@ -8306,7 +9038,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "NAP"
+      "expected": "NAP",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 165,
@@ -8351,7 +9087,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "FIO"
+      "expected": "FIO",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 166,
@@ -8396,7 +9136,11 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "FIO"
+      "expected": "CAG",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 167,
@@ -8441,7 +9185,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "ROM"
+      "expected": "ROM",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 168,
@@ -8486,7 +9234,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "TOR"
+      "expected": "TOR",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 169,
@@ -8531,7 +9283,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "MIL"
+      "expected": "VEN",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 170,
@@ -8576,7 +9332,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 171,
@@ -8621,7 +9381,11 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "FIO"
+      "expected": "FIO",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 172,
@@ -8666,7 +9430,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "ATA"
+      "expected": "ATA",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 173,
@@ -8711,7 +9479,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "CAG"
+      "expected": "VEN",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 174,
@@ -8756,7 +9528,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "FIO"
+      "expected": "LEC",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 175,
@@ -8801,7 +9577,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "FRO"
+      "expected": "BOL",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 176,
@@ -8846,7 +9626,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "VEN"
+      "expected": "VEN",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 177,
@@ -8891,7 +9675,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 178,
@@ -8936,7 +9724,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "LEC"
+      "expected": "LEC",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 179,
@@ -8981,7 +9773,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "COM"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 180,
@@ -9026,7 +9822,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "GEN"
+      "expected": "GEN",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 181,
@@ -9071,7 +9871,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "TOR"
+      "expected": "GEN",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 182,
@@ -9116,7 +9920,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "VEN"
+      "expected": "VEN",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 183,
@@ -9161,7 +9969,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "MON"
+      "expected": "BOL",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 184,
@@ -9206,7 +10018,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "LAZ"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 185,
@@ -9251,7 +10067,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "NAP"
+      "expected": "VEN",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 186,
@@ -9296,7 +10116,11 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "ATA"
+      "expected": "ATA",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 187,
@@ -9341,7 +10165,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "LEC"
+      "expected": "LEC",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 188,
@@ -9386,7 +10214,11 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "CAG"
+      "expected": "CAG",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 189,
@@ -9431,7 +10263,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 190,
@@ -9476,7 +10312,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "FIO"
+      "expected": "FIO",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 191,
@@ -9521,7 +10361,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "BOL"
+      "expected": "BOL",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 192,
@@ -9566,7 +10410,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "MON"
+      "expected": "MON",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 193,
@@ -9611,7 +10459,11 @@
         "sa_q12": "A",
         "sa_q13": "B"
       },
-      "expected": "FIO"
+      "expected": "FIO",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 194,
@@ -9656,7 +10508,11 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "LAZ"
+      "expected": "MIL",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 195,
@@ -9701,7 +10557,11 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "MON"
+      "expected": "MON",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 196,
@@ -9746,7 +10606,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "MIL"
+      "expected": "MIL",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     },
     {
       "seed": 197,
@@ -9791,7 +10655,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "FRO"
+      "expected": "FRO",
+      "spineAnswers": {
+        "S6": "B",
+        "S7": "D"
+      }
     },
     {
       "seed": 198,
@@ -9836,7 +10704,11 @@
         "sa_q12": "B",
         "sa_q13": "B"
       },
-      "expected": "PAR"
+      "expected": "PAR",
+      "spineAnswers": {
+        "S6": "C",
+        "S7": "C"
+      }
     },
     {
       "seed": 199,
@@ -9881,7 +10753,11 @@
         "sa_q12": "D",
         "sa_q13": "B"
       },
-      "expected": "MON"
+      "expected": "MON",
+      "spineAnswers": {
+        "S6": "D",
+        "S7": "B"
+      }
     },
     {
       "seed": 200,
@@ -9926,7 +10802,12 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "LAZ"
+      "expected": "LAZ",
+      "spineAnswers": {
+        "S6": "A",
+        "S7": "A"
+      }
     }
-  ]
+  ],
+  "rebaselined_s42": "s42: SA onto the shared spine. S6(build)+S7(role) re-authored, added off shared answers. Fixtures carry spineAnswers {S6,S7}; winners re-recorded on the spine engine."
 }
