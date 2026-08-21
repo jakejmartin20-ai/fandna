@@ -518,11 +518,18 @@ function AppInner(){
   function startOver(){
     clearAll();
     setMode("full");setSavedCore(null);setGenome({});setCoreProfile(null);setEvidence(null);setEvidenceInput(null);
+    setEarnFamily(null);
     setPhase("out");
     setTimeout(()=>{
       setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");
       setScreen("home");setPhase("in");
     },160);
+  }
+  // Re-open an already-earned bucket crest from the home tick. Reuses the earn overlay (display-only).
+  function openCrest(fam){
+    if(!fam) return;
+    setEarnReduced(!!(typeof window!=="undefined"&&window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches));
+    setEarnFamily(fam);
   }
   // Restore a saved genome from a share code: the link IS the backup. Rebuilds local storage by
   // replaying the packed {core + club-per-sport} through saveResult (no new storage code), then
@@ -969,6 +976,7 @@ function AppInner(){
             onCompare={shareGenomeCompare}
             onHow={openHow}
             onResequence={()=>setResequenceConfirm(true)}
+            onOpenCrest={openCrest}
             resequenceDelta={resequenceDelta}
             onDismissDelta={()=>{setResequenceDelta(null);clearPending();}}
           />
