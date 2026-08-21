@@ -12,13 +12,15 @@
 const KEY = "fandna_v1";     // localStorage key unchanged (bumping it would drop everyone's genome)
 const VERSION = 2;           // v2 adds spineAnswers
 
-function blank(){ return { version: VERSION, coreAnswers: null, coreProfile: null, spineAnswers: null, results: {}, pending: [] }; }
+function blank(){ return { version: VERSION, coreAnswers: null, coreProfile: null, spineAnswers: null, results: {}, pending: [], earnedGroups: [] }; }
 
 function migrate(state){
   // Single place to bump old shapes forward as the schema evolves.
   if (!state || typeof state!=="object") return blank();
   if (!state.results) state.results = {};
   if (!Array.isArray(state.pending)) state.pending = [];
+  // earnedGroups: which bucket crests have already fired their earn moment (fire once, forever).
+  if (!Array.isArray(state.earnedGroups)) state.earnedGroups = [];
   // v1 -> v2: spineAnswers didn't exist. Old genomes get null; a spine-enabled league they had
   // already taken is re-derived / re-flagged on recompute (App.jsx), never silently mis-scored.
   if (!("spineAnswers" in state) || state.spineAnswers === undefined) state.spineAnswers = null;
@@ -94,4 +96,15 @@ function appendPending(moved){
 function readPending(){ return loadState().pending || []; }
 function clearPending(){ const state=loadState(); state.pending=[]; writeState(state); return state; }
 
-export { loadState, saveResult, saveSpine, clearModule, clearAll, appendPending, readPending, clearPending, KEY, VERSION };
+// Bucket crests earned. The earn moment fires once per bucket, the first time it completes; the
+// flag persists so it never re-fires and never un-earns when a hidden league later flips live.
+function markGroupEarned(groupId){
+  const state = loadState();
+  if (!Array.isArray(state.earnedGroups)) state.earnedGroups = [];
+  if (groupId && !state.earnedGroups.includes(groupId)) state.earnedGroups.push(groupId);
+  writeState(state);
+  return state.earnedGroups;
+}
+function earnedGroups(){ return loadState().earnedGroups || []; }
+
+export { loadState, saveResult, saveSpine, clearModule, clearAll, appendPending, readPending, clearPending, markGroupEarned, earnedGroups, KEY, VERSION };
