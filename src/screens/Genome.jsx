@@ -17,6 +17,7 @@ import { useState } from "react";
 import { ClubMark } from "../components/ClubMark";
 import { CoreStrip } from "../components/CoreStrip";
 import { InstinctsLine } from "../components/InstinctsLine";
+import { HexBadge } from "../components/HexBadge";
 import { FAMILIES } from "../lib/manifest";
 import { generateRead, coreBlocks } from "../lib/genomeRead";
 import { encodeGenome } from "../lib/compareCode";
@@ -97,6 +98,7 @@ export function GenomeHome({
   onCompare,         // () => void : share the /c/ compare link (home primary CTA)
   onResequence,      // () => void : open the "re-sequence core?" confirm
   onOpenCrest,       // (fam) => void : re-open an earned bucket crest from the home tick
+  onOpenFinale,      // () => void : re-open the collection-complete finale from the quiet home line
   resequenceDelta,   // {moved:[{sport,from,to}],stale:[code]} shown once after a re-sequence, or null
   onDismissDelta,    // () => void : clear the delta banner
 }){
@@ -464,6 +466,15 @@ export function GenomeHome({
 
       {/* The family panels - the through-line's evidence and the way into each league. */}
       <div style={{marginTop:14,marginBottom:26}}>
+        {(()=>{ const allDone = FAMILIES.every(f=>{ const gs=sports.filter(s=>s.group===f.id); return gs.length>0 && gs.every(s=>s.live && genome[s.code] && genome[s.code].club); });
+          return allDone ? (
+            <button type="button" onClick={()=>onOpenFinale&&onOpenFinale()} aria-label="Collection complete, view the genome"
+              style={{display:"flex",alignItems:"center",gap:10,width:"100%",marginBottom:14,background:"rgba(201,178,122,0.07)",border:"1px solid rgba(201,178,122,0.35)",borderRadius:12,padding:"10px 14px",cursor:"pointer",textAlign:"left"}}>
+              <HexBadge kind="genome" profile={coreProfile} size={26}/>
+              <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.18em",textTransform:"uppercase",color:"#d8c184",flex:1}}>Collection complete</span>
+              <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.1em",textTransform:"uppercase",color:"#8a8560"}}>all three groups</span>
+            </button>
+          ) : null; })()}
         {FAMILIES.map((fam,i)=>(
           <FamilyPanel key={fam.id} fam={fam} last={i===FAMILIES.length-1}/>
         ))}
