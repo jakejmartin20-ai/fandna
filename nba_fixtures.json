@@ -1,7 +1,7 @@
 {
   "meta": {
     "purpose": "NBA regression gate. Each fixture is an input the live NBA engine maps to a team. Any future change to src/data/nba.js scoring (or the shared fingerprint engine in src/lib/scoring.js) must reproduce every winner here, or the diff must be reviewed and accepted.",
-    "generated": "2026-07-06",
+    "generated": "2026-08-20",
     "source": "Re-baselined at the NBA scoring-balance build (30 teams, 12 module questions). Accepted change: 8 magnet trims (DAL x4, WAS x2, MIA x2) + 1 New Orleans re-key (q12 D->C, 'the long shot nobody believed'), fixing the Dallas star-chase magnet that swallowed Phoenix (4.7%->100%) and separating the Orlando/New Orleans near-twins (both now self-land). NBA is a fingerprint sport like NFL and MLB: coreProfile vs teamDims plus module-point tiebreakers. Post-build HARD Lane gate: zero swallowed, floor HOU ~26%, biggest magnet DET ~8.4%, 30/30 signatures self-land.",
     "synthetic_caveat": "Signatures pin coreProfile to each teams own teamDims and use that teams signature module answers; they measure ENGINE BEHAVIOR (reachability), not real-taker prevalence. Random fixtures reuse the prior baselines uniform inputs, re-baselined on the CURRENT (post-decompression) engine. The prior committed baseline predated core decompression, so raw winner drift vs it is not attributable to this change. Isolating scoring alone on the current engine, the accepted trims moved exactly 3 of 40 random winners (rnd_001, rnd_018, rnd_026), all Dallas/Washington magnet-shedding in the intended direction. All 30 signatures self-land. Reachability is not prevalence.",
     "signature_method": "coreProfile = teamDims; moduleAnswers = the option the team sits in per choice question, strong end (1 or 5) of its slider camp, neutral 3 where the team is off the slider.",
@@ -15,7 +15,9 @@
     "dataFile": "nba.js 65815756",
     "engine": "src/lib/scoring.js ef38619b (NBA fingerprint, FP_W 1.2, DIST_REF 14)",
     "note": "nba sliders rebuilt as honest per-team footprints; q9 re-aimed from emotion-duplicate to ROOTEDNESS (new wording \"Where do you belong?\"); q3=process, q6=emotion. peak-by-trait across all 5 positions.",
-    "rebaselined_s32": "2026-08-11 session32: module-coding honesty starvation fix. 6 cell restorations (+2 each) returning build-trim-zeroed cells to each team's owned option — DAL q1-A/q5-A/q4-C, MIA q7-A/q10-B, WAS q1-A. Lifts self-capture (DAL 1.8->7.8%, WAS 5.4->8.3%, MIA 6.5->11.4%) with no magnet (max CLE 6.0% < 8.3%), nothing dead (min BKN 0.51% > 0.37%), no module-twin, 30/30 signatures self-land. 3 random winners moved (rnd_018 HOU->DAL, rnd_028 HOU->MIA, rnd_034 GSW->MIA), all starved-team reclamation. NBA remains hidden (?nba)."
+    "rebaselined_s32": "2026-08-11 session32: module-coding honesty starvation fix. 6 cell restorations (+2 each) returning build-trim-zeroed cells to each team's owned option — DAL q1-A/q5-A/q4-C, MIA q7-A/q10-B, WAS q1-A. Lifts self-capture (DAL 1.8->7.8%, WAS 5.4->8.3%, MIA 6.5->11.4%) with no magnet (max CLE 6.0% < 8.3%), nothing dead (min BKN 0.51% > 0.37%), no module-twin, 30/30 signatures self-land. 3 random winners moved (rnd_018 HOU->DAL, rnd_028 HOU->MIA, rnd_034 GSW->MIA), all starved-team reclamation. NBA remains hidden (?nba).",
+    "format": "new (spine-era): signatures carry coreProfile, randoms carry coreAnswers, both carry explicit spineAnswers {S1..S7}. Re-recorded s44 to retire the pre-spine old-format harvest.",
+    "regenerated": "s44 under the live spine engine (all 7 slots scored; signatures own-pole self-land 30/30)"
   },
   "fixtures": [
     {
@@ -30,6 +32,15 @@
         "community": 3,
         "chaos": 6,
         "rootedness": 9
+      },
+      "spineAnswers": {
+        "S1": "B",
+        "S2": "A",
+        "S3": "1",
+        "S4": "2",
+        "S5": "D",
+        "S6": "C",
+        "S7": "A"
       },
       "moduleAnswers": {
         "nba_q1": "A",
@@ -61,6 +72,15 @@
         "chaos": 4,
         "rootedness": 10
       },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "C",
+        "S3": "1",
+        "S4": "1",
+        "S5": "C",
+        "S6": "D",
+        "S7": "A"
+      },
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "C",
@@ -90,6 +110,15 @@
         "community": 7,
         "chaos": 4,
         "rootedness": 7
+      },
+      "spineAnswers": {
+        "S1": "C",
+        "S2": "C",
+        "S3": "2",
+        "S4": "3",
+        "S5": "B",
+        "S6": "B",
+        "S7": "A"
       },
       "moduleAnswers": {
         "nba_q1": "B",
@@ -121,6 +150,15 @@
         "chaos": 5,
         "rootedness": 8
       },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "B",
+        "S3": "2",
+        "S4": "2",
+        "S5": "D",
+        "S6": "D",
+        "S7": "A"
+      },
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "D",
@@ -150,6 +188,15 @@
         "community": 9,
         "chaos": 2,
         "rootedness": 8
+      },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "B",
+        "S3": "2",
+        "S4": "2",
+        "S5": "B",
+        "S6": "B",
+        "S7": "C"
       },
       "moduleAnswers": {
         "nba_q1": "B",
@@ -181,6 +228,15 @@
         "chaos": 3,
         "rootedness": 5
       },
+      "spineAnswers": {
+        "S1": "C",
+        "S2": "C",
+        "S3": "2",
+        "S4": "4",
+        "S5": "C",
+        "S6": "A",
+        "S7": "D"
+      },
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "C",
@@ -210,6 +266,15 @@
         "community": 6,
         "chaos": 6,
         "rootedness": 8
+      },
+      "spineAnswers": {
+        "S1": "C",
+        "S2": "C",
+        "S3": "2",
+        "S4": "2",
+        "S5": "C",
+        "S6": "A",
+        "S7": "B"
       },
       "moduleAnswers": {
         "nba_q1": "D",
@@ -241,6 +306,15 @@
         "chaos": 3,
         "rootedness": 6
       },
+      "spineAnswers": {
+        "S1": "C",
+        "S2": "B",
+        "S3": "2",
+        "S4": "3",
+        "S5": "B",
+        "S6": "B",
+        "S7": "C"
+      },
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "B",
@@ -270,6 +344,15 @@
         "community": 8,
         "chaos": 4,
         "rootedness": 6
+      },
+      "spineAnswers": {
+        "S1": "C",
+        "S2": "C",
+        "S3": "2",
+        "S4": "3",
+        "S5": "C",
+        "S6": "B",
+        "S7": "C"
       },
       "moduleAnswers": {
         "nba_q1": "B",
@@ -301,6 +384,15 @@
         "chaos": 3,
         "rootedness": 8
       },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "C",
+        "S3": "4",
+        "S4": "2",
+        "S5": "B",
+        "S6": "B",
+        "S7": "C"
+      },
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "B",
@@ -330,6 +422,15 @@
         "community": 7,
         "chaos": 4,
         "rootedness": 4
+      },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "C",
+        "S3": "4",
+        "S4": "4",
+        "S5": "B",
+        "S6": "B",
+        "S7": "D"
       },
       "moduleAnswers": {
         "nba_q1": "D",
@@ -361,6 +462,15 @@
         "chaos": 5,
         "rootedness": 8
       },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "A",
+        "S3": "3",
+        "S4": "2",
+        "S5": "C",
+        "S6": "B",
+        "S7": "C"
+      },
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "C",
@@ -390,6 +500,15 @@
         "community": 8,
         "chaos": 5,
         "rootedness": 4
+      },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "C",
+        "S3": "4",
+        "S4": "4",
+        "S5": "C",
+        "S6": "B",
+        "S7": "C"
       },
       "moduleAnswers": {
         "nba_q1": "B",
@@ -421,6 +540,15 @@
         "chaos": 2,
         "rootedness": 7
       },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "B",
+        "S3": "4",
+        "S4": "3",
+        "S5": "B",
+        "S6": "B",
+        "S7": "C"
+      },
       "moduleAnswers": {
         "nba_q1": "B",
         "nba_q2": "B",
@@ -450,6 +578,15 @@
         "community": 8,
         "chaos": 4,
         "rootedness": 7
+      },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "C",
+        "S3": "4",
+        "S4": "3",
+        "S5": "B",
+        "S6": "B",
+        "S7": "C"
       },
       "moduleAnswers": {
         "nba_q1": "A",
@@ -481,6 +618,15 @@
         "chaos": 6,
         "rootedness": 9
       },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "A",
+        "S3": "2",
+        "S4": "2",
+        "S5": "A",
+        "S6": "C",
+        "S7": "A"
+      },
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "A",
@@ -510,6 +656,15 @@
         "community": 6,
         "chaos": 6,
         "rootedness": 6
+      },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "A",
+        "S3": "3",
+        "S4": "3",
+        "S5": "A",
+        "S6": "D",
+        "S7": "B"
       },
       "moduleAnswers": {
         "nba_q1": "B",
@@ -541,6 +696,15 @@
         "chaos": 5,
         "rootedness": 6
       },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "A",
+        "S3": "4",
+        "S4": "3",
+        "S5": "C",
+        "S6": "A",
+        "S7": "B"
+      },
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "C",
@@ -570,6 +734,15 @@
         "community": 5,
         "chaos": 7,
         "rootedness": 3
+      },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "D",
+        "S3": "4",
+        "S4": "5",
+        "S5": "D",
+        "S6": "D",
+        "S7": "D"
       },
       "moduleAnswers": {
         "nba_q1": "C",
@@ -601,6 +774,15 @@
         "chaos": 5,
         "rootedness": 6
       },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "D",
+        "S3": "5",
+        "S4": "3",
+        "S5": "A",
+        "S6": "A",
+        "S7": "C"
+      },
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "A",
@@ -630,6 +812,15 @@
         "community": 3,
         "chaos": 9,
         "rootedness": 4
+      },
+      "spineAnswers": {
+        "S1": "B",
+        "S2": "D",
+        "S3": "2",
+        "S4": "4",
+        "S5": "D",
+        "S6": "C",
+        "S7": "D"
       },
       "moduleAnswers": {
         "nba_q1": "C",
@@ -661,6 +852,15 @@
         "chaos": 7,
         "rootedness": 4
       },
+      "spineAnswers": {
+        "S1": "B",
+        "S2": "D",
+        "S3": "2",
+        "S4": "4",
+        "S5": "D",
+        "S6": "C",
+        "S7": "D"
+      },
       "moduleAnswers": {
         "nba_q1": "C",
         "nba_q2": "D",
@@ -690,6 +890,15 @@
         "community": 4,
         "chaos": 7,
         "rootedness": 6
+      },
+      "spineAnswers": {
+        "S1": "B",
+        "S2": "D",
+        "S3": "2",
+        "S4": "3",
+        "S5": "D",
+        "S6": "C",
+        "S7": "B"
       },
       "moduleAnswers": {
         "nba_q1": "C",
@@ -721,6 +930,15 @@
         "chaos": 5,
         "rootedness": 6
       },
+      "spineAnswers": {
+        "S1": "B",
+        "S2": "C",
+        "S3": "2",
+        "S4": "3",
+        "S5": "C",
+        "S6": "C",
+        "S7": "A"
+      },
       "moduleAnswers": {
         "nba_q1": "C",
         "nba_q2": "C",
@@ -750,6 +968,15 @@
         "community": 5,
         "chaos": 8,
         "rootedness": 6
+      },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "D",
+        "S3": "2",
+        "S4": "3",
+        "S5": "A",
+        "S6": "C",
+        "S7": "B"
       },
       "moduleAnswers": {
         "nba_q1": "A",
@@ -781,6 +1008,15 @@
         "chaos": 7,
         "rootedness": 7
       },
+      "spineAnswers": {
+        "S1": "B",
+        "S2": "D",
+        "S3": "2",
+        "S4": "3",
+        "S5": "D",
+        "S6": "A",
+        "S7": "B"
+      },
       "moduleAnswers": {
         "nba_q1": "C",
         "nba_q2": "D",
@@ -810,6 +1046,15 @@
         "community": 7,
         "chaos": 4,
         "rootedness": 4
+      },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "C",
+        "S3": "3",
+        "S4": "4",
+        "S5": "A",
+        "S6": "D",
+        "S7": "C"
       },
       "moduleAnswers": {
         "nba_q1": "D",
@@ -841,6 +1086,15 @@
         "chaos": 5,
         "rootedness": 4
       },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "C",
+        "S3": "4",
+        "S4": "4",
+        "S5": "A",
+        "S6": "A",
+        "S7": "D"
+      },
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "A",
@@ -870,6 +1124,15 @@
         "community": 5,
         "chaos": 6,
         "rootedness": 3
+      },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "D",
+        "S3": "4",
+        "S4": "5",
+        "S5": "A",
+        "S6": "A",
+        "S7": "D"
       },
       "moduleAnswers": {
         "nba_q1": "D",
@@ -901,6 +1164,15 @@
         "chaos": 6,
         "rootedness": 4
       },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "A",
+        "S3": "4",
+        "S4": "4",
+        "S5": "D",
+        "S6": "A",
+        "S7": "D"
+      },
       "moduleAnswers": {
         "nba_q1": "B",
         "nba_q2": "D",
@@ -921,7 +1193,6 @@
     {
       "id": "rnd_001",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "E",
         "q2": "right",
@@ -948,6 +1219,15 @@
         "q23": "D",
         "q24": "2"
       },
+      "spineAnswers": {
+        "S1": "B",
+        "S2": "D",
+        "S3": "3",
+        "S4": "5",
+        "S5": "A",
+        "S6": "C",
+        "S7": "A"
+      },
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "A",
@@ -962,13 +1242,12 @@
         "nba_q11": "A",
         "nba_q12": "D"
       },
-      "winner": "NYK",
-      "winnerName": "New York Knicks"
+      "winner": "DAL",
+      "winnerName": "Dallas Mavericks"
     },
     {
       "id": "rnd_002",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "A",
         "q2": "left",
@@ -995,6 +1274,15 @@
         "q23": "C",
         "q24": "3"
       },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "B",
+        "S3": "3",
+        "S4": "2",
+        "S5": "A",
+        "S6": "C",
+        "S7": "B"
+      },
       "moduleAnswers": {
         "nba_q1": "B",
         "nba_q2": "B",
@@ -1009,13 +1297,12 @@
         "nba_q11": "C",
         "nba_q12": "A"
       },
-      "winner": "BOS",
-      "winnerName": "Boston Celtics"
+      "winner": "NYK",
+      "winnerName": "New York Knicks"
     },
     {
       "id": "rnd_003",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "D",
         "q2": "left",
@@ -1042,6 +1329,15 @@
         "q23": "C",
         "q24": "5"
       },
+      "spineAnswers": {
+        "S1": "B",
+        "S2": "A",
+        "S3": "5",
+        "S4": "5",
+        "S5": "C",
+        "S6": "A",
+        "S7": "C"
+      },
       "moduleAnswers": {
         "nba_q1": "B",
         "nba_q2": "B",
@@ -1056,13 +1352,12 @@
         "nba_q11": "D",
         "nba_q12": "C"
       },
-      "winner": "IND",
-      "winnerName": "Indiana Pacers"
+      "winner": "SAC",
+      "winnerName": "Sacramento Kings"
     },
     {
       "id": "rnd_004",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "C",
         "q2": "right",
@@ -1089,6 +1384,15 @@
         "q23": "E",
         "q24": "3"
       },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "B",
+        "S3": "5",
+        "S4": "2",
+        "S5": "D",
+        "S6": "D",
+        "S7": "B"
+      },
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "B",
@@ -1103,13 +1407,12 @@
         "nba_q11": "C",
         "nba_q12": "C"
       },
-      "winner": "DEN",
-      "winnerName": "Denver Nuggets"
+      "winner": "PHI",
+      "winnerName": "Philadelphia 76ers"
     },
     {
       "id": "rnd_005",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "C",
         "q2": "right",
@@ -1136,6 +1439,15 @@
         "q23": "E",
         "q24": "5"
       },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "D",
+        "S3": "3",
+        "S4": "2",
+        "S5": "A",
+        "S6": "B",
+        "S7": "D"
+      },
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "A",
@@ -1150,13 +1462,12 @@
         "nba_q11": "B",
         "nba_q12": "C"
       },
-      "winner": "SAC",
-      "winnerName": "Sacramento Kings"
+      "winner": "MIN",
+      "winnerName": "Minnesota Timberwolves"
     },
     {
       "id": "rnd_006",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "C",
         "q2": "left",
@@ -1183,6 +1494,15 @@
         "q23": "A",
         "q24": "5"
       },
+      "spineAnswers": {
+        "S1": "C",
+        "S2": "C",
+        "S3": "5",
+        "S4": "2",
+        "S5": "D",
+        "S6": "B",
+        "S7": "A"
+      },
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "A",
@@ -1197,13 +1517,12 @@
         "nba_q11": "A",
         "nba_q12": "A"
       },
-      "winner": "CHI",
-      "winnerName": "Chicago Bulls"
+      "winner": "GSW",
+      "winnerName": "Golden State Warriors"
     },
     {
       "id": "rnd_007",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "E",
         "q2": "left",
@@ -1230,6 +1549,15 @@
         "q23": "B",
         "q24": "2"
       },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "B",
+        "S3": "1",
+        "S4": "3",
+        "S5": "D",
+        "S6": "A",
+        "S7": "D"
+      },
       "moduleAnswers": {
         "nba_q1": "C",
         "nba_q2": "B",
@@ -1244,13 +1572,12 @@
         "nba_q11": "C",
         "nba_q12": "C"
       },
-      "winner": "SAC",
-      "winnerName": "Sacramento Kings"
+      "winner": "HOU",
+      "winnerName": "Houston Rockets"
     },
     {
       "id": "rnd_008",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "B",
         "q2": "left",
@@ -1277,6 +1604,15 @@
         "q23": "D",
         "q24": "1"
       },
+      "spineAnswers": {
+        "S1": "C",
+        "S2": "B",
+        "S3": "3",
+        "S4": "5",
+        "S5": "B",
+        "S6": "C",
+        "S7": "A"
+      },
       "moduleAnswers": {
         "nba_q1": "C",
         "nba_q2": "B",
@@ -1291,13 +1627,12 @@
         "nba_q11": "D",
         "nba_q12": "D"
       },
-      "winner": "ATL",
-      "winnerName": "Atlanta Hawks"
+      "winner": "MIA",
+      "winnerName": "Miami Heat"
     },
     {
       "id": "rnd_009",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "B",
         "q2": "left",
@@ -1324,6 +1659,15 @@
         "q23": "E",
         "q24": "1"
       },
+      "spineAnswers": {
+        "S1": "C",
+        "S2": "B",
+        "S3": "1",
+        "S4": "5",
+        "S5": "B",
+        "S6": "A",
+        "S7": "B"
+      },
       "moduleAnswers": {
         "nba_q1": "B",
         "nba_q2": "A",
@@ -1338,13 +1682,12 @@
         "nba_q11": "C",
         "nba_q12": "B"
       },
-      "winner": "CLE",
-      "winnerName": "Cleveland Cavaliers"
+      "winner": "PHI",
+      "winnerName": "Philadelphia 76ers"
     },
     {
       "id": "rnd_010",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "D",
         "q2": "left",
@@ -1371,6 +1714,15 @@
         "q23": "E",
         "q24": "1"
       },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "B",
+        "S3": "1",
+        "S4": "5",
+        "S5": "B",
+        "S6": "B",
+        "S7": "C"
+      },
       "moduleAnswers": {
         "nba_q1": "C",
         "nba_q2": "A",
@@ -1385,13 +1737,12 @@
         "nba_q11": "D",
         "nba_q12": "B"
       },
-      "winner": "CLE",
-      "winnerName": "Cleveland Cavaliers"
+      "winner": "SAS",
+      "winnerName": "San Antonio Spurs"
     },
     {
       "id": "rnd_011",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "C",
         "q2": "left",
@@ -1418,6 +1769,15 @@
         "q23": "D",
         "q24": "3"
       },
+      "spineAnswers": {
+        "S1": "B",
+        "S2": "D",
+        "S3": "2",
+        "S4": "4",
+        "S5": "A",
+        "S6": "C",
+        "S7": "D"
+      },
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "C",
@@ -1432,13 +1792,12 @@
         "nba_q11": "B",
         "nba_q12": "A"
       },
-      "winner": "CHI",
-      "winnerName": "Chicago Bulls"
+      "winner": "DAL",
+      "winnerName": "Dallas Mavericks"
     },
     {
       "id": "rnd_012",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "A",
         "q2": "right",
@@ -1465,6 +1824,15 @@
         "q23": "B",
         "q24": "1"
       },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "D",
+        "S3": "4",
+        "S4": "3",
+        "S5": "C",
+        "S6": "B",
+        "S7": "D"
+      },
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "A",
@@ -1479,13 +1847,12 @@
         "nba_q11": "C",
         "nba_q12": "A"
       },
-      "winner": "DEN",
-      "winnerName": "Denver Nuggets"
+      "winner": "POR",
+      "winnerName": "Portland Trail Blazers"
     },
     {
       "id": "rnd_013",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "E",
         "q2": "left",
@@ -1512,6 +1879,15 @@
         "q23": "C",
         "q24": "2"
       },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "D",
+        "S3": "5",
+        "S4": "2",
+        "S5": "A",
+        "S6": "D",
+        "S7": "C"
+      },
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "C",
@@ -1526,13 +1902,12 @@
         "nba_q11": "C",
         "nba_q12": "B"
       },
-      "winner": "LAC",
-      "winnerName": "Los Angeles Clippers"
+      "winner": "WAS",
+      "winnerName": "Washington Wizards"
     },
     {
       "id": "rnd_014",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "C",
         "q2": "right",
@@ -1559,6 +1934,15 @@
         "q23": "A",
         "q24": "5"
       },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "C",
+        "S3": "1",
+        "S4": "5",
+        "S5": "D",
+        "S6": "B",
+        "S7": "B"
+      },
       "moduleAnswers": {
         "nba_q1": "C",
         "nba_q2": "C",
@@ -1573,13 +1957,12 @@
         "nba_q11": "B",
         "nba_q12": "D"
       },
-      "winner": "BOS",
-      "winnerName": "Boston Celtics"
+      "winner": "ATL",
+      "winnerName": "Atlanta Hawks"
     },
     {
       "id": "rnd_015",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "E",
         "q2": "left",
@@ -1605,6 +1988,15 @@
         "q22": "right",
         "q23": "C",
         "q24": "4"
+      },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "B",
+        "S3": "3",
+        "S4": "5",
+        "S5": "B",
+        "S6": "C",
+        "S7": "A"
       },
       "moduleAnswers": {
         "nba_q1": "C",
@@ -1626,7 +2018,6 @@
     {
       "id": "rnd_016",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "E",
         "q2": "right",
@@ -1653,6 +2044,15 @@
         "q23": "D",
         "q24": "3"
       },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "A",
+        "S3": "4",
+        "S4": "5",
+        "S5": "D",
+        "S6": "C",
+        "S7": "A"
+      },
       "moduleAnswers": {
         "nba_q1": "B",
         "nba_q2": "D",
@@ -1667,13 +2067,12 @@
         "nba_q11": "A",
         "nba_q12": "D"
       },
-      "winner": "ORL",
-      "winnerName": "Orlando Magic"
+      "winner": "CHA",
+      "winnerName": "Charlotte Hornets"
     },
     {
       "id": "rnd_017",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "A",
         "q2": "right",
@@ -1700,6 +2099,15 @@
         "q23": "D",
         "q24": "5"
       },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "C",
+        "S3": "1",
+        "S4": "1",
+        "S5": "C",
+        "S6": "C",
+        "S7": "D"
+      },
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "A",
@@ -1714,13 +2122,12 @@
         "nba_q11": "A",
         "nba_q12": "D"
       },
-      "winner": "POR",
-      "winnerName": "Portland Trail Blazers"
+      "winner": "ORL",
+      "winnerName": "Orlando Magic"
     },
     {
       "id": "rnd_018",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "A",
         "q2": "left",
@@ -1747,6 +2154,15 @@
         "q23": "E",
         "q24": "1"
       },
+      "spineAnswers": {
+        "S1": "B",
+        "S2": "D",
+        "S3": "4",
+        "S4": "4",
+        "S5": "D",
+        "S6": "B",
+        "S7": "B"
+      },
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "A",
@@ -1761,13 +2177,12 @@
         "nba_q11": "A",
         "nba_q12": "A"
       },
-      "winner": "DAL",
+      "winner": "HOU",
       "winnerName": "Houston Rockets"
     },
     {
       "id": "rnd_019",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "D",
         "q2": "right",
@@ -1794,6 +2209,15 @@
         "q23": "B",
         "q24": "1"
       },
+      "spineAnswers": {
+        "S1": "C",
+        "S2": "C",
+        "S3": "2",
+        "S4": "1",
+        "S5": "B",
+        "S6": "C",
+        "S7": "C"
+      },
       "moduleAnswers": {
         "nba_q1": "B",
         "nba_q2": "B",
@@ -1808,13 +2232,12 @@
         "nba_q11": "C",
         "nba_q12": "B"
       },
-      "winner": "CLE",
-      "winnerName": "Cleveland Cavaliers"
+      "winner": "MIL",
+      "winnerName": "Milwaukee Bucks"
     },
     {
       "id": "rnd_020",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "C",
         "q2": "right",
@@ -1841,6 +2264,15 @@
         "q23": "A",
         "q24": "5"
       },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "A",
+        "S3": "2",
+        "S4": "4",
+        "S5": "D",
+        "S6": "D",
+        "S7": "C"
+      },
       "moduleAnswers": {
         "nba_q1": "C",
         "nba_q2": "C",
@@ -1861,7 +2293,6 @@
     {
       "id": "rnd_021",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "B",
         "q2": "right",
@@ -1888,6 +2319,15 @@
         "q23": "E",
         "q24": "4"
       },
+      "spineAnswers": {
+        "S1": "C",
+        "S2": "A",
+        "S3": "5",
+        "S4": "1",
+        "S5": "A",
+        "S6": "C",
+        "S7": "D"
+      },
       "moduleAnswers": {
         "nba_q1": "C",
         "nba_q2": "D",
@@ -1902,13 +2342,12 @@
         "nba_q11": "A",
         "nba_q12": "B"
       },
-      "winner": "PHX",
-      "winnerName": "Phoenix Suns"
+      "winner": "NYK",
+      "winnerName": "New York Knicks"
     },
     {
       "id": "rnd_022",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "A",
         "q2": "right",
@@ -1935,6 +2374,15 @@
         "q23": "E",
         "q24": "5"
       },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "D",
+        "S3": "5",
+        "S4": "2",
+        "S5": "C",
+        "S6": "A",
+        "S7": "B"
+      },
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "B",
@@ -1949,13 +2397,12 @@
         "nba_q11": "D",
         "nba_q12": "C"
       },
-      "winner": "DET",
-      "winnerName": "Detroit Pistons"
+      "winner": "SAC",
+      "winnerName": "Sacramento Kings"
     },
     {
       "id": "rnd_023",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "E",
         "q2": "right",
@@ -1982,6 +2429,15 @@
         "q23": "A",
         "q24": "1"
       },
+      "spineAnswers": {
+        "S1": "C",
+        "S2": "A",
+        "S3": "5",
+        "S4": "4",
+        "S5": "A",
+        "S6": "B",
+        "S7": "D"
+      },
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "D",
@@ -1996,13 +2452,12 @@
         "nba_q11": "C",
         "nba_q12": "A"
       },
-      "winner": "TOR",
-      "winnerName": "Toronto Raptors"
+      "winner": "MIN",
+      "winnerName": "Minnesota Timberwolves"
     },
     {
       "id": "rnd_024",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "A",
         "q2": "right",
@@ -2029,6 +2484,15 @@
         "q23": "D",
         "q24": "2"
       },
+      "spineAnswers": {
+        "S1": "B",
+        "S2": "D",
+        "S3": "1",
+        "S4": "3",
+        "S5": "A",
+        "S6": "C",
+        "S7": "C"
+      },
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "B",
@@ -2043,13 +2507,12 @@
         "nba_q11": "D",
         "nba_q12": "B"
       },
-      "winner": "DET",
-      "winnerName": "Detroit Pistons"
+      "winner": "DAL",
+      "winnerName": "Dallas Mavericks"
     },
     {
       "id": "rnd_025",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "D",
         "q2": "right",
@@ -2076,6 +2539,15 @@
         "q23": "C",
         "q24": "1"
       },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "A",
+        "S3": "3",
+        "S4": "4",
+        "S5": "B",
+        "S6": "D",
+        "S7": "C"
+      },
       "moduleAnswers": {
         "nba_q1": "B",
         "nba_q2": "C",
@@ -2096,7 +2568,6 @@
     {
       "id": "rnd_026",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "C",
         "q2": "right",
@@ -2123,6 +2594,15 @@
         "q23": "E",
         "q24": "2"
       },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "B",
+        "S3": "1",
+        "S4": "2",
+        "S5": "D",
+        "S6": "A",
+        "S7": "D"
+      },
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "B",
@@ -2137,13 +2617,12 @@
         "nba_q11": "D",
         "nba_q12": "D"
       },
-      "winner": "MIN",
-      "winnerName": "Minnesota Timberwolves"
+      "winner": "CHA",
+      "winnerName": "Charlotte Hornets"
     },
     {
       "id": "rnd_027",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "C",
         "q2": "right",
@@ -2170,6 +2649,15 @@
         "q23": "E",
         "q24": "5"
       },
+      "spineAnswers": {
+        "S1": "C",
+        "S2": "B",
+        "S3": "2",
+        "S4": "3",
+        "S5": "C",
+        "S6": "C",
+        "S7": "B"
+      },
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "A",
@@ -2184,13 +2672,12 @@
         "nba_q11": "B",
         "nba_q12": "A"
       },
-      "winner": "POR",
-      "winnerName": "Portland Trail Blazers"
+      "winner": "MIA",
+      "winnerName": "Miami Heat"
     },
     {
       "id": "rnd_028",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "E",
         "q2": "left",
@@ -2217,6 +2704,15 @@
         "q23": "A",
         "q24": "3"
       },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "D",
+        "S3": "3",
+        "S4": "3",
+        "S5": "B",
+        "S6": "B",
+        "S7": "D"
+      },
       "moduleAnswers": {
         "nba_q1": "C",
         "nba_q2": "A",
@@ -2231,13 +2727,12 @@
         "nba_q11": "A",
         "nba_q12": "D"
       },
-      "winner": "MIA",
-      "winnerName": "Houston Rockets"
+      "winner": "ATL",
+      "winnerName": "Atlanta Hawks"
     },
     {
       "id": "rnd_029",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "A",
         "q2": "right",
@@ -2264,6 +2759,15 @@
         "q23": "A",
         "q24": "2"
       },
+      "spineAnswers": {
+        "S1": "C",
+        "S2": "C",
+        "S3": "4",
+        "S4": "2",
+        "S5": "A",
+        "S6": "C",
+        "S7": "B"
+      },
       "moduleAnswers": {
         "nba_q1": "C",
         "nba_q2": "A",
@@ -2278,13 +2782,12 @@
         "nba_q11": "B",
         "nba_q12": "C"
       },
-      "winner": "TOR",
-      "winnerName": "Toronto Raptors"
+      "winner": "IND",
+      "winnerName": "Indiana Pacers"
     },
     {
       "id": "rnd_030",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "D",
         "q2": "left",
@@ -2311,6 +2814,15 @@
         "q23": "E",
         "q24": "4"
       },
+      "spineAnswers": {
+        "S1": "B",
+        "S2": "C",
+        "S3": "4",
+        "S4": "2",
+        "S5": "D",
+        "S6": "D",
+        "S7": "B"
+      },
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "B",
@@ -2325,13 +2837,12 @@
         "nba_q11": "D",
         "nba_q12": "A"
       },
-      "winner": "NYK",
-      "winnerName": "New York Knicks"
+      "winner": "CHI",
+      "winnerName": "Chicago Bulls"
     },
     {
       "id": "rnd_031",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "C",
         "q2": "left",
@@ -2358,6 +2869,15 @@
         "q23": "B",
         "q24": "5"
       },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "A",
+        "S3": "3",
+        "S4": "1",
+        "S5": "D",
+        "S6": "A",
+        "S7": "A"
+      },
       "moduleAnswers": {
         "nba_q1": "B",
         "nba_q2": "D",
@@ -2378,7 +2898,6 @@
     {
       "id": "rnd_032",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "B",
         "q2": "left",
@@ -2405,6 +2924,15 @@
         "q23": "A",
         "q24": "1"
       },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "A",
+        "S3": "4",
+        "S4": "2",
+        "S5": "A",
+        "S6": "C",
+        "S7": "A"
+      },
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "D",
@@ -2419,13 +2947,12 @@
         "nba_q11": "D",
         "nba_q12": "A"
       },
-      "winner": "ATL",
-      "winnerName": "Atlanta Hawks"
+      "winner": "MIA",
+      "winnerName": "Miami Heat"
     },
     {
       "id": "rnd_033",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "C",
         "q2": "right",
@@ -2452,6 +2979,15 @@
         "q23": "D",
         "q24": "4"
       },
+      "spineAnswers": {
+        "S1": "C",
+        "S2": "B",
+        "S3": "2",
+        "S4": "1",
+        "S5": "D",
+        "S6": "D",
+        "S7": "D"
+      },
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "C",
@@ -2466,13 +3002,12 @@
         "nba_q11": "D",
         "nba_q12": "D"
       },
-      "winner": "ORL",
-      "winnerName": "Orlando Magic"
+      "winner": "PHI",
+      "winnerName": "Philadelphia 76ers"
     },
     {
       "id": "rnd_034",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "C",
         "q2": "right",
@@ -2499,6 +3034,15 @@
         "q23": "A",
         "q24": "2"
       },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "D",
+        "S3": "2",
+        "S4": "1",
+        "S5": "B",
+        "S6": "B",
+        "S7": "D"
+      },
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "B",
@@ -2513,13 +3057,12 @@
         "nba_q11": "A",
         "nba_q12": "A"
       },
-      "winner": "MIA",
+      "winner": "GSW",
       "winnerName": "Golden State Warriors"
     },
     {
       "id": "rnd_035",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "E",
         "q2": "left",
@@ -2546,6 +3089,15 @@
         "q23": "A",
         "q24": "5"
       },
+      "spineAnswers": {
+        "S1": "C",
+        "S2": "D",
+        "S3": "1",
+        "S4": "4",
+        "S5": "A",
+        "S6": "D",
+        "S7": "D"
+      },
       "moduleAnswers": {
         "nba_q1": "C",
         "nba_q2": "B",
@@ -2560,13 +3112,12 @@
         "nba_q11": "C",
         "nba_q12": "B"
       },
-      "winner": "HOU",
-      "winnerName": "Houston Rockets"
+      "winner": "LAC",
+      "winnerName": "Los Angeles Clippers"
     },
     {
       "id": "rnd_036",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "E",
         "q2": "right",
@@ -2593,6 +3144,15 @@
         "q23": "B",
         "q24": "4"
       },
+      "spineAnswers": {
+        "S1": "B",
+        "S2": "B",
+        "S3": "5",
+        "S4": "2",
+        "S5": "D",
+        "S6": "D",
+        "S7": "A"
+      },
       "moduleAnswers": {
         "nba_q1": "A",
         "nba_q2": "D",
@@ -2607,13 +3167,12 @@
         "nba_q11": "D",
         "nba_q12": "A"
       },
-      "winner": "CHA",
-      "winnerName": "Charlotte Hornets"
+      "winner": "CHI",
+      "winnerName": "Chicago Bulls"
     },
     {
       "id": "rnd_037",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "A",
         "q2": "left",
@@ -2640,6 +3199,15 @@
         "q23": "D",
         "q24": "4"
       },
+      "spineAnswers": {
+        "S1": "D",
+        "S2": "A",
+        "S3": "3",
+        "S4": "1",
+        "S5": "C",
+        "S6": "C",
+        "S7": "B"
+      },
       "moduleAnswers": {
         "nba_q1": "C",
         "nba_q2": "A",
@@ -2654,13 +3222,12 @@
         "nba_q11": "A",
         "nba_q12": "A"
       },
-      "winner": "GSW",
-      "winnerName": "Golden State Warriors"
+      "winner": "CLE",
+      "winnerName": "Cleveland Cavaliers"
     },
     {
       "id": "rnd_038",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "B",
         "q2": "left",
@@ -2687,6 +3254,15 @@
         "q23": "B",
         "q24": "1"
       },
+      "spineAnswers": {
+        "S1": "B",
+        "S2": "C",
+        "S3": "3",
+        "S4": "2",
+        "S5": "A",
+        "S6": "D",
+        "S7": "D"
+      },
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "C",
@@ -2701,13 +3277,12 @@
         "nba_q11": "B",
         "nba_q12": "B"
       },
-      "winner": "BOS",
-      "winnerName": "Boston Celtics"
+      "winner": "TOR",
+      "winnerName": "Toronto Raptors"
     },
     {
       "id": "rnd_039",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "B",
         "q2": "left",
@@ -2734,6 +3309,15 @@
         "q23": "C",
         "q24": "1"
       },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "B",
+        "S3": "2",
+        "S4": "4",
+        "S5": "D",
+        "S6": "C",
+        "S7": "B"
+      },
       "moduleAnswers": {
         "nba_q1": "B",
         "nba_q2": "A",
@@ -2748,13 +3332,12 @@
         "nba_q11": "C",
         "nba_q12": "D"
       },
-      "winner": "ORL",
-      "winnerName": "Orlando Magic"
+      "winner": "DEN",
+      "winnerName": "Denver Nuggets"
     },
     {
       "id": "rnd_040",
       "kind": "random",
-      "forTeam": null,
       "coreAnswers": {
         "q1": "B",
         "q2": "right",
@@ -2781,6 +3364,15 @@
         "q23": "B",
         "q24": "3"
       },
+      "spineAnswers": {
+        "S1": "C",
+        "S2": "A",
+        "S3": "1",
+        "S4": "5",
+        "S5": "D",
+        "S6": "A",
+        "S7": "C"
+      },
       "moduleAnswers": {
         "nba_q1": "D",
         "nba_q2": "D",
@@ -2795,8 +3387,8 @@
         "nba_q11": "D",
         "nba_q12": "A"
       },
-      "winner": "SAC",
-      "winnerName": "Sacramento Kings"
+      "winner": "CHA",
+      "winnerName": "Charlotte Hornets"
     }
   ]
 }
