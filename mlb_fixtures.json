@@ -18,7 +18,8 @@
       ],
       "unique": 10,
       "note": "MLB on the shared spine (s43): S6 build + S7 role re-authored; q11 (role echo) and q5 (inert) dropped. Fixtures carry explicit spineAnswers."
-    }
+    },
+    "rerecorded": "s46-mlb-floor-clear"
   },
   "fixtures": [
     {
@@ -1272,8 +1273,8 @@
         "S6": "B",
         "S7": "C"
       },
-      "winner": "BOS",
-      "winnerName": "Boston Red Sox"
+      "winner": "CHC",
+      "winnerName": "Chicago Cubs"
     },
     {
       "id": "rnd_007",
@@ -1419,8 +1420,8 @@
         "S6": "B",
         "S7": "C"
       },
-      "winner": "BOS",
-      "winnerName": "Boston Red Sox"
+      "winner": "CHC",
+      "winnerName": "Chicago Cubs"
     },
     {
       "id": "rnd_010",
@@ -2203,8 +2204,8 @@
         "S6": "C",
         "S7": "C"
       },
-      "winner": "BOS",
-      "winnerName": "Boston Red Sox"
+      "winner": "DET",
+      "winnerName": "Detroit Tigers"
     },
     {
       "id": "rnd_026",
@@ -2497,8 +2498,8 @@
         "S6": "D",
         "S7": "A"
       },
-      "winner": "TOR",
-      "winnerName": "Toronto Blue Jays"
+      "winner": "PHI",
+      "winnerName": "Philadelphia Phillies"
     },
     {
       "id": "rnd_032",
