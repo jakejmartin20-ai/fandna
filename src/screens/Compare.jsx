@@ -10,7 +10,7 @@
 import { SPORT_DATA } from "../lib/sportData";
 import { SPORTS, sportName } from "../lib/manifest";
 import { regOf } from "../lib/register";
-import { ClubMark } from "../components/ClubMark";
+import { HexBadge } from "../components/HexBadge";
 import { CompareStrips } from "../components/CompareStrips";
 import { sameGenome } from "../lib/compareCode";
 import { archetypeLabel, bandModel, sportSplit, poleFor } from "../lib/compareRead";
@@ -94,14 +94,24 @@ function ShareFoot({ onReshare }) {
   );
 }
 
-// A crest with its label + archetype under it (the You / Them headline pair).
-function CrestFace({ sport, club, side, arch }) {
+// A crest with its label + archetype under it (the You / Them headline pair). The team hex is the
+// headline (the club you collect); a small genome helix hex tucks into its corner as a seal, so each
+// side reads as one unit: this club, carrying this DNA. Same hex family the share card and the home
+// crest use. The seven-trait read below (CompareStrips) is still the detailed lens; the seal is a glance.
+function CrestFace({ sport, club, side, arch, profile }) {
   const t = teamOf(sport, club);
   const label = side === "you" ? "You" : "Them";
   const labelColor = side === "you" ? GOLD : "#7f9fd0";
   return (
     <div style={{ textAlign: "center", flex: 1, minWidth: 0 }}>
-      <div style={{ display: "inline-flex" }}>{t ? <ClubMark team={t} size={92} /> : null}</div>
+      <div style={{ position: "relative", display: "inline-block" }}>
+        {t ? <HexBadge kind="team" size={84} color={t.color} mark={t.code3} title={teamName(sport, club)} /> : null}
+        {t && profile ? (
+          <div style={{ position: "absolute", right: -6, bottom: -4, filter: "drop-shadow(0 0 3px #0a0a12)" }}>
+            <HexBadge kind="genome" size={32} profile={profile} title="genome" />
+          </div>
+        ) : null}
+      </div>
       <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: "0.26em", textTransform: "uppercase", color: labelColor, margin: "12px 0 6px" }}>{label}</div>
       <div style={{ fontFamily: CG, fontSize: "clamp(20px,4.6vw,26px)", color: "#e8e4de", lineHeight: 1 }}>{teamName(sport, club)}</div>
       <div style={{ fontFamily: MONO, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "#8a8aa2", marginTop: 6 }}>
@@ -110,11 +120,16 @@ function CrestFace({ sport, club, side, arch }) {
     </div>
   );
 }
-function LockedDisc({ size = 92 }) {
+// The "you have not sequenced yet" placeholder on the recruit route: an empty hex outline, so the
+// locked side still reads as part of the hex family (was a dashed circle before the crest layer).
+function LockedDisc({ size = 84 }) {
+  const S = size, cx = S / 2, cy = S / 2, R = S / 2 - 3, a = R * 0.866;
+  const pts = [[cx, cy - R], [cx + a, cy - R / 2], [cx + a, cy + R / 2], [cx, cy + R], [cx - a, cy + R / 2], [cx - a, cy - R / 2]]
+    .map(p => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(" ");
   return (
-    <svg width={size} height={size} viewBox="0 0 100 100" role="img" aria-label="not sequenced" style={{ display: "block" }}>
-      <circle cx="50" cy="50" r="46" fill="#20202b" stroke="#3a3a4c" strokeWidth="2" strokeDasharray="5 5" />
-      <text x="50" y="63" textAnchor="middle" fontFamily={CG} fontSize="42" fill="#6a6a86">?</text>
+    <svg width={S} height={S} viewBox={`0 0 ${S} ${S}`} role="img" aria-label="not sequenced" style={{ display: "block" }}>
+      <polygon points={pts} fill="#20202b" stroke="#3a3a4c" strokeWidth="2" strokeDasharray="5 5" />
+      <text x={cx} y={cy} dy="0.34em" textAnchor="middle" fontFamily={CG} fontSize={(S * 0.46).toFixed(1)} fill="#6a6a86">?</text>
     </svg>
   );
 }
@@ -201,7 +216,7 @@ export function Compare({ friend, me, onStartSport, onReshare, onExit, onRestore
       <div style={{ textAlign: "center" }}>
         <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: "0.22em", textTransform: "uppercase", color: "#8484b0", margin: "4px 0 20px" }}>A friend sent you their FanDNA</div>
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 18, marginBottom: 8 }}>
-          {themHead ? <CrestFace sport={themHead.sport} club={themHead.club} side="them" arch={themArch} /> : null}
+          {themHead ? <CrestFace sport={themHead.sport} club={themHead.club} side="them" arch={themArch} profile={friend.coreProfile} /> : null}
           <Vs />
           <div style={{ textAlign: "center", flex: 1 }}>
             <div style={{ display: "inline-flex" }}><LockedDisc /></div>
@@ -292,9 +307,9 @@ export function Compare({ friend, me, onStartSport, onReshare, onExit, onRestore
     return wrap(
       <div>
         <div style={{ display: "flex", justifyContent: "center", alignItems: "flex-start", gap: 8, margin: "6px 0 4px" }}>
-          {youCore ? <CrestFace sport={youCore.sport} club={youCore.club} side="you" arch={youArch} /> : null}
+          {youCore ? <CrestFace sport={youCore.sport} club={youCore.club} side="you" arch={youArch} profile={youProfile} /> : null}
           <Vs />
-          {themCore ? <CrestFace sport={themCore.sport} club={themCore.club} side="them" arch={themArchL} /> : null}
+          {themCore ? <CrestFace sport={themCore.sport} club={themCore.club} side="them" arch={themArchL} profile={themProfile} /> : null}
         </div>
         <div style={{ textAlign: "center", margin: "18px 0 6px" }}>
           <Hero>Different games. Different wiring.</Hero>
@@ -328,7 +343,7 @@ export function Compare({ friend, me, onStartSport, onReshare, onExit, onRestore
     // collapsed crest for same team
     const crestBlock = sameTeam ? (
       <div style={{ textAlign: "center", margin: "6px 0 2px" }}>
-        <div style={{ display: "inline-flex" }}>{teamOf(sh.sport, sh.youClub) ? <ClubMark team={teamOf(sh.sport, sh.youClub)} size={96} /> : null}</div>
+        <div style={{ display: "inline-flex" }}>{teamOf(sh.sport, sh.youClub) ? <HexBadge kind="team" size={100} color={teamOf(sh.sport, sh.youClub).color} mark={teamOf(sh.sport, sh.youClub).code3} title={teamName(sh.sport, sh.youClub)} /> : null}</div>
         <div style={{ fontFamily: CG, fontSize: 26, color: "#e8e4de", margin: "12px 0 4px" }}>You + Them</div>
         <div style={{ fontFamily: MONO, fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase", color: GOLD }}>
           {sameArch ? `Both: ${youArch}` : `${youArch} + ${themArchL}`}&nbsp;·&nbsp;{teamName(sh.sport, sh.youClub)}
@@ -336,9 +351,9 @@ export function Compare({ friend, me, onStartSport, onReshare, onExit, onRestore
       </div>
     ) : (
       <div style={{ display: "flex", justifyContent: "center", alignItems: "flex-start", gap: 8, margin: "6px 0 4px" }}>
-        <CrestFace sport={sh.sport} club={sh.youClub} side="you" arch={youArch} />
+        <CrestFace sport={sh.sport} club={sh.youClub} side="you" arch={youArch} profile={youProfile} />
         <Vs />
-        <CrestFace sport={sh.sport} club={sh.themClub} side="them" arch={themArchL} />
+        <CrestFace sport={sh.sport} club={sh.themClub} side="them" arch={themArchL} profile={themProfile} />
       </div>
     );
 
@@ -417,7 +432,7 @@ export function Compare({ friend, me, onStartSport, onReshare, onExit, onRestore
     const themT = r.themClub ? teamOf(r.sport, r.themClub) : null;
     const Side = ({ t, sport, club, muted }) => (
       <div style={{ display: "flex", alignItems: "center", gap: 8, flex: 1, minWidth: 0, opacity: muted ? 0.5 : 1 }}>
-        {t ? <ClubMark team={t} size={30} /> : <span style={{ fontFamily: CG, fontStyle: "italic", fontSize: 16, color: "#6a6a86" }}>not yet</span>}
+        {t ? <HexBadge kind="team" size={30} color={t.color} mark={t.code3} title={teamName(sport, club)} /> : <span style={{ fontFamily: CG, fontStyle: "italic", fontSize: 16, color: "#6a6a86" }}>not yet</span>}
         {t && <span style={{ fontFamily: CG, fontSize: 17, color: "#dcd8d2", lineHeight: 1.15 }}>{teamName(sport, club)}</span>}
       </div>
     );
