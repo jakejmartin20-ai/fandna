@@ -5,7 +5,8 @@ import { coreQuestions, DIM_ORDER, DIM_LABELS } from "./data/core";
 import { spineQuestions } from "./data/spine";
 import { SPORT_DATA } from "./lib/sportData";
 import { scoreCore, scoreModule, matchEvidence, decompressProfile } from "./lib/scoring";
-import { loadState, saveResult, clearAll, appendPending, readPending, clearPending } from "./lib/storage";
+import { loadState, saveResult, clearAll, appendPending, readPending, clearPending, markGroupEarned } from "./lib/storage";
+import { newlyCompletedGroup, groupClubColors } from "./lib/crest";
 import { pingResult } from "./lib/telemetry";
 import { generateShareCard } from "./lib/card";
 import { ChoiceQ, BinaryQ, SliderQ } from "./components/quiz";
@@ -42,6 +43,7 @@ function recomputeAllFromCore(newCoreAnswers){
 }
 import { CoreStrip } from "./components/CoreStrip";
 import { InstinctsLine } from "./components/InstinctsLine";
+import { CrestEarn } from "./components/CrestEarn";
 import { MatchEvidence } from "./components/MatchEvidence";
 import { CrossMatch } from "./components/CrossMatch";
 import { SPORTS, FAMILIES } from "./lib/manifest";
@@ -258,6 +260,8 @@ function AppInner(){
   const [showTop,setShowTop]=useState(false);   // back-to-top affordance on the long single-scroll result (display-only)
   const [howFrom,setHowFrom]=useState("home");   // which screen the explainer was opened from, so Back returns there
   const [genome,setGenome]=useState({});         // saved results map { PL:{club} } - drives the home strands + share string
+  const [earnFamily,setEarnFamily]=useState(null); // the bucket that just completed, driving the crest earn moment (null = none)
+  const [earnReduced,setEarnReduced]=useState(false); // prefers-reduced-motion at the moment it fired
   const [activeSport,setActiveSport]=useState("PL"); // which sport's quiz/result/card is in play
   const [compareFriend,setCompareFriend]=useState(null);  // decoded friend genome for the /c/ compare route
   const [pendingCompare,setPendingCompare]=useState(null); // friend genome held while a recruit takes the quiz
@@ -495,6 +499,12 @@ function AppInner(){
       track("quiz_completed",{sport:activeSport,club});
       pingResult({sport:activeSport,club,scores:s,coreProfile,coreAnswers,retake:!!(genome[activeSport]&&genome[activeSport].club)});
       saveResult(activeSport,{coreAnswers,coreProfile,spineAnswers,club,moduleAnswers,scores:s});
+      // Did this club just complete a bucket for the first time? If so, arm the crest earn moment.
+      try{
+        const stNow=loadState();
+        const fam=newlyCompletedGroup(stNow.results, stNow.earnedGroups);
+        if(fam){ markGroupEarned(fam.id); setEarnReduced(!!(typeof window!=="undefined"&&window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches)); setEarnFamily(fam); track("crest_earned",{group:fam.id}); }
+      }catch(e){}
       if(pendingCompare){ setCompareFriend(pendingCompare); setPendingCompare(null); setScreen("compare"); }
     }
   }
@@ -844,6 +854,15 @@ function AppInner(){
       position:"relative",
     }}>
       <Analytics/>
+      {earnFamily && (
+        <CrestEarn
+          family={earnFamily}
+          clubColors={groupClubColors(genome, earnFamily.id)}
+          reducedMotion={earnReduced}
+          onShare={()=>{ setEarnFamily(null); try{ shareCard(); }catch(e){} }}
+          onDone={()=>setEarnFamily(null)}
+        />
+      )}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
         @keyframes slideIn  {from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
