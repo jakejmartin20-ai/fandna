@@ -33,15 +33,14 @@ export function CoreStrip({ dims, compact=false }){
       onKeyDown={(e)=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); setOpen(o=>!o); } }}
       style={{cursor:"pointer"}}>
 
-      {/* Label + subtle tap cue */}
+      {/* Label + chevron-disc affordance (matches the instincts line; the disc carries the cue) */}
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:12}}>
         <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",letterSpacing:"0.28em",textTransform:"uppercase"}}>Your core</span>
-        <span style={{display:"flex",alignItems:"center",gap:6,opacity:0.6,fontFamily:"'DM Mono',monospace",fontSize:9,color:"#8484b0",letterSpacing:"0.14em",textTransform:"uppercase"}}>
-          {open?"tap to close":"tap to read"}
-          <svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true" style={{transform:open?"rotate(180deg)":"none",transition:"transform .25s ease"}}>
-            <path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="#8484b0" strokeWidth="1.3"/>
+        <div aria-hidden="true" style={{flexShrink:0,width:30,height:30,borderRadius:"50%",border:"1px solid #3f3f55",display:"flex",alignItems:"center",justifyContent:"center"}}>
+          <svg width="12" height="12" viewBox="0 0 12 12" style={{transform:open?"rotate(180deg)":"none",transition:"transform .22s ease"}}>
+            <path d="M2.5 4.5 L6 8 L9.5 4.5" fill="none" stroke="#9696b4" strokeWidth="1.4" strokeLinecap="round"/>
           </svg>
-        </span>
+        </div>
       </div>
 
       {/* The seven bands */}
