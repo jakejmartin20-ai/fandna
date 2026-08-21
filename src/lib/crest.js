@@ -55,3 +55,15 @@ export function newlyCompletedGroup(results, earnedGroups){
   }
   return null;
 }
+
+// The whole collection: every bucket complete. Drives the collection-complete finale (and its
+// quiet home line). The genome itself is never "earned" - this marks the collection as whole.
+export function allBucketsComplete(results){
+  return FAMILIES.length>0 && FAMILIES.every(f => isGroupComplete(results, f.id));
+}
+
+// The completed buckets, each with its label and strand colours - the finale draws one hex each.
+export function completedGroups(results){
+  return FAMILIES.filter(f => isGroupComplete(results, f.id))
+    .map(f => ({ id:f.id, label:f.label, colors:groupClubColors(results, f.id) }));
+}
