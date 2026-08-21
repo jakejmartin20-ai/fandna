@@ -96,6 +96,7 @@ export function GenomeHome({
   onHow,             // () => void : open the "How this works" explainer
   onCompare,         // () => void : share the /c/ compare link (home primary CTA)
   onResequence,      // () => void : open the "re-sequence core?" confirm
+  onOpenCrest,       // (fam) => void : re-open an earned bucket crest from the home tick
   resequenceDelta,   // {moved:[{sport,from,to}],stale:[code]} shown once after a re-sequence, or null
   onDismissDelta,    // () => void : clear the delta banner
 }){
@@ -227,6 +228,10 @@ export function GenomeHome({
     if(list.length===0) return null;
     const liveInFam = list.filter(s=>s.live);
     const doneN = liveInFam.filter(s=>{ const r=genome[s.code]; return !!(r&&r.club); }).length;
+    // A bucket earns its crest when every league in it is collected (the full five). Because you can
+    // only hold a live league, a bucket with a hidden league is not yet reachable and shows no tick.
+    const reachable = list.every(s=>s.live);
+    const complete = reachable && list.every(s=>{ const r=genome[s.code]; return !!(r&&r.club); });
     const scrolls = list.length>MAX_ROWS;
     const maxH = MAX_ROWS*ROW_PX + PEEK;
 
@@ -237,7 +242,13 @@ export function GenomeHome({
           <div style={{display:"flex",alignItems:"center",gap:9,padding:"13px 15px 11px",borderBottom:`1px solid ${PBD}`}}>
             <FamilyGlyph kind={fam.glyph}/>
             <span style={{fontFamily:"'DM Mono',monospace",fontSize:12,color:PLBL,letterSpacing:"0.32em",textTransform:"uppercase",fontWeight:500,flex:1,minWidth:0}}>{fam.label}</span>
-            {liveInFam.length>0&&(<span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:COUNT,letterSpacing:"0.12em",textTransform:"uppercase",flexShrink:0}}>{doneN} of {liveInFam.length} mapped</span>)}
+            {complete ? (
+              <button type="button" onClick={()=>onOpenCrest&&onOpenCrest(fam)} aria-label={`View your ${fam.label} crest`}
+                style={{display:"flex",alignItems:"center",gap:6,background:"rgba(201,178,122,0.12)",border:"1px solid rgba(201,178,122,0.5)",borderRadius:20,padding:"4px 11px 4px 9px",cursor:"pointer",flexShrink:0}}>
+                <svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true"><polygon points="8,1 9.705,5.654 14.657,5.837 10.758,8.896 12.115,13.663 8,10.9 3.885,13.663 5.242,8.896 1.343,5.837 6.295,5.654" fill="#c9b27a"/></svg>
+                <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#d8c184",letterSpacing:"0.16em",textTransform:"uppercase"}}>View crest</span>
+              </button>
+            ) : (liveInFam.length>0&&(<span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:COUNT,letterSpacing:"0.12em",textTransform:"uppercase",flexShrink:0}}>{doneN} of {liveInFam.length} mapped</span>))}
           </div>
 
           {/* leagues (scrolls inside when there are more than MAX_ROWS) */}
@@ -431,6 +442,7 @@ export function GenomeHome({
           const total = set.length;
           const doneN = set.filter(s=>{ const r=genome[s.code]; return !!(r&&r.club); }).length;
           const gold = isNew;
+          const pillComplete = !isNew && inFam.every(s=>s.live) && inFam.every(s=>{ const r=genome[s.code]; return !!(r&&r.club); });
           const pillLabel = fam.label.split(" ")[0];                  // FOOTBALL / AMERICAN / WORLD
           return (
             <button key={fam.id} type="button"
@@ -439,6 +451,9 @@ export function GenomeHome({
                 border:"1px solid #2c2c40",borderRadius:20,padding:"7px 13px",cursor:"pointer"}}>
               <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.16em",textTransform:"uppercase",color:PLBL}}>{pillLabel}</span>
               <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.04em",color:COUNT}}>{doneN}/{total}</span>
+              {pillComplete&&(
+                <svg width="11" height="11" viewBox="0 0 16 16" aria-hidden="true" style={{flexShrink:0}}><polygon points="8,1 9.705,5.654 14.657,5.837 10.758,8.896 12.115,13.663 8,10.9 3.885,13.663 5.242,8.896 1.343,5.837 6.295,5.654" fill="#c9b27a"/></svg>
+              )}
               {isNew&&(
                 <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.14em",color:"#c9b27a",background:"rgba(201,178,122,0.14)",borderRadius:4,padding:"1px 5px"}}>NEW</span>
               )}
