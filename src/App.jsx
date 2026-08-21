@@ -6,13 +6,13 @@ import { spineQuestions } from "./data/spine";
 import { SPORT_DATA } from "./lib/sportData";
 import { scoreCore, scoreModule, matchEvidence, decompressProfile } from "./lib/scoring";
 import { loadState, saveResult, clearAll, appendPending, readPending, clearPending, markGroupEarned } from "./lib/storage";
-import { newlyCompletedGroup, groupClubColors } from "./lib/crest";
+import { newlyCompletedGroup, groupClubColors, allBucketsComplete, completedGroups } from "./lib/crest";
 import { pingResult } from "./lib/telemetry";
 import { generateShareCard } from "./lib/card";
 import { ChoiceQ, BinaryQ, SliderQ } from "./components/quiz";
 import { ClubMark } from "./components/ClubMark";
 import { GenomeHome } from "./screens/Genome";
-import { coreBlocks } from "./lib/genomeRead";
+import { coreBlocks, generateRead } from "./lib/genomeRead";
 
 // Recompute every stored league from its saved module answers against a freshly
 // scored core, writing the results back to storage. Returns what moved and which
@@ -44,6 +44,7 @@ function recomputeAllFromCore(newCoreAnswers){
 import { CoreStrip } from "./components/CoreStrip";
 import { InstinctsLine } from "./components/InstinctsLine";
 import { CrestEarn } from "./components/CrestEarn";
+import { CrestFinale } from "./components/CrestFinale";
 import { MatchEvidence } from "./components/MatchEvidence";
 import { CrossMatch } from "./components/CrossMatch";
 import { SPORTS, FAMILIES } from "./lib/manifest";
@@ -262,6 +263,8 @@ function AppInner(){
   const [genome,setGenome]=useState({});         // saved results map { PL:{club} } - drives the home strands + share string
   const [earnFamily,setEarnFamily]=useState(null); // the bucket that just completed, driving the crest earn moment (null = none)
   const [earnReduced,setEarnReduced]=useState(false); // prefers-reduced-motion at the moment it fired
+  const [finaleOn,setFinaleOn]=useState(false);   // collection-complete finale (all three buckets whole)
+  const [finaleReduced,setFinaleReduced]=useState(false);
   const [activeSport,setActiveSport]=useState("PL"); // which sport's quiz/result/card is in play
   const [compareFriend,setCompareFriend]=useState(null);  // decoded friend genome for the /c/ compare route
   const [pendingCompare,setPendingCompare]=useState(null); // friend genome held while a recruit takes the quiz
@@ -499,11 +502,19 @@ function AppInner(){
       track("quiz_completed",{sport:activeSport,club});
       pingResult({sport:activeSport,club,scores:s,coreProfile,coreAnswers,retake:!!(genome[activeSport]&&genome[activeSport].club)});
       saveResult(activeSport,{coreAnswers,coreProfile,spineAnswers,club,moduleAnswers,scores:s});
-      // Did this club just complete a bucket for the first time? If so, arm the crest earn moment.
+      // Did this club complete a bucket? Record it. If it also completed the whole collection,
+      // fire the finale (once) instead of a single-bucket earn moment.
       try{
         const stNow=loadState();
         const fam=newlyCompletedGroup(stNow.results, stNow.earnedGroups);
-        if(fam){ markGroupEarned(fam.id); setEarnReduced(!!(typeof window!=="undefined"&&window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches)); setEarnFamily(fam); track("crest_earned",{group:fam.id}); }
+        if(fam) markGroupEarned(fam.id);
+        const st2=loadState();
+        const rm=!!(typeof window!=="undefined"&&window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+        if(allBucketsComplete(st2.results) && !st2.earnedGroups.includes("genome")){
+          markGroupEarned("genome"); setFinaleReduced(rm); setFinaleOn(true); track("collection_complete",{});
+        } else if(fam){
+          setEarnReduced(rm); setEarnFamily(fam); track("crest_earned",{group:fam.id});
+        }
       }catch(e){}
       if(pendingCompare){ setCompareFriend(pendingCompare); setPendingCompare(null); setScreen("compare"); }
     }
@@ -518,7 +529,7 @@ function AppInner(){
   function startOver(){
     clearAll();
     setMode("full");setSavedCore(null);setGenome({});setCoreProfile(null);setEvidence(null);setEvidenceInput(null);
-    setEarnFamily(null);
+    setEarnFamily(null);setFinaleOn(false);
     setPhase("out");
     setTimeout(()=>{
       setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");
@@ -530,6 +541,11 @@ function AppInner(){
     if(!fam) return;
     setEarnReduced(!!(typeof window!=="undefined"&&window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches));
     setEarnFamily(fam);
+  }
+  // Re-open the collection-complete finale from the quiet home line.
+  function openFinale(){
+    setFinaleReduced(!!(typeof window!=="undefined"&&window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches));
+    setFinaleOn(true);
   }
   // Restore a saved genome from a share code: the link IS the backup. Rebuilds local storage by
   // replaying the packed {core + club-per-sport} through saveResult (no new storage code), then
@@ -870,6 +886,16 @@ function AppInner(){
           onDone={()=>setEarnFamily(null)}
         />
       )}
+      {finaleOn && (
+        <CrestFinale
+          groups={completedGroups(genome)}
+          genomeProfile={coreProfile}
+          typeName={(coreProfile && generateRead(coreProfile, Object.keys(genome).length) || {}).headline}
+          reducedMotion={finaleReduced}
+          onShare={()=>{ setFinaleOn(false); try{ shareCard(); }catch(e){} }}
+          onDone={()=>setFinaleOn(false)}
+        />
+      )}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
         @keyframes slideIn  {from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
@@ -977,6 +1003,7 @@ function AppInner(){
             onHow={openHow}
             onResequence={()=>setResequenceConfirm(true)}
             onOpenCrest={openCrest}
+            onOpenFinale={openFinale}
             resequenceDelta={resequenceDelta}
             onDismissDelta={()=>{setResequenceDelta(null);clearPending();}}
           />
