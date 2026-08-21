@@ -22,8 +22,7 @@ export function CrestEarn({ family, clubColors, reducedMotion=false, onShare, on
 
   const rm = !!reducedMotion;
   const anim = (name, dur, delay) => rm ? "none" : `${name} ${dur}s ease ${delay}s both`;
-  const label = family.label || "Bucket";
-  const count = clubColors.length;
+  const label = family.label || "Crest";
 
   const btn = {
     fontFamily:"'DM Mono',monospace", fontSize:11, letterSpacing:"0.14em",
@@ -55,7 +54,7 @@ export function CrestEarn({ family, clubColors, reducedMotion=false, onShare, on
 
       <div style={{marginTop:22, opacity: rm ? 1 : 0, animation: anim("ceRise", 0.5, 0.62),
         fontFamily:"'DM Mono',monospace", fontSize:10, letterSpacing:"0.34em", textTransform:"uppercase", color:"#c9a95e"}}>
-        Bucket complete
+        Fully sequenced
       </div>
       <div style={{marginTop:8, opacity: rm ? 1 : 0, animation: anim("ceRise", 0.5, 0.62),
         fontFamily:"'Cormorant Garamond',Georgia,serif", fontSize:34, color:"#ece7de", letterSpacing:"-0.01em", lineHeight:1}}>
@@ -63,7 +62,7 @@ export function CrestEarn({ family, clubColors, reducedMotion=false, onShare, on
       </div>
       <div style={{marginTop:8, opacity: rm ? 1 : 0, animation: anim("ceRise", 0.5, 0.78),
         fontFamily:"'Cormorant Garamond',Georgia,serif", fontStyle:"italic", fontSize:16, color:"#a6a2b6"}}>
-        {count} leagues sequenced. One family, whole.
+        Every {label} league, read in your DNA.
       </div>
 
       <div style={{marginTop:26, display:"flex", gap:10, opacity: rm ? 1 : 0, animation: anim("ceRise", 0.5, 0.98)}}>
