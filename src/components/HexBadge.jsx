@@ -47,17 +47,15 @@ export function HexBadge({ kind="genome", size=64, color, mark, clubColors, prof
   const S = size, cx = S/2, cy = S/2, R = S/2 - 3, scale = S/66;
   const strandW = Math.max(0.8, 1.4*scale);
 
-  // TEAM: a solid club hex with its tricode.
+  // TEAM: a solid club hex with its tricode. A thin light edge lifts it off the dark on every kit.
   if(kind === "team"){
     if(!color) return null;
     const light = lum(color) > 0.6;
-    const dark  = lum(color) < 0.12;
-    const stroke = light ? "#c9c9d6" : (dark ? "#3a3a4e" : "none");
-    const sw = (light||dark) ? Math.max(1, scale) : 0;
     const txtCol = light ? "#2a2a3a" : "#ffffff";
+    const edgeW = Math.max(1, 1.5*scale);
     return (
       <svg width={S} height={S} viewBox={`0 0 ${S} ${S}`} style={style} role="img" aria-label={title || (mark ? `${mark} badge` : "team badge")}>
-        <polygon points={hexPoints(cx,cy,R)} fill={color} stroke={stroke} strokeWidth={sw}/>
+        <polygon points={hexPoints(cx,cy,R)} fill={color} stroke="#c9c9d6" strokeWidth={edgeW} strokeOpacity="0.55"/>
         {mark &&
           <text x={cx} y={cy} dy="0.35em" textAnchor="middle"
             fontFamily="'DM Mono',monospace" fontWeight="500"
