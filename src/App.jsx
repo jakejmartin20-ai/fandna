@@ -7,6 +7,7 @@ import { SPORT_DATA } from "./lib/sportData";
 import { scoreCore, scoreModule, matchEvidence, decompressProfile } from "./lib/scoring";
 import { loadState, saveResult, clearAll, appendPending, readPending, clearPending, markGroupEarned } from "./lib/storage";
 import { newlyCompletedGroup, groupClubColors, allBucketsComplete, completedGroups } from "./lib/crest";
+import { hasCompletedAll } from "./lib/beachGate";
 import { pingResult } from "./lib/telemetry";
 import { generateShareCard } from "./lib/card";
 import { ChoiceQ, BinaryQ, SliderQ } from "./components/quiz";
@@ -45,6 +46,7 @@ import { CoreStrip } from "./components/CoreStrip";
 import { InstinctsLine } from "./components/InstinctsLine";
 import { CrestEarn } from "./components/CrestEarn";
 import { CrestFinale } from "./components/CrestFinale";
+import { BeachWindow, BeachIndicator } from "./components/BeachEgg";
 import { MatchEvidence } from "./components/MatchEvidence";
 import { CrossMatch } from "./components/CrossMatch";
 import { SPORTS, FAMILIES } from "./lib/manifest";
@@ -265,6 +267,9 @@ function AppInner(){
   const [earnReduced,setEarnReduced]=useState(false); // prefers-reduced-motion at the moment it fired
   const [finaleOn,setFinaleOn]=useState(false);   // collection-complete finale (all three buckets whole)
   const [finaleReduced,setFinaleReduced]=useState(false);
+  const [beachOn,setBeachOn]=useState(false);       // the Pro Beach Hockey bonus window (floating, non-blocking)
+  const [beachReduced,setBeachReduced]=useState(false);
+  const [beachSeen,setBeachSeen]=useState(()=>{ try{ return loadState().earnedGroups.includes("beach_seen"); }catch(e){ return false; } }); // watched the reveal to the end?
   const [activeSport,setActiveSport]=useState("PL"); // which sport's quiz/result/card is in play
   const [compareFriend,setCompareFriend]=useState(null);  // decoded friend genome for the /c/ compare route
   const [pendingCompare,setPendingCompare]=useState(null); // friend genome held while a recruit takes the quiz
@@ -529,7 +534,7 @@ function AppInner(){
   function startOver(){
     clearAll();
     setMode("full");setSavedCore(null);setGenome({});setCoreProfile(null);setEvidence(null);setEvidenceInput(null);
-    setEarnFamily(null);setFinaleOn(false);
+    setEarnFamily(null);setFinaleOn(false);setBeachOn(false);setBeachSeen(false);
     setPhase("out");
     setTimeout(()=>{
       setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");
@@ -547,6 +552,20 @@ function AppInner(){
     setFinaleReduced(!!(typeof window!=="undefined"&&window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches));
     setFinaleOn(true);
   }
+  // Replay / open the Pro Beach Hockey bonus window (from the corner indicator or the home card).
+  function openBeach(){
+    setBeachReduced(!!(typeof window!=="undefined"&&window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches));
+    setBeachOn(true);
+  }
+  // Marked once the reveal has actually played to the team: the corner indicator retires and the
+  // home card settles into its calm relive state. Fire-once via earnedGroups (no new storage code).
+  function markBeachSeen(){ if(!beachSeen){ markGroupEarned("beach_seen"); setBeachSeen(true); } }
+  // Hidden preview trigger (?beach), like ?nhl / ?nba / ?afl: lets Jake and Mark pull up the actual
+  // window on demand off their current core, with no fifteen-league gate. Invisible to real users.
+  useEffect(()=>{
+    if(typeof window==="undefined") return;
+    if(/[?&]beach\b/.test(window.location.search)) openBeach();
+  }, []);
   // Restore a saved genome from a share code: the link IS the backup. Rebuilds local storage by
   // replaying the packed {core + club-per-sport} through saveResult (no new storage code), then
   // hydrates state. A restored sport's result-screen match evidence is thinner (the code carries
@@ -896,6 +915,17 @@ function AppInner(){
           onDone={()=>setFinaleOn(false)}
         />
       )}
+      {beachOn && (
+        <BeachWindow
+          coreProfile={coreProfile}
+          reducedMotion={beachReduced}
+          onDone={()=>setBeachOn(false)}
+          onSeen={markBeachSeen}
+        />
+      )}
+      {screen==="result" && !beachOn && !beachSeen && hasCompletedAll(genome) && (
+        <BeachIndicator onOpen={openBeach}/>
+      )}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
         @keyframes slideIn  {from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
@@ -1004,6 +1034,8 @@ function AppInner(){
             onResequence={()=>setResequenceConfirm(true)}
             onOpenCrest={openCrest}
             onOpenFinale={openFinale}
+            onOpenBeach={openBeach}
+            beachSeen={beachSeen}
             resequenceDelta={resequenceDelta}
             onDismissDelta={()=>{setResequenceDelta(null);clearPending();}}
           />
