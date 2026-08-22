@@ -18,6 +18,7 @@ import { ClubMark } from "../components/ClubMark";
 import { CoreStrip } from "../components/CoreStrip";
 import { InstinctsLine } from "../components/InstinctsLine";
 import { HexBadge } from "../components/HexBadge";
+import { BeachHomeCard } from "../components/BeachEgg";
 import { FAMILIES } from "../lib/manifest";
 import { generateRead, coreBlocks } from "../lib/genomeRead";
 import { encodeGenome } from "../lib/compareCode";
@@ -99,6 +100,8 @@ export function GenomeHome({
   onResequence,      // () => void : open the "re-sequence core?" confirm
   onOpenCrest,       // (fam) => void : re-open an earned bucket crest from the home tick
   onOpenFinale,      // () => void : re-open the collection-complete finale from the quiet home line
+  onOpenBeach,       // () => void : replay the Pro Beach Hockey bonus reveal from its home card
+  beachSeen,         // has the bonus reveal already been watched? (alert card vs calm relive card)
   resequenceDelta,   // {moved:[{sport,from,to}],stale:[code]} shown once after a re-sequence, or null
   onDismissDelta,    // () => void : clear the delta banner
 }){
@@ -479,6 +482,10 @@ export function GenomeHome({
           <FamilyPanel key={fam.id} fam={fam} last={i===FAMILIES.length-1}/>
         ))}
       </div>
+
+      {/* The Pro Beach Hockey bonus: a restrained teaser until every league is sequenced, then a
+          relive card. It cannot appear for a first-time visitor; hasCompletedAll gates the earned state. */}
+      <BeachHomeCard coreProfile={coreProfile} results={genome} coreSequenced={coreSequenced} seen={beachSeen} onOpen={onOpenBeach}/>
 
       {/* Support + feedback footer */}
       <div style={{paddingTop:20,borderTop:"1px solid #1e1e2e",textAlign:"center",position:"relative",zIndex:1}}>
