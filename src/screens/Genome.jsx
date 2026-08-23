@@ -274,7 +274,7 @@ export function GenomeHome({
                 <svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true"><polygon points="8,1 9.705,5.654 14.657,5.837 10.758,8.896 12.115,13.663 8,10.9 3.885,13.663 5.242,8.896 1.343,5.837 6.295,5.654" fill="#c9b27a"/></svg>
                 <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#d8c184",letterSpacing:"0.16em",textTransform:"uppercase"}}>View crest</span>
               </button>
-            ) : (liveInFam.length>0&&(<span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:COUNT,letterSpacing:"0.12em",textTransform:"uppercase",flexShrink:0}}>{doneN} of {liveInFam.length} mapped</span>))}
+            ) : (liveInFam.length>0&&(<span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:COUNT,letterSpacing:"0.12em",textTransform:"uppercase",flexShrink:0}}>{doneN} of {list.length} mapped</span>))}
           </div>
 
           {/* leagues (scrolls inside when there are more than MAX_ROWS) */}
@@ -464,8 +464,8 @@ export function GenomeHome({
           if(inFam.length===0) return null;
           const liveInFam = inFam.filter(s=>s.live);
           const isNew = liveInFam.length===0;   // family whose sports are all still hidden (the World teaser)
-          const set = isNew ? inFam : liveInFam; // populated families count live (matches the panel header); an all-hidden family counts its total, so World reads 0/3
-          const total = set.length;
+          const set = isNew ? inFam : liveInFam; // numerator: mapped live leagues (an all-hidden family has none done)
+          const total = inFam.length; // denominator is the full bucket (all five slots), so every pill reads x/5
           const doneN = set.filter(s=>{ const r=genome[s.code]; return !!(r&&r.club); }).length;
           const gold = isNew;
           const pillComplete = !isNew && inFam.every(s=>s.live) && inFam.every(s=>{ const r=genome[s.code]; return !!(r&&r.club); });
