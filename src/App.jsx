@@ -317,7 +317,7 @@ function AppInner(){
   // The 7 shared-spine questions are answered ONCE (like the core). They join the run only when this
   // sport uses the spine AND it hasn't been answered yet. First play: core + spine + module. A later
   // spine-league when the spine is already cached: module only. Live (non-spine) sports are unchanged.
-  const needSpine = usesSpine && !savedSpine;
+  const needSpine = !savedSpine; // ask the shared spine on ANY first-ever run - even a bespoke (off-spine) league like PL/NFL/CFB - so every taker builds a spine profile and the home instincts line fills in
   const sequence=useMemo(
     ()=> mode==="core" ? coreQuestions
        : mode==="module" ? (needSpine ? [...spineQuestions, ...moduleQuestions] : moduleQuestions)
@@ -497,7 +497,7 @@ function AppInner(){
       setScores(s);
       setCoreProfile(coreProfile);
       setResult(club);
-      if(usesSpine && Object.keys(spineAnswers).length) setSavedSpine(spineAnswers);
+      if(Object.keys(spineAnswers).length) setSavedSpine(spineAnswers); // cache the spine whenever it was collected, even after a bespoke-league (PL/NFL/CFB) first run
       setEvidence(matchEvidence(activeSport,{coreAnswers,moduleAnswers,coreProfile,spineAnswers}));
       setEvidenceInput({coreAnswers,moduleAnswers,coreProfile,spineAnswers});
       { const rm = typeof window!=="undefined" && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; setRevealSeq(!rm); setLanded(rm); }
