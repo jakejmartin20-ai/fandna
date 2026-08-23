@@ -29,12 +29,18 @@ function hexPoints(cx, cy, R){
   return [[cx,cy-R],[cx+a,cy-R/2],[cx+a,cy+R/2],[cx,cy+R],[cx-a,cy+R/2],[cx-a,cy-R/2]]
     .map(p => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(" ");
 }
-function BeachHex({ size=44, mark, locked=false, gid="bh" }){
+function BeachHex({ size=44, mark, locked=false, lit=false, gid="bh" }){
   const S=size, cx=S/2, cy=S/2, R=S/2-3, scale=S/66;
   if(locked){
+    // "lit" gives the teaser hex a brighter sunset-gradient rim + more weight; plain stays a dim outline.
+    const w = lit ? Math.max(1.6,2.2*scale) : Math.max(1,1.3*scale);
     return (
       <svg width={S} height={S} viewBox={`0 0 ${S} ${S}`} role="img" aria-label="a hidden bonus, locked">
-        <polygon points={hexPoints(cx,cy,R)} fill="none" stroke="#b5657f" strokeWidth={Math.max(1,1.3*scale)} strokeOpacity="0.5"/>
+        {lit &&
+          <defs><linearGradient id={gid} x1="0" y1="0" x2="0.7" y2="1">
+            <stop offset="0" stopColor={SUNSET[0]}/><stop offset="0.55" stopColor={SUNSET[1]}/><stop offset="1" stopColor={SUNSET[2]}/>
+          </linearGradient></defs>}
+        <polygon points={hexPoints(cx,cy,R)} fill="none" stroke={lit?`url(#${gid})`:"#b5657f"} strokeWidth={w} strokeOpacity={lit?0.95:0.5}/>
       </svg>
     );
   }
@@ -218,12 +224,14 @@ export function BeachHomeCard({ coreProfile, results, coreSequenced, seen, onOpe
     );
   }
 
-  // teaser: only for a returning taker, never a first-time visitor.
+  // teaser: only for a returning taker, never a first-time visitor. Given room to breathe (padding
+  // above + below) and a sunset-lit hex with a soft glow, so it reads as intentional while staying
+  // quieter than a real league row.
   if(!coreSequenced) return null;
   return (
-    <div style={{marginTop:18,display:"flex",alignItems:"center",justifyContent:"center",gap:10}}>
-      <div style={{flex:"none"}}><BeachHex size={24} locked/></div>
-      <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#6a6a86",letterSpacing:".01em"}}>
+    <div style={{marginTop:30,paddingBottom:16,display:"flex",alignItems:"center",justifyContent:"center",gap:12}}>
+      <div style={{flex:"none",filter:"drop-shadow(0 0 8px rgba(255,90,122,.4))"}}><BeachHex size={30} locked lit gid="pbh-teaser"/></div>
+      <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:15.5,color:"#8a7a92",letterSpacing:".015em"}}>
         Past the fifteenth, there is one more read.
       </div>
     </div>
