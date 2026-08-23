@@ -19,8 +19,10 @@ const SPORTS = [
   { code: "L1",  name: "Ligue 1",       live: true,  hook: "Which club are you?",      group: "global" },
   { code: "SA",  name: "Serie A",       live: true,  hook: "Which club are you?",      group: "global" },
   { code: "F1",  name: "Formula 1",     live: true, hook: "Which team are you?",       group: "world" },
-  { code: "AFL", name: "AFL",           live: false, hook: "Which club are you?",       group: "world" },
-  { code: "IPL", name: "IPL",           live: false, hook: "Which franchise are you?",  group: "world" },
+  { code: "AFL", name: "AFL",           live: true,  hook: "Which club are you?",       group: "world" },
+  { code: "IPL", name: "IPL",           live: false, planned: true, hook: "Which franchise are you?",  group: "world" },
+  { code: "W4",  name: "World league #4", live: false, planned: true, hook: "", group: "world" },
+  { code: "W5",  name: "World league #5", live: false, planned: true, hook: "", group: "world" },
 ];
 
 // The two branches on the genome home, in display order. `glyph` picks the header mark.
