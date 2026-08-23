@@ -212,6 +212,27 @@ export function GenomeHome({
       );
     }
 
+    // Further-out placeholder: a league we intend to build but have not started (World bucket slots).
+    // One tier past "Coming soon" - same circular disc as every row in this column, but recessed, an
+    // empty inner ring (a reserved slot, not a "?"), and the "Not yet sequenced" / "planned" copy.
+    if(s.planned){
+      return(
+        <div style={{
+          display:"flex",alignItems:"center",gap:12,background:"transparent",marginBottom:mb,
+          border:"1px solid #1d1d27",borderRadius:10,padding:"12px 14px",
+        }}>
+          <div style={{width:42,height:42,borderRadius:"50%",flexShrink:0,border:"1px solid #2c2c38",display:"flex",alignItems:"center",justifyContent:"center"}}>
+            <div style={{width:15,height:15,borderRadius:"50%",border:"1px solid #3f3f4d"}}/>
+          </div>
+          <div style={{flex:1,minWidth:0}}>
+            <div style={{fontSize:10,color:"#6f6f80",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:3}}>{s.name}</div>
+            <div style={{fontSize:"clamp(15px,3.6vw,17px)",color:"#83837e",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic"}}>Not yet sequenced</div>
+          </div>
+          <span style={{fontSize:9,color:"#6a6a78",letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",flexShrink:0}}>planned</span>
+        </div>
+      );
+    }
+
     return(
       <div style={{
         display:"flex",alignItems:"center",gap:12,background:"transparent",marginBottom:mb,
