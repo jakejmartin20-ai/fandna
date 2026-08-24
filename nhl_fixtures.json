@@ -21,7 +21,10 @@
     "rebaselined": "2026-08-06 s25: NHL sliders q3/q6/q9 re-authored to three-position (instinct/center/plan, tradition/center/fresh, responsibility/center/defer) by trait tertiles (chaos/root/ambition). Re-recorded on live main engine.",
     "fpW": 1.5,
     "rebaselined_s31": "2026-08-10 s31: NHL FP_W 1.2->1.5 (per-league module-weight tuning pass, >1% reachability knee). Signatures self-land unchanged; 7 random winners re-recorded.",
-    "rebaselined_s42": "2026-08-19 s42: NHL onto the shared spine (Option B). S4 (roots) carry-over from nhl_q6, S2 (pressure) re-author from nhl_q11 (six 'stay level' clubs unleaned). Dropped nhl_q6/nhl_q11 from the module (10 unique). Fixtures carry explicit spineAnswers {S2,S4}; winners re-recorded on the spine engine."
+    "rebaselined_s42": "2026-08-19 s42: NHL onto the shared spine (Option B). S4 (roots) carry-over from nhl_q6, S2 (pressure) re-author from nhl_q11 (six 'stay level' clubs unleaned). Dropped nhl_q6/nhl_q11 from the module (10 unique). Fixtures carry explicit spineAnswers {S2,S4}; winners re-recorded on the spine engine.",
+    "rebaseline_note": [
+      "s51 NHL lean-module rebuild: module cut 12->6 (dropped 8 spine-echoes; kept+sharpened the following question; added the reverence-vs-celebration question). Research-grounded identities (see fandna-nhl-souls.md). Seattle teamDim scale-up (community 6->8, emotion 5->7). Self-land 32/32. All 72 fixtures re-recorded under the new engine."
+    ]
   },
   "fixtures": [
     {
@@ -38,16 +41,12 @@
         "rootedness": 10
       },
       "moduleAnswers": {
-        "nhl_q1": "C",
-        "nhl_q2": "C",
-        "nhl_q3": "4",
+        "nhl_q1": "B",
+        "nhl_q2": "A",
+        "nhl_q3": "B",
         "nhl_q4": "A",
         "nhl_q5": "A",
-        "nhl_q7": "A",
-        "nhl_q8": "B",
-        "nhl_q9": "1",
-        "nhl_q10": "A",
-        "nhl_q12": "D"
+        "nhl_q6": "A"
       },
       "winner": "MTL",
       "winnerName": "Montreal Canadiens",
@@ -70,16 +69,12 @@
         "rootedness": 10
       },
       "moduleAnswers": {
-        "nhl_q1": "C",
-        "nhl_q2": "B",
-        "nhl_q3": "3",
-        "nhl_q4": "E",
+        "nhl_q1": "B",
+        "nhl_q2": "A",
+        "nhl_q3": "A",
+        "nhl_q4": "C",
         "nhl_q5": "A",
-        "nhl_q7": "A",
-        "nhl_q8": "B",
-        "nhl_q9": "2",
-        "nhl_q10": "A",
-        "nhl_q12": "D"
+        "nhl_q6": "A"
       },
       "winner": "TOR",
       "winnerName": "Toronto Maple Leafs",
@@ -102,16 +97,12 @@
         "rootedness": 9
       },
       "moduleAnswers": {
-        "nhl_q1": "A",
-        "nhl_q2": "A",
-        "nhl_q3": "2",
+        "nhl_q1": "E",
+        "nhl_q2": "B",
+        "nhl_q3": "A",
         "nhl_q4": "A",
-        "nhl_q5": "E",
-        "nhl_q7": "A",
-        "nhl_q8": "E",
-        "nhl_q9": "2",
-        "nhl_q10": "A",
-        "nhl_q12": "B"
+        "nhl_q5": "A",
+        "nhl_q6": "A"
       },
       "winner": "BOS",
       "winnerName": "Boston Bruins",
@@ -134,16 +125,12 @@
         "rootedness": 9
       },
       "moduleAnswers": {
-        "nhl_q1": "C",
-        "nhl_q2": "C",
-        "nhl_q3": "5",
-        "nhl_q4": "C",
-        "nhl_q5": "B",
-        "nhl_q7": "A",
-        "nhl_q8": "B",
-        "nhl_q9": "3",
-        "nhl_q10": "A",
-        "nhl_q12": "A"
+        "nhl_q1": "B",
+        "nhl_q2": "B",
+        "nhl_q3": "B",
+        "nhl_q4": "A",
+        "nhl_q5": "A",
+        "nhl_q6": "A"
       },
       "winner": "DET",
       "winnerName": "Detroit Red Wings",
@@ -166,16 +153,12 @@
         "rootedness": 8
       },
       "moduleAnswers": {
-        "nhl_q1": "A",
-        "nhl_q2": "B",
-        "nhl_q3": "2",
-        "nhl_q4": "C",
+        "nhl_q1": "E",
+        "nhl_q2": "A",
+        "nhl_q3": "C",
+        "nhl_q4": "A",
         "nhl_q5": "A",
-        "nhl_q7": "C",
-        "nhl_q8": "E",
-        "nhl_q9": "2",
-        "nhl_q10": "A",
-        "nhl_q12": "B"
+        "nhl_q6": "A"
       },
       "winner": "CHI",
       "winnerName": "Chicago Blackhawks",
@@ -199,15 +182,11 @@
       },
       "moduleAnswers": {
         "nhl_q1": "C",
-        "nhl_q2": "C",
-        "nhl_q3": "2",
+        "nhl_q2": "A",
+        "nhl_q3": "B",
         "nhl_q4": "A",
         "nhl_q5": "A",
-        "nhl_q7": "C",
-        "nhl_q8": "C",
-        "nhl_q9": "2",
-        "nhl_q10": "B",
-        "nhl_q12": "C"
+        "nhl_q6": "A"
       },
       "winner": "NYR",
       "winnerName": "New York Rangers",
@@ -230,16 +209,12 @@
         "rootedness": 8
       },
       "moduleAnswers": {
-        "nhl_q1": "A",
+        "nhl_q1": "B",
         "nhl_q2": "B",
-        "nhl_q3": "2",
+        "nhl_q3": "B",
         "nhl_q4": "A",
-        "nhl_q5": "E",
-        "nhl_q7": "C",
-        "nhl_q8": "B",
-        "nhl_q9": "1",
-        "nhl_q10": "B",
-        "nhl_q12": "B"
+        "nhl_q5": "B",
+        "nhl_q6": "A"
       },
       "winner": "EDM",
       "winnerName": "Edmonton Oilers",
@@ -262,16 +237,12 @@
         "rootedness": 8
       },
       "moduleAnswers": {
-        "nhl_q1": "A",
-        "nhl_q2": "B",
-        "nhl_q3": "3",
-        "nhl_q4": "D",
-        "nhl_q5": "A",
-        "nhl_q7": "B",
-        "nhl_q8": "B",
-        "nhl_q9": "3",
-        "nhl_q10": "A",
-        "nhl_q12": "D"
+        "nhl_q1": "E",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "B",
+        "nhl_q5": "B",
+        "nhl_q6": "A"
       },
       "winner": "CGY",
       "winnerName": "Calgary Flames",
@@ -294,16 +265,12 @@
         "rootedness": 7
       },
       "moduleAnswers": {
-        "nhl_q1": "A",
+        "nhl_q1": "B",
         "nhl_q2": "B",
-        "nhl_q3": "2",
-        "nhl_q4": "B",
-        "nhl_q5": "A",
-        "nhl_q7": "C",
-        "nhl_q8": "B",
-        "nhl_q9": "3",
-        "nhl_q10": "A",
-        "nhl_q12": "B"
+        "nhl_q3": "C",
+        "nhl_q4": "C",
+        "nhl_q5": "B",
+        "nhl_q6": "A"
       },
       "winner": "VAN",
       "winnerName": "Vancouver Canucks",
@@ -327,15 +294,11 @@
       },
       "moduleAnswers": {
         "nhl_q1": "D",
-        "nhl_q2": "B",
-        "nhl_q3": "4",
-        "nhl_q4": "D",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "C",
         "nhl_q5": "B",
-        "nhl_q7": "D",
-        "nhl_q8": "B",
-        "nhl_q9": "4",
-        "nhl_q10": "B",
-        "nhl_q12": "D"
+        "nhl_q6": "A"
       },
       "winner": "WPG",
       "winnerName": "Winnipeg Jets",
@@ -358,16 +321,12 @@
         "rootedness": 5
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "B",
-        "nhl_q3": "3",
-        "nhl_q4": "E",
-        "nhl_q5": "B",
-        "nhl_q7": "D",
-        "nhl_q8": "B",
-        "nhl_q9": "5",
-        "nhl_q10": "A",
-        "nhl_q12": "D"
+        "nhl_q1": "B",
+        "nhl_q2": "C",
+        "nhl_q3": "C",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "A"
       },
       "winner": "OTT",
       "winnerName": "Ottawa Senators",
@@ -390,16 +349,12 @@
         "rootedness": 8
       },
       "moduleAnswers": {
-        "nhl_q1": "A",
-        "nhl_q2": "A",
-        "nhl_q3": "1",
-        "nhl_q4": "E",
-        "nhl_q5": "A",
-        "nhl_q7": "B",
-        "nhl_q8": "E",
-        "nhl_q9": "3",
-        "nhl_q10": "A",
-        "nhl_q12": "B"
+        "nhl_q1": "E",
+        "nhl_q2": "B",
+        "nhl_q3": "A",
+        "nhl_q4": "A",
+        "nhl_q5": "B",
+        "nhl_q6": "A"
       },
       "winner": "PHI",
       "winnerName": "Philadelphia Flyers",
@@ -422,16 +377,12 @@
         "rootedness": 7
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "B",
-        "nhl_q3": "3",
-        "nhl_q4": "E",
-        "nhl_q5": "A",
-        "nhl_q7": "B",
-        "nhl_q8": "B",
-        "nhl_q9": "4",
-        "nhl_q10": "A",
-        "nhl_q12": "D"
+        "nhl_q1": "E",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "C",
+        "nhl_q5": "B",
+        "nhl_q6": "A"
       },
       "winner": "BUF",
       "winnerName": "Buffalo Sabres",
@@ -454,16 +405,12 @@
         "rootedness": 7
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "B",
-        "nhl_q3": "3",
-        "nhl_q4": "E",
-        "nhl_q5": "C",
-        "nhl_q7": "B",
-        "nhl_q8": "B",
-        "nhl_q9": "3",
-        "nhl_q10": "A",
-        "nhl_q12": "D"
+        "nhl_q1": "B",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "B",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
       },
       "winner": "STL",
       "winnerName": "St. Louis Blues",
@@ -488,14 +435,10 @@
       "moduleAnswers": {
         "nhl_q1": "D",
         "nhl_q2": "B",
-        "nhl_q3": "4",
+        "nhl_q3": "A",
         "nhl_q4": "A",
         "nhl_q5": "B",
-        "nhl_q7": "A",
-        "nhl_q8": "D",
-        "nhl_q9": "3",
-        "nhl_q10": "A",
-        "nhl_q12": "A"
+        "nhl_q6": "A"
       },
       "winner": "NYI",
       "winnerName": "New York Islanders",
@@ -518,16 +461,12 @@
         "rootedness": 7
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "B",
-        "nhl_q3": "5",
-        "nhl_q4": "D",
-        "nhl_q5": "B",
-        "nhl_q7": "D",
-        "nhl_q8": "B",
-        "nhl_q9": "4",
-        "nhl_q10": "A",
-        "nhl_q12": "D"
+        "nhl_q1": "B",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "A"
       },
       "winner": "MIN",
       "winnerName": "Minnesota Wild",
@@ -550,16 +489,12 @@
         "rootedness": 5
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "B",
-        "nhl_q3": "2",
+        "nhl_q1": "E",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
         "nhl_q4": "C",
-        "nhl_q5": "A",
-        "nhl_q7": "C",
-        "nhl_q8": "E",
-        "nhl_q9": "4",
-        "nhl_q10": "C",
-        "nhl_q12": "B"
+        "nhl_q5": "C",
+        "nhl_q6": "B"
       },
       "winner": "NSH",
       "winnerName": "Nashville Predators",
@@ -582,16 +517,12 @@
         "rootedness": 5
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "B",
-        "nhl_q3": "3",
-        "nhl_q4": "E",
-        "nhl_q5": "B",
-        "nhl_q7": "D",
-        "nhl_q8": "B",
-        "nhl_q9": "5",
-        "nhl_q10": "C",
-        "nhl_q12": "D"
+        "nhl_q1": "B",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "C"
       },
       "winner": "CBJ",
       "winnerName": "Columbus Blue Jackets",
@@ -614,16 +545,12 @@
         "rootedness": 6
       },
       "moduleAnswers": {
-        "nhl_q1": "B",
-        "nhl_q2": "D",
-        "nhl_q3": "5",
+        "nhl_q1": "D",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
         "nhl_q4": "B",
-        "nhl_q5": "D",
-        "nhl_q7": "B",
-        "nhl_q8": "C",
-        "nhl_q9": "3",
-        "nhl_q10": "D",
-        "nhl_q12": "A"
+        "nhl_q5": "B",
+        "nhl_q6": "C"
       },
       "winner": "NJD",
       "winnerName": "New Jersey Devils",
@@ -646,16 +573,12 @@
         "rootedness": 5
       },
       "moduleAnswers": {
-        "nhl_q1": "B",
-        "nhl_q2": "A",
-        "nhl_q3": "3",
-        "nhl_q4": "E",
+        "nhl_q1": "C",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "B",
         "nhl_q5": "C",
-        "nhl_q7": "B",
-        "nhl_q8": "B",
-        "nhl_q9": "4",
-        "nhl_q10": "D",
-        "nhl_q12": "A"
+        "nhl_q6": "B"
       },
       "winner": "CAR",
       "winnerName": "Carolina Hurricanes",
@@ -678,16 +601,12 @@
         "rootedness": 6
       },
       "moduleAnswers": {
-        "nhl_q1": "B",
+        "nhl_q1": "A",
         "nhl_q2": "C",
-        "nhl_q3": "4",
-        "nhl_q4": "E",
+        "nhl_q3": "A",
+        "nhl_q4": "B",
         "nhl_q5": "B",
-        "nhl_q7": "B",
-        "nhl_q8": "A",
-        "nhl_q9": "4",
-        "nhl_q10": "D",
-        "nhl_q12": "A"
+        "nhl_q6": "B"
       },
       "winner": "DAL",
       "winnerName": "Dallas Stars",
@@ -711,15 +630,11 @@
       },
       "moduleAnswers": {
         "nhl_q1": "C",
-        "nhl_q2": "C",
-        "nhl_q3": "2",
+        "nhl_q2": "A",
+        "nhl_q3": "B",
         "nhl_q4": "A",
-        "nhl_q5": "A",
-        "nhl_q7": "C",
-        "nhl_q8": "C",
-        "nhl_q9": "1",
-        "nhl_q10": "A",
-        "nhl_q12": "C"
+        "nhl_q5": "B",
+        "nhl_q6": "C"
       },
       "winner": "PIT",
       "winnerName": "Pittsburgh Penguins",
@@ -743,15 +658,11 @@
       },
       "moduleAnswers": {
         "nhl_q1": "C",
-        "nhl_q2": "C",
-        "nhl_q3": "2",
+        "nhl_q2": "B",
+        "nhl_q3": "A",
         "nhl_q4": "B",
-        "nhl_q5": "A",
-        "nhl_q7": "C",
-        "nhl_q8": "B",
-        "nhl_q9": "2",
-        "nhl_q10": "A",
-        "nhl_q12": "C"
+        "nhl_q5": "B",
+        "nhl_q6": "C"
       },
       "winner": "WSH",
       "winnerName": "Washington Capitals",
@@ -774,16 +685,12 @@
         "rootedness": 6
       },
       "moduleAnswers": {
-        "nhl_q1": "C",
+        "nhl_q1": "B",
         "nhl_q2": "C",
-        "nhl_q3": "3",
+        "nhl_q3": "B",
         "nhl_q4": "A",
         "nhl_q5": "B",
-        "nhl_q7": "C",
-        "nhl_q8": "C",
-        "nhl_q9": "1",
-        "nhl_q10": "D",
-        "nhl_q12": "B"
+        "nhl_q6": "C"
       },
       "winner": "COL",
       "winnerName": "Colorado Avalanche",
@@ -807,15 +714,11 @@
       },
       "moduleAnswers": {
         "nhl_q1": "C",
-        "nhl_q2": "C",
-        "nhl_q3": "3",
-        "nhl_q4": "C",
+        "nhl_q2": "A",
+        "nhl_q3": "A",
+        "nhl_q4": "B",
         "nhl_q5": "B",
-        "nhl_q7": "A",
-        "nhl_q8": "C",
-        "nhl_q9": "3",
-        "nhl_q10": "B",
-        "nhl_q12": "C"
+        "nhl_q6": "B"
       },
       "winner": "LAK",
       "winnerName": "Los Angeles Kings",
@@ -839,15 +742,11 @@
       },
       "moduleAnswers": {
         "nhl_q1": "C",
-        "nhl_q2": "C",
-        "nhl_q3": "3",
+        "nhl_q2": "B",
+        "nhl_q3": "B",
         "nhl_q4": "A",
         "nhl_q5": "C",
-        "nhl_q7": "A",
-        "nhl_q8": "C",
-        "nhl_q9": "1",
-        "nhl_q10": "C",
-        "nhl_q12": "C"
+        "nhl_q6": "B"
       },
       "winner": "TBL",
       "winnerName": "Tampa Bay Lightning",
@@ -870,16 +769,12 @@
         "rootedness": 3
       },
       "moduleAnswers": {
-        "nhl_q1": "B",
-        "nhl_q2": "C",
-        "nhl_q3": "2",
-        "nhl_q4": "B",
+        "nhl_q1": "C",
+        "nhl_q2": "A",
+        "nhl_q3": "A",
+        "nhl_q4": "A",
         "nhl_q5": "C",
-        "nhl_q7": "C",
-        "nhl_q8": "C",
-        "nhl_q9": "1",
-        "nhl_q10": "C",
-        "nhl_q12": "E"
+        "nhl_q6": "B"
       },
       "winner": "VGK",
       "winnerName": "Vegas Golden Knights",
@@ -902,16 +797,12 @@
         "rootedness": 4
       },
       "moduleAnswers": {
-        "nhl_q1": "A",
-        "nhl_q2": "A",
-        "nhl_q3": "2",
-        "nhl_q4": "E",
-        "nhl_q5": "E",
-        "nhl_q7": "E",
-        "nhl_q8": "E",
-        "nhl_q9": "3",
-        "nhl_q10": "C",
-        "nhl_q12": "B"
+        "nhl_q1": "E",
+        "nhl_q2": "B",
+        "nhl_q3": "A",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
       },
       "winner": "FLA",
       "winnerName": "Florida Panthers",
@@ -934,16 +825,12 @@
         "rootedness": 3
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
+        "nhl_q1": "B",
         "nhl_q2": "B",
-        "nhl_q3": "4",
+        "nhl_q3": "B",
         "nhl_q4": "C",
-        "nhl_q5": "D",
-        "nhl_q7": "D",
-        "nhl_q8": "B",
-        "nhl_q9": "5",
-        "nhl_q10": "C",
-        "nhl_q12": "E"
+        "nhl_q5": "C",
+        "nhl_q6": "B"
       },
       "winner": "SEA",
       "winnerName": "Seattle Kraken",
@@ -966,16 +853,12 @@
         "rootedness": 2
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "B",
-        "nhl_q3": "4",
-        "nhl_q4": "D",
-        "nhl_q5": "D",
-        "nhl_q7": "D",
-        "nhl_q8": "B",
-        "nhl_q9": "5",
-        "nhl_q10": "D",
-        "nhl_q12": "E"
+        "nhl_q1": "B",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "C"
       },
       "winner": "UTA",
       "winnerName": "Utah Mammoth",
@@ -998,16 +881,12 @@
         "rootedness": 4
       },
       "moduleAnswers": {
-        "nhl_q1": "B",
-        "nhl_q2": "B",
-        "nhl_q3": "4",
-        "nhl_q4": "E",
-        "nhl_q5": "E",
-        "nhl_q7": "E",
-        "nhl_q8": "C",
-        "nhl_q9": "4",
-        "nhl_q10": "C",
-        "nhl_q12": "B"
+        "nhl_q1": "C",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "B",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
       },
       "winner": "ANA",
       "winnerName": "Anaheim Ducks",
@@ -1030,16 +909,12 @@
         "rootedness": 5
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "B",
-        "nhl_q3": "4",
-        "nhl_q4": "B",
-        "nhl_q5": "A",
-        "nhl_q7": "A",
-        "nhl_q8": "B",
-        "nhl_q9": "3",
-        "nhl_q10": "A",
-        "nhl_q12": "C"
+        "nhl_q1": "C",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "C"
       },
       "winner": "SJS",
       "winnerName": "San Jose Sharks",
@@ -1081,17 +956,13 @@
       "moduleAnswers": {
         "nhl_q1": "B",
         "nhl_q2": "B",
-        "nhl_q3": "3",
-        "nhl_q4": "D",
-        "nhl_q5": "E",
-        "nhl_q7": "A",
-        "nhl_q8": "A",
-        "nhl_q9": "4",
-        "nhl_q10": "D",
-        "nhl_q12": "A"
+        "nhl_q3": "A",
+        "nhl_q4": "B",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
       },
-      "winner": "DAL",
-      "winnerName": "Dallas Stars",
+      "winner": "STL",
+      "winnerName": "St. Louis Blues",
       "spineAnswers": {
         "S2": "C",
         "S4": "3"
@@ -1128,19 +999,15 @@
         "q24": "5"
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "D",
-        "nhl_q3": "2",
-        "nhl_q4": "D",
+        "nhl_q1": "C",
+        "nhl_q2": "B",
+        "nhl_q3": "A",
+        "nhl_q4": "B",
         "nhl_q5": "C",
-        "nhl_q7": "E",
-        "nhl_q8": "E",
-        "nhl_q9": "3",
-        "nhl_q10": "D",
-        "nhl_q12": "A"
+        "nhl_q6": "A"
       },
-      "winner": "CGY",
-      "winnerName": "Calgary Flames",
+      "winner": "WSH",
+      "winnerName": "Washington Capitals",
       "spineAnswers": {
         "S2": "A",
         "S4": "1"
@@ -1177,19 +1044,15 @@
         "q24": "2"
       },
       "moduleAnswers": {
-        "nhl_q1": "B",
-        "nhl_q2": "D",
-        "nhl_q3": "4",
+        "nhl_q1": "C",
+        "nhl_q2": "B",
+        "nhl_q3": "C",
         "nhl_q4": "B",
-        "nhl_q5": "A",
-        "nhl_q7": "B",
-        "nhl_q8": "D",
-        "nhl_q9": "4",
-        "nhl_q10": "B",
-        "nhl_q12": "E"
+        "nhl_q5": "B",
+        "nhl_q6": "A"
       },
-      "winner": "CGY",
-      "winnerName": "Calgary Flames",
+      "winner": "LAK",
+      "winnerName": "Los Angeles Kings",
       "spineAnswers": {
         "S2": "B",
         "S4": "2"
@@ -1226,19 +1089,15 @@
         "q24": "1"
       },
       "moduleAnswers": {
-        "nhl_q1": "C",
+        "nhl_q1": "B",
         "nhl_q2": "A",
-        "nhl_q3": "5",
+        "nhl_q3": "C",
         "nhl_q4": "A",
-        "nhl_q5": "D",
-        "nhl_q7": "C",
-        "nhl_q8": "A",
-        "nhl_q9": "1",
-        "nhl_q10": "B",
-        "nhl_q12": "D"
+        "nhl_q5": "C",
+        "nhl_q6": "C"
       },
-      "winner": "MTL",
-      "winnerName": "Montreal Canadiens",
+      "winner": "CHI",
+      "winnerName": "Chicago Blackhawks",
       "spineAnswers": {
         "S2": "D",
         "S4": "5"
@@ -1275,19 +1134,15 @@
         "q24": "3"
       },
       "moduleAnswers": {
-        "nhl_q1": "B",
-        "nhl_q2": "B",
-        "nhl_q3": "1",
+        "nhl_q1": "C",
+        "nhl_q2": "A",
+        "nhl_q3": "C",
         "nhl_q4": "C",
         "nhl_q5": "B",
-        "nhl_q7": "A",
-        "nhl_q8": "B",
-        "nhl_q9": "4",
-        "nhl_q10": "C",
-        "nhl_q12": "A"
+        "nhl_q6": "C"
       },
-      "winner": "NYI",
-      "winnerName": "New York Islanders",
+      "winner": "PIT",
+      "winnerName": "Pittsburgh Penguins",
       "spineAnswers": {
         "S2": "C",
         "S4": "2"
@@ -1324,19 +1179,15 @@
         "q24": "2"
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "A",
-        "nhl_q3": "4",
-        "nhl_q4": "C",
-        "nhl_q5": "E",
-        "nhl_q7": "C",
-        "nhl_q8": "D",
-        "nhl_q9": "5",
-        "nhl_q10": "C",
-        "nhl_q12": "B"
+        "nhl_q1": "B",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "B",
+        "nhl_q5": "B",
+        "nhl_q6": "A"
       },
-      "winner": "NSH",
-      "winnerName": "Nashville Predators",
+      "winner": "CGY",
+      "winnerName": "Calgary Flames",
       "spineAnswers": {
         "S2": "A",
         "S4": "3"
@@ -1374,18 +1225,14 @@
       },
       "moduleAnswers": {
         "nhl_q1": "A",
-        "nhl_q2": "A",
-        "nhl_q3": "4",
-        "nhl_q4": "A",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "B",
         "nhl_q5": "A",
-        "nhl_q7": "B",
-        "nhl_q8": "B",
-        "nhl_q9": "4",
-        "nhl_q10": "C",
-        "nhl_q12": "E"
+        "nhl_q6": "A"
       },
-      "winner": "SEA",
-      "winnerName": "Seattle Kraken",
+      "winner": "ANA",
+      "winnerName": "Anaheim Ducks",
       "spineAnswers": {
         "S2": "D",
         "S4": "1"
@@ -1422,19 +1269,15 @@
         "q24": "1"
       },
       "moduleAnswers": {
-        "nhl_q1": "B",
+        "nhl_q1": "A",
         "nhl_q2": "B",
-        "nhl_q3": "3",
-        "nhl_q4": "E",
-        "nhl_q5": "B",
-        "nhl_q7": "E",
-        "nhl_q8": "C",
-        "nhl_q9": "5",
-        "nhl_q10": "B",
-        "nhl_q12": "A"
+        "nhl_q3": "C",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "A"
       },
-      "winner": "BUF",
-      "winnerName": "Buffalo Sabres",
+      "winner": "OTT",
+      "winnerName": "Ottawa Senators",
       "spineAnswers": {
         "S2": "B",
         "S4": "2"
@@ -1471,19 +1314,15 @@
         "q24": "4"
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "C",
-        "nhl_q3": "5",
-        "nhl_q4": "B",
-        "nhl_q5": "B",
-        "nhl_q7": "E",
-        "nhl_q8": "E",
-        "nhl_q9": "3",
-        "nhl_q10": "C",
-        "nhl_q12": "C"
+        "nhl_q1": "C",
+        "nhl_q2": "B",
+        "nhl_q3": "A",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "C"
       },
-      "winner": "NYI",
-      "winnerName": "New York Islanders",
+      "winner": "NSH",
+      "winnerName": "Nashville Predators",
       "spineAnswers": {
         "S2": "D",
         "S4": "2"
@@ -1520,16 +1359,12 @@
         "q24": "5"
       },
       "moduleAnswers": {
-        "nhl_q1": "A",
+        "nhl_q1": "E",
         "nhl_q2": "A",
-        "nhl_q3": "4",
-        "nhl_q4": "D",
-        "nhl_q5": "D",
-        "nhl_q7": "E",
-        "nhl_q8": "C",
-        "nhl_q9": "2",
-        "nhl_q10": "A",
-        "nhl_q12": "B"
+        "nhl_q3": "C",
+        "nhl_q4": "B",
+        "nhl_q5": "C",
+        "nhl_q6": "C"
       },
       "winner": "ANA",
       "winnerName": "Anaheim Ducks",
@@ -1569,19 +1404,15 @@
         "q24": "5"
       },
       "moduleAnswers": {
-        "nhl_q1": "B",
+        "nhl_q1": "C",
         "nhl_q2": "A",
-        "nhl_q3": "2",
-        "nhl_q4": "A",
-        "nhl_q5": "E",
-        "nhl_q7": "D",
-        "nhl_q8": "E",
-        "nhl_q9": "3",
-        "nhl_q10": "C",
-        "nhl_q12": "B"
+        "nhl_q3": "A",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "A"
       },
-      "winner": "BOS",
-      "winnerName": "Boston Bruins",
+      "winner": "TOR",
+      "winnerName": "Toronto Maple Leafs",
       "spineAnswers": {
         "S2": "A",
         "S4": "2"
@@ -1618,19 +1449,15 @@
         "q24": "2"
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
+        "nhl_q1": "A",
         "nhl_q2": "A",
-        "nhl_q3": "5",
+        "nhl_q3": "C",
         "nhl_q4": "B",
-        "nhl_q5": "E",
-        "nhl_q7": "C",
-        "nhl_q8": "D",
-        "nhl_q9": "2",
-        "nhl_q10": "D",
-        "nhl_q12": "B"
+        "nhl_q5": "A",
+        "nhl_q6": "B"
       },
-      "winner": "BOS",
-      "winnerName": "Boston Bruins",
+      "winner": "CHI",
+      "winnerName": "Chicago Blackhawks",
       "spineAnswers": {
         "S2": "A",
         "S4": "1"
@@ -1667,19 +1494,15 @@
         "q24": "4"
       },
       "moduleAnswers": {
-        "nhl_q1": "A",
-        "nhl_q2": "D",
-        "nhl_q3": "3",
-        "nhl_q4": "C",
-        "nhl_q5": "E",
-        "nhl_q7": "D",
-        "nhl_q8": "E",
-        "nhl_q9": "2",
-        "nhl_q10": "D",
-        "nhl_q12": "D"
+        "nhl_q1": "B",
+        "nhl_q2": "A",
+        "nhl_q3": "C",
+        "nhl_q4": "B",
+        "nhl_q5": "B",
+        "nhl_q6": "A"
       },
-      "winner": "CHI",
-      "winnerName": "Chicago Blackhawks",
+      "winner": "STL",
+      "winnerName": "St. Louis Blues",
       "spineAnswers": {
         "S2": "A",
         "S4": "3"
@@ -1716,19 +1539,15 @@
         "q24": "3"
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "A",
-        "nhl_q3": "5",
-        "nhl_q4": "E",
+        "nhl_q1": "C",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "A",
         "nhl_q5": "A",
-        "nhl_q7": "D",
-        "nhl_q8": "D",
-        "nhl_q9": "5",
-        "nhl_q10": "B",
-        "nhl_q12": "A"
+        "nhl_q6": "A"
       },
-      "winner": "WPG",
-      "winnerName": "Winnipeg Jets",
+      "winner": "NSH",
+      "winnerName": "Nashville Predators",
       "spineAnswers": {
         "S2": "D",
         "S4": "3"
@@ -1765,19 +1584,15 @@
         "q24": "1"
       },
       "moduleAnswers": {
-        "nhl_q1": "A",
+        "nhl_q1": "C",
         "nhl_q2": "C",
-        "nhl_q3": "2",
-        "nhl_q4": "A",
-        "nhl_q5": "A",
-        "nhl_q7": "D",
-        "nhl_q8": "E",
-        "nhl_q9": "5",
-        "nhl_q10": "C",
-        "nhl_q12": "E"
+        "nhl_q3": "A",
+        "nhl_q4": "B",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
       },
-      "winner": "SEA",
-      "winnerName": "Seattle Kraken",
+      "winner": "ANA",
+      "winnerName": "Anaheim Ducks",
       "spineAnswers": {
         "S2": "D",
         "S4": "1"
@@ -1816,17 +1631,13 @@
       "moduleAnswers": {
         "nhl_q1": "B",
         "nhl_q2": "C",
-        "nhl_q3": "5",
-        "nhl_q4": "A",
+        "nhl_q3": "B",
+        "nhl_q4": "C",
         "nhl_q5": "B",
-        "nhl_q7": "E",
-        "nhl_q8": "D",
-        "nhl_q9": "3",
-        "nhl_q10": "C",
-        "nhl_q12": "A"
+        "nhl_q6": "C"
       },
-      "winner": "DET",
-      "winnerName": "Detroit Red Wings",
+      "winner": "MIN",
+      "winnerName": "Minnesota Wild",
       "spineAnswers": {
         "S2": "B",
         "S4": "1"
@@ -1863,19 +1674,15 @@
         "q24": "5"
       },
       "moduleAnswers": {
-        "nhl_q1": "C",
+        "nhl_q1": "D",
         "nhl_q2": "B",
-        "nhl_q3": "5",
-        "nhl_q4": "A",
-        "nhl_q5": "E",
-        "nhl_q7": "C",
-        "nhl_q8": "D",
-        "nhl_q9": "2",
-        "nhl_q10": "A",
-        "nhl_q12": "D"
+        "nhl_q3": "A",
+        "nhl_q4": "C",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
       },
-      "winner": "OTT",
-      "winnerName": "Ottawa Senators",
+      "winner": "BUF",
+      "winnerName": "Buffalo Sabres",
       "spineAnswers": {
         "S2": "A",
         "S4": "4"
@@ -1912,19 +1719,15 @@
         "q24": "5"
       },
       "moduleAnswers": {
-        "nhl_q1": "B",
-        "nhl_q2": "D",
-        "nhl_q3": "1",
+        "nhl_q1": "E",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
         "nhl_q4": "C",
-        "nhl_q5": "C",
-        "nhl_q7": "C",
-        "nhl_q8": "C",
-        "nhl_q9": "5",
-        "nhl_q10": "A",
-        "nhl_q12": "E"
+        "nhl_q5": "A",
+        "nhl_q6": "A"
       },
-      "winner": "PHI",
-      "winnerName": "Philadelphia Flyers",
+      "winner": "BUF",
+      "winnerName": "Buffalo Sabres",
       "spineAnswers": {
         "S2": "A",
         "S4": "4"
@@ -1963,17 +1766,13 @@
       "moduleAnswers": {
         "nhl_q1": "C",
         "nhl_q2": "A",
-        "nhl_q3": "4",
-        "nhl_q4": "A",
-        "nhl_q5": "E",
-        "nhl_q7": "D",
-        "nhl_q8": "C",
-        "nhl_q9": "3",
-        "nhl_q10": "B",
-        "nhl_q12": "A"
+        "nhl_q3": "A",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
       },
-      "winner": "NYI",
-      "winnerName": "New York Islanders",
+      "winner": "SJS",
+      "winnerName": "San Jose Sharks",
       "spineAnswers": {
         "S2": "A",
         "S4": "1"
@@ -2011,18 +1810,14 @@
       },
       "moduleAnswers": {
         "nhl_q1": "A",
-        "nhl_q2": "A",
-        "nhl_q3": "3",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
         "nhl_q4": "B",
-        "nhl_q5": "D",
-        "nhl_q7": "C",
-        "nhl_q8": "E",
-        "nhl_q9": "4",
-        "nhl_q10": "A",
-        "nhl_q12": "E"
+        "nhl_q5": "B",
+        "nhl_q6": "C"
       },
-      "winner": "CHI",
-      "winnerName": "Chicago Blackhawks",
+      "winner": "CGY",
+      "winnerName": "Calgary Flames",
       "spineAnswers": {
         "S2": "B",
         "S4": "4"
@@ -2059,19 +1854,15 @@
         "q24": "2"
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "C",
-        "nhl_q3": "3",
-        "nhl_q4": "B",
-        "nhl_q5": "A",
-        "nhl_q7": "E",
-        "nhl_q8": "B",
-        "nhl_q9": "1",
-        "nhl_q10": "B",
-        "nhl_q12": "C"
+        "nhl_q1": "A",
+        "nhl_q2": "A",
+        "nhl_q3": "B",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
       },
-      "winner": "WSH",
-      "winnerName": "Washington Capitals",
+      "winner": "NYR",
+      "winnerName": "New York Rangers",
       "spineAnswers": {
         "S2": "A",
         "S4": "4"
@@ -2108,19 +1899,15 @@
         "q24": "2"
       },
       "moduleAnswers": {
-        "nhl_q1": "B",
-        "nhl_q2": "D",
-        "nhl_q3": "5",
-        "nhl_q4": "E",
-        "nhl_q5": "D",
-        "nhl_q7": "B",
-        "nhl_q8": "E",
-        "nhl_q9": "1",
-        "nhl_q10": "D",
-        "nhl_q12": "B"
+        "nhl_q1": "A",
+        "nhl_q2": "A",
+        "nhl_q3": "B",
+        "nhl_q4": "B",
+        "nhl_q5": "A",
+        "nhl_q6": "B"
       },
-      "winner": "PHI",
-      "winnerName": "Philadelphia Flyers",
+      "winner": "MTL",
+      "winnerName": "Montreal Canadiens",
       "spineAnswers": {
         "S2": "C",
         "S4": "2"
@@ -2157,19 +1944,15 @@
         "q24": "3"
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "A",
-        "nhl_q3": "4",
-        "nhl_q4": "E",
-        "nhl_q5": "B",
-        "nhl_q7": "C",
-        "nhl_q8": "C",
-        "nhl_q9": "3",
-        "nhl_q10": "B",
-        "nhl_q12": "A"
+        "nhl_q1": "A",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "B",
+        "nhl_q5": "A",
+        "nhl_q6": "C"
       },
-      "winner": "NYI",
-      "winnerName": "New York Islanders",
+      "winner": "CGY",
+      "winnerName": "Calgary Flames",
       "spineAnswers": {
         "S2": "A",
         "S4": "3"
@@ -2206,19 +1989,15 @@
         "q24": "5"
       },
       "moduleAnswers": {
-        "nhl_q1": "B",
-        "nhl_q2": "D",
-        "nhl_q3": "5",
-        "nhl_q4": "D",
-        "nhl_q5": "D",
-        "nhl_q7": "E",
-        "nhl_q8": "B",
-        "nhl_q9": "1",
-        "nhl_q10": "A",
-        "nhl_q12": "A"
+        "nhl_q1": "A",
+        "nhl_q2": "B",
+        "nhl_q3": "A",
+        "nhl_q4": "A",
+        "nhl_q5": "A",
+        "nhl_q6": "C"
       },
-      "winner": "NJD",
-      "winnerName": "New Jersey Devils",
+      "winner": "BOS",
+      "winnerName": "Boston Bruins",
       "spineAnswers": {
         "S2": "A",
         "S4": "3"
@@ -2255,19 +2034,15 @@
         "q24": "3"
       },
       "moduleAnswers": {
-        "nhl_q1": "A",
-        "nhl_q2": "D",
-        "nhl_q3": "5",
-        "nhl_q4": "C",
-        "nhl_q5": "E",
-        "nhl_q7": "B",
-        "nhl_q8": "C",
-        "nhl_q9": "3",
-        "nhl_q10": "D",
-        "nhl_q12": "C"
+        "nhl_q1": "D",
+        "nhl_q2": "A",
+        "nhl_q3": "B",
+        "nhl_q4": "B",
+        "nhl_q5": "C",
+        "nhl_q6": "A"
       },
-      "winner": "NJD",
-      "winnerName": "New Jersey Devils",
+      "winner": "LAK",
+      "winnerName": "Los Angeles Kings",
       "spineAnswers": {
         "S2": "B",
         "S4": "4"
@@ -2304,19 +2079,15 @@
         "q24": "1"
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "B",
-        "nhl_q3": "4",
+        "nhl_q1": "E",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
         "nhl_q4": "A",
-        "nhl_q5": "E",
-        "nhl_q7": "B",
-        "nhl_q8": "D",
-        "nhl_q9": "2",
-        "nhl_q10": "C",
-        "nhl_q12": "A"
+        "nhl_q5": "B",
+        "nhl_q6": "C"
       },
-      "winner": "SEA",
-      "winnerName": "Seattle Kraken",
+      "winner": "BUF",
+      "winnerName": "Buffalo Sabres",
       "spineAnswers": {
         "S2": "B",
         "S4": "4"
@@ -2353,16 +2124,12 @@
         "q24": "1"
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
+        "nhl_q1": "A",
         "nhl_q2": "C",
-        "nhl_q3": "2",
-        "nhl_q4": "A",
-        "nhl_q5": "D",
-        "nhl_q7": "E",
-        "nhl_q8": "A",
-        "nhl_q9": "2",
-        "nhl_q10": "C",
-        "nhl_q12": "B"
+        "nhl_q3": "B",
+        "nhl_q4": "B",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
       },
       "winner": "EDM",
       "winnerName": "Edmonton Oilers",
@@ -2402,19 +2169,15 @@
         "q24": "3"
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "B",
-        "nhl_q3": "3",
-        "nhl_q4": "C",
-        "nhl_q5": "D",
-        "nhl_q7": "A",
-        "nhl_q8": "B",
-        "nhl_q9": "2",
-        "nhl_q10": "A",
-        "nhl_q12": "A"
+        "nhl_q1": "A",
+        "nhl_q2": "A",
+        "nhl_q3": "B",
+        "nhl_q4": "B",
+        "nhl_q5": "A",
+        "nhl_q6": "B"
       },
-      "winner": "CHI",
-      "winnerName": "Chicago Blackhawks",
+      "winner": "NYR",
+      "winnerName": "New York Rangers",
       "spineAnswers": {
         "S2": "D",
         "S4": "3"
@@ -2451,19 +2214,15 @@
         "q24": "1"
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "C",
-        "nhl_q3": "3",
-        "nhl_q4": "B",
-        "nhl_q5": "E",
-        "nhl_q7": "A",
-        "nhl_q8": "B",
-        "nhl_q9": "4",
-        "nhl_q10": "A",
-        "nhl_q12": "C"
+        "nhl_q1": "A",
+        "nhl_q2": "B",
+        "nhl_q3": "C",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
       },
-      "winner": "SJS",
-      "winnerName": "San Jose Sharks",
+      "winner": "DET",
+      "winnerName": "Detroit Red Wings",
       "spineAnswers": {
         "S2": "D",
         "S4": "2"
@@ -2500,19 +2259,15 @@
         "q24": "1"
       },
       "moduleAnswers": {
-        "nhl_q1": "A",
+        "nhl_q1": "D",
         "nhl_q2": "A",
-        "nhl_q3": "1",
-        "nhl_q4": "D",
-        "nhl_q5": "C",
-        "nhl_q7": "E",
-        "nhl_q8": "C",
-        "nhl_q9": "3",
-        "nhl_q10": "A",
-        "nhl_q12": "B"
+        "nhl_q3": "A",
+        "nhl_q4": "A",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
       },
-      "winner": "FLA",
-      "winnerName": "Florida Panthers",
+      "winner": "LAK",
+      "winnerName": "Los Angeles Kings",
       "spineAnswers": {
         "S2": "B",
         "S4": "3"
@@ -2549,19 +2304,15 @@
         "q24": "4"
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "C",
-        "nhl_q3": "1",
-        "nhl_q4": "E",
-        "nhl_q5": "E",
-        "nhl_q7": "C",
-        "nhl_q8": "A",
-        "nhl_q9": "3",
-        "nhl_q10": "A",
-        "nhl_q12": "E"
+        "nhl_q1": "C",
+        "nhl_q2": "A",
+        "nhl_q3": "C",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
       },
-      "winner": "PHI",
-      "winnerName": "Philadelphia Flyers",
+      "winner": "CHI",
+      "winnerName": "Chicago Blackhawks",
       "spineAnswers": {
         "S2": "A",
         "S4": "5"
@@ -2599,18 +2350,14 @@
       },
       "moduleAnswers": {
         "nhl_q1": "B",
-        "nhl_q2": "D",
-        "nhl_q3": "4",
-        "nhl_q4": "C",
-        "nhl_q5": "E",
-        "nhl_q7": "B",
-        "nhl_q8": "D",
-        "nhl_q9": "4",
-        "nhl_q10": "A",
-        "nhl_q12": "E"
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "C"
       },
-      "winner": "ANA",
-      "winnerName": "Anaheim Ducks",
+      "winner": "SJS",
+      "winnerName": "San Jose Sharks",
       "spineAnswers": {
         "S2": "A",
         "S4": "5"
@@ -2648,18 +2395,14 @@
       },
       "moduleAnswers": {
         "nhl_q1": "C",
-        "nhl_q2": "B",
-        "nhl_q3": "2",
-        "nhl_q4": "D",
-        "nhl_q5": "A",
-        "nhl_q7": "B",
-        "nhl_q8": "A",
-        "nhl_q9": "1",
-        "nhl_q10": "A",
-        "nhl_q12": "B"
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "C"
       },
-      "winner": "VAN",
-      "winnerName": "Vancouver Canucks",
+      "winner": "SJS",
+      "winnerName": "San Jose Sharks",
       "spineAnswers": {
         "S2": "B",
         "S4": "2"
@@ -2696,19 +2439,15 @@
         "q24": "2"
       },
       "moduleAnswers": {
-        "nhl_q1": "B",
-        "nhl_q2": "A",
-        "nhl_q3": "1",
+        "nhl_q1": "D",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
         "nhl_q4": "C",
-        "nhl_q5": "C",
-        "nhl_q7": "C",
-        "nhl_q8": "E",
-        "nhl_q9": "3",
-        "nhl_q10": "A",
-        "nhl_q12": "E"
+        "nhl_q5": "A",
+        "nhl_q6": "C"
       },
-      "winner": "VGK",
-      "winnerName": "Vegas Golden Knights",
+      "winner": "NJD",
+      "winnerName": "New Jersey Devils",
       "spineAnswers": {
         "S2": "B",
         "S4": "5"
@@ -2745,19 +2484,15 @@
         "q24": "3"
       },
       "moduleAnswers": {
-        "nhl_q1": "D",
-        "nhl_q2": "D",
-        "nhl_q3": "5",
-        "nhl_q4": "C",
+        "nhl_q1": "C",
+        "nhl_q2": "B",
+        "nhl_q3": "C",
+        "nhl_q4": "A",
         "nhl_q5": "C",
-        "nhl_q7": "C",
-        "nhl_q8": "A",
-        "nhl_q9": "2",
-        "nhl_q10": "C",
-        "nhl_q12": "C"
+        "nhl_q6": "B"
       },
-      "winner": "WSH",
-      "winnerName": "Washington Capitals",
+      "winner": "FLA",
+      "winnerName": "Florida Panthers",
       "spineAnswers": {
         "S2": "A",
         "S4": "4"
@@ -2794,19 +2529,15 @@
         "q24": "3"
       },
       "moduleAnswers": {
-        "nhl_q1": "B",
+        "nhl_q1": "A",
         "nhl_q2": "A",
-        "nhl_q3": "3",
+        "nhl_q3": "C",
         "nhl_q4": "B",
-        "nhl_q5": "B",
-        "nhl_q7": "E",
-        "nhl_q8": "D",
-        "nhl_q9": "1",
-        "nhl_q10": "B",
-        "nhl_q12": "E"
+        "nhl_q5": "A",
+        "nhl_q6": "C"
       },
-      "winner": "VGK",
-      "winnerName": "Vegas Golden Knights",
+      "winner": "CHI",
+      "winnerName": "Chicago Blackhawks",
       "spineAnswers": {
         "S2": "C",
         "S4": "5"
@@ -2844,18 +2575,14 @@
       },
       "moduleAnswers": {
         "nhl_q1": "B",
-        "nhl_q2": "D",
-        "nhl_q3": "4",
-        "nhl_q4": "E",
-        "nhl_q5": "D",
-        "nhl_q7": "E",
-        "nhl_q8": "E",
-        "nhl_q9": "2",
-        "nhl_q10": "D",
-        "nhl_q12": "A"
+        "nhl_q2": "B",
+        "nhl_q3": "B",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
       },
-      "winner": "DAL",
-      "winnerName": "Dallas Stars",
+      "winner": "DET",
+      "winnerName": "Detroit Red Wings",
       "spineAnswers": {
         "S2": "D",
         "S4": "4"
@@ -2892,19 +2619,15 @@
         "q24": "5"
       },
       "moduleAnswers": {
-        "nhl_q1": "A",
-        "nhl_q2": "D",
-        "nhl_q3": "2",
-        "nhl_q4": "A",
-        "nhl_q5": "D",
-        "nhl_q7": "B",
-        "nhl_q8": "E",
-        "nhl_q9": "5",
-        "nhl_q10": "C",
-        "nhl_q12": "A"
+        "nhl_q1": "D",
+        "nhl_q2": "B",
+        "nhl_q3": "C",
+        "nhl_q4": "C",
+        "nhl_q5": "B",
+        "nhl_q6": "A"
       },
-      "winner": "BOS",
-      "winnerName": "Boston Bruins",
+      "winner": "NYI",
+      "winnerName": "New York Islanders",
       "spineAnswers": {
         "S2": "B",
         "S4": "1"
@@ -2941,19 +2664,15 @@
         "q24": "3"
       },
       "moduleAnswers": {
-        "nhl_q1": "B",
+        "nhl_q1": "A",
         "nhl_q2": "A",
-        "nhl_q3": "3",
-        "nhl_q4": "A",
+        "nhl_q3": "A",
+        "nhl_q4": "C",
         "nhl_q5": "C",
-        "nhl_q7": "D",
-        "nhl_q8": "A",
-        "nhl_q9": "4",
-        "nhl_q10": "C",
-        "nhl_q12": "A"
+        "nhl_q6": "A"
       },
-      "winner": "CAR",
-      "winnerName": "Carolina Hurricanes",
+      "winner": "TOR",
+      "winnerName": "Toronto Maple Leafs",
       "spineAnswers": {
         "S2": "A",
         "S4": "2"
@@ -2990,19 +2709,15 @@
         "q24": "5"
       },
       "moduleAnswers": {
-        "nhl_q1": "A",
+        "nhl_q1": "B",
         "nhl_q2": "C",
-        "nhl_q3": "5",
+        "nhl_q3": "A",
         "nhl_q4": "C",
-        "nhl_q5": "E",
-        "nhl_q7": "D",
-        "nhl_q8": "C",
-        "nhl_q9": "3",
-        "nhl_q10": "D",
-        "nhl_q12": "A"
+        "nhl_q5": "B",
+        "nhl_q6": "C"
       },
-      "winner": "DET",
-      "winnerName": "Detroit Red Wings",
+      "winner": "STL",
+      "winnerName": "St. Louis Blues",
       "spineAnswers": {
         "S2": "C",
         "S4": "2"
