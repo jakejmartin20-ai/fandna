@@ -27,7 +27,7 @@
 // unique module and carries the spine tables, mirroring nba-spine.js / f1-spine.js / afl-spine.js.
 import { moduleQuestions as nhlModule, scoring as nhlScoring } from "./nhl";
 
-export const MODULE_UNIQUE = ["nhl_q1", "nhl_q2", "nhl_q3", "nhl_q4", "nhl_q5", "nhl_q7", "nhl_q8", "nhl_q9", "nhl_q10", "nhl_q12"];
+export const MODULE_UNIQUE = ["nhl_q1", "nhl_q2", "nhl_q3", "nhl_q4", "nhl_q5", "nhl_q6"];
 export const moduleQuestions = nhlModule.filter(q => MODULE_UNIQUE.includes(q.id));
 export const scoring = Object.fromEntries(MODULE_UNIQUE.map(id => [id, nhlScoring[id]]));
 
