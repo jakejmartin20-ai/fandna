@@ -5,7 +5,7 @@ import { coreQuestions, DIM_ORDER, DIM_LABELS } from "./data/core";
 import { spineQuestions } from "./data/spine";
 import { SPORT_DATA } from "./lib/sportData";
 import { scoreCore, scoreModule, matchEvidence, decompressProfile } from "./lib/scoring";
-import { loadState, saveResult, clearAll, appendPending, readPending, clearPending, markGroupEarned } from "./lib/storage";
+import { loadState, saveResult, saveSpine, clearAll, appendPending, readPending, clearPending, markGroupEarned } from "./lib/storage";
 import { newlyCompletedGroup, groupClubColors, allBucketsComplete, completedGroups } from "./lib/crest";
 import { hasCompletedAll } from "./lib/beachGate";
 import { pingResult } from "./lib/telemetry";
@@ -320,6 +320,7 @@ function AppInner(){
   const needSpine = !savedSpine; // ask the shared spine on ANY first-ever run - even a bespoke (off-spine) league like PL/NFL/CFB - so every taker builds a spine profile and the home instincts line fills in
   const sequence=useMemo(
     ()=> mode==="core" ? coreQuestions
+       : mode==="spine" ? spineQuestions
        : mode==="module" ? (needSpine ? [...spineQuestions, ...moduleQuestions] : moduleQuestions)
        : [...coreQuestions, ...(needSpine ? spineQuestions : []), ...moduleQuestions],
     [mode,activeSport,needSpine]
@@ -477,6 +478,28 @@ function AppInner(){
         setCur(0);setAnswers({});setResult(null);setScores(null);setTab("result");
         setScreen("home");setPhase("in");
       },160);
+    } else if(mode==="spine"){
+      // Re-take the shared instincts: the 7 spine answers ARE the whole run. Save them, then
+      // recompute every taken league from its stored module answers against the NEW spine and the
+      // unchanged core, through the same engine, so a club only moves if the new instincts honestly
+      // land it elsewhere. A league restored from a share link has no stored answers to re-read, so
+      // we keep its club and flag it (same treatment as the core re-sequence).
+      const newSpine=Object.fromEntries(Object.entries(na).filter(([k])=>spineIds.has(k)));
+      saveSpine(newSpine);                       // persist the new spine BEFORE recompute reads it
+      setSavedSpine(newSpine);
+      const st0=loadState();
+      const { newCore, moved, stale } = recomputeAllFromCore(st0.coreAnswers||{});
+      const stg=loadState();
+      setCoreProfile(newCore);
+      setGenome(stg.results||{});
+      setResequenceDelta({moved,stale});
+      track("instincts_resequenced",{moved:moved.length,stale:stale.length});
+      setMode("full");
+      setPhase("out");
+      setTimeout(()=>{
+        setCur(0);setAnswers({});setResult(null);setScores(null);setTab("result");
+        setScreen("home");setPhase("in");
+      },160);
     } else {
       // Two-stage scoring. Split the answers into the shared core and the PL module.
       // On a module-only retake the core comes from the already-saved genome.
@@ -615,6 +638,22 @@ function AppInner(){
     setResequenceDelta(null);
     setSavedCore(null);
     setMode("core");
+    setPhase("out");
+    setTimeout(()=>{
+      setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");
+      setScreen("quiz");setPhase("in");
+    },160);
+  }
+  // Re-take the shared instincts: re-answer the 7 spine calls. On finish, every taken league
+  // recomputes from its saved answers against the new instincts (see the mode==="spine" branch).
+  // Requires an already-sequenced core (the spine only exists alongside one); with no core we fall
+  // back to a full first run rather than re-take instincts in isolation.
+  function retakeInstincts(){
+    const st=loadState();
+    if(!st.coreAnswers){ startOver(); return; }
+    setSavedCore({coreAnswers:st.coreAnswers,coreProfile:st.coreProfile});
+    setResequenceDelta(null);
+    setMode("spine");
     setPhase("out");
     setTimeout(()=>{
       setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");
@@ -1031,7 +1070,8 @@ function AppInner(){
             onRestore={restoreFromText}
             onCompare={shareGenomeCompare}
             onHow={openHow}
-            onResequence={()=>setResequenceConfirm(true)}
+            onRetakeCore={resequenceCore}
+            onRetakeInstincts={retakeInstincts}
             onOpenCrest={openCrest}
             onOpenFinale={openFinale}
             onOpenBeach={openBeach}
