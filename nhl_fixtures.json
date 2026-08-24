@@ -23,6 +23,7 @@
     "rebaselined_s31": "2026-08-10 s31: NHL FP_W 1.2->1.5 (per-league module-weight tuning pass, >1% reachability knee). Signatures self-land unchanged; 7 random winners re-recorded.",
     "rebaselined_s42": "2026-08-19 s42: NHL onto the shared spine (Option B). S4 (roots) carry-over from nhl_q6, S2 (pressure) re-author from nhl_q11 (six 'stay level' clubs unleaned). Dropped nhl_q6/nhl_q11 from the module (10 unique). Fixtures carry explicit spineAnswers {S2,S4}; winners re-recorded on the spine engine.",
     "rebaseline_note": [
+      "s52 NHL fix: nhl-spine MODULE_UNIQUE corrected to [nhl_q1..nhl_q6] so the reverence question (nhl_q6) is actually scored. The prior ship silently filtered it out (live ran 5 questions). Winners re-recorded on the true 6-question engine; self-land 32/32.",
       "s51 NHL lean-module rebuild: module cut 12->6 (dropped 8 spine-echoes; kept+sharpened the following question; added the reverence-vs-celebration question). Research-grounded identities (see fandna-nhl-souls.md). Seattle teamDim scale-up (community 6->8, emotion 5->7). Self-land 32/32. All 72 fixtures re-recorded under the new engine."
     ]
   },
@@ -1006,8 +1007,8 @@
         "nhl_q5": "C",
         "nhl_q6": "A"
       },
-      "winner": "WSH",
-      "winnerName": "Washington Capitals",
+      "winner": "CGY",
+      "winnerName": "Calgary Flames",
       "spineAnswers": {
         "S2": "A",
         "S4": "1"
@@ -1321,8 +1322,8 @@
         "nhl_q5": "C",
         "nhl_q6": "C"
       },
-      "winner": "NSH",
-      "winnerName": "Nashville Predators",
+      "winner": "WSH",
+      "winnerName": "Washington Capitals",
       "spineAnswers": {
         "S2": "D",
         "S4": "2"
@@ -1501,8 +1502,8 @@
         "nhl_q5": "B",
         "nhl_q6": "A"
       },
-      "winner": "STL",
-      "winnerName": "St. Louis Blues",
+      "winner": "CGY",
+      "winnerName": "Calgary Flames",
       "spineAnswers": {
         "S2": "A",
         "S4": "3"
@@ -1546,8 +1547,8 @@
         "nhl_q5": "A",
         "nhl_q6": "A"
       },
-      "winner": "NSH",
-      "winnerName": "Nashville Predators",
+      "winner": "BUF",
+      "winnerName": "Buffalo Sabres",
       "spineAnswers": {
         "S2": "D",
         "S4": "3"
@@ -1681,8 +1682,8 @@
         "nhl_q5": "B",
         "nhl_q6": "C"
       },
-      "winner": "BUF",
-      "winnerName": "Buffalo Sabres",
+      "winner": "CBJ",
+      "winnerName": "Columbus Blue Jackets",
       "spineAnswers": {
         "S2": "A",
         "S4": "4"
@@ -1771,8 +1772,8 @@
         "nhl_q5": "C",
         "nhl_q6": "B"
       },
-      "winner": "SJS",
-      "winnerName": "San Jose Sharks",
+      "winner": "NSH",
+      "winnerName": "Nashville Predators",
       "spineAnswers": {
         "S2": "A",
         "S4": "1"
@@ -1816,8 +1817,8 @@
         "nhl_q5": "B",
         "nhl_q6": "C"
       },
-      "winner": "CGY",
-      "winnerName": "Calgary Flames",
+      "winner": "STL",
+      "winnerName": "St. Louis Blues",
       "spineAnswers": {
         "S2": "B",
         "S4": "4"
@@ -1861,8 +1862,8 @@
         "nhl_q5": "C",
         "nhl_q6": "B"
       },
-      "winner": "NYR",
-      "winnerName": "New York Rangers",
+      "winner": "TBL",
+      "winnerName": "Tampa Bay Lightning",
       "spineAnswers": {
         "S2": "A",
         "S4": "4"
@@ -1951,8 +1952,8 @@
         "nhl_q5": "A",
         "nhl_q6": "C"
       },
-      "winner": "CGY",
-      "winnerName": "Calgary Flames",
+      "winner": "SJS",
+      "winnerName": "San Jose Sharks",
       "spineAnswers": {
         "S2": "A",
         "S4": "3"
@@ -2041,8 +2042,8 @@
         "nhl_q5": "C",
         "nhl_q6": "A"
       },
-      "winner": "LAK",
-      "winnerName": "Los Angeles Kings",
+      "winner": "NYR",
+      "winnerName": "New York Rangers",
       "spineAnswers": {
         "S2": "B",
         "S4": "4"
@@ -2086,8 +2087,8 @@
         "nhl_q5": "B",
         "nhl_q6": "C"
       },
-      "winner": "BUF",
-      "winnerName": "Buffalo Sabres",
+      "winner": "NJD",
+      "winnerName": "New Jersey Devils",
       "spineAnswers": {
         "S2": "B",
         "S4": "4"
@@ -2131,8 +2132,8 @@
         "nhl_q5": "B",
         "nhl_q6": "C"
       },
-      "winner": "EDM",
-      "winnerName": "Edmonton Oilers",
+      "winner": "WSH",
+      "winnerName": "Washington Capitals",
       "spineAnswers": {
         "S2": "A",
         "S4": "3"
@@ -2581,8 +2582,8 @@
         "nhl_q5": "C",
         "nhl_q6": "B"
       },
-      "winner": "DET",
-      "winnerName": "Detroit Red Wings",
+      "winner": "SEA",
+      "winnerName": "Seattle Kraken",
       "spineAnswers": {
         "S2": "D",
         "S4": "4"
