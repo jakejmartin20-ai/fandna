@@ -97,7 +97,8 @@ export function GenomeHome({
   onRestore,         // (text) => bool : restore a saved genome from a pasted share link
   onHow,             // () => void : open the "How this works" explainer
   onCompare,         // () => void : share the /c/ compare link (home primary CTA)
-  onResequence,      // () => void : open the "re-sequence core?" confirm
+  onRetakeCore,      // () => void : re-answer the 24 core questions (fired from the core strip's retake disc)
+  onRetakeInstincts, // () => void : re-answer the 7 spine questions (fired from the instincts line's retake disc)
   onOpenCrest,       // (fam) => void : re-open an earned bucket crest from the home tick
   onOpenFinale,      // () => void : re-open the collection-complete finale from the quiet home line
   onOpenBeach,       // () => void : replay the Pro Beach Hockey bonus reveal from its home card
@@ -412,19 +413,11 @@ export function GenomeHome({
               <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(16px,4.3vw,19px)",color:"#9898b8",lineHeight:1.5}}>{readOut.read} {readOut.closing}</div>
             </div>
           )}
-          <CoreStrip dims={coreProfile}/>
-          <InstinctsLine spineAnswers={spineAnswers}/>
-          {/* Re-sequence core: re-answer the shared 24, every league recomputes. Lives with the
-              genome (the core IS the genome), quiet so it never competes with Compare. */}
-          {onResequence&&(
-            <button type="button" onClick={onResequence}
-              style={{display:"flex",width:"100%",alignItems:"center",justifyContent:"space-between",gap:10,background:"rgba(120,120,160,0.05)",border:"1px solid #2c2c40",borderRadius:8,padding:"10px 13px",marginTop:13,cursor:"pointer"}}
-              onMouseEnter={e=>{e.currentTarget.style.borderColor="#4a4a6a";}}
-              onMouseLeave={e=>{e.currentTarget.style.borderColor="#2c2c40";}}>
-              <span style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#a7a2c0",letterSpacing:"0.18em",textTransform:"uppercase",flexShrink:0}}>Re-sequence core</span>
-              <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:13,color:"#8888a6",textAlign:"right",lineHeight:1.3}}>re-answer the 24, your leagues recompute</span>
-            </button>
-          )}
+          {/* The core strip and the instincts line each carry their own retake disc (beside the
+              expand chevron), which opens a two-step confirm in place. The old standalone
+              "Re-sequence core" button is gone: both retakes now live on their own rows. */}
+          <CoreStrip dims={coreProfile} onRetake={onRetakeCore}/>
+          <InstinctsLine spineAnswers={spineAnswers} onRetake={onRetakeInstincts}/>
           {/* Hero teams-code strip removed (session-28 redesign): the family panels below are the
               single source of the league list, so the hero no longer double-prints the groups. */}
           {/* Primary: Compare with a friend (the /c/ genome invite) */}
