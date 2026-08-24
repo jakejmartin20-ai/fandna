@@ -1550,13 +1550,13 @@ const teamDims = {
   "rootedness": 9
  },
  "HAW": {
-  "loyalty": 6,
+  "loyalty": 7,
   "emotion": 4,
   "ambition": 9,
   "process": 9,
   "community": 5,
   "chaos": 3,
-  "rootedness": 5
+  "rootedness": 6
  },
  "MEL": {
   "loyalty": 8,
@@ -1568,8 +1568,8 @@ const teamDims = {
   "rootedness": 10
  },
  "NTH": {
-  "loyalty": 8,
-  "emotion": 5,
+  "loyalty": 9,
+  "emotion": 6,
   "ambition": 4,
   "process": 4,
   "community": 6,
@@ -1595,7 +1595,7 @@ const teamDims = {
   "rootedness": 6
  },
  "WBD": {
-  "loyalty": 6,
+  "loyalty": 8,
   "emotion": 5,
   "ambition": 5,
   "process": 5,
