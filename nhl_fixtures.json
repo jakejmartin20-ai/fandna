@@ -1090,8 +1090,8 @@
         "nhl_q10": "D",
         "nhl_q12": "A"
       },
-      "winner": "STL",
-      "winnerName": "St. Louis Blues",
+      "winner": "DAL",
+      "winnerName": "Dallas Stars",
       "spineAnswers": {
         "S2": "C",
         "S4": "3"
@@ -1433,8 +1433,8 @@
         "nhl_q10": "B",
         "nhl_q12": "A"
       },
-      "winner": "OTT",
-      "winnerName": "Ottawa Senators",
+      "winner": "BUF",
+      "winnerName": "Buffalo Sabres",
       "spineAnswers": {
         "S2": "B",
         "S4": "2"
@@ -1776,8 +1776,8 @@
         "nhl_q10": "C",
         "nhl_q12": "E"
       },
-      "winner": "NSH",
-      "winnerName": "Nashville Predators",
+      "winner": "SEA",
+      "winnerName": "Seattle Kraken",
       "spineAnswers": {
         "S2": "D",
         "S4": "1"
@@ -2364,8 +2364,8 @@
         "nhl_q10": "C",
         "nhl_q12": "B"
       },
-      "winner": "WSH",
-      "winnerName": "Washington Capitals",
+      "winner": "EDM",
+      "winnerName": "Edmonton Oilers",
       "spineAnswers": {
         "S2": "A",
         "S4": "3"
@@ -2413,8 +2413,8 @@
         "nhl_q10": "A",
         "nhl_q12": "A"
       },
-      "winner": "TOR",
-      "winnerName": "Toronto Maple Leafs",
+      "winner": "CHI",
+      "winnerName": "Chicago Blackhawks",
       "spineAnswers": {
         "S2": "D",
         "S4": "3"

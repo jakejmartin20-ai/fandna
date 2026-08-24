@@ -3056,7 +3056,7 @@
         "bl_q9": "right",
         "bl_q10": "right"
       },
-      "expected": "BAY",
+      "expected": "BVB",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -3516,7 +3516,7 @@
         "bl_q9": "right",
         "bl_q10": "right"
       },
-      "expected": "BAY",
+      "expected": "HSV",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -4298,7 +4298,7 @@
         "bl_q9": "right",
         "bl_q10": "left"
       },
-      "expected": "FCA",
+      "expected": "M05",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -4344,7 +4344,7 @@
         "bl_q9": "right",
         "bl_q10": "left"
       },
-      "expected": "B04",
+      "expected": "BVB",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -4666,7 +4666,7 @@
         "bl_q9": "left",
         "bl_q10": "right"
       },
-      "expected": "SGE",
+      "expected": "SCP",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -5448,7 +5448,7 @@
         "bl_q9": "right",
         "bl_q10": "right"
       },
-      "expected": "B04",
+      "expected": "BVB",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -5862,7 +5862,7 @@
         "bl_q9": "right",
         "bl_q10": "right"
       },
-      "expected": "HSV",
+      "expected": "BAY",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -6230,7 +6230,7 @@
         "bl_q9": "right",
         "bl_q10": "right"
       },
-      "expected": "SGE",
+      "expected": "ELV",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -6736,7 +6736,7 @@
         "bl_q9": "left",
         "bl_q10": "left"
       },
-      "expected": "SCP",
+      "expected": "ELV",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -7518,7 +7518,7 @@
         "bl_q9": "left",
         "bl_q10": "right"
       },
-      "expected": "FCA",
+      "expected": "SVW",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -7610,7 +7610,7 @@
         "bl_q9": "right",
         "bl_q10": "right"
       },
-      "expected": "M05",
+      "expected": "SCP",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -7840,7 +7840,7 @@
         "bl_q9": "left",
         "bl_q10": "left"
       },
-      "expected": "B04",
+      "expected": "BMG",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -8530,7 +8530,7 @@
         "bl_q9": "right",
         "bl_q10": "left"
       },
-      "expected": "VFB",
+      "expected": "SGE",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -8852,7 +8852,7 @@
         "bl_q9": "left",
         "bl_q10": "right"
       },
-      "expected": "HSV",
+      "expected": "ELV",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -9128,7 +9128,7 @@
         "bl_q9": "left",
         "bl_q10": "right"
       },
-      "expected": "BMG",
+      "expected": "SCF",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"

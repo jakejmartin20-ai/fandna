@@ -2443,8 +2443,8 @@
         "cfb_q11": "D",
         "cfb_q12": "E"
       },
-      "winner": "TCU",
-      "winnerName": "TCU"
+      "winner": "APP",
+      "winnerName": "Appalachian State"
     },
     {
       "id": "rnd_20",
@@ -2857,8 +2857,8 @@
         "cfb_q11": "D",
         "cfb_q12": "E"
       },
-      "winner": "MIA",
-      "winnerName": "Miami"
+      "winner": "USC",
+      "winnerName": "USC"
     },
     {
       "id": "rnd_29",
@@ -2949,8 +2949,8 @@
         "cfb_q11": "D",
         "cfb_q12": "B"
       },
-      "winner": "TUL",
-      "winnerName": "Tulane"
+      "winner": "CST",
+      "winnerName": "Coastal Carolina"
     },
     {
       "id": "rnd_31",

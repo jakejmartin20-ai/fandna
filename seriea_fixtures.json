@@ -960,7 +960,7 @@
       "club": "VEN",
       "useProfile": false,
       "coreAnswers": {
-        "q1": "C",
+        "q1": "B",
         "q2": "right",
         "q3": "B",
         "q4": "5",
@@ -1737,7 +1737,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "LAZ",
+      "expected": "GEN",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -4383,7 +4383,7 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "UDI",
+      "expected": "GEN",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -4677,7 +4677,7 @@
         "sa_q12": "B",
         "sa_q13": "A"
       },
-      "expected": "PAR",
+      "expected": "LAZ",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -5853,7 +5853,7 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "LAZ",
+      "expected": "TOR",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -9528,7 +9528,7 @@
         "sa_q12": "C",
         "sa_q13": "A"
       },
-      "expected": "LEC",
+      "expected": "CAG",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -10116,7 +10116,7 @@
         "sa_q12": "C",
         "sa_q13": "B"
       },
-      "expected": "ATA",
+      "expected": "MIL",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -10508,7 +10508,7 @@
         "sa_q12": "D",
         "sa_q13": "A"
       },
-      "expected": "MIL",
+      "expected": "NAP",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"

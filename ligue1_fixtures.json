@@ -2242,7 +2242,7 @@
         "l1_q11": "C",
         "l1_q12": "B"
       },
-      "expected": "NIC",
+      "expected": "STR",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -5554,7 +5554,7 @@
         "l1_q11": "B",
         "l1_q12": "D"
       },
-      "expected": "TOU",
+      "expected": "BRE",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -5986,7 +5986,7 @@
         "l1_q11": "D",
         "l1_q12": "D"
       },
-      "expected": "STR",
+      "expected": "ANG",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -6610,7 +6610,7 @@
         "l1_q11": "D",
         "l1_q12": "C"
       },
-      "expected": "LEM",
+      "expected": "MAR",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -7186,7 +7186,7 @@
         "l1_q11": "D",
         "l1_q12": "D"
       },
-      "expected": "ANG",
+      "expected": "REN",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -9778,7 +9778,7 @@
         "l1_q11": "B",
         "l1_q12": "B"
       },
-      "expected": "PFC",
+      "expected": "PSG",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"

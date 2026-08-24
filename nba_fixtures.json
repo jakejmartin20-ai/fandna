@@ -1407,8 +1407,8 @@
         "nba_q11": "C",
         "nba_q12": "C"
       },
-      "winner": "PHI",
-      "winnerName": "Philadelphia 76ers"
+      "winner": "CHI",
+      "winnerName": "Chicago Bulls"
     },
     {
       "id": "rnd_005",
@@ -1737,8 +1737,8 @@
         "nba_q11": "D",
         "nba_q12": "B"
       },
-      "winner": "SAS",
-      "winnerName": "San Antonio Spurs"
+      "winner": "MIL",
+      "winnerName": "Milwaukee Bucks"
     },
     {
       "id": "rnd_011",

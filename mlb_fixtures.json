@@ -1420,8 +1420,8 @@
         "S6": "B",
         "S7": "C"
       },
-      "winner": "CHC",
-      "winnerName": "Chicago Cubs"
+      "winner": "TOR",
+      "winnerName": "Toronto Blue Jays"
     },
     {
       "id": "rnd_010",
@@ -2106,8 +2106,8 @@
         "S6": "D",
         "S7": "D"
       },
-      "winner": "CIN",
-      "winnerName": "Cincinnati Reds"
+      "winner": "BOS",
+      "winnerName": "Boston Red Sox"
     },
     {
       "id": "rnd_024",
@@ -2792,8 +2792,8 @@
         "S6": "D",
         "S7": "D"
       },
-      "winner": "CIN",
-      "winnerName": "Cincinnati Reds"
+      "winner": "TB",
+      "winnerName": "Tampa Bay Rays"
     },
     {
       "id": "rnd_038",

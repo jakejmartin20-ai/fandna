@@ -1191,8 +1191,8 @@
         "nfl_q11": "4",
         "nfl_q12": "E"
       },
-      "winner": "KC",
-      "winnerName": "Dallas Cowboys"
+      "winner": "NYG",
+      "winnerName": "New York Giants"
     },
     {
       "id": "nfl_rand_07",
@@ -1441,8 +1441,8 @@
         "nfl_q11": "2",
         "nfl_q12": "A"
       },
-      "winner": "CHI",
-      "winnerName": "Denver Broncos"
+      "winner": "SF",
+      "winnerName": "San Francisco 49ers"
     },
     {
       "id": "nfl_rand_12",
@@ -2241,7 +2241,7 @@
         "nfl_q11": "3",
         "nfl_q12": "A"
       },
-      "winner": "MIN",
+      "winner": "NYG",
       "winnerName": "New York Giants"
     },
     {
@@ -2341,8 +2341,8 @@
         "nfl_q11": "2",
         "nfl_q12": "A"
       },
-      "winner": "KC",
-      "winnerName": "Kansas City Chiefs"
+      "winner": "SF",
+      "winnerName": "San Francisco 49ers"
     },
     {
       "id": "nfl_rand_30",
@@ -2891,8 +2891,8 @@
         "nfl_q11": "1",
         "nfl_q12": "A"
       },
-      "winner": "IND",
-      "winnerName": "Indianapolis Colts"
+      "winner": "NYG",
+      "winnerName": "New York Giants"
     }
   ]
 }
