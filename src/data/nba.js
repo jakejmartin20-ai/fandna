@@ -2279,7 +2279,7 @@ const teamDims = {
     "ambition": 8,
     "process": 4,
     "community": 5,
-    "chaos": 8,
+    "chaos": 6,
     "rootedness": 6
   },
   "HOU": {
