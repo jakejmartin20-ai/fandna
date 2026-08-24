@@ -1,11 +1,16 @@
 // FanDNA - InstinctsLine: surfaces the shared SPINE (the 7 cross-sport gut calls) back to the
-// taker on the genome home hero and the result screen. Display-only. It reads the cached
-// spineAnswers (S1..S7, answered once, stored the same way as the core) and never touches scoring.
+// taker on the genome home hero and the result screen. Reads the cached spineAnswers (S1..S7,
+// answered once, stored the same way as the core) and never touches scoring.
 //
 // Resting state is one calm row: a label + a plain descriptor + a chevron disc (the "open me"
 // signal). Tapping it reveals the seven calls with the taker's own answer highlighted; the two
 // slider calls show where their dot landed between the poles. If the taker has no spine answers
 // yet (an old genome, or only bespoke leagues taken), the whole line renders nothing.
+//
+// When an onRetake handler is supplied (the home hero), a small retake disc sits beside the
+// expand chevron. Tapping it opens a two-step confirm in place; confirming re-answers the seven
+// and recomputes the taken leagues. It is never shown where onRetake is absent (e.g. the result
+// screen), so those surfaces stay display-only.
 //
 // All copy here is user-facing: sentence case, periods only, no em dashes.
 
@@ -66,8 +71,9 @@ function readInstincts(spineAnswers){
 
 const ACCENT = "#9280c6";
 
-export function InstinctsLine({ spineAnswers }){
+export function InstinctsLine({ spineAnswers, onRetake }){
   const [open, setOpen] = useState(false);
+  const [confirm, setConfirm] = useState(false);   // two-step guard on the retake
   const calls = readInstincts(spineAnswers);
   if (!calls.length) return null;
 
@@ -85,12 +91,36 @@ export function InstinctsLine({ spineAnswers }){
             <div style={{fontSize:12.5,color:"#a29cbb",marginTop:7,lineHeight:1.45}}>The seven gut calls behind every team you get.</div>
           )}
         </div>
-        <div aria-hidden="true" style={{flexShrink:0,width:30,height:30,borderRadius:"50%",border:"1px solid #4a4468",display:"flex",alignItems:"center",justifyContent:"center",color:"#b9aee0"}}>
-          <svg width="12" height="12" viewBox="0 0 12 12" style={{transform:open?"rotate(180deg)":"none",transition:"transform .22s ease"}}>
-            <path d="M2.5 4.5 L6 8 L9.5 4.5" fill="none" stroke="#b9aee0" strokeWidth="1.4" strokeLinecap="round"/>
-          </svg>
+        <div style={{display:"flex",alignItems:"center",gap:8,flexShrink:0}}>
+          {onRetake&&(
+            <button type="button" aria-label="Retake your seven instincts"
+              onClick={(e)=>{ e.stopPropagation(); setConfirm(c=>!c); }}
+              style={{width:30,height:30,borderRadius:"50%",border:`1px solid ${confirm?"#6a5f8a":"#4a4468"}`,background:confirm?"rgba(120,104,168,0.16)":"none",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer",padding:0,flexShrink:0}}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#b9aee0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+              </svg>
+            </button>
+          )}
+          <div aria-hidden="true" style={{width:30,height:30,borderRadius:"50%",border:"1px solid #4a4468",display:"flex",alignItems:"center",justifyContent:"center",color:"#b9aee0",flexShrink:0}}>
+            <svg width="12" height="12" viewBox="0 0 12 12" style={{transform:open?"rotate(180deg)":"none",transition:"transform .22s ease"}}>
+              <path d="M2.5 4.5 L6 8 L9.5 4.5" fill="none" stroke="#b9aee0" strokeWidth="1.4" strokeLinecap="round"/>
+            </svg>
+          </div>
         </div>
       </div>
+
+      {/* Retake confirm (sibling of the clickable row so its taps never toggle the reveal) */}
+      {onRetake&&confirm&&(
+        <div style={{marginTop:12,borderTop:"1px solid #262238",paddingTop:12}}>
+          <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#b8b4c4",lineHeight:1.5,marginBottom:10}}>Re-answer your seven instincts? Your leagues recompute against your new answers.</div>
+          <div style={{display:"flex",gap:22,alignItems:"center"}}>
+            <button type="button" onClick={()=>{setConfirm(false);onRetake&&onRetake();}}
+              style={{color:"#d4a44e",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",background:"none",border:"none",cursor:"pointer",padding:"2px 0"}}>Retake</button>
+            <button type="button" onClick={()=>setConfirm(false)}
+              style={{color:"#7f7f9f",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",background:"none",border:"none",cursor:"pointer",padding:"2px 0"}}>Cancel</button>
+          </div>
+        </div>
+      )}
 
       {open && (
         <div style={{marginTop:12,borderTop:"1px solid #262238",paddingTop:12,display:"flex",flexDirection:"column",gap:11}}>
