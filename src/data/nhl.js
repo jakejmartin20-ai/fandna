@@ -6,267 +6,72 @@ const moduleQuestions = [
     "id": "nhl_q1",
     "type": "choice",
     "phase": "The fine print",
-    "question": "When it comes to having someone's back:",
+    "question": "The people you’d want around you when it counts:",
     "options": [
-      {
-        "label": "I'm there the second they need me, no hesitation.",
-        "value": "A"
-      },
-      {
-        "label": "I'm in it for good. I don't bail when it gets hard.",
-        "value": "B"
-      },
-      {
-        "label": "I remember who showed up for me, and I pay it back.",
-        "value": "C"
-      },
-      {
-        "label": "Quiet about it, but it runs deep and never moves.",
-        "value": "D"
-      }
+      { "label": "A tight core that built something real together, and stuck it out.", "value": "A" },
+      { "label": "A whole community, thousands strong, all in together.", "value": "B" },
+      { "label": "The best there is, wherever they come from.", "value": "C" },
+      { "label": "My people, outnumbered in our own backyard, and prouder for it.", "value": "D" },
+      { "label": "The more of us and the louder, the better. The numbers are the point.", "value": "E" },
     ]
   },
   {
     "id": "nhl_q2",
     "type": "choice",
     "phase": "The fine print",
-    "question": "When the team's under real pressure, the version of you that shows up:",
+    "question": "When you’re doing something that matters, how much you want the eyes on you:",
     "options": [
-      {
-        "label": "I step up first, before anyone asks. Every time.",
-        "value": "A"
-      },
-      {
-        "label": "I show up for the people who'd show up for me.",
-        "value": "B"
-      },
-      {
-        "label": "I lead by example more than by taking the fall.",
-        "value": "C"
-      },
-      {
-        "label": "I look after myself first, and I'm honest about it.",
-        "value": "D"
-      }
+      { "label": "All the way. The biggest stage, the brightest lights, the pressure that comes with them.", "value": "A" },
+      { "label": "A real stage is good, but it doesn’t have to be the brightest in the room.", "value": "B" },
+      { "label": "Doesn’t move me. The work is the same whether anyone’s watching or not.", "value": "C" },
     ]
   },
   {
     "id": "nhl_q3",
-    "type": "slider",
+    "type": "choice",
     "phase": "The fine print",
-    "question": "React on instinct, or take a moment to assess?",
-    "left": "When it's flying at me with no time to think, that's when I'm sharpest.",
-    "right": "Give me a moment to read it and set up. I'm better prepared than off the cuff."
+    "question": "Up against something genuinely hard, the way you get through it:",
+    "options": [
+      { "label": "I wear it down. Outlast it, outwork it, refuse to break first.", "value": "A" },
+      { "label": "I find the angle. Skill and a little cleverness get me around it.", "value": "B" },
+      { "label": "I throw everything at it at once and trust it gives.", "value": "C" },
+    ]
   },
   {
     "id": "nhl_q4",
     "type": "choice",
-    "phase": "The fine print",
-    "question": "You finally reach the thing you've chased your whole life. What makes it mean the most:",
+    "phase": "What it comes down to",
+    "question": "You’ve finally won the biggest thing there is. What happens in you next:",
     "options": [
-      {
-        "label": "It goes down in history. My name remembered long after I'm gone.",
-        "value": "A"
-      },
-      {
-        "label": "Nobody can ever take it back or say I wasn't there.",
-        "value": "B"
-      },
-      {
-        "label": "I did it a way that was unmistakably mine.",
-        "value": "C"
-      },
-      {
-        "label": "I got to share it with the exact people I started with.",
-        "value": "D"
-      },
-      {
-        "label": "I earned it the hard way, when quitting would've been easier.",
-        "value": "E"
-      }
+      { "label": "Do it again. And again. One is never enough — I want a run of them.", "value": "A" },
+      { "label": "Savour it. That was the mountain, and I climbed it.", "value": "B" },
+      { "label": "Proud — but honestly the chase always meant more to me than the trophy.", "value": "C" },
     ]
   },
   {
     "id": "nhl_q5",
     "type": "choice",
-    "phase": "The fine print",
-    "question": "Something you love slips away in the cruelest way, right at the very end. What happens inside:",
+    "phase": "What it comes down to",
+    "question": "What you’d rather be part of:",
     "options": [
-      {
-        "label": "I feel every bit of it, out loud, and don't hide it.",
-        "value": "A"
-      },
-      {
-        "label": "I go quiet and carry it alone for a while.",
-        "value": "B"
-      },
-      {
-        "label": "I pour it straight into the next thing, fast.",
-        "value": "C"
-      },
-      {
-        "label": "I shrug it off. Sometimes the bounce just doesn't go my way.",
-        "value": "D"
-      },
-      {
-        "label": "I let it harden into fuel for later.",
-        "value": "E"
-      }
+      { "label": "Something with a century behind it. The history is the point, even when it weighs on you.", "value": "A" },
+      { "label": "Something I helped build into what it is.", "value": "B" },
+      { "label": "Something brand new. No history to live up to — a clean page I get to write.", "value": "C" },
     ]
   },
   {
     "id": "nhl_q6",
-    "type": "slider",
-    "phase": "The fine print",
-    "question": "True to where it came from, or at home anywhere?",
-    "left": "Some things should stay true to where they came from.",
-    "right": "Anything can belong anywhere if it's built right. Earn it fresh."
-  },
-  {
-    "id": "nhl_q7",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "Every effort has a glamorous half and a grinding, unseen half. You:",
+    "question": "The thing you love most — the way you hold it:",
     "options": [
-      {
-        "label": "I do both without being asked. That's just the standard.",
-        "value": "A"
-      },
-      {
-        "label": "Honestly, I prefer the grinding, unseen half.",
-        "value": "B"
-      },
-      {
-        "label": "I show up biggest for the glamorous half.",
-        "value": "C"
-      },
-      {
-        "label": "I cover whatever the group needs covered.",
-        "value": "D"
-      },
-      {
-        "label": "I do it my own way, glamorous or not.",
-        "value": "E"
-      }
+      { "label": "With reverence. I feel the weight of everyone who came before, and I carry it.", "value": "A" },
+      { "label": "As a celebration. I throw myself in, here and now, and make it a party.", "value": "B" },
+      { "label": "I respect what came before, but I’m here for what it is now.", "value": "C" },
     ]
   },
-  {
-    "id": "nhl_q8",
-    "type": "choice",
-    "phase": "What it comes down to",
-    "question": "The people you'd want around you when it counts:",
-    "options": [
-      {
-        "label": "A tight, loyal few who've been through it all with me.",
-        "value": "A"
-      },
-      {
-        "label": "A whole community, thousands strong, all in together.",
-        "value": "B"
-      },
-      {
-        "label": "The best people I can find, wherever they come from.",
-        "value": "C"
-      },
-      {
-        "label": "My people, however few of us there are.",
-        "value": "D"
-      },
-      {
-        "label": "The more of us and the louder, the better. The numbers are the point.",
-        "value": "E"
-      }
-    ]
-  },
-  {
-    "id": "nhl_q9",
-    "type": "slider",
-    "phase": "What it comes down to",
-    "question": "Reach for the big moment, or take pride in a quieter role?",
-    "left": "Put it on me. When it's biggest, I want it in my hands.",
-    "right": "I'll do my part and let someone else have the spotlight. No fuss."
-  },
-  {
-    "id": "nhl_q10",
-    "type": "choice",
-    "phase": "What it comes down to",
-    "question": "The idea of packing up and starting fresh somewhere brand new:",
-    "options": [
-      {
-        "label": "Not a chance. I'm loyal to where I'm rooted, full stop.",
-        "value": "A"
-      },
-      {
-        "label": "I could, but I'd carry the old place with me forever.",
-        "value": "B"
-      },
-      {
-        "label": "I'd love it. A fresh start, no history to live up to.",
-        "value": "C"
-      },
-      {
-        "label": "Already did it, and it's the best thing I ever chose.",
-        "value": "D"
-      }
-    ]
-  },
-  {
-    "id": "nhl_q11",
-    "type": "choice",
-    "phase": "What it comes down to",
-    "question": "Everything comes down to one moment, with it all on the line. What happens:",
-    "options": [
-      {
-        "label": "It all pours out of me. Everyone around me feels it.",
-        "value": "A"
-      },
-      {
-        "label": "I go calm and still. The bigger it gets, the quieter I am inside.",
-        "value": "B"
-      },
-      {
-        "label": "I sharpen up, lock in, get precise.",
-        "value": "C"
-      },
-      {
-        "label": "I loosen up and actually get freer when it's biggest.",
-        "value": "D"
-      },
-      {
-        "label": "I stay level. Same me, big moment or small.",
-        "value": "E"
-      }
-    ]
-  },
-  {
-    "id": "nhl_q12",
-    "type": "choice",
-    "phase": "What it comes down to",
-    "question": "The conditions where you do your best work:",
-    "options": [
-      {
-        "label": "Structured and controlled. I like knowing the plan.",
-        "value": "A"
-      },
-      {
-        "label": "Loose and fast. Give me a little chaos.",
-        "value": "B"
-      },
-      {
-        "label": "Tight and high-stakes. I rise when it's on the line.",
-        "value": "C"
-      },
-      {
-        "label": "Steady and familiar. I want solid ground under me.",
-        "value": "D"
-      },
-      {
-        "label": "Wide open and new. No rules yet, so I'll write them.",
-        "value": "E"
-      }
-    ]
-  }
 ];
+
 const teams = {
   "MTL": {
     "name": "Montreal Canadiens",
@@ -1967,629 +1772,250 @@ const nearlyGot = {
 const scoring = {
   "nhl_q1": {
     "A": {
-      "BOS": 2,
-      "CHI": 2,
-      "EDM": 2,
-      "CGY": 2,
-      "VAN": 2,
-      "PHI": 2,
-      "FLA": 2
+      "DAL": 2
     },
     "B": {
-      "NJD": 2,
-      "CAR": 2,
-      "DAL": 2,
-      "VGK": 2,
-      "ANA": 2
-    },
-    "C": {
       "MTL": 2,
       "TOR": 2,
       "DET": 2,
+      "EDM": 2,
+      "VAN": 2,
+      "OTT": 2,
+      "STL": 2,
+      "MIN": 2,
+      "CBJ": 2,
+      "COL": 2,
+      "SEA": 2,
+      "UTA": 2
+    },
+    "C": {
       "NYR": 2,
+      "CAR": 2,
       "PIT": 2,
       "WSH": 2,
-      "COL": 2,
       "LAK": 2,
-      "TBL": 2
+      "TBL": 2,
+      "VGK": 2,
+      "ANA": 2,
+      "SJS": 2
     },
     "D": {
       "WPG": 2,
-      "OTT": 2,
-      "BUF": 2,
-      "STL": 2,
       "NYI": 2,
-      "MIN": 2,
+      "NJD": 2
+    },
+    "E": {
+      "BOS": 2,
+      "CHI": 2,
+      "CGY": 2,
+      "PHI": 2,
+      "BUF": 2,
       "NSH": 2,
-      "CBJ": 2,
-      "SEA": 2,
-      "UTA": 2,
-      "SJS": 2
+      "FLA": 2
     }
   },
   "nhl_q2": {
     "A": {
-      "BOS": 2,
-      "PHI": 2,
-      "CAR": 2,
-      "FLA": 2
-    },
-    "B": {
+      "MTL": 2,
       "TOR": 2,
       "CHI": 2,
+      "NYR": 2,
+      "PIT": 2,
+      "LAK": 2,
+      "VGK": 2
+    },
+    "B": {
+      "BOS": 2,
+      "DET": 2,
       "EDM": 2,
-      "CGY": 2,
       "VAN": 2,
+      "PHI": 2,
+      "NYI": 2,
+      "WSH": 2,
+      "TBL": 2,
+      "FLA": 2,
+      "SEA": 2
+    },
+    "C": {
+      "CGY": 2,
       "WPG": 2,
       "OTT": 2,
       "BUF": 2,
       "STL": 2,
-      "NYI": 2,
       "MIN": 2,
       "NSH": 2,
       "CBJ": 2,
-      "SEA": 2,
+      "NJD": 2,
+      "CAR": 2,
+      "DAL": 2,
+      "COL": 2,
       "UTA": 2,
       "ANA": 2,
       "SJS": 2
-    },
-    "C": {
-      "MTL": 2,
-      "DET": 2,
-      "NYR": 2,
-      "DAL": 2,
-      "PIT": 2,
-      "WSH": 2,
-      "COL": 2,
-      "LAK": 2,
-      "TBL": 2,
-      "VGK": 2
-    },
-    "D": {
-      "NJD": 2
     }
   },
   "nhl_q3": {
-    "1": {
-      "EDM": 2,
-      "VAN": 2,
-      "PHI": 3,
-      "VGK": 2,
-      "FLA": 2
-    },
-    "2": {
-      "BOS": 3,
-      "CHI": 3,
-      "NYR": 3,
-      "EDM": 3,
-      "VAN": 3,
-      "PHI": 1,
-      "NSH": 3,
-      "PIT": 3,
-      "WSH": 3,
-      "VGK": 3,
-      "FLA": 3,
-      "OTT": 2,
-      "CAR": 2
-    },
-    "3": {
-      "BOS": 2,
-      "CHI": 2,
-      "NYR": 2,
-      "NSH": 2,
-      "PIT": 2,
-      "WSH": 2,
-      "TOR": 3,
-      "CGY": 3,
-      "OTT": 3,
-      "BUF": 3,
-      "STL": 3,
-      "CBJ": 3,
-      "CAR": 3,
-      "COL": 3,
-      "LAK": 3,
-      "TBL": 3,
-      "UTA": 2,
-      "ANA": 2,
-      "SJS": 2
-    },
-    "4": {
+    "A": {
       "TOR": 2,
+      "BOS": 2,
       "CGY": 2,
+      "WPG": 2,
+      "PHI": 2,
       "BUF": 2,
       "STL": 2,
-      "CBJ": 2,
-      "COL": 2,
-      "LAK": 2,
-      "TBL": 2,
-      "MTL": 3,
-      "DET": 1,
-      "WPG": 3,
-      "NYI": 3,
-      "MIN": 1,
-      "NJD": 1,
-      "DAL": 3,
-      "SEA": 3,
-      "UTA": 3,
-      "ANA": 3,
-      "SJS": 3
-    },
-    "5": {
-      "MTL": 2,
-      "DET": 3,
-      "WPG": 2,
       "NYI": 2,
-      "MIN": 3,
-      "NJD": 3,
+      "NSH": 2,
+      "CBJ": 2,
+      "NJD": 2,
       "DAL": 2,
-      "SEA": 2
+      "WSH": 2,
+      "LAK": 2,
+      "VGK": 2,
+      "FLA": 2,
+      "ANA": 2
+    },
+    "B": {
+      "MTL": 2,
+      "DET": 2,
+      "NYR": 2,
+      "EDM": 2,
+      "MIN": 2,
+      "CAR": 2,
+      "PIT": 2,
+      "COL": 2,
+      "TBL": 2,
+      "SEA": 2,
+      "UTA": 2,
+      "SJS": 2
+    },
+    "C": {
+      "CHI": 2,
+      "VAN": 2,
+      "OTT": 2
     }
   },
   "nhl_q4": {
     "A": {
       "MTL": 2,
       "BOS": 2,
+      "DET": 2,
+      "CHI": 2,
       "NYR": 2,
       "EDM": 2,
+      "PHI": 2,
       "NYI": 2,
       "PIT": 2,
       "COL": 2,
-      "TBL": 2
+      "TBL": 2,
+      "VGK": 2,
+      "FLA": 2
     },
     "B": {
-      "VAN": 2,
-      "NJD": 2,
-      "WSH": 2,
-      "VGK": 2,
-      "SJS": 2
-    },
-    "C": {
-      "DET": 2,
-      "CHI": 2,
-      "NSH": 2,
-      "LAK": 2,
-      "SEA": 2
-    },
-    "D": {
       "CGY": 2,
-      "WPG": 2,
-      "MIN": 2,
-      "UTA": 2
-    },
-    "E": {
-      "TOR": 2,
-      "OTT": 2,
-      "PHI": 2,
-      "BUF": 2,
       "STL": 2,
-      "CBJ": 2,
+      "NJD": 2,
       "CAR": 2,
       "DAL": 2,
-      "FLA": 2,
+      "WSH": 2,
+      "LAK": 2,
       "ANA": 2
+    },
+    "C": {
+      "TOR": 2,
+      "VAN": 2,
+      "WPG": 2,
+      "OTT": 2,
+      "BUF": 2,
+      "MIN": 2,
+      "NSH": 2,
+      "CBJ": 2,
+      "SEA": 2,
+      "UTA": 2,
+      "SJS": 2
     }
   },
   "nhl_q5": {
     "A": {
       "MTL": 2,
       "TOR": 2,
+      "BOS": 2,
+      "DET": 2,
       "CHI": 2,
-      "NYR": 2,
-      "CGY": 2,
-      "VAN": 2,
-      "PHI": 2,
-      "BUF": 2,
-      "NSH": 2,
-      "PIT": 2,
-      "WSH": 2,
-      "SJS": 2
+      "NYR": 2
     },
     "B": {
-      "DET": 2,
+      "EDM": 2,
+      "CGY": 2,
+      "VAN": 2,
       "WPG": 2,
-      "OTT": 2,
+      "PHI": 2,
+      "BUF": 2,
+      "STL": 2,
       "NYI": 2,
-      "MIN": 2,
-      "CBJ": 2,
+      "NJD": 2,
       "DAL": 2,
+      "PIT": 2,
+      "WSH": 2,
       "COL": 2,
       "LAK": 2
     },
     "C": {
-      "STL": 2,
+      "OTT": 2,
+      "MIN": 2,
+      "NSH": 2,
+      "CBJ": 2,
       "CAR": 2,
       "TBL": 2,
-      "VGK": 2
-    },
-    "D": {
-      "NJD": 2,
-      "SEA": 2,
-      "UTA": 2
-    },
-    "E": {
-      "BOS": 2,
-      "EDM": 2,
+      "VGK": 2,
       "FLA": 2,
-      "ANA": 2
+      "SEA": 2,
+      "UTA": 2,
+      "ANA": 2,
+      "SJS": 2
     }
   },
   "nhl_q6": {
-    "1": {
-      "MTL": 3,
-      "TOR": 3,
-      "BOS": 2,
-      "DET": 2,
-      "CHI": 1,
-      "NYR": 2,
-      "EDM": 1,
-      "CGY": 1,
-      "PHI": 1
-    },
-    "2": {
-      "MTL": 1,
-      "TOR": 1,
-      "BOS": 3,
-      "DET": 3,
-      "CHI": 3,
-      "NYR": 3,
-      "EDM": 3,
-      "CGY": 3,
-      "VAN": 3,
-      "PHI": 3,
-      "BUF": 3,
-      "STL": 2,
-      "NYI": 2,
-      "MIN": 2,
-      "PIT": 2
-    },
-    "3": {
-      "CHI": 1,
-      "EDM": 1,
-      "CGY": 1,
-      "VAN": 2,
-      "PHI": 1,
-      "BUF": 2,
-      "WPG": 3,
-      "STL": 3,
-      "NYI": 3,
-      "MIN": 3,
-      "NJD": 3,
-      "DAL": 3,
-      "PIT": 3,
-      "WSH": 3,
-      "COL": 3,
-      "LAK": 3,
-      "OTT": 2,
-      "NSH": 2,
-      "CBJ": 2,
-      "CAR": 2,
-      "TBL": 2,
-      "FLA": 1,
-      "ANA": 1,
-      "SJS": 2
-    },
-    "4": {
-      "WPG": 2,
-      "NJD": 2,
-      "DAL": 2,
-      "WSH": 2,
-      "COL": 2,
-      "LAK": 2,
-      "OTT": 3,
-      "NSH": 3,
-      "CBJ": 3,
-      "CAR": 3,
-      "TBL": 3,
-      "VGK": 3,
-      "FLA": 3,
-      "SEA": 3,
-      "UTA": 1,
-      "ANA": 3,
-      "SJS": 3
-    },
-    "5": {
-      "VGK": 2,
-      "FLA": 1,
-      "SEA": 2,
-      "UTA": 3,
-      "ANA": 1
-    }
-  },
-  "nhl_q7": {
     "A": {
       "MTL": 2,
       "TOR": 2,
       "BOS": 2,
       "DET": 2,
-      "NYI": 2,
-      "LAK": 2,
-      "TBL": 2,
-      "SJS": 2
-    },
-    "B": {
-      "CGY": 2,
-      "PHI": 2,
-      "BUF": 2,
-      "STL": 2,
-      "NJD": 2,
-      "CAR": 2,
-      "DAL": 2
-    },
-    "C": {
       "CHI": 2,
       "NYR": 2,
       "EDM": 2,
-      "VAN": 2,
-      "NSH": 2,
-      "PIT": 2,
-      "WSH": 2,
-      "COL": 2,
-      "VGK": 2
-    },
-    "D": {
-      "WPG": 2,
-      "OTT": 2,
-      "MIN": 2,
-      "CBJ": 2,
-      "SEA": 2,
-      "UTA": 2
-    },
-    "E": {
-      "FLA": 2,
-      "ANA": 2
-    }
-  },
-  "nhl_q8": {
-    "A": {
-      "DAL": 2
-    },
-    "B": {
-      "MTL": 2,
-      "TOR": 2,
-      "DET": 2,
-      "EDM": 2,
       "CGY": 2,
       "VAN": 2,
       "WPG": 2,
       "OTT": 2,
+      "PHI": 2,
       "BUF": 2,
-      "STL": 2,
-      "MIN": 2,
-      "CBJ": 2,
+      "NYI": 2,
+      "MIN": 2
+    },
+    "B": {
+      "NSH": 2,
       "CAR": 2,
-      "WSH": 2,
+      "DAL": 2,
+      "LAK": 2,
+      "TBL": 2,
+      "VGK": 2,
+      "FLA": 2,
       "SEA": 2,
+      "ANA": 2
+    },
+    "C": {
+      "STL": 2,
+      "CBJ": 2,
+      "NJD": 2,
+      "PIT": 2,
+      "WSH": 2,
+      "COL": 2,
       "UTA": 2,
       "SJS": 2
-    },
-    "C": {
-      "NYR": 2,
-      "NJD": 2,
-      "PIT": 2,
-      "COL": 2,
-      "LAK": 2,
-      "TBL": 2,
-      "VGK": 2,
-      "ANA": 2
-    },
-    "D": {
-      "NYI": 2
-    },
-    "E": {
-      "BOS": 2,
-      "CHI": 2,
-      "PHI": 2,
-      "NSH": 2,
-      "FLA": 2
-    }
-  },
-  "nhl_q9": {
-    "1": {
-      "MTL": 3,
-      "TOR": 2,
-      "BOS": 2,
-      "CHI": 2,
-      "NYR": 2,
-      "EDM": 3,
-      "PIT": 3,
-      "WSH": 2,
-      "COL": 3,
-      "TBL": 3,
-      "VGK": 3
-    },
-    "2": {
-      "MTL": 1,
-      "TOR": 3,
-      "BOS": 3,
-      "CHI": 3,
-      "NYR": 3,
-      "EDM": 1,
-      "PIT": 1,
-      "WSH": 3,
-      "COL": 1,
-      "TBL": 1,
-      "VGK": 1,
-      "DET": 2,
-      "LAK": 2,
-      "FLA": 2
-    },
-    "3": {
-      "DET": 3,
-      "CGY": 3,
-      "VAN": 3,
-      "PHI": 3,
-      "STL": 3,
-      "NYI": 3,
-      "NJD": 3,
-      "LAK": 3,
-      "FLA": 3,
-      "SJS": 3,
-      "CAR": 2,
-      "DAL": 2
-    },
-    "4": {
-      "CGY": 2,
-      "VAN": 2,
-      "PHI": 2,
-      "STL": 2,
-      "NYI": 2,
-      "NJD": 2,
-      "SJS": 2,
-      "WPG": 3,
-      "OTT": 1,
-      "BUF": 3,
-      "MIN": 3,
-      "NSH": 3,
-      "CBJ": 1,
-      "CAR": 3,
-      "DAL": 3,
-      "SEA": 1,
-      "UTA": 1,
-      "ANA": 3
-    },
-    "5": {
-      "WPG": 2,
-      "OTT": 3,
-      "BUF": 2,
-      "MIN": 2,
-      "NSH": 2,
-      "CBJ": 3,
-      "SEA": 3,
-      "UTA": 3,
-      "ANA": 2
-    }
-  },
-  "nhl_q10": {
-    "A": {
-      "MTL": 2,
-      "TOR": 2,
-      "BOS": 2,
-      "DET": 2,
-      "CHI": 2,
-      "CGY": 2,
-      "VAN": 2,
-      "OTT": 2,
-      "PHI": 2,
-      "BUF": 2,
-      "STL": 2,
-      "NYI": 2,
-      "MIN": 2,
-      "PIT": 2,
-      "WSH": 2,
-      "SJS": 2
-    },
-    "B": {
-      "NYR": 2,
-      "EDM": 2,
-      "WPG": 2,
-      "LAK": 2
-    },
-    "C": {
-      "NSH": 2,
-      "CBJ": 2,
-      "TBL": 2,
-      "VGK": 2,
-      "FLA": 2,
-      "SEA": 2,
-      "ANA": 2
-    },
-    "D": {
-      "NJD": 2,
-      "CAR": 2,
-      "DAL": 2,
-      "COL": 2,
-      "UTA": 2
-    }
-  },
-  "nhl_q11": {
-    "A": {
-      "TOR": 2,
-      "BOS": 2,
-      "CHI": 2,
-      "NYR": 2,
-      "EDM": 2,
-      "CGY": 2,
-      "VAN": 2,
-      "PHI": 2,
-      "BUF": 2,
-      "WSH": 2,
-      "FLA": 2,
-      "SJS": 2
-    },
-    "B": {
-      "DET": 2,
-      "NJD": 2,
-      "LAK": 2,
-      "VGK": 2
-    },
-    "C": {
-      "MTL": 2,
-      "STL": 2,
-      "NYI": 2,
-      "CAR": 2,
-      "DAL": 2,
-      "PIT": 2,
-      "COL": 2,
-      "TBL": 2
-    },
-    "D": {
-      "NSH": 2,
-      "ANA": 2
-    },
-    "E": {
-      "WPG": 2,
-      "OTT": 2,
-      "MIN": 2,
-      "CBJ": 2,
-      "SEA": 2,
-      "UTA": 2
-    }
-  },
-  "nhl_q12": {
-    "A": {
-      "DET": 3,
-      "NYI": 3,
-      "NJD": 3,
-      "CAR": 3,
-      "DAL": 3
-    },
-    "B": {
-      "BOS": 3,
-      "CHI": 3,
-      "EDM": 3,
-      "VAN": 3,
-      "PHI": 3,
-      "NSH": 3,
-      "COL": 3,
-      "FLA": 3,
-      "ANA": 3
-    },
-    "C": {
-      "NYR": 3,
-      "PIT": 3,
-      "WSH": 3,
-      "LAK": 3,
-      "TBL": 3,
-      "SJS": 3
-    },
-    "D": {
-      "MTL": 3,
-      "TOR": 3,
-      "CGY": 3,
-      "WPG": 3,
-      "OTT": 3,
-      "BUF": 3,
-      "STL": 3,
-      "MIN": 3,
-      "CBJ": 3
-    },
-    "E": {
-      "VGK": 3,
-      "SEA": 3,
-      "UTA": 3
     }
   }
 };
+
 const teamDims = {
   "MTL": {
     "loyalty": 10,
@@ -2845,10 +2271,10 @@ const teamDims = {
   },
   "SEA": {
     "loyalty": 6,
-    "emotion": 5,
+    "emotion": 7,
     "ambition": 5,
     "process": 6,
-    "community": 6,
+    "community": 8,
     "chaos": 4,
     "rootedness": 3
   },
