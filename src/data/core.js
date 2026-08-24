@@ -220,9 +220,9 @@ const coreQuestions = [
     "id": "q12",
     "type": "slider",
     "phase": "Where do you belong?",
-    "question": "When you care about something:",
-    "left": "My intensity is internal, I feel it but don't broadcast it",
-    "right": "Everyone around me knows exactly how much I care"
+    "question": "How you feel things, in general:",
+    "left": "Evenly. Most things don't move me much.",
+    "right": "Intensely. I feel the highs and lows deeply."
   },
   {
     "id": "q13",
@@ -436,9 +436,9 @@ const coreQuestions = [
     "id": "q24",
     "type": "slider",
     "phase": "How do you feel it?",
-    "question": "Hope, for you:",
-    "left": "Is rational, based on genuine evidence",
-    "right": "Persists regardless of evidence. It refuses to die"
+    "question": "Your commitment to what you love:",
+    "left": "Holds while it still makes sense",
+    "right": "Holds even if it never pays off again"
   }
 ];
 
@@ -455,10 +455,10 @@ const DIM_CODES  = {loyalty:"LOY",emotion:"EMO",ambition:"AMB",process:"PRO",com
 
 const coreDimScoring = {
   "q1": {
-    "A": { "emotion": 9 },
-    "B": { "emotion": 4 },
-    "C": { "emotion": 8 },
-    "D": { "emotion": 1 },
+    "A": { "emotion": 7 },
+    "B": { "emotion": 9 },
+    "C": { "emotion": 4 },
+    "D": { "emotion": 4 },
     "E": { "emotion": 5 }
   },
   "q2": {
@@ -506,10 +506,10 @@ const coreDimScoring = {
   },
   "q9": {
     "A": { "loyalty": 10 },
-    "B": { "loyalty": 8 },
-    "C": { "loyalty": 6 },
-    "D": { "loyalty": 2 },
-    "E": { "loyalty": 7 }
+    "B": { "loyalty": 9 },
+    "C": { "loyalty": 8 },
+    "D": { "loyalty": 3 },
+    "E": { "loyalty": 8 }
   },
   "q10": {
     "left": { "community": 9 },
@@ -566,11 +566,11 @@ const coreDimScoring = {
     "right": { "process": 2 }
   },
   "q19": {
-    "A": { "emotion": 9 },
+    "A": { "emotion": 7 },
     "B": { "emotion": 6 },
-    "C": { "emotion": 3 },
+    "C": { "emotion": 8 },
     "D": { "emotion": 4 },
-    "E": { "emotion": 4 }
+    "E": { "emotion": 8 }
   },
   "q20": {
     "1": { "process": 1 },
@@ -582,9 +582,9 @@ const coreDimScoring = {
   "q21": {
     "A": { "emotion": 9 },
     "B": { "emotion": 10 },
-    "C": { "emotion": 7 },
-    "D": { "emotion": 4 },
-    "E": { "emotion": 2 }
+    "C": { "emotion": 10 },
+    "D": { "emotion": 8 },
+    "E": { "emotion": 4 }
   },
   "q22": {
     "left": { "community": 2 },
@@ -604,6 +604,6 @@ const coreDimScoring = {
     "4": { "loyalty": 8 },
     "5": { "loyalty": 10 }
   }
-};
+};;
 
 export { coreQuestions, coreDimScoring, DIM_ORDER, DIM_LABELS, DIM_COLORS, DIM_CODES };
