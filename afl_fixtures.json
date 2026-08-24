@@ -4,7 +4,10 @@
     "engine": "fingerprint-spine",
     "generated": "2026-08-19",
     "count": 58,
-    "note": "AFL on the shared spine (s41). Scores S1/S2/S3/S4/S7; S5/S6 not scored. Fixtures carry explicit spineAnswers."
+    "note": "AFL on the shared spine (s41). Scores S1/S2/S3/S4/S7; S5/S6 not scored. Fixtures carry explicit spineAnswers.",
+    "rebaseline_note": [
+      "s52 AFL grounding pass: research-grounded teamDim corrections (Hawthorn loyalty 6->7 rootedness 5->6, North Melbourne loyalty 8->9 emotion 5->6, Western Bulldogs loyalty 6->8) per fandna-afl-souls.md. Module + afl-spine unchanged. 18/18 self-land, no flips, no magnets, floor improved (all 18 clear). Fixtures re-recorded."
+    ]
   },
   "fixtures": [
     {
@@ -865,8 +868,8 @@
         "afl_q10": "A",
         "afl_q11": "B"
       },
-      "winner": "FRE",
-      "winnerName": "Fremantle",
+      "winner": "WBD",
+      "winnerName": "Western Bulldogs",
       "coreAnswers": {
         "q1": "B",
         "q2": "right",
@@ -1053,8 +1056,8 @@
         "afl_q10": "D",
         "afl_q11": "D"
       },
-      "winner": "NTH",
-      "winnerName": "North Melbourne",
+      "winner": "COL",
+      "winnerName": "Collingwood",
       "coreAnswers": {
         "q1": "C",
         "q2": "right",
