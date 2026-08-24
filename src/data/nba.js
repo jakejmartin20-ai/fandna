@@ -2172,7 +2172,7 @@ const teamDims = {
     "process": 7,
     "community": 8,
     "chaos": 5,
-    "rootedness": 4
+    "rootedness": 6
   },
   "UTA": {
     "loyalty": 9,
@@ -2268,7 +2268,7 @@ const teamDims = {
     "loyalty": 8,
     "emotion": 7,
     "ambition": 9,
-    "process": 7,
+    "process": 8,
     "community": 6,
     "chaos": 5,
     "rootedness": 6
@@ -2292,13 +2292,13 @@ const teamDims = {
     "rootedness": 7
   },
   "TOR": {
-    "loyalty": 7,
+    "loyalty": 8,
     "emotion": 7,
     "ambition": 7,
     "process": 6,
     "community": 7,
     "chaos": 4,
-    "rootedness": 4
+    "rootedness": 6
   },
   "ORL": {
     "loyalty": 7,
