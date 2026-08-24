@@ -515,7 +515,7 @@ const teamDims = {
   "ATM": { loyalty:9, emotion:9, ambition:8, process:6, community:7, chaos:6, rootedness:8 },
   "ATH": { loyalty:10, emotion:8, ambition:7, process:10, community:9, chaos:4, rootedness:10 },
   "RSO": { loyalty:8, emotion:6, ambition:7, process:9, community:8, chaos:3, rootedness:9 },
-  "SEV": { loyalty:8, emotion:7, ambition:7, process:5, community:5, chaos:8, rootedness:8 },
+  "SEV": { loyalty:8, emotion:7, ambition:7, process:7, community:5, chaos:6, rootedness:8 },
   "BET": { loyalty:10, emotion:10, ambition:6, process:5, community:8, chaos:7, rootedness:9 },
   "VAL": { loyalty:8, emotion:8, ambition:7, process:4, community:7, chaos:9, rootedness:9 },
   "DEP": { loyalty:9, emotion:8, ambition:6, process:5, community:7, chaos:6, rootedness:9 },
