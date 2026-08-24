@@ -31,22 +31,22 @@ const moduleQuestions = [
     "id": "cfb_q2",
     "type": "choice",
     "phase": "The fine print",
-    "question": "When a lot is expected of you, that pressure feels like:",
+    "question": "When a lot is expected of you, you:",
     "options": [
       {
-        "label": "A machine I trust, do the work, the result takes care of itself.",
+        "label": "Trust the routine. Do the work, and the result takes care of itself.",
         "value": "A"
       },
       {
-        "label": "A birthright. Of course we come through; that's just who we are.",
+        "label": "Barely feel it. I've always come through, and I expect to again.",
         "value": "B"
       },
       {
-        "label": "A weight I've finally earned the right to carry.",
+        "label": "Feel the weight, and I've earned the right to carry it.",
         "value": "C"
       },
       {
-        "label": "Not really my world, I'm just out to prove I belong at all.",
+        "label": "Feel like an outsider, still out to prove I belong at all.",
         "value": "D"
       }
     ]
