@@ -2227,7 +2227,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "SEV",
+      "expected": "ALA",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -2755,7 +2755,7 @@
         "ll_q11": "D",
         "ll_q12": "left"
       },
-      "expected": "BAR",
+      "expected": "SEV",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -3043,7 +3043,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "ELC",
+      "expected": "SEV",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -3235,7 +3235,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "ALA",
+      "expected": "SEV",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -4963,7 +4963,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "SEV",
+      "expected": "RAC",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -5011,7 +5011,7 @@
         "ll_q11": "B",
         "ll_q12": "left"
       },
-      "expected": "CEL",
+      "expected": "SEV",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -8419,7 +8419,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "RMA",
+      "expected": "SEV",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -8611,7 +8611,7 @@
         "ll_q11": "B",
         "ll_q12": "right"
       },
-      "expected": "SEV",
+      "expected": "VAL",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -10099,7 +10099,7 @@
         "ll_q11": "C",
         "ll_q12": "right"
       },
-      "expected": "VAL",
+      "expected": "SEV",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -10539,5 +10539,6 @@
     }
   ],
   "rebaselined_s31": "2026-08-10 s31: LL FP_W 1.2->1.4 (per-league weight tune, floor-bound knee). 7 random + 0 ideal winners re-recorded.",
-  "rebaselined_s42": "s42: LL onto the shared spine. S6(build)+S7(role) re-authored, added off shared answers. Fixtures carry spineAnswers {S6,S7}; winners re-recorded on the spine engine."
+  "rebaselined_s42": "s42: LL onto the shared spine. S6(build)+S7(role) re-authored, added off shared answers. Fixtures carry spineAnswers {S6,S7}; winners re-recorded on the spine engine.",
+  "rebaselined_s54": "2026-08-24 s54: La Liga identity-grounding backfill (souls pass, fandna-laliga-souls.md). One research-grounded teamDim correction: SEV process 5->7 (the enduring soul is the Monchi sell-to-grow method / Europa League kings, an under-read process identity), chaos 8->6 (the recent post-Monchi brittleness is perishable, not the enduring soul). teamDims only, base file; ll-spine UNCHANGED. Full gate on the wired engine: 20/20 self-land, magnet SEV 7.45->9.81% (no balloon, < 13.9% ceiling), floor ATH 1.91->1.79% (all reachable), 9 accepted random flips all SEV-centered (6 to SEV, 3 from SEV), zero collateral. BANKED for a combined multi-league upload round."
 }
