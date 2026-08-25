@@ -505,7 +505,7 @@ const teamDims = {
   "FCA": { loyalty:7, emotion:4, ambition:3, process:6, community:5, chaos:3, rootedness:7 },
   "KOE": { loyalty:10, emotion:9, ambition:5, process:3, community:8, chaos:8, rootedness:9 },
   "M05": { loyalty:7, emotion:6, ambition:5, process:7, community:6, chaos:5, rootedness:7 },
-  "FCU": { loyalty:10, emotion:7, ambition:4, process:4, community:10, chaos:4, rootedness:9 },
+  "FCU": { loyalty:10, emotion:8, ambition:4, process:4, community:10, chaos:4, rootedness:10 },
   "ELV": { loyalty:7, emotion:6, ambition:5, process:6, community:7, chaos:6, rootedness:6 },
   "SCP": { loyalty:7, emotion:5, ambition:4, process:6, community:6, chaos:5, rootedness:6 },
   "SGE": { loyalty:8, emotion:9, ambition:7, process:4, community:8, chaos:8, rootedness:7 },

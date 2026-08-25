@@ -426,7 +426,7 @@ const squadUrls = {
 };
 
 const teamDims = {
-  "PSG": { loyalty:5, emotion:8, ambition:10, process:6, community:3, chaos:6, rootedness:4 },
+  "PSG": { loyalty:5, emotion:8, ambition:10, process:6, community:4, chaos:6, rootedness:4 },
   "MAR": { loyalty:9, emotion:10, ambition:8, process:2, community:8, chaos:10, rootedness:9 },
   "MON": { loyalty:3, emotion:4, ambition:7, process:9, community:2, chaos:4, rootedness:4 },
   "LIL": { loyalty:7, emotion:5, ambition:7, process:8, community:5, chaos:3, rootedness:7 },

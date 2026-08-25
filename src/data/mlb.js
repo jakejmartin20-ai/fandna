@@ -2535,7 +2535,7 @@ const scoring = {
 const teamDims = {
   "NYY": {
     "loyalty": 7,
-    "emotion": 5,
+    "emotion": 6,
     "ambition": 10,
     "process": 8,
     "community": 5,

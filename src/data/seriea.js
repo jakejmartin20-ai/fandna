@@ -483,9 +483,9 @@ const squadUrls = {
 
 const teamDims = {
   "INT": { loyalty:6, emotion:7, ambition:9, process:8, community:5, chaos:5, rootedness:5 },
-  "JUV": { loyalty:5, emotion:5, ambition:10, process:9, community:3, chaos:6, rootedness:5 },
+  "JUV": { loyalty:5, emotion:5, ambition:10, process:9, community:3, chaos:6, rootedness:6 },
   "MIL": { loyalty:6, emotion:7, ambition:9, process:6, community:5, chaos:6, rootedness:6 },
-  "NAP": { loyalty:9, emotion:10, ambition:8, process:3, community:9, chaos:9, rootedness:9 },
+  "NAP": { loyalty:9, emotion:10, ambition:8, process:4, community:9, chaos:9, rootedness:9 },
   "ROM": { loyalty:9, emotion:9, ambition:7, process:4, community:8, chaos:7, rootedness:8 },
   "LAZ": { loyalty:7, emotion:8, ambition:6, process:5, community:6, chaos:7, rootedness:6 },
   "ATA": { loyalty:7, emotion:6, ambition:8, process:9, community:8, chaos:4, rootedness:8 },
