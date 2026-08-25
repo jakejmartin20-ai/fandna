@@ -40,11 +40,11 @@ const moduleQuestions = [
     "value": "B"
    },
    {
-    "label": "Neither. It comes down to want, out-work them.",
+    "label": "Neither. It comes down to hunger, the side that wants it most.",
     "value": "C"
    },
    {
-    "label": "Belief. Caring runs all the way through a better side.",
+    "label": "Neither. It comes down to heart, a side that plays for each other.",
     "value": "D"
    }
   ]
@@ -141,7 +141,7 @@ const moduleQuestions = [
   "id": "afl_q8",
   "type": "choice",
   "phase": "What it comes down to",
-  "question": "The kind of mob you would actually want to belong to:",
+  "question": "The kind of following you would actually want to belong to:",
   "options": [
    {
     "label": "Massive, one of many in a huge crowd.",
@@ -170,7 +170,7 @@ const moduleQuestions = [
   "right": "Wherever I land next. Home is not a postcode."
  },
  {
-  "id": "afl_q10",
+  "id": "afl_q13",
   "type": "choice",
   "phase": "What it comes down to",
   "question": "The thing you love has gone slick and corporate, run by money now. That leaves you:",
@@ -184,11 +184,15 @@ const moduleQuestions = [
     "value": "B"
    },
    {
-    "label": "Untouched. It was never about who owns it.",
+    "label": "Reluctantly on board, as long as the club still belongs to its people.",
+    "value": "E"
+   },
+   {
+    "label": "Untouched. My club runs deeper than whoever owns it.",
     "value": "C"
    },
    {
-    "label": "Unbothered. I have no old soul to lose, I am the new model.",
+    "label": "Unbothered. I never had an old soul to lose, I am the new model.",
     "value": "D"
    }
   ]
@@ -1182,15 +1186,13 @@ const scoring = {
    "GCS": 2
   }
  },
- "afl_q10": {
+ "afl_q13": {
   "A": {
    "COL": 2,
    "ESS": 2,
    "RIC": 2,
-   "NTH": 2,
    "STK": 2,
    "FRE": 2,
-   "WBD": 2,
    "PTA": 2
   },
   "B": {
@@ -1208,6 +1210,10 @@ const scoring = {
   "D": {
    "GWS": 2,
    "GCS": 2
+  },
+  "E": {
+   "WBD": 2,
+   "NTH": 2
   }
  },
  "afl_q11": {
