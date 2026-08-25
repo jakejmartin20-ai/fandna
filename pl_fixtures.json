@@ -11,7 +11,8 @@
       "rand_25: LI -> MU (true tie LI=MU=35 pts; profile closer to MU)",
       "s20 PL honesty pass (q7-E cluster + Villa q18): removed q7-E \"don't get attached\" from MU/WO/SP/LU/CV; Villa q18 left 2->1 (results-leaning). Zero signature flips. 5 random baselines re-recorded: rand_01 MU->MC, rand_03 CV->BR, rand_12 LU->NF, rand_29 AV->NC, rand_30 MU->LI.",
       "s20 Hull/Wolves place-honesty: HU q7-E \"don't get attached\" removed (q7.E now empty), HU added to q7-B \"leaving feels like failing someone\" (3); WO moved off q8 \"not defined by place\" onto q8 \"leaning place\" (2). Signature personas re-recorded to answer honestly: HU sig q7 E->B, WO sig q8 1->4. Zero signature winner flips, zero random flips."
-    ]
+    ],
+    "rebaselined_s55": "PL matrix calibration: EV magnet trim (pl_q7:right, pl_q8:B) + owned cells HU/LE + Wolves reinforce + Arsenal rootedness 5->6. self-land 23/23, EV 15%->7.7%, no magnet, fragile margins HU/WO/LE 1/2/4->6/5/6."
   },
   "fixtures": [
     {
@@ -1184,7 +1185,7 @@
         "pl_q13": "left",
         "pl_q14": "E"
       },
-      "winner": "EV",
+      "winner": "HU",
       "winnerName": "Everton"
     },
     {
@@ -1414,7 +1415,7 @@
         "pl_q13": "left",
         "pl_q14": "C"
       },
-      "winner": "EV",
+      "winner": "SU",
       "winnerName": "Everton"
     },
     {
@@ -1966,7 +1967,7 @@
         "pl_q13": "left",
         "pl_q14": "D"
       },
-      "winner": "EV",
+      "winner": "HU",
       "winnerName": "Everton"
     },
     {
