@@ -44,6 +44,8 @@ function recomputeAllFromCore(newCoreAnswers){
 }
 import { CoreStrip } from "./components/CoreStrip";
 import { InstinctsLine } from "./components/InstinctsLine";
+import { CoreReveal } from "./components/CoreReveal";
+import { StageBar } from "./components/StageBar";
 import { CrestEarn } from "./components/CrestEarn";
 import { CrestFinale } from "./components/CrestFinale";
 import { BeachWindow, BeachIndicator } from "./components/BeachEgg";
@@ -270,6 +272,8 @@ function AppInner(){
   const [beachOn,setBeachOn]=useState(false);       // the Pro Beach Hockey bonus window (floating, non-blocking)
   const [beachReduced,setBeachReduced]=useState(false);
   const [beachSeen,setBeachSeen]=useState(()=>{ try{ return loadState().earnedGroups.includes("beach_seen"); }catch(e){ return false; } }); // watched the reveal to the end?
+  const [pendingAdvance,setPendingAdvance]=useState(null); // question index to resume at after the core reveal
+  const [coreRevealSeen,setCoreRevealSeen]=useState(false); // the first-full-take type reveal fires once per run
   const [activeSport,setActiveSport]=useState("PL"); // which sport's quiz/result/card is in play
   const [compareFriend,setCompareFriend]=useState(null);  // decoded friend genome for the /c/ compare route
   const [pendingCompare,setPendingCompare]=useState(null); // friend genome held while a recruit takes the quiz
@@ -344,6 +348,28 @@ function AppInner(){
   const coreInSeq=phaseOrder.filter(p=>CORE_PHASES.has(p)).length; // core segments in this run
   const modInSeq=phaseOrder.length-coreInSeq;                       // league segments in this run
   const seqLeagueName=(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League";
+
+  // Named stage model for the progress bar (StageBar): Core / Instincts / <League>, each sized by
+  // how many questions it holds in THIS run, so a first full take reads as three clear stages. A
+  // module-only retake shows just the league stage; a core or instincts re-sequence shows just its
+  // one stage. The live stage is "active" (glows + a leading dot); passed stages are "done". Progress-only.
+  const quizStages=useMemo(()=>{
+    const coreLen  = sequence.filter(x=>coreIds.has(x.id)).length;
+    const spineLen = sequence.filter(x=>spineIds.has(x.id)).length;
+    const modLen   = sequence.length - coreLen - spineLen;
+    const out=[]; let start=0;
+    const mk=(key,label,color,labelColor,len)=>{
+      if(len<=0) return;
+      const done=cur>=start+len, active=cur>=start&&cur<start+len;
+      const frac=done?1:active?Math.max(0,Math.min(1,(cur-start+1)/len)):0;
+      out.push({key,label,color,labelColor,len,frac,state:done?"done":active?"active":"upcoming"});
+      start+=len;
+    };
+    mk("core","Core","#7f7fb0","#9a9acc",coreLen);
+    mk("spine","Instincts","#7f7fb0","#9a9acc",spineLen);
+    mk("mod",seqLeagueName,"#c9b27a","#c9b27a",modLen);
+    return out;
+  },[sequence,cur,seqLeagueName,coreIds,spineIds]);
 
   // Resume a previously completed PL genome. The result is PRELOADED so the completed
   // strand on the home screen is tappable straight to it, but we stay on the home screen
@@ -457,6 +483,21 @@ function AppInner(){
     if(Object.keys(answers).length===0) track("quiz_started");
     if(cur+1<sequence.length){
       const nextPhase=sequence[cur+1].phase;
+      // First full take only: at the seam where the about-you questions (core + instincts) give
+      // way to the sport module, pause on a reveal of the taker's core "type" before the sport
+      // begins - so the three-part test stops feeling hidden. Fires once per run; a later league
+      // reuses the cached core (mode "module") and never reaches this branch. Display-only.
+      const crossingToSport = CORE_PHASES.has(q.phase) && !CORE_PHASES.has(nextPhase);
+      if(mode==="full" && crossingToSport && !coreRevealSeen){
+        const coreAnswersSoFar = Object.fromEntries(Object.entries(na).filter(([k])=>coreIds.has(k)));
+        setCoreProfile(scoreCore(coreAnswersSoFar));
+        setPendingAdvance(cur+1);
+        setCoreRevealSeen(true);
+        track("core_reveal_shown");
+        setPhase("out");
+        setTimeout(()=>{ setScreen("reveal"); setPhase("in"); try{ window.scrollTo(0,0); }catch(e){} },220);
+        return;
+      }
       if(nextPhase!==q.phase) track("quiz_phase",{phase:nextPhase});
       setPhase("out");
       setTimeout(()=>{setCur(c=>c+1);setPhase("in");},220);
@@ -554,10 +595,23 @@ function AppInner(){
     setTimeout(()=>{setCur(c=>c-1);setPhase("in");},220);
   }
 
+  // Leave the core reveal and resume the run at the first sport-module question.
+  function continueFromReveal(){
+    const to = (pendingAdvance!=null) ? pendingAdvance : cur;
+    track("core_reveal_continued");
+    setPhase("out");
+    setTimeout(()=>{
+      setCur(to); setPendingAdvance(null);
+      setScreen("quiz"); setPhase("in");
+      try{ window.scrollTo(0,0); }catch(e){}
+    },160);
+  }
+
   function startOver(){
     clearAll();
     setMode("full");setSavedCore(null);setGenome({});setCoreProfile(null);setEvidence(null);setEvidenceInput(null);
     setEarnFamily(null);setFinaleOn(false);setBeachOn(false);setBeachSeen(false);
+    setPendingAdvance(null);setCoreRevealSeen(false);
     setPhase("out");
     setTimeout(()=>{
       setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");
@@ -666,6 +720,7 @@ function AppInner(){
     const sport=code||"PL";
     setActiveSport(sport);
     setResult(null); setScores(null); setEvidence(null); setEvidenceInput(null);   // drop any prior sport's result before this one's data loads
+    setPendingAdvance(null); setCoreRevealSeen(false);   // arm the first-full-take core reveal fresh
     const st=loadState();
     setSavedSpine(st.spineAnswers||null);   // spine is shared + answered once; a later spine-league skips it
     if(st.coreAnswers){
@@ -1094,26 +1149,9 @@ function AppInner(){
             <div style={{textAlign:"center",marginBottom:14,fontSize:11,color:"#8484b0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>
               {mode==="core" ? "Your core" : ((SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League")}
             </div>
-            {/* Progress: the shared core (purple) then the league (gold), grouped and labelled,
-                so the about-you layer and the sport layer read as distinct at a glance. */}
-            <div style={{marginBottom:24}}>
-              <div style={{display:"flex",gap:3,height:5}}>
-                {phaseOrder.map((ph,i)=>{
-                  const isCore=CORE_PHASES.has(ph);
-                  const seam=i>0&&CORE_PHASES.has(phaseOrder[i-1])&&!isCore; // first league seg after the core
-                  const frac=i<phaseIdx?1:i>phaseIdx?0:Math.min(1,Math.max(0,(cur-phaseStart+1)/phaseLen));
-                  return(
-                    <div key={ph} style={{flex:1,height:"100%",background:"#1e1e2e",borderRadius:2,overflow:"hidden",marginLeft:seam?18:0}}>
-                      <div style={{height:"100%",width:`${frac*100}%`,background:isCore?"#7f7fb0":"#c9b27a",borderRadius:2,transition:"width .3s ease"}}/>
-                    </div>
-                  );
-                })}
-              </div>
-              <div style={{display:"flex",marginTop:7,fontFamily:"'DM Mono',monospace",fontSize:8,letterSpacing:"0.18em",textTransform:"uppercase"}}>
-                {coreInSeq>0&&<span style={{flex:coreInSeq,color:"#8a8ac0",marginRight:modInSeq>0?18:0}}>Your core</span>}
-                {modInSeq>0&&<span style={{flex:modInSeq,color:"#c9b27a",textAlign:coreInSeq>0?"right":"left"}}>{seqLeagueName}</span>}
-              </div>
-            </div>
+            {/* Progress: three named stages - Core, Instincts, then the sport - so the about-you
+                layers and the sport layer read as distinct at a glance. The live stage glows. */}
+            <StageBar stages={quizStages}/>
 
             {/* Nav row */}
             <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:28,flexWrap:"nowrap",gap:8}}>
@@ -1172,6 +1210,15 @@ function AppInner(){
             {q.type==="binary"&&<BinaryQ key={q.id} q={q} onSelect={handleSelect}/>}
             {q.type==="slider"&&<SliderQ key={q.id} q={q} onSelect={handleSelect}/>}
           </>
+        )}
+
+        {/* ── CORE REVEAL (first full take: your type, between the about-you questions and the sport) ── */}
+        {screen==="reveal"&&(
+          <CoreReveal
+            coreProfile={coreProfile}
+            sportName={seqLeagueName}
+            onContinue={continueFromReveal}
+          />
         )}
 
         {/* ── RESULT ── */}
