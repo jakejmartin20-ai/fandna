@@ -1783,7 +1783,7 @@ const scoring = {
   "q3": {
     "A": {
       "MC": 2,
-      "WO": 3,
+      "WO": 4,
       "BR": 2,
       "BH": 1
     },
@@ -2281,7 +2281,7 @@ const scoring = {
     },
     "5": {
       "BR": 2,
-      "WO": 3,
+      "WO": 4,
       "BH": 2,
       "LE": 2
     }
@@ -2470,7 +2470,7 @@ const scoring = {
   "q22": {
     "left": {
       "EV": 3,
-      "WO": 3,
+      "WO": 4,
       "BR": 2,
       "AR": 2,
       "FU": 1,
@@ -2715,7 +2715,7 @@ const scoring = {
   },
   "pl_q5": {
     "left": {
-      "LE": 3,
+      "LE": 5,
       "NF": 3,
       "SP": 3,
       "WH": 2,
@@ -2791,7 +2791,7 @@ const scoring = {
       "AV": 2
     },
     "right": {
-      "EV": 3,
+      "HU": 5,
       "CP": 3,
       "WH": 3,
       "SU": 3,
@@ -2808,7 +2808,6 @@ const scoring = {
     },
     "B": {
       "CP": 2,
-      "EV": 3,
       "WH": 3,
       "CV": 3,
       "SU": 3,
@@ -3016,7 +3015,7 @@ const scoring = {
 const teamDims = {
   LI:{loyalty:10,emotion:10,ambition:9, process:4, community:9, chaos:4, rootedness:8},
   MC:{loyalty:7, emotion:6, ambition:10,process:9, community:7, chaos:2, rootedness:7},
-  AR:{loyalty:5, emotion:8, ambition:7, process:7, community:5, chaos:4, rootedness:5},
+  AR:{loyalty:5, emotion:8, ambition:7, process:7, community:5, chaos:4, rootedness:6},
   EV:{loyalty:10,emotion:8, ambition:5, process:3, community:7, chaos:4, rootedness:8},
   NC:{loyalty:8, emotion:8, ambition:7, process:4, community:10,chaos:4, rootedness:9},
   WH:{loyalty:6, emotion:8, ambition:5, process:3, community:8, chaos:6, rootedness:9},
