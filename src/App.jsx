@@ -292,6 +292,7 @@ function AppInner(){
   const nhlUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("nhl");
   const f1Unlocked  = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("f1");
   const aflUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("afl");
+  const iplUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("ipl");
   const sportsList = SPORTS.map(s=>
     s.code==="NFL" ? {...s, live: s.live||nflUnlocked} :
     s.code==="MLB" ? {...s, live: s.live||mlbUnlocked} :
@@ -303,7 +304,8 @@ function AppInner(){
     s.code==="CFB" ? {...s, live: s.live||cfbUnlocked} :
     s.code==="NHL" ? {...s, live: s.live||nhlUnlocked} :
     s.code==="F1"  ? {...s, live: s.live||f1Unlocked} :
-    s.code==="AFL" ? {...s, live: s.live||aflUnlocked} : s);
+    s.code==="AFL" ? {...s, live: s.live||aflUnlocked} :
+    s.code==="IPL" ? {...s, live: s.live||iplUnlocked} : s);
 
   // Active sport's data, bound to the same names the screens already use, so the result
   // screen and quiz read the right sport with no other changes. PL behaves exactly as before.
@@ -819,7 +821,7 @@ function AppInner(){
 
 
     // ── Pre-compute tab data (no logic inside JSX) ───────────────────────────
-  const vit = result ? vitalStats[result] : null;
+  const vit = result && vitalStats ? vitalStats[result] : null;
   const statsData = vit ? (activeSport==="AFL" ? [
     ["Base",         vit.base],
     ["Founded",      String(vit.founded)],
@@ -863,7 +865,7 @@ function AppInner(){
   // never with personality framing. No "nearest to your sequence", no similarity copy, no
   // "what you share". A matrix score that finished close is a fact; a close identity is a
   // claim the matrix cannot back. PL gaps are integer matrix points and display as integers.
-  const READOUT_K = { MLB: 4, CFB: 4, NFL: 4, NHL: 4, F1: 4, AFL: 4, PL: 3 };
+  const READOUT_K = { MLB: 4, CFB: 4, NFL: 4, NHL: 4, F1: 4, AFL: 4, IPL: 4, PL: 3 };
   const readoutRows = result
     ? sortedOthers.slice(0, READOUT_K[activeSport]||3).filter(([k])=>teams[k])
     : [];
@@ -1335,8 +1337,9 @@ function AppInner(){
                 </div>
             <ChapterHead n="03" title="Vitals" sub={"the "+regOf(activeSport).noun+" itself"} color={team.color} textColor={teamTextColors[result]||team.color}/>
                 <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:18}}>{regOf(activeSport).team} Info</div>
-                {statsData.length>0?(
+                {(statsData.length>0||(milestones&&milestones[result]))?(
                   <>
+                    {statsData.length>0&&(
                     <div style={{border:"1px solid #1e1e2e",borderRadius:8,overflow:"hidden",marginBottom:20}}>
                       <div style={{height:3,background:team.color}}/>
                       {statsData.map(([label,val],i)=>(
@@ -1351,8 +1354,9 @@ function AppInner(){
                         </div>
                       ))}
                     </div>
+                    )}
                     {/* All-time greats */}
-                    {greats[result]&&(
+                    {greats&&greats[result]&&(
                       <div style={{marginBottom:20}}>
                         <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:12,marginTop:20}}>All-time greats</div>
                         {greats[result].map((g,i)=>(
@@ -1367,7 +1371,7 @@ function AppInner(){
                       </div>
                     )}
                     {/* Club milestones - fallback for clubs with no all-time greats */}
-                    {!greats[result]&&milestones[result]&&(
+                    {(!greats||!greats[result])&&milestones&&milestones[result]&&(
                       <div style={{marginBottom:20}}>
                         <div style={{fontSize:11,color:"#aaa",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:12,marginTop:20}}>Club milestones</div>
                         {milestones[result].map((m,i)=>(
