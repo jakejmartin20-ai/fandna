@@ -35,6 +35,10 @@ import { teamDims as aflDims } from "../data/afl";
 // AFL runs the shared spine (Option B): its 6 unique questions + the spine tables live in the
 // afl-spine add-on; teamDims still comes from afl.js above.
 import { moduleQuestions as aflModule, scoring as aflScoring, spineScoring as aflSpine, spinePhase as aflSpinePhase } from "../data/afl-spine";
+import { teamDims as iplDims } from "../data/ipl";
+// IPL runs the shared spine (Option B, s58): all 7 slots. Its 4 unique module questions + the spine
+// tables live in the ipl-spine add-on; teamDims still comes from ipl.js above. Hidden-first (?ipl).
+import { moduleQuestions as iplModule, scoring as iplScoring, spineScoring as iplSpine, spinePhase as iplSpinePhase } from "../data/ipl-spine";
 import { teamDims as blDims } from "../data/bundesliga";
 import { moduleQuestions as blModule, scoring as blScoring, spineScoring as blSpine, spinePhase as blSpinePhase } from "../data/bl-spine";
 import { teamDims as llDims } from "../data/laliga";
@@ -190,6 +194,7 @@ const FP_ENGINES = {
   SA: makeFpEngine(saDims, saScoring, saModule, 0.9, saSpine, saSpinePhase),   // FP_W 0.9 (s44 reachability tune: lowered from 1.2 to clear the Napoli floor 0.74% -> ~1.2%; magnet Milan ~7.9% < 12.5% ceiling, self-land 20/20, no club balloons)
   F1: makeFpEngine(f1Dims, f1Scoring, f1Module, 1.6, f1Spine, f1SpinePhase),   // small 11-team field: 1.2 let the module override the core by ~3 ranks; 1.6 makes it a tie-breaker (knee before Red Bull drops below reachable)
   AFL: makeFpEngine(aflDims, aflScoring, aflModule, 1.2, aflSpine, aflSpinePhase),   // 18-team small-mid field; FP_W 1.2 (no magnet, top pooled ~11.5% under the 13.9% ceiling; higher FP_W lowers the SYD/GWS edge floors)
+  IPL: makeFpEngine(iplDims, iplScoring, iplModule, 1.4, iplSpine, iplSpinePhase),   // 10-team small field; FP_W 1.4 (s58; self-land 10/10, top ~17% RCB under the F1 21% small-field ceiling, floor LSG ~2.8%; RCB magnet trimmed at the cells, teamDims grid untouched)
 };
 
 
@@ -449,6 +454,7 @@ for (const q of blModule)        QUESTION_MAP[q.id] = q;   // namespaced ids (bl
 for (const q of llModule)        QUESTION_MAP[q.id] = q;   // namespaced ids (ll_q*), no collision with PL
 for (const q of l1Module)        QUESTION_MAP[q.id] = q;   // namespaced ids (l1_q*), no collision with PL
 for (const q of saModule)        QUESTION_MAP[q.id] = q;   // namespaced ids (sa_q*), no collision with PL
+for (const q of iplModule)       QUESTION_MAP[q.id] = q;   // namespaced ids (ipl_q*), no collision with PL
 for (const q of spineQuestions)  QUESTION_MAP[q.id] = q;   // shared-spine ids (S1..S7), no collision
 
 function answerLabel(qId, ans){

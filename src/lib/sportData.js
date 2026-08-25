@@ -22,6 +22,8 @@ import * as F1base from "../data/f1";
 import * as F1spine from "../data/f1-spine";
 import * as AFLbase from "../data/afl";
 import * as AFLspine from "../data/afl-spine";
+import * as IPLbase from "../data/ipl";
+import * as IPLspine from "../data/ipl-spine";
 
 // NBA runs the shared cross-sport spine (Option B): the quiz shows its 6 unique questions (from the
 // nba-spine add-on) and carries the spine tables, while every other field still comes from nba.js.
@@ -95,6 +97,10 @@ const SA = { ...SAbase, moduleQuestions: SAspine.moduleQuestions, spineScoring: 
 // tables (S6 build + S7 role, re-authored). Its own role question (q11) is dropped to the spine; no
 // display re-scene is needed (nothing left among the 10 echoes a scored slot).
 const MLB = { ...MLBbase, moduleQuestions: MLBspine.moduleQuestions, spineScoring: MLBspine.spineScoring, spinePhase: MLBspine.spinePhase };
-const SPORT_DATA = { PL, NFL, MLB, NBA, BL, LL, L1, SA, CFB, NHL, F1, AFL };
+// IPL runs the shared spine (s58): same pattern as F1 / AFL. It shows its 4 unique questions and
+// carries all 7 spine tables. No display re-scene needed - none of the 4 module questions echoes a
+// scored spine slot (they are the 4 spine-orthogonal cricket axes). Hidden-first (?ipl preview).
+const IPL = { ...IPLbase, moduleQuestions: IPLspine.moduleQuestions, spineScoring: IPLspine.spineScoring, spinePhase: IPLspine.spinePhase };
+const SPORT_DATA = { PL, NFL, MLB, NBA, BL, LL, L1, SA, CFB, NHL, F1, AFL, IPL };
 
 export { SPORT_DATA };

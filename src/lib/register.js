@@ -39,6 +39,9 @@ const REGISTER = {
   AFL: { noun: "club",      worn: "guernsey", team: "club", teams: "clubs", league: "AFL", leagueAbbr: "AFL", leagueIn: "the AFL",
          tail: "Who you barrack for come September is up to you.",
          xmHeader: "Already have a club?", xmEscape: "I don't follow the AFL" },
+  IPL: { noun: "franchise",  worn: "jersey", team: "franchise", teams: "franchises", league: "IPL", leagueAbbr: "IPL", leagueIn: "the IPL",
+         tail: "Who you roar for through the summer is up to you.",
+         xmHeader: "Already have a franchise?", xmEscape: "I don't follow the IPL" },
 };
 function regOf(s){ return REGISTER[s] || REGISTER.PL; }
 
