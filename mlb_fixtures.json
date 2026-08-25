@@ -19,7 +19,8 @@
       "unique": 10,
       "note": "MLB on the shared spine (s43): S6 build + S7 role re-authored; q11 (role echo) and q5 (inert) dropped. Fixtures carry explicit spineAnswers."
     },
-    "rerecorded": "s46-mlb-floor-clear"
+    "rerecorded": "s46-mlb-floor-clear",
+    "rebaselined_s54": "s54: soft (E) accuracy flags shipped after per-flag wired-engine safety test (all SAFE - no clumping/starvation, self-land intact, centered flips). teamDims-only; spine untouched. changed: NYY emotion 5->6; sig_NYY coreProfile repinned (1)."
   },
   "fixtures": [
     {
@@ -28,7 +29,7 @@
       "forTeam": "NYY",
       "coreProfile": {
         "loyalty": 7,
-        "emotion": 5,
+        "emotion": 6,
         "ambition": 10,
         "process": 8,
         "community": 5,

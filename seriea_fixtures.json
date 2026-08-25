@@ -8940,7 +8940,7 @@
         "sa_q12": "A",
         "sa_q13": "A"
       },
-      "expected": "INT",
+      "expected": "JUV",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -10809,5 +10809,6 @@
       }
     }
   ],
-  "rebaselined_s42": "s42: SA onto the shared spine. S6(build)+S7(role) re-authored, added off shared answers. Fixtures carry spineAnswers {S6,S7}; winners re-recorded on the spine engine."
+  "rebaselined_s42": "s42: SA onto the shared spine. S6(build)+S7(role) re-authored, added off shared answers. Fixtures carry spineAnswers {S6,S7}; winners re-recorded on the spine engine.",
+  "rebaselined_s54": "s54: soft (E) accuracy flags shipped after per-flag wired-engine safety test (all SAFE - no clumping/starvation, self-land intact, centered flips). teamDims-only; spine untouched. changed: JUV,NAP"
 }

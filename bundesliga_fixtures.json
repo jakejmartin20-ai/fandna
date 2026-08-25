@@ -5954,7 +5954,7 @@
         "bl_q9": "left",
         "bl_q10": "left"
       },
-      "expected": "FCU",
+      "expected": "SCP",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -9772,7 +9772,7 @@
         "bl_q9": "left",
         "bl_q10": "right"
       },
-      "expected": "FCU",
+      "expected": "S04",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -10056,5 +10056,6 @@
     }
   ],
   "rebaselined_s31": "2026-08-10 s31: BL FP_W 1.2->1.5 (per-league weight tune, magnet-bound knee). 25 random + 0 ideal winners re-recorded.",
-  "rebaselined_s42": "s42: BL onto the shared spine. S6(build)+S7(role) re-authored, bl_q11/bl_q12 dropped to the spine. Fixtures carry spineAnswers {S6,S7}; winners re-recorded on the spine engine."
+  "rebaselined_s42": "s42: BL onto the shared spine. S6(build)+S7(role) re-authored, bl_q11/bl_q12 dropped to the spine. Fixtures carry spineAnswers {S6,S7}; winners re-recorded on the spine engine.",
+  "rebaselined_s54": "s54: soft (E) accuracy flags shipped after per-flag wired-engine safety test (all SAFE - no clumping/starvation, self-land intact, centered flips). teamDims-only; spine untouched. changed: FCU"
 }

@@ -3826,7 +3826,7 @@
         "l1_q11": "B",
         "l1_q12": "C"
       },
-      "expected": "TOU",
+      "expected": "PSG",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -4930,7 +4930,7 @@
         "l1_q11": "C",
         "l1_q12": "A"
       },
-      "expected": "LYO",
+      "expected": "PSG",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -5458,7 +5458,7 @@
         "l1_q11": "C",
         "l1_q12": "B"
       },
-      "expected": "LEN",
+      "expected": "PSG",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -10457,5 +10457,6 @@
       }
     }
   ],
-  "rebaselined_s42": "s42: L1 onto the shared spine. S6(build)+S7(role) re-authored, added off shared answers. Fixtures carry spineAnswers {S6,S7}; winners re-recorded on the spine engine."
+  "rebaselined_s42": "s42: L1 onto the shared spine. S6(build)+S7(role) re-authored, added off shared answers. Fixtures carry spineAnswers {S6,S7}; winners re-recorded on the spine engine.",
+  "rebaselined_s54": "s54: soft (E) accuracy flags shipped after per-flag wired-engine safety test (all SAFE - no clumping/starvation, self-land intact, centered flips). teamDims-only; spine untouched. changed: PSG"
 }
