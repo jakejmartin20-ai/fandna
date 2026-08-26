@@ -36,31 +36,31 @@ const ROW_PX = 84;        // approx height of one strand row (card + gap)
 const PEEK = 60;          // half-row sliver so a partial next card is always visible when scrollable (Variant B)
 
 function FamilyGlyph({ kind }){
-  if(kind === "soccerball"){
-    return (
-      <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" style={{flexShrink:0}}>
-        <circle cx="8" cy="8" r="6.4" fill="none" stroke={PLBL} strokeWidth="1.2"/>
-        <polygon points="8,5.7 10.19,7.29 9.35,9.86 6.65,9.86 5.81,7.29" fill={PLBL}/>
-        <line x1="8" y1="5.7" x2="8" y2="2.2" stroke={PLBL} strokeWidth="1"/>
-        <line x1="10.19" y1="7.29" x2="13.3" y2="6.2" stroke={PLBL} strokeWidth="1"/>
-        <line x1="9.35" y1="9.86" x2="11.3" y2="12.4" stroke={PLBL} strokeWidth="1"/>
-        <line x1="6.65" y1="9.86" x2="4.7" y2="12.4" stroke={PLBL} strokeWidth="1"/>
-        <line x1="5.81" y1="7.29" x2="2.7" y2="6.2" stroke={PLBL} strokeWidth="1"/>
-      </svg>
-    );
-  }
-  if(kind === "globe"){
-    return (
-      <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" style={{flexShrink:0}}>
-        <circle cx="8" cy="8" r="6.4" fill="none" stroke={PLBL} strokeWidth="1.2"/>
-        <ellipse cx="8" cy="8" rx="2.9" ry="6.4" fill="none" stroke={PLBL} strokeWidth="1"/>
-        <line x1="1.6" y1="8" x2="14.4" y2="8" stroke={PLBL} strokeWidth="1"/>
-      </svg>
-    );
-  }
+  const inner = kind === "soccerball" ? (
+    <>
+      <circle cx="8" cy="8" r="6.4" fill="none" stroke={PLBL} strokeWidth="1.2"/>
+      <polygon points="8,5.7 10.19,7.29 9.35,9.86 6.65,9.86 5.81,7.29" fill={PLBL}/>
+      <line x1="8" y1="5.7" x2="8" y2="2.2" stroke={PLBL} strokeWidth="1"/>
+      <line x1="10.19" y1="7.29" x2="13.3" y2="6.2" stroke={PLBL} strokeWidth="1"/>
+      <line x1="9.35" y1="9.86" x2="11.3" y2="12.4" stroke={PLBL} strokeWidth="1"/>
+      <line x1="6.65" y1="9.86" x2="4.7" y2="12.4" stroke={PLBL} strokeWidth="1"/>
+      <line x1="5.81" y1="7.29" x2="2.7" y2="6.2" stroke={PLBL} strokeWidth="1"/>
+    </>
+  ) : kind === "globe" ? (
+    <>
+      <circle cx="8" cy="8" r="6.4" fill="none" stroke={PLBL} strokeWidth="1.2"/>
+      <ellipse cx="8" cy="8" rx="2.9" ry="6.4" fill="none" stroke={PLBL} strokeWidth="1"/>
+      <line x1="1.6" y1="8" x2="14.4" y2="8" stroke={PLBL} strokeWidth="1"/>
+    </>
+  ) : (
+    <polygon points="8,1 9.705,5.654 14.657,5.837 10.758,8.896 12.115,13.663 8,10.9 3.885,13.663 5.242,8.896 1.343,5.837 6.295,5.654" fill={PLBL}/>
+  );
+  // Hex-framed (s58): the sport symbol inside the FanDNA crest/badge hexagon, so the home
+  // iconography speaks the same genome-badge language as the earned crests. Display-only.
   return (
-    <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true" style={{flexShrink:0}}>
-      <polygon points="8,1 9.705,5.654 14.657,5.837 10.758,8.896 12.115,13.663 8,10.9 3.885,13.663 5.242,8.896 1.343,5.837 6.295,5.654" fill={PLBL}/>
+    <svg width="19" height="19" viewBox="0 0 16 16" aria-hidden="true" style={{flexShrink:0}}>
+      <polygon points="8,0.7 14.3,4.35 14.3,11.65 8,15.3 1.7,11.65 1.7,4.35" fill="none" stroke={PERI} strokeWidth="1.05"/>
+      <g transform="translate(8,8) scale(0.56) translate(-8,-8)">{inner}</g>
     </svg>
   );
 }
@@ -278,25 +278,11 @@ export function GenomeHome({
             ) : (liveInFam.length>0&&(<span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:COUNT,letterSpacing:"0.12em",textTransform:"uppercase",flexShrink:0}}>{doneN} of {list.length} mapped</span>))}
           </div>
 
-          {/* leagues (scrolls inside when there are more than MAX_ROWS) */}
-          {scrolls ? (
-            <div style={{position:"relative"}}>
-              <div className="fdna-scroll" ref={el=>{ if(el) requestAnimationFrame(()=>sizeThumb(el)); }} onScroll={e=>sizeThumb(e.currentTarget)}
-                style={{padding:"13px 16px 13px 13px",maxHeight:maxH,overflowY:"auto"}}>
-                {list.map((s,i)=>(<Strand key={s.code} s={s} last={i===list.length-1}/>))}
-              </div>
-              {/* always-visible scroll bar so the peek is unmistakable */}
-              <div className="fdna-track" style={{position:"absolute",top:10,bottom:10,right:5,width:4,borderRadius:2,background:"#2b2b3a",pointerEvents:"none"}}>
-                <div className="fdna-thumb" style={{position:"absolute",top:0,left:0,width:4,borderRadius:2,background:"#63637e",height:24,willChange:"transform"}}/>
-              </div>
-              {/* soft fade cue */}
-              <div style={{position:"absolute",left:3,right:9,bottom:0,height:26,pointerEvents:"none",background:`linear-gradient(to top, ${PBG} 12%, transparent)`}}/>
-            </div>
-          ) : (
-            <div className="fdna-scroll" style={{padding:"13px 13px",overflowY:"visible"}}>
-              {list.map((s,i)=>(<Strand key={s.code} s={s} last={i===list.length-1}/>))}
-            </div>
-          )}
+          {/* leagues - full list, no internal scroll (s58: buckets no longer scroll inside;
+              the page scrolls and the jump-nav pills hop between families). */}
+          <div className="fdna-scroll" style={{padding:"13px 13px",overflowY:"visible"}}>
+            {list.map((s,i)=>(<Strand key={s.code} s={s} last={i===list.length-1}/>))}
+          </div>
         </div>
       </div>
     );
