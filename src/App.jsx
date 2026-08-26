@@ -1051,23 +1051,31 @@ function AppInner(){
       }}/>
 
       {/* Floating nav on the long single-scroll result: Home is always reachable; back-to-top joins
-          once you have scrolled down. Display-only. (s58: home was easy to miss at the top only.) */}
+          once you have scrolled down. Hex-shaped (s58) so the FABs wear the FanDNA badge. Display-only. */}
       {screen==="result" && (
-        <div style={{position:"fixed",right:18,bottom:20,zIndex:40,display:"flex",flexDirection:"column",alignItems:"center",gap:10}}>
+        <div style={{position:"fixed",right:18,bottom:20,zIndex:40,display:"flex",flexDirection:"column",alignItems:"center",gap:12}}>
           {showTop && (
             <button type="button" aria-label="Back to top"
               onClick={()=>{ const rm = typeof window!=="undefined" && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; try{ window.scrollTo({top:0,behavior:rm?"auto":"smooth"}); }catch(e){ try{ window.scrollTo(0,0); }catch(_){} } }}
-              style={{width:44,height:44,borderRadius:"50%",background:"rgba(30,30,46,0.92)",border:"1px solid #34344a",color:"#c8c4d8",fontSize:19,lineHeight:1,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 4px 16px rgba(0,0,0,0.45)",backdropFilter:"blur(4px)",WebkitBackdropFilter:"blur(4px)",animation:"fadeIn .2s ease"}}
-              onMouseEnter={e=>{e.currentTarget.style.borderColor="#5a5a7a";e.currentTarget.style.color="#efe9e3";}}
-              onMouseLeave={e=>{e.currentTarget.style.borderColor="#34344a";e.currentTarget.style.color="#c8c4d8";}}
-            >{"\u2191"}</button>
+              style={{width:46,height:46,background:"none",border:"none",padding:0,cursor:"pointer",position:"relative",display:"flex",alignItems:"center",justifyContent:"center",filter:"drop-shadow(0 4px 12px rgba(0,0,0,0.5))",animation:"fadeIn .2s ease"}}
+              onMouseEnter={e=>{const h=e.currentTarget.querySelector(".fhex"); if(h)h.setAttribute("stroke","#5a5a7a"); const i=e.currentTarget.querySelector(".fico"); if(i)i.style.color="#efe9e3";}}
+              onMouseLeave={e=>{const h=e.currentTarget.querySelector(".fhex"); if(h)h.setAttribute("stroke","#3a3a52"); const i=e.currentTarget.querySelector(".fico"); if(i)i.style.color="#c8c4d8";}}
+            >
+              <svg width="46" height="46" viewBox="0 0 24 24" style={{position:"absolute",inset:0}} aria-hidden="true"><path className="fhex" d="M12 1.6 L21.1 6.85 L21.1 17.15 L12 22.4 L2.9 17.15 L2.9 6.85 Z" fill="rgba(30,30,46,0.95)" stroke="#3a3a52" strokeWidth="1"/></svg>
+              <span className="fico" style={{position:"relative",color:"#c8c4d8",fontSize:19,lineHeight:1}}>{"\u2191"}</span>
+            </button>
           )}
           <button type="button" aria-label="Back to your FanDNA home"
             onClick={()=>{ try{ window.scrollTo(0,0); }catch(e){} setScreen("home"); }}
-            style={{width:44,height:44,borderRadius:"50%",background:"rgba(30,30,46,0.92)",border:"1px solid #34344a",color:"#c8c4d8",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 4px 16px rgba(0,0,0,0.45)",backdropFilter:"blur(4px)",WebkitBackdropFilter:"blur(4px)"}}
-            onMouseEnter={e=>{e.currentTarget.style.borderColor="#5a5a7a";e.currentTarget.style.color="#efe9e3";}}
-            onMouseLeave={e=>{e.currentTarget.style.borderColor="#34344a";e.currentTarget.style.color="#c8c4d8";}}
-          ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.2 L20.5 7.1 L20.5 16.9 L12 21.8 L3.5 16.9 L3.5 7.1 Z" stroke="#8a8ac0" strokeWidth="1.5"/><path d="M7.4 12.1 12 8.4l4.6 3.7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M8.7 11.2V16h6.6v-4.8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
+            style={{width:46,height:46,background:"none",border:"none",padding:0,cursor:"pointer",position:"relative",display:"flex",alignItems:"center",justifyContent:"center",filter:"drop-shadow(0 4px 12px rgba(0,0,0,0.5))"}}
+            onMouseEnter={e=>{const h=e.currentTarget.querySelector(".fhex"); if(h)h.setAttribute("stroke","#5a5a7a"); const i=e.currentTarget.querySelector(".fico"); if(i)i.style.color="#efe9e3";}}
+            onMouseLeave={e=>{const h=e.currentTarget.querySelector(".fhex"); if(h)h.setAttribute("stroke","#3a3a52"); const i=e.currentTarget.querySelector(".fico"); if(i)i.style.color="#c8c4d8";}}
+          >
+            <svg width="46" height="46" viewBox="0 0 24 24" style={{position:"absolute",inset:0}} aria-hidden="true"><path className="fhex" d="M12 1.6 L21.1 6.85 L21.1 17.15 L12 22.4 L2.9 17.15 L2.9 6.85 Z" fill="rgba(30,30,46,0.95)" stroke="#3a3a52" strokeWidth="1"/></svg>
+            <span className="fico" style={{position:"relative",display:"flex",color:"#c8c4d8"}}>
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5"/><path d="M6.2 10.2V19h11.6v-8.8"/></svg>
+            </span>
+          </button>
         </div>
       )}
 
