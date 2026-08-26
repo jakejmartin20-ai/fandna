@@ -362,4 +362,22 @@ const milestones = {
   ]
 };
 
-export { moduleQuestions, teams, archetypes, teamTextColors, milestones, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };
+// Club Info table for the result-screen Vitals chapter. Enduring, dossier-grounded facts only.
+// Titles + last title are the sole moving fields and are web-verified at build (s58: RCB back-to-back
+// 2025+2026, GT runner-up 2026, PBKS still title-less; MI/CSK five each; KKR 2024). Capacities are
+// widely-cited approximate seated figures. Title-less clubs omit lastTitle so that row simply drops
+// (the render filters empty rows), which also avoids an em dash in user-facing copy.
+const vitalStats = {
+  "CSK":  { firstSeason: 2008, ground: "MA Chidambaram Stadium (Chepauk)", city: "Chennai", capacity: "~50,000", colours: "Yellow and blue", titles: "Five (2010, 2011, 2018, 2021, 2023)", lastTitle: "2023" },
+  "MI":   { firstSeason: 2008, ground: "Wankhede Stadium", city: "Mumbai", capacity: "~33,000", colours: "Blue and gold", titles: "Five (2013, 2015, 2017, 2019, 2020)", lastTitle: "2020" },
+  "RCB":  { firstSeason: 2008, ground: "M. Chinnaswamy Stadium", city: "Bengaluru", capacity: "~40,000", colours: "Red and gold", titles: "Two (2025, 2026)", lastTitle: "2026" },
+  "KKR":  { firstSeason: 2008, ground: "Eden Gardens", city: "Kolkata", capacity: "~66,000", colours: "Purple and gold", titles: "Three (2012, 2014, 2024)", lastTitle: "2024" },
+  "DC":   { firstSeason: 2008, ground: "Arun Jaitley Stadium", city: "Delhi", capacity: "~35,000", colours: "Blue and red", titles: "None yet" },
+  "SRH":  { firstSeason: 2013, ground: "Rajiv Gandhi International Cricket Stadium", city: "Hyderabad", capacity: "~55,000", colours: "Orange and black", titles: "One (2016)", lastTitle: "2016" },
+  "RR":   { firstSeason: 2008, ground: "Sawai Mansingh Stadium", city: "Jaipur", capacity: "~30,000", colours: "Pink and blue", titles: "One (2008)", lastTitle: "2008" },
+  "PBKS": { firstSeason: 2008, ground: "Maharaja Yadavindra Singh Stadium (Mullanpur)", city: "New Chandigarh", capacity: "~38,000", colours: "Red and silver", titles: "None yet" },
+  "GT":   { firstSeason: 2022, ground: "Narendra Modi Stadium", city: "Ahmedabad", capacity: "~132,000", colours: "Navy and gold", titles: "One (2022)", lastTitle: "2022" },
+  "LSG":  { firstSeason: 2022, ground: "Ekana Cricket Stadium", city: "Lucknow", capacity: "~50,000", colours: "Teal and navy", titles: "None yet" }
+};
+
+export { moduleQuestions, teams, archetypes, teamTextColors, milestones, vitalStats, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };
