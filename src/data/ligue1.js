@@ -449,7 +449,7 @@ const teamDims = {
 const moduleQuestions = [
   { id:"l1_q1", type:"choice", phase:"The fine print", question:"There's always someone with all the money, soaking up the best of everything. You:",
     options:[ {label:"Want to drag them down a peg. Beating the giant is the sweetest win there is.", value:"A"}, {label:"Wish I were them. If the money showed up, I'd take it.", value:"B"}, {label:"Barely think about them. Too busy with my own thing.", value:"C"}, {label:"Want to beat them on merit, with less. The only win that counts.", value:"D"}, ] },
-  { id:"l1_q2", type:"choice", phase:"The fine print", question:"The whole spectacle in the stands, the noise and the color. Where are you in it?",
+  { id:"l1_q2", type:"choice", phase:"The fine print", question:"When a thing you love turns into a crowd, all noise and color, where are you in it?",
     options:[ {label:"Right in it. I help make the noise. It's half the reason I come.", value:"A"}, {label:"Swept up in it. I sing along and feel part of something.", value:"B"}, {label:"Feeling it quietly. It moves me, I just don't show it big.", value:"C"}, {label:"Kept at arm's length. I came for the football, not the pageantry.", value:"D"}, ] },
   { id:"l1_q3", type:"choice", phase:"The fine print", question:"Sitting with the memory of a greatness that's slipped into the past, you feel it:",
     options:[ {label:"As a weight. The best days are behind, and the gap aches.", value:"A"}, {label:"As pride and fuel. That history is proof of what I am.", value:"B"}, {label:"With peace. It was wonderful, it's over, that's alright.", value:"C"}, {label:"Not at all. There was never a golden age to lose, and that's freedom.", value:"D"}, ] },
