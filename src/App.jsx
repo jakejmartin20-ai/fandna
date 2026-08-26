@@ -1050,14 +1050,25 @@ function AppInner(){
         transition:"background 1s ease",
       }}/>
 
-      {/* Back to top: floats over the long single-scroll result once you have scrolled down. Display-only. */}
-      {screen==="result" && showTop && (
-        <button type="button" aria-label="Back to top"
-          onClick={()=>{ const rm = typeof window!=="undefined" && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; try{ window.scrollTo({top:0,behavior:rm?"auto":"smooth"}); }catch(e){ try{ window.scrollTo(0,0); }catch(_){} } }}
-          style={{position:"fixed",right:18,bottom:20,zIndex:40,width:44,height:44,borderRadius:"50%",background:"rgba(30,30,46,0.92)",border:"1px solid #34344a",color:"#c8c4d8",fontSize:19,lineHeight:1,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 4px 16px rgba(0,0,0,0.45)",backdropFilter:"blur(4px)",WebkitBackdropFilter:"blur(4px)",animation:"fadeIn .2s ease"}}
-          onMouseEnter={e=>{e.currentTarget.style.borderColor="#5a5a7a";e.currentTarget.style.color="#efe9e3";}}
-          onMouseLeave={e=>{e.currentTarget.style.borderColor="#34344a";e.currentTarget.style.color="#c8c4d8";}}
-        >{"\u2191"}</button>
+      {/* Floating nav on the long single-scroll result: Home is always reachable; back-to-top joins
+          once you have scrolled down. Display-only. (s58: home was easy to miss at the top only.) */}
+      {screen==="result" && (
+        <div style={{position:"fixed",right:18,bottom:20,zIndex:40,display:"flex",flexDirection:"column",alignItems:"center",gap:10}}>
+          {showTop && (
+            <button type="button" aria-label="Back to top"
+              onClick={()=>{ const rm = typeof window!=="undefined" && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; try{ window.scrollTo({top:0,behavior:rm?"auto":"smooth"}); }catch(e){ try{ window.scrollTo(0,0); }catch(_){} } }}
+              style={{width:44,height:44,borderRadius:"50%",background:"rgba(30,30,46,0.92)",border:"1px solid #34344a",color:"#c8c4d8",fontSize:19,lineHeight:1,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 4px 16px rgba(0,0,0,0.45)",backdropFilter:"blur(4px)",WebkitBackdropFilter:"blur(4px)",animation:"fadeIn .2s ease"}}
+              onMouseEnter={e=>{e.currentTarget.style.borderColor="#5a5a7a";e.currentTarget.style.color="#efe9e3";}}
+              onMouseLeave={e=>{e.currentTarget.style.borderColor="#34344a";e.currentTarget.style.color="#c8c4d8";}}
+            >{"\u2191"}</button>
+          )}
+          <button type="button" aria-label="Back to your FanDNA home"
+            onClick={()=>{ try{ window.scrollTo(0,0); }catch(e){} setScreen("home"); }}
+            style={{width:44,height:44,borderRadius:"50%",background:"rgba(30,30,46,0.92)",border:"1px solid #34344a",color:"#c8c4d8",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 4px 16px rgba(0,0,0,0.45)",backdropFilter:"blur(4px)",WebkitBackdropFilter:"blur(4px)"}}
+            onMouseEnter={e=>{e.currentTarget.style.borderColor="#5a5a7a";e.currentTarget.style.color="#efe9e3";}}
+            onMouseLeave={e=>{e.currentTarget.style.borderColor="#34344a";e.currentTarget.style.color="#c8c4d8";}}
+          ><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 11.2 12 4l9 7.2"/><path d="M5.5 9.6V20h13V9.6"/></svg></button>
+        </div>
       )}
 
       {/* Re-sequence core confirm: re-answering the core can move clubs, so set that expectation. */}
@@ -1231,13 +1242,14 @@ function AppInner(){
             <div style={{marginBottom:14,display:"flex",justifyContent:"space-between",alignItems:"center"}}>
               <button onClick={()=>setScreen("home")}
                 style={{
-                  background:"none",border:"none",padding:0,
-                  color:"#9898b8",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",
-                  fontFamily:"'DM Mono',monospace",cursor:"pointer",transition:"color .15s",
+                  display:"inline-flex",alignItems:"center",gap:7,
+                  background:"rgba(152,152,184,0.08)",border:"1px solid #34344a",borderRadius:20,padding:"6px 13px 6px 11px",
+                  color:"#b8b8d0",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",
+                  fontFamily:"'DM Mono',monospace",cursor:"pointer",transition:"all .15s",
                 }}
-                onMouseEnter={e=>e.currentTarget.style.color="#ccc"}
-                onMouseLeave={e=>e.currentTarget.style.color="#9898b8"}
-              >← Your FanDNA</button>
+                onMouseEnter={e=>{e.currentTarget.style.color="#efe9e3";e.currentTarget.style.borderColor="#5a5a7a";}}
+                onMouseLeave={e=>{e.currentTarget.style.color="#b8b8d0";e.currentTarget.style.borderColor="#34344a";}}
+              ><span aria-hidden="true" style={{fontSize:13,lineHeight:1}}>←</span> Your FanDNA</button>
               <span style={{fontSize:11,color:"#8484b0",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>
                 {(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"}
               </span>
