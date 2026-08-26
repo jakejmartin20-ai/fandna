@@ -257,6 +257,7 @@ function AppInner(){
   const [savedCore,setSavedCore]=useState(null); // cached {coreAnswers,coreProfile} for module-only retakes
   const [savedSpine,setSavedSpine]=useState(null); // cached shared-spine answers {S1..S7}, answered once
   const [resequenceConfirm,setResequenceConfirm]=useState(false); // the "re-sequence core?" confirm modal
+  const [exitConfirm,setExitConfirm]=useState(false); // leave-the-quiz confirm (in-app, s58)
   const [resequenceDelta,setResequenceDelta]=useState(null);      // {moved:[{sport,from,to}],stale:[...]} shown once after a re-sequence
   const [coreProfile,setCoreProfile]=useState(null); // the user's 7-dim core; drives the strip everywhere
   const [landed,setLanded]=useState(true);        // result reveal: club-card head hidden until the strip has read, then lands (finish path only)
@@ -372,6 +373,16 @@ function AppInner(){
     mk("mod",seqLeagueName,"#c9b27a","#c9b27a",modLen);
     return out;
   },[sequence,cur,seqLeagueName,coreIds,spineIds]);
+
+  // Per-stage count (Baymard chunking): count WITHIN the active stage, not the flat total, so a
+  // long first take reads as three short, finishable parts (Core / Instincts / Sport) and the
+  // denominator resets at each new part instead of ever showing "of 35". Progress-only.
+  const stageCoreLen  = sequence.filter(x=>coreIds.has(x.id)).length;
+  const stageSpineLen = sequence.filter(x=>spineIds.has(x.id)).length;
+  let stageLabel, stageIdx, stageTotal;
+  if(cur < stageCoreLen){ stageLabel="Core"; stageIdx=cur+1; stageTotal=stageCoreLen; }
+  else if(cur < stageCoreLen+stageSpineLen){ stageLabel="Instincts"; stageIdx=cur-stageCoreLen+1; stageTotal=stageSpineLen; }
+  else { stageLabel=seqLeagueName; stageIdx=cur-stageCoreLen-stageSpineLen+1; stageTotal=Math.max(1,sequence.length-stageCoreLen-stageSpineLen); }
 
   // Resume a previously completed PL genome. The result is PRELOADED so the completed
   // strand on the home screen is tappable straight to it, but we stay on the home screen
@@ -1103,6 +1114,24 @@ function AppInner(){
         </div>
       )}
 
+      {/* Leave-the-take confirm: answers only commit at the finish, so a mid-take exit discards
+          this run. In-app modal (matches re-sequence) rather than a native dialog. */}
+      {exitConfirm&&(
+        <div role="dialog" aria-modal="true" aria-label="Leave this take"
+          style={{position:"fixed",inset:0,zIndex:50,display:"flex",alignItems:"center",justifyContent:"center",padding:"24px",background:"rgba(10,10,16,0.72)",animation:"fadeIn .18s ease"}}
+          onClick={()=>setExitConfirm(false)}>
+          <div onClick={e=>e.stopPropagation()}
+            style={{width:"100%",maxWidth:400,background:"#1c1c28",border:"1px solid #2a2a3a",borderRadius:14,padding:"26px 24px",animation:"popIn .2s ease"}}>
+            <div style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:500,fontSize:25,color:"#e8e4de",marginBottom:12}}>Leave this take?</div>
+            <p style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:16,color:"#9e9eba",lineHeight:1.5,margin:"0 0 18px"}}>Your answers so far aren't saved yet, so you'd start this one fresh next time. Anything you've already sequenced stays put.</p>
+            <div style={{display:"flex",gap:12,justifyContent:"center"}}>
+              <button onClick={()=>{ setExitConfirm(false); try{window.scrollTo(0,0);}catch(e){} setScreen("home"); }} style={{background:"#6a5ad0",border:"none",borderRadius:6,padding:"11px 22px",color:"#f0eefb",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.18em",textTransform:"uppercase",cursor:"pointer"}}>Leave</button>
+              <button onClick={()=>setExitConfirm(false)} style={{background:"none",border:"1px solid #4a4a6a",borderRadius:6,padding:"11px 22px",color:"#9898b8",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.18em",textTransform:"uppercase",cursor:"pointer"}}>Stay</button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div style={{
         width:"100%",maxWidth:560,position:"relative",zIndex:1,
         animation:`${phase==="out"?"slideOut":"slideIn"} .22s ease forwards`,
@@ -1164,7 +1193,7 @@ function AppInner(){
               FanDNA quiz: {mode==="core" ? "Your core" : ((SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League")}
             </h1>
             <div aria-live="polite" style={{position:"absolute",width:1,height:1,padding:0,margin:-1,overflow:"hidden",clip:"rect(0,0,0,0)",whiteSpace:"nowrap",border:0}}>
-              Question {cur+1} of {sequence.length}
+              {stageLabel}, question {stageIdx} of {stageTotal}
             </div>
             {/* League indicator: which sequence you're taking, always visible */}
             <div style={{textAlign:"center",marginBottom:14,fontSize:11,color:"#8484b0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>
@@ -1199,14 +1228,28 @@ function AppInner(){
                   border:`1px solid ${phaseColors[currentPhase]||"#333"}`,
                   background:`${phaseColors[currentPhase]||"#333"}22`,
                   padding:"4px 10px",borderRadius:20,fontWeight:500,
-                  maxWidth:"clamp(100px,35vw,180px)",overflow:"hidden",
+                  maxWidth:"clamp(90px,32vw,180px)",overflow:"hidden",
                   textOverflow:"ellipsis",whiteSpace:"nowrap",
                 }}>
                   {phaseShortNames[currentPhase]||currentPhase}
                 </span>
                 <span style={{fontSize:10,color:"#aaa",letterSpacing:"0.15em",fontFamily:"'DM Mono',monospace"}}>
-                  {cur+1}/{sequence.length}
+                  {stageIdx}/{stageTotal}
                 </span>
+                {/* Quiet exit: leave the take and return to the genome home. Confirms mid-take so a
+                    mis-tap never discards answers (which only commit at the finish). */}
+                <button type="button" aria-label="Leave this take"
+                  onClick={()=>{ if(cur===0){ try{window.scrollTo(0,0);}catch(e){} setScreen("home"); } else { setExitConfirm(true); } }}
+                  style={{width:30,height:30,background:"none",border:"none",padding:0,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",position:"relative",flexShrink:0}}
+                  onMouseEnter={e=>{const h=e.currentTarget.querySelector(".qhex"); if(h)h.setAttribute("stroke","#6a6a8a");}}
+                  onMouseLeave={e=>{const h=e.currentTarget.querySelector(".qhex"); if(h)h.setAttribute("stroke","#3a3a4e");}}
+                >
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path className="qhex" d="M12 2.4 L20.3 7.2 L20.3 16.8 L12 21.6 L3.7 16.8 L3.7 7.2 Z" stroke="#3a3a4e" strokeWidth="1.3"/>
+                    <path d="M8 12.1 12 8.9l4 3.2" stroke="#8a8ab0" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M9.1 11.4V15.4h5.8v-4" stroke="#8a8ab0" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
               </div>
             </div>
 
@@ -1215,6 +1258,9 @@ function AppInner(){
               <div style={{textAlign:"center",marginBottom:26}}>
                 <div style={{fontSize:11,color:"#8484b0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:10}}>{mode==="core"?"Re-sequencing your core":"Which team are you, really?"}</div>
                 <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(14px,3.4vw,17px)",color:"#9898b8",lineHeight:1.55,margin:0}}>{mode==="core"?"Answer honestly, not how you wish you were. When you finish, every league you have taken re-reads against the new you.":mode==="module"?`Your core is already sequenced. ${moduleQuestions.length} questions to remap your ${(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"} strand.`:"Answer honestly, not how you wish you were. New to the league or loyal for life, this is the club in your DNA."}</p>
+                {mode==="full"&&(
+                  <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.16em",textTransform:"uppercase",color:"#7a7a98",marginTop:13}}>{quizStages.length} short parts &middot; about 5 minutes</div>
+                )}
               </div>
             )}
 
