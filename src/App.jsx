@@ -481,9 +481,10 @@ function AppInner(){
     return()=>window.removeEventListener("keydown",h);
   },[cur,q,result,screen]);
 
-  // Back-to-top: show a jump-to-top button once the reader is well down the long result scroll.
+  // Back-to-top: show a jump-to-top button once the reader is well down a long single-scroll
+  // page - the result AND the continuous-scroll genome home (s58).
   useEffect(()=>{
-    if(screen!=="result"){ setShowTop(false); return; }
+    if(screen!=="result"&&screen!=="home"){ setShowTop(false); return; }
     const onScroll=()=>setShowTop(window.scrollY>640);
     onScroll();
     window.addEventListener("scroll",onScroll,{passive:true});
@@ -849,6 +850,14 @@ function AppInner(){
     ["Colours",    vit.colours],
     ["Drivers",    vit.drivers],
     ["Principal",  vit.principal],
+  ] : activeSport==="IPL" ? [
+    ["First season", String(vit.firstSeason)],
+    ["Home ground",  vit.ground],
+    ["City",         vit.city],
+    ["Capacity",     vit.capacity],
+    ["Colours",      vit.colours],
+    ["Titles",       vit.titles],
+    ["Last title",   vit.lastTitle],
   ] : activeSport!=="PL" ? [
     ["Nickname",   vit.nickname],
     ["Founded",    String(vit.founded)],
@@ -1063,7 +1072,7 @@ function AppInner(){
 
       {/* Floating nav on the long single-scroll result: Home is always reachable; back-to-top joins
           once you have scrolled down. Hex-shaped (s58) so the FABs wear the FanDNA badge. Display-only. */}
-      {screen==="result" && (
+      {(screen==="result"||(screen==="home"&&showTop)) && (
         <div style={{position:"fixed",right:18,bottom:20,zIndex:40,display:"flex",flexDirection:"column",alignItems:"center",gap:12}}>
           {showTop && (
             <button type="button" aria-label="Back to top"
@@ -1076,6 +1085,7 @@ function AppInner(){
               <span className="fico" style={{position:"relative",color:"#c8c4d8",fontSize:19,lineHeight:1}}>{"\u2191"}</span>
             </button>
           )}
+          {screen==="result" && (
           <button type="button" aria-label="Back to your FanDNA home"
             onClick={()=>{ try{ window.scrollTo(0,0); }catch(e){} setScreen("home"); }}
             style={{width:46,height:46,background:"none",border:"none",padding:0,cursor:"pointer",position:"relative",display:"flex",alignItems:"center",justifyContent:"center",filter:"drop-shadow(0 4px 12px rgba(0,0,0,0.5))"}}
@@ -1087,6 +1097,7 @@ function AppInner(){
               <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5"/><path d="M6.2 10.2V19h11.6v-8.8"/></svg>
             </span>
           </button>
+          )}
         </div>
       )}
 
