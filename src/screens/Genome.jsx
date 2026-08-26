@@ -272,7 +272,7 @@ export function GenomeHome({
             {complete ? (
               <button type="button" onClick={()=>onOpenCrest&&onOpenCrest(fam)} aria-label={`View your ${fam.label} crest`}
                 style={{display:"flex",alignItems:"center",gap:6,background:"rgba(201,178,122,0.12)",border:"1px solid rgba(201,178,122,0.5)",borderRadius:20,padding:"4px 11px 4px 9px",cursor:"pointer",flexShrink:0}}>
-                <svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true"><polygon points="8,1 9.705,5.654 14.657,5.837 10.758,8.896 12.115,13.663 8,10.9 3.885,13.663 5.242,8.896 1.343,5.837 6.295,5.654" fill="#c9b27a"/></svg>
+                <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L20.5 7.1 L20.5 16.9 L12 21.8 L3.5 16.9 L3.5 7.1 Z" fill="#c9b27a33" stroke="#c9b27a" strokeWidth="1.6"/><circle cx="12" cy="12" r="2.3" fill="#c9b27a"/></svg>
                 <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#d8c184",letterSpacing:"0.16em",textTransform:"uppercase"}}>View crest</span>
               </button>
             ) : (liveInFam.length>0&&(<span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:COUNT,letterSpacing:"0.12em",textTransform:"uppercase",flexShrink:0}}>{doneN} of {list.length} mapped</span>))}
@@ -457,7 +457,7 @@ export function GenomeHome({
               <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.16em",textTransform:"uppercase",color:PLBL}}>{pillLabel}</span>
               <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.04em",color:COUNT}}>{doneN}/{total}</span>
               {pillComplete&&(
-                <svg width="11" height="11" viewBox="0 0 16 16" aria-hidden="true" style={{flexShrink:0}}><polygon points="8,1 9.705,5.654 14.657,5.837 10.758,8.896 12.115,13.663 8,10.9 3.885,13.663 5.242,8.896 1.343,5.837 6.295,5.654" fill="#c9b27a"/></svg>
+                <svg width="11" height="11" viewBox="0 0 24 24" aria-hidden="true" style={{flexShrink:0}}><path d="M12 2.2 L20.5 7.1 L20.5 16.9 L12 21.8 L3.5 16.9 L3.5 7.1 Z" fill="#c9b27a33" stroke="#c9b27a" strokeWidth="1.6"/><circle cx="12" cy="12" r="2.3" fill="#c9b27a"/></svg>
               )}
               {isNew&&(
                 <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.14em",color:"#c9b27a",background:"rgba(201,178,122,0.14)",borderRadius:4,padding:"1px 5px"}}>NEW</span>
