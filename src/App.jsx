@@ -1067,7 +1067,7 @@ function AppInner(){
             style={{width:44,height:44,borderRadius:"50%",background:"rgba(30,30,46,0.92)",border:"1px solid #34344a",color:"#c8c4d8",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",boxShadow:"0 4px 16px rgba(0,0,0,0.45)",backdropFilter:"blur(4px)",WebkitBackdropFilter:"blur(4px)"}}
             onMouseEnter={e=>{e.currentTarget.style.borderColor="#5a5a7a";e.currentTarget.style.color="#efe9e3";}}
             onMouseLeave={e=>{e.currentTarget.style.borderColor="#34344a";e.currentTarget.style.color="#c8c4d8";}}
-          ><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 11.2 12 4l9 7.2"/><path d="M5.5 9.6V20h13V9.6"/></svg></button>
+          ><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.2 L20.5 7.1 L20.5 16.9 L12 21.8 L3.5 16.9 L3.5 7.1 Z" stroke="#8a8ac0" strokeWidth="1.5"/><path d="M7.4 12.1 12 8.4l4.6 3.7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M8.7 11.2V16h6.6v-4.8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></button>
         </div>
       )}
 
@@ -1249,7 +1249,7 @@ function AppInner(){
                 }}
                 onMouseEnter={e=>{e.currentTarget.style.color="#efe9e3";e.currentTarget.style.borderColor="#5a5a7a";}}
                 onMouseLeave={e=>{e.currentTarget.style.color="#b8b8d0";e.currentTarget.style.borderColor="#34344a";}}
-              ><span aria-hidden="true" style={{fontSize:13,lineHeight:1}}>←</span> Your FanDNA</button>
+              ><span aria-hidden="true" style={{fontSize:13,lineHeight:1}}>←</span> Your full FanDNA</button>
               <span style={{fontSize:11,color:"#8484b0",letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>
                 {(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"}
               </span>
