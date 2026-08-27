@@ -12,6 +12,7 @@ import { pingResult } from "./lib/telemetry";
 import { generateShareCard } from "./lib/card";
 import { ChoiceQ, BinaryQ, SliderQ } from "./components/quiz";
 import { ClubMark } from "./components/ClubMark";
+import { DumpView } from "./components/DumpView";
 import { GenomeHome } from "./screens/Genome";
 import { coreBlocks, generateRead } from "./lib/genomeRead";
 
@@ -1002,6 +1003,13 @@ function AppInner(){
   // The recipient's OWN genome, read fresh from storage for the compare route (refreshes after a
   // recruit finishes the quiz). Kept out of JSX per the no-logic-in-JSX house rule.
   const compareMe = useMemo(()=>{ const st=loadState(); return {coreProfile:st.coreProfile, results:st.results||{}}; }, [screen, genome, coreProfile]);
+
+  // ?dump: a display-only export of the saved genome for copy-off on mobile (same hook style as
+  // ?beach / ?ipl). Placed after all hooks so the early return never trips the rules-of-hooks.
+  // Reads storage only; imports nothing from the scoring path; cannot move a match.
+  if (typeof window!=="undefined" && new URLSearchParams(window.location.search).has("dump")) {
+    return <DumpView/>;
+  }
 
   return(
     <div ref={containerRef} className="app-root" style={{
