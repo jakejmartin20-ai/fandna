@@ -22,6 +22,7 @@ const CLUBS = {
   F1: new Set(["FER","MER","MCL","RBR","WIL","AST","ALP","HAA","RB","AUD","CAD"]),
   AFL: new Set(["CAR","COL","ESS","GEE","HAW","MEL","NTH","RIC","STK","WBD","ADE","PTA","WCE","FRE","SYD","GWS","BRL","GCS"]),
   IPL: new Set(["CSK","MI","RCB","KKR","DC","SRH","RR","PBKS","GT","LSG"]),
+  TOP14: new Set(["TLS","RCT","UBB","LAR","ASM","SFP","R92","ABR","PAU","USP","CAS","MHR","LOU","USM"]),
 };
 const BANDS = new Set(["tie", "close", "mid", "clear"]);
 
