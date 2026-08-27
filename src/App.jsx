@@ -12,7 +12,6 @@ import { pingResult } from "./lib/telemetry";
 import { generateShareCard } from "./lib/card";
 import { ChoiceQ, BinaryQ, SliderQ } from "./components/quiz";
 import { ClubMark } from "./components/ClubMark";
-import { DumpView } from "./components/DumpView";
 import { GenomeHome } from "./screens/Genome";
 import { coreBlocks, generateRead } from "./lib/genomeRead";
 
@@ -295,6 +294,7 @@ function AppInner(){
   const f1Unlocked  = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("f1");
   const aflUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("afl");
   const iplUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("ipl");
+  const top14Unlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("top14");
   const sportsList = SPORTS.map(s=>
     s.code==="NFL" ? {...s, live: s.live||nflUnlocked} :
     s.code==="MLB" ? {...s, live: s.live||mlbUnlocked} :
@@ -307,7 +307,8 @@ function AppInner(){
     s.code==="NHL" ? {...s, live: s.live||nhlUnlocked} :
     s.code==="F1"  ? {...s, live: s.live||f1Unlocked} :
     s.code==="AFL" ? {...s, live: s.live||aflUnlocked} :
-    s.code==="IPL" ? {...s, live: s.live||iplUnlocked} : s);
+    s.code==="IPL" ? {...s, live: s.live||iplUnlocked} :
+    s.code==="TOP14" ? {...s, live: s.live||top14Unlocked} : s);
 
   // Active sport's data, bound to the same names the screens already use, so the result
   // screen and quiz read the right sport with no other changes. PL behaves exactly as before.
@@ -859,6 +860,14 @@ function AppInner(){
     ["Colours",      vit.colours],
     ["Titles",       vit.titles],
     ["Last title",   vit.lastTitle],
+  ] : activeSport==="TOP14" ? [
+    ["Founded",       String(vit.founded)],
+    ["Home ground",   vit.ground],
+    ["City",          vit.city],
+    ["Colours",       vit.colours],
+    ["French titles", vit.titles],
+    ["European",      vit.european],
+    ["Last title",    vit.lastTitle],
   ] : activeSport!=="PL" ? [
     ["Nickname",   vit.nickname],
     ["Founded",    String(vit.founded)],
@@ -886,7 +895,7 @@ function AppInner(){
   // never with personality framing. No "nearest to your sequence", no similarity copy, no
   // "what you share". A matrix score that finished close is a fact; a close identity is a
   // claim the matrix cannot back. PL gaps are integer matrix points and display as integers.
-  const READOUT_K = { MLB: 4, CFB: 4, NFL: 4, NHL: 4, F1: 4, AFL: 4, IPL: 4, PL: 3 };
+  const READOUT_K = { MLB: 4, CFB: 4, NFL: 4, NHL: 4, F1: 4, AFL: 4, IPL: 4, TOP14: 4, PL: 3 };
   const readoutRows = result
     ? sortedOthers.slice(0, READOUT_K[activeSport]||3).filter(([k])=>teams[k])
     : [];
@@ -1003,13 +1012,6 @@ function AppInner(){
   // The recipient's OWN genome, read fresh from storage for the compare route (refreshes after a
   // recruit finishes the quiz). Kept out of JSX per the no-logic-in-JSX house rule.
   const compareMe = useMemo(()=>{ const st=loadState(); return {coreProfile:st.coreProfile, results:st.results||{}}; }, [screen, genome, coreProfile]);
-
-  // ?dump: a display-only export of the saved genome for copy-off on mobile (same hook style as
-  // ?beach / ?ipl). Placed after all hooks so the early return never trips the rules-of-hooks.
-  // Reads storage only; imports nothing from the scoring path; cannot move a match.
-  if (typeof window!=="undefined" && new URLSearchParams(window.location.search).has("dump")) {
-    return <DumpView/>;
-  }
 
   return(
     <div ref={containerRef} className="app-root" style={{
