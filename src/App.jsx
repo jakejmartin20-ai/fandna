@@ -5,6 +5,7 @@ import { coreQuestions, DIM_ORDER, DIM_LABELS } from "./data/core";
 import { spineQuestions } from "./data/spine";
 import { SPORT_DATA } from "./lib/sportData";
 import { scoreCore, scoreModule, matchEvidence, decompressProfile } from "./lib/scoring";
+import { computeWhy } from "./lib/whyYou";
 import { loadState, saveResult, saveSpine, clearAll, appendPending, readPending, clearPending, markGroupEarned } from "./lib/storage";
 import { newlyCompletedGroup, groupClubColors, allBucketsComplete, completedGroups } from "./lib/crest";
 import { hasCompletedAll } from "./lib/beachGate";
@@ -1405,13 +1406,13 @@ function AppInner(){
                 {/* Fandom vs FanDNA reframe (per 1b) - sport-aware */}
                 <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(15px,3.4vw,18px)",fontStyle:"italic",color:"#9898b8",lineHeight:1.6,margin:"6px 0 22px"}}>This is your {regOf(activeSport).noun} by DNA. {regOf(activeSport).tail}</p>
             <ChapterHead n="02" title="Why you" sub="the answers and traits behind it" color={team.color} textColor={teamTextColors[result]||team.color}/>
-                {Array.isArray(team.why)&&team.why.length>0&&(
+                {(()=>{ const whyLines = coreProfile ? computeWhy(coreProfile, D.teamDims[result], activeSport, result) : []; return whyLines.length>0 && (
                   <div style={{borderLeft:`2px solid ${teamTextColors[result]||team.color}`,paddingLeft:14,margin:"0 0 22px"}}>
-                    {team.why.map((w,i)=>(
-                      <p key={i} style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(17px,4vw,20px)",fontWeight:300,color:"#e8e4de",lineHeight:1.5,margin:0,paddingTop:i?12:0,paddingBottom:i===team.why.length-1?0:12,borderTop:i?"1px solid #242433":"none"}}>{w}</p>
+                    {whyLines.map((w,i)=>(
+                      <p key={i} style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(17px,4vw,20px)",fontWeight:300,color:"#e8e4de",lineHeight:1.5,margin:0,paddingTop:i?12:0,paddingBottom:i===whyLines.length-1?0:12,borderTop:i?"1px solid #242433":"none"}}>{w}</p>
                     ))}
                   </div>
-                )}
+                ); })()}
                 <MatchEvidence evidence={evidence} clubName={team.name} color={teamTextColors[result]||team.color} noun={regOf(activeSport).noun} section="why"/>
                 <div style={{marginTop:28,paddingTop:24,borderTop:"1px solid #1e1e2e"}}>
                 {coreProfile ? (
