@@ -42,6 +42,9 @@ const REGISTER = {
   IPL: { noun: "franchise",  worn: "jersey", team: "franchise", teams: "franchises", league: "IPL", leagueAbbr: "IPL", leagueIn: "the IPL",
          tail: "Who you roar for through the summer is up to you.",
          xmHeader: "Already have a franchise?", xmEscape: "I don't follow the IPL" },
+  TOP14: { noun: "club",     worn: "shirt", team: "club", teams: "clubs", league: "Top 14", leagueAbbr: "Top 14", leagueIn: "the Top 14",
+         tail: "Who you sing for on a Saturday is up to you.",
+         xmHeader: "Already have a club?", xmEscape: "I don't follow the Top 14" },
 };
 function regOf(s){ return REGISTER[s] || REGISTER.PL; }
 

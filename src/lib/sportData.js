@@ -24,6 +24,8 @@ import * as AFLbase from "../data/afl";
 import * as AFLspine from "../data/afl-spine";
 import * as IPLbase from "../data/ipl";
 import * as IPLspine from "../data/ipl-spine";
+import * as TOP14base from "../data/top14";
+import * as TOP14spine from "../data/top14-spine";
 
 // NBA runs the shared cross-sport spine (Option B): the quiz shows its 6 unique questions (from the
 // nba-spine add-on) and carries the spine tables, while every other field still comes from nba.js.
@@ -101,6 +103,11 @@ const MLB = { ...MLBbase, moduleQuestions: MLBspine.moduleQuestions, spineScorin
 // carries all 7 spine tables. No display re-scene needed - none of the 4 module questions echoes a
 // scored spine slot (they are the 4 spine-orthogonal cricket axes). Hidden-first (?ipl preview).
 const IPL = { ...IPLbase, moduleQuestions: IPLspine.moduleQuestions, spineScoring: IPLspine.spineScoring, spinePhase: IPLspine.spinePhase };
-const SPORT_DATA = { PL, NFL, MLB, NBA, BL, LL, L1, SA, CFB, NHL, F1, AFL, IPL };
+
+// Top 14 runs the shared spine (s60): same pattern as the soccer leagues. It shows its 4 unique
+// questions and carries the S6/S7 spine tables, while every other field comes from top14.js. The 4
+// module questions are the spine-orthogonal axes (talent / circus / belonging / reverence). Hidden-first (?top14).
+const TOP14 = { ...TOP14base, moduleQuestions: TOP14spine.moduleQuestions, spineScoring: TOP14spine.spineScoring, spinePhase: TOP14spine.spinePhase };
+const SPORT_DATA = { PL, NFL, MLB, NBA, BL, LL, L1, SA, CFB, NHL, F1, AFL, IPL, TOP14 };
 
 export { SPORT_DATA };
