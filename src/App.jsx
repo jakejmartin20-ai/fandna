@@ -296,6 +296,7 @@ function AppInner(){
   const aflUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("afl");
   const iplUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("ipl");
   const top14Unlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("top14");
+  const elUnlocked = typeof window!=="undefined" && new URLSearchParams(window.location.search).has("euroleague");
   const sportsList = SPORTS.map(s=>
     s.code==="NFL" ? {...s, live: s.live||nflUnlocked} :
     s.code==="MLB" ? {...s, live: s.live||mlbUnlocked} :
@@ -309,7 +310,8 @@ function AppInner(){
     s.code==="F1"  ? {...s, live: s.live||f1Unlocked} :
     s.code==="AFL" ? {...s, live: s.live||aflUnlocked} :
     s.code==="IPL" ? {...s, live: s.live||iplUnlocked} :
-    s.code==="TOP14" ? {...s, live: s.live||top14Unlocked} : s);
+    s.code==="TOP14" ? {...s, live: s.live||top14Unlocked} :
+    s.code==="EL" ? {...s, live: s.live||elUnlocked} : s);
 
   // Active sport's data, bound to the same names the screens already use, so the result
   // screen and quiz read the right sport with no other changes. PL behaves exactly as before.
@@ -869,6 +871,14 @@ function AppInner(){
     ["French titles", vit.titles],
     ["European",      vit.european],
     ["Last title",    vit.lastTitle],
+  ] : activeSport==="EL" ? [
+    ["Founded",      String(vit.founded)],
+    ["Arena",        vit.arena],
+    ["City",         vit.city],
+    ["Colours",      vit.colours],
+    ["EuroLeague",   vit.titles],
+    ["Domestic",     vit.domestic],
+    ["Last title",   vit.lastTitle],
   ] : activeSport!=="PL" ? [
     ["Nickname",   vit.nickname],
     ["Founded",    String(vit.founded)],
@@ -896,7 +906,7 @@ function AppInner(){
   // never with personality framing. No "nearest to your sequence", no similarity copy, no
   // "what you share". A matrix score that finished close is a fact; a close identity is a
   // claim the matrix cannot back. PL gaps are integer matrix points and display as integers.
-  const READOUT_K = { MLB: 4, CFB: 4, NFL: 4, NHL: 4, F1: 4, AFL: 4, IPL: 4, TOP14: 4, PL: 3 };
+  const READOUT_K = { MLB: 4, CFB: 4, NFL: 4, NHL: 4, F1: 4, AFL: 4, IPL: 4, TOP14: 4, EL: 4, PL: 3 };
   const readoutRows = result
     ? sortedOthers.slice(0, READOUT_K[activeSport]||3).filter(([k])=>teams[k])
     : [];
