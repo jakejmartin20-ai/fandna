@@ -1,0 +1,1995 @@
+{
+ "meta": {
+  "sport": "EL",
+  "engine": "fingerprint-spine",
+  "generated": "2026-08-27",
+  "count": 64,
+  "note": "EuroLeague on the shared spine (all 7 slots, like F1/NBA/IPL), FP_W 0.8. 20 signatures (own-pole self-land) + 44 randoms (validated core sets). s62 build."
+ },
+ "fixtures": [
+  {
+   "id": "sig_RMA",
+   "kind": "signature",
+   "forTeam": "RMA",
+   "coreProfile": {
+    "loyalty": 8,
+    "emotion": 5,
+    "ambition": 10,
+    "process": 7,
+    "community": 4,
+    "chaos": 2,
+    "rootedness": 9
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "B",
+    "S3": "1",
+    "S4": "1",
+    "S5": "A",
+    "S6": "D",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "right",
+    "el_q4": "left"
+   },
+   "winner": "RMA",
+   "winnerName": "RMA"
+  },
+  {
+   "id": "sig_BAR",
+   "kind": "signature",
+   "forTeam": "BAR",
+   "coreProfile": {
+    "loyalty": 8,
+    "emotion": 7,
+    "ambition": 7,
+    "process": 5,
+    "community": 10,
+    "chaos": 4,
+    "rootedness": 8
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "D",
+    "S3": "3",
+    "S4": "2",
+    "S5": "B",
+    "S6": "B",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "left",
+    "el_q3": "right",
+    "el_q4": "right"
+   },
+   "winner": "BAR",
+   "winnerName": "BAR"
+  },
+  {
+   "id": "sig_BAS",
+   "kind": "signature",
+   "forTeam": "BAS",
+   "coreProfile": {
+    "loyalty": 6,
+    "emotion": 4,
+    "ambition": 5,
+    "process": 10,
+    "community": 5,
+    "chaos": 3,
+    "rootedness": 8
+   },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "B",
+    "S3": "4",
+    "S4": "2",
+    "S5": "C",
+    "S6": "B",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "BAS",
+   "winnerName": "BAS"
+  },
+  {
+   "id": "sig_VAL",
+   "kind": "signature",
+   "forTeam": "VAL",
+   "coreProfile": {
+    "loyalty": 6,
+    "emotion": 4,
+    "ambition": 6,
+    "process": 8,
+    "community": 8,
+    "chaos": 2,
+    "rootedness": 5
+   },
+   "spineAnswers": {
+    "S1": "D",
+    "S2": "C",
+    "S3": "3",
+    "S4": "4",
+    "S5": "C",
+    "S6": "B",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "VAL",
+   "winnerName": "VAL"
+  },
+  {
+   "id": "sig_OLY",
+   "kind": "signature",
+   "forTeam": "OLY",
+   "coreProfile": {
+    "loyalty": 9,
+    "emotion": 9,
+    "ambition": 9,
+    "process": 8,
+    "community": 9,
+    "chaos": 5,
+    "rootedness": 7
+   },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "A",
+    "S3": "1",
+    "S4": "3",
+    "S5": "B",
+    "S6": "C",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "left",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "OLY",
+   "winnerName": "OLY"
+  },
+  {
+   "id": "sig_PAN",
+   "kind": "signature",
+   "forTeam": "PAN",
+   "coreProfile": {
+    "loyalty": 8,
+    "emotion": 8,
+    "ambition": 9,
+    "process": 3,
+    "community": 5,
+    "chaos": 8,
+    "rootedness": 9
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "A",
+    "S3": "2",
+    "S4": "1",
+    "S5": "D",
+    "S6": "C",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "left",
+    "el_q3": "left",
+    "el_q4": "left"
+   },
+   "winner": "PAN",
+   "winnerName": "PAN"
+  },
+  {
+   "id": "sig_FEN",
+   "kind": "signature",
+   "forTeam": "FEN",
+   "coreProfile": {
+    "loyalty": 6,
+    "emotion": 8,
+    "ambition": 9,
+    "process": 8,
+    "community": 5,
+    "chaos": 4,
+    "rootedness": 5
+   },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "A",
+    "S3": "2",
+    "S4": "4",
+    "S5": "A",
+    "S6": "C",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "left",
+    "el_q3": "right",
+    "el_q4": "left"
+   },
+   "winner": "FEN",
+   "winnerName": "FEN"
+  },
+  {
+   "id": "sig_EFS",
+   "kind": "signature",
+   "forTeam": "EFS",
+   "coreProfile": {
+    "loyalty": 6,
+    "emotion": 6,
+    "ambition": 9,
+    "process": 9,
+    "community": 5,
+    "chaos": 3,
+    "rootedness": 8
+   },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "C",
+    "S3": "2",
+    "S4": "2",
+    "S5": "C",
+    "S6": "D",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "left"
+   },
+   "winner": "EFS",
+   "winnerName": "EFS"
+  },
+  {
+   "id": "sig_BES",
+   "kind": "signature",
+   "forTeam": "BES",
+   "coreProfile": {
+    "loyalty": 6,
+    "emotion": 7,
+    "ambition": 4,
+    "process": 3,
+    "community": 8,
+    "chaos": 8,
+    "rootedness": 5
+   },
+   "spineAnswers": {
+    "S1": "D",
+    "S2": "D",
+    "S3": "5",
+    "S4": "4",
+    "S5": "D",
+    "S6": "A",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "left",
+    "el_q3": "right",
+    "el_q4": "right"
+   },
+   "winner": "BES",
+   "winnerName": "BES"
+  },
+  {
+   "id": "sig_PTZ",
+   "kind": "signature",
+   "forTeam": "PTZ",
+   "coreProfile": {
+    "loyalty": 7,
+    "emotion": 9,
+    "ambition": 5,
+    "process": 6,
+    "community": 8,
+    "chaos": 9,
+    "rootedness": 8
+   },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "A",
+    "S3": "5",
+    "S4": "2",
+    "S5": "D",
+    "S6": "A",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "left",
+    "el_q3": "right",
+    "el_q4": "right"
+   },
+   "winner": "PTZ",
+   "winnerName": "PTZ"
+  },
+  {
+   "id": "sig_RED",
+   "kind": "signature",
+   "forTeam": "RED",
+   "coreProfile": {
+    "loyalty": 8,
+    "emotion": 8,
+    "ambition": 8,
+    "process": 5,
+    "community": 7,
+    "chaos": 6,
+    "rootedness": 8
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "D",
+    "S3": "3",
+    "S4": "2",
+    "S5": "D",
+    "S6": "A",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "left",
+    "el_q3": "right",
+    "el_q4": "left"
+   },
+   "winner": "RED",
+   "winnerName": "RED"
+  },
+  {
+   "id": "sig_MIL",
+   "kind": "signature",
+   "forTeam": "MIL",
+   "coreProfile": {
+    "loyalty": 4,
+    "emotion": 4,
+    "ambition": 9,
+    "process": 9,
+    "community": 3,
+    "chaos": 2,
+    "rootedness": 8
+   },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "B",
+    "S3": "1",
+    "S4": "2",
+    "S5": "A",
+    "S6": "C",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "left"
+   },
+   "winner": "MIL",
+   "winnerName": "MIL"
+  },
+  {
+   "id": "sig_VIR",
+   "kind": "signature",
+   "forTeam": "VIR",
+   "coreProfile": {
+    "loyalty": 7,
+    "emotion": 7,
+    "ambition": 5,
+    "process": 5,
+    "community": 7,
+    "chaos": 4,
+    "rootedness": 10
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "C",
+    "S3": "4",
+    "S4": "1",
+    "S5": "B",
+    "S6": "B",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "VIR",
+   "winnerName": "VIR"
+  },
+  {
+   "id": "sig_BAY",
+   "kind": "signature",
+   "forTeam": "BAY",
+   "coreProfile": {
+    "loyalty": 4,
+    "emotion": 3,
+    "ambition": 8,
+    "process": 8,
+    "community": 4,
+    "chaos": 2,
+    "rootedness": 4
+   },
+   "spineAnswers": {
+    "S1": "D",
+    "S2": "B",
+    "S3": "2",
+    "S4": "4",
+    "S5": "C",
+    "S6": "D",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "right",
+    "el_q3": "right",
+    "el_q4": "left"
+   },
+   "winner": "BAY",
+   "winnerName": "BAY"
+  },
+  {
+   "id": "sig_ASV",
+   "kind": "signature",
+   "forTeam": "ASV",
+   "coreProfile": {
+    "loyalty": 7,
+    "emotion": 5,
+    "ambition": 8,
+    "process": 7,
+    "community": 5,
+    "chaos": 6,
+    "rootedness": 7
+   },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "C",
+    "S3": "3",
+    "S4": "3",
+    "S5": "D",
+    "S6": "A",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "left"
+   },
+   "winner": "ASV",
+   "winnerName": "ASV"
+  },
+  {
+   "id": "sig_PRS",
+   "kind": "signature",
+   "forTeam": "PRS",
+   "coreProfile": {
+    "loyalty": 3,
+    "emotion": 6,
+    "ambition": 9,
+    "process": 7,
+    "community": 4,
+    "chaos": 8,
+    "rootedness": 2
+   },
+   "spineAnswers": {
+    "S1": "D",
+    "S2": "D",
+    "S3": "2",
+    "S4": "5",
+    "S5": "A",
+    "S6": "A",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "left",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "PRS",
+   "winnerName": "PRS"
+  },
+  {
+   "id": "sig_HAP",
+   "kind": "signature",
+   "forTeam": "HAP",
+   "coreProfile": {
+    "loyalty": 9,
+    "emotion": 8,
+    "ambition": 5,
+    "process": 4,
+    "community": 10,
+    "chaos": 7,
+    "rootedness": 7
+   },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "A",
+    "S3": "4",
+    "S4": "3",
+    "S5": "B",
+    "S6": "D",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "left",
+    "el_q3": "right",
+    "el_q4": "right"
+   },
+   "winner": "HAP",
+   "winnerName": "HAP"
+  },
+  {
+   "id": "sig_MAC",
+   "kind": "signature",
+   "forTeam": "MAC",
+   "coreProfile": {
+    "loyalty": 9,
+    "emotion": 7,
+    "ambition": 9,
+    "process": 8,
+    "community": 7,
+    "chaos": 3,
+    "rootedness": 9
+   },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "C",
+    "S3": "2",
+    "S4": "1",
+    "S5": "C",
+    "S6": "D",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "right",
+    "el_q4": "left"
+   },
+   "winner": "MAC",
+   "winnerName": "MAC"
+  },
+  {
+   "id": "sig_ZAL",
+   "kind": "signature",
+   "forTeam": "ZAL",
+   "coreProfile": {
+    "loyalty": 10,
+    "emotion": 8,
+    "ambition": 5,
+    "process": 5,
+    "community": 9,
+    "chaos": 5,
+    "rootedness": 10
+   },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "D",
+    "S3": "5",
+    "S4": "1",
+    "S5": "B",
+    "S6": "B",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "right",
+    "el_q4": "right"
+   },
+   "winner": "ZAL",
+   "winnerName": "ZAL"
+  },
+  {
+   "id": "sig_DUB",
+   "kind": "signature",
+   "forTeam": "DUB",
+   "coreProfile": {
+    "loyalty": 2,
+    "emotion": 4,
+    "ambition": 10,
+    "process": 8,
+    "community": 2,
+    "chaos": 5,
+    "rootedness": 1
+   },
+   "spineAnswers": {
+    "S1": "D",
+    "S2": "B",
+    "S3": "1",
+    "S4": "5",
+    "S5": "A",
+    "S6": "C",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "left",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "DUB",
+   "winnerName": "DUB"
+  },
+  {
+   "id": "rnd_01",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 4,
+    "emotion": 6,
+    "ambition": 6,
+    "process": 6,
+    "community": 6,
+    "chaos": 9,
+    "rootedness": 5
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "B",
+    "S3": "1",
+    "S4": "5",
+    "S5": "D",
+    "S6": "D",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "ASV",
+   "winnerName": "ASV"
+  },
+  {
+   "id": "rnd_02",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 6,
+    "emotion": 5,
+    "ambition": 7,
+    "process": 2,
+    "community": 5,
+    "chaos": 8,
+    "rootedness": 4
+   },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "C",
+    "S3": "5",
+    "S4": "5",
+    "S5": "A",
+    "S6": "D",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "left",
+    "el_q3": "right",
+    "el_q4": "left"
+   },
+   "winner": "FEN",
+   "winnerName": "FEN"
+  },
+  {
+   "id": "rnd_03",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 1,
+    "emotion": 8,
+    "ambition": 6,
+    "process": 3,
+    "community": 4,
+    "chaos": 4,
+    "rootedness": 7
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "A",
+    "S3": "5",
+    "S4": "5",
+    "S5": "A",
+    "S6": "D",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "left",
+    "el_q3": "left",
+    "el_q4": "left"
+   },
+   "winner": "PAN",
+   "winnerName": "PAN"
+  },
+  {
+   "id": "rnd_04",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 4,
+    "emotion": 6,
+    "ambition": 5,
+    "process": 4,
+    "community": 6,
+    "chaos": 7,
+    "rootedness": 4
+   },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "D",
+    "S3": "4",
+    "S4": "3",
+    "S5": "B",
+    "S6": "A",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "ASV",
+   "winnerName": "ASV"
+  },
+  {
+   "id": "rnd_05",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 5,
+    "emotion": 8,
+    "ambition": 5,
+    "process": 8,
+    "community": 5,
+    "chaos": 6,
+    "rootedness": 7
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "A",
+    "S3": "3",
+    "S4": "1",
+    "S5": "D",
+    "S6": "B",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "left",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "VIR",
+   "winnerName": "VIR"
+  },
+  {
+   "id": "rnd_06",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 8,
+    "emotion": 9,
+    "ambition": 6,
+    "process": 3,
+    "community": 3,
+    "chaos": 6,
+    "rootedness": 4
+   },
+   "spineAnswers": {
+    "S1": "D",
+    "S2": "C",
+    "S3": "2",
+    "S4": "4",
+    "S5": "B",
+    "S6": "C",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "left",
+    "el_q3": "right",
+    "el_q4": "right"
+   },
+   "winner": "FEN",
+   "winnerName": "FEN"
+  },
+  {
+   "id": "rnd_07",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 6,
+    "emotion": 7,
+    "ambition": 9,
+    "process": 6,
+    "community": 5,
+    "chaos": 5,
+    "rootedness": 7
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "A",
+    "S3": "5",
+    "S4": "1",
+    "S5": "D",
+    "S6": "A",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "left"
+   },
+   "winner": "ASV",
+   "winnerName": "ASV"
+  },
+  {
+   "id": "rnd_08",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 4,
+    "emotion": 6,
+    "ambition": 5,
+    "process": 3,
+    "community": 6,
+    "chaos": 8,
+    "rootedness": 9
+   },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "C",
+    "S3": "5",
+    "S4": "5",
+    "S5": "D",
+    "S6": "D",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "left",
+    "el_q3": "left",
+    "el_q4": "left"
+   },
+   "winner": "ASV",
+   "winnerName": "ASV"
+  },
+  {
+   "id": "rnd_09",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 5,
+    "emotion": 6,
+    "ambition": 8,
+    "process": 4,
+    "community": 7,
+    "chaos": 9,
+    "rootedness": 5
+   },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "A",
+    "S3": "4",
+    "S4": "1",
+    "S5": "A",
+    "S6": "A",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "left"
+   },
+   "winner": "PAN",
+   "winnerName": "PAN"
+  },
+  {
+   "id": "rnd_10",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 5,
+    "emotion": 7,
+    "ambition": 5,
+    "process": 10,
+    "community": 2,
+    "chaos": 6,
+    "rootedness": 5
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "A",
+    "S3": "2",
+    "S4": "3",
+    "S5": "C",
+    "S6": "A",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "left",
+    "el_q3": "right",
+    "el_q4": "left"
+   },
+   "winner": "FEN",
+   "winnerName": "FEN"
+  },
+  {
+   "id": "rnd_11",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 7,
+    "emotion": 6,
+    "ambition": 6,
+    "process": 5,
+    "community": 6,
+    "chaos": 0,
+    "rootedness": 4
+   },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "C",
+    "S3": "1",
+    "S4": "2",
+    "S5": "C",
+    "S6": "B",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "left",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "VAL",
+   "winnerName": "VAL"
+  },
+  {
+   "id": "rnd_12",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 7,
+    "emotion": 8,
+    "ambition": 6,
+    "process": 4,
+    "community": 9,
+    "chaos": 7,
+    "rootedness": 4
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "D",
+    "S3": "5",
+    "S4": "4",
+    "S5": "A",
+    "S6": "C",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "left",
+    "el_q3": "right",
+    "el_q4": "left"
+   },
+   "winner": "RED",
+   "winnerName": "RED"
+  },
+  {
+   "id": "rnd_13",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 6,
+    "emotion": 5,
+    "ambition": 5,
+    "process": 6,
+    "community": 4,
+    "chaos": 5,
+    "rootedness": 7
+   },
+   "spineAnswers": {
+    "S1": "D",
+    "S2": "A",
+    "S3": "5",
+    "S4": "1",
+    "S5": "D",
+    "S6": "A",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "left",
+    "el_q3": "left",
+    "el_q4": "left"
+   },
+   "winner": "ASV",
+   "winnerName": "ASV"
+  },
+  {
+   "id": "rnd_14",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 8,
+    "emotion": 5,
+    "ambition": 4,
+    "process": 8,
+    "community": 5,
+    "chaos": 5,
+    "rootedness": 6
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "B",
+    "S3": "2",
+    "S4": "5",
+    "S5": "A",
+    "S6": "B",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "left",
+    "el_q3": "right",
+    "el_q4": "right"
+   },
+   "winner": "BAR",
+   "winnerName": "BAR"
+  },
+  {
+   "id": "rnd_15",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 4,
+    "emotion": 6,
+    "ambition": 7,
+    "process": 4,
+    "community": 8,
+    "chaos": 7,
+    "rootedness": 7
+   },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "D",
+    "S3": "2",
+    "S4": "4",
+    "S5": "C",
+    "S6": "B",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "left",
+    "el_q3": "right",
+    "el_q4": "right"
+   },
+   "winner": "ZAL",
+   "winnerName": "ZAL"
+  },
+  {
+   "id": "rnd_16",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 2,
+    "emotion": 7,
+    "ambition": 6,
+    "process": 5,
+    "community": 5,
+    "chaos": 6,
+    "rootedness": 7
+   },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "A",
+    "S3": "2",
+    "S4": "2",
+    "S5": "B",
+    "S6": "A",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "right",
+    "el_q4": "right"
+   },
+   "winner": "PTZ",
+   "winnerName": "PTZ"
+  },
+  {
+   "id": "rnd_17",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 7,
+    "emotion": 8,
+    "ambition": 6,
+    "process": 4,
+    "community": 3,
+    "chaos": 1,
+    "rootedness": 5
+   },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "D",
+    "S3": "5",
+    "S4": "1",
+    "S5": "B",
+    "S6": "C",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "left",
+    "el_q3": "right",
+    "el_q4": "right"
+   },
+   "winner": "ZAL",
+   "winnerName": "ZAL"
+  },
+  {
+   "id": "rnd_18",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 6,
+    "emotion": 5,
+    "ambition": 8,
+    "process": 6,
+    "community": 4,
+    "chaos": 3,
+    "rootedness": 3
+   },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "D",
+    "S3": "2",
+    "S4": "1",
+    "S5": "D",
+    "S6": "D",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "right",
+    "el_q3": "right",
+    "el_q4": "left"
+   },
+   "winner": "EFS",
+   "winnerName": "EFS"
+  },
+  {
+   "id": "rnd_19",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 7,
+    "emotion": 8,
+    "ambition": 4,
+    "process": 8,
+    "community": 5,
+    "chaos": 3,
+    "rootedness": 7
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "A",
+    "S3": "3",
+    "S4": "1",
+    "S5": "B",
+    "S6": "B",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "left",
+    "el_q3": "left",
+    "el_q4": "left"
+   },
+   "winner": "VIR",
+   "winnerName": "VIR"
+  },
+  {
+   "id": "rnd_20",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 8,
+    "emotion": 7,
+    "ambition": 8,
+    "process": 6,
+    "community": 5,
+    "chaos": 5,
+    "rootedness": 6
+   },
+   "spineAnswers": {
+    "S1": "D",
+    "S2": "C",
+    "S3": "4",
+    "S4": "3",
+    "S5": "D",
+    "S6": "D",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "left",
+    "el_q3": "left",
+    "el_q4": "left"
+   },
+   "winner": "EFS",
+   "winnerName": "EFS"
+  },
+  {
+   "id": "rnd_21",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 9,
+    "emotion": 6,
+    "ambition": 8,
+    "process": 6,
+    "community": 6,
+    "chaos": 5,
+    "rootedness": 8
+   },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "D",
+    "S3": "4",
+    "S4": "2",
+    "S5": "D",
+    "S6": "D",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "PTZ",
+   "winnerName": "PTZ"
+  },
+  {
+   "id": "rnd_22",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 6,
+    "emotion": 6,
+    "ambition": 5,
+    "process": 4,
+    "community": 7,
+    "chaos": 6,
+    "rootedness": 6
+   },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "C",
+    "S3": "2",
+    "S4": "5",
+    "S5": "C",
+    "S6": "D",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "MAC",
+   "winnerName": "MAC"
+  },
+  {
+   "id": "rnd_23",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 8,
+    "emotion": 6,
+    "ambition": 6,
+    "process": 2,
+    "community": 2,
+    "chaos": 6,
+    "rootedness": 6
+   },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "D",
+    "S3": "4",
+    "S4": "4",
+    "S5": "D",
+    "S6": "C",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "left",
+    "el_q3": "right",
+    "el_q4": "right"
+   },
+   "winner": "BES",
+   "winnerName": "BES"
+  },
+  {
+   "id": "rnd_24",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 5,
+    "emotion": 5,
+    "ambition": 7,
+    "process": 3,
+    "community": 4,
+    "chaos": 5,
+    "rootedness": 4
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "A",
+    "S3": "3",
+    "S4": "1",
+    "S5": "B",
+    "S6": "A",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "VIR",
+   "winnerName": "VIR"
+  },
+  {
+   "id": "rnd_25",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 7,
+    "emotion": 6,
+    "ambition": 7,
+    "process": 2,
+    "community": 5,
+    "chaos": 4,
+    "rootedness": 6
+   },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "A",
+    "S3": "1",
+    "S4": "5",
+    "S5": "A",
+    "S6": "C",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "left"
+   },
+   "winner": "MIL",
+   "winnerName": "MIL"
+  },
+  {
+   "id": "rnd_26",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 3,
+    "emotion": 7,
+    "ambition": 6,
+    "process": 7,
+    "community": 6,
+    "chaos": 7,
+    "rootedness": 7
+   },
+   "spineAnswers": {
+    "S1": "D",
+    "S2": "B",
+    "S3": "2",
+    "S4": "4",
+    "S5": "D",
+    "S6": "A",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "left",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "BES",
+   "winnerName": "BES"
+  },
+  {
+   "id": "rnd_27",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 10,
+    "emotion": 6,
+    "ambition": 3,
+    "process": 5,
+    "community": 6,
+    "chaos": 4,
+    "rootedness": 6
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "A",
+    "S3": "5",
+    "S4": "1",
+    "S5": "A",
+    "S6": "A",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "left",
+    "el_q3": "right",
+    "el_q4": "left"
+   },
+   "winner": "PTZ",
+   "winnerName": "PTZ"
+  },
+  {
+   "id": "rnd_28",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 8,
+    "emotion": 7,
+    "ambition": 6,
+    "process": 2,
+    "community": 4,
+    "chaos": 7,
+    "rootedness": 6
+   },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "B",
+    "S3": "5",
+    "S4": "3",
+    "S5": "A",
+    "S6": "B",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "VIR",
+   "winnerName": "VIR"
+  },
+  {
+   "id": "rnd_29",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 8,
+    "emotion": 5,
+    "ambition": 6,
+    "process": 7,
+    "community": 4,
+    "chaos": 5,
+    "rootedness": 6
+   },
+   "spineAnswers": {
+    "S1": "D",
+    "S2": "A",
+    "S3": "1",
+    "S4": "1",
+    "S5": "B",
+    "S6": "C",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "left",
+    "el_q3": "right",
+    "el_q4": "left"
+   },
+   "winner": "FEN",
+   "winnerName": "FEN"
+  },
+  {
+   "id": "rnd_30",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 9,
+    "emotion": 5,
+    "ambition": 8,
+    "process": 7,
+    "community": 3,
+    "chaos": 4,
+    "rootedness": 5
+   },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "B",
+    "S3": "1",
+    "S4": "5",
+    "S5": "A",
+    "S6": "B",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "left",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "BAS",
+   "winnerName": "BAS"
+  },
+  {
+   "id": "rnd_31",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 10,
+    "emotion": 8,
+    "ambition": 6,
+    "process": 4,
+    "community": 6,
+    "chaos": 6,
+    "rootedness": 8
+   },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "C",
+    "S3": "5",
+    "S4": "5",
+    "S5": "B",
+    "S6": "D",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "right",
+    "el_q4": "right"
+   },
+   "winner": "ZAL",
+   "winnerName": "ZAL"
+  },
+  {
+   "id": "rnd_32",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 4,
+    "emotion": 5,
+    "ambition": 7,
+    "process": 7,
+    "community": 5,
+    "chaos": 5,
+    "rootedness": 7
+   },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "C",
+    "S3": "1",
+    "S4": "1",
+    "S5": "B",
+    "S6": "D",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "left",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "EFS",
+   "winnerName": "EFS"
+  },
+  {
+   "id": "rnd_33",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 8,
+    "emotion": 8,
+    "ambition": 6,
+    "process": 3,
+    "community": 5,
+    "chaos": 7,
+    "rootedness": 8
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "D",
+    "S3": "4",
+    "S4": "5",
+    "S5": "C",
+    "S6": "D",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "VIR",
+   "winnerName": "VIR"
+  },
+  {
+   "id": "rnd_34",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 6,
+    "emotion": 8,
+    "ambition": 5,
+    "process": 6,
+    "community": 7,
+    "chaos": 7,
+    "rootedness": 6
+   },
+   "spineAnswers": {
+    "S1": "D",
+    "S2": "C",
+    "S3": "3",
+    "S4": "1",
+    "S5": "D",
+    "S6": "D",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "right",
+    "el_q3": "right",
+    "el_q4": "right"
+   },
+   "winner": "VIR",
+   "winnerName": "VIR"
+  },
+  {
+   "id": "rnd_35",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 6,
+    "emotion": 7,
+    "ambition": 8,
+    "process": 7,
+    "community": 5,
+    "chaos": 5,
+    "rootedness": 8
+   },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "A",
+    "S3": "4",
+    "S4": "2",
+    "S5": "A",
+    "S6": "B",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "left",
+    "el_q3": "left",
+    "el_q4": "left"
+   },
+   "winner": "EFS",
+   "winnerName": "EFS"
+  },
+  {
+   "id": "rnd_36",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 4,
+    "emotion": 7,
+    "ambition": 8,
+    "process": 1,
+    "community": 2,
+    "chaos": 5,
+    "rootedness": 5
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "A",
+    "S3": "1",
+    "S4": "2",
+    "S5": "A",
+    "S6": "A",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "ASV",
+   "winnerName": "ASV"
+  },
+  {
+   "id": "rnd_37",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 5,
+    "emotion": 6,
+    "ambition": 8,
+    "process": 4,
+    "community": 4,
+    "chaos": 4,
+    "rootedness": 3
+   },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "C",
+    "S3": "1",
+    "S4": "5",
+    "S5": "D",
+    "S6": "B",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "right",
+    "el_q4": "left"
+   },
+   "winner": "MAC",
+   "winnerName": "MAC"
+  },
+  {
+   "id": "rnd_38",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 8,
+    "emotion": 7,
+    "ambition": 9,
+    "process": 6,
+    "community": 5,
+    "chaos": 6,
+    "rootedness": 7
+   },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "D",
+    "S3": "3",
+    "S4": "1",
+    "S5": "C",
+    "S6": "B",
+    "S7": "D"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "right",
+    "el_q4": "right"
+   },
+   "winner": "ZAL",
+   "winnerName": "ZAL"
+  },
+  {
+   "id": "rnd_39",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 5,
+    "emotion": 6,
+    "ambition": 6,
+    "process": 3,
+    "community": 4,
+    "chaos": 10,
+    "rootedness": 7
+   },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "C",
+    "S3": "1",
+    "S4": "1",
+    "S5": "B",
+    "S6": "A",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "VIR",
+   "winnerName": "VIR"
+  },
+  {
+   "id": "rnd_40",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 4,
+    "emotion": 5,
+    "ambition": 5,
+    "process": 6,
+    "community": 8,
+    "chaos": 5,
+    "rootedness": 4
+   },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "A",
+    "S3": "4",
+    "S4": "2",
+    "S5": "B",
+    "S6": "C",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "left",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "OLY",
+   "winnerName": "OLY"
+  },
+  {
+   "id": "rnd_41",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 6,
+    "emotion": 7,
+    "ambition": 10,
+    "process": 3,
+    "community": 2,
+    "chaos": 10,
+    "rootedness": 5
+   },
+   "spineAnswers": {
+    "S1": "C",
+    "S2": "C",
+    "S3": "4",
+    "S4": "4",
+    "S5": "C",
+    "S6": "B",
+    "S7": "B"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "left"
+   },
+   "winner": "ASV",
+   "winnerName": "ASV"
+  },
+  {
+   "id": "rnd_42",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 8,
+    "emotion": 7,
+    "ambition": 7,
+    "process": 7,
+    "community": 3,
+    "chaos": 7,
+    "rootedness": 6
+   },
+   "spineAnswers": {
+    "S1": "A",
+    "S2": "B",
+    "S3": "3",
+    "S4": "1",
+    "S5": "D",
+    "S6": "A",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "el_q1": "right",
+    "el_q2": "right",
+    "el_q3": "left",
+    "el_q4": "right"
+   },
+   "winner": "VIR",
+   "winnerName": "VIR"
+  },
+  {
+   "id": "rnd_43",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 7,
+    "emotion": 6,
+    "ambition": 4,
+    "process": 4,
+    "community": 3,
+    "chaos": 7,
+    "rootedness": 5
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "A",
+    "S3": "5",
+    "S4": "1",
+    "S5": "C",
+    "S6": "D",
+    "S7": "A"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "right",
+    "el_q3": "right",
+    "el_q4": "left"
+   },
+   "winner": "MAC",
+   "winnerName": "MAC"
+  },
+  {
+   "id": "rnd_44",
+   "kind": "random",
+   "forTeam": null,
+   "coreProfile": {
+    "loyalty": 4,
+    "emotion": 7,
+    "ambition": 6,
+    "process": 6,
+    "community": 4,
+    "chaos": 8,
+    "rootedness": 8
+   },
+   "spineAnswers": {
+    "S1": "B",
+    "S2": "D",
+    "S3": "4",
+    "S4": "3",
+    "S5": "A",
+    "S6": "B",
+    "S7": "C"
+   },
+   "moduleAnswers": {
+    "el_q1": "left",
+    "el_q2": "left",
+    "el_q3": "right",
+    "el_q4": "left"
+   },
+   "winner": "BAR",
+   "winnerName": "BAR"
+  }
+ ]
+}
