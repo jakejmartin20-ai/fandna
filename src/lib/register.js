@@ -45,6 +45,9 @@ const REGISTER = {
   TOP14: { noun: "club",     worn: "shirt", team: "club", teams: "clubs", league: "Top 14", leagueAbbr: "Top 14", leagueIn: "the Top 14",
          tail: "Who you sing for on a Saturday is up to you.",
          xmHeader: "Already have a club?", xmEscape: "I don't follow the Top 14" },
+  EL: { noun: "club",        worn: "jersey", team: "club", teams: "clubs", league: "EuroLeague", leagueAbbr: "EuroLeague", leagueIn: "the EuroLeague",
+         tail: "Who you roar for on a European night is up to you.",
+         xmHeader: "Already have a club?", xmEscape: "I don't follow the EuroLeague" },
 };
 function regOf(s){ return REGISTER[s] || REGISTER.PL; }
 

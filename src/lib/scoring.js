@@ -43,6 +43,8 @@ import { teamDims as top14Dims } from "../data/top14";
 // Top 14 runs the shared spine (Option B, s60): the soccer standard, scores S6+S7. Its 4 unique module
 // questions + the spine tables live in the top14-spine add-on; teamDims comes from top14.js. Hidden-first (?top14).
 import { moduleQuestions as top14Module, scoring as top14Scoring, spineScoring as top14Spine, spinePhase as top14SpinePhase } from "../data/top14-spine";
+import { teamDims as elDims } from "../data/euroleague";
+import { moduleQuestions as elModule, scoring as elScoring, spineScoring as elSpine, spinePhase as elSpinePhase } from "../data/euroleague-spine";
 import { teamDims as blDims } from "../data/bundesliga";
 import { moduleQuestions as blModule, scoring as blScoring, spineScoring as blSpine, spinePhase as blSpinePhase } from "../data/bl-spine";
 import { teamDims as llDims } from "../data/laliga";
@@ -200,6 +202,7 @@ const FP_ENGINES = {
   AFL: makeFpEngine(aflDims, aflScoring, aflModule, 1.2, aflSpine, aflSpinePhase),   // 18-team small-mid field; FP_W 1.2 (no magnet, top pooled ~11.5% under the 13.9% ceiling; higher FP_W lowers the SYD/GWS edge floors)
   IPL: makeFpEngine(iplDims, iplScoring, iplModule, 1.4, iplSpine, iplSpinePhase),   // 10-team small field; FP_W 1.4 (s58; self-land 10/10, top ~17% RCB under the F1 21% small-field ceiling, floor LSG ~2.8%; RCB magnet trimmed at the cells, teamDims grid untouched)
   TOP14: makeFpEngine(top14Dims, top14Scoring, top14Module, 0.75, top14Spine, top14SpinePhase),   // 14-team field; FP_W 0.75 (s60; soccer standard scoring S6+S7, self-land 14/14, top LOU ~13.6% under the 14-team ceiling, floor SFP ~2.5%, no magnet)
+  EL: makeFpEngine(elDims, elScoring, elModule, 0.8, elSpine, elSpinePhase),   // 20-team all-7-slot spine (s62; FP_W 0.8 reachability tune, self-land 20/20, top VIR ~9.2% well under the 20-team ceiling, floor DUB ~1.2%, no magnet; Milano/Dubai cleared the floor by lowering FP_W to lift the sharp corners)
 };
 
 
