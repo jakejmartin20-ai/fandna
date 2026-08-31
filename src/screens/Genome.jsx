@@ -182,7 +182,7 @@ export function GenomeHome({
           <div style={{display:"flex",alignItems:"center",gap:12}}>
             <ClubMark team={t} size={46}/>
             <div style={{flex:1,minWidth:0}}>
-              <div style={{fontSize:10,color:"#888",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:2}}>{s.name}</div>
+              <div style={{fontSize:10,color:"#888",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:2}}>{s.name}{s.sport ? " · " + s.sport : ""}</div>
               <div style={{fontSize:"clamp(18px,4.6vw,22px)",color:"#e8e4de",fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:400,lineHeight:1.1}}>{t.name}</div>
               <div style={{fontSize:13,color:accent,fontStyle:"italic",fontFamily:"'Cormorant Garamond',Georgia,serif",marginTop:2}}>{(SD.archetypes&&SD.archetypes[r.club])||""}</div>
             </div>
@@ -205,7 +205,7 @@ export function GenomeHome({
           <div style={{display:"flex",alignItems:"center",gap:12}}>
             <div style={{width:46,height:46,borderRadius:"50%",flexShrink:0,border:"1px dashed #565674",display:"flex",alignItems:"center",justifyContent:"center",fontSize:22,color:"#8a8ab0",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>?</div>
             <div style={{flex:1,minWidth:0}}>
-              <div style={{fontSize:10,color:"#9a9ac4",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:3}}>{s.name}</div>
+              <div style={{fontSize:10,color:"#9a9ac4",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:3}}>{s.name}{s.sport ? " · " + s.sport : ""}</div>
               <div style={{fontSize:"clamp(18px,4.6vw,21px)",color:"#c9b27a",fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:400,lineHeight:1.1}}>Map it &rarr;</div>
             </div>
           </div>
@@ -226,7 +226,7 @@ export function GenomeHome({
             <div style={{width:15,height:15,borderRadius:"50%",border:"1px solid #3f3f4d"}}/>
           </div>
           <div style={{flex:1,minWidth:0}}>
-            <div style={{fontSize:10,color:"#6f6f80",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:3}}>{s.name}</div>
+            <div style={{fontSize:10,color:"#6f6f80",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:3}}>{s.name}{s.sport ? " · " + s.sport : ""}</div>
             <div style={{fontSize:"clamp(15px,3.6vw,17px)",color:"#83837e",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic"}}>Not yet sequenced</div>
           </div>
           <span style={{fontSize:9,color:"#6a6a78",letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",flexShrink:0}}>planned</span>
@@ -241,7 +241,7 @@ export function GenomeHome({
       }}>
         <div style={{width:42,height:42,borderRadius:"50%",flexShrink:0,border:"1px solid #3a3a4a",display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,color:"#6f6f88",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>?</div>
         <div style={{flex:1,minWidth:0}}>
-          <div style={{fontSize:10,color:"#818181",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:3}}>{s.name}</div>
+          <div style={{fontSize:10,color:"#818181",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:3}}>{s.name}{s.sport ? " · " + s.sport : ""}</div>
           <div style={{fontSize:"clamp(15px,3.6vw,17px)",color:"#9a9a9a",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic"}}>Coming soon</div>
         </div>
         <span style={{fontSize:10,color:"#818181",letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",flexShrink:0}}>soon</span>
