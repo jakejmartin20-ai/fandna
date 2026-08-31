@@ -6,23 +6,24 @@
 // `group` ties each sport to a family on the genome home (the two branches). FAMILIES sets
 // the order the branches appear in and each branch's label + glyph. Adding a league is one
 // row in SPORTS with its `group`; it drops into the right branch automatically, no other
-// change needed.
+// change needed. `sport` is the plain-language discipline shown on the genome-home cards
+// (e.g. "IPL · CRICKET") so an abbreviation is never opaque.
 const SPORTS = [
-  { code: "PL",  name: "Premier League", live: true,  hook: "Which club are you?",     group: "global" },
-  { code: "NFL", name: "NFL",            live: true, hook: "Which franchise are you?", group: "american" },
-  { code: "MLB", name: "MLB",            live: true,  hook: "Which ballclub are you?",  group: "american" },
-  { code: "NBA", name: "NBA",            live: false, hook: "Which team are you?",      group: "american" },
-  { code: "NHL", name: "NHL",            live: false, hook: "Which NHL team are you?",  group: "american" },
-  { code: "CFB", name: "College Football", live: true,  hook: "Which program are you?", group: "american" },
-  { code: "BL",  name: "Bundesliga",    live: true,  hook: "Which club are you?",      group: "global" },
-  { code: "LL",  name: "La Liga",       live: true,  hook: "Which club are you?",      group: "global" },
-  { code: "L1",  name: "Ligue 1",       live: true,  hook: "Which club are you?",      group: "global" },
-  { code: "SA",  name: "Serie A",       live: true,  hook: "Which club are you?",      group: "global" },
-  { code: "F1",  name: "Formula 1",     live: true, hook: "Which team are you?",       group: "world" },
-  { code: "AFL", name: "AFL",           live: true,  hook: "Which club are you?",       group: "world" },
-  { code: "IPL", name: "IPL",           live: false, hook: "Which franchise are you?",  group: "world" },
-  { code: "TOP14", name: "Top 14",        live: false, hook: "Which club are you?",   group: "world" },
-  { code: "EL",  name: "EuroLeague",       live: false, hook: "Which club are you?",   group: "world" },
+  { code: "PL",  name: "Premier League", live: true,  hook: "Which club are you?",     sport: "Football",          group: "global" },
+  { code: "NFL", name: "NFL",            live: true,  hook: "Which franchise are you?", sport: "American Football",  group: "american" },
+  { code: "MLB", name: "MLB",            live: true,  hook: "Which ballclub are you?",  sport: "Baseball",           group: "american" },
+  { code: "NBA", name: "NBA",            live: false, hook: "Which team are you?",      sport: "Basketball",         group: "american" },
+  { code: "NHL", name: "NHL",            live: false, hook: "Which NHL team are you?",  sport: "Ice Hockey",         group: "american" },
+  { code: "CFB", name: "College Football", live: true, hook: "Which program are you?",  sport: "American Football",  group: "american" },
+  { code: "BL",  name: "Bundesliga",    live: true,  hook: "Which club are you?",      sport: "Football",           group: "global" },
+  { code: "LL",  name: "La Liga",       live: true,  hook: "Which club are you?",      sport: "Football",           group: "global" },
+  { code: "L1",  name: "Ligue 1",       live: true,  hook: "Which club are you?",      sport: "Football",           group: "global" },
+  { code: "SA",  name: "Serie A",       live: true,  hook: "Which club are you?",      sport: "Football",           group: "global" },
+  { code: "F1",  name: "Formula 1",     live: true,  hook: "Which team are you?",      sport: "Motor Racing",       group: "world" },
+  { code: "AFL", name: "AFL",           live: true,  hook: "Which club are you?",      sport: "Australian Rules",   group: "world" },
+  { code: "IPL", name: "IPL",           live: false, hook: "Which franchise are you?", sport: "Cricket",            group: "world" },
+  { code: "TOP14", name: "Top 14",      live: false, hook: "Which club are you?",      sport: "Rugby",              group: "world" },
+  { code: "EL",  name: "EuroLeague",    live: false, hook: "Which club are you?",      sport: "Basketball",         group: "world" },
 ];
 
 // The two branches on the genome home, in display order. `glyph` picks the header mark.
