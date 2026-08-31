@@ -117,12 +117,12 @@ export function BeachWindow({ coreProfile, reducedMotion=false, onDone, onSeen }
   const tbtn = { width:13,height:11,background:"#c0c0c0",border:"1px solid",borderColor:"#fff #808080 #808080 #fff",color:"#000",fontSize:8,lineHeight:"11px",textAlign:"center",cursor:"pointer",fontStyle:"normal" };
 
   return (
-    <div role="dialog" aria-label="Pro Beach Hockey" style={{position:"fixed",right:14,bottom:16,zIndex:120,
-      width:"min(300px,86vw)",background:"#c0c0c0",border:"2px solid",borderColor:"#fff #808080 #808080 #fff",
-      boxShadow:"0 16px 44px rgba(0,0,0,.65)",fontFamily:"'Times New Roman',Georgia,serif",color:"#000",transformOrigin:"bottom right",
-      animation:"pbh-grow .28s ease-out"}}>
+    <div role="dialog" aria-label="Pro Beach Hockey" style={{position:"fixed",right:14,top:"50%",zIndex:120,transform:"translateY(-50%)",
+      width:"min(340px,92vw)",background:"#c0c0c0",border:"2px solid",borderColor:"#fff #808080 #808080 #fff",
+      boxShadow:"0 16px 44px rgba(0,0,0,.65)",fontFamily:"'Times New Roman',Georgia,serif",color:"#000",transformOrigin:"center right",
+      animation:"pbh-flow .42s cubic-bezier(.2,.75,.3,1)"}}>
       <style>{`
-        @keyframes pbh-grow { from{transform:scale(.4);opacity:.2} to{transform:scale(1);opacity:1} }
+        @keyframes pbh-flow { from{transform:translateY(-50%) translateY(40vh) scale(.5);opacity:.2} to{transform:translateY(-50%) scale(1);opacity:1} }
         @keyframes pbh-spin2 { to { transform:rotate(360deg); } }
         @keyframes pbh-wipe { to { clip-path:inset(0 0 0 0); } }
         @keyframes pbh-scan { 0%{opacity:.9} 100%{opacity:0} }
@@ -148,7 +148,7 @@ export function BeachWindow({ coreProfile, reducedMotion=false, onDone, onSeen }
       </div>
 
       {/* body */}
-      <div style={{position:"relative",background:"#fff",maxHeight:320,overflowY:"auto"}}>
+      <div style={{position:"relative",background:"#fff",maxHeight:"min(52vh,380px)",overflowY:"auto"}}>
         <div className={"pbhw-band"+(st.wipe?" on":"")}>
           <div className={"pbhw-scan"+(st.wipe?" on":"")}/>
           <div style={{padding:"14px 14px 6px",textAlign:"center"}}>
