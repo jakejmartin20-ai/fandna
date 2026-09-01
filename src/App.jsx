@@ -1285,6 +1285,7 @@ function AppInner(){
                 <button onClick={goBack} disabled={cur===0}
                   style={{
                     background:"none",border:"none",padding:0,
+                    minHeight:44,display:"inline-flex",alignItems:"center",
                     color:cur===0?"#333344":"#9898b8",
                     fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",
                     fontFamily:"'DM Mono',monospace",cursor:cur===0?"default":"pointer",
@@ -1335,7 +1336,7 @@ function AppInner(){
                 <div style={{fontSize:11,color:"#8484b0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:10}}>{mode==="core"?"Re-sequencing your core":"Which team are you, really?"}</div>
                 <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(14px,3.4vw,17px)",color:"#9898b8",lineHeight:1.55,margin:0}}>{mode==="core"?"Answer honestly, not how you wish you were. When you finish, every league you have taken re-reads against the new you.":mode==="module"?`Your core is already sequenced. ${moduleQuestions.length} questions to remap your ${(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"} strand.`:"Answer honestly, not how you wish you were. New to the league or loyal for life, this is the club in your DNA."}</p>
                 {mode==="full"&&(
-                  <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.16em",textTransform:"uppercase",color:"#7a7a98",marginTop:13}}>{quizStages.length} short parts &middot; about 5 minutes</div>
+                  <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.16em",textTransform:"uppercase",color:"#8a8ab0",marginTop:13}}>{quizStages.length} short parts &middot; about 5 minutes</div>
                 )}
               </div>
             )}
