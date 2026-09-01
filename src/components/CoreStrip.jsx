@@ -47,10 +47,12 @@ export function CoreStrip({ dims, compact=false, onRetake }){
             {onRetake&&(
               <button type="button" aria-label="Retake your core questions"
                 onClick={(e)=>{ e.stopPropagation(); setConfirm(c=>!c); }}
-                style={{width:30,height:30,borderRadius:"50%",border:`1px solid ${confirm?"#6a5f8a":"#3f3f55"}`,background:confirm?"rgba(120,104,168,0.14)":"none",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer",padding:0,flexShrink:0}}>
+                style={{width:44,height:44,borderRadius:"50%",border:"none",background:"none",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer",padding:0,flexShrink:0}}>
+                <span style={{width:30,height:30,borderRadius:"50%",border:`1px solid ${confirm?"#6a5f8a":"#3f3f55"}`,background:confirm?"rgba(120,104,168,0.14)":"none",display:"flex",alignItems:"center",justifyContent:"center"}}>
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#b0a8cc" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M23 4v6h-6"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
                 </svg>
+                </span>
               </button>
             )}
             <div aria-hidden="true" style={{width:30,height:30,borderRadius:"50%",border:"1px solid #3f3f55",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>
