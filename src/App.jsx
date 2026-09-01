@@ -321,7 +321,6 @@ function AppInner(){
   const usesSpine = !!D.spineScoring;
   const teams = D.teams, archetypes = D.archetypes, teamTextColors = D.teamTextColors;
   const greats = D.greats, vitalStats = D.vitalStats; // nearlyGot retired from the result screen (chapter 04 is THE READOUT)
-  const squadUrls = D.squadUrls;
   const milestones = D.milestones || {};
 
   // The active question run. First time: 24 core + 14 PL module = 38, in the v1 order.
@@ -1532,21 +1531,7 @@ function AppInner(){
                   matchedColor={teamTextColors[result]||team.color}
                   voice={regOf(activeSport)}
                 />
-            {/* one kit/squad CTA set for the whole result (was repeated in three tabs) */}
-            <div style={{display:"flex",gap:24,flexWrap:"wrap",marginTop:34,paddingTop:24,borderTop:"1px solid #2a2a3a"}}>
-                  {team.kit&&(<a href={team.kit} target="_blank" rel="noopener noreferrer"
-                    style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
-                    <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> Buy the kit
-                  </a>)}
-                  {squadUrls[result]&&(
-                    <a href={squadUrls[result]} target="_blank" rel="noopener noreferrer"
-                      style={{display:"inline-flex",alignItems:"center",gap:10,background:`${team.color}22`,border:`1px solid ${team.color}55`,borderRadius:5,padding:"12px 20px",color:"#e8e4de",fontSize:11,letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",textDecoration:"none",transition:"all .15s ease",fontWeight:500}}>
-                      <span style={{color:(teamTextColors[result]||team.color)}}>↗</span> View squad
-                    </a>
-                  )}
-            </div>
 
-            
             {/* #8 Retention: progress (B) + next-strand (A) + full-genome link (C) */}
             <div style={{marginTop:34,paddingTop:26,borderTop:"1px solid #1e1e2e"}}>
               <div style={{textAlign:"center",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.28em",textTransform:"uppercase",color:"#8a8ab0",marginBottom:12}}>Same you &middot; every sport</div>
