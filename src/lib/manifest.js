@@ -12,7 +12,7 @@ const SPORTS = [
   { code: "PL",  name: "Premier League", live: true,  hook: "Which club are you?",     sport: "Football",          group: "global" },
   { code: "NFL", name: "NFL",            live: true,  hook: "Which franchise are you?", sport: "American Football",  group: "american" },
   { code: "MLB", name: "MLB",            live: true,  hook: "Which ballclub are you?",  sport: "Baseball",           group: "american" },
-  { code: "NBA", name: "NBA",            live: false, hook: "Which team are you?",      sport: "Basketball",         group: "american" },
+  { code: "NBA", name: "NBA",            live: true , hook: "Which team are you?",      sport: "Basketball",         group: "american" },
   { code: "NHL", name: "NHL",            live: false, hook: "Which NHL team are you?",  sport: "Ice Hockey",         group: "american" },
   { code: "CFB", name: "College Football", live: true, hook: "Which program are you?",  sport: "American Football",  group: "american" },
   { code: "BL",  name: "Bundesliga",    live: true,  hook: "Which club are you?",      sport: "Football",           group: "global" },
