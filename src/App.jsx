@@ -906,7 +906,7 @@ function AppInner(){
   // never with personality framing. No "nearest to your sequence", no similarity copy, no
   // "what you share". A matrix score that finished close is a fact; a close identity is a
   // claim the matrix cannot back. PL gaps are integer matrix points and display as integers.
-  const READOUT_K = { MLB: 4, CFB: 4, NFL: 4, NHL: 4, F1: 4, AFL: 4, IPL: 4, TOP14: 4, EL: 4, PL: 3 };
+  const READOUT_K = { MLB: 4, CFB: 4, NFL: 4, NHL: 4, F1: 4, AFL: 4, IPL: 4, TOP14: 4, EL: 4, NBA: 4, PL: 3 };
   const readoutRows = result
     ? sortedOthers.slice(0, READOUT_K[activeSport]||3).filter(([k])=>teams[k])
     : [];
