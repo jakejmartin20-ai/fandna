@@ -453,7 +453,7 @@ export function GenomeHome({
             <button key={fam.id} type="button"
               onClick={()=>{ const el=(typeof document!=="undefined")&&document.getElementById("fam-"+fam.id); if(el) el.scrollIntoView({behavior:"smooth",block:"start"}); }}
               style={{display:"flex",alignItems:"center",gap:7,background:"#171722",
-                border:"1px solid #2c2c40",borderRadius:20,padding:"7px 13px",cursor:"pointer"}}>
+                border:"1px solid #2c2c40",borderRadius:22,padding:"7px 16px",minHeight:44,boxSizing:"border-box",cursor:"pointer"}}>
               <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.16em",textTransform:"uppercase",color:PLBL}}>{pillLabel}</span>
               <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.04em",color:COUNT}}>{doneN}/{total}</span>
               {pillComplete&&(
