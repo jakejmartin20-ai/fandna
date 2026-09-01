@@ -1531,10 +1531,10 @@ function AppInner(){
                   <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.12em",color:(teamTextColors[result]||team.color),marginTop:8}}>the strongest signal in your sample</div>
                 </div>
                 {readoutRows.length>0&&(<>
-                  <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#8484b0",marginBottom:16}}>{activeSport==="PL" ? "The closest readings" : "Nearest to your sequence"}</div>
+                  <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#8484b0",marginBottom:5}}>{activeSport==="PL" ? "The closest readings" : "Nearest to your sequence"}</div>
+                  <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:13,color:"#77779c",marginBottom:16}}>share of your match's score</div>
                   {readoutRows.map(([k,pts])=>{
                     const nt=teams[k];
-                    const gap=maxScore-pts;
                     const frac=maxScore>0?Math.max(0,Math.min(1,pts/maxScore)):0;
                     return(
                       <div key={k} style={{marginBottom:18}}>
@@ -1543,7 +1543,7 @@ function AppInner(){
                             <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:17,color:"#ddd"}}>{nt.name}</span>
                             <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:12.5,color:"#77779c",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{archetypes[k]||""}</span>
                           </div>
-                          <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",whiteSpace:"nowrap",marginLeft:10}}>within {activeSport==="PL" ? String(Math.round(gap)) : gap.toFixed(1)}</span>
+                          <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",whiteSpace:"nowrap",marginLeft:10}}>{Math.min(99, Math.round(frac*100))}%</span>
                         </div>
                         <div style={{height:3,background:"#252533",borderRadius:2,overflow:"hidden"}}>
                           <div style={{height:"100%",width:`${(frac*100).toFixed(1)}%`,background:"#4a4a6a",borderRadius:2}}/>
