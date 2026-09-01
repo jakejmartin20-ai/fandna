@@ -61,141 +61,71 @@ const teams = {
     "name": "Stade Toulousain", "emoji": "\u2b50", "color": "#E01A22", "code3": "TLS", "kitType": "duo", "secondaryColor": "#111111",
     "tagline": "Twenty-five titles and a way of playing all your own, because winning here was never chased, it was simply expected.",
     "desc": "You are the standard everyone else measures themselves against, and you carry it lightly. Winning isn't something you chase, it's woven into who you are, assumed rather than hoped for. What sets you apart is that you built it yourself, an academy that turns your own kids into the best in the world and a fast, daring style that could only be yours. You're deeply rooted in a place where what you do is close to a religion, and you'd never dream of buying what you can grow. Others find your calm almost arrogant. You'd say you simply know what you are.",
-    "why": [
-      "You treat what you love as a calling, something close to sacred, and you carry that with quiet reverence rather than noise.",
-      "You back your own. You'd take someone you raised over a ready-made name every time, and it's made you the best there is.",
-      "Winning is your baseline, not your dream. You expect the top, and you get there your own expansive way."
-    ]
   },
   "RCT": {
     "name": "RC Toulon", "emoji": "\u2693", "color": "#D2001F", "code3": "RCT", "kitType": "duo", "secondaryColor": "#111111",
     "tagline": "A band of superstars in a working port, built to win now and to be watched while doing it.",
     "desc": "You are the showman with a chequebook, the one who goes and gets the best and worries about the rest later. When you want something you buy it, the biggest names in the world, and you're not shy about the spectacle that comes with them. You live for the win in front of you, not some patient ten-year plan, and you'd rather blaze bright than build slow. Your home is a blue-collar naval town that roars for you like nowhere else. Critics call you a team that bought its glory. You'd say the trophies don't ask how they arrived.",
-    "why": [
-      "You want the best, full stop, and you'll go and sign it rather than wait for it to grow.",
-      "You burn for it, all or nothing, and you'd take a blaze of glory now over a slow, safe climb.",
-      "You love the show. The bigger and louder the occasion, the more you come alive."
-    ]
   },
   "UBB": {
     "name": "Union Bordeaux B\u00e8gles", "emoji": "\ud83c\udf77", "color": "#6E2639", "code3": "UBB", "kitType": "duo", "secondaryColor": "#FFFFFF",
     "tagline": "The most thrilling attack in Europe and the biggest crowd on the continent, built from nothing in a football city.",
     "desc": "You are the exhilarating newcomer who arrived and made everyone watch. You play with speed and daring, an attack that leaves people breathless, and you did it in a place that was never supposed to be yours, a football city you turned into your own. You feel it all at full volume, and so does the enormous crowd you've gathered, the biggest in European rugby. You're young and still building, chasing the one prize that's slipped your grasp at home even as you conquered the continent. You'd tear it down and start again to get there. Half the fun, for you, is the noise and the joy of it.",
-    "why": [
-      "You're wild about the show, the colour and the roar, and you built the biggest, loudest crowd there is.",
-      "You feel everything at full volume, an exhilarating high-wire act that either soars or falls.",
-      "You'd rather back raw hunger and daring than a finished reputation."
-    ]
   },
   "LAR": {
     "name": "Stade Rochelais", "emoji": "\ud83c\udf0a", "color": "#FFD200", "code3": "LAR", "kitType": "duo", "secondaryColor": "#111111",
     "tagline": "A modest coastal town that turned relentless graft into back-to-back European crowns, and never once stopped selling out.",
     "desc": "You are the underdog who did it the hard way and stayed humble about it. You come from a modest Atlantic port that nobody expected much from, and you turned commitment, solidarity and sheer relentlessness into two European crowns. The bond with your town is total, the whole place turning yellow and black on match weekends, more than a hundred sellouts in a row. You don't chase the spotlight or make noise. You just show up, dig in and refuse to fold, and you treat the whole thing with a quiet, near-sacred seriousness. Humility isn't a pose for you, it's the point.",
-    "why": [
-      "You treat what you love with quiet reverence, a serious calling rather than a show.",
-      "You dig in and refuse to fold. The harder it gets, the more relentless you become.",
-      "You stay, unconditionally. The bond with your people was never a transaction."
-    ]
   },
   "ASM": {
     "name": "ASM Clermont Auvergne", "emoji": "\ud83d\udc9b", "color": "#FFD100", "code3": "ASM", "kitType": "duo", "secondaryColor": "#0A2C6E",
     "tagline": "Ten lost finals, a faith that never broke, and a Yellow Army that loved you long before there was anything to win.",
     "desc": "You are the purest devotion in the game, the one who loved through heartbreak and never once wavered. You lost final after final, ten of them, three in a row, and still your Yellow Army filled the ground every week and sang you on. When the win finally came, in your hundredth year, it meant more than any easy triumph ever could, because you'd earned that loyalty through the pain rather than the glory. Your roots run down into a company town and its factory, and you feel every result in your bones. You wouldn't swap a single one of those hard years for a colder, easier road.",
-    "why": [
-      "You stayed through everything. Ten lost finals only proved a loyalty that was never about reward.",
-      "You feel it all the way down, every high and every ache, and you'd dull none of it.",
-      "You treat it as something close to sacred, a devotion carried with real reverence."
-    ]
   },
   "SFP": {
     "name": "Stade Fran\u00e7ais Paris", "emoji": "\ud83c\udf38", "color": "#E6007E", "code3": "SFP", "kitType": "duo", "secondaryColor": "#FFFFFF",
     "tagline": "Pink shirts, nude calendars and Madonna at the ground, the great showman who dragged rugby into the spotlight.",
     "desc": "You are rugby's showman and its provocateur, the one who was never going to play it safe or quiet. You turned the game into theatre, the shocking pink shirts, the calendars, the pop stars, the record crowds, an art-and-culture identity that scandalised every buttoned-up club around you. You provoke on purpose, because a bit of noise keeps the whole thing alive, and you'd rather be talked about than tidy. You're a metropolitan creature, not a country one, drawn to the bright lights and the big statement. Some accused you of betraying the spirit of the game. You'd say you gave it a spark it badly needed.",
-    "why": [
-      "You stir it up on purpose. A bit of provocation is how you keep the whole thing alive.",
-      "You burn for it, bold and all-in, never half-hearted and never quiet.",
-      "You're pulled toward the glamour, the lights and the big statement, and you make no apology for it."
-    ]
   },
   "R92": {
     "name": "Racing 92", "emoji": "\ud83d\udc8e", "color": "#5BC2E7", "code3": "R92", "kitType": "duo", "secondaryColor": "#FFFFFF",
     "tagline": "Champagne on the pitch and superstars in the side, Parisian money and chic in a space-age arena.",
     "desc": "You are the glamour and the money, the one who does everything in style and makes no apology for it. From the champagne-on-the-pitch decadents of old to the modern star-signing, wine-cellar-in-the-training-ground operation, you've always been about wealth and chic and being seen doing it well. You go and buy the best, the biggest names in the world, and house them somewhere futuristic and gleaming. You're a Parisian creature through and through, drawn to the finest of everything, ambitious and modern and a little decadent. You're not the club of deep roots and folk songs. You're the club of the good life, and you wear it lightly.",
-    "why": [
-      "You want the best and you go and get it, the biggest names, the finest of everything.",
-      "You're pulled toward the glamour, the money and the modern sheen, and you enjoy it openly.",
-      "You'd rather be building something ambitious and new than tending an old tradition."
-    ]
   },
   "ABR": {
     "name": "Aviron Bayonnais", "emoji": "\ud83c\udf89", "color": "#009EE0", "code3": "ABR", "kitType": "duo", "secondaryColor": "#FFFFFF",
     "tagline": "The club that founded its city's festival, deeply Basque, fervent and sold out through every high and low.",
     "desc": "You are the festival and the fervour, the beating Basque heart of your town. Your sky blue and white is the colour of the sea and the sky, your anthem is sung across the whole city, and the famous festival that draws millions was founded by your own sportsmen. You feel it all, joyfully and out loud, and your support stays sold out through relegations and comebacks alike, faithful without conditions. You're not chasing glamour or the spotlight. You just show up, quietly devoted underneath all the colour, and throw yourself into the celebration of it. Belonging, for you, is the whole point.",
-    "why": [
-      "For you it's a celebration, joyful and colourful, and you throw yourself right into it.",
-      "You want to be part of something people are wild about, all passion, noise and colour.",
-      "You stay, faithfully, through every high and low, sold out whatever the table says."
-    ]
   },
   "PAU": {
     "name": "Section Paloise", "emoji": "\u26f0\ufe0f", "color": "#009639", "code3": "PAU", "kitType": "duo", "secondaryColor": "#FFFFFF",
     "tagline": "The proud symbol of B\u00e9arn, its anthem sung acapella by the whole ground, faithful, resilient, quietly sure of itself.",
     "desc": "You are the quiet pride of a proud region, rooted so deep you never needed to look elsewhere. You're the symbol of B\u00e9arn, not Basque, your anthem sung acapella by the whole ground in your own tongue, invoking the mountains and the old kings. You've a real tradition of raising your own and a faithful, resilient support that stays whatever the season brings. You don't burn or provoke or chase the lights. You carry it with a solemn, understated pride, treating what you love as close to sacred, and you feel most yourself exactly where you're from. Others move on. You put down roots and stay.",
-    "why": [
-      "You treat it as something almost sacred, carried with a quiet, solemn pride.",
-      "Your identity is handed down by where you're from, and you wear those roots proudly.",
-      "You trust your own eye and your own people over whatever the fashion says."
-    ]
   },
   "USP": {
     "name": "USA Perpignan", "emoji": "\ud83d\udd25", "color": "#B01116", "code3": "USP", "kitType": "duo", "secondaryColor": "#F2A900",
     "tagline": "French Catalonia in blood red and gold, all pride, fight and furia, burning just as bright in the hard years.",
     "desc": "You are the fire, the incandescent Catalan heart in blood red and gold. Pride, fight and furia are your whole language, a feverish, unmatched passion for your region's colours that outsiders can't quite fathom. You feel everything at maximum, and the intensity doesn't dim when the results do, burning just as fiercely through the lean years as the good ones. You're a former giant who's known the heights and the depths and stayed exactly as fervent throughout. You don't do half measures or quiet devotion. You do all or nothing, a cause you'd give everything to, right up against the Spanish border where the whole town lives and dies with you.",
-    "why": [
-      "You burn for it, all or nothing, a cause you'd pour everything into.",
-      "You feel it at full intensity, and that fire doesn't fade when the results do.",
-      "You want to be part of something people are wild about, fierce and proud and loud."
-    ]
   },
   "CAS": {
     "name": "Castres Olympique", "emoji": "\u2699\ufe0f", "color": "#0033A0", "code3": "CAS", "kitType": "duo", "secondaryColor": "#FFFFFF",
     "tagline": "A small Occitan town that keeps beating the giants, faithful to its roots, quietly efficient, feared at home.",
     "desc": "You are the blue-collar giant-killer, the small town that keeps punching up and winning. You've no big budget and no glamour, just a philosophy of engagement, solidarity and fidelity to your roots, bankrolled for decades by a local son who never let you forget where you came from. You do it the efficient, pragmatic way, no drama and no fuss, and you treat the whole thing with a serious, near-sacred respect. Your home is a fortress with a singular atmosphere, a town of forty thousand filling the ground. Others chase the spotlight. You quietly get the job done, and five titles say the model works.",
-    "why": [
-      "You cut through the noise and let the work speak. No circus, no drama, just the real thing.",
-      "You treat it seriously, a calling carried with quiet respect rather than show.",
-      "You want something honest and unpretentious, real and without airs."
-    ]
   },
   "MHR": {
     "name": "Montpellier H\u00e9rault Rugby", "emoji": "\ud83c\udf3f", "color": "#0055A4", "code3": "MHR", "kitType": "duo", "secondaryColor": "#FFFFFF",
     "tagline": "Billionaire money and one of France's best academies, symbolised by a flower that survives fire and drought.",
     "desc": "You are the modern project, the young, ambitious build with money behind it and method underneath. You're the youngest club in the league, backed by a billionaire and stocked with world champions, but there's more to you than the chequebook, one of the best academies in France and a symbol that says everything, a rockrose that survives and even feeds on fire and drought. You chase the win with resources and clear thinking, and you'd rather build something new and ambitious than tend an old tradition. Your roots are genuinely thin, your form can swing hard, but you keep coming back. You treat it less as a religion and more as a project worth getting right.",
-    "why": [
-      "You'd rather build something modern and ambitious than protect an old tradition.",
-      "You want the best, and you'll go and get it, whether you buy it or raise it.",
-      "You're drawn to the money, the ambition and the modern sheen of it all."
-    ]
   },
   "LOU": {
     "name": "Lyon OU", "emoji": "\ud83d\udc3a", "color": "#E30613", "code3": "LOU", "kitType": "duo", "secondaryColor": "#111111",
     "tagline": "The wolf of a big football city, an outsider to rugby's heartland who built its own festive, student-packed crowd.",
     "desc": "You are the outsider who built your own thing, the wolf loose in a big football city. You were never part of rugby's traditional heartland, never quite embraced by the region's old clubs, and you couldn't lean on generations of tradition the way they do. So you made your own, a young, festive, student-heavy crowd with the best party before and after the game anywhere. You're one of the oldest clubs around and yet somehow always the newcomer, coexisting with football's long shadow in a place that was never meant to be yours. You don't do reverence or deep roots. You do celebration, on your own terms, and you back your own eye over anyone's tradition.",
-    "why": [
-      "You back your own eye and your own way over whatever the establishment rates.",
-      "For you it's a celebration, festive and loud, built on your own terms.",
-      "You define home for yourself. You belong wherever you decide to build the next thing."
-    ]
   },
   "USM": {
     "name": "US Montauban", "emoji": "\ud83c\udf3e", "color": "#006C3B", "code3": "USM", "kitType": "duo", "secondaryColor": "#111111",
     "tagline": "The smallest ground in the league and the biggest heart, a former champion that went bust and clawed all the way back.",
     "desc": "You are the plucky survivor, the tiny town with the biggest heart. You play at the smallest ground in the league, and you've been to the brink and back, a former champion that went bankrupt, dropped down the divisions and clawed its way home. Your spirit is simplicity, consistency and fidelity to the group, promotion celebrated without frills, the same faithful squad kept together, every good day treated as a gift. You take heavy beatings from the big clubs and battle like mad at home anyway, because belonging matters more to you than the scoreline. You're folksy, rooted and grateful, and you wouldn't trade any of it.",
-    "why": [
-      "You want something honest and unpretentious, real, folksy and without airs.",
-      "You back your own people and your own way, faithful to the group above all.",
-      "For you it's a celebration, joyful and grateful, whatever the table says."
-    ]
   }
 };
 

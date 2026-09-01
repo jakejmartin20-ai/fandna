@@ -63,11 +63,6 @@ const teams = {
     "secondaryColor": "#1A3A8B",
     "tagline": "Five titles, one captain, and a yellow that never fades, because the badge was always bigger than the result.",
     "desc": "You are the calm at the centre of the league, the family that never turns on its own. Yellow is close to a religion where you're from, and the whistle goes up whether the season is soaring or sinking. You back your people to a fault. It's hard to earn a place with you and harder still to lose one, because you give the long rope and don't panic when results wobble. You've won five times without ever seeming to chase it, and when you were once forced away for two seasons you simply came back and won again. Your roots run as deep as anyone's, woven into a whole region's sense of itself. You measure yourself by faith kept, not by the table.",
-    "why": [
-      "You stay, full stop. Your loyalty is unconditional and holds through the lean years exactly as through the good ones.",
-      "Your bond is a whole community's, handed down and worn in public, the closest thing the league has to a family.",
-      "You keep your composure while others come apart, trusting the patient way and letting results find you."
-    ]
   },
   "MI": {
     "name": "Mumbai Indians",
@@ -78,11 +73,6 @@ const teams = {
     "secondaryColor": "#D1AB3E",
     "tagline": "Five titles and a machine built to win, where the standard is simple: winning is not negotiable.",
     "desc": "You are the professional's professional, the operation everyone else measures against. Winning isn't a hope for you, it's the baseline, and everything bends toward it. You run on method and cold clarity rather than sentiment, which is how you've built five titles and a habit of peaking exactly when it matters. You're loyal to a stable core and have a real gift for raising your own, taking the unproven and making them great. But you'll make the hard, unsentimental call when the numbers demand it, even moving on from a legend, because results come before feelings. Others find you clinical and a little cold. You'd say you simply refuse to let anything get in the way of the win.",
-    "why": [
-      "You trust the system above all. Titles at your level aren't luck, they're a machine tuned to the last detail.",
-      "You aim only at the top and expect to stay there. Second place isn't a result you recognise.",
-      "You keep sentiment out of the big calls. When the evidence says move on, you move on, whoever it is."
-    ]
   },
   "RCB": {
     "name": "Royal Challengers Bengaluru",
@@ -93,11 +83,6 @@ const teams = {
     "secondaryColor": "#C5A028",
     "tagline": "Seventeen years without a trophy and a fanbase that never once wavered, and now, back to back, the cup is finally yours.",
     "desc": "You are the romantic of the league, the one who loved without reward for the longest time and never stopped. Glamour was in you from the start, a side full of superstars and a following that filled the ground in red and gold long before there was anything to celebrate. For seventeen years the cup slipped away, final after final, and still the chant went up every spring: this year, it's ours. You won that loyalty the hard way, through the heartbreak rather than the winning. That is the soul, and it doesn't change now that the wait is over. Because it is over: champions at last, then champions again, with the same faithful faces who stayed through all of it. You feel every result at full volume, and you wouldn't swap a single year of the pain for a colder, easier road to the top.",
-    "why": [
-      "You stayed through everything. Loyalty, for you, was never about being rewarded, and seventeen lean years only proved it.",
-      "You feel it all the way down. Every high and every low lands at full volume, and you wouldn't dull that for anything.",
-      "You're drawn to the bright and the bold, the big names and the big nights, and you'll take heart over a tidy plan every time."
-    ]
   },
   "KKR": {
     "name": "Kolkata Knight Riders",
@@ -108,11 +93,6 @@ const teams = {
     "secondaryColor": "#B3A123",
     "tagline": "Star power out front and cold numbers behind it, and three titles that prove the two can live together.",
     "desc": "You are the rare mix of showbiz and spreadsheet, glamour on the surface and hard method underneath. Your nights are loud and starlit, a famous owner and a famous ground and a crowd that roars a name as much as a result. But behind the glow you're one of the most clear-eyed operators around, the first to bring real data into how you build, willing to tear the whole thing up and start clean when the analysis says so, even letting a local hero go for the plan. You're not sentimental about people, you're loyal to the system that keeps working. Three titles say the combination is no accident. You like the spotlight, and you like being right underneath it.",
-    "why": [
-      "You go by the numbers when it counts. The show is real, but the decisions are made on evidence.",
-      "You like to be seen. If you're doing something well, you'd rather it happened out loud and in the light.",
-      "You back the method over any one name. The system is what you're loyal to, and it has earned it."
-    ]
   },
   "DC": {
     "name": "Delhi Capitals",
@@ -123,11 +103,6 @@ const teams = {
     "secondaryColor": "#EF1B23",
     "tagline": "Eighteen years, a pile of talent, and still no trophy, the nearly-men forever building toward a first crown.",
     "desc": "You are the talented one still waiting for the moment to arrive. You've been here since the very beginning and rebuilt yourself more than once, chasing a first title that keeps slipping away. Somewhere along the road you found your real purpose: taking young players nobody was sure about and turning them into the future, then trusting them. You're patient with potential and you stand by your people when it matters, even through the worst of times. The drama around you is the churn of always starting again, new leaders, new plans, the restless search for the missing piece. You've come close, once all the way to the final, but the crown stays just out of reach. You keep building anyway, certain your year is coming.",
-    "why": [
-      "You believe in what people can become, and you'd rather grow raw talent than buy the finished article.",
-      "You keep chasing the top even after years of near misses, restless and unwilling to settle for close.",
-      "You stand by your own through the hard stretches, and that patience is its own kind of loyalty."
-    ]
   },
   "SRH": {
     "name": "Sunrisers Hyderabad",
@@ -138,11 +113,6 @@ const teams = {
     "secondaryColor": "#000000",
     "tagline": "The quiet team everyone quietly respects, run by an owner who wears every win and loss on her face.",
     "desc": "You are the underdog people root for even when they're not yours, the one who goes about the work without the noise the bigger names make. You rose from the ashes of a team that no longer exists and made a home in orange, and your following is smaller but as devoted as any. What gives you away is the heart on the sleeve: the person at the top feels every ball, visibly, and everyone can see it. You spent years as the disciplined, defensive side that ground out results, and then you flipped entirely into the most fearless, all-or-nothing team going, the kind that either blows the roof off or falls apart. Quiet in reputation, loud in feeling. You wouldn't have it any other way.",
-    "why": [
-      "You feel it deeply even when you keep it contained. The intensity is real, it just doesn't always announce itself.",
-      "You do your work without needing the spotlight, and you've earned respect precisely because you never demanded it.",
-      "The energy where you are comes from one person at the top whose heart is on show, and you like that it's out in the open."
-    ]
   },
   "RR": {
     "name": "Rajasthan Royals",
@@ -153,11 +123,6 @@ const teams = {
     "secondaryColor": "#21418A",
     "tagline": "Champions in the very first season with a team of unknowns, and ever since, the smart, scrappy gambler who does it differently.",
     "desc": "You are the clever underdog who never had the biggest budget and never needed it. You won it all in the first year with a side nobody had heard of, the ultimate against-the-odds story, and it set your whole character: find value where others don't look, back the unknown kid, do it your own way. You're one of the smartest operators in the room and also one of the most volatile, because betting on raw talent means the highs are dizzying and the lows are steep. Pink is your colour and a proud old city is your home. Some years the gamble comes off and you unearth the next star. Some years it collapses. You take the rollercoaster because playing it safe was never you.",
-    "why": [
-      "You go by what the numbers tell you, hunting the undervalued rather than the obvious names.",
-      "You live with real volatility, the big swings up and down, because chasing the clever bet is worth the ride.",
-      "You'd rather grow an unknown into a star than buy a finished one, and finding the diamond is the whole thrill."
-    ]
   },
   "PBKS": {
     "name": "Punjab Kings",
@@ -168,11 +133,6 @@ const teams = {
     "secondaryColor": "#A7A9AC",
     "tagline": "Seventeen captains, endless reinvention, and a glamour that never quits, forever tearing it up to chase the formula.",
     "desc": "You are the beautiful chaos of the league, all colour and passion and constant reinvention. You've changed captains more than any side going, changed your name, your look, your plan, always convinced the next overhaul is the one that finally cracks it. The heart is real and it's loud, an owner who lives and dies with every ball and a Punjabi energy that lifts the whole thing. What you've never done is settle, build a steady core, and let it grow. You let your best go and watch them shine elsewhere, then start again from scratch. You've reached the final twice and come up short both times, still chasing a first crown. You're unpredictable to your bones. Nobody, including you, ever quite knows what they'll get.",
-    "why": [
-      "You're always reinventing, tearing it down and starting fresh in the belief the next version wins.",
-      "You feel everything out loud. The passion is right on the surface, win or lose.",
-      "You'd rather bring in the exciting finished name than patiently grow your own, and the churn is simply who you are."
-    ]
   },
   "GT": {
     "name": "Gujarat Titans",
@@ -183,11 +143,6 @@ const teams = {
     "secondaryColor": "#B4975A",
     "tagline": "Champions in your very first season and calm about it, the clinical newcomer who just quietly wins.",
     "desc": "You are the newcomer who arrived and immediately won, without fuss and without drama. In your first season you lifted the trophy, something no one had done before, and you've stayed near the top ever since, twice more within a game of the title. You do it the same way every time: a settled core, a balanced side, cool professional heads, and no interest in the noise. Where others overhaul, you trust what works and let it run. You don't do meltdowns and you don't do theatrics, and that steadiness is exactly the point. You're the youngest of the group with the least history, but you've made up the gap with pure competence. You're not here to take part. You're here to win, and you say so plainly.",
-    "why": [
-      "You trust the system and the balance of the whole thing, the calm execution that keeps producing.",
-      "You're the least dramatic side there is, steady where others come apart, and you win because of it.",
-      "You aim to win rather than merely compete, backing a stable core rather than chasing new names."
-    ]
   },
   "LSG": {
     "name": "Lucknow Super Giants",
@@ -198,11 +153,6 @@ const teams = {
     "secondaryColor": "#14213D",
     "tagline": "New money, big names, and no patience, the ambitious arriviste where the owner is the loudest voice in the room.",
     "desc": "You are the newest arrival with the deepest pockets and the shortest fuse. You spent big from day one, chasing the biggest names to announce yourself, and you've never been willing to wait. The defining picture of you is the owner's box, one powerful, demanding figure who sets the whole mood and isn't shy about showing displeasure in public when things go wrong. You have no history to lean on yet and not much of a settled identity, because people and plans turn over fast where you are. The ambition is enormous and so is the drama, and they come from the same place, the person at the top who wants it all now. You haven't won anything yet. You fully intend to, and soon.",
-    "why": [
-      "Your ambition is huge and impatient. You want the top, you want it now, and you'll spend whatever it takes.",
-      "The energy where you are comes straight from one strong figure at the top whose mood sets the tone.",
-      "You'd rather bring in the proven name than wait for someone to grow, because waiting was never your style."
-    ]
   }
 };
 

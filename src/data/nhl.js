@@ -82,11 +82,6 @@ const teams = {
     "secondaryColor": "#192168",
     "tagline": "More Cups than anyone, twenty-four of them, and a whole province that treats you like faith.",
     "desc": "You are the most decorated franchise in the sport, twenty-four championships, more than anyone who has ever played the game. In Montreal hockey is not a pastime, it is close to religion, the red, white and blue passed from parent to child like a family name. You carry ghosts in the rafters and a standard no one else can touch, and you measure every season against a glory that stretches back a century. The last Cup came in 1993, long enough ago to ache, and the wait only sharpens what it all means. Winning is not a hope for you. It is a birthright you mean to reclaim.",
-    "why": [
-      "Your loyalty is inherited and total, handed down like a family name. The crest outranks any player who has ever worn it, and it always will.",
-      "Your standard is set by a century of winning, not by one season. Nothing short of a championship has ever really counted here.",
-      "You feel the weight of the history and the length of the wait together. Caring this much is heavy, and you would not lighten it if you could."
-    ]
   },
   "TOR": {
     "name": "Toronto Maple Leafs",
@@ -97,11 +92,6 @@ const teams = {
     "secondaryColor": "#FFFFFF",
     "tagline": "Thirteen Cups, none since 1967, the longest wait in hockey, and still you show up.",
     "desc": "You were born into the biggest, loudest hockey market on earth, and into its longest ache. Thirteen championships sit in your history, more than everyone but Montreal, and not one has come since 1967, the longest drought the sport has ever known. A whole country watches, judges, and waits with you, and every spring the hope rises again no matter how many springs have ended the same way. You do not root because it pays off. You root because it is who you are, handed down, non-negotiable, blue and white to the bone.",
-    "why": [
-      "Your loyalty was never a choice; it was inherited, the way a name is. Leaving is not on the table and never has been.",
-      "You feel the wait fully every year, the ache and the hope together. That is the price of caring this much, and you pay it gladly.",
-      "Your standard comes from a glorious past, not this season. One title would not just be a win. It would end the longest wait in the game."
-    ]
   },
   "BOS": {
     "name": "Boston Bruins",
@@ -112,11 +102,6 @@ const teams = {
     "secondaryColor": "#FFB81C",
     "tagline": "Six Cups and a black-and-gold reputation, the toughest team in the toughest hockey town.",
     "desc": "You are hockey the hard way, black and gold, built on muscle and spite in a city that respects nothing softer. Six championships sit in your history, and the last came in 2011, but the identity runs deeper than any trophy. You are the Big Bad Bruins, the team other clubs dreaded coming to play, where Bobby Orr flew through the air and a working city saw itself in every hit. You do not want pretty. You want honest, physical, earned, the kind of winning that leaves a mark. Respect, for you, is something you take, never something you ask for.",
-    "why": [
-      "Your loyalty runs to a blue-collar city and an identity older than anyone alive. You root the way Boston works, hard and without apology.",
-      "You have real appetite for the rough edges of the game. You would rather win ugly and honest than pretty and soft.",
-      "Six banners set your bar, and you measure a season by whether it added to them. The standard is winning, the Boston way."
-    ]
   },
   "DET": {
     "name": "Detroit Red Wings",
@@ -127,11 +112,6 @@ const teams = {
     "secondaryColor": "#FFFFFF",
     "tagline": "Eleven Cups in the city that named itself Hockeytown, winning built like a production line.",
     "desc": "You come from Hockeytown, and you take the name literally. Eleven championships, more than anyone but Montreal and Toronto, built by a franchise that treats winning like a production line, quiet and relentless and beautifully made. Your golden run spanned the nineties and two-thousands, Steve Yzerman and Nicklas Lidstrom turning skill and structure into a decade of contention. You value craft over noise, the smart pass over the big hit, and an octopus on the ice for luck. You do not chase the spotlight. You just keep building winners, the way the city builds everything, with patience and pride.",
-    "why": [
-      "You trust craft and structure over flash. The smart, patient, well-built way of winning is the only way you respect.",
-      "Your loyalty runs to a hockey-mad city and a name it earned. Hockeytown is not a slogan to you, it is an inheritance.",
-      "Eleven banners set your standard, and you measure yourself against the whole history of the sport, not one season."
-    ]
   },
   "CHI": {
     "name": "Chicago Blackhawks",
@@ -142,11 +122,6 @@ const teams = {
     "secondaryColor": "#000000",
     "tagline": "Six Cups and a modern dynasty, then a teardown, glory and collapse in a single lifetime.",
     "desc": "You know both halves of the story. Six championships, an Original Six charter, and a modern dynasty that won three Cups in six years and made the whole league jealous, the Madhouse on Madison roaring and Chelsea Dagger blaring after every goal. Then it came apart, torn down to the studs, and you learned that even the best runs end. You carry the memory of being on top and the sting of watching it dismantled, and you measure everything against a peak you actually lived. The glory was real. So was the fall. You would not trade either one.",
-    "why": [
-      "Your loyalty is anchored to a golden run you lived through. You stay devoted to the standard that dynasty set.",
-      "You have felt the whole arc, the top of the world and the teardown, and you feel both vividly. The memory is part of how you root.",
-      "You judge every season against a championship peak, because you watched your team actually reach it."
-    ]
   },
   "NYR": {
     "name": "New York Rangers",
@@ -157,11 +132,6 @@ const teams = {
     "secondaryColor": "#CE1126",
     "tagline": "Original Six on Broadway, and 1994 finally ended fifty-four years of waiting.",
     "desc": "You are the big-market Original Six, hockey under the bright lights of Broadway and the world's most famous arena. For fifty-four years you waited, an eternity of near-misses in a city that demands everything, until 1994, when Mark Messier willed it home and the Garden finally exploded. That release defines you, the glamour and the pressure of New York, the long ache, and the roar when it finally broke. You want the show and you want the win, and you carry both the weight of history and the thrill of the spotlight. Nowhere else feels this big.",
-    "why": [
-      "Your loyalty runs to a charter franchise on the sport's brightest stage. You feel the size of New York in everything you root for.",
-      "You know what it is to wait, and what it is when the wait finally breaks. That release is stitched into how you love this team.",
-      "You want the win and the show at once. A title under the Broadway lights is the only version that fully counts."
-    ]
   },
   "EDM": {
     "name": "Edmonton Oilers",
@@ -172,11 +142,6 @@ const teams = {
     "secondaryColor": "#041E42",
     "tagline": "Five Cups in the eighties, then the trade that broke a country's heart, now the McDavid era.",
     "desc": "You are boom and bust in oil country, the highest highs and the cruelest turns. In the eighties you had the greatest offensive team ever assembled, five Cups in seven years, Wayne Gretzky rewriting the record book. Then came the trade, 1988, when he was sold south and a whole nation grieved, and the lean years after felt like penance. Now Connor McDavid has made you must-watch again, close enough to taste it, twice to the Final and twice turned away. You know glory and heartbreak intimately, and you believe, because you have to, that the next great run is already here.",
-    "why": [
-      "You have lived the extremes, dynasty and heartbreak, and you feel both fully. Loving this team has never been calm and never will be.",
-      "You have seen the very top and you want back there. Anything less than a championship feels like unfinished business.",
-      "Your loyalty runs to a hockey-first city that lives and dies with the team. In oil country the Oilers are the whole conversation."
-    ]
   },
   "CGY": {
     "name": "Calgary Flames",
@@ -187,11 +152,6 @@ const teams = {
     "secondaryColor": "#F1BE48",
     "tagline": "The C of Red, the 1989 Cup, and a whole city that turns crimson every spring.",
     "desc": "You are a sea of red, the loudest, most loyal building in the game when the playoffs come and the whole city pulls on the same jersey. One Stanley Cup sits in your history, 1989, won in the middle of the Battle of Alberta against your bitter provincial rivals, and it has never stopped mattering. You are blue-collar and proud, a Canadian hockey town that shows up no matter the standings, that treats a playoff run like a civic holiday. You do not have a dynasty to point to. You have something steadier, a devotion that turns the streets red and never once cools off.",
-    "why": [
-      "Your loyalty is a whole-city affair, the C of Red pulling the same direction. Belonging to that crowd is the point.",
-      "You show up regardless of the standings, year after year. Devotion, for you, was never conditional on winning.",
-      "Your roots are deep and Canadian and proud. This is a hockey town to its core, and you would not trade it."
-    ]
   },
   "VAN": {
     "name": "Vancouver Canucks",
@@ -202,11 +162,6 @@ const teams = {
     "secondaryColor": "#00843D",
     "tagline": "Never won a Cup, two Game 7 Finals lost, and a passion that runs hot and sometimes over.",
     "desc": "You love this team with an intensity that runs right to the edge, and sometimes past it. You have never won a Stanley Cup, but you have come agonizingly close, twice losing Game 7 of the Final, in 1994 and again in 2011 at home, the second time so painful the city itself boiled over. That heartbreak is woven into who you are, along with towel power and a fan base that lives and dies with every shift. You are volatile and devoted in equal measure, a beautiful west-coast obsession that has given everything, gotten so close, and kept coming back for more.",
-    "why": [
-      "You feel this team at full volume, joy and heartbreak both turned all the way up. There is no lukewarm way for you to love it.",
-      "You have been hurt as badly as any fan base can be, and you keep coming back. That is devotion tested and proven.",
-      "Your passion is a shared, west-coast, whole-city thing. When the team runs, the entire region rises with it."
-    ]
   },
   "WPG": {
     "name": "Winnipeg Jets",
@@ -217,11 +172,6 @@ const teams = {
     "secondaryColor": "#004C97",
     "tagline": "The team that left for Phoenix and came home, and a whiteout that swallows the whole arena.",
     "desc": "You know what it is to lose your team and get it back. The original Jets flew to Phoenix in 1996 and broke the city's heart, and for fifteen years there was nothing, until 2011 brought hockey home again and the whole province exhaled. Now the Whiteout swallows the arena every spring, a sea of white so loud and grateful it feels like a thank-you note to the sport. You have never won a Cup, but that is not really the point. The point is the team is here, that it came back, and that you will never again take a single home game for granted.",
-    "why": [
-      "Your loyalty was forged by loss and return. Having the team at all is a gift you refuse to take for granted.",
-      "The Whiteout is a whole-city ritual, a sea of white pulling as one. Belonging to that crowd is most of the joy.",
-      "Your roots are small-market and proud and hard-won. This is a hockey town that had to fight to stay one."
-    ]
   },
   "OTT": {
     "name": "Ottawa Senators",
@@ -232,11 +182,6 @@ const teams = {
     "secondaryColor": "#000000",
     "tagline": "A lone Cup Final in 2007, a club that nearly went under, and a capital that refused to let go.",
     "desc": "You are the capital's team, and you have never had it easy. One magical spring in 2007 carried you to the Stanley Cup Final, and you have not been back since. Off the ice it was harder still: bankruptcy, an owner the fans turned on, a sale that dragged on for the better part of a year, a long fight just to get a rink downtown where you belong. Through all of it, you stayed. Loud, loyal, a little battered, sure the almost was worth it and the best is still ahead. Yours is devotion that never needed a trophy to justify itself.",
-    "why": [
-      "Your loyalty was tested the way few fans ever face it, bankruptcy and turmoil and near-misses, and it held every time. Staying is the point.",
-      "You are a capital city's team, grassroots and all-in, where the whole town shows up rather than a handful of front-row stars.",
-      "Your roots are real but hard-won, never handed to you. You fought to keep your team and fought to bring it home."
-    ]
   },
   "PHI": {
     "name": "Philadelphia Flyers",
@@ -247,11 +192,6 @@ const teams = {
     "secondaryColor": "#000000",
     "tagline": "The Broad Street Bullies, back-to-back Cups in the seventies, feared everywhere you went.",
     "desc": "You are the meanest team hockey ever produced, and you have never once apologized for it. In the mid-seventies you won back-to-back Cups as the Broad Street Bullies, a snarling, brawling, terrifying group that other teams genuinely dreaded facing, and that identity never left. You are blue-collar Philadelphia, loud and combative and fiercely loyal, a fan base that respects effort and spite above all else and will boo anything soft. You have not won since 1975, and the wait grinds at you, but the attitude is untouched. You play hard, you hit harder, and you make every visitor earn every inch.",
-    "why": [
-      "You love the game at its most physical and combative. Softness is the one thing you cannot forgive, in a team or in yourself.",
-      "Your loyalty is blue-collar Philadelphia, loud and demanding and fierce. You give everything and expect everything back.",
-      "You feel it all at full intensity, and the long wait since 1975 sits heavy. Caring this hard is who you are."
-    ]
   },
   "BUF": {
     "name": "Buffalo Sabres",
@@ -262,11 +202,6 @@ const teams = {
     "secondaryColor": "#FFB81C",
     "tagline": "Never lifted the Cup, the league's longest playoff wait, and a goal you swear never counted.",
     "desc": "You are rust-belt loyalty in its purest form, a fan base that keeps the faith through decades of nothing. You have never won a Stanley Cup, and you have the scars to prove how close it came: the 1999 Final lost on a goal scored with a skate in the crease, a goal your city still insists never counted, and years later the longest playoff drought in the entire league. And still you fill the building, still you believe, still you love this team with a blue-and-gold stubbornness that outlasts every disappointment. You root not because it is easy or rewarded, but because it is yours, and giving up was never an option.",
-    "why": [
-      "Your loyalty was tested by decades of losing and never broke. Faith without payoff is the truest kind, and it is yours.",
-      "You are rust-belt and all-in, a whole city that shows up regardless. Belonging to that faithful crowd is the point.",
-      "You carry a specific heartbreak, a Cup lost on a goal you never accepted, and you feel it still. That ache is part of the bond."
-    ]
   },
   "STL": {
     "name": "St. Louis Blues",
@@ -277,11 +212,6 @@ const teams = {
     "secondaryColor": "#FCB514",
     "tagline": "Last place in January, champions in June, 2019, after fifty-two years of waiting.",
     "desc": "You are the long wait finally rewarded, the sweetest championship story the sport has told in years. For fifty-two years you chased a Cup and came up empty, and in January of 2019 you sat dead last in the entire league, going nowhere. Then everything turned, a rookie goaltender caught fire, a Laura Branigan song became a battle cry, and you won it all, last to first, Play Gloria echoing through the city. You are blue-collar Midwestern loyalty, patient and stubborn and finally vindicated. You waited longer than almost anyone, you never quit, and when it came, it came in the most improbable way possible.",
-    "why": [
-      "Your loyalty was patient past all reason, fifty-two years of faith before the payoff. Waiting that long and staying is who you are.",
-      "You believe a turnaround is always possible, because you lived the ultimate one. Last place in January means nothing if you keep working.",
-      "You are Midwestern and blue-collar and all-in, a whole city singing the same song. That shared release is the heart of it."
-    ]
   },
   "NYI": {
     "name": "New York Islanders",
@@ -292,11 +222,6 @@ const teams = {
     "secondaryColor": "#F47D30",
     "tagline": "Four straight Cups from 1980 to 1983, then decades in the suburban wilderness.",
     "desc": "You know a level of dominance almost no one else has reached, and then the long fall after it. From 1980 to 1983 you won four straight Stanley Cups, a dynasty that beat everyone, the Nassau Coliseum earning the name Fort Neverlose. Then it faded, and the decades since have mostly been spent as Long Island's overlooked, blue-collar team, playing in the big-city cousins' shadow. You carry the memory of true greatness and the grit of a fan base that never got the spotlight it earned. You are working-class, unglamorous, and proud of it, still measuring everything against four straight, still certain your kind of team knows how to win.",
-    "why": [
-      "Your loyalty is anchored to a four-Cup dynasty you or your family lived through. That standard still defines how you root.",
-      "You are blue-collar Long Island, unglamorous and proud, the working cousins to the big-city team. Belonging there is the point.",
-      "You carry both the memory of greatness and the sting of the wilderness after. Both live in how you love this team."
-    ]
   },
   "MIN": {
     "name": "Minnesota Wild",
@@ -307,11 +232,6 @@ const teams = {
     "secondaryColor": "#A6192E",
     "tagline": "The State of Hockey, grassroots to the core, still chasing a first Cup as the Wild.",
     "desc": "You are the deepest hockey roots in America, the State of Hockey, where the game is played on every frozen pond and the high school tournament fills an NHL arena. As the Wild you have never won a Stanley Cup, and there is an old wound underneath, the North Stars who left for Dallas in 1993 and won a title there instead. But your identity was never really about the trophy. It is about the game itself, grown from the grassroots up, a whole state that lives and breathes it. You show up loyal and knowledgeable and all-in, certain no one loves the sport more purely than you do.",
-    "why": [
-      "Your loyalty is grassroots and statewide, hockey woven into everyday life. Belonging to that whole community is the heart of it.",
-      "Your roots in the game run as deep as anywhere in the country. This is who you are, not just what you watch.",
-      "You carry an old wound, a team that left and won elsewhere, and you love the current one anyway. That devotion is unconditional."
-    ]
   },
   "NSH": {
     "name": "Nashville Predators",
@@ -322,11 +242,6 @@ const teams = {
     "secondaryColor": "#041E42",
     "tagline": "Smashville, the catfish on the ice, the loudest barn in the league, one Final in 2017.",
     "desc": "You turned a city nobody expected to care about hockey into Smashville, the loudest, most joyful building in the league. You have never won a Cup, but you reached the Final in 2017 and turned the whole run into a party, catfish thrown on the ice, country stars on the anthem, a downtown that shakes. You are the great Southern hockey surprise, proof the game can take root anywhere and be more fun than anyone imagined. You do not carry a century of tradition. You carry noise, personality, and a chip about being underestimated, and you would put your barn and your party up against anyone's.",
-    "why": [
-      "Your loyalty is loud, joyful, and unmistakable, a whole downtown turned into a party. Belonging to that noise is the point.",
-      "You bring color and personality and a little mayhem to everything. The fun is not a side effect, it is the identity.",
-      "You carry a chip about being doubted, hockey where it supposedly could not work. Proving them wrong is part of the joy."
-    ]
   },
   "CBJ": {
     "name": "Columbus Blue Jackets",
@@ -337,11 +252,6 @@ const teams = {
     "secondaryColor": "#CE1126",
     "tagline": "Small-market Ohio, the cannon after every goal, still chasing a first playoff breakthrough.",
     "desc": "You are the earnest underdog, small-market Ohio hockey with a cannon that fires after every goal and a fan base that calls itself the 5th Line. You have never won a Stanley Cup, and playoff success has been rare and hard-won, but you show up loyal and hopeful anyway, building a hockey culture in a football state one season at a time. You do not have tradition or trophies to lean on. You have grit, patience, and a genuine, unpretentious love of the game, the kind of fan base that celebrates every small step. You are still waiting for the breakthrough, and you have not lost faith that it is coming.",
-    "why": [
-      "Your loyalty is small-market, earnest, and all-in, the 5th Line showing up regardless. Belonging to that hopeful crowd is the point.",
-      "You keep the faith with little to show for it, building something from the ground up. Patience without payoff is your kind of devotion.",
-      "Your hockey roots are young but real, grown in a football state. You are creating a tradition rather than inheriting one."
-    ]
   },
   "NJD": {
     "name": "New Jersey Devils",
@@ -352,11 +262,6 @@ const teams = {
     "secondaryColor": "#000000",
     "tagline": "Three Cups won on a suffocating system, the smart, patient, unglamorous way to win.",
     "desc": "You win with your head, not your highlight reel. Three Stanley Cups sit in your history, all built on a suffocating defensive system that strangled opponents and frustrated purists, hockey engineered rather than improvised. You do not need to be loved or watched. You need to be effective, and for years you were the most effective team in the sport, Martin Brodeur in goal and a trap that turned games into vises. You are Jersey's team, unpretentious and proud of the substance over the flash. Let others chase style points. You will take the quiet, brilliant, buttoned-up win, and the three banners that prove it works.",
-    "why": [
-      "You trust the system above all, the disciplined, engineered way of winning. Style points mean nothing next to being effective.",
-      "You measure yourself in results, not highlights. Three Cups won your way is the only argument you need.",
-      "Your loyalty is to a no-nonsense, substance-over-flash identity. You are Jersey's team, and you like it unglamorous."
-    ]
   },
   "CAR": {
     "name": "Carolina Hurricanes",
@@ -367,11 +272,6 @@ const teams = {
     "secondaryColor": "#000000",
     "tagline": "The old Hartford Whalers made new, and a 2026 Cup won on structure with a grinder as MVP.",
     "desc": "You are proof that the smart, structured way wins, and you have the fresh trophy to show it. Once the Hartford Whalers, you moved south and built something better, a relentless, system-first team that just won the 2026 Stanley Cup on suffocating defense, with a thirty-seven-year-old grinder named playoff MVP over any superstar. Your fans are the Caniacs, loud and devoted in a market that had to be taught the game and learned to love it hard. You do not win with the flashiest roster. You win with structure, work, and buy-in, everyone rowing the same direction, and in 2026 you showed the whole league the boring, brilliant way beats the pretty one.",
-    "why": [
-      "You trust structure and buy-in over star power. The everyone-rows-together way of winning is your faith, and it just won it all.",
-      "Your fans are the Caniacs, a taught-and-devoted market that learned the game and loves it loudly. Belonging to that crowd is the point.",
-      "You just proved the system beats the spectacle. A Cup won your unglamorous way is the sweetest kind of vindication."
-    ]
   },
   "DAL": {
     "name": "Dallas Stars",
@@ -382,11 +282,6 @@ const teams = {
     "secondaryColor": "#8F8F8C",
     "tagline": "The old Minnesota North Stars, a 1999 Cup in Texas, hockey where nobody expected it.",
     "desc": "You are hockey where it was never supposed to work. Once the Minnesota North Stars, you moved to Texas in 1993 and, six years later, won the Stanley Cup in the heat, victory green against all the doubters. You are structured and defensively stubborn, a team that grinds out wins rather than dazzling, and you built a real hockey culture in football country from nothing. There is an old tension in your history, a fan base in Minnesota that never forgave the move, but you took the game somewhere new and proved it could thrive. You do the unglamorous things well, and you have a Cup in Texas to show for it.",
-    "why": [
-      "You win by grinding, structure and defensive discipline over flash. The patient, hard-nosed way is the way you respect.",
-      "You built hockey where it supposedly could not exist and made it thrive. Proving the doubters wrong is part of your identity.",
-      "You have a Cup in the most unlikely place, and you want more. You measure yourself by results, not by where you play."
-    ]
   },
   "PIT": {
     "name": "Pittsburgh Penguins",
@@ -397,11 +292,6 @@ const teams = {
     "secondaryColor": "#FCB514",
     "tagline": "Five Cups, Lemieux then Crosby, star power that saved the franchise and won everything.",
     "desc": "You are star power incarnate, the team that has always been carried by the best player in the world. Five Stanley Cups, two eras of greatness: Mario Lemieux, who won two Cups and then literally bought the team to save it from ruin, and Sidney Crosby, who won three more and became the face of the sport. You are pedigree and superstar shine, a franchise twice pulled back from the edge of relocation and twice turned into a champion. You expect to contend because your history is stacked with legends who made it so. You do not do small. You do stars, banners, and the certainty that greatness is your birthright.",
-    "why": [
-      "You expect to contend, always, because your history is built by the best players alive. Anything short of a Cup run feels wrong.",
-      "Your loyalty survived two brushes with losing the team entirely. That devotion, tested by near-collapse, runs deep.",
-      "Your identity is star power and pedigree, Lemieux to Crosby. You root for a franchise that expects greatness."
-    ]
   },
   "WSH": {
     "name": "Washington Capitals",
@@ -412,11 +302,6 @@ const teams = {
     "secondaryColor": "#041E42",
     "tagline": "Ovechkin, the greatest goal-scorer ever, and the 2018 Cup that ended decades of heartbreak.",
     "desc": "You belong to the greatest goal-scorer who ever lived. Alex Ovechkin spent his entire career in your sweater and passed Wayne Gretzky for the most goals in NHL history, a record almost no one thought could fall. For years the individual brilliance came without the trophy, playoff heartbreak stacking up season after season, until 2018, when it all finally broke and you won your first Stanley Cup. You are star power and long-awaited payoff, Rock the Red, a fan base that suffered through the near-misses and got the release it earned. You waited a long time for the win, and you had the best show in hockey the whole way.",
-    "why": [
-      "Your identity is tied to the greatest goal-scorer ever, one man, one sweater, one city. That loyalty runs both ways.",
-      "You endured years of playoff heartbreak chasing the Cup, and 2018 finally delivered it. The wait made the win everything.",
-      "You rooted for individual greatness and hoped for the team payoff. Feeling both, the brilliance and the ache, is your story."
-    ]
   },
   "COL": {
     "name": "Colorado Avalanche",
@@ -427,11 +312,6 @@ const teams = {
     "secondaryColor": "#236192",
     "tagline": "The old Quebec Nordiques reborn, three Cups, and star-driven greatness at altitude.",
     "desc": "You arrived already great and never really stopped. Once the Quebec Nordiques, you moved to Denver in 1995 and won the Stanley Cup in your very first season, then won again in 2001 and a third time in 2022, three titles built on elite, high-flying talent. You are star power at altitude, fast and skilled and expected to contend, a franchise that has always had one of the best players in the world on its roster. You do not grind out ugly wins. You overwhelm, with speed and skill and swagger. Greatness, for you, has been less a goal than a habit, and you fully intend to keep it that way.",
-    "why": [
-      "You expect to contend on the strength of elite talent. Anything less than a deep run feels beneath the standard you set.",
-      "You win with speed, skill, and swagger, hockey played fast and loud. The flair is the point, not a bonus.",
-      "Your identity is star-driven greatness, one elite roster after another. You root for a team that expects to be the best."
-    ]
   },
   "LAK": {
     "name": "Los Angeles Kings",
@@ -442,11 +322,6 @@ const teams = {
     "secondaryColor": "#A2AAAD",
     "tagline": "Gretzky put hockey on the LA map, and two Cups in 2012 and 2014 made it stick.",
     "desc": "You are hockey in the city of stars, and it took a star to make it matter. When Wayne Gretzky was traded to Los Angeles in 1988 he turned a hockey afterthought into an event, and though the Cup did not come then, the foundation did. Two decades later you won it twice, 2012 and 2014, gritty, star-anchored teams that finally delivered. You are Hollywood and hockey at once, glamour and a hard-earned toughness underneath, a franchise that had to build its own tradition in a place that had none. You do not have a century of banners. You have Gretzky, two Cups, and a city you taught to love the game.",
-    "why": [
-      "You measure yourself by the two Cups you earned and want more. Contending, in a city of stars, is the standard.",
-      "You built a hockey tradition where none existed, starting with Gretzky. Creating that identity is part of your pride.",
-      "Your loyalty is glamour and grit at once, Hollywood on top, toughness underneath. You root for both halves."
-    ]
   },
   "TBL": {
     "name": "Tampa Bay Lightning",
@@ -457,11 +332,6 @@ const teams = {
     "secondaryColor": "#FFFFFF",
     "tagline": "Three Cups since 2004, back-to-back in 2020 and 2021, a modern Sun Belt dynasty.",
     "desc": "You are the modern Sun Belt dynasty, proof that hockey in the Florida heat can be a machine. Three Stanley Cups sit in your history, the first in 2004 and then back-to-back titles in 2020 and 2021, built on a core of stars who stayed together and dominated. You are skilled, deep, and relentless, a team that turned a nontraditional market into a genuine power and made contending look routine. You do not have decades of tradition, and you do not need them. You have a recent dynasty, elite talent, and the swagger of a franchise that spent years as the best team in the sport.",
-    "why": [
-      "You expect to win because you recently, repeatedly did. A deep run is the baseline, not the dream.",
-      "Your loyalty is to a modern power you watched become dominant. That shared recent glory is the bond.",
-      "You built a hockey dynasty where the game barely existed, and made it look routine. That is your kind of pride."
-    ]
   },
   "VGK": {
     "name": "Vegas Golden Knights",
@@ -472,11 +342,6 @@ const teams = {
     "secondaryColor": "#333F42",
     "tagline": "An expansion team in the Final in year one, a Cup by year six, built to win from day one.",
     "desc": "You are the machine, the team assembled to win now. You entered the league in 2017 and did the impossible, reaching the Stanley Cup Final in your very first season, then won it all in 2023, faster than any expansion team ever. You have no roots to speak of, and that is exactly the point, near-zero history is your flex, a win-now operation that treats contending as the only acceptable state. Vegas Born, glittering and ruthless, a franchise that arrived fully formed and expects a championship every single year. You did not wait your turn or pay any dues. You just showed up and started winning.",
-    "why": [
-      "You expect to win now, every year, no exceptions. Contending is not a goal for you, it is the baseline you were built on.",
-      "Your near-total lack of history is your flex, not your shame. You arrived fully formed and answer to no tradition.",
-      "Your identity is glitter and ruthlessness at once, Vegas through and through. You root for a show that also happens to win."
-    ]
   },
   "FLA": {
     "name": "Florida Panthers",
@@ -487,11 +352,6 @@ const teams = {
     "secondaryColor": "#041E42",
     "tagline": "Thirty years nobody watched, then back-to-back Cups, and you never forgot being nothing.",
     "desc": "For thirty years you were the team nobody watched, hockey grafted onto a beach where it was never supposed to take. Then, all at once, you became the best team in the sport, winning the Stanley Cup in 2024 and again in 2025, back to back over the same opponent both times. You play like villains and love it, loud and fearless and happy to be hated. But the chip never leaves. You remember the decades of nothing, and every win answers everyone who ignored you. You were nobody. Now you are champions, and you will let no one forget either half.",
-    "why": [
-      "You have no long tradition to lean on, and you made that your fuel. Being underestimated for decades is what makes the winning taste right.",
-      "You are happy to be the villain, loud and fearless and a little hated, and you would not trade the swagger for respectability.",
-      "You aim as high as it goes and you got there, twice. The hunger was built in the lean years and never switched off."
-    ]
   },
   "SEA": {
     "name": "Seattle Kraken",
@@ -502,11 +362,6 @@ const teams = {
     "secondaryColor": "#99D9D9",
     "tagline": "The league's newest big-market expansion, a brand built from scratch and still taking shape.",
     "desc": "You are the blank slate by design, the league's freshest expansion, an identity still being written in real time. You arrived in 2021 with a brilliant brand, the Kraken, a sea monster and a beautiful sweater and a gleaming arena, but almost no history yet, no dynasty, no wound, no decades of anything. And that is the appeal. You get to decide who you become, a modern hockey market in a great sports city, building your traditions from the first puck drop. You do not carry the past because you do not have one. You have a clean start, a loud new fan base, and a whole future to define however you choose.",
-    "why": [
-      "You have almost no history, and you treat that as freedom. You get to build your identity rather than inherit it.",
-      "Your fan base is new, loud, and forming its own rituals. Belonging at the start of something is the appeal.",
-      "You are not weighed down by old heartbreak or expectation. You root with the optimism of a clean slate."
-    ]
   },
   "UTA": {
     "name": "Utah Mammoth",
@@ -517,11 +372,6 @@ const teams = {
     "secondaryColor": "#000000",
     "tagline": "The league's newest team, born from Arizona's ashes, a fresh start in Salt Lake City.",
     "desc": "You are the newest team in the entire league, a franchise barely getting started. You arrived suddenly, when the players and assets of a failed Arizona team were moved to Salt Lake City and rebranded, and in 2024 hockey had a brand-new home in the mountains. You became the Mammoth, and a fan base formed almost overnight, thrilled just to have a team of their own at last. You have no banners, no history, no old wounds, only a clean beginning. You are the ground floor of something, and being here this early, before any of it is written, is the entire appeal.",
-    "why": [
-      "You have no history at all, and you love that. Being at the very beginning, before anything is written, is the point.",
-      "Your fan base formed overnight, grateful and all-in. Belonging at the ground floor of a team is the whole thrill.",
-      "You carry no old heartbreak, only a fresh start. You root with the pure excitement of something just begun."
-    ]
   },
   "ANA": {
     "name": "Anaheim Ducks",
@@ -532,11 +382,6 @@ const teams = {
     "secondaryColor": "#000000",
     "tagline": "Born a Disney movie team, a real 2007 Cup, the improbable Mighty Ducks made legit.",
     "desc": "You started as a joke and turned into a champion. You were literally created by Disney in 1993, named for a movie, the Mighty Ducks, and nobody took you seriously, until you got good and, in 2007, won the Stanley Cup, the first California team ever to do it, built on a bruising, unglamorous, powerhouse blue line. You are Southern California hockey with a chip and a sense of humor, an identity that began as pure novelty and earned genuine respect the hard way. You do not mind the punchline origin. You have a Cup that shut everyone up, and you like the underdog-made-good story just fine.",
-    "why": [
-      "You began as a novelty and made yourself legitimate. Turning the joke into a champion is the heart of your pride.",
-      "You carry a sense of humor and a chip at once, the cartoon team that got real. You root with that mix of fun and defiance.",
-      "You have a Cup that silenced the doubters, and it still means everything. You measure yourself by that hard-won respect."
-    ]
   },
   "SJS": {
     "name": "San Jose Sharks",
@@ -547,11 +392,6 @@ const teams = {
     "secondaryColor": "#000000",
     "tagline": "Silicon Valley teal, a long strong window, a 2016 Final, and still no Cup to show for it.",
     "desc": "You are the team that was good for a long time and never got the prize. From Silicon Valley in your unmistakable teal, you spent years as a strong, respected contender, piling up regular-season success and playoff appearances, reaching the Stanley Cup Final in 2016, and never quite lifting it. You have never won, and your wound is a specific one: not decades of losing, but decades of almost, very good when it counted and never quite enough. You are West Coast, modern, and loyal through the near-misses, still proud of the run even without the ring. You know how close is close, and you are still waiting to finally cross the line.",
-    "why": [
-      "You stayed loyal through years of coming close and falling short. Devotion tested by almost, not by losing, is your kind.",
-      "You carry the specific ache of the near-miss, good enough to contend, never enough to win. You feel every one of those inches.",
-      "You are Silicon Valley hockey in teal, a modern West Coast fan base. Belonging to that loyal crowd is the point."
-    ]
   }
 };
 const archetypes = {

@@ -257,11 +257,6 @@ const teams = {
     "secondaryColor": "#FFEB00",
     "tagline": "The only name never to miss a season since 1950, and every year without a title only makes you burn hotter.",
     "desc": "You are not a team so much as a religion. You come from Maranello, the only marque to have entered every season since the championship began in 1950, and you carry a following that fills grandstands in red wherever the race is held. The passion is the point, and so is the pain: you have gone since 2008 without a constructors' crown, and every near miss lands like a national wound. Precision has never been your first language. Drama is. When you win it is operatic, and when a strategy call goes wrong the whole of Italy hears about it. You would not trade a drop of that feeling for a colder, tidier way of winning. Forza Ferrari is not a slogan. It is a faith kept through every barren year.",
-    "why": [
-      "Your heart rules. You feel every result at full volume, the highs operatic and the lows like grief, and you would not have it any other way.",
-      "Your roots run deepest in the sport. One town, one colour, one unbroken line since the very first season, and a following the size of a nation.",
-      "You chase the title as hard as anyone, but never coldly. Passion comes before precision, which is your glory and, on the wrong afternoon, your undoing."
-    ]
   },
   "MER": {
     "name": "Mercedes",
@@ -272,11 +267,6 @@ const teams = {
     "secondaryColor": "#101010",
     "tagline": "Eight constructors' titles in a row, the longest streak the sport has ever seen, and you made dominance look like routine.",
     "desc": "You are the machine everyone else measures themselves against. Between 2014 and 2021 you won eight constructors' titles without a break, the longest run of dominance in the sport's history, and you did it not with drama but with a standard so high it looked routine. You do not run on passion. You run on precision, on getting every small thing right and letting the results follow. Winning, to you, is an engineering problem solved better than anyone else solves it. Cold is not an insult here. Cold is the point. When you set the benchmark, the whole grid spends years trying to reach it, and quietly, that is exactly how you like it.",
-    "why": [
-      "You trust the system above all else. Titles at your level are not luck, they are the output of a machine built to produce them, tuned to the last detail.",
-      "You keep your composure when others lose theirs. No theatrics, no meltdowns, just calm control while the pressure does its work on everyone else.",
-      "You aim for the very top and expect to stay there. Setting the standard is not enough, holding it season after season is the real prize."
-    ]
   },
   "MCL": {
     "name": "McLaren",
@@ -287,11 +277,6 @@ const teams = {
     "secondaryColor": "#101820",
     "tagline": "Second only to the oldest name in the sport across its whole history, you ended a 26-year wait and won it all over again.",
     "desc": "You are one of the true giants, second only to the oldest name in the sport across the whole of its history. You come from Woking, from a culture of quiet engineering excellence, and for a long time your greatness lived mostly in the past, a 26-year wait between constructors' crowns that became the longest drought any champion had carried. Then you ended it, and rather than exhale you did it again the very next year, back-to-back for the first time since 1991. You win the way you always have, with cool precision and total buy-in rather than noise and drama. The papaya is not loud for the sake of it. It is the colour of a team that does the work and lets the results speak.",
-    "why": [
-      "You trust engineering above all. Your revivals are never flukes, they are the payoff of a technical culture built to get every detail right.",
-      "You expect to win it all. A strong season that ends without a title does not satisfy you, the trophy is the only measure that counts.",
-      "You hold your identity through the lean years. Even across a long drought you never stopped being one of the sport's storied names, and you carried that pride until the winning returned."
-    ]
   },
   "RBR": {
     "name": "Red Bull",
@@ -302,11 +287,6 @@ const teams = {
     "secondaryColor": "#E4002B",
     "tagline": "You showed up as an energy drink that bought a struggling team, then out-won names a century older than you.",
     "desc": "You are the outsider who was never supposed to belong and won anyway. You arrived in 2005, an energy-drink brand that bought a fading team, and inside a decade you were beating marques that had raced since the sport began. You owe nothing to heritage or place. You are a brand, not a town, and you treat the establishment as something to beat, not join. When you are on top you are ruthless, a machine tuned to win and keep winning long after everyone else has folded. Right now the crown has slipped. The designer who built your dominance has gone, the long-time boss with him, you are learning a new engine, and your talisman's future is the paddock's favourite question. None of that changes what you are. You are built to claw back to the front, and you intend to.",
-    "why": [
-      "Your hunger is total, dialled to the maximum. You do not race to take part, you race to win the whole thing, and second place barely registers.",
-      "You are loyal to winning, not to a place or a past. No home town, no long line of tradition, just a brand that will change whatever it takes to stay on top.",
-      "You win by being sharper than everyone else, ruthless and quick to move, with just enough edge and drama to keep the whole paddock watching."
-    ]
   },
   "WIL": {
     "name": "Williams",
@@ -317,11 +297,6 @@ const teams = {
     "secondaryColor": "#FFFFFF",
     "tagline": "Nine titles won as a proud independent, and a family name that held the line through twenty lean years.",
     "desc": "You are the great independent, the family team that did it its own way. Founded in a workshop in 1977, you rose to win nine constructors' titles across the 1980s and 1990s, beating giants with far deeper pockets purely on engineering and grit. Then came the fall, twenty years in the wilderness where the wins dried up and the money got tight, and through all of it you refused to stop being Williams. The loyalty is bone-deep, to the name, to the craft, to a way of racing that owes nothing to anyone. Now you are climbing back, patient and stubborn, rebuilding brick by brick. You were never the richest or the loudest. You were the one that endured.",
-    "why": [
-      "Your loyalty is total, the highest there is. You stayed yourself through two decades when it would have been easier to walk away or sell up, and you never did.",
-      "Your roots and your heart run deep. One name, one workshop, a family identity you carry with real feeling through good years and bad.",
-      "You want to win, but not at any cost. You would rather climb back the honest way, on your own terms, than buy your way there."
-    ]
   },
   "AST": {
     "name": "Aston Martin",
@@ -332,11 +307,6 @@ const teams = {
     "secondaryColor": "#00594F",
     "tagline": "You bought a midfield team, poured a fortune into it, and hired the sport's greatest designer to finally make it win.",
     "desc": "You are the great project, the team money is building into a giant. Not long ago you were a modest midfield outfit, until an ambitious owner poured a fortune in, built a gleaming new factory, secured a works engine deal, and hired the most successful designer the sport has ever known to run the whole thing. You have no long line of titles behind you, and you are impatient about that. Everything you do points at the front, and you would rather spend big and swing for greatness than settle for a comfortable midfield. You are still assembling the pieces, and the results have not caught the ambition yet. But make no mistake about the goal. You are not here to make up the numbers. You are here to win.",
-    "why": [
-      "Your ambition runs near the top. You are not chasing respectability, you are chasing the championship, and you have bet everything on getting there.",
-      "You believe in building it right. Deep investment, the best people, a proper factory, all pointed at turning money into performance.",
-      "You owe little to the past. You are a new identity built on an old midfield team, loyal to the destination more than any tradition."
-    ]
   },
   "ALP": {
     "name": "Alpine",
@@ -347,11 +317,6 @@ const teams = {
     "secondaryColor": "#FF4FA3",
     "tagline": "France's works team, born from a factory that won world titles under other names, and drama has followed you the whole way.",
     "desc": "You are the heart-on-sleeve French team, all passion and turbulence. Your factory has a proud past, a place that won world championships under other banners before the blue arrived, but calm has never been your natural state. Management comes and goes, the plans change, the drama plays out in public, and through it all you feel every high and low at full volume. You lost your own engine along the way and had to lean on a rival's, another twist in a story that never runs smooth. When it clicks you are thrilling. When it does not you are chaos in motion. What never changes is the emotion. You would rather burn bright and unpredictable than tick along quietly in the midfield.",
-    "why": [
-      "You run on feeling and thrive in the turbulence. Stability was never your style, and you would take a wild ride over a quiet one every time.",
-      "You carry a national identity and a proud factory heritage, a team that means something to a whole country even in the lean years.",
-      "You lead with the heart over the spreadsheet. Plans and structure come second to instinct and emotion, which is your charm and your curse."
-    ]
   },
   "HAA": {
     "name": "Haas",
@@ -362,11 +327,6 @@ const teams = {
     "secondaryColor": "#E8E8E8",
     "tagline": "The grid's leanest team, running on a shoestring and a smart shortcut, and you have always punched above your weight.",
     "desc": "You are the grid's great pragmatist, the small American team that does more with less. You run on the leanest budget out there and you are not shy about the smart shortcut, buying whatever the rules allow and building only what you must. You are not chasing championships, and you are honest about that. Your win is a strong points day against teams spending many times what you do, a midfield scrap taken on cleverness and grit rather than money. No glamour, no drama, no pretending to be something you are not. You show up, do the unglamorous work, and let a good result speak for a team that was never supposed to keep up in the first place.",
-    "why": [
-      "Your ambition is grounded. You are not here to win the title, you are here to compete hard, bank good points, and prove a small team belongs.",
-      "You get by on cleverness, not resources. You buy smart, work lean, and find the result the big spenders miss.",
-      "You keep it honest and unshowy. No pretense, no drama, just steady graft from a team that knows exactly what it is."
-    ]
   },
   "RB": {
     "name": "Racing Bulls",
@@ -377,11 +337,6 @@ const teams = {
     "secondaryColor": "#FFFFFF",
     "tagline": "The junior team, the proving ground where tomorrow's champions cut their teeth before moving up.",
     "desc": "You are the proving ground, the team where careers begin. From a small Italian town you have spent decades doing one job better than anyone: taking young, hungry talent and giving it a real seat, a real chance to show what it can do. Some of the sport's biggest names raced for you first before graduating to bigger things, and you take pride in that even when they leave. You are the younger sibling in a family of two teams, restless and full of energy, never quite the finished article because being finished was never the point. You are where the future gets tested. Win or lose, there is always another prospect coming, another shot to hand someone, another story just starting.",
-    "why": [
-      "Your ambition is not the title. It is development, growth, giving raw talent the miles and the chance it needs to become something.",
-      "You run young and restless. There is energy and unpredictability in you, the feel of a team where things are always in motion.",
-      "You hold a home and a role more than a fixed identity. You are the sibling team, proud of your part even as the best you raise move on."
-    ]
   },
   "AUD": {
     "name": "Audi",
@@ -392,11 +347,6 @@ const teams = {
     "secondaryColor": "#1A1A1A",
     "tagline": "A German giant with a five-year plan and its own engine, patient enough to build a champion from the ground up.",
     "desc": "You are the patient giant, an engineering colossus that does nothing by halves. You arrived by taking over one of the sport's longest-serving privateers, a proud independent that gave countless drivers their start, and you brought the full weight of a German manufacturer with you. You built your own engine from the ground up, set out a five-year plan to reach the front, and you mean to follow it step by step. You are not here for a quick thrill or a lucky podium. You are here to engineer your way to a championship, methodically, the way you do everything. It will take time and you know it. Patience and precision are not weaknesses to you. They are the whole strategy.",
-    "why": [
-      "You trust engineering above all else. A works engine built in-house, a clear plan, and the belief that if you do the work right, results follow.",
-      "You aim high but with patience. The championship is the goal, and you accept it will take years of disciplined building to get there.",
-      "You carry a long heritage forward. You inherited a proud old team's home and history, and you honour it while making it your own."
-    ]
   },
   "CAD": {
     "name": "Cadillac",
@@ -407,11 +357,6 @@ const teams = {
     "secondaryColor": "#C9A227",
     "tagline": "The eleventh team, an American giant arriving with a blank page and everything to prove.",
     "desc": "You are the new arrival, a blank page with a giant's ambition. You are the eleventh team on the grid and the first all-new name in years, an American manufacturer that muscled its way into a closed world and intends to belong. You have no history yet, no trophies, no legend, and that does not faze you at all. It excites you. Everything is ahead of you and unwritten, and you get to decide what your story becomes. You arrived with big backing and experienced hands rather than starting from nothing, but the identity is still yours to build. You are bold, fresh, and unafraid to be the outsider, because being underestimated is exactly the position you plan to prove everyone wrong from.",
-    "why": [
-      "Your ambition is huge and it points forward. You did not enter to make up the numbers, you entered to build something that belongs at the front.",
-      "You carry no past, and you like it that way. A blank slate, no baggage, a story you get to write from the very first page.",
-      "You run on bold, fresh energy. There is excitement and a little swagger in you, the buzz of a newcomer with everything to prove."
-    ]
   }
 };
 

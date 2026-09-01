@@ -266,11 +266,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You won it all without losing a game, and your all time record is still under .500.",
     "desc": "You are the impossible one. For more than a century Indiana football was the punchline of a basketball school, a program with far more losses than wins and almost nothing to show for the trying. Then a coach nobody outside Bloomington could name arrived, said out loud that he would simply win, and did exactly that. Sixteen games, sixteen wins, a Big Ten title and the first national championship in the program's life. Your quarterback took the Heisman. Your stadium, which had rarely sold out in its life, started filling four times a year once the winning started. You are the proof that it can happen to anyone, including you.",
-    "why": [
-      "Your ambition and your process run at the very top of the scale together. You believe the right method, repeated without drama, eventually beats history itself.",
-      "Your rootedness sits low, and that is the point. You had no tradition to protect, so you built the thing you wanted out of nothing.",
-      "You carry a chip you earned rather than inherited. Being doubted for a very long time did not make you bitter, it made you patient."
-    ]
   },
   "ALA": {
     "name": "Alabama",
@@ -280,11 +275,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "Eighteen titles deep, and you still count anything short of the next one as failure.",
     "desc": "Winning is not your goal. It is your floor. You come from the most decorated program in the modern history of the sport, a place where two separate dynasties a generation apart each stacked six national titles, and where a good year that ends without a trophy gets quietly filed as a disappointment. You do not apologize for the standard and you do not lower it. Roll Tide is not a cheer to you. It is a promise that the bar stays exactly where it is.",
-    "why": [
-      "Your ambition sits at the ceiling. You were not built to enjoy the ride, you were built to win the whole thing, and you judge every season by that one line.",
-      "Your trust in the system is total. Titles at your place are not luck or a hot streak, they are the output of a machine built to produce them, year after year.",
-      "Your loyalty runs deep and quiet. You do not need chaos or drama to prove you care. The standard itself is the love."
-    ]
   },
   "UGA": {
     "name": "Georgia",
@@ -294,11 +284,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You waited forty-one years for one, then won two in a row and never looked back.",
     "desc": "For forty-one years you were the program that could not win the big one, close so often it started to feel like a curse, always a step behind the bluebloods you were supposed to sit with. Then it broke. You won it all, and instead of exhaling you did it again the very next year, the first team of the modern playoff era to repeat. Now the standard is simply this: reload, recruit, and expect to be there at the end. Between the hedges you turned decades of heartbreak into the most feared machine in the sport, and you are not planning to give it back.",
-    "why": [
-      "Your ambition is maxed out. After waiting decades for a title, you refuse to settle for one, and you now measure every season against the very top.",
-      "You pair that hunger with real warmth. This is a family as much as a program, a whole state that pours into the Dawg Walk and roars between the hedges.",
-      "You trust the build. Your dominance is not a lucky run, it is recruiting, development, and discipline stacked year over year into something that reloads instead of rebuilding."
-    ]
   },
   "OSU": {
     "name": "Ohio State",
@@ -308,11 +293,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "For a whole state, autumn is your Saturdays, and anything short of a title is a failure.",
     "desc": "You are the beating heart of a football-mad state, where the biggest program for hundreds of miles carries the pride of a whole region every Saturday. Winning is not a hope here, it is the expected return on all that devotion, and a great season that ends without a title still stings. Your standard is nine national championships deep and your rivalry with the team up north defines your calendar. In 2024 you lost that rivalry game at home and won the national championship anyway, which is the most Ohio State thing imaginable: the expectation never moved, and neither did you.",
-    "why": [
-      "Your ambition runs to the ceiling. A conference title is nice, but only a national championship registers as the season doing its job.",
-      "Your rootedness is enormous. You are the pride of an entire state that treats your Saturdays as the center of the fall.",
-      "You trust the machine over any single hero. Titles here come from a program built to reload, not from waiting on lightning to strike."
-    ]
   },
   "OKL": {
     "name": "Oklahoma",
@@ -322,11 +302,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "No program has ever won more games in a row than you did, and the standard never came down.",
     "desc": "You are the pride of a state with no pro team to share the spotlight, which means on Saturdays the whole place is yours. Your history is a mountain: seven national championships, seven Heisman winners, and the longest winning streak the sport has ever seen, forty-seven straight, a record no one has come close to touching. The wagon still circles the field, Boomer Sooner still rings out, and the expectation that comes with all that crimson has never eased. You do not think of yourself as a good program that has some trophies. You think of yourself as royalty, because the record book agrees.",
-    "why": [
-      "Your ambition is total. With seven titles behind you, nothing less than contending for another feels like enough.",
-      "You are your whole state's team. With no pro franchise to split attention, the loyalty and rootedness here run as deep as it gets.",
-      "You trust a tradition of winning. Your standard is not aspiration, it is history: the streaks, the titles, the Heismans, all of it expecting a sequel."
-    ]
   },
   "MIC": {
     "name": "Michigan",
@@ -336,11 +311,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "No one has won more games in the history of the sport than you, and you wear it without apology.",
     "desc": "You are the winningest program in the history of college football, the first to reach a thousand victories, and you have never once been shy about it. You fill the largest stadium in the country, more than a hundred thousand strong, and send them home humming the most famous fight song in the sport. Your pride is not loud or chaotic, it is old, certain, and a little superior, the pride of the leaders and best. Your calendar bends around one game against the team down south, and after years of losing it you seized it back and rode that run all the way to a national title. You do not chase relevance. You are the standard other programs measure themselves against.",
-    "why": [
-      "You have won more than anyone, ever. That deep, settled confidence is the foundation of how you see yourself and the sport.",
-      "Your rootedness and tradition run to the top. The winged helmet, the fight song, the Big House: this is heritage worn as identity.",
-      "You keep your emotion measured. The pride here is stately rather than frenzied, certainty rather than desperation."
-    ]
   },
   "TEX": {
     "name": "Texas",
@@ -350,11 +320,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "Everything is bigger where you are from, and you have never doubted the biggest stage belongs to you.",
     "desc": "You come from a place that considers itself a nation unto itself, and your program wears that same certainty. You are the biggest brand in the sport, the richest athletic department, a burnt-orange empire that expects the spotlight as a birthright. Your crowning moment is one of the greatest games ever played, a national title delivered on the last drive of the Rose Bowl by a quarterback who simply refused to lose. There have been lean stretches when the swagger ran ahead of the results, but the belief never wavered. You are Texas, the Eyes are upon you, and you have always assumed the biggest stage in the sport was built with your name on it.",
-    "why": [
-      "Your ambition is maxed. You do not think in terms of good seasons, you think in terms of the biggest prize and the biggest stage.",
-      "You carry a real streak of swagger and flash. The confidence here can outrun the results, and it never seems to shrink either way.",
-      "You are the flagship of a proud, enormous state, and your loyalty and reach are sized to match it."
-    ]
   },
   "NDM": {
     "name": "Notre Dame",
@@ -364,11 +329,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You answer to no conference and belong to no one city, only to a tradition half the country roots against.",
     "desc": "You belong to no conference and no single city. Your faithful are scattered across the whole country, drawn less by geography than by a tradition that feels almost like a religion: the Golden Dome, the mural of Touchdown Jesus rising over the stadium, a fight song even people who hate you can hum. You claim eleven national championships and more of the sport's greatest players than anyone, and every fall the country splits neatly into those who love you and those who cannot wait to see you lose. The last title was a long time ago now, and the wait gnaws. But the loyalty does not waver, because being Notre Dame was never really about the standings. It is about the echoes, and you are always waiting to wake them again.",
-    "why": [
-      "Your loyalty is off the charts. This is a faith more than a fandom, a devotion that does not depend on the standings to justify it.",
-      "Your following is national, not local. You draw the country's Catholics and romantics rather than one region's neighbors, which makes you unlike any other blueblood.",
-      "Your ambition is high and your history immense, and the weight of all that tradition is both the gift and the pressure you carry every season."
-    ]
   },
   "USC": {
     "name": "USC",
@@ -378,11 +338,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "No school has minted more stars than you, and you have always carried the sport like it belongs in your city.",
     "desc": "You are Hollywood's team, the glamour program of college football, a star factory set down in the middle of Los Angeles. No school has produced more Heisman winners than you, and the run of tailbacks is so long they call you Running Back U. Your Saturdays come with a white horse, a marching band pouring out of Heritage Hall, and a swagger that assumes the spotlight is yours by right. It has been two decades now since the last title, and the wait chafes at a program built for glory. But you do not do humble. You do cardinal and gold, sunshine and star power, and the certainty that greatness is simply what happens here.",
-    "why": [
-      "Your ambition is sky-high and your sense of self even higher. You expect stars, spotlight, and championships as a matter of course.",
-      "You lean on individual brilliance more than grind. Your history is a parade of singular talents, the most decorated collection of stars in the sport.",
-      "You carry a glamour and a flash the blue-collar programs do not. This is Hollywood football, and it looks the part."
-    ]
   },
   "FLA": {
     "name": "Florida",
@@ -392,11 +347,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You play hot, loud, and a little cocky, and for one stretch you owned the whole sport.",
     "desc": "You are heat and noise and attitude, a program that plays with its chin up and its mouth open. A brash coach with a quick offense and a quicker wit turned you into a national power and gave your stadium its name: the Swamp, where only Gators get out alive. Then came a run for the ages, three national titles in thirteen years and a quarterback who felt more like a folk hero than a college kid. It has been quiet since, the way it goes for a program that lives and dies on swagger. But when the Swamp is full and the sun is brutal and the Chomp is rolling, you remember exactly who you are, and so does everyone across the field.",
-    "why": [
-      "Your ambition and your emotion both run high. You want the whole thing, and you are never shy about saying so.",
-      "You carry real flash and edge. Your best teams dazzle and talk, and the swagger is part of the point.",
-      "You are a proud, loud program in a hostile home, the kind of place opponents dread walking into."
-    ]
   },
   "FSU": {
     "name": "Florida State",
@@ -406,11 +356,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You did everything right, went undefeated, and got left out anyway, and you have never once let it go.",
     "desc": "You play with a flaming spear, a war chant, and a chip on your shoulder the size of the panhandle. In your golden years you were untouchable, fourteen straight seasons finishing in the nation's top five, a garnet-and-gold machine full of swagger and Prime Time flash. But your defining modern moment is a wound: an undefeated season, a conference title, and then a snub, the first perfect Power conference champion ever left out of the playoff. You did not forget. You do not intend to. Every fall Osceola plants that burning spear at midfield and the message is the same one your motto has always carried. Unconquered. Come and try.",
-    "why": [
-      "Your emotion runs hot and your edge runs deep. You play with a grievance, and it fuels you.",
-      "You carry flash and swagger in your bones, the spear and the chant and the garnet-and-gold attitude that announced you decades ago.",
-      "Your ambition is real and your pride enormous. Your best was a dynasty, and you measure yourself against that ceiling."
-    ]
   },
   "PSU": {
     "name": "Penn State",
@@ -420,11 +365,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You put no names on the jerseys and let the team speak, and a hundred thousand answer back as one.",
     "desc": "You are the plainest uniform in the sport and the loudest fan base behind it, a contradiction that makes perfect sense in Happy Valley. No names on the backs, because the team comes before any one of you. You won two national titles in the 1980s under the coach whose name is stitched into everything here, and you have chased a third with the patience of a program that measures itself in seasons, not headlines. When the whole stadium goes white and roars We Are, it is not flash, it is faith, blue-collar and unshakable. You do not need the newest thing. You need the standard held, the work put in, and the whole valley behind you.",
-    "why": [
-      "Your trust in the process is total. You believe in discipline, development, and doing it the honest way, no shortcuts.",
-      "Your loyalty and community are enormous. A fan base hundreds of thousands strong treats this program as a shared identity.",
-      "You keep the flash turned all the way down. No names, no gimmicks, just the team and the work and a title still worth chasing."
-    ]
   },
   "CLM": {
     "name": "Clemson",
@@ -434,11 +374,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You were never supposed to sit at this table, so you built a machine, beat the king twice, and pulled up a chair.",
     "desc": "You were not born a blueblood. You were a small town in the upstate of South Carolina with a rock, a hill, and a coach who talks about faith and family more than schemes. And out of that you built a dynasty, the one program that could look Alabama in the eye and win, twice, in the biggest game there is. Your whole identity is culture: total buy-in, a locker room that calls itself a family, everybody all in. Death Valley roars, the Tigers pour down the hill and touch Howard's Rock, and a program the giants once overlooked plays like it has always belonged. Because now it does, and it earned every inch.",
-    "why": [
-      "Your sense of community is the whole thing. This is a family and a culture first, and the buy-in is total.",
-      "You trust the build completely. Your rise was not luck, it was recruiting, development, and belief stacked into a machine.",
-      "Your ambition matches anyone's. You proved an outsider could beat the very best, and you have no interest in going back to being overlooked."
-    ]
   },
   "ORE": {
     "name": "Oregon",
@@ -448,11 +383,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "No one in the sport looks like you or plays as fast, and you are still chasing the one thing you have never held.",
     "desc": "You are the flash of college football, the program that turns up every week in a uniform no one has ever seen, backed by the swoosh and the billions of the alum who built Nike in this town. Speed, style, innovation, the newest of everything: that is the brand, and it is genuinely yours, not borrowed from anyone. You have crashed the national stage, played for it all, and dazzled the whole country doing it. What you have not done, not once, is win it. That missing trophy is the only thing your gleaming facilities and highlight offenses cannot manufacture. So you keep pushing the tempo and the look and the ceiling, chasing the one prize that would finally make the flash mean everything.",
-    "why": [
-      "Your ambition is enormous and your appetite for the new even bigger. You want to look, move, and win like no one else.",
-      "You carry a real streak of chaos and flash. The uniforms, the speed, the constant reinvention: unpredictability is the brand.",
-      "You are a modern national brand more than a deeply rooted local one, pulled together by style and Nike as much as by place."
-    ]
   },
   "LSU": {
     "name": "LSU",
@@ -462,11 +392,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You turn a Saturday night into an earthquake, and the whole country can hear it.",
     "desc": "You are the loudest night in college football, a purple-and-gold roar rising out of the Louisiana dark. Death Valley after sundown is less a stadium than a weather event: a crowd so violent a last-second touchdown once shook a seismograph, an atmosphere Bear Bryant compared to standing inside a drum. Your fandom is Cajun and unfiltered, part festival and part endurance test for anyone unlucky enough to visit. You have won it all four times, most recently with a team so good it is spoken of as one of the greatest ever. Mike the Tiger prowls his enclosure, the band strikes up, and for one night the swamp belongs to you and everyone knows it.",
-    "why": [
-      "Your emotion is off the charts, the highest there is. You do not do football quietly, you do it at full volume and full heart.",
-      "You carry real chaos and passion. Your best nights feel less like games than eruptions, wild and loud and a little dangerous.",
-      "Your roots run deep into Louisiana. This is the state's team, its Saturday religion, and the loyalty is bone-deep."
-    ]
   },
   "TEN": {
     "name": "Tennessee",
@@ -476,11 +401,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You sing the same song a hundred thousand strong until the whole SEC has learned to hate it.",
     "desc": "You are a sea of orange and a song that will not quit. Neyland Stadium has hosted more football wins than any building in the sport, and on a fall Saturday it fills with a crowd that sails in by boat, docks the Vol Navy along the river, and files into the checkerboard end zones to sing 'Rocky Top' at a volume opponents describe as a form of torture. Your last national title was a while ago now, and the wait gnaws, because you remember exactly how good it felt and you have never stopped wanting it back. But the devotion never wavers. Through every lean year the Big Orange shows up, loud and hopeful, running through the T and believing this is the year the glory returns.",
-    "why": [
-      "Your loyalty and emotion run deep. The Big Orange faithful show up in a sea of color no matter what the record says.",
-      "You are steeped in tradition, from the checkerboards to the Vol Navy to a song the whole conference dreads. Heritage is the heartbeat here.",
-      "You carry a real yearning. You have tasted the top and you ache to get back, and that hunger colors every season."
-    ]
   },
   "AUB": {
     "name": "Auburn",
@@ -490,11 +410,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You live in the giant's shadow next door, so you learned to win the games nobody could believe.",
     "desc": "You share a state with a dynasty, and that has made you tougher, hungrier, and a little bit haunted. Everything at Auburn is measured against the giant up the road, which is why your greatest moments are the improbable ones: a missed field goal returned the length of the field as time expired, a prayer answered in the end zone, a perfect season and a national title snatched out of the Tide's shadow. Before kickoff an eagle circles Jordan-Hare and the whole stadium roars War Eagle. After a win you flood downtown and bury Toomer's Corner in toilet paper like a snowstorm. You are the underdog with the miracle streak, and you would not trade that identity for anyone's.",
-    "why": [
-      "You carry a real chip and a real fire. Living next to a giant taught you to play with an edge that never fully cools.",
-      "Your emotion and chaos run high. Your defining games are the wild, impossible ones, and you feed on that lightning.",
-      "Your loyalty is fierce and communal. War Eagle is a greeting, a battle cry, and a bond, all at once."
-    ]
   },
   "OLE": {
     "name": "Ole Miss",
@@ -504,11 +419,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You throw the best party in the sport under the oaks, and you would not trade the Grove for a trophy.",
     "desc": "You are Southern charm and controlled chaos, a program where the tailgate is as famous as the team. On a fall Friday the Grove fills with tents, chandeliers, and silver platters, ten acres of oaks that outsiders call the finest tailgate in all of college sports, and then everyone spills toward Vaught-Hemingway shouting Hotty Toddy. Your golden age was decades ago, your national titles claimed and disputed, but lately Oxford has come roaring back, all the way to your first playoff. The Mannings still run through this place; the campus speed limit honors Archie's jersey number. You love hard and you live well, and win or lose, nobody has more fun being who they are.",
-    "why": [
-      "Your emotion and your flair run high. Game day here is an event, gorgeous and a little wild, and you pour yourself into it.",
-      "You carry a real streak of chaos and charm at once. This is Southern gentility with a party underneath it.",
-      "Your community is the whole point. The Grove, the Walk of Champions, the chant: this is a shared experience as much as a football team."
-    ]
   },
   "SCA": {
     "name": "South Carolina",
@@ -518,11 +428,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You have never won the big one, and you still fill the place to the rafters every single Saturday.",
     "desc": "You are loyalty in its purest, most stubborn form. No national title. No conference crown. A history of near-misses and heartbreak that has earned you the nickname of college football's Cubs, curse and all. And still, every Saturday, eighty thousand of you pack Williams-Brice, more people than all but a handful of cities in the whole state. You take the field to the theme from a space odyssey and 'Sandstorm' shakes the press box, and for a few hours belief runs wild. You do not show up because you expect to win it all. You show up because this is yours, garnet and black, through every lean year, and one of these days the breakthrough is going to feel that much sweeter for the wait.",
-    "why": [
-      "Your loyalty is the whole story, and it runs as deep as anyone's. You pour everything into a program that has given you almost no trophies in return, and you never waver.",
-      "Your emotion and energy run high. The entrance, the towels, the roar: game day here is electric no matter the standings.",
-      "You are driven by devotion more than expectation. You are not here for the certainty of winning; you are here because this is home."
-    ]
   },
   "IOW": {
     "name": "Iowa",
@@ -532,11 +437,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You wave to a hospital full of kids after the first quarter, then win the boring, beautiful way.",
     "desc": "You are process incarnate, the most disciplined and least flashy fanbase in the sport, and proud of every bit of it. You win with defense, special teams, and a punt game other people mock right up until it beats them. Your stadium is named for the only Heisman winner it ever produced, a man who died in the war, and after the first quarter of every home game the entire place, players and visitors included, turns to wave at the children watching from the hospital next door. That is who you are: hard-nosed and decent in the same breath. You do not chase highlights. You chase fundamentals, and you trust that doing the little things right, over and over, is its own kind of glory.",
-    "why": [
-      "Your process orientation is maxed out, the highest there is. You believe in fundamentals, discipline, and doing the small things right.",
-      "You value decency as loudly as toughness. The Wave to the children's hospital is the truest expression of who you are.",
-      "You are loyal and rooted without needing the spotlight. You take quiet pride in the grind, not the flash."
-    ]
   },
   "KSU": {
     "name": "Kansas State",
@@ -546,11 +446,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You cheered for the worst program in America until a coach turned it into the greatest turnaround ever.",
     "desc": "You are the underdog's underdog, a purple faithful that stuck around through the darkest years in the sport's history and got rewarded for it. Before Bill Snyder, Kansas State was the worst program in the country, a punchline in a rural town that had almost nothing to cheer. He built a winner out of walk-ons, junior-college transfers, and a wall of discipline, and turned Manhattan into a place giants dreaded visiting. Your program's slogan is Family, stitched right onto the helmet, and it means it. You do not have the talent, the titles, or the name. What you have is toughness, structure, and the deep loyalty of people who never left. You are proof that the right culture can build something out of nothing.",
-    "why": [
-      "You are the ultimate overachiever, winning through process, structure, and culture rather than raw talent.",
-      "Your loyalty runs bone-deep. You are the faithful who stayed through futility, which makes the turnaround yours as much as anyone's.",
-      "You believe in family and the honest build. Walk-ons, discipline, and togetherness are the whole identity, not a marketing line."
-    ]
   },
   "WIS": {
     "name": "Wisconsin",
@@ -560,11 +455,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You run the ball, jump around, and bury teams under three hundred pounds of Midwestern offensive line.",
     "desc": "You are a bruiser, the blue-collar heart of the Big Ten, and you win the same honest way every single time: you run the ball down people's throats. Wisconsin is an offensive-line and running-back factory, a place that turns big, tough Midwestern kids into a ground game nobody can stop, and it has produced two Heisman-winning backs to prove it. Camp Randall is one of the oldest stadiums in the sport, and between the third and fourth quarters the whole place bounces to Jump Around, seventy-five thousand people losing their minds in unison. You do not need trick plays or hype. You need a lead blocker and a cold November afternoon. That is your kind of football: physical, disciplined, and proud of the grind.",
-    "why": [
-      "You are physical and process-driven to the core. Your identity is running the ball and winning in the trenches.",
-      "You take pride in the blue-collar build. Great linemen and great backs, developed and hardened, are the whole point.",
-      "You love the shared ritual. Jump Around and the Fifth Quarter turn a football game into a full-throated community party."
-    ]
   },
   "NEB": {
     "name": "Nebraska",
@@ -574,11 +464,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You applaud the team that just beat you, every time, and you have never once thought that was strange.",
     "desc": "You are the most loyal fanbase in America and one of the most decent. Memorial Stadium has sold out every single game since 1962, and on game day it becomes the third-largest city in the state. No program in any NCAA sport has a longer streak. You built five national titles on in-state walk-ons and a defense so proud it earned its own name, the Blackshirts. And when the game ends, win or lose, the Sea of Red applauds the visiting team as it walks off, because that is who you are. The glory years are a while back now, and the wait has been long and hard. But the faith never breaks. Nobody leaves. Nobody ever has.",
-    "why": [
-      "Your loyalty, community, and roots are all maxed out. This is an entire state's team, and the devotion is total and unconditional.",
-      "You value decency as much as winning. Applauding the opponent off the field is a point of pride, not a gimmick.",
-      "You believe in the honest build. Walk-ons, a hard-nosed defense, methodical dominance: that is how the glory was won and how you want it back."
-    ]
   },
   "TAM": {
     "name": "Texas A&M",
@@ -588,11 +473,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "Every soul in the building stands the whole game, ready to play, because that is what the 12th Man means.",
     "desc": "You are the tightest-knit fanbase in the sport, a maroon congregation that treats loyalty like a sacred duty. Your whole identity is the 12th Man: the entire student body stands from kickoff to final whistle, ready to step onto the field if called, honoring a walk-on who did exactly that a century ago. Kyle Field is the biggest stadium in the SEC, and the night before every game tens of thousands pack it for Midnight Yell, a ritual no other school can explain to outsiders. The Corps of Cadets, the War Hymn, the Aggie Ring: this is tradition as identity, unity as a way of life. You do not just cheer for the team. You consider yourself part of it.",
-    "why": [
-      "Your loyalty and sense of community are as high as they come, maxed out. This is a family bound by tradition and a shared code.",
-      "You believe deeply in the collective over the individual. The 12th Man means the whole stands together, ready, as one.",
-      "You honor ritual and discipline. From the Corps to Midnight Yell, your traditions are the point, not a sideshow."
-    ]
   },
   "MAR": {
     "name": "Marshall",
@@ -602,11 +482,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "From the ashes of the worst night imaginable, you rebuilt a program and a promise: We Are Marshall.",
     "desc": "You are heart and resilience, the most emotionally rooted community in the sport. In 1970 a plane crash took nearly your entire team, its coaches, and dozens of local supporters in a single night, the worst tragedy any American sports program has ever known. Marshall could have folded. Instead a young team of survivors and newcomers rebuilt from nothing, and the town of Huntington rebuilt with it, and out of that grief came a phrase that means everything here: We Are Marshall. A fountain on campus honors the lost, its water shut off each November and turned back on every spring. Decades later the Herd rose again, sending stars like Randy Moss to the world. You do not measure yourself in trophies. You measure yourself in the bond that refused to break.",
-    "why": [
-      "Your emotion, loyalty, community, and roots are all maxed out. Few programs anywhere feel their team this deeply.",
-      "Your identity is resilience. You are defined not by what was lost, but by the choice to rebuild and endure together.",
-      "You belong to a place. Marshall and Huntington are one, bound by memory, pride, and a phrase that says it all."
-    ]
   },
   "HAW": {
     "name": "Hawai'i",
@@ -616,11 +491,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You are the only team for two thousand miles, so the whole island becomes your ohana on Saturday.",
     "desc": "You are the most isolated program in the sport and one of the most beloved, the only major team for thousands of miles of open ocean. That distance makes everything harder: brutal travel, late-night mainland kickoffs, a schedule nobody else would want. It also makes the bond unbreakable. Hawaii football is ohana, family, the whole island's team, and game day carries the culture with it, a warrior chant before kickoff, ti leaves waving in the stands, rainbows over the stadium. You made your name throwing the ball all over the yard in the run-and-shoot, and in 2007 you rode it to an undefeated regular season and a Sugar Bowl. You do not have the resources or the geography. What you have is aloha, and a fanbase that treats every Saturday like a homecoming.",
-    "why": [
-      "Your community and roots are maxed out. You are the whole island's team, and that belonging runs as deep as it gets.",
-      "You embrace a wide-open, high-energy style. The run-and-shoot and the island atmosphere give you a genuine streak of chaos.",
-      "You carry your culture onto the field. The warrior chant, the ti leaves, and the spirit of ohana are the identity itself."
-    ]
   },
   "ARM": {
     "name": "Army",
@@ -630,11 +500,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You stand with the whole Corps for four quarters, because the Long Gray Line never sits down.",
     "desc": "You are duty, honor, and country made into a football team. At West Point the entire Corps of Cadets stands for all four quarters, drops for push-ups after every score, and marches onto the field in formation before kickoff, because for you the game is one more expression of service, not a spectacle. You win with the triple option, an offense built on precision, unselfishness, and everyone doing their job without the ball. Your glory years came in the 1940s, when Mr. Inside and Mr. Outside ran the country's best team, and that pride has never faded. Above all there is Beat Navy, the game that means more than any ranking. You are the Long Gray Line: tradition carried forward by people about to serve something far bigger than a scoreboard.",
-    "why": [
-      "Your loyalty and sense of community are absolute, both maxed out. This is the collective over the individual, taken as a sacred code.",
-      "You honor tradition and duty above all. The Corps, the Long Gray Line, and the option are about service, not stats.",
-      "You value precision and unselfishness. The triple option is a team ethos disguised as an offense: everyone does their part."
-    ]
   },
   "NAV": {
     "name": "Navy",
@@ -644,11 +509,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "In the rivalry that defines you, you have won more than they have, and you have never let them forget it.",
     "desc": "You belong to something bigger and older than a football team: a service, a fleet, a brigade that marches into the stadium in formation. The wins matter, and you have plenty of them, more in the rivalry that means everything than the other side has ever managed, a fact you carry with quiet certainty. But the thing you were really built on is not any one Saturday. It is the discipline underneath it, the sense that you are one part of a machine that works because every part does its job. You do not chase chaos or flash. You out-execute, you out-last, and when it is over you stand at attention for the other academy's song before you sing your own. Beat Army is not trash talk to you. It is a settled matter you renew every December.",
-    "why": [
-      "Your sense of the collective is total. You do not think of yourself as an individual with a team, you think of yourself as one part of a brigade, and that is the whole identity.",
-      "You trust the system and the discipline over any single moment of flash. You win by executing your assignment better than the other side executes theirs.",
-      "When it counts most, you have the receipts. In the rivalry that defines you, the record is on your side, and you carry it as quiet, proven fact rather than noise."
-    ]
   },
   "AIR": {
     "name": "Air Force",
@@ -658,11 +518,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You run the option like a drill and deliver the game ball by parachute from the sky.",
     "desc": "You are precision made visible, a program where discipline is not a value but the entire point. Air Force runs the triple option with a machinist's exactness, willing smaller, faster teams past bigger ones through timing, technique, and sheer execution. Game day in the Rockies is a spectacle of the sky: the cadets march on in formation, the Wings of Blue parachute team drops the game ball onto the field, fighter jets scream over the mountains, and live falcons soar at halftime. You have won more Commander-in-Chief's Trophies than Army or Navy, and you measure yourself against your own standard, not anyone else's. This is football as a mission: clean, exact, and executed by people who will spend their lives doing exactly that.",
-    "why": [
-      "Your process orientation is maxed out. You win through precision, technique, and flawless execution, not brute force.",
-      "You hold yourself to a bar nobody handed you. The Academy runs on an honor code, not just a rulebook, and the football team lives under it like everyone else.",
-      "You value discipline and service. The option, the flyovers, and the parachutes are all one thing: exactness with a purpose."
-    ]
   },
   "BYU": {
     "name": "BYU",
@@ -672,11 +527,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You will not play on Sunday, you send your team on missions, and you still won it all.",
     "desc": "You are a program built on faith and structure, a community bound by shared values as much as a shared team. BYU will not play on Sunday, holds its players to an honor code, and sends many of them on two-year missions, so your roster is older, more grounded, and more disciplined than anyone else's. None of that stopped you from winning the whole thing in 1984, the last team from outside the sport's power conferences ever to do it. You are Quarterback U, the place a passing revolution was born, home to a lineage of great arms and a Heisman winner. Your fans are loyal, principled, and everywhere, a nation unto themselves. You prove you can hold to your standards, do it your own way, and still stand at the top.",
-    "why": [
-      "Your loyalty and community are maxed out. This is a values-based fanbase that functions like an extended family and a faith at once.",
-      "You carry real ambition. A national title, a Heisman, and a move to the Big 12 say you expect to compete, not just belong.",
-      "You do it your own way. The honor code, the missions, and the no-Sunday rule are non-negotiable, and you win anyway."
-    ]
   },
   "WVU": {
     "name": "West Virginia",
@@ -686,11 +536,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "No one has won more without ever winning it all, and still you would not be anywhere else.",
     "desc": "You are the entire state's team. No pro franchise, no rival Power program, nothing but you and the mountains and a stadium in Morgantown that sings John Denver back to itself after a win. You have been undefeated, ranked number one, one game from playing for it all, and you have watched that chance slip away in the cruelest way a rival could hand it to you. You have never won the whole thing. You have won more games than anyone else who never did. And every fall you pour it all back in, gold and blue and unreasonable hope, because loving this team was never a choice you got to make. It is where you are from.",
-    "why": [
-      "Your loyalty and your roots both sit at the very top of the scale. This is not a team you picked, it is the place you are from, and the state has nothing bigger than you.",
-      "Your emotion runs as high as it goes. You have been a game away from playing for everything and had it taken away, and you came back the next fall louder than before.",
-      "You carry a real streak of chaos. The joy here is a little wild and a little unreasonable, and it does not wait for permission or for the results to justify it."
-    ]
   },
   "ARK": {
     "name": "Arkansas",
@@ -700,11 +545,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You are the only game the whole state has, so a hundred thousand voices call the Hogs as one.",
     "desc": "You belong to an entire state, top to bottom, the only major team Arkansas has ever had. No pro franchise, no rival program, just the Razorbacks and a whole population that lives and dies with them. That is why the hog call carries the way it does: 'Wooo, Pig, Sooie' rolling through the stadium in a wave, a hundred thousand people who feel like family calling the Hogs together. Your lone national title is from 1964 and you have chased another ever since, through good years and lean ones, never once wavering. You are loud, emotional, and rooted all the way down. This is not just your team. In Arkansas, it is the team, and it always will be.",
-    "why": [
-      "Your roots go as deep as any program's, all the way to the bottom. You are the whole state's team, and that bond is unbreakable.",
-      "Your loyalty and emotion run high. You pour everything into the Hogs, in the best years and the worst ones alike.",
-      "You are driven by devotion more than title hunger. You show up for the call, the community, and the pride of being Arkansas."
-    ]
   },
   "ECU": {
     "name": "East Carolina",
@@ -714,11 +554,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You raise the No Quarter flag in the fourth quarter and give visiting giants no mercy.",
     "desc": "You are rowdy to the bone, a purple-and-gold pirate crew that treats every home game like a boarding party. Dowdy-Ficklen is called Rowdy at Dowdy for a reason: the team enters through purple smoke, a cannon booms after every score, and when the fourth quarter starts the black pirate flag comes down and the red No Quarter flag goes up, the whole stadium crossing their arms and vowing no mercy. You are a scrappy underdog with a giant-killer streak, the kind of team that knocks off a ranked Virginia Tech and West Virginia in the same season just to prove it can. You do not have the budget, the recruits, or the history of the big boys. You have Greenville, a skull-and-crossbones, and a fanbase that shows up loud and stays loud. That is more than enough.",
-    "why": [
-      "Your emotion and chaos run high. You are unpredictable, rowdy, and dangerous, exactly the kind of team nobody wants to visit.",
-      "Your loyalty and roots are deep. Pirate Nation is Greenville's team, and the devotion never wavers with the standings.",
-      "You live for the upset. In 1999 a hurricane pushed you out of your own stadium, and you still took down ninth-ranked Miami on a borrowed field."
-    ]
   },
   "WAZ": {
     "name": "Washington State",
@@ -728,11 +563,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "Your flag has flown on every College GameDay for twenty years, from the loneliest campus in the country.",
     "desc": "You are the most loyal lost cause in college football, a crimson-and-gray faithful stranded on the beautiful, remote Palouse and proud of every isolated inch of it. Your defining symbol is Ol' Crimson, a WSU flag that has appeared on the set of ESPN's College GameDay every single week since 2003, shipped around the country by Cougs who refuse to let the world forget they exist. You gave the sport the wide-open Air Raid and a folk hero or two, and you gave yourselves a rueful verb, to Coug it, for all the heartbreak. When the conference collapsed and everyone else fled, you were one of the last two standing, abandoned but unbowed. You do not win a lot. You never, ever leave. Go Cougs.",
-    "why": [
-      "Your loyalty and roots run deep. From the most isolated campus in major football, the Cougs never stop showing up.",
-      "You have a genuine streak of chaos and heart. The Air Raid and the wide-open style match a fanbase that feels everything.",
-      "You wear the underdog's self-aware humor like a badge. Coug'd it is a punchline you own, because the loyalty outlasts the heartbreak."
-    ]
   },
   "APP": {
     "name": "Appalachian State",
@@ -742,11 +572,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You are the little mountain school that walked into the Big House and beat number five Michigan.",
     "desc": "You are the giant-killer, a small mountain school from Boone with the biggest upset in the sport's history to your name. On September 1, 2007, a two-time defending FCS champion walked into Michigan Stadium in front of 109,000 people and beat the fifth-ranked Wolverines, the first time a team from the lower division ever knocked off a ranked one, still called the greatest upset college football has ever seen. You won three straight FCS national titles, moved up to the big leagues, and just kept slaying, stunning a top-ten Texas A&M as a three-touchdown underdog. Your home is Kidd Brewer Stadium, The Rock, perched a mile up in the Appalachians and nearly impossible to win in. You are proof that nobody is too big to fall, and that the mountain always has one more upset in it.",
-    "why": [
-      "You live for the upset. Being the giant-killer, the team nobody sees coming, is your entire identity and your proudest tradition.",
-      "Your community and roots run deep in the mountains. Boone is a tight, loyal, high-elevation fortress that travels well and shows up loud.",
-      "You carry a champion's edge under the underdog label. Three FCS titles say the giant-killing is skill, not luck."
-    ]
   },
   "VAT": {
     "name": "Virginia Tech",
@@ -756,11 +581,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "When Enter Sandman drops and the whole stadium jumps, Lane registers as an earthquake.",
     "desc": "You are the most electric entrance in college football and one of its most passionate, blue-collar fanbases. When the lights dim and Metallica's Enter Sandman hits, Lane Stadium erupts and the whole crowd starts jumping in unison, so hard the ground movement registers on the university's seismographs as a small earthquake. That energy is the soul of Hokie Nation: loud, loyal, and a little bit menacing, tucked away in the mountains of southwest Virginia where fans drive hours to get there. Your golden era was built on Beamer Ball, winning with defense and special teams and a battered lunch pail, and lit up by Michael Vick's magic on an undefeated run to the title game. You will gobble like a turkey and jump until the stands shake. That is Virginia Tech.",
-    "why": [
-      "Your emotion and loyalty run high. Hokie Nation feels every snap, and the Enter Sandman entrance is that passion made physical.",
-      "You value toughness and identity over flash. Beamer Ball, the Lunch Pail defense, and special teams are the blue-collar heart of it.",
-      "You are rooted and devoted. Fans drive hours through the mountains to Blacksburg and turn Lane Stadium into one of the sport's scariest places."
-    ]
   },
   "MST": {
     "name": "Mississippi State",
@@ -770,11 +590,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You hand out cowbells instead of pom-poms and grind out wins one clang at a time.",
     "desc": "You are blue-collar to the bone, a maroon underdog that scraps for everything it gets. Your fans do not wave pom-poms; they ring cowbells, thousands of them, a clanging wall of noise so distinctive the conference spent 36 years trying to ban it before finally giving up. You play in the second-oldest stadium in the sport, out in Starkville, where the grind is the identity: defense, toughness, and Hail State pride, no shortcuts and no apologies. You have never won it all, and you know the giants of the SEC by heart, but you show up every fall ready to make somebody's day miserable. When the cowbells are going and the Bulldogs are digging in, you are exactly the kind of hard-nosed, deafening problem nobody wants to visit.",
-    "why": [
-      "You are blue-collar and proud of it. Your identity is grit, defense, and grinding out a hard-earned win, not flash.",
-      "Your loyalty, community, and roots run deep. This is a tight, rooted Bulldog faithful that never stops ringing.",
-      "You do not measure yourself by titles. You measure yourself by toughness, noise, and the willingness to scrap with anyone."
-    ]
   },
   "COL": {
     "name": "Colorado",
@@ -784,11 +599,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "Twenty years of bad football did not move you an inch. You never once considered leaving.",
     "desc": "You are loyalty tested by two long decades and never broken. Colorado won it all in 1990, a national title capped by Kordell Stewart's Miracle at Michigan and a live buffalo named Ralphie thundering onto the field before every half, one of the great traditions in sports. Then came the lean years, a slow slide into irrelevance that stretched on and on. Most fanbases would have drifted away. You did not. You kept filling mile-high Folsom Field, kept running Ralphie, kept believing, and lately the faith has been rewarded with a genuine resurgence and a 2024 Heisman winner. Yours is not front-running love. It is the deep, stubborn, black-and-gold kind that waits through the worst and shows up anyway. That is the Buffs.",
-    "why": [
-      "Your loyalty is the real story. You held on through twenty thankless years without ever walking away, and that devotion defines you.",
-      "Your emotion runs deep. This is a passionate, all-in fanbase that feels the highs and the long lows just as intensely.",
-      "You carry a proud history and a stubborn hope. A 1990 title, Ralphie, and mile-high Folsom are worth believing in, no matter the record."
-    ]
   },
   "BOI": {
     "name": "Boise State",
@@ -798,11 +608,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You play on a field the color of the sky and once beat Oklahoma with a Statue of Liberty.",
     "desc": "You are the mid-major that refused to stay in its place, the little program that crashed the party and never left. Your home field is The Blue, the famous blue turf installed in 1986, the first non-green field in the sport and still the most recognizable, so distinctive you hold a trademark on it. Your legend was born on January 1, 2007, when you beat mighty Oklahoma in the Fiesta Bowl on a string of trick plays capped by a Statue of Liberty two-point conversion, still one of the greatest games ever played. That was not a fluke. You turned it into decades of winning, a quarterback with more wins than any other in the college game, and a 2024 College Football Playoff berth behind a Heisman-runner-up back. You do not accept that big programs get to win. You just keep beating them.",
-    "why": [
-      "You carry real ambition and belief. You never accepted mid-major limits, and you have the wins and the playoff berth to prove it.",
-      "You are disciplined and well-built. The trick-play magic runs on top of a tough, smart, consistently excellent program.",
-      "You own the sport's most distinctive home. The Blue is your identity, your edge, and your statement that you belong."
-    ]
   },
   "MIA": {
     "name": "Miami",
@@ -812,11 +617,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "This is The U: five titles, a turnover chain, and more swagger than the rest of the sport combined.",
     "desc": "You are swagger made into a football team, the brashest, flashiest program the sport has ever produced. In the 1980s and 90s, The U won five national titles and did it with a strut, a chip, and an us-against-everybody attitude that rewrote what a college team could look like. You are a factory for NFL stars, with more Pro Football Hall of Famers than almost anyone, and a modern signature to match: the turnover chain, a giant gold rope draped on any defender who takes the ball away. You do not do humble, and you never have. You do flash, confidence, big plays, and big personalities, all of it soaked in South Florida heat. Love it or hate it, everyone knows exactly who you are. This is The U.",
-    "why": [
-      "Your emotion, ambition, and chaos are all maxed out. You are the definition of swagger, big plays, and big-stage confidence.",
-      "You carry a championship pedigree with attitude. Five titles and a strut to match are the whole point.",
-      "You are a star machine. The turnover chain, the NFL pipeline, and the bravado are all one thing: The U demands the spotlight."
-    ]
   },
   "UCF": {
     "name": "UCF",
@@ -826,11 +626,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "Everyone said you could not be champions, so you crowned yourselves and threw a parade at Disney World.",
     "desc": "You are the boldest upstart in college football, a program that refuses to accept its assigned place in the pecking order. In 2017 you went 13-0, beat a ranked Auburn team that had beaten both national title contenders, got snubbed by the playoff anyway, and did the most audacious thing imaginable: you declared yourselves national champions, hung a banner, handed out rings, and paraded through Walt Disney World. Two years earlier you had gone winless. That is the UCF way, doing what everyone says can't be done. Your stadium literally bounces when the crowd jumps, your fifty-yard line points at a NASA launch pad, and your whole identity is a chip on the shoulder the size of Orlando. You are new, you are brash, and you are not waiting for permission. Charge On.",
-    "why": [
-      "Your ambition and audacity define you. You refuse to accept limits, and crowning yourselves champions is the purest proof.",
-      "You carry a chip on your shoulder with joy. The doubters fuel you, and proving them wrong is the whole mission.",
-      "You are the meteoric riser. From winless to undefeated to the Big 12, you move fast and dare anyone to keep up."
-    ]
   },
   "SMU": {
     "name": "SMU",
@@ -840,11 +635,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You are the only football program the NCAA ever shut down, and you clawed all the way back to the playoff.",
     "desc": "You are the ultimate resurrection story, a program that was buried and rose anyway. In the early 1980s the Pony Express of Eric Dickerson and Craig James made SMU the hottest team in the country, winning at a rate nobody could match. Then, in 1987, the NCAA dropped the death penalty, the NCAA's harshest sanction, and the only time it has ever landed on a football program: yours was shut down entirely. Two decades of wandering the wilderness followed. But Dallas money and Dallas ambition never quit, and you clawed all the way back, into the ACC and into the 2024 College Football Playoff, a seat at the sport's biggest table for the first time in a generation. You know exactly what it means to lose everything and build it again. Pony Up.",
-    "why": [
-      "Your ambition never died, even when the program did. Clawing back from the death penalty to the playoff is your defining trait.",
-      "You carry resilience and Dallas swagger together. The fall was total, and the climb back was all guts and hustle.",
-      "You have a taste for the big stage. The Pony Express and the ACC leap say you always aimed to run with the best."
-    ]
   },
   "STA": {
     "name": "Stanford",
@@ -854,11 +644,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You pair the world's best classrooms with a punishing running game, and a dancing Tree for a mascot.",
     "desc": "You are brains and brawn in the same uniform, one of the finest universities on earth that also happens to hit like a freight train. Stanford wins with what its coaches once called intellectual brutality: smart, disciplined, physical football, a bruising run game and an offensive line that overpowers people who were supposed to be more athletic. Your quarterback pipeline is absurd, Plunkett and Elway and Luck, and Christian McCaffrey rewrote the record book out of your backfield. Yet you never take yourself too seriously: your mascot is an unofficial, googly-eyed Tree, and your marching band is a gloriously chaotic, satirical mess that half the sport loves to hate. You do not lead with passion or noise. You lead with precision, intelligence, and just enough irreverence to keep everyone guessing.",
-    "why": [
-      "Your process orientation is your strength. You win with intelligence, discipline, and physical, well-drilled football.",
-      "You value substance over spectacle. The academics are elite, the run game is punishing, and the hype is optional.",
-      "You carry a streak of irreverence. The goofy Tree and the anarchic band say you can be serious and self-aware at once."
-    ]
   },
   "GAT": {
     "name": "Georgia Tech",
@@ -868,11 +653,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You lead your team out with a 1930 Ford and sing a fight song about a whiskey-making engineer.",
     "desc": "You are the engineer's team, a brainy, tradition-rich program that does everything a little differently and likes it that way. A restored 1930 Ford Model A, the Ramblin' Wreck, leads your team onto the oldest on-campus stadium in the sport, right in the heart of Atlanta. Your fight song, one of the most famous ever written, is about a hell-raising engineer building a still, and it is belted out from Georgia Tech to the surface of the moon. Your coaching tree gave the sport John Heisman, the man the trophy is named for. You won a national title in 1990, you spent a decade flummoxing modern defenses with a throwback option attack, and every November you renew Clean, Old-Fashioned Hate with Georgia. You are precise, technical, stubborn, and proud, the smart, gritty misfit of the South.",
-    "why": [
-      "Your process orientation runs deep. You win with scheme, discipline, and engineering-minded precision over raw talent.",
-      "You treasure tradition and quirk. The Ramblin' Wreck, the fight song, and the whistle are the soul of the program.",
-      "You are the proud misfit. A tech school that does football its own contrarian way, from the option offense to Clean, Old-Fashioned Hate."
-    ]
   },
   "VAN": {
     "name": "Vanderbilt",
@@ -882,11 +662,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You are the smartest team in the room, and lately you have been throwing the giants' goalposts in the river.",
     "desc": "You are the brain of the SEC, one of the finest universities in the country stuck in a league of football factories, and for a long time that meant being everyone's favorite easy win. Not anymore. In 2024 you beat the number-one team in the nation for the first time in program history, ending forty years of futility against Alabama, and your fans tore down the goalposts and carried them two miles through Nashville to throw them in the Cumberland River. Then you did it again, winning ten games for the first time ever and finishing the season ranked. You win with brains, patience, and a methodical style that wears giants down. The doormat became the giant-slayer, and the whole sport had to look twice.",
-    "why": [
-      "You lead with your mind. You are an academic powerhouse that competes through preparation, patience, and smarts rather than raw talent.",
-      "You carry the underdog's chip and the underdog's joy. Nobody expects you, which makes toppling a giant that much sweeter.",
-      "You value the methodical build over flash. Your best wins come from control, discipline, and wearing bigger teams down."
-    ]
   },
   "WAS": {
     "name": "Washington",
@@ -896,11 +671,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "Your stadium sits on a lake, boats dock for the game, and your Dawgs bow down to nobody.",
     "desc": "You are the pride of the Pacific Northwest, a program with championship pedigree and the most beautiful home in the sport. Husky Stadium hugs the shore of Lake Washington, where fans arrive by boat, seaplanes drift overhead, and it is routinely called the greatest setting in college football. On the field, you are Quarterback U, a pipeline of passers from Warren Moon to Michael Penix Jr., and your 1991 team went undefeated as one of the finest ever assembled. You proved you still belong in 2023, running the table and marching all the way to the national title game. You are the Dawgs: loud, loyal, ambitious, and unmistakably yours. Bow Down to Washington.",
-    "why": [
-      "Your loyalty and ambition run deep. You carry championship pedigree and expect to compete for the biggest prizes.",
-      "You take pride in your setting and your standard. The lake, the noise, and the QB tradition are all part of the identity.",
-      "You are the Pacific Northwest's flagship. The Dawgs represent a region, and you wear that purple with real weight."
-    ]
   },
   "TCU": {
     "name": "TCU",
@@ -910,11 +680,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "Nobody picks you, nobody plans for you, and twice now you have wrecked the ending anyway.",
     "desc": "You are the little program that keeps gatecrashing the big party, and you do it rooting for a horned lizard. TCU spent decades as a mid-major nobody took seriously, then Gary Patterson built a defensive machine in Fort Worth that went undefeated and won the 2010 Rose Bowl, proof the establishment could not keep you out. You did it again in 2022, running the table and charging all the way to the national championship game as the team no one saw coming. You are purple through and through, loyal and balanced and quietly relentless, with the Riff Ram cheer echoing through Amon Carter Stadium. You do not have the bluebloods' resources or their respect. You just keep showing up where you are not supposed to be. Go Frogs.",
-    "why": [
-      "You blend loyalty, ambition, and balance. No single trait dominates, which is exactly how you sneak up on bigger programs.",
-      "You carry an underdog's edge. Crashing the sport's biggest stage twice as an outsider is the core of who you are.",
-      "You are proudly your own. A horned frog mascot and a Fort Worth address say you were never trying to look like anybody else."
-    ]
   },
   "OKS": {
     "name": "Oklahoma State",
@@ -924,11 +689,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You gave the sport Barry Sanders and the greatest season ever, and you cheer in the brightest orange around.",
     "desc": "You are Cowboy football, loyal to Stillwater and proud of it, a program that gave the world the single greatest season the sport has ever seen. In 1988, Barry Sanders ran for numbers so absurd they still stand, and did it with a humility that defined you: no dancing, no preening, just a flip of the ball to the official and back to the huddle. You play in Boone Pickens Stadium, a house that oil money built, in the brightest orange in college football, behind a mustachioed Pistol Pete. For generations you were cast as the little brother in your own state, and you wore that chip with pride, scrapping and clawing and refusing to be dismissed. This is a hard-working, deeply rooted, orange-blooded fan base. Go Pokes.",
-    "why": [
-      "Your rootedness is your anchor. Loyalty to Stillwater and to the orange runs as deep as it gets.",
-      "You carry a little brother's chip with pride. Being underestimated has always fueled you, never diminished you.",
-      "You value substance over show. Barry Sanders flipping the ball to the ref is the whole Cowboy ethos in one image."
-    ]
   },
   "MSU": {
     "name": "Michigan State",
@@ -938,11 +698,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "They called you little brother, so you went and won it against the bluebloods who doubted you.",
     "desc": "You are blue-collar football with a chip on your shoulder, and you earned every bit of it. For years the program across the state waved you off as its little brother, and you turned that insult into a mission. Under Mark Dantonio, the Spartans answered with Big Ten titles, a Rose Bowl, and a College Football Playoff berth, proving that toughness and belief could beat pedigree and privilege. You win with defense, discipline, and a green-and-white faith that never wavered through the lean years. Spartan Stadium sits in the heart of East Lansing, and in a state split down the middle, you are the ones who chose grit over glamour. Nobody handed you legitimacy. You went and took it. Go Green.",
-    "why": [
-      "Your loyalty and emotion run hottest against doubt. The chip on your shoulder is the engine of the whole program.",
-      "You proved yourself the hard way. Big Ten titles and a playoff run against the bluebloods are legitimacy you earned, not inherited.",
-      "You are blue-collar to the core. Defense, toughness, and a faithful green following that stuck it out define you."
-    ]
   },
   "TTU": {
     "name": "Texas Tech",
@@ -952,11 +707,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You turn scoreboards into nonsense and treat every Saturday night like a dare.",
     "desc": "You are the wildest show in West Texas, a program that does everything loud, fast, and a little bit crazy. Texas Tech is where the Air Raid was born, an offense built to sling the ball forty times a night and light up scoreboards until the numbers stop making sense. Your fans throw tortillas onto the field, your team charges out of the tunnel behind a Masked Rider on a black horse, and Lubbock on a Saturday night feels like nowhere else in the sport. You gave the world Patrick Mahomes and a pile of record-setting quarterbacks. You are passionate, quirky, chaotic, and fiercely loyal to a corner of Texas everyone else forgets. Wreck 'Em. Guns Up.",
-    "why": [
-      "Your chaos and emotion are maxed. You play fast, score in bunches, and thrive on the beautiful mess of it all.",
-      "You do things your own way. Michael Crabtree tiptoeing past number one Texas with a second left is still the most Texas Tech play ever run.",
-      "You are fiercely loyal to your patch of West Texas. Lubbock is far from everything, and you wear that isolation as pride."
-    ]
   },
   "TUL": {
     "name": "Tulane",
@@ -966,11 +716,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "You cheer under the live oaks of New Orleans, where your Green Wave keeps rising no matter what.",
     "desc": "You are New Orleans football, brainy and resilient and soaked in the rhythm of the greatest city in the country. Tulane is an elite university that plays real football, tailgating under the live oaks of an uptown campus, chanting Roll Wave in a stadium that finally came home after decades away. Your history has ups and downs, but the theme never changes: you get back up. The 1998 Green Wave went undefeated and got snubbed anyway. The 2022 team completed the greatest turnaround in the sport's history and beat USC in the Cotton Bowl from a 0.2 percent chance to win. When your city has been knocked down, so has your program, and both keep rising every time. That is the Green Wave. Roll Wave.",
-    "why": [
-      "Your community and rootedness run deep. Tulane and New Orleans are bound together, and you carry the city's spirit.",
-      "You embody resilience. Getting back up after being knocked down is the truest thread in your whole history.",
-      "You pair brains with heart. An elite academic school that still plays with passion is a rare and proud combination."
-    ]
   },
   "CST": {
     "name": "Coastal Carolina",
@@ -980,11 +725,6 @@ const teams = {
     "kitType": "solid",
     "tagline": "Your mascot is a rooster from a medieval poem, and your whole identity is refusing to take yourself seriously.",
     "desc": "You are the most fun story in college football, a program that turned quirk into an identity and rode it all the way onto the national stage. You root for a Chanticleer, a proud, fierce rooster lifted straight out of Chaucer, and you play on bright teal turf near the beach in Conway, South Carolina. Your football program is barely two decades old, but in 2020 the Chants went undefeated, grew mullets and mustaches, hosted College GameDay for the Mormons versus Mullets showdown with BYU, and became the feel-good team of a hard year. You are not chasing anybody's pedigree. You are a young, loud, joyful upstart having the time of your life and inviting everyone along. Chants Up.",
-    "why": [
-      "Your chaos and joy are maxed out. You play loose, have fun, and turn every home game into a party.",
-      "You embrace being different. Teal turf, a literary rooster, and a wall of mullets are the whole delightful point.",
-      "You are a close-knit young upstart. Pedigree means nothing to you; showing the sport a good time means everything."
-    ]
   }
 };
 
