@@ -259,6 +259,8 @@ function AppInner(){
   const [savedSpine,setSavedSpine]=useState(null); // cached shared-spine answers {S1..S7}, answered once
   const [resequenceConfirm,setResequenceConfirm]=useState(false); // the "re-sequence core?" confirm modal
   const [exitConfirm,setExitConfirm]=useState(false); // leave-the-quiz confirm (in-app, s58)
+  const [retakeConfirm,setRetakeConfirm]=useState(false); // retake-this-league confirm (in-app, s64; was window.confirm)
+  const [startOverConfirm,setStartOverConfirm]=useState(false); // start-over confirm (in-app, s64; was window.confirm)
   const [resequenceDelta,setResequenceDelta]=useState(null);      // {moved:[{sport,from,to}],stale:[...]} shown once after a re-sequence
   const [coreProfile,setCoreProfile]=useState(null); // the user's 7-dim core; drives the strip everywhere
   const [landed,setLanded]=useState(true);        // result reveal: club-card head hidden until the strip has read, then lands (finish path only)
@@ -1170,6 +1172,42 @@ function AppInner(){
         </div>
       )}
 
+      {/* Retake-this-league confirm: in-app modal (matches re-sequence) rather than a native dialog. */}
+      {retakeConfirm&&(
+        <div role="dialog" aria-modal="true" aria-label={`Retake ${activeSport}`}
+          style={{position:"fixed",inset:0,zIndex:50,display:"flex",alignItems:"center",justifyContent:"center",padding:"24px",background:"rgba(10,10,16,0.72)",animation:"fadeIn .18s ease"}}
+          onClick={()=>setRetakeConfirm(false)}>
+          <div onClick={e=>e.stopPropagation()}
+            style={{width:"100%",maxWidth:420,background:"#1c1c28",border:"1px solid #2a2a3a",borderRadius:14,padding:"26px 24px",animation:"popIn .2s ease"}}>
+            <div style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:500,fontSize:25,color:"#e8e4de",marginBottom:12}}>Retake {activeSport}?</div>
+            <p style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:16,color:"#9e9eba",lineHeight:1.5,margin:"0 0 12px"}}>This re-runs your {activeSport} answers and may land you on a different club.</p>
+            <p style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:16,color:"#9e9eba",lineHeight:1.5,margin:"0 0 16px"}}>Your core and every other league stay exactly as they are.</p>
+            <div style={{display:"flex",gap:12,justifyContent:"center"}}>
+              <button onClick={()=>{ setRetakeConfirm(false); retakeModule(); }} style={{background:"#6a5ad0",border:"none",borderRadius:6,padding:"11px 22px",color:"#f0eefb",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.18em",textTransform:"uppercase",cursor:"pointer"}}>Retake</button>
+              <button onClick={()=>setRetakeConfirm(false)} style={{background:"none",border:"1px solid #4a4a6a",borderRadius:6,padding:"11px 22px",color:"#9898b8",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.18em",textTransform:"uppercase",cursor:"pointer"}}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Start-over confirm: in-app modal (matches re-sequence) rather than a native dialog. The one irreversible action. */}
+      {startOverConfirm&&(
+        <div role="dialog" aria-modal="true" aria-label="Start over"
+          style={{position:"fixed",inset:0,zIndex:50,display:"flex",alignItems:"center",justifyContent:"center",padding:"24px",background:"rgba(10,10,16,0.72)",animation:"fadeIn .18s ease"}}
+          onClick={()=>setStartOverConfirm(false)}>
+          <div onClick={e=>e.stopPropagation()}
+            style={{width:"100%",maxWidth:400,background:"#1c1c28",border:"1px solid #2a2a3a",borderRadius:14,padding:"26px 24px",animation:"popIn .2s ease"}}>
+            <div style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:500,fontSize:25,color:"#e8e4de",marginBottom:12}}>Start over?</div>
+            <p style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:16,color:"#9e9eba",lineHeight:1.5,margin:"0 0 8px"}}>This erases your entire FanDNA. Every league result and your saved core are cleared.</p>
+            <p style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:16,color:"#bea878",lineHeight:1.5,margin:"0 0 16px"}}>This can't be undone.</p>
+            <div style={{display:"flex",gap:12,justifyContent:"center"}}>
+              <button onClick={()=>{ setStartOverConfirm(false); startOver(); }} style={{background:"#6a5ad0",border:"none",borderRadius:6,padding:"11px 22px",color:"#f0eefb",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.18em",textTransform:"uppercase",cursor:"pointer"}}>Start over</button>
+              <button onClick={()=>setStartOverConfirm(false)} style={{background:"none",border:"1px solid #4a4a6a",borderRadius:6,padding:"11px 22px",color:"#9898b8",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.18em",textTransform:"uppercase",cursor:"pointer"}}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div style={{
         width:"100%",maxWidth:560,position:"relative",zIndex:1,
         animation:`${phase==="out"?"slideOut":"slideIn"} .22s ease forwards`,
@@ -1559,7 +1597,7 @@ function AppInner(){
             </div>
 
             <div style={{marginTop:32,textAlign:"center",display:"flex",gap:14,justifyContent:"center",flexWrap:"wrap"}}>
-              <button onClick={()=>{ if(window.confirm(`Retake ${activeSport}? This replaces your current ${activeSport} result.`)) retakeModule(); }}
+              <button onClick={()=>setRetakeConfirm(true)}
                 style={{background:"none",border:"1px solid #444",borderRadius:5,padding:"9px 22px",color:"#bbb",fontSize:11,letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",cursor:"pointer",transition:"all .15s"}}
                 onMouseEnter={e=>{e.currentTarget.style.borderColor="#888";e.currentTarget.style.color="#aaa";}}
                 onMouseLeave={e=>{e.currentTarget.style.borderColor="#252535";e.currentTarget.style.color="#818181";}}
@@ -1569,7 +1607,7 @@ function AppInner(){
                 onMouseEnter={e=>{e.currentTarget.style.borderColor="#888";e.currentTarget.style.color="#aaa";}}
                 onMouseLeave={e=>{e.currentTarget.style.borderColor="#252535";e.currentTarget.style.color="#818181";}}
               >re-sequence core</button>
-              <button onClick={()=>{ if(window.confirm("Start over? This clears your entire FanDNA. Every league result and your saved core will be erased. This cannot be undone.")) startOver(); }}
+              <button onClick={()=>setStartOverConfirm(true)}
                 style={{background:"none",border:"1px solid #444",borderRadius:5,padding:"9px 22px",color:"#bbb",fontSize:11,letterSpacing:"0.25em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",cursor:"pointer",transition:"all .15s"}}
                 onMouseEnter={e=>{e.currentTarget.style.borderColor="#888";e.currentTarget.style.color="#aaa";}}
                 onMouseLeave={e=>{e.currentTarget.style.borderColor="#252535";e.currentTarget.style.color="#818181";}}
