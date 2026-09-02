@@ -215,7 +215,8 @@ export function CrossMatch({ sport, input, teams, teamDims = {}, coreProfile, te
 
   return (
     <div style={{marginTop:24,paddingTop:24,borderTop:"1px solid #2a2a3a"}}>
-      <h2 style={{fontFamily:SERIF,fontSize:26,color:"#efe9e3",lineHeight:1.2,margin:"0 0 16px",fontWeight:600}}>{v.xmHeader}</h2>
+      <h2 style={{fontFamily:SERIF,fontSize:26,color:"#efe9e3",lineHeight:1.2,margin:"0 0 6px",fontWeight:600}}>Compare your match</h2>
+      <p style={{fontFamily:SERIF,fontStyle:"italic",fontSize:16,color:"#9696b4",lineHeight:1.5,margin:"0 0 16px"}}>See how it lines up with the {v.team} you already follow.</p>
 
       <button onClick={()=>setOpen(o=>!o)} aria-haspopup="listbox" aria-expanded={open}
         style={{width:"100%",display:"flex",alignItems:"center",justifyContent:"space-between",background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:12,padding:"15px 16px",color:chosen?"#efe9e3":"#9696b4",fontFamily:MONO,fontSize:14,cursor:"pointer"}}>
