@@ -23,7 +23,6 @@ const MONO = "'DM Mono',monospace";
 const DEFAULT_VOICE = {
   noun: "club", worn: "shirt", team: "club", teams: "clubs",
   league: "Premier League", leagueAbbr: "PL",
-  xmHeader: "Already have a favourite club?",
   xmEscape: "I don't support a Premier League club",
 };
 
