@@ -645,9 +645,9 @@ const greats = {
 };
 
 const vitalStats = {
-  LI:{ founded:1892, ground:"Anfield",               city:"Liverpool",       capacity:"61,276",  titles:"20 English league titles", lastTitle:"2019/20 (PL)",   kitMaker:"Adidas",   colors:"Red & white",         nickname:"The Reds",        },
+  LI:{ founded:1892, ground:"Anfield",               city:"Liverpool",       capacity:"61,276",  titles:"20 English league titles", lastTitle:"2024/25 (PL)",   kitMaker:"Adidas",   colors:"Red & white",         nickname:"The Reds",        },
   MC:{ founded:1880, ground:"Etihad Stadium",         city:"Manchester",      capacity:"53,400",  titles:"10 English league titles", lastTitle:"2023/24 (PL)",   kitMaker:"Puma",     colors:"Sky blue & white",    nickname:"The Citizens",    },
-  AR:{ founded:1886, ground:"Emirates Stadium",       city:"London (N7)",     capacity:"60,704",  titles:"14 English league titles", lastTitle:"2003/04 (PL)",   kitMaker:"Adidas",   colors:"Red & white",         nickname:"The Gunners",     },
+  AR:{ founded:1886, ground:"Emirates Stadium",       city:"London (N7)",     capacity:"60,704",  titles:"15 English league titles", lastTitle:"2025/26 (PL)",   kitMaker:"Adidas",   colors:"Red & white",         nickname:"The Gunners",     },
   EV:{ founded:1878, ground:"Goodison Park",          city:"Liverpool",       capacity:"39,572",  titles:"9 English league titles", lastTitle:"1986/87 (Div 1)",kitMaker:"Hummel",   colors:"Royal blue & white",  nickname:"The Toffees",     },
   NC:{ founded:1892, ground:"St. James' Park",        city:"Newcastle",       capacity:"52,305",  titles:"4 English league titles", lastTitle:"1926/27 (Div 1)",kitMaker:"Castore",  colors:"Black & white",       nickname:"The Magpies",     },
   WH:{ founded:1895, ground:"London Stadium",         city:"London (E20)",    capacity:"62,500",  titles:"0 English league titles", lastTitle:"None (PL era)",  kitMaker:"Umbro",    colors:"Claret & blue",       nickname:"The Hammers",     },
@@ -665,8 +665,8 @@ const vitalStats = {
   AV:{ founded:1874, ground:"Villa Park",              city:"Birmingham",      capacity:"52,509",  titles:"7 English league titles", lastTitle:"1980/81 (Div 1)", kitMaker:"Castore",  colors:"Claret & blue",       nickname:"The Villans",     },
   SU:{ founded:1879, ground:"Stadium of Light",        city:"Sunderland",      capacity:"46,000",  titles:"6 English league titles", lastTitle:"1935/36 (Div 1)", kitMaker:"Adidas",   colors:"Red & white",         nickname:"The Black Cats",  },
   LU:{ founded:1919, ground:"Elland Road",             city:"Leeds",           capacity:"37,890",  titles:"3 English league titles", lastTitle:"1991/92 (Div 1)", kitMaker:"Adidas",   colors:"White & blue",        nickname:"The Whites",      },
-  CH:{ founded:1905, ground:"Stamford Bridge",         city:"London (SW6)",    capacity:"40,341",  titles:"6 English league titles", lastTitle:"2021/22 (PL)",    kitMaker:"Nike",     colors:"Blue & white",        nickname:"The Blues",       },
-  IT:{ founded:1878, ground:"Portman Road",            city:"Ipswich",         capacity:"30,311",  titles:"1 English league title", lastTitle:"None (PL era)",   kitMaker:"Hummel",   colors:"Blue & white",        nickname:"The Tractor Boys", },
+  CH:{ founded:1905, ground:"Stamford Bridge",         city:"London (SW6)",    capacity:"40,341",  titles:"6 English league titles", lastTitle:"2016/17 (PL)",    kitMaker:"Nike",     colors:"Blue & white",        nickname:"The Blues",       },
+  IT:{ founded:1878, ground:"Portman Road",            city:"Ipswich",         capacity:"30,311",  titles:"1 English league title", lastTitle:"1961/62 (Div 1)",   kitMaker:"Hummel",   colors:"Blue & white",        nickname:"The Tractor Boys", },
   CV:{ founded:1883, ground:"CBS Arena",               city:"Coventry",        capacity:"32,609",  titles:"0 English league titles", lastTitle:"None (PL era)",   kitMaker:"Hummel",   colors:"Sky blue & white",    nickname:"The Sky Blues",   },
   HU:{ founded:1904, ground:"MKM Stadium", city:"Hull", capacity:"25,586", titles:"0 English league titles", lastTitle:"None", kitMaker:"Kappa", colors:"Amber & black", nickname:"The Tigers", },
 };

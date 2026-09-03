@@ -241,7 +241,7 @@ const milestones = {
 
 const vitalStats = {
   INT:{nickname:"I Nerazzurri", founded:"1908", stadium:"San Siro", city:"Milan", capacity:"75,817", colors:"Black & blue", titles:"21 league titles, 3 European Cups", lastTitle:"League 2026"},
-  JUV:{nickname:"La Vecchia Signora", founded:"1897", stadium:"Allianz Stadium", city:"Turin", capacity:"41,507", colors:"Black & white", titles:"36 league titles, 2 European Cups", lastTitle:"League 2025"},
+  JUV:{nickname:"La Vecchia Signora", founded:"1897", stadium:"Allianz Stadium", city:"Turin", capacity:"41,507", colors:"Black & white", titles:"36 league titles, 2 European Cups", lastTitle:"League 2020"},
   MIL:{nickname:"I Rossoneri", founded:"1899", stadium:"San Siro", city:"Milan", capacity:"75,817", colors:"Red & black", titles:"19 league titles, 7 European Cups", lastTitle:"League 2022"},
   NAP:{nickname:"I Partenopei", founded:"1926", stadium:"Stadio Diego Armando Maradona", city:"Naples", capacity:"54,726", colors:"Sky blue", titles:"4 league titles", lastTitle:"2025"},
   ROM:{nickname:"I Giallorossi", founded:"1927", stadium:"Stadio Olimpico", city:"Rome", capacity:"70,634", colors:"Maroon & gold", titles:"3 league titles", lastTitle:"2001"},

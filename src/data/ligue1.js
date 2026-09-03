@@ -206,7 +206,7 @@ const milestones = {
 };
 
 const vitalStats = {
-  PSG:{nickname:"Les Parisiens", founded:"1970", stadium:"Parc des Princes", city:"Paris", capacity:"47,926", colors:"Navy & red", titles:"14 league titles, 1 Champions League", lastTitle:"League 2026"},
+  PSG:{nickname:"Les Parisiens", founded:"1970", stadium:"Parc des Princes", city:"Paris", capacity:"47,926", colors:"Navy & red", titles:"14 league titles, 2 Champions Leagues", lastTitle:"League 2026"},
   MAR:{nickname:"L'OM", founded:"1899", stadium:"Stade Vélodrome", city:"Marseille", capacity:"67,394", colors:"White & blue", titles:"9 league titles, 1 Champions League", lastTitle:"League 2010"},
   MON:{nickname:"Les Monégasques", founded:"1924", stadium:"Stade Louis II", city:"Monaco", capacity:"18,523", colors:"Red & white", titles:"8 league titles", lastTitle:"2017"},
   LIL:{nickname:"Les Dogues", founded:"1944", stadium:"Stade Pierre-Mauroy", city:"Lille", capacity:"50,186", colors:"Red & navy", titles:"4 league titles", lastTitle:"2021"},
