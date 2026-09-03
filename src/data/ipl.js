@@ -244,7 +244,6 @@ const CARD_BADGES = {
 };
 
 const badgeUrls = {};
-const squadUrls = {};
 
 // Enduring club milestones (dossier-grounded, no perishable roster/owner data). Shown on the result
 // screen via the shared greats/milestones slot (IPL carries no separate greats/vitals maps by design;
@@ -330,4 +329,4 @@ const vitalStats = {
   "LSG":  { firstSeason: 2022, ground: "Ekana Cricket Stadium", city: "Lucknow", capacity: "~50,000", colours: "Teal and navy", titles: "None yet" }
 };
 
-export { moduleQuestions, teams, archetypes, teamTextColors, milestones, vitalStats, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };
+export { moduleQuestions, teams, archetypes, teamTextColors, milestones, vitalStats, scoring, teamDims, CARD_BADGES, badgeUrls };

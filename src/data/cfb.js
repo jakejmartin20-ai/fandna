@@ -4086,7 +4086,6 @@ const CARD_BADGES = {
 
 const badgeUrls = {};
 
-const squadUrls = {};  // no per-team roster links yet; the View squad CTA stays hidden (data-gated)
 
 
-export { moduleQuestions, teams, archetypes, teamTextColors, greats, vitalStats, nearlyGot, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };
+export { moduleQuestions, teams, archetypes, teamTextColors, greats, vitalStats, nearlyGot, scoring, teamDims, CARD_BADGES, badgeUrls };

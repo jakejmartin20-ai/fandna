@@ -2892,7 +2892,6 @@ const CARD_BADGES = {
 };
 
 
-const squadUrls = {};  // no per-team roster links yet; the View squad CTA stays hidden (data-gated)
 
 const milestones = {
   "BUF": ["Two AFL championships back to back, 1964 and 1965, the only titles the franchise has ever held.", "Four straight Super Bowl trips, 1990 through 1993, the only team ever to reach four in a row.", "The comeback against Houston in the 1992 playoffs, thirty-two points down and back to win, the greatest in NFL history.", "Wide Right, Super Bowl XXV, the kick that missed and the wound Buffalo still carries.", "The seventeen-year playoff drought finally broken in 2017, Bills Mafia's long wait rewarded."],
@@ -2929,4 +2928,4 @@ const milestones = {
   "JAX": ["An expansion team that reached the AFC Championship in only its second season.", "Two trips to the conference title game, 1996 and 2017, both falling one win short.", "The improbable 1996 run, a young franchise winning at Denver in the playoffs.", "Trevor Lawrence, the number one pick meant to carry the next era.", "Still chasing a first Super Bowl, the title drought unbroken since 1995."],
 };
 
-export { moduleQuestions, teams, archetypes, teamTextColors, greats, vitalStats, milestones, nearlyGot, scoring, teamDims, CARD_BADGES, squadUrls };
+export { moduleQuestions, teams, archetypes, teamTextColors, greats, vitalStats, milestones, nearlyGot, scoring, teamDims, CARD_BADGES };

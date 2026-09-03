@@ -1113,7 +1113,6 @@ const CARD_BADGES = {
 };
 
 const badgeUrls = {};
-const squadUrls = {};
 
 const milestones = {
   "AST": [
@@ -1154,4 +1153,4 @@ const milestones = {
   ]
 };
 
-export { moduleQuestions, teams, archetypes, teamTextColors, greats, vitalStats, milestones, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };
+export { moduleQuestions, teams, archetypes, teamTextColors, greats, vitalStats, milestones, scoring, teamDims, CARD_BADGES, badgeUrls };

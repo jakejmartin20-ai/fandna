@@ -2214,7 +2214,6 @@ const badgeUrls = {
   "ANA": "https://a.espncdn.com/i/teamlogos/nhl/500/ana.png",
   "SJS": "https://a.espncdn.com/i/teamlogos/nhl/500/sj.png"
 };
-const squadUrls = {};  // no per-team roster links yet; the View squad CTA stays hidden (data-gated)
 const milestones = {
   "MTL": [
     "Twenty-four Stanley Cups, the most of any franchise in NHL history.",
@@ -2442,4 +2441,4 @@ const milestones = {
   ]
 };
 
-export { moduleQuestions, teams, archetypes, teamTextColors, greats, vitalStats, milestones, nearlyGot, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };
+export { moduleQuestions, teams, archetypes, teamTextColors, greats, vitalStats, milestones, nearlyGot, scoring, teamDims, CARD_BADGES, badgeUrls };

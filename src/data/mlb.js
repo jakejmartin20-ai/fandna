@@ -2691,7 +2691,6 @@ const CARD_BADGES = {
 };
 
 
-const squadUrls = {};  // no per-team roster links yet; the View squad CTA stays hidden (data-gated)
 
 
 const milestones = {
@@ -2727,4 +2726,4 @@ const milestones = {
   "LAA": ["A first and only World Series title in 2002, powered by the Rally Monkey.", "A comeback from the brink in Game 6, then Game 7 over the Giants.", "Mike Trout, a three-time MVP whose prime passed with barely a playoff game to show.", "Shohei Ohtani's two-way brilliance in Anaheim, unanimous MVPs and no October.", "Nolan Ryan's no-hitters and hundred-mile-per-hour heat, an early face of the franchise."],
 };
 
-export { moduleQuestions, teams, archetypes, teamTextColors, greats, vitalStats, milestones, nearlyGot, scoring, teamDims, CARD_BADGES, squadUrls };
+export { moduleQuestions, teams, archetypes, teamTextColors, greats, vitalStats, milestones, nearlyGot, scoring, teamDims, CARD_BADGES };

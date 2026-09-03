@@ -153,7 +153,6 @@ const CARD_BADGES = {
 };
 
 const badgeUrls = {};
-const squadUrls = {};
 
 const milestones = {
   "RMA": ["The most decorated club in European basketball history, with eleven titles between 1964 and 2023.", "Runners-up in 2026, beaten in the Athens final by Olympiacos.", "The Pablo Laso era delivered three modern crowns on defensive grit.", "Los Blancos: the institution that expects to win as a baseline."],
@@ -201,4 +200,4 @@ const vitalStats = {
   "DUB": { founded: 2023, arena: "Coca-Cola Arena", city: "Dubai", colours: "Brown, black and white", titles: "None yet", domestic: "None (founded 2023)" }
 };
 
-export { moduleQuestions, teams, archetypes, teamTextColors, milestones, vitalStats, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };
+export { moduleQuestions, teams, archetypes, teamTextColors, milestones, vitalStats, scoring, teamDims, CARD_BADGES, badgeUrls };

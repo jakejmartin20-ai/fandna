@@ -2245,7 +2245,6 @@ const badgeUrls = {
   "CHA": "https://a.espncdn.com/i/teamlogos/nba/500/cha.png"
 };
 
-const squadUrls = {};  // no per-team roster links yet; the View squad CTA stays hidden (data-gated)
 
 const milestones = {
   "LAL": [
@@ -2460,4 +2459,4 @@ const milestones = {
   ]
 };
 
-export { moduleQuestions, teams, archetypes, teamTextColors, greats, vitalStats, milestones, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };
+export { moduleQuestions, teams, archetypes, teamTextColors, greats, vitalStats, milestones, scoring, teamDims, CARD_BADGES, badgeUrls };

@@ -210,7 +210,6 @@ const CARD_BADGES = {
 };
 
 const badgeUrls = {};
-const squadUrls = {};
 
 // Enduring club milestones (dossier-grounded, no perishable roster/owner data). Shown on the result
 // screen milestones slot alongside the vitalStats Club Info table.
@@ -321,4 +320,4 @@ const vitalStats = {
   "USM": { founded: 1903, ground: "Stade Sapiac", city: "Montauban", colours: "Green and black", titles: "1 (1967)", european: "-", lastTitle: "1967" }
 };
 
-export { moduleQuestions, teams, archetypes, teamTextColors, milestones, vitalStats, scoring, teamDims, CARD_BADGES, badgeUrls, squadUrls };
+export { moduleQuestions, teams, archetypes, teamTextColors, milestones, vitalStats, scoring, teamDims, CARD_BADGES, badgeUrls };
