@@ -10,9 +10,17 @@
 // so a storage failure never breaks the quiz.
 
 const KEY = "fandna_v1";     // localStorage key unchanged (bumping it would drop everyone's genome)
-const VERSION = 2;           // v2 adds spineAnswers
+const VERSION = 2;           // storage schema (v2 adds spineAnswers). SEPARATE from CORE_VERSION below.
 
-function blank(){ return { version: VERSION, coreAnswers: null, coreProfile: null, spineAnswers: null, results: {}, pending: [], earnedGroups: [] }; }
+// CORE_VERSION stamps the CORE QUESTION SET, not the storage schema. It bumps only when a core
+// question's ANSWERS change shape (options added / re-lettered), which invalidates a returning
+// user's stored answers to those questions. The community+chaos regrade (q6/q10/q22 binary ->
+// graded A-E) is core set 2: a genome with no coreVersion, or coreVersion < 2, holds pre-regrade
+// answers and must be re-asked (App.jsx routes it to the Core-update prompt) rather than silently
+// re-scored (scoreCore skips the now-unknown left/right keys and degrades the profile).
+const CORE_VERSION = 2;
+
+function blank(){ return { version: VERSION, coreVersion: 0, coreAnswers: null, coreProfile: null, spineAnswers: null, results: {}, pending: [], earnedGroups: [], updatePending: false, coreFrozen: false }; }
 
 function migrate(state){
   // Single place to bump old shapes forward as the schema evolves.
@@ -24,6 +32,13 @@ function migrate(state){
   // v1 -> v2: spineAnswers didn't exist. Old genomes get null; a spine-enabled league they had
   // already taken is re-derived / re-flagged on recompute (App.jsx), never silently mis-scored.
   if (!("spineAnswers" in state) || state.spineAnswers === undefined) state.spineAnswers = null;
+  // Core-set stamp + return-migration flags. A genome saved before this ship has NO coreVersion,
+  // so it defaults to 0 (pre-regrade) and is caught by the Core-update prompt on return. New/updated
+  // genomes carry coreVersion 2. updatePending marks a genome routed to the prompt; coreFrozen marks
+  // a genome whose owner chose "keep my current results" (its old core stays, never re-scored).
+  if (typeof state.coreVersion !== "number") state.coreVersion = 0;
+  if (typeof state.updatePending !== "boolean") state.updatePending = false;
+  if (typeof state.coreFrozen !== "boolean") state.coreFrozen = false;
   state.version = VERSION;
   return state;
 }
@@ -107,4 +122,33 @@ function markGroupEarned(groupId){
 }
 function earnedGroups(){ return loadState().earnedGroups || []; }
 
-export { loadState, saveResult, saveSpine, clearModule, clearAll, appendPending, readPending, clearPending, markGroupEarned, earnedGroups, KEY, VERSION };
+// Core-set stamping. Kept OUT of saveResult on purpose: a module-only retake reuses the cached
+// core answers verbatim (which, for a "keep" genome, are still the old-format ones), so stamping
+// there would wrongly promote a stale core to current. Instead App.jsx stamps only at the moments a
+// core was actually answered under the current set (a first full take, a core re-sequence, or a
+// completed Core-update), and freezes at the moment "keep" is chosen.
+//   stampCoreCurrent  : the stored core IS the current set now -> current, not pending, not frozen.
+//   keepCurrentCore   : user kept their pre-regrade result -> stop nagging (current stamp) but never
+//                       re-score the old-format answers (frozen); a later full retake clears it.
+//   markUpdatePending : flag a genome that has been routed to the Core-update prompt (telemetry / a
+//                       belt-and-braces guard); cleared by either of the two above.
+function stampCoreCurrent(){
+  const state = loadState();
+  state.coreVersion = CORE_VERSION; state.updatePending = false; state.coreFrozen = false;
+  writeState(state);
+  return state;
+}
+function keepCurrentCore(){
+  const state = loadState();
+  state.coreVersion = CORE_VERSION; state.updatePending = false; state.coreFrozen = true;
+  writeState(state);
+  return state;
+}
+function markUpdatePending(){
+  const state = loadState();
+  state.updatePending = true;
+  writeState(state);
+  return state;
+}
+
+export { loadState, saveResult, saveSpine, clearModule, clearAll, appendPending, readPending, clearPending, markGroupEarned, earnedGroups, stampCoreCurrent, keepCurrentCore, markUpdatePending, KEY, VERSION, CORE_VERSION };
