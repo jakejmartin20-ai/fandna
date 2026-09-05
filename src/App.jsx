@@ -5,7 +5,7 @@ import { coreQuestions, DIM_ORDER, DIM_LABELS } from "./data/core";
 import { spineQuestions } from "./data/spine";
 import { SPORT_DATA } from "./lib/sportData";
 import { scoreCore, scoreModule, matchEvidence, decompressProfile } from "./lib/scoring";
-import { loadState, saveResult, saveSpine, clearAll, appendPending, readPending, clearPending, markGroupEarned } from "./lib/storage";
+import { loadState, saveResult, saveSpine, clearAll, appendPending, readPending, clearPending, markGroupEarned, stampCoreCurrent, keepCurrentCore, markUpdatePending } from "./lib/storage";
 import { newlyCompletedGroup, groupClubColors, allBucketsComplete, completedGroups } from "./lib/crest";
 import { hasCompletedAll } from "./lib/beachGate";
 import { pingResult } from "./lib/telemetry";
@@ -46,6 +46,8 @@ function recomputeAllFromCore(newCoreAnswers){
 import { CoreStrip } from "./components/CoreStrip";
 import { InstinctsLine } from "./components/InstinctsLine";
 import { CoreReveal } from "./components/CoreReveal";
+import { CoreUpdatePrompt } from "./components/CoreUpdatePrompt";
+import { CoreResequenced } from "./components/CoreResequenced";
 import { StageBar } from "./components/StageBar";
 import { CrestEarn } from "./components/CrestEarn";
 import { CrestFinale } from "./components/CrestFinale";
@@ -262,6 +264,7 @@ function AppInner(){
   const [retakeConfirm,setRetakeConfirm]=useState(false); // retake-this-league confirm (in-app, s64; was window.confirm)
   const [startOverConfirm,setStartOverConfirm]=useState(false); // start-over confirm (in-app, s64; was window.confirm)
   const [resequenceDelta,setResequenceDelta]=useState(null);      // {moved:[{sport,from,to}],stale:[...]} shown once after a re-sequence
+  const [coreUpdateResult,setCoreUpdateResult]=useState(null);    // {moved,held,stale} feeding the Beat 2 Core-update reveal
   const [coreProfile,setCoreProfile]=useState(null); // the user's 7-dim core; drives the strip everywhere
   const [landed,setLanded]=useState(true);        // result reveal: club-card head hidden until the strip has read, then lands (finish path only)
   const [revealSeq,setRevealSeq]=useState(false); // true only when arriving at a result straight from finishing the quiz
@@ -333,6 +336,7 @@ function AppInner(){
   const needSpine = !savedSpine; // ask the shared spine on ANY first-ever run - even a bespoke (off-spine) league like PL/NFL/CFB - so every taker builds a spine profile and the home instincts line fills in
   const sequence=useMemo(
     ()=> mode==="core" ? coreQuestions
+       : mode==="coreupdate" ? ["q10","q22","q6"].map(id=>coreQuestions.find(p=>p.id===id))
        : mode==="spine" ? spineQuestions
        : mode==="module" ? (needSpine ? [...spineQuestions, ...moduleQuestions] : moduleQuestions)
        : [...coreQuestions, ...(needSpine ? spineQuestions : []), ...moduleQuestions],
@@ -357,6 +361,9 @@ function AppInner(){
   const coreInSeq=phaseOrder.filter(p=>CORE_PHASES.has(p)).length; // core segments in this run
   const modInSeq=phaseOrder.length-coreInSeq;                       // league segments in this run
   const seqLeagueName=(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League";
+  // What this run is called in the quiz chrome (indicator + hidden h1): the core, the 3-question
+  // core update, or the league module.
+  const quizRunLabel = mode==="core" ? "Your core" : mode==="coreupdate" ? "Core update" : seqLeagueName;
 
   // Named stage model for the progress bar (StageBar): Core / Instincts / <League>, each sized by
   // how many questions it holds in THIS run, so a first full take reads as three clear stages. A
@@ -374,11 +381,11 @@ function AppInner(){
       out.push({key,label,color,labelColor,len,frac,state:done?"done":active?"active":"upcoming"});
       start+=len;
     };
-    mk("core","Core","#7f7fb0","#9a9acc",coreLen);
+    mk("core",mode==="coreupdate"?"Core update":"Core","#7f7fb0","#9a9acc",coreLen);
     mk("spine","Instincts","#7f7fb0","#9a9acc",spineLen);
     mk("mod",seqLeagueName,"#c9b27a","#c9b27a",modLen);
     return out;
-  },[sequence,cur,seqLeagueName,coreIds,spineIds]);
+  },[sequence,cur,seqLeagueName,coreIds,spineIds,mode]);
 
   // Per-stage count (Baymard chunking): count WITHIN the active stage, not the flat total, so a
   // long first take reads as three short, finishable parts (Core / Instincts / Sport) and the
@@ -386,7 +393,7 @@ function AppInner(){
   const stageCoreLen  = sequence.filter(x=>coreIds.has(x.id)).length;
   const stageSpineLen = sequence.filter(x=>spineIds.has(x.id)).length;
   let stageLabel, stageIdx, stageTotal;
-  if(cur < stageCoreLen){ stageLabel="Core"; stageIdx=cur+1; stageTotal=stageCoreLen; }
+  if(cur < stageCoreLen){ stageLabel=mode==="coreupdate"?"Core update":"Core"; stageIdx=cur+1; stageTotal=stageCoreLen; }
   else if(cur < stageCoreLen+stageSpineLen){ stageLabel="Instincts"; stageIdx=cur-stageCoreLen+1; stageTotal=stageSpineLen; }
   else { stageLabel=seqLeagueName; stageIdx=cur-stageCoreLen-stageSpineLen+1; stageTotal=Math.max(1,sequence.length-stageCoreLen-stageSpineLen); }
 
@@ -400,7 +407,16 @@ function AppInner(){
     // banner. Deterministic recompute, never a scoring change; the core is re-derived too,
     // so a core-scoring change still heals here as it always did. Healed results re-ping
     // telemetry (flagged as a retake) so live counts follow the current engine.
-    if(st.coreAnswers){
+    // A genome saved before the community+chaos regrade carries no coreVersion (or < 2), so its
+    // answers to q6/q10/q22 are the old left/right, not the graded A-E. Re-scoring it silently would
+    // DROP those three answers (scoreCore skips the unknown keys) and degrade the read, so instead of
+    // the usual heal we route it to the Core-update prompt (Beat 1) and re-ask just those three. A
+    // genome that already chose "keep my current results" is coreFrozen: left exactly as it stands,
+    // never re-scored, so its old team can't drift out from under it.
+    const hasCore = !!st.coreAnswers;
+    const preRegrade = hasCore && !st.coreFrozen && (typeof st.coreVersion!=="number" || st.coreVersion < 2);
+
+    if(hasCore && !preRegrade && !st.coreFrozen){
       const { newCore, moved, stale } = recomputeAllFromCore(st.coreAnswers);
       if(moved.length){
         appendPending(moved);
@@ -409,8 +425,9 @@ function AppInner(){
       }
       st=loadState();
     }
+    if(preRegrade) markUpdatePending();
     const pend=readPending();
-    if(pend.length) setResequenceDelta({moved:pend,stale:[],reason:"heal"});
+    if(pend.length && !preRegrade) setResequenceDelta({moved:pend,stale:[],reason:"heal"});
     setGenome(st.results||{});
     setCoreProfile(st.coreProfile||null);
     setSavedSpine(st.spineAnswers||null);   // so a later spine-league skips the already-answered spine
@@ -421,6 +438,8 @@ function AppInner(){
       setEvidence(matchEvidence("PL",{coreAnswers:st.coreAnswers||{},moduleAnswers:st.results.PL.answers||{},coreProfile:st.coreProfile||null}));
       setEvidenceInput({coreAnswers:st.coreAnswers||{},moduleAnswers:st.results.PL.answers||{},coreProfile:st.coreProfile||null});
     }
+    // Genome + sticky result are loaded behind it; now raise the Core-update prompt over the home.
+    if(preRegrade){ track("core_update_prompted",{}); setScreen("coreupdate"); }
   },[]);
 
   // On load, a /c/<code> link carries a friend's packed genome. Decode it and route to Compare;
@@ -560,6 +579,36 @@ function AppInner(){
       setTimeout(()=>{
         setCur(0);setAnswers({});setResult(null);setScores(null);setTab("result");
         setScreen("home");setPhase("in");
+      },160);
+    } else if(mode==="coreupdate"){
+      // Returning-user Core update: the taker re-answered ONLY the three regraded questions. Merge
+      // those over the 21 kept answers, re-read every played league against the sharper core, stamp
+      // the genome current (so it never re-prompts), then reveal what moved (Beat 2). recomputeAllFromCore
+      // persists the merged core + the re-scored results; stampCoreCurrent marks coreVersion 2.
+      const st0=loadState();
+      const kept =Object.fromEntries(Object.entries(st0.coreAnswers||{}).filter(([k])=>!["q6","q10","q22"].includes(k)));
+      const fresh=Object.fromEntries(Object.entries(na).filter(([k])=>["q6","q10","q22"].includes(k)));
+      const merged={...kept,...fresh};
+      const { newCore, moved, stale } = recomputeAllFromCore(merged);
+      stampCoreCurrent();
+      const stg=loadState();
+      setCoreProfile(newCore);
+      setGenome(stg.results||{});
+      setSavedCore({coreAnswers:merged,coreProfile:newCore});
+      // What held: every played league that didn't move (share-restored leagues kept their club too).
+      const movedSet=new Set(moved.map(m=>m.sport));
+      const held=Object.entries(stg.results||{})
+        .filter(([sport,r])=>r&&r.club&&!movedSet.has(sport))
+        .map(([sport,r])=>({sport,club:r.club}));
+      setCoreUpdateResult({moved,held,stale});
+      moved.forEach(m=>pingResult({sport:m.sport,club:m.to,scores:m.scores,coreProfile:newCore,coreAnswers:merged,retake:true}));
+      track("core_updated",{moved:moved.length,held:held.length,stale:stale.length});
+      setMode("full");
+      setPhase("out");
+      setTimeout(()=>{
+        setCur(0);setAnswers({});setResult(null);setScores(null);setTab("result");
+        setScreen("resequenced");setPhase("in");
+        try{ window.scrollTo(0,0); }catch(e){}
       },160);
     } else {
       // Two-stage scoring. Split the answers into the shared core and the PL module.
@@ -716,6 +765,29 @@ function AppInner(){
     setTimeout(()=>{
       setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");
       setScreen("quiz");setPhase("in");
+    },160);
+  }
+  // Beat 1 -> retake: re-ask only the three regraded questions. On finish, the mode "coreupdate"
+  // completion merges them over the kept answers, re-reads every played league, and shows Beat 2.
+  function startCoreUpdate(){
+    setResequenceDelta(null);
+    setMode("coreupdate");
+    setPhase("out");
+    setTimeout(()=>{
+      setCur(0);setAnswers({});setScores(null);setResult(null);setTab("result");
+      setScreen("quiz");setPhase("in");
+      try{ window.scrollTo(0,0); }catch(e){}
+    },160);
+  }
+  // Beat 1 -> keep: freeze the current genome. coreVersion is stamped current (so it never re-prompts)
+  // and coreFrozen is set (so its pre-regrade answers are never re-scored and the old team can't drift).
+  function keepCoreUpdate(){
+    keepCurrentCore();
+    track("core_update_kept",{});
+    setPhase("out");
+    setTimeout(()=>{
+      setScreen("home");setPhase("in");
+      try{ window.scrollTo(0,0); }catch(e){}
     },160);
   }
   // Re-take the shared instincts: re-answer the 7 spine calls. On finish, every taken league
@@ -1266,14 +1338,14 @@ function AppInner(){
         {screen==="quiz"&&(
           <>
             <h1 style={{position:"absolute",width:1,height:1,padding:0,margin:-1,overflow:"hidden",clip:"rect(0,0,0,0)",whiteSpace:"nowrap",border:0}}>
-              FanDNA quiz: {mode==="core" ? "Your core" : ((SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League")}
+              FanDNA quiz: {quizRunLabel}
             </h1>
             <div aria-live="polite" style={{position:"absolute",width:1,height:1,padding:0,margin:-1,overflow:"hidden",clip:"rect(0,0,0,0)",whiteSpace:"nowrap",border:0}}>
               {stageLabel}, question {stageIdx} of {stageTotal}
             </div>
             {/* League indicator: which sequence you're taking, always visible */}
             <div style={{textAlign:"center",marginBottom:14,fontSize:11,color:"#8484b0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace"}}>
-              {mode==="core" ? "Your core" : ((SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League")}
+              {quizRunLabel}
             </div>
             {/* Progress: three named stages - Core, Instincts, then the sport - so the about-you
                 layers and the sport layer read as distinct at a glance. The live stage glows. */}
@@ -1333,8 +1405,8 @@ function AppInner(){
             {/* Entry framing, first question only (per 1b) */}
             {cur===0&&(
               <div style={{textAlign:"center",marginBottom:26}}>
-                <div style={{fontSize:11,color:"#8484b0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:10}}>{mode==="core"?"Re-sequencing your core":"Which team are you, really?"}</div>
-                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(14px,3.4vw,17px)",color:"#9898b8",lineHeight:1.55,margin:0}}>{mode==="core"?"Answer honestly, not how you wish you were. When you finish, every league you have taken re-reads against the new you.":mode==="module"?`Your core is already sequenced. ${moduleQuestions.length} questions to remap your ${(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"} strand.`:"Answer honestly, not how you wish you were. New to the league or loyal for life, this is the club in your DNA."}</p>
+                <div style={{fontSize:11,color:"#8484b0",letterSpacing:"0.3em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:10}}>{mode==="core"?"Re-sequencing your core":mode==="coreupdate"?"Core update":"Which team are you, really?"}</div>
+                <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:"clamp(14px,3.4vw,17px)",color:"#9898b8",lineHeight:1.55,margin:0}}>{mode==="core"?"Answer honestly, not how you wish you were. When you finish, every league you have taken re-reads against the new you.":mode==="coreupdate"?"Three quick questions. When you finish, every league you have taken re-reads against the sharper you.":mode==="module"?`Your core is already sequenced. ${moduleQuestions.length} questions to remap your ${(SPORTS.find(s=>s.code===activeSport)||{}).name||"Premier League"} strand.`:"Answer honestly, not how you wish you were. New to the league or loyal for life, this is the club in your DNA."}</p>
                 {mode==="full"&&(
                   <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.16em",textTransform:"uppercase",color:"#8a8ab0",marginTop:13}}>{quizStages.length} short parts &middot; about 5 minutes</div>
                 )}
@@ -1362,6 +1434,19 @@ function AppInner(){
             coreProfile={coreProfile}
             sportName={seqLeagueName}
             onContinue={continueFromReveal}
+          />
+        )}
+
+        {/* ── CORE UPDATE, Beat 1: a returning pre-regrade genome is offered the 3-question re-ask ── */}
+        {screen==="coreupdate"&&(
+          <CoreUpdatePrompt onRetake={startCoreUpdate} onKeep={keepCoreUpdate}/>
+        )}
+
+        {/* ── CORE UPDATE, Beat 2: the louder reveal of what the sharper core moved ── */}
+        {screen==="resequenced"&&(
+          <CoreResequenced
+            result={coreUpdateResult}
+            onContinue={()=>{ setCoreUpdateResult(null); setPhase("out"); setTimeout(()=>{ setScreen("home"); setPhase("in"); try{window.scrollTo(0,0);}catch(e){} },160); }}
           />
         )}
 
