@@ -110,11 +110,31 @@ const coreQuestions = [
   },
   {
     "id": "q6",
-    "type": "binary",
+    "type": "choice",
     "phase": "Who are you?",
     "question": "A day with no plan, everything changing around you:",
-    "left": "Drains me. I need structure to function.",
-    "right": "Energises me. I'm at my best improvising."
+    "options": [
+      {
+        "label": "It unsettles me. I need a plan to function.",
+        "value": "A"
+      },
+      {
+        "label": "I can manage, but I would rather have structure.",
+        "value": "B"
+      },
+      {
+        "label": "Fine either way. It depends on the day.",
+        "value": "C"
+      },
+      {
+        "label": "I like the room to improvise.",
+        "value": "D"
+      },
+      {
+        "label": "I come alive. Unplanned is where I do my best.",
+        "value": "E"
+      }
+    ]
   },
   {
     "id": "q7",
@@ -182,11 +202,31 @@ const coreQuestions = [
   },
   {
     "id": "q10",
-    "type": "binary",
+    "type": "choice",
     "phase": "Where do you belong?",
-    "question": "Honestly:",
-    "left": "I need to be part of something bigger than myself",
-    "right": "I find meaning in doing excellent work independently"
+    "question": "Where your sense of meaning comes from:",
+    "options": [
+      {
+        "label": "Being part of something bigger than myself. That's where meaning lives.",
+        "value": "A"
+      },
+      {
+        "label": "Belonging matters, but I keep my own space inside it.",
+        "value": "B"
+      },
+      {
+        "label": "A good group lifts me, though I can go it alone when I have to.",
+        "value": "C"
+      },
+      {
+        "label": "I'll pitch in, but my meaning comes from my own work.",
+        "value": "D"
+      },
+      {
+        "label": "Doing excellent work on my own is enough for me.",
+        "value": "E"
+      }
+    ]
   },
   {
     "id": "q11",
@@ -398,11 +438,31 @@ const coreQuestions = [
   },
   {
     "id": "q22",
-    "type": "binary",
+    "type": "choice",
     "phase": "How do you feel it?",
-    "question": "Your suffering:",
-    "left": "Is private, I feel it alone",
-    "right": "Is shared, misery loves company and honesty"
+    "question": "When you're going through something hard:",
+    "options": [
+      {
+        "label": "I want my people around me. Out loud, together.",
+        "value": "A"
+      },
+      {
+        "label": "I lean on a few close people to get through it.",
+        "value": "B"
+      },
+      {
+        "label": "I share some of it and keep some of it back.",
+        "value": "C"
+      },
+      {
+        "label": "I mostly handle it myself, then tell people after.",
+        "value": "D"
+      },
+      {
+        "label": "I go quiet and get through it alone.",
+        "value": "E"
+      }
+    ]
   },
   {
     "id": "q23",
@@ -487,8 +547,11 @@ const coreDimScoring = {
     "E": { "community": 1 }
   },
   "q6": {
-    "left": { "chaos": 1 },
-    "right": { "chaos": 10 }
+    "A": { "chaos": 1 },
+    "B": { "chaos": 3 },
+    "C": { "chaos": 5 },
+    "D": { "chaos": 8 },
+    "E": { "chaos": 10 }
   },
   "q7": {
     "A": { "loyalty": 10 },
@@ -512,8 +575,11 @@ const coreDimScoring = {
     "E": { "loyalty": 8 }
   },
   "q10": {
-    "left": { "community": 9 },
-    "right": { "community": 2 }
+    "A": { "community": 10 },
+    "B": { "community": 8 },
+    "C": { "community": 5 },
+    "D": { "community": 3 },
+    "E": { "community": 1 }
   },
   "q11": {
     "A": { "rootedness": 8 },
@@ -587,8 +653,11 @@ const coreDimScoring = {
     "E": { "emotion": 4 }
   },
   "q22": {
-    "left": { "community": 2 },
-    "right": { "community": 9 }
+    "A": { "community": 10 },
+    "B": { "community": 8 },
+    "C": { "community": 5 },
+    "D": { "community": 3 },
+    "E": { "community": 1 }
   },
   "q23": {
     "A": { "ambition": 9 },
