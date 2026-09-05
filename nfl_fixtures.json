@@ -16,13 +16,13 @@
       "kind": "signature",
       "forTeam": "BUF",
       "coreProfile": {
-        "loyalty": 10,
-        "emotion": 9,
-        "ambition": 7,
-        "process": 4,
-        "community": 9,
-        "chaos": 7,
-        "rootedness": 9
+        "loyalty": 8.831571764705883,
+        "emotion": 7.715476470588236,
+        "ambition": 6.648508235294118,
+        "process": 2.9693882352941174,
+        "community": 8.064049411764705,
+        "chaos": 7.226577647058823,
+        "rootedness": 7.800417647058824
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -43,13 +43,13 @@
       "kind": "signature",
       "forTeam": "NE",
       "coreProfile": {
-        "loyalty": 4,
-        "emotion": 3,
-        "ambition": 9,
-        "process": 10,
-        "community": 3,
-        "chaos": 2,
-        "rootedness": 5
+        "loyalty": 2.704512941176471,
+        "emotion": 3.7978294117647056,
+        "ambition": 8.297920000000001,
+        "process": 9.604682352941175,
+        "community": 1.3864023529411762,
+        "chaos": 1.511871764705882,
+        "rootedness": 3.694535294117647
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -70,13 +70,13 @@
       "kind": "signature",
       "forTeam": "GB",
       "coreProfile": {
-        "loyalty": 10,
-        "emotion": 7,
-        "ambition": 7,
-        "process": 5,
-        "community": 10,
-        "chaos": 3,
-        "rootedness": 10
+        "loyalty": 8.831571764705883,
+        "emotion": 6.4095941176470586,
+        "ambition": 6.648508235294118,
+        "process": 4.075270588235294,
+        "community": 9.176990588235293,
+        "chaos": 2.6548129411764707,
+        "rootedness": 8.826888235294117
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -100,13 +100,13 @@
       "kind": "signature",
       "forTeam": "DAL",
       "coreProfile": {
-        "loyalty": 6,
-        "emotion": 7,
-        "ambition": 10,
-        "process": 4,
-        "community": 4,
-        "chaos": 6,
-        "rootedness": 5
+        "loyalty": 4.7468658823529415,
+        "emotion": 6.4095941176470586,
+        "ambition": 9.122625882352942,
+        "process": 2.9693882352941174,
+        "community": 2.4993435294117647,
+        "chaos": 6.083636470588235,
+        "rootedness": 3.694535294117647
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -128,13 +128,13 @@
       "kind": "signature",
       "forTeam": "PIT",
       "coreProfile": {
-        "loyalty": 9,
-        "emotion": 8,
-        "ambition": 8,
-        "process": 6,
-        "community": 8,
-        "chaos": 3,
-        "rootedness": 9
+        "loyalty": 7.810395294117647,
+        "emotion": 7.062535294117647,
+        "ambition": 7.473214117647059,
+        "process": 5.181152941176471,
+        "community": 6.951108235294117,
+        "chaos": 2.6548129411764707,
+        "rootedness": 7.800417647058824
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -156,13 +156,13 @@
       "kind": "signature",
       "forTeam": "LV",
       "coreProfile": {
-        "loyalty": 8,
-        "emotion": 8,
-        "ambition": 7,
-        "process": 3,
-        "community": 7,
-        "chaos": 9,
-        "rootedness": 3
+        "loyalty": 6.789218823529412,
+        "emotion": 7.062535294117647,
+        "ambition": 6.648508235294118,
+        "process": 1.8635058823529413,
+        "community": 5.8381670588235295,
+        "chaos": 9.51246,
+        "rootedness": 1.6415941176470579
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -184,13 +184,13 @@
       "kind": "signature",
       "forTeam": "NO",
       "coreProfile": {
-        "loyalty": 9,
-        "emotion": 10,
-        "ambition": 6,
-        "process": 4,
-        "community": 9,
-        "chaos": 6,
-        "rootedness": 9
+        "loyalty": 7.810395294117647,
+        "emotion": 8.368417647058823,
+        "ambition": 5.823802352941177,
+        "process": 2.9693882352941174,
+        "community": 8.064049411764705,
+        "chaos": 6.083636470588235,
+        "rootedness": 7.800417647058824
       },
       "moduleAnswers": {
         "nfl_q13": "B",
@@ -214,13 +214,13 @@
       "kind": "signature",
       "forTeam": "DET",
       "coreProfile": {
-        "loyalty": 10,
-        "emotion": 7,
-        "ambition": 5,
-        "process": 3,
-        "community": 8,
-        "chaos": 4,
-        "rootedness": 9
+        "loyalty": 8.831571764705883,
+        "emotion": 6.4095941176470586,
+        "ambition": 4.999096470588236,
+        "process": 1.8635058823529413,
+        "community": 6.951108235294117,
+        "chaos": 3.7977541176470586,
+        "rootedness": 7.800417647058824
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -242,13 +242,13 @@
       "kind": "signature",
       "forTeam": "KC",
       "coreProfile": {
-        "loyalty": 7,
-        "emotion": 8,
-        "ambition": 9,
-        "process": 7,
-        "community": 7,
-        "chaos": 5,
-        "rootedness": 7
+        "loyalty": 5.768042352941176,
+        "emotion": 7.062535294117647,
+        "ambition": 8.297920000000001,
+        "process": 6.287035294117647,
+        "community": 5.8381670588235295,
+        "chaos": 4.9406952941176465,
+        "rootedness": 5.747476470588235
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -270,13 +270,13 @@
       "kind": "signature",
       "forTeam": "SF",
       "coreProfile": {
-        "loyalty": 7,
-        "emotion": 7,
-        "ambition": 9,
-        "process": 8,
-        "community": 6,
-        "chaos": 5,
-        "rootedness": 6
+        "loyalty": 5.768042352941176,
+        "emotion": 6.4095941176470586,
+        "ambition": 8.297920000000001,
+        "process": 7.392917647058823,
+        "community": 4.725225882352941,
+        "chaos": 4.9406952941176465,
+        "rootedness": 4.721005882352941
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -297,13 +297,13 @@
       "kind": "signature",
       "forTeam": "PHI",
       "coreProfile": {
-        "loyalty": 9,
-        "emotion": 9,
-        "ambition": 8,
-        "process": 6,
-        "community": 9,
-        "chaos": 8,
-        "rootedness": 10
+        "loyalty": 7.810395294117647,
+        "emotion": 7.715476470588236,
+        "ambition": 7.473214117647059,
+        "process": 5.181152941176471,
+        "community": 8.064049411764705,
+        "chaos": 8.369518823529411,
+        "rootedness": 8.826888235294117
       },
       "moduleAnswers": {
         "nfl_q13": "B",
@@ -325,13 +325,13 @@
       "kind": "signature",
       "forTeam": "SEA",
       "coreProfile": {
-        "loyalty": 8,
-        "emotion": 8,
-        "ambition": 7,
-        "process": 6,
-        "community": 10,
-        "chaos": 6,
-        "rootedness": 7
+        "loyalty": 6.789218823529412,
+        "emotion": 7.062535294117647,
+        "ambition": 6.648508235294118,
+        "process": 5.181152941176471,
+        "community": 9.176990588235293,
+        "chaos": 6.083636470588235,
+        "rootedness": 5.747476470588235
       },
       "moduleAnswers": {
         "nfl_q13": "B",
@@ -351,13 +351,13 @@
       "kind": "signature",
       "forTeam": "MIA",
       "coreProfile": {
-        "loyalty": 6,
-        "emotion": 7,
-        "ambition": 6,
-        "process": 5,
-        "community": 4,
-        "chaos": 4,
-        "rootedness": 6
+        "loyalty": 4.7468658823529415,
+        "emotion": 6.4095941176470586,
+        "ambition": 5.823802352941177,
+        "process": 4.075270588235294,
+        "community": 2.4993435294117647,
+        "chaos": 3.7977541176470586,
+        "rootedness": 4.721005882352941
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -377,13 +377,13 @@
       "kind": "signature",
       "forTeam": "LAC",
       "coreProfile": {
-        "loyalty": 6,
-        "emotion": 8,
-        "ambition": 6,
-        "process": 5,
-        "community": 5,
-        "chaos": 8,
-        "rootedness": 4
+        "loyalty": 4.7468658823529415,
+        "emotion": 7.062535294117647,
+        "ambition": 5.823802352941177,
+        "process": 4.075270588235294,
+        "community": 3.6122847058823524,
+        "chaos": 8.369518823529411,
+        "rootedness": 2.6680647058823523
       },
       "moduleAnswers": {
         "nfl_q13": "B",
@@ -405,13 +405,13 @@
       "kind": "signature",
       "forTeam": "BAL",
       "coreProfile": {
-        "loyalty": 8,
-        "emotion": 8,
-        "ambition": 7,
-        "process": 7,
-        "community": 8,
-        "chaos": 4,
-        "rootedness": 8
+        "loyalty": 6.789218823529412,
+        "emotion": 7.062535294117647,
+        "ambition": 6.648508235294118,
+        "process": 6.287035294117647,
+        "community": 6.951108235294117,
+        "chaos": 3.7977541176470586,
+        "rootedness": 6.77394705882353
       },
       "moduleAnswers": {
         "nfl_q13": "B",
@@ -434,13 +434,13 @@
       "kind": "signature",
       "forTeam": "CLE",
       "coreProfile": {
-        "loyalty": 10,
-        "emotion": 9,
-        "ambition": 5,
-        "process": 3,
-        "community": 9,
-        "chaos": 8,
-        "rootedness": 9
+        "loyalty": 8.831571764705883,
+        "emotion": 7.715476470588236,
+        "ambition": 4.999096470588236,
+        "process": 1.8635058823529413,
+        "community": 8.064049411764705,
+        "chaos": 8.369518823529411,
+        "rootedness": 7.800417647058824
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -461,13 +461,13 @@
       "kind": "signature",
       "forTeam": "NYG",
       "coreProfile": {
-        "loyalty": 8,
-        "emotion": 6,
-        "ambition": 7,
-        "process": 6,
-        "community": 7,
-        "chaos": 4,
-        "rootedness": 8
+        "loyalty": 6.789218823529412,
+        "emotion": 5.756652941176471,
+        "ambition": 6.648508235294118,
+        "process": 5.181152941176471,
+        "community": 5.8381670588235295,
+        "chaos": 3.7977541176470586,
+        "rootedness": 6.77394705882353
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -487,13 +487,13 @@
       "kind": "signature",
       "forTeam": "TB",
       "coreProfile": {
-        "loyalty": 6,
-        "emotion": 6,
-        "ambition": 6,
-        "process": 5,
-        "community": 6,
-        "chaos": 7,
-        "rootedness": 5
+        "loyalty": 4.7468658823529415,
+        "emotion": 5.756652941176471,
+        "ambition": 5.823802352941177,
+        "process": 4.075270588235294,
+        "community": 4.725225882352941,
+        "chaos": 7.226577647058823,
+        "rootedness": 3.694535294117647
       },
       "moduleAnswers": {
         "nfl_q13": "B",
@@ -514,13 +514,13 @@
       "kind": "signature",
       "forTeam": "MIN",
       "coreProfile": {
-        "loyalty": 9,
-        "emotion": 9,
-        "ambition": 7,
-        "process": 5,
-        "community": 8,
-        "chaos": 7,
-        "rootedness": 8
+        "loyalty": 7.810395294117647,
+        "emotion": 7.715476470588236,
+        "ambition": 6.648508235294118,
+        "process": 4.075270588235294,
+        "community": 6.951108235294117,
+        "chaos": 7.226577647058823,
+        "rootedness": 6.77394705882353
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -544,13 +544,13 @@
       "kind": "signature",
       "forTeam": "CHI",
       "coreProfile": {
-        "loyalty": 9,
-        "emotion": 7,
-        "ambition": 6,
-        "process": 5,
-        "community": 8,
-        "chaos": 5,
-        "rootedness": 9
+        "loyalty": 7.810395294117647,
+        "emotion": 6.4095941176470586,
+        "ambition": 5.823802352941177,
+        "process": 4.075270588235294,
+        "community": 6.951108235294117,
+        "chaos": 4.9406952941176465,
+        "rootedness": 7.800417647058824
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -571,13 +571,13 @@
       "kind": "signature",
       "forTeam": "IND",
       "coreProfile": {
-        "loyalty": 6,
-        "emotion": 6,
-        "ambition": 7,
-        "process": 7,
-        "community": 5,
-        "chaos": 4,
-        "rootedness": 5
+        "loyalty": 4.7468658823529415,
+        "emotion": 5.756652941176471,
+        "ambition": 6.648508235294118,
+        "process": 6.287035294117647,
+        "community": 3.6122847058823524,
+        "chaos": 3.7977541176470586,
+        "rootedness": 3.694535294117647
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -596,13 +596,13 @@
       "kind": "signature",
       "forTeam": "DEN",
       "coreProfile": {
-        "loyalty": 9,
-        "emotion": 8,
-        "ambition": 8,
-        "process": 5,
-        "community": 8,
-        "chaos": 4,
-        "rootedness": 8
+        "loyalty": 7.810395294117647,
+        "emotion": 7.062535294117647,
+        "ambition": 7.473214117647059,
+        "process": 4.075270588235294,
+        "community": 6.951108235294117,
+        "chaos": 3.7977541176470586,
+        "rootedness": 6.77394705882353
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -624,13 +624,13 @@
       "kind": "signature",
       "forTeam": "LAR",
       "coreProfile": {
-        "loyalty": 4,
-        "emotion": 5,
-        "ambition": 9,
-        "process": 7,
-        "community": 4,
-        "chaos": 5,
-        "rootedness": 3
+        "loyalty": 2.704512941176471,
+        "emotion": 5.103711764705882,
+        "ambition": 8.297920000000001,
+        "process": 6.287035294117647,
+        "community": 2.4993435294117647,
+        "chaos": 4.9406952941176465,
+        "rootedness": 1.6415941176470579
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -650,13 +650,13 @@
       "kind": "signature",
       "forTeam": "CIN",
       "coreProfile": {
-        "loyalty": 7,
-        "emotion": 7,
-        "ambition": 6,
-        "process": 3,
-        "community": 7,
-        "chaos": 7,
-        "rootedness": 8
+        "loyalty": 5.768042352941176,
+        "emotion": 6.4095941176470586,
+        "ambition": 5.823802352941177,
+        "process": 1.8635058823529413,
+        "community": 5.8381670588235295,
+        "chaos": 7.226577647058823,
+        "rootedness": 6.77394705882353
       },
       "moduleAnswers": {
         "nfl_q13": "B",
@@ -678,13 +678,13 @@
       "kind": "signature",
       "forTeam": "ATL",
       "coreProfile": {
-        "loyalty": 5,
-        "emotion": 7,
-        "ambition": 6,
-        "process": 4,
-        "community": 5,
-        "chaos": 7,
-        "rootedness": 6
+        "loyalty": 3.725689411764706,
+        "emotion": 6.4095941176470586,
+        "ambition": 5.823802352941177,
+        "process": 2.9693882352941174,
+        "community": 3.6122847058823524,
+        "chaos": 7.226577647058823,
+        "rootedness": 4.721005882352941
       },
       "moduleAnswers": {
         "nfl_q13": "B",
@@ -708,13 +708,13 @@
       "kind": "signature",
       "forTeam": "ARI",
       "coreProfile": {
-        "loyalty": 8,
-        "emotion": 6,
-        "ambition": 5,
-        "process": 4,
-        "community": 5,
-        "chaos": 4,
-        "rootedness": 6
+        "loyalty": 6.789218823529412,
+        "emotion": 5.756652941176471,
+        "ambition": 4.999096470588236,
+        "process": 2.9693882352941174,
+        "community": 3.6122847058823524,
+        "chaos": 3.7977541176470586,
+        "rootedness": 4.721005882352941
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -736,13 +736,13 @@
       "kind": "signature",
       "forTeam": "WAS",
       "coreProfile": {
-        "loyalty": 8,
-        "emotion": 7,
-        "ambition": 7,
-        "process": 4,
-        "community": 7,
-        "chaos": 5,
-        "rootedness": 8
+        "loyalty": 6.789218823529412,
+        "emotion": 6.4095941176470586,
+        "ambition": 6.648508235294118,
+        "process": 2.9693882352941174,
+        "community": 5.8381670588235295,
+        "chaos": 4.9406952941176465,
+        "rootedness": 6.77394705882353
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -763,13 +763,13 @@
       "kind": "signature",
       "forTeam": "NYJ",
       "coreProfile": {
-        "loyalty": 9,
-        "emotion": 8,
-        "ambition": 6,
-        "process": 3,
-        "community": 7,
-        "chaos": 8,
-        "rootedness": 8
+        "loyalty": 7.810395294117647,
+        "emotion": 7.062535294117647,
+        "ambition": 5.823802352941177,
+        "process": 1.8635058823529413,
+        "community": 5.8381670588235295,
+        "chaos": 8.369518823529411,
+        "rootedness": 6.77394705882353
       },
       "moduleAnswers": {
         "nfl_q13": "A",
@@ -792,13 +792,13 @@
       "kind": "signature",
       "forTeam": "TEN",
       "coreProfile": {
-        "loyalty": 7,
-        "emotion": 7,
-        "ambition": 6,
-        "process": 5,
-        "community": 6,
-        "chaos": 4,
-        "rootedness": 6
+        "loyalty": 5.768042352941176,
+        "emotion": 6.4095941176470586,
+        "ambition": 5.823802352941177,
+        "process": 4.075270588235294,
+        "community": 4.725225882352941,
+        "chaos": 3.7977541176470586,
+        "rootedness": 4.721005882352941
       },
       "moduleAnswers": {
         "nfl_q13": "B",
@@ -818,13 +818,13 @@
       "kind": "signature",
       "forTeam": "HOU",
       "coreProfile": {
-        "loyalty": 6,
-        "emotion": 6,
-        "ambition": 6,
-        "process": 5,
-        "community": 6,
-        "chaos": 4,
-        "rootedness": 7
+        "loyalty": 4.7468658823529415,
+        "emotion": 5.756652941176471,
+        "ambition": 5.823802352941177,
+        "process": 4.075270588235294,
+        "community": 4.725225882352941,
+        "chaos": 3.7977541176470586,
+        "rootedness": 5.747476470588235
       },
       "moduleAnswers": {
         "nfl_q13": "B",
@@ -845,13 +845,13 @@
       "kind": "signature",
       "forTeam": "CAR",
       "coreProfile": {
-        "loyalty": 7,
-        "emotion": 7,
-        "ambition": 6,
-        "process": 5,
-        "community": 7,
-        "chaos": 5,
-        "rootedness": 6
+        "loyalty": 5.768042352941176,
+        "emotion": 6.4095941176470586,
+        "ambition": 5.823802352941177,
+        "process": 4.075270588235294,
+        "community": 5.8381670588235295,
+        "chaos": 4.9406952941176465,
+        "rootedness": 4.721005882352941
       },
       "moduleAnswers": {
         "nfl_q13": "B",
@@ -872,13 +872,13 @@
       "kind": "signature",
       "forTeam": "JAX",
       "coreProfile": {
-        "loyalty": 7,
-        "emotion": 7,
-        "ambition": 5,
-        "process": 4,
-        "community": 7,
-        "chaos": 5,
-        "rootedness": 7
+        "loyalty": 5.768042352941176,
+        "emotion": 6.4095941176470586,
+        "ambition": 4.999096470588236,
+        "process": 2.9693882352941174,
+        "community": 5.8381670588235295,
+        "chaos": 4.9406952941176465,
+        "rootedness": 5.747476470588235
       },
       "moduleAnswers": {
         "nfl_q13": "B",
@@ -904,11 +904,11 @@
         "q3": "E",
         "q4": "4",
         "q5": "A",
-        "q6": "right",
+        "q6": "C",
         "q7": "D",
         "q8": "3",
         "q9": "B",
-        "q10": "left",
+        "q10": "D",
         "q11": "A",
         "q12": "4",
         "q13": "C",
@@ -920,7 +920,7 @@
         "q19": "E",
         "q20": "4",
         "q21": "B",
-        "q22": "left",
+        "q22": "E",
         "q23": "C",
         "q24": "3"
       },
@@ -941,8 +941,8 @@
         "nfl_q11": "3",
         "nfl_q12": "C"
       },
-      "winner": "NYG",
-      "winnerName": "Carolina Panthers"
+      "winner": "MIA",
+      "winnerName": "Miami Dolphins"
     },
     {
       "id": "nfl_rand_02",
@@ -954,11 +954,11 @@
         "q3": "A",
         "q4": "3",
         "q5": "E",
-        "q6": "right",
+        "q6": "C",
         "q7": "A",
         "q8": "4",
         "q9": "C",
-        "q10": "right",
+        "q10": "D",
         "q11": "C",
         "q12": "2",
         "q13": "D",
@@ -970,7 +970,7 @@
         "q19": "C",
         "q20": "3",
         "q21": "C",
-        "q22": "right",
+        "q22": "D",
         "q23": "E",
         "q24": "2"
       },
@@ -1004,11 +1004,11 @@
         "q3": "B",
         "q4": "2",
         "q5": "D",
-        "q6": "right",
+        "q6": "B",
         "q7": "D",
         "q8": "3",
         "q9": "A",
-        "q10": "left",
+        "q10": "D",
         "q11": "A",
         "q12": "3",
         "q13": "E",
@@ -1020,7 +1020,7 @@
         "q19": "E",
         "q20": "4",
         "q21": "E",
-        "q22": "left",
+        "q22": "C",
         "q23": "A",
         "q24": "5"
       },
@@ -1041,7 +1041,7 @@
         "nfl_q11": "5",
         "nfl_q12": "C"
       },
-      "winner": "NYJ",
+      "winner": "JAX",
       "winnerName": "Jacksonville Jaguars"
     },
     {
@@ -1054,11 +1054,11 @@
         "q3": "B",
         "q4": "5",
         "q5": "B",
-        "q6": "right",
+        "q6": "E",
         "q7": "A",
         "q8": "4",
         "q9": "A",
-        "q10": "right",
+        "q10": "A",
         "q11": "E",
         "q12": "2",
         "q13": "A",
@@ -1070,7 +1070,7 @@
         "q19": "D",
         "q20": "3",
         "q21": "C",
-        "q22": "left",
+        "q22": "B",
         "q23": "A",
         "q24": "5"
       },
@@ -1104,11 +1104,11 @@
         "q3": "C",
         "q4": "2",
         "q5": "A",
-        "q6": "right",
+        "q6": "A",
         "q7": "A",
         "q8": "3",
         "q9": "D",
-        "q10": "right",
+        "q10": "A",
         "q11": "C",
         "q12": "5",
         "q13": "B",
@@ -1120,7 +1120,7 @@
         "q19": "A",
         "q20": "2",
         "q21": "B",
-        "q22": "right",
+        "q22": "E",
         "q23": "B",
         "q24": "3"
       },
@@ -1154,11 +1154,11 @@
         "q3": "A",
         "q4": "1",
         "q5": "D",
-        "q6": "left",
+        "q6": "C",
         "q7": "C",
         "q8": "4",
         "q9": "B",
-        "q10": "left",
+        "q10": "C",
         "q11": "E",
         "q12": "1",
         "q13": "A",
@@ -1170,7 +1170,7 @@
         "q19": "A",
         "q20": "3",
         "q21": "A",
-        "q22": "left",
+        "q22": "B",
         "q23": "D",
         "q24": "2"
       },
@@ -1204,11 +1204,11 @@
         "q3": "D",
         "q4": "3",
         "q5": "E",
-        "q6": "right",
+        "q6": "E",
         "q7": "C",
         "q8": "3",
         "q9": "E",
-        "q10": "left",
+        "q10": "D",
         "q11": "A",
         "q12": "2",
         "q13": "D",
@@ -1220,7 +1220,7 @@
         "q19": "D",
         "q20": "4",
         "q21": "C",
-        "q22": "left",
+        "q22": "B",
         "q23": "A",
         "q24": "4"
       },
@@ -1254,11 +1254,11 @@
         "q3": "B",
         "q4": "5",
         "q5": "D",
-        "q6": "left",
+        "q6": "C",
         "q7": "A",
         "q8": "3",
         "q9": "B",
-        "q10": "left",
+        "q10": "B",
         "q11": "C",
         "q12": "4",
         "q13": "B",
@@ -1270,7 +1270,7 @@
         "q19": "B",
         "q20": "4",
         "q21": "D",
-        "q22": "right",
+        "q22": "A",
         "q23": "E",
         "q24": "5"
       },
@@ -1292,7 +1292,7 @@
         "nfl_q12": "C"
       },
       "winner": "KC",
-      "winnerName": "Pittsburgh Steelers"
+      "winnerName": "Kansas City Chiefs"
     },
     {
       "id": "nfl_rand_09",
@@ -1304,11 +1304,11 @@
         "q3": "A",
         "q4": "1",
         "q5": "A",
-        "q6": "left",
+        "q6": "D",
         "q7": "D",
         "q8": "4",
         "q9": "B",
-        "q10": "left",
+        "q10": "C",
         "q11": "C",
         "q12": "5",
         "q13": "A",
@@ -1320,7 +1320,7 @@
         "q19": "E",
         "q20": "5",
         "q21": "A",
-        "q22": "left",
+        "q22": "E",
         "q23": "E",
         "q24": "1"
       },
@@ -1354,11 +1354,11 @@
         "q3": "E",
         "q4": "3",
         "q5": "A",
-        "q6": "left",
+        "q6": "C",
         "q7": "E",
         "q8": "5",
         "q9": "B",
-        "q10": "right",
+        "q10": "C",
         "q11": "A",
         "q12": "2",
         "q13": "C",
@@ -1370,7 +1370,7 @@
         "q19": "C",
         "q20": "4",
         "q21": "A",
-        "q22": "left",
+        "q22": "D",
         "q23": "A",
         "q24": "4"
       },
@@ -1392,7 +1392,7 @@
         "nfl_q12": "E"
       },
       "winner": "BAL",
-      "winnerName": "Kansas City Chiefs"
+      "winnerName": "Baltimore Ravens"
     },
     {
       "id": "nfl_rand_11",
@@ -1404,11 +1404,11 @@
         "q3": "B",
         "q4": "5",
         "q5": "A",
-        "q6": "left",
+        "q6": "E",
         "q7": "E",
         "q8": "5",
         "q9": "A",
-        "q10": "right",
+        "q10": "A",
         "q11": "C",
         "q12": "1",
         "q13": "B",
@@ -1420,7 +1420,7 @@
         "q19": "D",
         "q20": "5",
         "q21": "B",
-        "q22": "right",
+        "q22": "A",
         "q23": "B",
         "q24": "5"
       },
@@ -1441,8 +1441,8 @@
         "nfl_q11": "2",
         "nfl_q12": "A"
       },
-      "winner": "SF",
-      "winnerName": "San Francisco 49ers"
+      "winner": "CHI",
+      "winnerName": "Chicago Bears"
     },
     {
       "id": "nfl_rand_12",
@@ -1454,11 +1454,11 @@
         "q3": "D",
         "q4": "5",
         "q5": "B",
-        "q6": "left",
+        "q6": "A",
         "q7": "C",
         "q8": "3",
         "q9": "A",
-        "q10": "right",
+        "q10": "D",
         "q11": "B",
         "q12": "4",
         "q13": "B",
@@ -1470,7 +1470,7 @@
         "q19": "D",
         "q20": "1",
         "q21": "A",
-        "q22": "right",
+        "q22": "C",
         "q23": "D",
         "q24": "3"
       },
@@ -1492,7 +1492,7 @@
         "nfl_q12": "C"
       },
       "winner": "ARI",
-      "winnerName": "Carolina Panthers"
+      "winnerName": "Arizona Cardinals"
     },
     {
       "id": "nfl_rand_13",
@@ -1504,11 +1504,11 @@
         "q3": "A",
         "q4": "4",
         "q5": "C",
-        "q6": "left",
+        "q6": "E",
         "q7": "D",
         "q8": "5",
         "q9": "A",
-        "q10": "right",
+        "q10": "C",
         "q11": "E",
         "q12": "4",
         "q13": "E",
@@ -1520,7 +1520,7 @@
         "q19": "C",
         "q20": "4",
         "q21": "B",
-        "q22": "right",
+        "q22": "B",
         "q23": "A",
         "q24": "2"
       },
@@ -1554,11 +1554,11 @@
         "q3": "A",
         "q4": "2",
         "q5": "A",
-        "q6": "right",
+        "q6": "B",
         "q7": "B",
         "q8": "2",
         "q9": "C",
-        "q10": "right",
+        "q10": "D",
         "q11": "D",
         "q12": "2",
         "q13": "A",
@@ -1570,7 +1570,7 @@
         "q19": "B",
         "q20": "1",
         "q21": "E",
-        "q22": "left",
+        "q22": "E",
         "q23": "A",
         "q24": "3"
       },
@@ -1604,11 +1604,11 @@
         "q3": "C",
         "q4": "2",
         "q5": "A",
-        "q6": "right",
+        "q6": "E",
         "q7": "E",
         "q8": "1",
         "q9": "E",
-        "q10": "left",
+        "q10": "A",
         "q11": "D",
         "q12": "1",
         "q13": "B",
@@ -1620,7 +1620,7 @@
         "q19": "A",
         "q20": "1",
         "q21": "D",
-        "q22": "right",
+        "q22": "D",
         "q23": "C",
         "q24": "4"
       },
@@ -1654,11 +1654,11 @@
         "q3": "C",
         "q4": "2",
         "q5": "A",
-        "q6": "right",
+        "q6": "A",
         "q7": "C",
         "q8": "4",
         "q9": "B",
-        "q10": "right",
+        "q10": "E",
         "q11": "C",
         "q12": "2",
         "q13": "E",
@@ -1670,7 +1670,7 @@
         "q19": "D",
         "q20": "5",
         "q21": "C",
-        "q22": "left",
+        "q22": "B",
         "q23": "A",
         "q24": "4"
       },
@@ -1692,7 +1692,7 @@
         "nfl_q12": "C"
       },
       "winner": "TB",
-      "winnerName": "Arizona Cardinals"
+      "winnerName": "Tampa Bay Buccaneers"
     },
     {
       "id": "nfl_rand_17",
@@ -1704,11 +1704,11 @@
         "q3": "B",
         "q4": "1",
         "q5": "C",
-        "q6": "right",
+        "q6": "E",
         "q7": "E",
         "q8": "1",
         "q9": "D",
-        "q10": "right",
+        "q10": "C",
         "q11": "C",
         "q12": "1",
         "q13": "B",
@@ -1720,7 +1720,7 @@
         "q19": "C",
         "q20": "4",
         "q21": "B",
-        "q22": "right",
+        "q22": "D",
         "q23": "E",
         "q24": "1"
       },
@@ -1742,7 +1742,7 @@
         "nfl_q12": "E"
       },
       "winner": "ATL",
-      "winnerName": "Houston Texans"
+      "winnerName": "Atlanta Falcons"
     },
     {
       "id": "nfl_rand_18",
@@ -1754,11 +1754,11 @@
         "q3": "A",
         "q4": "5",
         "q5": "B",
-        "q6": "left",
+        "q6": "E",
         "q7": "D",
         "q8": "4",
         "q9": "C",
-        "q10": "right",
+        "q10": "A",
         "q11": "E",
         "q12": "2",
         "q13": "C",
@@ -1770,7 +1770,7 @@
         "q19": "D",
         "q20": "2",
         "q21": "C",
-        "q22": "left",
+        "q22": "D",
         "q23": "C",
         "q24": "1"
       },
@@ -1791,8 +1791,8 @@
         "nfl_q11": "1",
         "nfl_q12": "D"
       },
-      "winner": "IND",
-      "winnerName": "Indianapolis Colts"
+      "winner": "WAS",
+      "winnerName": "Washington Commanders"
     },
     {
       "id": "nfl_rand_19",
@@ -1804,11 +1804,11 @@
         "q3": "A",
         "q4": "5",
         "q5": "D",
-        "q6": "left",
+        "q6": "C",
         "q7": "A",
         "q8": "4",
         "q9": "D",
-        "q10": "left",
+        "q10": "E",
         "q11": "C",
         "q12": "1",
         "q13": "C",
@@ -1820,7 +1820,7 @@
         "q19": "A",
         "q20": "3",
         "q21": "A",
-        "q22": "right",
+        "q22": "A",
         "q23": "E",
         "q24": "3"
       },
@@ -1854,11 +1854,11 @@
         "q3": "B",
         "q4": "4",
         "q5": "E",
-        "q6": "left",
+        "q6": "E",
         "q7": "E",
         "q8": "4",
         "q9": "E",
-        "q10": "left",
+        "q10": "B",
         "q11": "B",
         "q12": "2",
         "q13": "B",
@@ -1870,7 +1870,7 @@
         "q19": "A",
         "q20": "1",
         "q21": "B",
-        "q22": "right",
+        "q22": "E",
         "q23": "C",
         "q24": "4"
       },
@@ -1891,8 +1891,8 @@
         "nfl_q11": "4",
         "nfl_q12": "E"
       },
-      "winner": "BAL",
-      "winnerName": "Miami Dolphins"
+      "winner": "NYJ",
+      "winnerName": "New York Jets"
     },
     {
       "id": "nfl_rand_21",
@@ -1904,11 +1904,11 @@
         "q3": "B",
         "q4": "1",
         "q5": "B",
-        "q6": "left",
+        "q6": "D",
         "q7": "C",
         "q8": "5",
         "q9": "D",
-        "q10": "left",
+        "q10": "B",
         "q11": "B",
         "q12": "5",
         "q13": "E",
@@ -1920,7 +1920,7 @@
         "q19": "B",
         "q20": "3",
         "q21": "C",
-        "q22": "right",
+        "q22": "E",
         "q23": "D",
         "q24": "3"
       },
@@ -1954,11 +1954,11 @@
         "q3": "A",
         "q4": "1",
         "q5": "A",
-        "q6": "left",
+        "q6": "E",
         "q7": "E",
         "q8": "1",
         "q9": "A",
-        "q10": "right",
+        "q10": "C",
         "q11": "B",
         "q12": "4",
         "q13": "B",
@@ -1970,7 +1970,7 @@
         "q19": "E",
         "q20": "2",
         "q21": "E",
-        "q22": "right",
+        "q22": "A",
         "q23": "A",
         "q24": "4"
       },
@@ -1992,7 +1992,7 @@
         "nfl_q12": "E"
       },
       "winner": "PIT",
-      "winnerName": "New York Giants"
+      "winnerName": "Pittsburgh Steelers"
     },
     {
       "id": "nfl_rand_23",
@@ -2004,11 +2004,11 @@
         "q3": "E",
         "q4": "3",
         "q5": "D",
-        "q6": "left",
+        "q6": "A",
         "q7": "B",
         "q8": "3",
         "q9": "D",
-        "q10": "left",
+        "q10": "E",
         "q11": "E",
         "q12": "5",
         "q13": "A",
@@ -2020,7 +2020,7 @@
         "q19": "E",
         "q20": "3",
         "q21": "C",
-        "q22": "left",
+        "q22": "B",
         "q23": "D",
         "q24": "1"
       },
@@ -2054,11 +2054,11 @@
         "q3": "C",
         "q4": "5",
         "q5": "C",
-        "q6": "right",
+        "q6": "E",
         "q7": "B",
         "q8": "1",
         "q9": "E",
-        "q10": "right",
+        "q10": "B",
         "q11": "C",
         "q12": "2",
         "q13": "D",
@@ -2070,7 +2070,7 @@
         "q19": "D",
         "q20": "2",
         "q21": "C",
-        "q22": "left",
+        "q22": "E",
         "q23": "B",
         "q24": "2"
       },
@@ -2091,8 +2091,8 @@
         "nfl_q11": "5",
         "nfl_q12": "A"
       },
-      "winner": "DAL",
-      "winnerName": "Dallas Cowboys"
+      "winner": "MIN",
+      "winnerName": "Minnesota Vikings"
     },
     {
       "id": "nfl_rand_25",
@@ -2104,11 +2104,11 @@
         "q3": "B",
         "q4": "2",
         "q5": "B",
-        "q6": "right",
+        "q6": "B",
         "q7": "D",
         "q8": "2",
         "q9": "B",
-        "q10": "left",
+        "q10": "B",
         "q11": "D",
         "q12": "3",
         "q13": "C",
@@ -2120,7 +2120,7 @@
         "q19": "C",
         "q20": "3",
         "q21": "D",
-        "q22": "left",
+        "q22": "A",
         "q23": "E",
         "q24": "1"
       },
@@ -2142,7 +2142,7 @@
         "nfl_q12": "D"
       },
       "winner": "WAS",
-      "winnerName": "Houston Texans"
+      "winnerName": "Washington Commanders"
     },
     {
       "id": "nfl_rand_26",
@@ -2154,11 +2154,11 @@
         "q3": "A",
         "q4": "5",
         "q5": "C",
-        "q6": "right",
+        "q6": "B",
         "q7": "E",
         "q8": "3",
         "q9": "B",
-        "q10": "right",
+        "q10": "E",
         "q11": "E",
         "q12": "1",
         "q13": "A",
@@ -2170,7 +2170,7 @@
         "q19": "E",
         "q20": "4",
         "q21": "D",
-        "q22": "left",
+        "q22": "E",
         "q23": "A",
         "q24": "4"
       },
@@ -2204,11 +2204,11 @@
         "q3": "A",
         "q4": "3",
         "q5": "D",
-        "q6": "left",
+        "q6": "D",
         "q7": "C",
         "q8": "5",
         "q9": "B",
-        "q10": "right",
+        "q10": "A",
         "q11": "B",
         "q12": "4",
         "q13": "D",
@@ -2220,7 +2220,7 @@
         "q19": "D",
         "q20": "5",
         "q21": "D",
-        "q22": "right",
+        "q22": "D",
         "q23": "C",
         "q24": "3"
       },
@@ -2241,8 +2241,8 @@
         "nfl_q11": "3",
         "nfl_q12": "A"
       },
-      "winner": "NYG",
-      "winnerName": "New York Giants"
+      "winner": "MIN",
+      "winnerName": "Minnesota Vikings"
     },
     {
       "id": "nfl_rand_28",
@@ -2254,11 +2254,11 @@
         "q3": "E",
         "q4": "3",
         "q5": "A",
-        "q6": "left",
+        "q6": "D",
         "q7": "C",
         "q8": "5",
         "q9": "D",
-        "q10": "left",
+        "q10": "A",
         "q11": "D",
         "q12": "2",
         "q13": "A",
@@ -2270,7 +2270,7 @@
         "q19": "D",
         "q20": "4",
         "q21": "C",
-        "q22": "right",
+        "q22": "B",
         "q23": "B",
         "q24": "3"
       },
@@ -2304,11 +2304,11 @@
         "q3": "A",
         "q4": "4",
         "q5": "A",
-        "q6": "right",
+        "q6": "D",
         "q7": "E",
         "q8": "1",
         "q9": "B",
-        "q10": "left",
+        "q10": "A",
         "q11": "E",
         "q12": "1",
         "q13": "B",
@@ -2320,7 +2320,7 @@
         "q19": "D",
         "q20": "1",
         "q21": "A",
-        "q22": "right",
+        "q22": "A",
         "q23": "E",
         "q24": "3"
       },
@@ -2354,11 +2354,11 @@
         "q3": "E",
         "q4": "4",
         "q5": "A",
-        "q6": "right",
+        "q6": "C",
         "q7": "D",
         "q8": "5",
         "q9": "A",
-        "q10": "left",
+        "q10": "A",
         "q11": "E",
         "q12": "1",
         "q13": "C",
@@ -2370,7 +2370,7 @@
         "q19": "C",
         "q20": "3",
         "q21": "B",
-        "q22": "left",
+        "q22": "B",
         "q23": "A",
         "q24": "1"
       },
@@ -2391,8 +2391,8 @@
         "nfl_q11": "3",
         "nfl_q12": "D"
       },
-      "winner": "NO",
-      "winnerName": "New Orleans Saints"
+      "winner": "SEA",
+      "winnerName": "Seattle Seahawks"
     },
     {
       "id": "nfl_rand_31",
@@ -2404,11 +2404,11 @@
         "q3": "B",
         "q4": "5",
         "q5": "C",
-        "q6": "left",
+        "q6": "B",
         "q7": "B",
         "q8": "2",
         "q9": "D",
-        "q10": "left",
+        "q10": "B",
         "q11": "B",
         "q12": "5",
         "q13": "E",
@@ -2420,7 +2420,7 @@
         "q19": "B",
         "q20": "1",
         "q21": "C",
-        "q22": "left",
+        "q22": "D",
         "q23": "A",
         "q24": "4"
       },
@@ -2454,11 +2454,11 @@
         "q3": "E",
         "q4": "1",
         "q5": "C",
-        "q6": "right",
+        "q6": "E",
         "q7": "E",
         "q8": "1",
         "q9": "B",
-        "q10": "right",
+        "q10": "B",
         "q11": "C",
         "q12": "3",
         "q13": "A",
@@ -2470,7 +2470,7 @@
         "q19": "A",
         "q20": "5",
         "q21": "D",
-        "q22": "left",
+        "q22": "D",
         "q23": "B",
         "q24": "5"
       },
@@ -2504,11 +2504,11 @@
         "q3": "E",
         "q4": "2",
         "q5": "C",
-        "q6": "right",
+        "q6": "B",
         "q7": "D",
         "q8": "3",
         "q9": "D",
-        "q10": "left",
+        "q10": "C",
         "q11": "B",
         "q12": "2",
         "q13": "A",
@@ -2520,7 +2520,7 @@
         "q19": "E",
         "q20": "1",
         "q21": "D",
-        "q22": "left",
+        "q22": "A",
         "q23": "E",
         "q24": "5"
       },
@@ -2554,11 +2554,11 @@
         "q3": "E",
         "q4": "5",
         "q5": "B",
-        "q6": "left",
+        "q6": "E",
         "q7": "C",
         "q8": "2",
         "q9": "C",
-        "q10": "left",
+        "q10": "C",
         "q11": "C",
         "q12": "2",
         "q13": "D",
@@ -2570,7 +2570,7 @@
         "q19": "C",
         "q20": "4",
         "q21": "A",
-        "q22": "right",
+        "q22": "C",
         "q23": "A",
         "q24": "2"
       },
@@ -2591,8 +2591,8 @@
         "nfl_q11": "4",
         "nfl_q12": "C"
       },
-      "winner": "BAL",
-      "winnerName": "Carolina Panthers"
+      "winner": "JAX",
+      "winnerName": "Jacksonville Jaguars"
     },
     {
       "id": "nfl_rand_35",
@@ -2604,11 +2604,11 @@
         "q3": "B",
         "q4": "2",
         "q5": "A",
-        "q6": "right",
+        "q6": "E",
         "q7": "E",
         "q8": "5",
         "q9": "E",
-        "q10": "left",
+        "q10": "E",
         "q11": "D",
         "q12": "1",
         "q13": "C",
@@ -2620,7 +2620,7 @@
         "q19": "B",
         "q20": "4",
         "q21": "D",
-        "q22": "left",
+        "q22": "D",
         "q23": "B",
         "q24": "4"
       },
@@ -2654,11 +2654,11 @@
         "q3": "D",
         "q4": "5",
         "q5": "B",
-        "q6": "left",
+        "q6": "B",
         "q7": "E",
         "q8": "1",
         "q9": "E",
-        "q10": "right",
+        "q10": "B",
         "q11": "E",
         "q12": "2",
         "q13": "B",
@@ -2670,7 +2670,7 @@
         "q19": "E",
         "q20": "1",
         "q21": "A",
-        "q22": "left",
+        "q22": "B",
         "q23": "B",
         "q24": "2"
       },
@@ -2691,8 +2691,8 @@
         "nfl_q11": "1",
         "nfl_q12": "D"
       },
-      "winner": "IND",
-      "winnerName": "Miami Dolphins"
+      "winner": "PIT",
+      "winnerName": "Pittsburgh Steelers"
     },
     {
       "id": "nfl_rand_37",
@@ -2704,11 +2704,11 @@
         "q3": "E",
         "q4": "5",
         "q5": "A",
-        "q6": "left",
+        "q6": "A",
         "q7": "C",
         "q8": "5",
         "q9": "A",
-        "q10": "right",
+        "q10": "D",
         "q11": "A",
         "q12": "2",
         "q13": "D",
@@ -2720,7 +2720,7 @@
         "q19": "D",
         "q20": "5",
         "q21": "E",
-        "q22": "left",
+        "q22": "C",
         "q23": "B",
         "q24": "2"
       },
@@ -2754,11 +2754,11 @@
         "q3": "A",
         "q4": "5",
         "q5": "B",
-        "q6": "left",
+        "q6": "D",
         "q7": "C",
         "q8": "1",
         "q9": "A",
-        "q10": "right",
+        "q10": "B",
         "q11": "E",
         "q12": "4",
         "q13": "A",
@@ -2770,7 +2770,7 @@
         "q19": "B",
         "q20": "5",
         "q21": "C",
-        "q22": "left",
+        "q22": "E",
         "q23": "B",
         "q24": "2"
       },
@@ -2791,8 +2791,8 @@
         "nfl_q11": "1",
         "nfl_q12": "E"
       },
-      "winner": "MIA",
-      "winnerName": "Miami Dolphins"
+      "winner": "LV",
+      "winnerName": "Las Vegas Raiders"
     },
     {
       "id": "nfl_rand_39",
@@ -2804,11 +2804,11 @@
         "q3": "E",
         "q4": "5",
         "q5": "A",
-        "q6": "right",
+        "q6": "B",
         "q7": "B",
         "q8": "2",
         "q9": "A",
-        "q10": "right",
+        "q10": "D",
         "q11": "E",
         "q12": "3",
         "q13": "C",
@@ -2820,7 +2820,7 @@
         "q19": "B",
         "q20": "4",
         "q21": "A",
-        "q22": "right",
+        "q22": "C",
         "q23": "C",
         "q24": "2"
       },
@@ -2841,8 +2841,8 @@
         "nfl_q11": "5",
         "nfl_q12": "A"
       },
-      "winner": "SEA",
-      "winnerName": "Buffalo Bills"
+      "winner": "SF",
+      "winnerName": "San Francisco 49ers"
     },
     {
       "id": "nfl_rand_40",
@@ -2854,11 +2854,11 @@
         "q3": "A",
         "q4": "2",
         "q5": "B",
-        "q6": "left",
+        "q6": "A",
         "q7": "E",
         "q8": "3",
         "q9": "B",
-        "q10": "left",
+        "q10": "C",
         "q11": "C",
         "q12": "1",
         "q13": "C",
@@ -2870,7 +2870,7 @@
         "q19": "E",
         "q20": "5",
         "q21": "C",
-        "q22": "right",
+        "q22": "C",
         "q23": "A",
         "q24": "5"
       },
@@ -2891,8 +2891,8 @@
         "nfl_q11": "1",
         "nfl_q12": "A"
       },
-      "winner": "NYG",
-      "winnerName": "New York Giants"
+      "winner": "IND",
+      "winnerName": "Indianapolis Colts"
     }
   ]
 }
