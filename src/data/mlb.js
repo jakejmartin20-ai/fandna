@@ -2476,7 +2476,7 @@ const teamDims = {
     "rootedness": 8
   },
   "PIT": {
-    "loyalty": 9,
+    "loyalty": 8,
     "emotion": 7,
     "ambition": 4,
     "process": 4,
