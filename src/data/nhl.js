@@ -9,10 +9,10 @@ const moduleQuestions = [
     "question": "The people you’d want around you when it counts:",
     "options": [
       { "label": "A tight core that built something real together, and stuck it out.", "value": "A" },
-      { "label": "A whole community, thousands strong, all in together.", "value": "B" },
+      { "label": "A whole community around me, everyone pulling the same way.", "value": "B" },
       { "label": "The best there is, wherever they come from.", "value": "C" },
-      { "label": "My people, outnumbered in our own backyard, and prouder for it.", "value": "D" },
-      { "label": "The more of us and the louder, the better. The numbers are the point.", "value": "E" },
+      { "label": "My people, outnumbered wherever we stand, and prouder for it.", "value": "D" },
+      { "label": "The bigger the group the better. I believe in strength in numbers.", "value": "E" },
     ]
   },
   {
@@ -43,9 +43,9 @@ const moduleQuestions = [
     "phase": "What it comes down to",
     "question": "You’ve finally won the biggest thing there is. What happens in you next:",
     "options": [
-      { "label": "Do it again. And again. One is never enough — I want a run of them.", "value": "A" },
+      { "label": "Do it again. And again. One is never enough, I want a run of them.", "value": "A" },
       { "label": "Savour it. That was the mountain, and I climbed it.", "value": "B" },
-      { "label": "Proud — but honestly the chase always meant more to me than the trophy.", "value": "C" },
+      { "label": "Proud, but the chase always meant more to me than the trophy.", "value": "C" },
     ]
   },
   {
@@ -56,14 +56,14 @@ const moduleQuestions = [
     "options": [
       { "label": "Something with a century behind it. The history is the point, even when it weighs on you.", "value": "A" },
       { "label": "Something I helped build into what it is.", "value": "B" },
-      { "label": "Something brand new. No history to live up to — a clean page I get to write.", "value": "C" },
+      { "label": "Something brand new. No history to live up to, just a clean page I get to write.", "value": "C" },
     ]
   },
   {
     "id": "nhl_q6",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "The thing you love most — the way you hold it:",
+    "question": "What matters most to you, the way you hold it:",
     "options": [
       { "label": "With reverence. I feel the weight of everyone who came before, and I carry it.", "value": "A" },
       { "label": "As a celebration. I throw myself in, here and now, and make it a party.", "value": "B" },

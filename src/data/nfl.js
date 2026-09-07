@@ -92,10 +92,10 @@ const moduleQuestions = [
     "id": "nfl_q2",
     "type": "choice",
     "phase": "The fine print",
-    "question": "When the thing you love lets you down, what happens inside?",
+    "question": "When something you're all in on lets you down, what happens inside?",
     "options": [
       {
-        "label": "I show up louder. Every heartbreak pulls more people in.",
+        "label": "I show up louder. Every heartbreak pulls me in deeper, not out.",
         "value": "A"
       },
       {
@@ -148,7 +148,7 @@ const moduleQuestions = [
     "id": "nfl_q4",
     "type": "choice",
     "phase": "The fine print",
-    "question": "Strip away the wins. What are you actually loyal to?",
+    "question": "Take the winning out of it. What are you actually loyal to?",
     "options": [
       {
         "label": "The city. Through it all, always the city.",
@@ -212,7 +212,7 @@ const moduleQuestions = [
     "id": "nfl_q7",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "There's one that got away. How do you carry it?",
+    "question": "There's one you nearly had. How do you carry it?",
     "options": [
       {
         "label": "Got so close I could feel it, then it slipped away.",
@@ -306,7 +306,7 @@ const moduleQuestions = [
     "phase": "What it comes down to",
     "question": "Let the results speak, or make some noise?",
     "left": "Let the work speak. I don't need noise, I just deliver.",
-    "right": "Make noise, loud enough to be felt. I want the whole place roaring."
+    "right": "Make noise, loud enough to be felt. If I made a mark, I want to hear it."
   },
   {
     "id": "nfl_q12",
@@ -327,7 +327,7 @@ const moduleQuestions = [
         "value": "C"
       },
       {
-        "label": "The people. The noise, the whole crowd. I'm not at the edge of it, I'm in it.",
+        "label": "The people around me. I'm never at the edge of it, I'm right in the thick of it.",
         "value": "D"
       },
       {
