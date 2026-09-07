@@ -29,7 +29,7 @@ function hexPoints(cx, cy, R){
   return [[cx,cy-R],[cx+a,cy-R/2],[cx+a,cy+R/2],[cx,cy+R],[cx-a,cy+R/2],[cx-a,cy-R/2]]
     .map(p => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join(" ");
 }
-function BeachHex({ size=44, mark, locked=false, lit=false, gid="bh" }){
+function BeachHex({ size=44, mark, locked=false, lit=false, gid="bh", palette=SUNSET }){
   const S=size, cx=S/2, cy=S/2, R=S/2-3, scale=S/66;
   if(locked){
     // "lit" gives the teaser hex a brighter sunset-gradient rim + more weight; plain stays a dim outline.
@@ -38,7 +38,7 @@ function BeachHex({ size=44, mark, locked=false, lit=false, gid="bh" }){
       <svg width={S} height={S} viewBox={`0 0 ${S} ${S}`} role="img" aria-label="a hidden bonus, locked">
         {lit &&
           <defs><linearGradient id={gid} x1="0" y1="0" x2="0.7" y2="1">
-            <stop offset="0" stopColor={SUNSET[0]}/><stop offset="0.55" stopColor={SUNSET[1]}/><stop offset="1" stopColor={SUNSET[2]}/>
+            <stop offset="0" stopColor={palette[0]}/><stop offset="0.55" stopColor={palette[1]}/><stop offset="1" stopColor={palette[2]}/>
           </linearGradient></defs>}
         <polygon points={hexPoints(cx,cy,R)} fill="none" stroke={lit?`url(#${gid})`:"#b5657f"} strokeWidth={w} strokeOpacity={lit?0.95:0.5}/>
       </svg>
@@ -48,7 +48,7 @@ function BeachHex({ size=44, mark, locked=false, lit=false, gid="bh" }){
     <svg width={S} height={S} viewBox={`0 0 ${S} ${S}`} role="img" aria-label={mark ? `${mark} bonus badge` : "bonus badge"}>
       <defs>
         <linearGradient id={gid} x1="0" y1="0" x2="0.7" y2="1">
-          <stop offset="0" stopColor={SUNSET[0]}/><stop offset="0.55" stopColor={SUNSET[1]}/><stop offset="1" stopColor={SUNSET[2]}/>
+          <stop offset="0" stopColor={palette[0]}/><stop offset="0.55" stopColor={palette[1]}/><stop offset="1" stopColor={palette[2]}/>
         </linearGradient>
       </defs>
       <polygon points={hexPoints(cx,cy,R)} fill={`url(#${gid})`} stroke="#c9c9d6" strokeWidth={Math.max(1,1.5*scale)} strokeOpacity="0.55"/>
@@ -96,6 +96,7 @@ export function BeachIndicator({ onOpen }){
 // Grows from the corner and loads the relic over a fake modem. Floats; screen behind stays live.
 export function BeachWindow({ coreProfile, reducedMotion=false, onDone, onSeen }){
   const team = matchBeach(coreProfile);
+  const pal = (team && team.colors) ? team.colors : { primary:"#ff5a7a", secondary:"#ff9e2c", accent:"#8a4bd8" };
   const [st, setSt] = useState({ prog:false, wipe:false, done:false, read:false, relic:false });
   const seenRef = useRef(false);
   const markSeen = () => { if(!seenRef.current){ seenRef.current = true; if(onSeen) onSeen(); } };
@@ -123,6 +124,7 @@ export function BeachWindow({ coreProfile, reducedMotion=false, onDone, onSeen }
       animation:"pbh-flow .42s cubic-bezier(.2,.75,.3,1)"}}>
       <style>{`
         @keyframes pbh-flow { from{transform:translateY(-50%) translateY(40vh) scale(.5);opacity:.2} to{transform:translateY(-50%) scale(1);opacity:1} }
+        @keyframes pbh-marq { from{transform:translateX(0)} to{transform:translateX(-50%)} }
         @keyframes pbh-spin2 { to { transform:rotate(360deg); } }
         @keyframes pbh-wipe { to { clip-path:inset(0 0 0 0); } }
         @keyframes pbh-scan { 0%{opacity:.9} 100%{opacity:0} }
@@ -147,24 +149,47 @@ export function BeachWindow({ coreProfile, reducedMotion=false, onDone, onSeen }
         <span role="button" aria-label="Close" onClick={()=>onDone&&onDone()} style={tbtn}>&#10005;</span>
       </div>
 
+      {/* marquee */}
+      <div style={{overflow:"hidden",whiteSpace:"nowrap",background:pal.accent+"22",borderTop:"1px solid #fff",borderBottom:"1px solid #808080"}}>
+        <div style={{display:"inline-block",padding:"1px 0",fontFamily:"'Courier New',monospace",fontSize:9,color:pal.primary,animation:"pbh-marq 12s linear infinite"}}>
+          {"\u2605 probeachhockey.net \u2605 EST 1998 \u2605 you are visitor #1337 \u2605 sign the guestbook \u2605 probeachhockey.net \u2605 EST 1998 \u2605 you are visitor #1337 \u2605 sign the guestbook \u2605 "}
+        </div>
+      </div>
+
       {/* body */}
-      <div style={{position:"relative",background:"#fff",maxHeight:"min(52vh,380px)",overflowY:"auto"}}>
+      <div style={{position:"relative",background:"#fff",backgroundImage:`repeating-linear-gradient(45deg, ${pal.primary}12 0 3px, transparent 3px 13px)`,maxHeight:"min(52vh,380px)",overflowY:"auto"}}>
         <div className={"pbhw-band"+(st.wipe?" on":"")}>
           <div className={"pbhw-scan"+(st.wipe?" on":"")}/>
           <div style={{padding:"14px 14px 6px",textAlign:"center"}}>
             <div style={{width:62,height:69,margin:"0 auto 8px",filter:"drop-shadow(0 0 14px rgba(255,90,122,.45))"}}>
-              <BeachHex size={62} mark={team.key} gid="pbh-win"/>
+              <BeachHex size={62} mark={team.key} gid="pbh-win" palette={[pal.primary,pal.secondary,pal.accent]}/>
             </div>
             <div style={{fontFamily:"Arial Black,Arial,sans-serif",fontSize:17,fontWeight:900,color:"#101014"}}>{team.name}</div>
-            <div style={{fontFamily:"Arial,sans-serif",fontSize:11,color:"#b0006a",fontStyle:"italic",marginBottom:5}}>{team.tagline}</div>
-            <div style={{height:6,width:st.done?"86%":0,margin:"4px auto 0",background:"linear-gradient(90deg,#ff9e2c,#ff5a7a,#8a4bd8)",
+            <div style={{fontFamily:"Arial,sans-serif",fontSize:11,color:pal.primary,fontStyle:"italic",marginBottom:5}}>{team.tagline}</div>
+            <div style={{height:6,width:st.done?"86%":0,margin:"4px auto 0",background:`linear-gradient(90deg,${pal.primary},${pal.secondary},${pal.accent})`,
               animation: st.done ? "pbh-fade .01s" : "none"}}/>
+          </div>
+          <div className={"pbhw-fade"+(st.relic?" on":"")} style={{margin:"8px 14px 0",height:14,display:"flex",alignItems:"center",justifyContent:"center",background:`repeating-linear-gradient(45deg, ${pal.accent} 0 8px, #1a1a1a 8px 16px)`}}>
+            <span style={{fontFamily:"Arial,sans-serif",fontSize:8,fontWeight:"bold",color:"#fff",letterSpacing:1,textShadow:"1px 1px 0 #000"}}>UNDER CONSTRUCTION</span>
           </div>
           <div className={"pbhw-fade"+(st.read?" on":"")}
             style={{padding:"8px 14px 0",fontFamily:"Georgia,serif",fontSize:11.5,lineHeight:1.55,color:"#1a1a22",textAlign:"left"}}>{team.read}</div>
+          <div className={"pbhw-fade"+(st.relic?" on":"")} style={{height:7,margin:"10px 16px 0",background:`repeating-linear-gradient(135deg, ${pal.accent} 0 5px, ${pal.secondary} 5px 10px)`}}/>
           <div className={"pbhw-fade"+(st.relic?" on":"")} style={{textAlign:"center",margin:"10px 0 4px"}}>
-            <span style={{display:"inline-block",background:"#000",color:"#39ff5a",fontFamily:"'Courier New',monospace",fontWeight:"bold",
+            <span style={{display:"inline-block",background:"#000",color:pal.accent,fontFamily:"'Courier New',monospace",fontWeight:"bold",
               letterSpacing:2,fontSize:11,padding:"2px 6px",border:"1px solid #333"}}>visitor 00001337</span>
+          </div>
+          <div className={"pbhw-fade"+(st.relic?" on":"")}
+            style={{display:"flex",gap:5,justifyContent:"center",margin:"8px 0 0"}}>
+            {[["Netscape","Now!",pal.primary],["Made w/","Notepad","#3a3a44"],["800","x600",pal.secondary]].map(([a,b,c],i)=>(
+              <span key={i} style={{width:60,height:20,background:c,border:"1px solid",borderColor:"#fff #808080 #808080 #fff",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",lineHeight:1}}>
+                <span style={{fontFamily:"Arial,sans-serif",fontSize:6.5,color:"#fff",textShadow:"0.5px 0.5px 0 rgba(0,0,0,.55)"}}>{a}</span>
+                <span style={{fontFamily:"Arial,sans-serif",fontSize:6.5,fontWeight:"bold",color:"#fff",textShadow:"0.5px 0.5px 0 rgba(0,0,0,.55)"}}>{b}</span>
+              </span>
+            ))}
+          </div>
+          <div className={"pbhw-fade"+(st.relic?" on":"")} style={{textAlign:"center",fontFamily:"Arial,sans-serif",fontSize:8.5,color:pal.primary,margin:"6px 0 0"}}>
+            {"\u00a9 1999  \u00b7  guestbook  \u00b7  webring  \u00b7  \u00ab prev | next \u00bb"}
           </div>
           <div className={"pbhw-fade"+(st.relic?" on":"")}
             style={{fontFamily:"Arial,sans-serif",fontSize:9,color:"#555",textAlign:"center",padding:"6px 8px 10px"}}>Best viewed in Netscape Navigator 4.0 at 800x600</div>
@@ -197,7 +222,7 @@ export function BeachHomeCard({ coreProfile, results, coreSequenced, seen, onOpe
         <button type="button" onClick={()=>onOpen&&onOpen()} aria-label={`Relive your Pro Beach Hockey bonus, ${team.name}`}
           style={{width:"100%",marginTop:18,padding:"14px",borderRadius:9,border:"1px solid #3a2a3e",
             background:"linear-gradient(180deg,#17111c,#120f17)",display:"flex",alignItems:"center",gap:13,cursor:"pointer",textAlign:"left"}}>
-          <div style={{flex:"none",filter:"drop-shadow(0 0 10px rgba(255,90,122,.35))"}}><BeachHex size={44} mark={team.key} gid="pbh-card"/></div>
+          <div style={{flex:"none",filter:"drop-shadow(0 0 10px rgba(255,90,122,.35))"}}><BeachHex size={44} mark={team.key} gid="pbh-card" palette={[team.colors.primary,team.colors.secondary,team.colors.accent]}/></div>
           <div style={{flex:1,minWidth:0}}>
             <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:".18em",textTransform:"uppercase",color:"#d08a5a"}}>Pro Beach Hockey &middot; bonus</div>
             <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:18,color:"#e7d9c9",marginTop:1}}>{team.name}</div>
