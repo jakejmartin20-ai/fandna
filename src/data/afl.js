@@ -32,7 +32,7 @@ const moduleQuestions = [
   "question": "Champion team, or a team of champions?",
   "options": [
    {
-    "label": "A team of champions. Stack the talent and let it win.",
+    "label": "A team of champions. Gather the standouts and let them win.",
     "value": "A"
    },
    {
@@ -141,10 +141,10 @@ const moduleQuestions = [
   "id": "afl_q8",
   "type": "choice",
   "phase": "What it comes down to",
-  "question": "The kind of following you would actually want to belong to:",
+  "question": "The kind of group you'd actually want to belong to:",
   "options": [
    {
-    "label": "Massive, one of many in a huge crowd.",
+    "label": "Big, where I'm one of many.",
     "value": "A"
    },
    {

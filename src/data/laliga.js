@@ -438,7 +438,7 @@ const moduleQuestions = [
   { id:"ll_q11", type:"choice", phase:"What it comes down to", question:"How much does the thing you love actually cost you, and how do you feel about that:",
     options:[ {label:"Everything I'll give it. Time, money, the calendar bends around it, and I wouldn't have it any other way.", value:"A"}, {label:"A real chunk of my life, kept in some kind of balance.", value:"B"}, {label:"More in my heart than my diary. I feel it deeply, I just don't organize my life around it.", value:"C"}, {label:"I keep it cheap on purpose. Loving something shouldn't run your life.", value:"D"}, ] },
   { id:"ll_q12", type:"binary", phase:"What it comes down to", question:"Win or lose, where do you land?",
-    left:"Win or lose, I'll be there singing. The love was never a transaction. Long live my team, even when they lose.",
+    left:"Win or lose, I'm all in. The love was never a transaction. I stay through the lean years and the bad days.",
     right:"I'm not built for noble defeat. I love it to win, and a loss is a loss, however pretty." },
 ];
 

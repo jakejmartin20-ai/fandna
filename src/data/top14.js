@@ -13,7 +13,7 @@ const moduleQuestions = [
     "question": "When you put a group together, who do you want in it?",
     "options": [
       { "label": "The people I came up with. I'd back someone I've known from the start over a ready-made name from outside.", "value": "A" },
-      { "label": "The best there is. If I want the best, I go and get the best.", "value": "B" },
+      { "label": "The most capable there are. If I want the best, I go and find them.", "value": "B" },
       { "label": "The hungriest. Give me heart and drive over a polished record.", "value": "C" },
       { "label": "Whoever I rate, in or out of fashion. I trust my own eye over the consensus.", "value": "D" }
     ]

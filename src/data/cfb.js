@@ -175,8 +175,8 @@ const moduleQuestions = [
     "id": "cfb_q9",
     "type": "slider",
     "phase": "What it comes down to",
-    "question": "The whole crowd as one, or the standout who carries it?",
-    "left": "It's the whole of us. The crowd, the place, all of it together.",
+    "question": "The whole of us together, or the standout who carries it?",
+    "left": "It's the whole of us. The people, the place, all of it together.",
     "right": "I'm drawn to the standout, the one who carries the moment."
   },
   {
