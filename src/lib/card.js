@@ -88,7 +88,7 @@ async function generateShareCard(sport, key, genome, coreProfile){
   let seqY;
   if(crests.length){
     const clabY=laneTop+laneH+50;
-    drawTracked(x,"CRESTS EARNED",cx,clabY,"400 24px 'DM Mono',monospace","#c9b27a",14);
+    drawTracked(x,"CRESTS EARNED",cx,clabY,"400 24px 'DM Mono',monospace","#b7a6ff",14);
     const hexR=30,step=hexR*2+30,rowW=(crests.length-1)*step,hy=clabY+34+hexR,hx0=cx-rowW/2;
     crests.forEach((g,i)=>{
       const hcx=hx0+i*step;
