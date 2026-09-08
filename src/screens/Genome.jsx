@@ -206,7 +206,7 @@ export function GenomeHome({
             <div style={{width:46,height:46,borderRadius:"50%",flexShrink:0,border:"1px dashed #565674",display:"flex",alignItems:"center",justifyContent:"center",fontSize:22,color:"#8a8ab0",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>?</div>
             <div style={{flex:1,minWidth:0}}>
               <div style={{fontSize:10,color:"#9a9ac4",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:3}}>{s.name}{s.sport ? " · " + s.sport : ""}</div>
-              <div style={{fontSize:"clamp(18px,4.6vw,21px)",color:"#c9b27a",fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:400,lineHeight:1.1}}>Map it &rarr;</div>
+              <div style={{fontSize:"clamp(18px,4.6vw,21px)",color:"#b7a6ff",fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:400,lineHeight:1.1}}>Map it &rarr;</div>
             </div>
           </div>
         </button>
@@ -271,9 +271,9 @@ export function GenomeHome({
             <span style={{fontFamily:"'DM Mono',monospace",fontSize:12,color:PLBL,letterSpacing:"0.32em",textTransform:"uppercase",fontWeight:500,flex:1,minWidth:0}}>{fam.label}</span>
             {complete ? (
               <button type="button" onClick={()=>onOpenCrest&&onOpenCrest(fam)} aria-label={`View your ${fam.label} crest`}
-                style={{display:"flex",alignItems:"center",gap:6,background:"rgba(201,178,122,0.12)",border:"1px solid rgba(201,178,122,0.5)",borderRadius:20,padding:"4px 11px 4px 9px",cursor:"pointer",flexShrink:0}}>
-                <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L20.5 7.1 L20.5 16.9 L12 21.8 L3.5 16.9 L3.5 7.1 Z" fill="#c9b27a33" stroke="#c9b27a" strokeWidth="1.6"/><circle cx="12" cy="12" r="2.3" fill="#c9b27a"/></svg>
-                <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#d8c184",letterSpacing:"0.16em",textTransform:"uppercase"}}>View crest</span>
+                style={{display:"flex",alignItems:"center",gap:6,background:"rgba(183,166,255,0.12)",border:"1px solid rgba(183,166,255,0.5)",borderRadius:20,padding:"4px 11px 4px 9px",cursor:"pointer",flexShrink:0}}>
+                <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L20.5 7.1 L20.5 16.9 L12 21.8 L3.5 16.9 L3.5 7.1 Z" fill="#b7a6ff33" stroke="#b7a6ff" strokeWidth="1.6"/><circle cx="12" cy="12" r="2.3" fill="#b7a6ff"/></svg>
+                <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#b7a6ff",letterSpacing:"0.16em",textTransform:"uppercase"}}>View crest</span>
               </button>
             ) : (liveInFam.length>0&&(<span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:COUNT,letterSpacing:"0.12em",textTransform:"uppercase",flexShrink:0}}>{doneN} of {list.length} mapped</span>))}
           </div>
@@ -341,7 +341,7 @@ export function GenomeHome({
             <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:13,color:"#8f8fa8",lineHeight:1.4,marginBottom:8}}>We refined the scoring. Your answers didn't change.</div>
           )}
           {resequenceDelta.moved.map(m=>(
-            <div key={m.sport} style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:15,color:"#c9c5cf",lineHeight:1.45}}>{leagueName(m.sport)} re-read: {clubName(m.sport,m.from)} &rarr; <span style={{color:"#c9b27a"}}>{clubName(m.sport,m.to)}</span></div>
+            <div key={m.sport} style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:15,color:"#c9c5cf",lineHeight:1.45}}>{leagueName(m.sport)} re-read: {clubName(m.sport,m.from)} &rarr; <span style={{color:"#b7a6ff"}}>{clubName(m.sport,m.to)}</span></div>
           ))}
           {resequenceDelta.moved.length===0&&resequenceDelta.stale.length===0&&(
             <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:15,color:"#9898b8",lineHeight:1.45}}>Every club held. Same you, same teams.</div>
@@ -370,7 +370,7 @@ export function GenomeHome({
           />
           <div style={{display:"flex",gap:14,justifyContent:"center",alignItems:"center",marginTop:12}}>
             <button type="button" onClick={()=>{ const ok=onRestore&&onRestore(restoreText); if(!ok) setRestoreErr(true); }}
-              style={{background:"linear-gradient(180deg,#d4a24c 0%,#c08f34 100%)",border:"none",borderRadius:22,padding:"10px 28px",color:"#241a05",fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:18,fontWeight:600,cursor:"pointer"}}
+              style={{background:"linear-gradient(180deg,#6a5ad0 0%,#5646b8 100%)",border:"none",borderRadius:22,padding:"10px 28px",color:"#f0eefb",fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:18,fontWeight:600,cursor:"pointer"}}
             >Restore</button>
             <button type="button" onClick={()=>{setRestoreOpen(false);setRestoreText("");setRestoreErr(false);}}
               style={{color:"#7f7f9f",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",background:"none",border:"none",cursor:"pointer",padding:"6px 6px"}}
@@ -457,10 +457,10 @@ export function GenomeHome({
               <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.16em",textTransform:"uppercase",color:PLBL}}>{pillLabel}</span>
               <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.04em",color:COUNT}}>{doneN}/{total}</span>
               {pillComplete&&(
-                <svg width="11" height="11" viewBox="0 0 24 24" aria-hidden="true" style={{flexShrink:0}}><path d="M12 2.2 L20.5 7.1 L20.5 16.9 L12 21.8 L3.5 16.9 L3.5 7.1 Z" fill="#c9b27a33" stroke="#c9b27a" strokeWidth="1.6"/><circle cx="12" cy="12" r="2.3" fill="#c9b27a"/></svg>
+                <svg width="11" height="11" viewBox="0 0 24 24" aria-hidden="true" style={{flexShrink:0}}><path d="M12 2.2 L20.5 7.1 L20.5 16.9 L12 21.8 L3.5 16.9 L3.5 7.1 Z" fill="#b7a6ff33" stroke="#b7a6ff" strokeWidth="1.6"/><circle cx="12" cy="12" r="2.3" fill="#b7a6ff"/></svg>
               )}
               {isNew&&(
-                <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.14em",color:"#c9b27a",background:"rgba(201,178,122,0.14)",borderRadius:4,padding:"1px 5px"}}>NEW</span>
+                <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.14em",color:"#b7a6ff",background:"rgba(183,166,255,0.14)",borderRadius:4,padding:"1px 5px"}}>NEW</span>
               )}
             </button>
           );
@@ -472,10 +472,10 @@ export function GenomeHome({
         {(()=>{ const allDone = FAMILIES.every(f=>{ const gs=sports.filter(s=>s.group===f.id); return gs.length>0 && gs.every(s=>s.live && genome[s.code] && genome[s.code].club); });
           return allDone ? (
             <button type="button" onClick={()=>onOpenFinale&&onOpenFinale()} aria-label="Collection complete, view the genome"
-              style={{display:"flex",alignItems:"center",gap:10,width:"100%",marginBottom:14,background:"rgba(201,178,122,0.07)",border:"1px solid rgba(201,178,122,0.35)",borderRadius:12,padding:"10px 14px",cursor:"pointer",textAlign:"left"}}>
+              style={{display:"flex",alignItems:"center",gap:10,width:"100%",marginBottom:14,background:"rgba(183,166,255,0.07)",border:"1px solid rgba(183,166,255,0.35)",borderRadius:12,padding:"10px 14px",cursor:"pointer",textAlign:"left"}}>
               <HexBadge kind="genome" profile={coreProfile} size={26}/>
-              <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.18em",textTransform:"uppercase",color:"#d8c184",flex:1}}>Collection complete</span>
-              <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.1em",textTransform:"uppercase",color:"#8a8560"}}>all three groups</span>
+              <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.18em",textTransform:"uppercase",color:"#b7a6ff",flex:1}}>Collection complete</span>
+              <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.1em",textTransform:"uppercase",color:"#807a9c"}}>all three groups</span>
             </button>
           ) : null; })()}
         {FAMILIES.map((fam,i)=>(
@@ -515,7 +515,7 @@ export function GenomeHome({
             <p style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#b8b4c4",lineHeight:1.6,margin:"0 auto 12px",maxWidth:320,letterSpacing:"0.02em"}}>This permanently clears your results and can't be undone.</p>
             <div style={{display:"flex",gap:22,justifyContent:"center",alignItems:"center"}}>
               <button type="button" onClick={()=>{setConfirmClear(false);onReset&&onReset();}}
-                style={{color:"#d4a44e",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",background:"none",border:"none",cursor:"pointer",padding:"4px 4px"}}
+                style={{color:"#b7a6ff",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",background:"none",border:"none",cursor:"pointer",padding:"4px 4px"}}
               >Clear everything</button>
               <button type="button" onClick={()=>setConfirmClear(false)}
                 style={{color:"#7f7f9f",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",background:"none",border:"none",cursor:"pointer",padding:"4px 4px"}}

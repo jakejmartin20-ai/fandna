@@ -15,8 +15,8 @@ import { CompareStrips } from "../components/CompareStrips";
 import { sameGenome } from "../lib/compareCode";
 import { archetypeLabel, bandModel, sportSplit, poleFor } from "../lib/compareRead";
 
-const GOLD = "#d4a24c";
-const ACCENT = "#d99a3c";
+const GOLD = "#b7a6ff";
+const ACCENT = "#b7a6ff";
 const CG = "'Cormorant Garamond',Georgia,serif";
 const MONO = "'DM Mono',monospace";
 
@@ -78,9 +78,9 @@ function Sub({ children, dim }) {
 function GoldButton({ children, onClick }) {
   return (
     <button onClick={onClick} style={{
-      background: `linear-gradient(180deg, ${GOLD} 0%, #c08f34 100%)`, border: "none", borderRadius: 24,
-      padding: "13px 30px", color: "#241a05", fontFamily: CG, fontSize: 20, fontWeight: 600, cursor: "pointer",
-      boxShadow: "0 2px 14px rgba(212,162,76,0.28)",
+      background: `linear-gradient(180deg, #6a5ad0 0%, #5646b8 100%)`, border: "none", borderRadius: 24,
+      padding: "13px 30px", color: "#f0eefb", fontFamily: CG, fontSize: 20, fontWeight: 600, cursor: "pointer",
+      boxShadow: "0 2px 14px rgba(106,90,208,0.30)",
     }}>{children}</button>
   );
 }
@@ -437,7 +437,7 @@ export function Compare({ friend, me, onStartSport, onReshare, onExit, onRestore
       </div>
     );
     return (
-      <div style={{ border: only ? `1px solid ${GOLD}55` : "1px solid #20202b", background: only ? "#191308" : "transparent", borderRadius: 8, padding: "12px 14px", marginBottom: 10 }}>
+      <div style={{ border: only ? `1px solid ${GOLD}55` : "1px solid #20202b", background: only ? "#191527" : "transparent", borderRadius: 8, padding: "12px 14px", marginBottom: 10 }}>
         <div style={{ fontFamily: MONO, fontSize: 10, letterSpacing: "0.16em", textTransform: "uppercase", color: "#7f7f9c", marginBottom: 8 }}>{sportName(r.sport)}</div>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <Side t={youT} sport={r.sport} club={r.youClub} muted={r.kind === "onlyThem"} />

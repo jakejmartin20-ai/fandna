@@ -50,7 +50,7 @@ const ANTI     = "RBL";   // the club this person is furthest from, shown as the
 
 // ── A gel strip. Same visual language as the home/card CoreStrip, but read-only and with its
 // own label, so nothing on the shipped CoreStrip has to change.
-function Gel({ dims, label, note, accent="#d4a44e", muted=false, height=86, delay=0 }){
+function Gel({ dims, label, note, accent="#b7a6ff", muted=false, height=86, delay=0 }){
   const [shown,setShown]=useState(false);
   useEffect(()=>{ const t=setTimeout(()=>setShown(true),140+delay); return ()=>clearTimeout(t); },[delay]);
   const d=dims||{}, P=6, B=10, travel=height-2*P-B, BOTTOM=height-B-2;
@@ -203,7 +203,7 @@ export function HowItWorks({ onStart, onBack, hasGenome=false }){
         <P>Average two dozen answers and almost nobody comes out extreme. Line up a raw core band for band and mostly you're looking at that bunching, not at a person.</P>
         <P>So before anything else, we read you against the full spread of ways these questions can be answered. A score that looks quiet can be a roar when most of that range sits below it. How far above the range you sit is the band you actually see.</P>
         <div style={{marginTop:24}}>
-          <Gel dims={stood} label="Where you stand" note="the strip on your home screen" accent="#d4a44e" height={86}/>
+          <Gel dims={stood} label="Where you stand" note="the strip on your home screen" accent="#b7a6ff" height={86}/>
         </div>
         <Note>Same person. Nothing added, nothing invented. Every band is now how far above or below that range you sit on the trait, which is the only thing a band can honestly mean.</Note>
         <div style={{marginTop:28}}>
@@ -234,7 +234,7 @@ export function HowItWorks({ onStart, onBack, hasGenome=false }){
         <Title>The bit we're strict about.</Title>
         <P>The easy way to build this is to make sure most people land somewhere famous. Big crest, big reaction, big share.</P>
         <P>So we test against it. Every club has to be reachable by the person who actually is that club. If one team starts swallowing everybody, the scoring's wrong and the scoring gets fixed. Never the team.</P>
-        <p style={{fontFamily:CG,fontStyle:"italic",fontSize:17,color:"#c8b084",lineHeight:1.5,margin:"14px 0 0"}}>A small club isn't a consolation prize. It's a read.</p>
+        <p style={{fontFamily:CG,fontStyle:"italic",fontSize:17,color:"#b7a6ff",lineHeight:1.5,margin:"14px 0 0"}}>A small club isn't a consolation prize. It's a read.</p>
       </Section>
 
       <Section>
@@ -262,7 +262,7 @@ export function HowItWorks({ onStart, onBack, hasGenome=false }){
 
       <div style={{display:"flex",justifyContent:"center"}}>
         <button type="button" onClick={onStart}
-          style={{fontFamily:CG,fontSize:19,fontWeight:600,color:"#16161e",background:"#d4a44e",border:"none",borderRadius:25,padding:"13px 34px",cursor:"pointer"}}>
+          style={{fontFamily:CG,fontSize:19,fontWeight:600,color:"#f0eefb",background:"#6a5ad0",border:"none",borderRadius:25,padding:"13px 34px",cursor:"pointer"}}>
           {hasGenome?"Back to my genome":"Sequence yourself"}
         </button>
       </div>
