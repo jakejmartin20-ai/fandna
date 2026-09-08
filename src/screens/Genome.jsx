@@ -173,8 +173,8 @@ export function GenomeHome({
           style={{
             display:"block",textAlign:"left",cursor:"pointer",width:"100%",marginBottom:mb,
             background:`linear-gradient(120deg, ${t.color}14 0%, transparent 55%)`,
-            border:"1px solid #242433",borderLeft:`3px solid ${t.color||"#9898b8"}`,
-            borderRadius:"6px 10px 10px 6px",padding:"12px 14px",transition:"border-color .15s ease",
+            border:"1px solid #242433",borderLeft:`4px solid ${t.color||"#9898b8"}`,
+            clipPath:"polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px)",padding:"12px 14px",transition:"border-color .15s ease",
           }}
           onMouseEnter={e=>{e.currentTarget.style.borderColor="#3a3a50";e.currentTarget.style.borderLeftColor=(t.color||"#9898b8");}}
           onMouseLeave={e=>{e.currentTarget.style.borderColor="#242433";e.currentTarget.style.borderLeftColor=(t.color||"#9898b8");}}
@@ -196,8 +196,10 @@ export function GenomeHome({
       return(
         <button onClick={()=>onStartSport(s.code)}
           style={{
-            display:"block",textAlign:"left",cursor:"pointer",width:"100%",marginBottom:mb,background:"#16161f",
-            border:"1px solid #242433",borderRadius:10,padding:"12px 14px",transition:"border-color .15s ease",
+            display:"block",textAlign:"left",cursor:"pointer",width:"100%",marginBottom:mb,
+            background:"linear-gradient(120deg, #6a5ad016 0%, transparent 55%)",
+            border:"1px solid #242433",borderLeft:"4px solid #6a5ad0",
+            clipPath:"polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px)",padding:"12px 14px",transition:"border-color .15s ease",
           }}
           onMouseEnter={e=>{e.currentTarget.style.borderColor="#3a3a50";}}
           onMouseLeave={e=>{e.currentTarget.style.borderColor="#242433";}}
@@ -220,7 +222,7 @@ export function GenomeHome({
       return(
         <div style={{
           display:"flex",alignItems:"center",gap:12,background:"transparent",marginBottom:mb,
-          border:"1px solid #1d1d27",borderRadius:10,padding:"12px 14px",
+          border:"1px solid #1d1d27",clipPath:"polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px)",padding:"12px 14px",
         }}>
           <div style={{width:42,height:42,borderRadius:"50%",flexShrink:0,border:"1px solid #2c2c38",display:"flex",alignItems:"center",justifyContent:"center"}}>
             <div style={{width:15,height:15,borderRadius:"50%",border:"1px solid #3f3f4d"}}/>
@@ -237,7 +239,7 @@ export function GenomeHome({
     return(
       <div style={{
         display:"flex",alignItems:"center",gap:12,background:"transparent",marginBottom:mb,
-        border:"1px solid #23232f",borderRadius:10,padding:"12px 14px",
+        border:"1px solid #23232f",clipPath:"polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px)",padding:"12px 14px",
       }}>
         <div style={{width:42,height:42,borderRadius:"50%",flexShrink:0,border:"1px solid #3a3a4a",display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,color:"#6f6f88",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>?</div>
         <div style={{flex:1,minWidth:0}}>
