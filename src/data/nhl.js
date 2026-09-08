@@ -200,8 +200,8 @@ const teams = {
     "code3": "BUF",
     "kitType": "duo",
     "secondaryColor": "#FFB81C",
-    "tagline": "Never lifted the Cup, the league's longest playoff wait, and a goal you swear never counted.",
-    "desc": "You are rust-belt loyalty in its purest form, a fan base that keeps the faith through decades of nothing. You have never won a Stanley Cup, and you have the scars to prove how close it came: the 1999 Final lost on a goal scored with a skate in the crease, a goal your city still insists never counted, and years later the longest playoff drought in the entire league. And still you fill the building, still you believe, still you love this team with a blue-and-gold stubbornness that outlasts every disappointment. You root not because it is easy or rewarded, but because it is yours, and giving up was never an option.",
+    "tagline": "Never lifted the Cup, the longest playoff wait in the league finally over, and a goal you swear never counted.",
+    "desc": "You are rust-belt loyalty in its purest form, a fan base that keeps the faith through decades of nothing. You have never won a Stanley Cup, and you have the scars to prove how close it came: the 1999 Final lost on a goal scored with a skate in the crease, a goal your city still insists never counted, and years later a fourteen-year playoff drought, the longest in the league, ended at last in 2026. And still you fill the building, still you believe, still you love this team with a blue-and-gold stubbornness that outlasts every disappointment. You root not because it is easy or rewarded, but because it is yours, and giving up was never an option.",
   },
   "STL": {
     "name": "St. Louis Blues",
@@ -2304,7 +2304,7 @@ const milestones = {
     "The 1999 Final ended by Brett Hull's disputed goal, forever the No Goal.",
     "Dominik Hasek's back-to-back Hart Trophies, a goaltender named league MVP.",
     "The French Connection line of the seventies, the franchise's first golden era.",
-    "The longest playoff drought in the NHL, more than a decade without a berth."
+    "Ending the NHL's longest playoff drought in 2026, back after fourteen years with an Atlantic Division title."
   ],
   "STL": [
     "The 2019 Stanley Cup, the franchise's first in its fifty-second season.",
