@@ -40,14 +40,14 @@ function BandRow({ profile, highlight, accent, H }) {
   );
 }
 
-export function CompareStrips({ you, them, highlightDims = [], highlightLabel = null, note = null, accent = "#d99a3c", H = 74 }) {
+export function CompareStrips({ you, them, highlightDims = [], highlightLabel = null, note = null, accent = "#b7a6ff", H = 74 }) {
   const hi = new Set(highlightDims);
   const mono = { fontFamily: "'DM Mono',monospace" };
 
   return (
     <div>
       {/* YOU */}
-      <div style={{ ...mono, fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "#c9a24a", marginBottom: 8 }}>You</div>
+      <div style={{ ...mono, fontSize: 11, letterSpacing: "0.24em", textTransform: "uppercase", color: "#b7a6ff", marginBottom: 8 }}>You</div>
       <BandRow profile={you} highlight={hi} accent={accent} H={H} />
 
       {/* dim codes */}

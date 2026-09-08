@@ -31,7 +31,7 @@ export function CoreUpdatePrompt({ onRetake, onKeep }){
       <style>{KEYFRAMES}</style>
 
       <div className="cu-rise" style={{textAlign:"center",...(shown?rise(0.02):{opacity:0})}}>
-        <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#e8c46e",letterSpacing:"0.3em",textTransform:"uppercase",marginBottom:20}}>
+        <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#b7a6ff",letterSpacing:"0.3em",textTransform:"uppercase",marginBottom:20}}>
           Core update
         </div>
         <h2 style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(32px,8.5vw,46px)",fontWeight:300,color:"#efe9e3",letterSpacing:"-0.01em",lineHeight:1.08,margin:"0 0 16px"}}>

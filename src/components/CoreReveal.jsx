@@ -29,7 +29,7 @@ export function CoreReveal({ coreProfile, sportName="your sport", onContinue }){
   const stages = [
     { key:"core",  label:"Core",     color:"#7f7fb0", labelColor:"#9a9acc", len:24, frac:1, state:"done" },
     { key:"spine", label:"Instincts",color:"#7f7fb0", labelColor:"#9a9acc", len:7,  frac:1, state:"done" },
-    { key:"mod",   label:sportName,  color:"#c9b27a", labelColor:"#c9b27a", len:14, frac:0, state:"upcoming" },
+    { key:"mod",   label:sportName,  color:"#b7a6ff", labelColor:"#b7a6ff", len:14, frac:0, state:"upcoming" },
   ];
 
   const rise = (d)=>({ animation:`crRise .5s cubic-bezier(.2,.8,.3,1) ${d}s both` });

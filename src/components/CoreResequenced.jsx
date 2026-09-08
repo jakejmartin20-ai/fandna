@@ -19,7 +19,7 @@ const Word = (n)=>{ const w=word(n); return w.charAt(0).toUpperCase()+w.slice(1)
 
 const leagueName = (code)=>{ const s=SPORTS.find(y=>y.code===code); return s?s.name:code; };
 const teamName = (code,club)=>{ const d=SPORT_DATA[code]; const t=d&&d.teams&&d.teams[club]; return (t&&t.name)?t.name:club; };
-const accentOf = (code,club)=>{ const d=SPORT_DATA[code]; const c=d&&d.teamTextColors&&d.teamTextColors[club]; return c||"#c9b27a"; };
+const accentOf = (code,club)=>{ const d=SPORT_DATA[code]; const c=d&&d.teamTextColors&&d.teamTextColors[club]; return c||"#b7a6ff"; };
 
 const KEYFRAMES = `
 @keyframes crsRise{0%{opacity:0;transform:translateY(10px);}100%{opacity:1;transform:translateY(0);}}
@@ -40,8 +40,8 @@ export function CoreResequenced({ result, onContinue }){
   const headline = n===0
     ? <span>Your teams all held.</span>
     : n===1
-      ? <span>One of your <span style={{color:"#e8c46e"}}>teams shifted.</span></span>
-      : <span>{Word(n)} of your <span style={{color:"#e8c46e"}}>teams shifted.</span></span>;
+      ? <span>One of your <span style={{color:"#b7a6ff"}}>teams shifted.</span></span>
+      : <span>{Word(n)} of your <span style={{color:"#b7a6ff"}}>teams shifted.</span></span>;
 
   // Held tally line: "{N} held, {up to two clubs} among them." No possessive, no "your <team>".
   const heldCount = held.length;
@@ -55,7 +55,7 @@ export function CoreResequenced({ result, onContinue }){
       <style>{KEYFRAMES}</style>
 
       <div className="crs-rise" style={{textAlign:"center",...(shown?rise(0.02):{opacity:0})}}>
-        <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#e8c46e",letterSpacing:"0.3em",textTransform:"uppercase",marginBottom:20}}>
+        <div style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#b7a6ff",letterSpacing:"0.3em",textTransform:"uppercase",marginBottom:20}}>
           Your core, resequenced
         </div>
         <h2 style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(32px,8.5vw,46px)",fontWeight:300,color:"#efe9e3",letterSpacing:"-0.01em",lineHeight:1.08,margin:"0 0 26px"}}>

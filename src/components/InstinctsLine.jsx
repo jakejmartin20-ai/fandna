@@ -117,7 +117,7 @@ export function InstinctsLine({ spineAnswers, onRetake }){
           <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#b8b4c4",lineHeight:1.5,marginBottom:10}}>Re-answer your seven instincts? Your leagues recompute against your new answers.</div>
           <div style={{display:"flex",gap:22,alignItems:"center"}}>
             <button type="button" onClick={()=>{setConfirm(false);onRetake&&onRetake();}}
-              style={{color:"#d4a44e",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",background:"none",border:"none",cursor:"pointer",padding:"2px 0"}}>Retake</button>
+              style={{color:"#b7a6ff",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",background:"none",border:"none",cursor:"pointer",padding:"2px 0"}}>Retake</button>
             <button type="button" onClick={()=>setConfirm(false)}
               style={{color:"#7f7f9f",fontSize:11,letterSpacing:"0.12em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",background:"none",border:"none",cursor:"pointer",padding:"2px 0"}}>Cancel</button>
           </div>
