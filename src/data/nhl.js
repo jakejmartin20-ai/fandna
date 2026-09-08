@@ -8,11 +8,11 @@ const moduleQuestions = [
     "phase": "The fine print",
     "question": "The people you’d want around you when it counts:",
     "options": [
-      { "label": "A tight core that built something real together, and stuck it out.", "value": "A" },
-      { "label": "A whole community around me, everyone pulling the same way.", "value": "B" },
-      { "label": "The best there is, wherever they come from.", "value": "C" },
-      { "label": "My people, outnumbered wherever we stand, and prouder for it.", "value": "D" },
-      { "label": "The bigger the group the better. I believe in strength in numbers.", "value": "E" },
+      { "label": "A small group who built something together and never walked away.", "value": "A" },
+      { "label": "A whole community around me, all pulling the same way.", "value": "B" },
+      { "label": "The most capable people I can find, wherever they come from.", "value": "C" },
+      { "label": "My own few, outnumbered wherever we go, and prouder for it.", "value": "D" },
+      { "label": "The more of us the better. There’s real strength in numbers.", "value": "E" },
     ]
   },
   {
@@ -41,11 +41,11 @@ const moduleQuestions = [
     "id": "nhl_q4",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "You’ve finally won the biggest thing there is. What happens in you next:",
+    "question": "You’ve finally pulled off the biggest thing you ever set out to do. What happens in you next:",
     "options": [
-      { "label": "Do it again. And again. One is never enough, I want a run of them.", "value": "A" },
+      { "label": "Do it again. And again. One is never enough for me.", "value": "A" },
       { "label": "Savour it. That was the mountain, and I climbed it.", "value": "B" },
-      { "label": "Proud, but the chase always meant more to me than the trophy.", "value": "C" },
+      { "label": "Proud, but the chase always meant more to me than the prize.", "value": "C" },
     ]
   },
   {
@@ -63,7 +63,7 @@ const moduleQuestions = [
     "id": "nhl_q6",
     "type": "choice",
     "phase": "What it comes down to",
-    "question": "What matters most to you, the way you hold it:",
+    "question": "The way you hold the things that matter to you:",
     "options": [
       { "label": "With reverence. I feel the weight of everyone who came before, and I carry it.", "value": "A" },
       { "label": "As a celebration. I throw myself in, here and now, and make it a party.", "value": "B" },
