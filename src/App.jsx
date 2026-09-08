@@ -383,7 +383,7 @@ function AppInner(){
     };
     mk("core",mode==="coreupdate"?"Core update":"Core","#7f7fb0","#9a9acc",coreLen);
     mk("spine","Instincts","#7f7fb0","#9a9acc",spineLen);
-    mk("mod",seqLeagueName,"#c9b27a","#c9b27a",modLen);
+    mk("mod",seqLeagueName,"#b7a6ff","#b7a6ff",modLen);
     return out;
   },[sequence,cur,seqLeagueName,coreIds,spineIds,mode]);
 
@@ -1213,9 +1213,9 @@ function AppInner(){
             <p style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:16,color:"#9e9eba",lineHeight:1.5,margin:"0 0 12px"}}>Your core is the same you across every sport. Re-answering it may change the clubs you have already been matched to. That is the mirror working, not a glitch.</p>
             <p style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:16,color:"#9e9eba",lineHeight:1.5,margin:"0 0 16px"}}>Your league answers are kept. We just re-read them against your new core.</p>
             {staleLeagueNames.length>0&&(
-              <div style={{display:"flex",gap:10,alignItems:"flex-start",background:"#282420",border:"1px solid #5a4a2a",borderRadius:7,padding:"10px 12px",marginBottom:18}}>
-                <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#ccaa6a",letterSpacing:"0.2em",marginTop:2,flexShrink:0}}>NOTE</span>
-                <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#bea878",lineHeight:1.4}}>{staleLeagueNames.join(" and ")} {staleLeagueNames.length>1?"were":"was"} restored from a link, so {staleLeagueNames.length>1?"they have":"it has"} no saved answers, so {staleLeagueNames.length>1?"they will":"it will"} need a fresh retake.</span>
+              <div style={{display:"flex",gap:10,alignItems:"flex-start",background:"#221f2b",border:"1px solid #3a3450",borderRadius:7,padding:"10px 12px",marginBottom:18}}>
+                <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#b7a6ff",letterSpacing:"0.2em",marginTop:2,flexShrink:0}}>NOTE</span>
+                <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:14,color:"#b7a6ff",lineHeight:1.4}}>{staleLeagueNames.join(" and ")} {staleLeagueNames.length>1?"were":"was"} restored from a link, so {staleLeagueNames.length>1?"they have":"it has"} no saved answers, so {staleLeagueNames.length>1?"they will":"it will"} need a fresh retake.</span>
               </div>
             )}
             <div style={{display:"flex",gap:12,justifyContent:"center"}}>
@@ -1271,7 +1271,7 @@ function AppInner(){
             style={{width:"100%",maxWidth:400,background:"#1c1c28",border:"1px solid #2a2a3a",borderRadius:14,padding:"26px 24px",animation:"popIn .2s ease"}}>
             <div style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontWeight:500,fontSize:25,color:"#e8e4de",marginBottom:12}}>Start over?</div>
             <p style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:16,color:"#9e9eba",lineHeight:1.5,margin:"0 0 8px"}}>This erases your entire FanDNA. Every league result and your saved core are cleared.</p>
-            <p style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:16,color:"#bea878",lineHeight:1.5,margin:"0 0 16px"}}>This can't be undone.</p>
+            <p style={{textAlign:"center",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:16,color:"#b7a6ff",lineHeight:1.5,margin:"0 0 16px"}}>This can't be undone.</p>
             <div style={{display:"flex",gap:12,justifyContent:"center"}}>
               <button onClick={()=>{ setStartOverConfirm(false); startOver(); }} style={{background:"#6a5ad0",border:"none",borderRadius:6,padding:"11px 22px",color:"#f0eefb",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.18em",textTransform:"uppercase",cursor:"pointer"}}>Start over</button>
               <button onClick={()=>setStartOverConfirm(false)} style={{background:"none",border:"1px solid #4a4a6a",borderRadius:6,padding:"11px 22px",color:"#9898b8",fontFamily:"'DM Mono',monospace",fontSize:11,letterSpacing:"0.18em",textTransform:"uppercase",cursor:"pointer"}}>Cancel</button>
