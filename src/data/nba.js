@@ -56,9 +56,9 @@ const moduleQuestions = [
     "id": "nba_q3",
     "type": "slider",
     "phase": "The fine print",
-    "question": "The ring, or the come-up?",
-    "left": "The ring is all that matters. Nobody remembers the climb, only who won.",
-    "right": "The come-up is the best part. The grind to get there means more than the trophy."
+    "question": "The win, or the come-up?",
+    "left": "The win is all that matters. Nobody remembers the climb, only who won.",
+    "right": "The come-up is the best part. The grind to get there means more than the win itself."
   },
   {
     "id": "nba_q4",
@@ -127,15 +127,15 @@ const moduleQuestions = [
         "value": "A"
       },
       {
-        "label": "Put it on one big talent and let them take over.",
+        "label": "Lean on one standout who can carry it, and let them.",
         "value": "B"
       },
       {
-        "label": "Scrappy and overachieving, making it up and getting there.",
+        "label": "Scrappy and overachieving, figuring it out and getting there.",
         "value": "C"
       },
       {
-        "label": "Gather the talent and turn them loose.",
+        "label": "Round up the best people I can and turn them loose.",
         "value": "D"
       }
     ]
@@ -203,7 +203,7 @@ const moduleQuestions = [
     "question": "When it's on the line, what do you count on to pull through:",
     "options": [
       {
-        "label": "One extraordinary talent, a level above everyone.",
+        "label": "One exceptional person, a level above everyone.",
         "value": "A"
       },
       {
