@@ -1473,7 +1473,7 @@ function AppInner(){
 
             {/* Card-as-hero: your share card, on screen, with the tappable core strip inside it.
                 Share and Download generate the flat image (which shows the codes only). */}
-            <div style={{border:`1px solid ${team.color}33`,borderRadius:14,overflow:"hidden",background:"#14141c",marginBottom:14}}>
+            <div style={{border:`1px solid ${team.color}33`,borderLeft:`4px solid ${team.color||"#6a5ad0"}`,clipPath:"polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px)",overflow:"hidden",background:"#14141c",marginBottom:14}}>
               <div style={{background:`linear-gradient(180deg,${team.color}2e 0%,transparent 70%)`,padding:"22px 18px 4px",textAlign:"center"}}>
                 <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",letterSpacing:"0.34em",textTransform:"uppercase",marginBottom:14}}>your {regOf(activeSport).noun}</div>
                 <div style={{display:"inline-flex",position:"relative",...rvHead(0)}}>
