@@ -125,10 +125,15 @@ export function GenomeHome({
     return { groups, seq: groups.flatMap(g=>g.items).join(" · ") };
   })();
   const shareText = SHARE.seq ? ("FanDNA: "+SHARE.seq) : shareString;
-  const _seqClean = (SHARE.seq||"").split(/\s*·\s*/).filter(t=>t&&!/-\?$/.test(t)).join(" · ");
+  const _seqToks = (SHARE.seq||"").split(/\s*·\s*/).filter(t=>t&&!/-\?$/.test(t));
+  const _seqClean = _seqToks.join(" · ");
+  // Bare-count solve: list the codes only when there are few; past 4 the string wraps into a wall
+  // in a text message, so collapse to a count. The /c/ link already carries the full genome.
+  const _seqLine = _seqToks.length===0 ? shareText
+    : (_seqToks.length<=4 ? ("FanDNA: "+_seqClean) : ("FanDNA: "+_seqToks.length+" teams sequenced"));
   const _blk = (coreProfile && Object.keys(coreProfile).length) ? ("\uD83E\uDDEC "+coreBlocks(coreProfile)) : "";
   const _cmp = "https://playfandna.com/c/"+encodeGenome({coreProfile, results:genome});
-  const shareCaption = [_blk, (_seqClean?("FanDNA: "+_seqClean):shareText), "Compare yours: "+_cmp].filter(Boolean).join("\n");
+  const shareCaption = [_blk, _seqLine, "Compare yours: "+_cmp].filter(Boolean).join("\n");
 
   function copyShare(){
     const txt = _cmp;   // keep-this-link: just the /c/ link, single line, pastes cleanly into Restore
