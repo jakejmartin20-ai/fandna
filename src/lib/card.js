@@ -100,13 +100,26 @@ async function generateShareCard(sport, key, genome, coreProfile){
     seqY=laneTop+laneH+62;
   }
   x.textAlign="center";
-  const orderedSports=FAMILIES.flatMap(f=>SPORTS.filter(s=>s.group===f.id));
-  const seq="FanDNA: "+orderedSports.filter(s=>s.code===sport||(genome&&genome[s.code]&&genome[s.code].club)).map(s=>{const ck=(s.code===sport)?key:genome[s.code].club;const _sd=SPORT_DATA[s.code];const c=(_sd&&_sd.teams&&_sd.teams[ck]&&_sd.teams[ck].code3)||ck;return `${s.code}-${c}`;}).join(" · ");
-  let seqSz=42,seqFont="400 42px 'DM Mono',monospace";
-  do{seqFont="400 "+seqSz+"px 'DM Mono',monospace";x.font=seqFont;if(trackedWidth(x,seq,2)<=960)break;seqSz-=2;}while(seqSz>22);
-  drawTracked(x,seq,cx,seqY,seqFont,"#d6d2ca",2);
-  x.font="italic 40px 'Cormorant Garamond',serif";x.fillStyle="#9898b8";x.fillText(closingLine,cx,seqY+62);
-  drawTracked(x,"playfandna.com",cx,seqY+112,"400 24px 'DM Mono',monospace","#7878a0",3);
+  // Sequence as a visual strip: one team-colour hex per collected league, grouped by family.
+  // The full genome rides in the share caption/link, so the card shows the shape, not a code wall.
+  const seqFams=FAMILIES.map(f=>({
+    items:SPORTS.filter(s=>s.group===f.id)
+      .filter(s=>s.code===sport||(genome&&genome[s.code]&&genome[s.code].club))
+      .map(s=>{const ck=(s.code===sport)?key:genome[s.code].club;const _sd=SPORT_DATA[s.code];return (_sd&&_sd.teams&&_sd.teams[ck]&&_sd.teams[ck].color)||"#9898b8";})
+  })).filter(g=>g.items.length>0);
+  const seqTotal=seqFams.reduce((n,g)=>n+g.items.length,0);
+  const hR=18,hGap=13,fGap=26,hA=hR*0.866,rowY=seqY-4;
+  const famW=g=>g.items.length*(hA*2)+(g.items.length-1)*hGap;
+  const stripW=seqFams.reduce((w,g)=>w+famW(g),0)+(seqFams.length-1)*fGap;
+  let sxp=cx-stripW/2+hA;
+  seqFams.forEach((g,gi)=>{
+    g.items.forEach((col,ii)=>{drawTeamHex(x,sxp,rowY,hR,col,null);if(ii<g.items.length-1)sxp+=hA*2+hGap;});
+    if(gi<seqFams.length-1){const sepx=sxp+hA+fGap/2;x.strokeStyle="#3c3c4e";x.lineWidth=2;x.beginPath();x.moveTo(sepx,rowY-20);x.lineTo(sepx,rowY+20);x.stroke();sxp+=hA*2+fGap;}
+  });
+  const cntY=seqY+34,cntTxt=seqTotal+(seqTotal===1?" team sequenced":" teams sequenced");
+  drawTracked(x,cntTxt,cx,cntY,"400 26px 'DM Mono',monospace","#9696b4",3);
+  x.font="italic 40px 'Cormorant Garamond',serif";x.fillStyle="#9898b8";x.textAlign="center";x.fillText(closingLine,cx,cntY+44);
+  drawTracked(x,"playfandna.com",cx,cntY+84,"400 24px 'DM Mono',monospace","#7878a0",3);
   return await new Promise(res=>cv.toBlob(res,"image/png"));
 }
 
