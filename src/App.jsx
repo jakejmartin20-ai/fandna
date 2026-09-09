@@ -1037,8 +1037,9 @@ function AppInner(){
   function genomeCode(){ return encodeGenome({coreProfile, results: genome}); }
   function cardCaption(){
     const noun=regOf(activeSport).noun;
-    const seq="FanDNA: "+shareGroups.flatMap(g=>g.items).filter(t=>!/-\?$/.test(t)).join(" · ");
-    return [`Which ${noun} are you, really? Turns out I'm ${team.name}, ${archetypes[result]}.`, blk(coreProfile), seq+".", `Find yours: playfandna.com`].filter(Boolean).join("\n");
+    const _toks=shareGroups.flatMap(g=>g.items).filter(t=>!/-\?$/.test(t));
+    const seqLine=_toks.length<=4 ? ("FanDNA: "+_toks.join(" · ")+".") : ("FanDNA: "+_toks.length+" teams sequenced.");
+    return [`Which ${noun} are you, really? Turns out I'm ${team.name}, ${archetypes[result]}.`, blk(coreProfile), seqLine, `Find yours: playfandna.com`].filter(Boolean).join("\n");
   }
   function saveBlob(blob){
     const url=URL.createObjectURL(blob);
