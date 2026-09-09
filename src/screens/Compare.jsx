@@ -138,7 +138,7 @@ function Vs() {
 }
 function CrossBox({ label, line, note, cta, onClick }) {
   return (
-    <div style={{ border: "1px solid #2a2a3a", borderRadius: 12, background: "#15151f", padding: "16px 16px 18px", marginTop: 22 }}>
+    <div style={{ border: "1px solid #2a2a3a", borderLeft: "4px solid #6a5ad0", clipPath: "polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px)", background: "linear-gradient(120deg,#6a5ad016 0%,transparent 55%),#15151f", padding: "16px 16px 18px", marginTop: 22 }}>
       <div style={{ fontFamily: MONO, fontSize: 10, letterSpacing: "0.22em", textTransform: "uppercase", color: GOLD, marginBottom: 8 }}>{label}</div>
       <div style={{ fontFamily: CG, fontSize: "clamp(18px,4.2vw,22px)", color: "#e2ded8", lineHeight: 1.3 }}>{line}</div>
       {note && <div style={{ fontFamily: CG, fontStyle: "italic", fontSize: 15, color: "#8f8fb2", margin: "5px 0 14px" }}>{note}</div>}
