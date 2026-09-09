@@ -175,7 +175,7 @@ function SplitChart({ you, matched, supported, matchedName, supportedName, match
 }
 
 function Card({ children }){
-  return <div style={{background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:14,padding:"18px 16px",marginTop:18}}>{children}</div>;
+  return <div style={{background:"linear-gradient(120deg,#6a5ad016 0%,transparent 55%),#1e1e2e",border:"1px solid #2a2a3a",borderLeft:"4px solid #6a5ad0",clipPath:"polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px)",padding:"18px 16px",marginTop:18}}>{children}</div>;
 }
 function Eyebrow({ children }){
   return <div style={{fontFamily:MONO,fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#8484b0",marginBottom:13}}>{children}</div>;
@@ -253,7 +253,7 @@ export function CrossMatch({ sport, input, teams, teamDims = {}, coreProfile, te
       )}
 
       {supported === "NONE" && (
-        <div style={{marginTop:22,background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:14,padding:"22px 18px"}}>
+        <div style={{marginTop:22,background:"linear-gradient(120deg,#6a5ad016 0%,transparent 55%),#1e1e2e",border:"1px solid #2a2a3a",borderLeft:"4px solid #6a5ad0",clipPath:"polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px)",padding:"22px 18px"}}>
           <div style={{fontFamily:SERIF,fontSize:21,color:"#efe9e3",marginBottom:8,lineHeight:1.3}}>No {v.team} named, nothing to line up.</div>
           <p style={{fontSize:14,color:"#c8c4be",lineHeight:1.6,margin:0}}>The compare reads your {v.noun} against your DNA. With no {v.league} {v.team} to point at, there is nothing to compare yet. When more sports go live, this becomes a cross-sport read.</p>
         </div>

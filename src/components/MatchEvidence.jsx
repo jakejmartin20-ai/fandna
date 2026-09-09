@@ -32,7 +32,7 @@ export function MatchEvidence({ evidence, clubName, color = "#b8567a", noun = "c
 
       {section !== "why" && (<>
       {/* THE STRESS TEST, the proof */}
-      <div style={{background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:14,padding:"18px 16px"}}>
+      <div style={{background:"linear-gradient(120deg,#6a5ad016 0%,transparent 55%),#1e1e2e",border:"1px solid #2a2a3a",borderLeft:"4px solid #6a5ad0",clipPath:"polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px)",padding:"18px 16px"}}>
         <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#8484b0",marginBottom:12}}>The match, stress-tested</div>
         <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(16px,3.6vw,18px)",fontWeight:300,color:"#e4ddd4",lineHeight:1.55,margin:0}}>
           We went back through all {total} of your answers, changing each one at a time. {club} held through {safe} of them.
@@ -47,7 +47,7 @@ export function MatchEvidence({ evidence, clubName, color = "#b8567a", noun = "c
       {/* WHAT TIPPED IT, the texture. When nothing stands out (a genuine broad match), a strong
           line says so on purpose, so the result never reads as bare. */}
       {section !== "stability" && (tips.length > 0 ? (
-        <div style={{background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:14,padding:"18px 16px",marginTop:16}}>
+        <div style={{background:"linear-gradient(120deg,#6a5ad016 0%,transparent 55%),#1e1e2e",border:"1px solid #2a2a3a",borderLeft:"4px solid #6a5ad0",clipPath:"polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px)",padding:"18px 16px",marginTop:16}}>
           <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#8484b0",marginBottom:4}}>What tipped it</div>
           <p style={{fontSize:12.5,color:"#9696b4",lineHeight:1.45,margin:"0 0 12px"}}>The answers that pulled you hardest toward {club}.</p>
           {tips.map((t, i) => (
@@ -61,7 +61,7 @@ export function MatchEvidence({ evidence, clubName, color = "#b8567a", noun = "c
           ))}
         </div>
       ) : (
-        <div style={{background:"#1e1e2e",border:"1px solid #2a2a3a",borderRadius:14,padding:"18px 16px",marginTop:16}}>
+        <div style={{background:"linear-gradient(120deg,#6a5ad016 0%,transparent 55%),#1e1e2e",border:"1px solid #2a2a3a",borderLeft:"4px solid #6a5ad0",clipPath:"polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px)",padding:"18px 16px",marginTop:16}}>
           <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#8484b0",marginBottom:10}}>Why this lands</div>
           <p style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:19,lineHeight:1.45,color:"#e4ddd4",margin:0}}>This match runs deeper than any one answer. {club} is where your whole core settles, not a {noun} one choice tipped you into. A broad match like this is its own kind of strong.</p>
         </div>
