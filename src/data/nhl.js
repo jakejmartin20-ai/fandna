@@ -1612,7 +1612,10 @@ const nearlyGot = {
 const scoring = {
   "nhl_q1": {
     "A": {
-      "DAL": 2
+      "DAL": 2,
+      "STL": 2,
+      "CAR": 2,
+      "NJD": 2
     },
     "B": {
       "MTL": 2,
@@ -1621,7 +1624,6 @@ const scoring = {
       "EDM": 2,
       "VAN": 2,
       "OTT": 2,
-      "STL": 2,
       "MIN": 2,
       "CBJ": 2,
       "COL": 2,
@@ -1630,7 +1632,6 @@ const scoring = {
     },
     "C": {
       "NYR": 2,
-      "CAR": 2,
       "PIT": 2,
       "WSH": 2,
       "LAK": 2,
@@ -1641,8 +1642,7 @@ const scoring = {
     },
     "D": {
       "WPG": 2,
-      "NYI": 2,
-      "NJD": 2
+      "NYI": 2
     },
     "E": {
       "BOS": 2,
