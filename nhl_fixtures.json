@@ -1,2728 +1,2729 @@
 {
- "meta": {
-  "purpose": "NHL regression gate. Each fixture is an input the live NHL engine maps to a team. Any future change to src/data/nhl.js scoring (or the shared fingerprint engine in src/lib/scoring.js) must reproduce every winner here, or the diff must be reviewed and accepted.",
-  "generated": "2026-08-07",
-  "source": "Baselined at the NHL convergence build (32 teams, 12 module questions, sliders nhl_q3/q6/q9). NHL is a fingerprint sport like NFL/MLB/NBA: coreProfile vs teamDims plus module-point tiebreakers. One honest scoring fix during the gate: Boston was swallowed by Philadelphia (near-identical rows); re-keyed BOS q4 E->A ('it lasts') and q7 B->A ('does both halves, the standard') onto genuinely-Boston pedigree cells (BOS self-reach 0%->65%). Post-build HARD Lane gate (anchor-calibrated to Serie A ROM 82.7% / NAP 95.4%): 32/32 signatures self-land, zero swallowed, Lane floor CHI ~36% (bar ~7%), uniform top magnet LAK ~6.2%. | Re-baselined at the slider-footprint redesign: nhl_q3/q6/q9 replaced 3 flat buckets with honest per-team footprints (peak at the team's trait position, lean by boundary). 17 signature answers moved to new peaks; 12 random winners re-recorded.",
-  "synthetic_caveat": "Signatures pin coreProfile to each team's own teamDims and use that team's signature module answers; they measure ENGINE BEHAVIOR (reachability), not real-taker prevalence. Random fixtures are seeded uniform inputs generated and replayed on the CURRENT engine. Reachability is not prevalence.",
-  "signature_method": "coreProfile = teamDims; moduleAnswers = the option the team sits in per choice question, strong end (1 or 5) of its slider camp, neutral 3 where the team is off the slider.",
-  "counts": {
-   "signature": 32,
-   "random": 40,
-   "total": 72,
-   "signatures_self_land": true,
-   "spine": {
-    "scored_slots": [
-     "S2",
-     "S4"
+  "meta": {
+    "purpose": "NHL regression gate. Each fixture is an input the live NHL engine maps to a team. Any future change to src/data/nhl.js scoring (or the shared fingerprint engine in src/lib/scoring.js) must reproduce every winner here, or the diff must be reviewed and accepted.",
+    "generated": "2026-08-07",
+    "source": "Baselined at the NHL convergence build (32 teams, 12 module questions, sliders nhl_q3/q6/q9). NHL is a fingerprint sport like NFL/MLB/NBA: coreProfile vs teamDims plus module-point tiebreakers. One honest scoring fix during the gate: Boston was swallowed by Philadelphia (near-identical rows); re-keyed BOS q4 E->A ('it lasts') and q7 B->A ('does both halves, the standard') onto genuinely-Boston pedigree cells (BOS self-reach 0%->65%). Post-build HARD Lane gate (anchor-calibrated to Serie A ROM 82.7% / NAP 95.4%): 32/32 signatures self-land, zero swallowed, Lane floor CHI ~36% (bar ~7%), uniform top magnet LAK ~6.2%. | Re-baselined at the slider-footprint redesign: nhl_q3/q6/q9 replaced 3 flat buckets with honest per-team footprints (peak at the team's trait position, lean by boundary). 17 signature answers moved to new peaks; 12 random winners re-recorded.",
+    "synthetic_caveat": "Signatures pin coreProfile to each team's own teamDims and use that team's signature module answers; they measure ENGINE BEHAVIOR (reachability), not real-taker prevalence. Random fixtures are seeded uniform inputs generated and replayed on the CURRENT engine. Reachability is not prevalence.",
+    "signature_method": "coreProfile = teamDims; moduleAnswers = the option the team sits in per choice question, strong end (1 or 5) of its slider camp, neutral 3 where the team is off the slider.",
+    "counts": {
+      "signature": 32,
+      "random": 40,
+      "total": 72,
+      "signatures_self_land": true,
+      "spine": {
+        "scored_slots": [
+          "S2",
+          "S4"
+        ],
+        "unique": 10
+      }
+    },
+    "rebaselined": "2026-08-06 s25: NHL sliders q3/q6/q9 re-authored to three-position (instinct/center/plan, tradition/center/fresh, responsibility/center/defer) by trait tertiles (chaos/root/ambition). Re-recorded on live main engine.",
+    "fpW": 1.5,
+    "rebaselined_s31": "2026-08-10 s31: NHL FP_W 1.2->1.5 (per-league module-weight tuning pass, >1% reachability knee). Signatures self-land unchanged; 7 random winners re-recorded.",
+    "rebaselined_s42": "2026-08-19 s42: NHL onto the shared spine (Option B). S4 (roots) carry-over from nhl_q6, S2 (pressure) re-author from nhl_q11 (six 'stay level' clubs unleaned). Dropped nhl_q6/nhl_q11 from the module (10 unique). Fixtures carry explicit spineAnswers {S2,S4}; winners re-recorded on the spine engine.",
+    "rebaseline_note": [
+      "s52 NHL fix: nhl-spine MODULE_UNIQUE corrected to [nhl_q1..nhl_q6] so the reverence question (nhl_q6) is actually scored. The prior ship silently filtered it out (live ran 5 questions). Winners re-recorded on the true 6-question engine; self-land 32/32.",
+      "s51 NHL lean-module rebuild: module cut 12->6 (dropped 8 spine-echoes; kept+sharpened the following question; added the reverence-vs-celebration question). Research-grounded identities (see fandna-nhl-souls.md). Seattle teamDim scale-up (community 6->8, emotion 5->7). Self-land 32/32. All 72 fixtures re-recorded under the new engine."
     ],
-    "unique": 10
-   }
+    "rebaselined_s77": "graded module (flat +2 -> 3/2/1) + CHI dims emotion 9 / community 7; FP_W 1.5 unchanged; 9 fixtures re-recorded"
   },
-  "rebaselined": "2026-08-06 s25: NHL sliders q3/q6/q9 re-authored to three-position (instinct/center/plan, tradition/center/fresh, responsibility/center/defer) by trait tertiles (chaos/root/ambition). Re-recorded on live main engine.",
-  "fpW": 1.5,
-  "rebaselined_s31": "2026-08-10 s31: NHL FP_W 1.2->1.5 (per-league module-weight tuning pass, >1% reachability knee). Signatures self-land unchanged; 7 random winners re-recorded.",
-  "rebaselined_s42": "2026-08-19 s42: NHL onto the shared spine (Option B). S4 (roots) carry-over from nhl_q6, S2 (pressure) re-author from nhl_q11 (six 'stay level' clubs unleaned). Dropped nhl_q6/nhl_q11 from the module (10 unique). Fixtures carry explicit spineAnswers {S2,S4}; winners re-recorded on the spine engine.",
-  "rebaseline_note": [
-   "s52 NHL fix: nhl-spine MODULE_UNIQUE corrected to [nhl_q1..nhl_q6] so the reverence question (nhl_q6) is actually scored. The prior ship silently filtered it out (live ran 5 questions). Winners re-recorded on the true 6-question engine; self-land 32/32.",
-   "s51 NHL lean-module rebuild: module cut 12->6 (dropped 8 spine-echoes; kept+sharpened the following question; added the reverence-vs-celebration question). Research-grounded identities (see fandna-nhl-souls.md). Seattle teamDim scale-up (community 6->8, emotion 5->7). Self-land 32/32. All 72 fixtures re-recorded under the new engine."
+  "fixtures": [
+    {
+      "id": "sig_MTL",
+      "kind": "signature",
+      "forTeam": "MTL",
+      "coreProfile": {
+        "loyalty": 8.831571764705883,
+        "emotion": 7.062535294117647,
+        "ambition": 8.297920000000001,
+        "process": 4.075270588235294,
+        "community": 5.8381670588235295,
+        "chaos": 3.7977541176470586,
+        "rootedness": 8.826888235294117
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "A",
+        "nhl_q3": "B",
+        "nhl_q4": "A",
+        "nhl_q5": "A",
+        "nhl_q6": "A"
+      },
+      "winner": "MTL",
+      "winnerName": "Montreal Canadiens",
+      "spineAnswers": {
+        "S2": "C",
+        "S4": "1"
+      }
+    },
+    {
+      "id": "sig_TOR",
+      "kind": "signature",
+      "forTeam": "TOR",
+      "coreProfile": {
+        "loyalty": 8.831571764705883,
+        "emotion": 7.715476470588236,
+        "ambition": 7.473214117647059,
+        "process": 2.9693882352941174,
+        "community": 5.8381670588235295,
+        "chaos": 4.9406952941176465,
+        "rootedness": 8.826888235294117
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "A",
+        "nhl_q3": "A",
+        "nhl_q4": "C",
+        "nhl_q5": "A",
+        "nhl_q6": "A"
+      },
+      "winner": "TOR",
+      "winnerName": "Toronto Maple Leafs",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "1"
+      }
+    },
+    {
+      "id": "sig_BOS",
+      "kind": "signature",
+      "forTeam": "BOS",
+      "coreProfile": {
+        "loyalty": 7.810395294117647,
+        "emotion": 7.062535294117647,
+        "ambition": 7.473214117647059,
+        "process": 5.181152941176471,
+        "community": 5.8381670588235295,
+        "chaos": 6.083636470588235,
+        "rootedness": 7.800417647058824
+      },
+      "moduleAnswers": {
+        "nhl_q1": "E",
+        "nhl_q2": "B",
+        "nhl_q3": "A",
+        "nhl_q4": "A",
+        "nhl_q5": "A",
+        "nhl_q6": "A"
+      },
+      "winner": "BOS",
+      "winnerName": "Boston Bruins",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "sig_DET",
+      "kind": "signature",
+      "forTeam": "DET",
+      "coreProfile": {
+        "loyalty": 7.810395294117647,
+        "emotion": 5.756652941176471,
+        "ambition": 7.473214117647059,
+        "process": 7.392917647058823,
+        "community": 5.8381670588235295,
+        "chaos": 2.6548129411764707,
+        "rootedness": 7.800417647058824
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "B",
+        "nhl_q3": "B",
+        "nhl_q4": "A",
+        "nhl_q5": "A",
+        "nhl_q6": "A"
+      },
+      "winner": "DET",
+      "winnerName": "Detroit Red Wings",
+      "spineAnswers": {
+        "S2": "B",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "sig_CHI",
+      "kind": "signature",
+      "forTeam": "CHI",
+      "coreProfile": {
+        "loyalty": 6.789218823529412,
+        "emotion": 6.4095941176470586,
+        "ambition": 7.473214117647059,
+        "process": 4.075270588235294,
+        "community": 4.725225882352941,
+        "chaos": 6.083636470588235,
+        "rootedness": 6.77394705882353
+      },
+      "moduleAnswers": {
+        "nhl_q1": "E",
+        "nhl_q2": "A",
+        "nhl_q3": "C",
+        "nhl_q4": "A",
+        "nhl_q5": "A",
+        "nhl_q6": "A"
+      },
+      "winner": "CHI",
+      "winnerName": "Chicago Blackhawks",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "sig_NYR",
+      "kind": "signature",
+      "forTeam": "NYR",
+      "coreProfile": {
+        "loyalty": 6.789218823529412,
+        "emotion": 7.062535294117647,
+        "ambition": 7.473214117647059,
+        "process": 4.075270588235294,
+        "community": 3.6122847058823524,
+        "chaos": 6.083636470588235,
+        "rootedness": 7.800417647058824
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "A",
+        "nhl_q3": "B",
+        "nhl_q4": "A",
+        "nhl_q5": "A",
+        "nhl_q6": "A"
+      },
+      "winner": "NYR",
+      "winnerName": "New York Rangers",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "sig_EDM",
+      "kind": "signature",
+      "forTeam": "EDM",
+      "coreProfile": {
+        "loyalty": 6.789218823529412,
+        "emotion": 7.062535294117647,
+        "ambition": 8.297920000000001,
+        "process": 2.9693882352941174,
+        "community": 5.8381670588235295,
+        "chaos": 7.226577647058823,
+        "rootedness": 6.77394705882353
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "B",
+        "nhl_q3": "B",
+        "nhl_q4": "A",
+        "nhl_q5": "B",
+        "nhl_q6": "A"
+      },
+      "winner": "EDM",
+      "winnerName": "Edmonton Oilers",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "sig_CGY",
+      "kind": "signature",
+      "forTeam": "CGY",
+      "coreProfile": {
+        "loyalty": 7.810395294117647,
+        "emotion": 6.4095941176470586,
+        "ambition": 6.648508235294118,
+        "process": 4.075270588235294,
+        "community": 6.951108235294117,
+        "chaos": 4.9406952941176465,
+        "rootedness": 6.77394705882353
+      },
+      "moduleAnswers": {
+        "nhl_q1": "E",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "B",
+        "nhl_q5": "B",
+        "nhl_q6": "A"
+      },
+      "winner": "CGY",
+      "winnerName": "Calgary Flames",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "sig_VAN",
+      "kind": "signature",
+      "forTeam": "VAN",
+      "coreProfile": {
+        "loyalty": 6.789218823529412,
+        "emotion": 7.715476470588236,
+        "ambition": 6.648508235294118,
+        "process": 2.9693882352941174,
+        "community": 5.8381670588235295,
+        "chaos": 7.226577647058823,
+        "rootedness": 5.747476470588235
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "B",
+        "nhl_q3": "C",
+        "nhl_q4": "C",
+        "nhl_q5": "B",
+        "nhl_q6": "A"
+      },
+      "winner": "VAN",
+      "winnerName": "Vancouver Canucks",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "sig_WPG",
+      "kind": "signature",
+      "forTeam": "WPG",
+      "coreProfile": {
+        "loyalty": 7.810395294117647,
+        "emotion": 6.4095941176470586,
+        "ambition": 5.823802352941177,
+        "process": 5.181152941176471,
+        "community": 8.064049411764705,
+        "chaos": 3.7977541176470586,
+        "rootedness": 4.721005882352941
+      },
+      "moduleAnswers": {
+        "nhl_q1": "D",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "C",
+        "nhl_q5": "B",
+        "nhl_q6": "A"
+      },
+      "winner": "WPG",
+      "winnerName": "Winnipeg Jets",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "sig_OTT",
+      "kind": "signature",
+      "forTeam": "OTT",
+      "coreProfile": {
+        "loyalty": 6.789218823529412,
+        "emotion": 6.4095941176470586,
+        "ambition": 4.999096470588236,
+        "process": 4.075270588235294,
+        "community": 6.951108235294117,
+        "chaos": 6.083636470588235,
+        "rootedness": 3.694535294117647
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "C",
+        "nhl_q3": "C",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "A"
+      },
+      "winner": "OTT",
+      "winnerName": "Ottawa Senators",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "4"
+      }
+    },
+    {
+      "id": "sig_PHI",
+      "kind": "signature",
+      "forTeam": "PHI",
+      "coreProfile": {
+        "loyalty": 7.810395294117647,
+        "emotion": 7.715476470588236,
+        "ambition": 6.648508235294118,
+        "process": 4.075270588235294,
+        "community": 5.8381670588235295,
+        "chaos": 8.369518823529411,
+        "rootedness": 6.77394705882353
+      },
+      "moduleAnswers": {
+        "nhl_q1": "E",
+        "nhl_q2": "B",
+        "nhl_q3": "A",
+        "nhl_q4": "A",
+        "nhl_q5": "B",
+        "nhl_q6": "A"
+      },
+      "winner": "PHI",
+      "winnerName": "Philadelphia Flyers",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "sig_BUF",
+      "kind": "signature",
+      "forTeam": "BUF",
+      "coreProfile": {
+        "loyalty": 7.810395294117647,
+        "emotion": 7.062535294117647,
+        "ambition": 5.823802352941177,
+        "process": 4.075270588235294,
+        "community": 6.951108235294117,
+        "chaos": 4.9406952941176465,
+        "rootedness": 5.747476470588235
+      },
+      "moduleAnswers": {
+        "nhl_q1": "E",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "C",
+        "nhl_q5": "B",
+        "nhl_q6": "A"
+      },
+      "winner": "BUF",
+      "winnerName": "Buffalo Sabres",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "sig_STL",
+      "kind": "signature",
+      "forTeam": "STL",
+      "coreProfile": {
+        "loyalty": 7.810395294117647,
+        "emotion": 6.4095941176470586,
+        "ambition": 6.648508235294118,
+        "process": 5.181152941176471,
+        "community": 6.951108235294117,
+        "chaos": 4.9406952941176465,
+        "rootedness": 5.747476470588235
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "B",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
+      },
+      "winner": "STL",
+      "winnerName": "St. Louis Blues",
+      "spineAnswers": {
+        "S2": "C",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "sig_NYI",
+      "kind": "signature",
+      "forTeam": "NYI",
+      "coreProfile": {
+        "loyalty": 7.810395294117647,
+        "emotion": 6.4095941176470586,
+        "ambition": 6.648508235294118,
+        "process": 6.287035294117647,
+        "community": 5.8381670588235295,
+        "chaos": 3.7977541176470586,
+        "rootedness": 5.747476470588235
+      },
+      "moduleAnswers": {
+        "nhl_q1": "D",
+        "nhl_q2": "B",
+        "nhl_q3": "A",
+        "nhl_q4": "A",
+        "nhl_q5": "B",
+        "nhl_q6": "A"
+      },
+      "winner": "NYI",
+      "winnerName": "New York Islanders",
+      "spineAnswers": {
+        "S2": "C",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "sig_MIN",
+      "kind": "signature",
+      "forTeam": "MIN",
+      "coreProfile": {
+        "loyalty": 7.810395294117647,
+        "emotion": 5.756652941176471,
+        "ambition": 5.823802352941177,
+        "process": 5.181152941176471,
+        "community": 8.064049411764705,
+        "chaos": 2.6548129411764707,
+        "rootedness": 5.747476470588235
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "A"
+      },
+      "winner": "MIN",
+      "winnerName": "Minnesota Wild",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "sig_NSH",
+      "kind": "signature",
+      "forTeam": "NSH",
+      "coreProfile": {
+        "loyalty": 6.789218823529412,
+        "emotion": 7.062535294117647,
+        "ambition": 5.823802352941177,
+        "process": 5.181152941176471,
+        "community": 8.064049411764705,
+        "chaos": 6.083636470588235,
+        "rootedness": 3.694535294117647
+      },
+      "moduleAnswers": {
+        "nhl_q1": "E",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
+      },
+      "winner": "NSH",
+      "winnerName": "Nashville Predators",
+      "spineAnswers": {
+        "S2": "D",
+        "S4": "4"
+      }
+    },
+    {
+      "id": "sig_CBJ",
+      "kind": "signature",
+      "forTeam": "CBJ",
+      "coreProfile": {
+        "loyalty": 6.789218823529412,
+        "emotion": 6.4095941176470586,
+        "ambition": 4.999096470588236,
+        "process": 5.181152941176471,
+        "community": 5.8381670588235295,
+        "chaos": 4.9406952941176465,
+        "rootedness": 3.694535294117647
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "C"
+      },
+      "winner": "CBJ",
+      "winnerName": "Columbus Blue Jackets",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "4"
+      }
+    },
+    {
+      "id": "sig_NJD",
+      "kind": "signature",
+      "forTeam": "NJD",
+      "coreProfile": {
+        "loyalty": 5.768042352941176,
+        "emotion": 5.103711764705882,
+        "ambition": 6.648508235294118,
+        "process": 9.604682352941175,
+        "community": 3.6122847058823524,
+        "chaos": 2.6548129411764707,
+        "rootedness": 4.721005882352941
+      },
+      "moduleAnswers": {
+        "nhl_q1": "D",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "B",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
+      },
+      "winner": "NJD",
+      "winnerName": "New Jersey Devils",
+      "spineAnswers": {
+        "S2": "B",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "sig_CAR",
+      "kind": "signature",
+      "forTeam": "CAR",
+      "coreProfile": {
+        "loyalty": 5.768042352941176,
+        "emotion": 5.756652941176471,
+        "ambition": 6.648508235294118,
+        "process": 8.4988,
+        "community": 4.725225882352941,
+        "chaos": 6.083636470588235,
+        "rootedness": 3.694535294117647
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "B",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
+      },
+      "winner": "CAR",
+      "winnerName": "Carolina Hurricanes",
+      "spineAnswers": {
+        "S2": "C",
+        "S4": "4"
+      }
+    },
+    {
+      "id": "sig_DAL",
+      "kind": "signature",
+      "forTeam": "DAL",
+      "coreProfile": {
+        "loyalty": 5.768042352941176,
+        "emotion": 5.756652941176471,
+        "ambition": 6.648508235294118,
+        "process": 7.392917647058823,
+        "community": 4.725225882352941,
+        "chaos": 3.7977541176470586,
+        "rootedness": 4.721005882352941
+      },
+      "moduleAnswers": {
+        "nhl_q1": "A",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "B",
+        "nhl_q5": "B",
+        "nhl_q6": "B"
+      },
+      "winner": "DAL",
+      "winnerName": "Dallas Stars",
+      "spineAnswers": {
+        "S2": "C",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "sig_PIT",
+      "kind": "signature",
+      "forTeam": "PIT",
+      "coreProfile": {
+        "loyalty": 6.789218823529412,
+        "emotion": 6.4095941176470586,
+        "ambition": 8.297920000000001,
+        "process": 5.181152941176471,
+        "community": 3.6122847058823524,
+        "chaos": 6.083636470588235,
+        "rootedness": 5.747476470588235
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "A",
+        "nhl_q3": "B",
+        "nhl_q4": "A",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
+      },
+      "winner": "PIT",
+      "winnerName": "Pittsburgh Penguins",
+      "spineAnswers": {
+        "S2": "C",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "sig_WSH",
+      "kind": "signature",
+      "forTeam": "WSH",
+      "coreProfile": {
+        "loyalty": 6.789218823529412,
+        "emotion": 7.062535294117647,
+        "ambition": 7.473214117647059,
+        "process": 4.075270588235294,
+        "community": 4.725225882352941,
+        "chaos": 6.083636470588235,
+        "rootedness": 4.721005882352941
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "B",
+        "nhl_q3": "A",
+        "nhl_q4": "B",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
+      },
+      "winner": "WSH",
+      "winnerName": "Washington Capitals",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "sig_COL",
+      "kind": "signature",
+      "forTeam": "COL",
+      "coreProfile": {
+        "loyalty": 5.768042352941176,
+        "emotion": 5.756652941176471,
+        "ambition": 8.297920000000001,
+        "process": 6.287035294117647,
+        "community": 3.6122847058823524,
+        "chaos": 4.9406952941176465,
+        "rootedness": 4.721005882352941
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "A",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
+      },
+      "winner": "COL",
+      "winnerName": "Colorado Avalanche",
+      "spineAnswers": {
+        "S2": "C",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "sig_LAK",
+      "kind": "signature",
+      "forTeam": "LAK",
+      "coreProfile": {
+        "loyalty": 5.768042352941176,
+        "emotion": 5.756652941176471,
+        "ambition": 7.473214117647059,
+        "process": 6.287035294117647,
+        "community": 3.6122847058823524,
+        "chaos": 4.9406952941176465,
+        "rootedness": 4.721005882352941
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "A",
+        "nhl_q3": "A",
+        "nhl_q4": "B",
+        "nhl_q5": "B",
+        "nhl_q6": "B"
+      },
+      "winner": "LAK",
+      "winnerName": "Los Angeles Kings",
+      "spineAnswers": {
+        "S2": "B",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "sig_TBL",
+      "kind": "signature",
+      "forTeam": "TBL",
+      "coreProfile": {
+        "loyalty": 5.768042352941176,
+        "emotion": 6.4095941176470586,
+        "ambition": 8.297920000000001,
+        "process": 6.287035294117647,
+        "community": 4.725225882352941,
+        "chaos": 4.9406952941176465,
+        "rootedness": 3.694535294117647
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "B",
+        "nhl_q3": "B",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
+      },
+      "winner": "TBL",
+      "winnerName": "Tampa Bay Lightning",
+      "spineAnswers": {
+        "S2": "C",
+        "S4": "4"
+      }
+    },
+    {
+      "id": "sig_VGK",
+      "kind": "signature",
+      "forTeam": "VGK",
+      "coreProfile": {
+        "loyalty": 4.7468658823529415,
+        "emotion": 6.4095941176470586,
+        "ambition": 8.297920000000001,
+        "process": 5.181152941176471,
+        "community": 4.725225882352941,
+        "chaos": 7.226577647058823,
+        "rootedness": 1.6415941176470579
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "A",
+        "nhl_q3": "A",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
+      },
+      "winner": "VGK",
+      "winnerName": "Vegas Golden Knights",
+      "spineAnswers": {
+        "S2": "B",
+        "S4": "4"
+      }
+    },
+    {
+      "id": "sig_FLA",
+      "kind": "signature",
+      "forTeam": "FLA",
+      "coreProfile": {
+        "loyalty": 5.768042352941176,
+        "emotion": 6.4095941176470586,
+        "ambition": 7.473214117647059,
+        "process": 6.287035294117647,
+        "community": 3.6122847058823524,
+        "chaos": 7.226577647058823,
+        "rootedness": 2.6680647058823523
+      },
+      "moduleAnswers": {
+        "nhl_q1": "E",
+        "nhl_q2": "B",
+        "nhl_q3": "A",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
+      },
+      "winner": "FLA",
+      "winnerName": "Florida Panthers",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "4"
+      }
+    },
+    {
+      "id": "sig_SEA",
+      "kind": "signature",
+      "forTeam": "SEA",
+      "coreProfile": {
+        "loyalty": 4.7468658823529415,
+        "emotion": 6.4095941176470586,
+        "ambition": 4.999096470588236,
+        "process": 5.181152941176471,
+        "community": 6.951108235294117,
+        "chaos": 3.7977541176470586,
+        "rootedness": 1.6415941176470579
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "B",
+        "nhl_q3": "B",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
+      },
+      "winner": "SEA",
+      "winnerName": "Seattle Kraken",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "4"
+      }
+    },
+    {
+      "id": "sig_UTA",
+      "kind": "signature",
+      "forTeam": "UTA",
+      "coreProfile": {
+        "loyalty": 4.7468658823529415,
+        "emotion": 5.103711764705882,
+        "ambition": 4.999096470588236,
+        "process": 5.181152941176471,
+        "community": 4.725225882352941,
+        "chaos": 4.9406952941176465,
+        "rootedness": 0.6151235294117647
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "C"
+      },
+      "winner": "UTA",
+      "winnerName": "Utah Mammoth",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "5"
+      }
+    },
+    {
+      "id": "sig_ANA",
+      "kind": "signature",
+      "forTeam": "ANA",
+      "coreProfile": {
+        "loyalty": 5.768042352941176,
+        "emotion": 5.756652941176471,
+        "ambition": 5.823802352941177,
+        "process": 5.181152941176471,
+        "community": 3.6122847058823524,
+        "chaos": 4.9406952941176465,
+        "rootedness": 2.6680647058823523
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "B",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
+      },
+      "winner": "ANA",
+      "winnerName": "Anaheim Ducks",
+      "spineAnswers": {
+        "S2": "D",
+        "S4": "4"
+      }
+    },
+    {
+      "id": "sig_SJS",
+      "kind": "signature",
+      "forTeam": "SJS",
+      "coreProfile": {
+        "loyalty": 6.789218823529412,
+        "emotion": 6.4095941176470586,
+        "ambition": 6.648508235294118,
+        "process": 5.181152941176471,
+        "community": 4.725225882352941,
+        "chaos": 4.9406952941176465,
+        "rootedness": 3.694535294117647
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "C"
+      },
+      "winner": "SJS",
+      "winnerName": "San Jose Sharks",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "4"
+      }
+    },
+    {
+      "id": "rnd_001",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "C",
+        "q2": "left",
+        "q3": "B",
+        "q4": "4",
+        "q5": "A",
+        "q6": "E",
+        "q7": "A",
+        "q8": "2",
+        "q9": "B",
+        "q10": "D",
+        "q11": "D",
+        "q12": "2",
+        "q13": "C",
+        "q14": "left",
+        "q15": "E",
+        "q16": "5",
+        "q17": "A",
+        "q18": "right",
+        "q19": "E",
+        "q20": "3",
+        "q21": "B",
+        "q22": "A",
+        "q23": "C",
+        "q24": "4"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "B",
+        "nhl_q3": "A",
+        "nhl_q4": "B",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
+      },
+      "winner": "NSH",
+      "winnerName": "Nashville Predators",
+      "spineAnswers": {
+        "S2": "C",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "rnd_002",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "C",
+        "q2": "right",
+        "q3": "C",
+        "q4": "2",
+        "q5": "C",
+        "q6": "C",
+        "q7": "D",
+        "q8": "5",
+        "q9": "C",
+        "q10": "E",
+        "q11": "A",
+        "q12": "4",
+        "q13": "E",
+        "q14": "left",
+        "q15": "A",
+        "q16": "5",
+        "q17": "C",
+        "q18": "right",
+        "q19": "E",
+        "q20": "2",
+        "q21": "D",
+        "q22": "E",
+        "q23": "B",
+        "q24": "5"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "B",
+        "nhl_q3": "A",
+        "nhl_q4": "B",
+        "nhl_q5": "C",
+        "nhl_q6": "A"
+      },
+      "winner": "WSH",
+      "winnerName": "Washington Capitals",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "1"
+      }
+    },
+    {
+      "id": "rnd_003",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "C",
+        "q2": "left",
+        "q3": "B",
+        "q4": "4",
+        "q5": "D",
+        "q6": "E",
+        "q7": "B",
+        "q8": "3",
+        "q9": "E",
+        "q10": "E",
+        "q11": "A",
+        "q12": "3",
+        "q13": "D",
+        "q14": "left",
+        "q15": "A",
+        "q16": "5",
+        "q17": "D",
+        "q18": "right",
+        "q19": "B",
+        "q20": "2",
+        "q21": "D",
+        "q22": "B",
+        "q23": "D",
+        "q24": "2"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "B",
+        "nhl_q3": "C",
+        "nhl_q4": "B",
+        "nhl_q5": "B",
+        "nhl_q6": "A"
+      },
+      "winner": "WSH",
+      "winnerName": "Washington Capitals",
+      "spineAnswers": {
+        "S2": "B",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "rnd_004",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "B",
+        "q2": "left",
+        "q3": "C",
+        "q4": "3",
+        "q5": "A",
+        "q6": "E",
+        "q7": "C",
+        "q8": "3",
+        "q9": "E",
+        "q10": "E",
+        "q11": "A",
+        "q12": "3",
+        "q13": "A",
+        "q14": "left",
+        "q15": "A",
+        "q16": "3",
+        "q17": "C",
+        "q18": "left",
+        "q19": "E",
+        "q20": "2",
+        "q21": "E",
+        "q22": "E",
+        "q23": "B",
+        "q24": "1"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "A",
+        "nhl_q3": "C",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "C"
+      },
+      "winner": "CHI",
+      "winnerName": "Chicago Blackhawks",
+      "spineAnswers": {
+        "S2": "D",
+        "S4": "5"
+      }
+    },
+    {
+      "id": "rnd_005",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "D",
+        "q2": "right",
+        "q3": "C",
+        "q4": "1",
+        "q5": "A",
+        "q6": "D",
+        "q7": "E",
+        "q8": "3",
+        "q9": "C",
+        "q10": "D",
+        "q11": "D",
+        "q12": "2",
+        "q13": "D",
+        "q14": "left",
+        "q15": "D",
+        "q16": "4",
+        "q17": "B",
+        "q18": "left",
+        "q19": "B",
+        "q20": "2",
+        "q21": "C",
+        "q22": "B",
+        "q23": "A",
+        "q24": "3"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "A",
+        "nhl_q3": "C",
+        "nhl_q4": "C",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
+      },
+      "winner": "PIT",
+      "winnerName": "Pittsburgh Penguins",
+      "spineAnswers": {
+        "S2": "C",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "rnd_006",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "D",
+        "q2": "right",
+        "q3": "E",
+        "q4": "3",
+        "q5": "D",
+        "q6": "B",
+        "q7": "E",
+        "q8": "3",
+        "q9": "A",
+        "q10": "D",
+        "q11": "A",
+        "q12": "4",
+        "q13": "A",
+        "q14": "left",
+        "q15": "E",
+        "q16": "1",
+        "q17": "E",
+        "q18": "left",
+        "q19": "B",
+        "q20": "3",
+        "q21": "A",
+        "q22": "B",
+        "q23": "B",
+        "q24": "2"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "B",
+        "nhl_q5": "B",
+        "nhl_q6": "A"
+      },
+      "winner": "CGY",
+      "winnerName": "Calgary Flames",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "rnd_007",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "C",
+        "q2": "right",
+        "q3": "A",
+        "q4": "4",
+        "q5": "A",
+        "q6": "B",
+        "q7": "E",
+        "q8": "4",
+        "q9": "C",
+        "q10": "D",
+        "q11": "D",
+        "q12": "4",
+        "q13": "D",
+        "q14": "right",
+        "q15": "B",
+        "q16": "2",
+        "q17": "E",
+        "q18": "right",
+        "q19": "D",
+        "q20": "4",
+        "q21": "E",
+        "q22": "D",
+        "q23": "E",
+        "q24": "2"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "A",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "B",
+        "nhl_q5": "A",
+        "nhl_q6": "A"
+      },
+      "winner": "CAR",
+      "winnerName": "Carolina Hurricanes",
+      "spineAnswers": {
+        "S2": "D",
+        "S4": "1"
+      }
+    },
+    {
+      "id": "rnd_008",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "B",
+        "q2": "right",
+        "q3": "D",
+        "q4": "5",
+        "q5": "A",
+        "q6": "C",
+        "q7": "A",
+        "q8": "3",
+        "q9": "E",
+        "q10": "D",
+        "q11": "E",
+        "q12": "4",
+        "q13": "B",
+        "q14": "left",
+        "q15": "A",
+        "q16": "4",
+        "q17": "C",
+        "q18": "right",
+        "q19": "E",
+        "q20": "4",
+        "q21": "C",
+        "q22": "A",
+        "q23": "C",
+        "q24": "1"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "A",
+        "nhl_q2": "B",
+        "nhl_q3": "C",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "A"
+      },
+      "winner": "OTT",
+      "winnerName": "Ottawa Senators",
+      "spineAnswers": {
+        "S2": "B",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "rnd_009",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "C",
+        "q2": "left",
+        "q3": "E",
+        "q4": "4",
+        "q5": "A",
+        "q6": "D",
+        "q7": "A",
+        "q8": "5",
+        "q9": "B",
+        "q10": "B",
+        "q11": "D",
+        "q12": "3",
+        "q13": "E",
+        "q14": "right",
+        "q15": "D",
+        "q16": "1",
+        "q17": "A",
+        "q18": "left",
+        "q19": "A",
+        "q20": "3",
+        "q21": "C",
+        "q22": "C",
+        "q23": "C",
+        "q24": "4"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "B",
+        "nhl_q3": "A",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "C"
+      },
+      "winner": "WSH",
+      "winnerName": "Washington Capitals",
+      "spineAnswers": {
+        "S2": "D",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "rnd_010",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "C",
+        "q2": "left",
+        "q3": "A",
+        "q4": "3",
+        "q5": "E",
+        "q6": "E",
+        "q7": "E",
+        "q8": "1",
+        "q9": "D",
+        "q10": "A",
+        "q11": "C",
+        "q12": "1",
+        "q13": "E",
+        "q14": "right",
+        "q15": "A",
+        "q16": "5",
+        "q17": "C",
+        "q18": "left",
+        "q19": "D",
+        "q20": "1",
+        "q21": "B",
+        "q22": "A",
+        "q23": "E",
+        "q24": "5"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "E",
+        "nhl_q2": "A",
+        "nhl_q3": "C",
+        "nhl_q4": "B",
+        "nhl_q5": "C",
+        "nhl_q6": "C"
+      },
+      "winner": "STL",
+      "winnerName": "St. Louis Blues",
+      "spineAnswers": {
+        "S2": "C",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "rnd_011",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "C",
+        "q2": "left",
+        "q3": "E",
+        "q4": "4",
+        "q5": "A",
+        "q6": "B",
+        "q7": "A",
+        "q8": "3",
+        "q9": "D",
+        "q10": "E",
+        "q11": "B",
+        "q12": "4",
+        "q13": "B",
+        "q14": "right",
+        "q15": "B",
+        "q16": "3",
+        "q17": "C",
+        "q18": "right",
+        "q19": "C",
+        "q20": "2",
+        "q21": "C",
+        "q22": "E",
+        "q23": "A",
+        "q24": "5"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "A",
+        "nhl_q3": "A",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "A"
+      },
+      "winner": "TOR",
+      "winnerName": "Toronto Maple Leafs",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "rnd_012",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "C",
+        "q2": "left",
+        "q3": "E",
+        "q4": "4",
+        "q5": "A",
+        "q6": "C",
+        "q7": "D",
+        "q8": "1",
+        "q9": "E",
+        "q10": "A",
+        "q11": "A",
+        "q12": "4",
+        "q13": "D",
+        "q14": "left",
+        "q15": "C",
+        "q16": "2",
+        "q17": "C",
+        "q18": "left",
+        "q19": "C",
+        "q20": "4",
+        "q21": "E",
+        "q22": "B",
+        "q23": "B",
+        "q24": "2"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "A",
+        "nhl_q2": "A",
+        "nhl_q3": "C",
+        "nhl_q4": "B",
+        "nhl_q5": "A",
+        "nhl_q6": "B"
+      },
+      "winner": "CHI",
+      "winnerName": "Chicago Blackhawks",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "1"
+      }
+    },
+    {
+      "id": "rnd_013",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "A",
+        "q2": "right",
+        "q3": "A",
+        "q4": "2",
+        "q5": "A",
+        "q6": "B",
+        "q7": "D",
+        "q8": "4",
+        "q9": "E",
+        "q10": "D",
+        "q11": "B",
+        "q12": "1",
+        "q13": "D",
+        "q14": "right",
+        "q15": "D",
+        "q16": "1",
+        "q17": "B",
+        "q18": "right",
+        "q19": "C",
+        "q20": "5",
+        "q21": "E",
+        "q22": "C",
+        "q23": "C",
+        "q24": "4"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "A",
+        "nhl_q3": "C",
+        "nhl_q4": "B",
+        "nhl_q5": "B",
+        "nhl_q6": "A"
+      },
+      "winner": "CGY",
+      "winnerName": "Calgary Flames",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "rnd_014",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "D",
+        "q2": "right",
+        "q3": "C",
+        "q4": "3",
+        "q5": "B",
+        "q6": "B",
+        "q7": "C",
+        "q8": "1",
+        "q9": "C",
+        "q10": "E",
+        "q11": "C",
+        "q12": "5",
+        "q13": "B",
+        "q14": "left",
+        "q15": "A",
+        "q16": "3",
+        "q17": "C",
+        "q18": "left",
+        "q19": "B",
+        "q20": "2",
+        "q21": "C",
+        "q22": "C",
+        "q23": "B",
+        "q24": "3"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "A",
+        "nhl_q5": "A",
+        "nhl_q6": "A"
+      },
+      "winner": "ANA",
+      "winnerName": "Anaheim Ducks",
+      "spineAnswers": {
+        "S2": "D",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "rnd_015",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "C",
+        "q2": "right",
+        "q3": "D",
+        "q4": "3",
+        "q5": "E",
+        "q6": "B",
+        "q7": "E",
+        "q8": "2",
+        "q9": "A",
+        "q10": "B",
+        "q11": "A",
+        "q12": "5",
+        "q13": "D",
+        "q14": "right",
+        "q15": "B",
+        "q16": "4",
+        "q17": "A",
+        "q18": "left",
+        "q19": "A",
+        "q20": "4",
+        "q21": "D",
+        "q22": "D",
+        "q23": "A",
+        "q24": "1"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "B",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
+      },
+      "winner": "NJD",
+      "winnerName": "New Jersey Devils",
+      "spineAnswers": {
+        "S2": "D",
+        "S4": "1"
+      }
+    },
+    {
+      "id": "rnd_016",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "A",
+        "q2": "right",
+        "q3": "C",
+        "q4": "3",
+        "q5": "A",
+        "q6": "D",
+        "q7": "E",
+        "q8": "5",
+        "q9": "D",
+        "q10": "E",
+        "q11": "A",
+        "q12": "3",
+        "q13": "A",
+        "q14": "left",
+        "q15": "B",
+        "q16": "2",
+        "q17": "B",
+        "q18": "left",
+        "q19": "A",
+        "q20": "1",
+        "q21": "B",
+        "q22": "C",
+        "q23": "B",
+        "q24": "5"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "C",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
+      },
+      "winner": "COL",
+      "winnerName": "Colorado Avalanche",
+      "spineAnswers": {
+        "S2": "B",
+        "S4": "1"
+      }
+    },
+    {
+      "id": "rnd_017",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "E",
+        "q2": "right",
+        "q3": "B",
+        "q4": "1",
+        "q5": "C",
+        "q6": "C",
+        "q7": "E",
+        "q8": "1",
+        "q9": "A",
+        "q10": "C",
+        "q11": "D",
+        "q12": "2",
+        "q13": "B",
+        "q14": "right",
+        "q15": "E",
+        "q16": "5",
+        "q17": "D",
+        "q18": "right",
+        "q19": "E",
+        "q20": "5",
+        "q21": "B",
+        "q22": "A",
+        "q23": "E",
+        "q24": "5"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "D",
+        "nhl_q2": "B",
+        "nhl_q3": "A",
+        "nhl_q4": "C",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
+      },
+      "winner": "CBJ",
+      "winnerName": "Columbus Blue Jackets",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "4"
+      }
+    },
+    {
+      "id": "rnd_018",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "A",
+        "q2": "right",
+        "q3": "C",
+        "q4": "5",
+        "q5": "E",
+        "q6": "C",
+        "q7": "C",
+        "q8": "5",
+        "q9": "A",
+        "q10": "C",
+        "q11": "C",
+        "q12": "5",
+        "q13": "C",
+        "q14": "left",
+        "q15": "D",
+        "q16": "1",
+        "q17": "B",
+        "q18": "right",
+        "q19": "E",
+        "q20": "1",
+        "q21": "C",
+        "q22": "C",
+        "q23": "C",
+        "q24": "5"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "E",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "C",
+        "nhl_q5": "A",
+        "nhl_q6": "A"
+      },
+      "winner": "BUF",
+      "winnerName": "Buffalo Sabres",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "4"
+      }
+    },
+    {
+      "id": "rnd_019",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "B",
+        "q2": "left",
+        "q3": "A",
+        "q4": "5",
+        "q5": "A",
+        "q6": "C",
+        "q7": "D",
+        "q8": "5",
+        "q9": "C",
+        "q10": "A",
+        "q11": "C",
+        "q12": "2",
+        "q13": "C",
+        "q14": "right",
+        "q15": "A",
+        "q16": "5",
+        "q17": "A",
+        "q18": "left",
+        "q19": "D",
+        "q20": "2",
+        "q21": "D",
+        "q22": "A",
+        "q23": "C",
+        "q24": "2"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "A",
+        "nhl_q3": "A",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
+      },
+      "winner": "NSH",
+      "winnerName": "Nashville Predators",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "1"
+      }
+    },
+    {
+      "id": "rnd_020",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "E",
+        "q2": "left",
+        "q3": "B",
+        "q4": "2",
+        "q5": "E",
+        "q6": "E",
+        "q7": "A",
+        "q8": "5",
+        "q9": "C",
+        "q10": "C",
+        "q11": "A",
+        "q12": "2",
+        "q13": "B",
+        "q14": "left",
+        "q15": "E",
+        "q16": "2",
+        "q17": "D",
+        "q18": "right",
+        "q19": "D",
+        "q20": "2",
+        "q21": "A",
+        "q22": "E",
+        "q23": "D",
+        "q24": "4"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "A",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "B",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
+      },
+      "winner": "STL",
+      "winnerName": "St. Louis Blues",
+      "spineAnswers": {
+        "S2": "B",
+        "S4": "4"
+      }
+    },
+    {
+      "id": "rnd_021",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "E",
+        "q2": "left",
+        "q3": "A",
+        "q4": "4",
+        "q5": "A",
+        "q6": "D",
+        "q7": "E",
+        "q8": "5",
+        "q9": "E",
+        "q10": "E",
+        "q11": "E",
+        "q12": "3",
+        "q13": "C",
+        "q14": "left",
+        "q15": "E",
+        "q16": "1",
+        "q17": "B",
+        "q18": "left",
+        "q19": "E",
+        "q20": "4",
+        "q21": "C",
+        "q22": "B",
+        "q23": "C",
+        "q24": "2"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "A",
+        "nhl_q2": "A",
+        "nhl_q3": "B",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
+      },
+      "winner": "CAR",
+      "winnerName": "Carolina Hurricanes",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "4"
+      }
+    },
+    {
+      "id": "rnd_022",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "C",
+        "q2": "right",
+        "q3": "A",
+        "q4": "5",
+        "q5": "B",
+        "q6": "B",
+        "q7": "D",
+        "q8": "4",
+        "q9": "A",
+        "q10": "B",
+        "q11": "B",
+        "q12": "4",
+        "q13": "B",
+        "q14": "left",
+        "q15": "A",
+        "q16": "4",
+        "q17": "A",
+        "q18": "right",
+        "q19": "D",
+        "q20": "4",
+        "q21": "C",
+        "q22": "D",
+        "q23": "D",
+        "q24": "2"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "A",
+        "nhl_q2": "A",
+        "nhl_q3": "B",
+        "nhl_q4": "B",
+        "nhl_q5": "A",
+        "nhl_q6": "B"
+      },
+      "winner": "CAR",
+      "winnerName": "Carolina Hurricanes",
+      "spineAnswers": {
+        "S2": "C",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "rnd_023",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "E",
+        "q2": "right",
+        "q3": "C",
+        "q4": "2",
+        "q5": "A",
+        "q6": "E",
+        "q7": "C",
+        "q8": "3",
+        "q9": "B",
+        "q10": "D",
+        "q11": "A",
+        "q12": "2",
+        "q13": "E",
+        "q14": "left",
+        "q15": "E",
+        "q16": "5",
+        "q17": "A",
+        "q18": "left",
+        "q19": "B",
+        "q20": "4",
+        "q21": "D",
+        "q22": "D",
+        "q23": "B",
+        "q24": "3"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "A",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "B",
+        "nhl_q5": "A",
+        "nhl_q6": "C"
+      },
+      "winner": "STL",
+      "winnerName": "St. Louis Blues",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "rnd_024",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "E",
+        "q2": "right",
+        "q3": "B",
+        "q4": "4",
+        "q5": "E",
+        "q6": "D",
+        "q7": "B",
+        "q8": "4",
+        "q9": "A",
+        "q10": "E",
+        "q11": "B",
+        "q12": "3",
+        "q13": "D",
+        "q14": "right",
+        "q15": "E",
+        "q16": "5",
+        "q17": "D",
+        "q18": "right",
+        "q19": "B",
+        "q20": "5",
+        "q21": "A",
+        "q22": "D",
+        "q23": "C",
+        "q24": "5"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "A",
+        "nhl_q2": "B",
+        "nhl_q3": "A",
+        "nhl_q4": "A",
+        "nhl_q5": "A",
+        "nhl_q6": "C"
+      },
+      "winner": "BOS",
+      "winnerName": "Boston Bruins",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "rnd_025",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "D",
+        "q2": "left",
+        "q3": "E",
+        "q4": "2",
+        "q5": "C",
+        "q6": "C",
+        "q7": "A",
+        "q8": "1",
+        "q9": "C",
+        "q10": "D",
+        "q11": "B",
+        "q12": "5",
+        "q13": "D",
+        "q14": "left",
+        "q15": "A",
+        "q16": "3",
+        "q17": "E",
+        "q18": "left",
+        "q19": "B",
+        "q20": "4",
+        "q21": "C",
+        "q22": "E",
+        "q23": "B",
+        "q24": "3"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "D",
+        "nhl_q2": "A",
+        "nhl_q3": "B",
+        "nhl_q4": "B",
+        "nhl_q5": "C",
+        "nhl_q6": "A"
+      },
+      "winner": "NYR",
+      "winnerName": "New York Rangers",
+      "spineAnswers": {
+        "S2": "B",
+        "S4": "4"
+      }
+    },
+    {
+      "id": "rnd_026",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "B",
+        "q2": "right",
+        "q3": "E",
+        "q4": "1",
+        "q5": "B",
+        "q6": "E",
+        "q7": "D",
+        "q8": "2",
+        "q9": "A",
+        "q10": "A",
+        "q11": "D",
+        "q12": "1",
+        "q13": "B",
+        "q14": "right",
+        "q15": "D",
+        "q16": "5",
+        "q17": "B",
+        "q18": "right",
+        "q19": "A",
+        "q20": "5",
+        "q21": "C",
+        "q22": "C",
+        "q23": "E",
+        "q24": "1"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "E",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "A",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
+      },
+      "winner": "BUF",
+      "winnerName": "Buffalo Sabres",
+      "spineAnswers": {
+        "S2": "B",
+        "S4": "4"
+      }
+    },
+    {
+      "id": "rnd_027",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "E",
+        "q2": "left",
+        "q3": "C",
+        "q4": "2",
+        "q5": "E",
+        "q6": "E",
+        "q7": "B",
+        "q8": "1",
+        "q9": "C",
+        "q10": "C",
+        "q11": "A",
+        "q12": "3",
+        "q13": "E",
+        "q14": "left",
+        "q15": "E",
+        "q16": "2",
+        "q17": "D",
+        "q18": "right",
+        "q19": "E",
+        "q20": "1",
+        "q21": "A",
+        "q22": "C",
+        "q23": "D",
+        "q24": "1"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "A",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "B",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
+      },
+      "winner": "STL",
+      "winnerName": "St. Louis Blues",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "rnd_028",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "C",
+        "q2": "left",
+        "q3": "B",
+        "q4": "3",
+        "q5": "D",
+        "q6": "C",
+        "q7": "B",
+        "q8": "4",
+        "q9": "C",
+        "q10": "E",
+        "q11": "C",
+        "q12": "3",
+        "q13": "A",
+        "q14": "left",
+        "q15": "D",
+        "q16": "3",
+        "q17": "D",
+        "q18": "right",
+        "q19": "A",
+        "q20": "2",
+        "q21": "C",
+        "q22": "A",
+        "q23": "B",
+        "q24": "3"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "A",
+        "nhl_q2": "A",
+        "nhl_q3": "B",
+        "nhl_q4": "B",
+        "nhl_q5": "A",
+        "nhl_q6": "B"
+      },
+      "winner": "NYR",
+      "winnerName": "New York Rangers",
+      "spineAnswers": {
+        "S2": "D",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "rnd_029",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "E",
+        "q2": "left",
+        "q3": "B",
+        "q4": "4",
+        "q5": "B",
+        "q6": "A",
+        "q7": "C",
+        "q8": "5",
+        "q9": "B",
+        "q10": "B",
+        "q11": "A",
+        "q12": "1",
+        "q13": "E",
+        "q14": "left",
+        "q15": "B",
+        "q16": "4",
+        "q17": "E",
+        "q18": "left",
+        "q19": "A",
+        "q20": "5",
+        "q21": "D",
+        "q22": "B",
+        "q23": "B",
+        "q24": "1"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "A",
+        "nhl_q2": "B",
+        "nhl_q3": "C",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
+      },
+      "winner": "TBL",
+      "winnerName": "Tampa Bay Lightning",
+      "spineAnswers": {
+        "S2": "D",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "rnd_030",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "A",
+        "q2": "left",
+        "q3": "A",
+        "q4": "5",
+        "q5": "D",
+        "q6": "B",
+        "q7": "A",
+        "q8": "3",
+        "q9": "D",
+        "q10": "B",
+        "q11": "C",
+        "q12": "2",
+        "q13": "D",
+        "q14": "right",
+        "q15": "D",
+        "q16": "3",
+        "q17": "C",
+        "q18": "left",
+        "q19": "D",
+        "q20": "1",
+        "q21": "D",
+        "q22": "A",
+        "q23": "D",
+        "q24": "1"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "D",
+        "nhl_q2": "A",
+        "nhl_q3": "A",
+        "nhl_q4": "A",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
+      },
+      "winner": "LAK",
+      "winnerName": "Los Angeles Kings",
+      "spineAnswers": {
+        "S2": "B",
+        "S4": "3"
+      }
+    },
+    {
+      "id": "rnd_031",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "C",
+        "q2": "left",
+        "q3": "A",
+        "q4": "1",
+        "q5": "E",
+        "q6": "D",
+        "q7": "B",
+        "q8": "2",
+        "q9": "A",
+        "q10": "D",
+        "q11": "B",
+        "q12": "5",
+        "q13": "A",
+        "q14": "left",
+        "q15": "D",
+        "q16": "5",
+        "q17": "D",
+        "q18": "right",
+        "q19": "A",
+        "q20": "3",
+        "q21": "D",
+        "q22": "D",
+        "q23": "A",
+        "q24": "4"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "A",
+        "nhl_q3": "C",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
+      },
+      "winner": "NYR",
+      "winnerName": "New York Rangers",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "5"
+      }
+    },
+    {
+      "id": "rnd_032",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "B",
+        "q2": "left",
+        "q3": "A",
+        "q4": "4",
+        "q5": "B",
+        "q6": "E",
+        "q7": "D",
+        "q8": "1",
+        "q9": "C",
+        "q10": "D",
+        "q11": "E",
+        "q12": "4",
+        "q13": "E",
+        "q14": "left",
+        "q15": "E",
+        "q16": "4",
+        "q17": "B",
+        "q18": "right",
+        "q19": "A",
+        "q20": "4",
+        "q21": "D",
+        "q22": "D",
+        "q23": "B",
+        "q24": "2"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "C"
+      },
+      "winner": "SJS",
+      "winnerName": "San Jose Sharks",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "5"
+      }
+    },
+    {
+      "id": "rnd_033",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "E",
+        "q2": "left",
+        "q3": "E",
+        "q4": "3",
+        "q5": "B",
+        "q6": "A",
+        "q7": "B",
+        "q8": "2",
+        "q9": "C",
+        "q10": "D",
+        "q11": "C",
+        "q12": "5",
+        "q13": "B",
+        "q14": "right",
+        "q15": "D",
+        "q16": "5",
+        "q17": "E",
+        "q18": "left",
+        "q19": "B",
+        "q20": "1",
+        "q21": "D",
+        "q22": "E",
+        "q23": "D",
+        "q24": "1"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "C",
+        "nhl_q3": "B",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "C"
+      },
+      "winner": "SJS",
+      "winnerName": "San Jose Sharks",
+      "spineAnswers": {
+        "S2": "B",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "rnd_034",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "D",
+        "q2": "right",
+        "q3": "B",
+        "q4": "1",
+        "q5": "D",
+        "q6": "D",
+        "q7": "D",
+        "q8": "1",
+        "q9": "C",
+        "q10": "A",
+        "q11": "A",
+        "q12": "1",
+        "q13": "C",
+        "q14": "right",
+        "q15": "D",
+        "q16": "1",
+        "q17": "B",
+        "q18": "left",
+        "q19": "B",
+        "q20": "4",
+        "q21": "D",
+        "q22": "D",
+        "q23": "E",
+        "q24": "2"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "D",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "C",
+        "nhl_q5": "A",
+        "nhl_q6": "C"
+      },
+      "winner": "NJD",
+      "winnerName": "New Jersey Devils",
+      "spineAnswers": {
+        "S2": "B",
+        "S4": "5"
+      }
+    },
+    {
+      "id": "rnd_035",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "C",
+        "q2": "left",
+        "q3": "D",
+        "q4": "3",
+        "q5": "C",
+        "q6": "E",
+        "q7": "A",
+        "q8": "3",
+        "q9": "A",
+        "q10": "C",
+        "q11": "D",
+        "q12": "5",
+        "q13": "A",
+        "q14": "right",
+        "q15": "E",
+        "q16": "4",
+        "q17": "E",
+        "q18": "left",
+        "q19": "A",
+        "q20": "3",
+        "q21": "B",
+        "q22": "C",
+        "q23": "E",
+        "q24": "3"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "C",
+        "nhl_q2": "B",
+        "nhl_q3": "C",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
+      },
+      "winner": "FLA",
+      "winnerName": "Florida Panthers",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "4"
+      }
+    },
+    {
+      "id": "rnd_036",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "A",
+        "q2": "right",
+        "q3": "E",
+        "q4": "2",
+        "q5": "B",
+        "q6": "C",
+        "q7": "D",
+        "q8": "5",
+        "q9": "B",
+        "q10": "E",
+        "q11": "A",
+        "q12": "2",
+        "q13": "B",
+        "q14": "right",
+        "q15": "E",
+        "q16": "5",
+        "q17": "E",
+        "q18": "right",
+        "q19": "D",
+        "q20": "4",
+        "q21": "D",
+        "q22": "A",
+        "q23": "B",
+        "q24": "3"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "A",
+        "nhl_q2": "A",
+        "nhl_q3": "C",
+        "nhl_q4": "B",
+        "nhl_q5": "A",
+        "nhl_q6": "C"
+      },
+      "winner": "STL",
+      "winnerName": "St. Louis Blues",
+      "spineAnswers": {
+        "S2": "C",
+        "S4": "5"
+      }
+    },
+    {
+      "id": "rnd_037",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "C",
+        "q2": "right",
+        "q3": "A",
+        "q4": "1",
+        "q5": "D",
+        "q6": "B",
+        "q7": "B",
+        "q8": "2",
+        "q9": "B",
+        "q10": "C",
+        "q11": "C",
+        "q12": "5",
+        "q13": "B",
+        "q14": "left",
+        "q15": "C",
+        "q16": "5",
+        "q17": "B",
+        "q18": "left",
+        "q19": "B",
+        "q20": "1",
+        "q21": "B",
+        "q22": "C",
+        "q23": "D",
+        "q24": "3"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "B",
+        "nhl_q3": "B",
+        "nhl_q4": "A",
+        "nhl_q5": "C",
+        "nhl_q6": "B"
+      },
+      "winner": "TBL",
+      "winnerName": "Tampa Bay Lightning",
+      "spineAnswers": {
+        "S2": "D",
+        "S4": "4"
+      }
+    },
+    {
+      "id": "rnd_038",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "B",
+        "q2": "right",
+        "q3": "C",
+        "q4": "1",
+        "q5": "C",
+        "q6": "C",
+        "q7": "A",
+        "q8": "5",
+        "q9": "A",
+        "q10": "C",
+        "q11": "A",
+        "q12": "2",
+        "q13": "A",
+        "q14": "left",
+        "q15": "B",
+        "q16": "2",
+        "q17": "D",
+        "q18": "right",
+        "q19": "E",
+        "q20": "4",
+        "q21": "A",
+        "q22": "A",
+        "q23": "D",
+        "q24": "5"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "D",
+        "nhl_q2": "B",
+        "nhl_q3": "C",
+        "nhl_q4": "C",
+        "nhl_q5": "B",
+        "nhl_q6": "A"
+      },
+      "winner": "VAN",
+      "winnerName": "Vancouver Canucks",
+      "spineAnswers": {
+        "S2": "B",
+        "S4": "1"
+      }
+    },
+    {
+      "id": "rnd_039",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "C",
+        "q2": "right",
+        "q3": "A",
+        "q4": "1",
+        "q5": "E",
+        "q6": "A",
+        "q7": "C",
+        "q8": "2",
+        "q9": "B",
+        "q10": "B",
+        "q11": "C",
+        "q12": "3",
+        "q13": "D",
+        "q14": "left",
+        "q15": "A",
+        "q16": "1",
+        "q17": "C",
+        "q18": "right",
+        "q19": "B",
+        "q20": "3",
+        "q21": "C",
+        "q22": "A",
+        "q23": "E",
+        "q24": "3"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "A",
+        "nhl_q2": "A",
+        "nhl_q3": "A",
+        "nhl_q4": "C",
+        "nhl_q5": "C",
+        "nhl_q6": "A"
+      },
+      "winner": "TOR",
+      "winnerName": "Toronto Maple Leafs",
+      "spineAnswers": {
+        "S2": "A",
+        "S4": "2"
+      }
+    },
+    {
+      "id": "rnd_040",
+      "kind": "random",
+      "forTeam": null,
+      "coreAnswers": {
+        "q1": "A",
+        "q2": "right",
+        "q3": "E",
+        "q4": "5",
+        "q5": "D",
+        "q6": "C",
+        "q7": "A",
+        "q8": "1",
+        "q9": "C",
+        "q10": "B",
+        "q11": "D",
+        "q12": "4",
+        "q13": "A",
+        "q14": "right",
+        "q15": "E",
+        "q16": "2",
+        "q17": "B",
+        "q18": "right",
+        "q19": "D",
+        "q20": "4",
+        "q21": "C",
+        "q22": "E",
+        "q23": "C",
+        "q24": "5"
+      },
+      "moduleAnswers": {
+        "nhl_q1": "B",
+        "nhl_q2": "C",
+        "nhl_q3": "A",
+        "nhl_q4": "C",
+        "nhl_q5": "B",
+        "nhl_q6": "C"
+      },
+      "winner": "CBJ",
+      "winnerName": "Columbus Blue Jackets",
+      "spineAnswers": {
+        "S2": "C",
+        "S4": "2"
+      }
+    }
   ]
- },
- "fixtures": [
-  {
-   "id": "sig_MTL",
-   "kind": "signature",
-   "forTeam": "MTL",
-   "coreProfile": {
-    "loyalty": 8.831571764705883,
-    "emotion": 7.062535294117647,
-    "ambition": 8.297920000000001,
-    "process": 4.075270588235294,
-    "community": 5.8381670588235295,
-    "chaos": 3.7977541176470586,
-    "rootedness": 8.826888235294117
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "A",
-    "nhl_q3": "B",
-    "nhl_q4": "A",
-    "nhl_q5": "A",
-    "nhl_q6": "A"
-   },
-   "winner": "MTL",
-   "winnerName": "Montreal Canadiens",
-   "spineAnswers": {
-    "S2": "C",
-    "S4": "1"
-   }
-  },
-  {
-   "id": "sig_TOR",
-   "kind": "signature",
-   "forTeam": "TOR",
-   "coreProfile": {
-    "loyalty": 8.831571764705883,
-    "emotion": 7.715476470588236,
-    "ambition": 7.473214117647059,
-    "process": 2.9693882352941174,
-    "community": 5.8381670588235295,
-    "chaos": 4.9406952941176465,
-    "rootedness": 8.826888235294117
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "A",
-    "nhl_q3": "A",
-    "nhl_q4": "C",
-    "nhl_q5": "A",
-    "nhl_q6": "A"
-   },
-   "winner": "TOR",
-   "winnerName": "Toronto Maple Leafs",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "1"
-   }
-  },
-  {
-   "id": "sig_BOS",
-   "kind": "signature",
-   "forTeam": "BOS",
-   "coreProfile": {
-    "loyalty": 7.810395294117647,
-    "emotion": 7.062535294117647,
-    "ambition": 7.473214117647059,
-    "process": 5.181152941176471,
-    "community": 5.8381670588235295,
-    "chaos": 6.083636470588235,
-    "rootedness": 7.800417647058824
-   },
-   "moduleAnswers": {
-    "nhl_q1": "E",
-    "nhl_q2": "B",
-    "nhl_q3": "A",
-    "nhl_q4": "A",
-    "nhl_q5": "A",
-    "nhl_q6": "A"
-   },
-   "winner": "BOS",
-   "winnerName": "Boston Bruins",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "sig_DET",
-   "kind": "signature",
-   "forTeam": "DET",
-   "coreProfile": {
-    "loyalty": 7.810395294117647,
-    "emotion": 5.756652941176471,
-    "ambition": 7.473214117647059,
-    "process": 7.392917647058823,
-    "community": 5.8381670588235295,
-    "chaos": 2.6548129411764707,
-    "rootedness": 7.800417647058824
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "B",
-    "nhl_q3": "B",
-    "nhl_q4": "A",
-    "nhl_q5": "A",
-    "nhl_q6": "A"
-   },
-   "winner": "DET",
-   "winnerName": "Detroit Red Wings",
-   "spineAnswers": {
-    "S2": "B",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "sig_CHI",
-   "kind": "signature",
-   "forTeam": "CHI",
-   "coreProfile": {
-    "loyalty": 6.789218823529412,
-    "emotion": 6.4095941176470586,
-    "ambition": 7.473214117647059,
-    "process": 4.075270588235294,
-    "community": 4.725225882352941,
-    "chaos": 6.083636470588235,
-    "rootedness": 6.77394705882353
-   },
-   "moduleAnswers": {
-    "nhl_q1": "E",
-    "nhl_q2": "A",
-    "nhl_q3": "C",
-    "nhl_q4": "A",
-    "nhl_q5": "A",
-    "nhl_q6": "A"
-   },
-   "winner": "CHI",
-   "winnerName": "Chicago Blackhawks",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "sig_NYR",
-   "kind": "signature",
-   "forTeam": "NYR",
-   "coreProfile": {
-    "loyalty": 6.789218823529412,
-    "emotion": 7.062535294117647,
-    "ambition": 7.473214117647059,
-    "process": 4.075270588235294,
-    "community": 3.6122847058823524,
-    "chaos": 6.083636470588235,
-    "rootedness": 7.800417647058824
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "A",
-    "nhl_q3": "B",
-    "nhl_q4": "A",
-    "nhl_q5": "A",
-    "nhl_q6": "A"
-   },
-   "winner": "NYR",
-   "winnerName": "New York Rangers",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "sig_EDM",
-   "kind": "signature",
-   "forTeam": "EDM",
-   "coreProfile": {
-    "loyalty": 6.789218823529412,
-    "emotion": 7.062535294117647,
-    "ambition": 8.297920000000001,
-    "process": 2.9693882352941174,
-    "community": 5.8381670588235295,
-    "chaos": 7.226577647058823,
-    "rootedness": 6.77394705882353
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "B",
-    "nhl_q3": "B",
-    "nhl_q4": "A",
-    "nhl_q5": "B",
-    "nhl_q6": "A"
-   },
-   "winner": "EDM",
-   "winnerName": "Edmonton Oilers",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "sig_CGY",
-   "kind": "signature",
-   "forTeam": "CGY",
-   "coreProfile": {
-    "loyalty": 7.810395294117647,
-    "emotion": 6.4095941176470586,
-    "ambition": 6.648508235294118,
-    "process": 4.075270588235294,
-    "community": 6.951108235294117,
-    "chaos": 4.9406952941176465,
-    "rootedness": 6.77394705882353
-   },
-   "moduleAnswers": {
-    "nhl_q1": "E",
-    "nhl_q2": "C",
-    "nhl_q3": "A",
-    "nhl_q4": "B",
-    "nhl_q5": "B",
-    "nhl_q6": "A"
-   },
-   "winner": "CGY",
-   "winnerName": "Calgary Flames",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "sig_VAN",
-   "kind": "signature",
-   "forTeam": "VAN",
-   "coreProfile": {
-    "loyalty": 6.789218823529412,
-    "emotion": 7.715476470588236,
-    "ambition": 6.648508235294118,
-    "process": 2.9693882352941174,
-    "community": 5.8381670588235295,
-    "chaos": 7.226577647058823,
-    "rootedness": 5.747476470588235
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "B",
-    "nhl_q3": "C",
-    "nhl_q4": "C",
-    "nhl_q5": "B",
-    "nhl_q6": "A"
-   },
-   "winner": "VAN",
-   "winnerName": "Vancouver Canucks",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "sig_WPG",
-   "kind": "signature",
-   "forTeam": "WPG",
-   "coreProfile": {
-    "loyalty": 7.810395294117647,
-    "emotion": 6.4095941176470586,
-    "ambition": 5.823802352941177,
-    "process": 5.181152941176471,
-    "community": 8.064049411764705,
-    "chaos": 3.7977541176470586,
-    "rootedness": 4.721005882352941
-   },
-   "moduleAnswers": {
-    "nhl_q1": "D",
-    "nhl_q2": "C",
-    "nhl_q3": "A",
-    "nhl_q4": "C",
-    "nhl_q5": "B",
-    "nhl_q6": "A"
-   },
-   "winner": "WPG",
-   "winnerName": "Winnipeg Jets",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "sig_OTT",
-   "kind": "signature",
-   "forTeam": "OTT",
-   "coreProfile": {
-    "loyalty": 6.789218823529412,
-    "emotion": 6.4095941176470586,
-    "ambition": 4.999096470588236,
-    "process": 4.075270588235294,
-    "community": 6.951108235294117,
-    "chaos": 6.083636470588235,
-    "rootedness": 3.694535294117647
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "C",
-    "nhl_q3": "C",
-    "nhl_q4": "C",
-    "nhl_q5": "C",
-    "nhl_q6": "A"
-   },
-   "winner": "OTT",
-   "winnerName": "Ottawa Senators",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "4"
-   }
-  },
-  {
-   "id": "sig_PHI",
-   "kind": "signature",
-   "forTeam": "PHI",
-   "coreProfile": {
-    "loyalty": 7.810395294117647,
-    "emotion": 7.715476470588236,
-    "ambition": 6.648508235294118,
-    "process": 4.075270588235294,
-    "community": 5.8381670588235295,
-    "chaos": 8.369518823529411,
-    "rootedness": 6.77394705882353
-   },
-   "moduleAnswers": {
-    "nhl_q1": "E",
-    "nhl_q2": "B",
-    "nhl_q3": "A",
-    "nhl_q4": "A",
-    "nhl_q5": "B",
-    "nhl_q6": "A"
-   },
-   "winner": "PHI",
-   "winnerName": "Philadelphia Flyers",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "sig_BUF",
-   "kind": "signature",
-   "forTeam": "BUF",
-   "coreProfile": {
-    "loyalty": 7.810395294117647,
-    "emotion": 7.062535294117647,
-    "ambition": 5.823802352941177,
-    "process": 4.075270588235294,
-    "community": 6.951108235294117,
-    "chaos": 4.9406952941176465,
-    "rootedness": 5.747476470588235
-   },
-   "moduleAnswers": {
-    "nhl_q1": "E",
-    "nhl_q2": "C",
-    "nhl_q3": "A",
-    "nhl_q4": "C",
-    "nhl_q5": "B",
-    "nhl_q6": "A"
-   },
-   "winner": "BUF",
-   "winnerName": "Buffalo Sabres",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "sig_STL",
-   "kind": "signature",
-   "forTeam": "STL",
-   "coreProfile": {
-    "loyalty": 7.810395294117647,
-    "emotion": 6.4095941176470586,
-    "ambition": 6.648508235294118,
-    "process": 5.181152941176471,
-    "community": 6.951108235294117,
-    "chaos": 4.9406952941176465,
-    "rootedness": 5.747476470588235
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "C",
-    "nhl_q3": "A",
-    "nhl_q4": "B",
-    "nhl_q5": "B",
-    "nhl_q6": "C"
-   },
-   "winner": "STL",
-   "winnerName": "St. Louis Blues",
-   "spineAnswers": {
-    "S2": "C",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "sig_NYI",
-   "kind": "signature",
-   "forTeam": "NYI",
-   "coreProfile": {
-    "loyalty": 7.810395294117647,
-    "emotion": 6.4095941176470586,
-    "ambition": 6.648508235294118,
-    "process": 6.287035294117647,
-    "community": 5.8381670588235295,
-    "chaos": 3.7977541176470586,
-    "rootedness": 5.747476470588235
-   },
-   "moduleAnswers": {
-    "nhl_q1": "D",
-    "nhl_q2": "B",
-    "nhl_q3": "A",
-    "nhl_q4": "A",
-    "nhl_q5": "B",
-    "nhl_q6": "A"
-   },
-   "winner": "NYI",
-   "winnerName": "New York Islanders",
-   "spineAnswers": {
-    "S2": "C",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "sig_MIN",
-   "kind": "signature",
-   "forTeam": "MIN",
-   "coreProfile": {
-    "loyalty": 7.810395294117647,
-    "emotion": 5.756652941176471,
-    "ambition": 5.823802352941177,
-    "process": 5.181152941176471,
-    "community": 8.064049411764705,
-    "chaos": 2.6548129411764707,
-    "rootedness": 5.747476470588235
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "C",
-    "nhl_q3": "B",
-    "nhl_q4": "C",
-    "nhl_q5": "C",
-    "nhl_q6": "A"
-   },
-   "winner": "MIN",
-   "winnerName": "Minnesota Wild",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "sig_NSH",
-   "kind": "signature",
-   "forTeam": "NSH",
-   "coreProfile": {
-    "loyalty": 6.789218823529412,
-    "emotion": 7.062535294117647,
-    "ambition": 5.823802352941177,
-    "process": 5.181152941176471,
-    "community": 8.064049411764705,
-    "chaos": 6.083636470588235,
-    "rootedness": 3.694535294117647
-   },
-   "moduleAnswers": {
-    "nhl_q1": "E",
-    "nhl_q2": "C",
-    "nhl_q3": "A",
-    "nhl_q4": "C",
-    "nhl_q5": "C",
-    "nhl_q6": "B"
-   },
-   "winner": "NSH",
-   "winnerName": "Nashville Predators",
-   "spineAnswers": {
-    "S2": "D",
-    "S4": "4"
-   }
-  },
-  {
-   "id": "sig_CBJ",
-   "kind": "signature",
-   "forTeam": "CBJ",
-   "coreProfile": {
-    "loyalty": 6.789218823529412,
-    "emotion": 6.4095941176470586,
-    "ambition": 4.999096470588236,
-    "process": 5.181152941176471,
-    "community": 5.8381670588235295,
-    "chaos": 4.9406952941176465,
-    "rootedness": 3.694535294117647
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "C",
-    "nhl_q3": "A",
-    "nhl_q4": "C",
-    "nhl_q5": "C",
-    "nhl_q6": "C"
-   },
-   "winner": "CBJ",
-   "winnerName": "Columbus Blue Jackets",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "4"
-   }
-  },
-  {
-   "id": "sig_NJD",
-   "kind": "signature",
-   "forTeam": "NJD",
-   "coreProfile": {
-    "loyalty": 5.768042352941176,
-    "emotion": 5.103711764705882,
-    "ambition": 6.648508235294118,
-    "process": 9.604682352941175,
-    "community": 3.6122847058823524,
-    "chaos": 2.6548129411764707,
-    "rootedness": 4.721005882352941
-   },
-   "moduleAnswers": {
-    "nhl_q1": "D",
-    "nhl_q2": "C",
-    "nhl_q3": "A",
-    "nhl_q4": "B",
-    "nhl_q5": "B",
-    "nhl_q6": "C"
-   },
-   "winner": "NJD",
-   "winnerName": "New Jersey Devils",
-   "spineAnswers": {
-    "S2": "B",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "sig_CAR",
-   "kind": "signature",
-   "forTeam": "CAR",
-   "coreProfile": {
-    "loyalty": 5.768042352941176,
-    "emotion": 5.756652941176471,
-    "ambition": 6.648508235294118,
-    "process": 8.4988,
-    "community": 4.725225882352941,
-    "chaos": 6.083636470588235,
-    "rootedness": 3.694535294117647
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "C",
-    "nhl_q3": "B",
-    "nhl_q4": "B",
-    "nhl_q5": "C",
-    "nhl_q6": "B"
-   },
-   "winner": "CAR",
-   "winnerName": "Carolina Hurricanes",
-   "spineAnswers": {
-    "S2": "C",
-    "S4": "4"
-   }
-  },
-  {
-   "id": "sig_DAL",
-   "kind": "signature",
-   "forTeam": "DAL",
-   "coreProfile": {
-    "loyalty": 5.768042352941176,
-    "emotion": 5.756652941176471,
-    "ambition": 6.648508235294118,
-    "process": 7.392917647058823,
-    "community": 4.725225882352941,
-    "chaos": 3.7977541176470586,
-    "rootedness": 4.721005882352941
-   },
-   "moduleAnswers": {
-    "nhl_q1": "A",
-    "nhl_q2": "C",
-    "nhl_q3": "A",
-    "nhl_q4": "B",
-    "nhl_q5": "B",
-    "nhl_q6": "B"
-   },
-   "winner": "DAL",
-   "winnerName": "Dallas Stars",
-   "spineAnswers": {
-    "S2": "C",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "sig_PIT",
-   "kind": "signature",
-   "forTeam": "PIT",
-   "coreProfile": {
-    "loyalty": 6.789218823529412,
-    "emotion": 6.4095941176470586,
-    "ambition": 8.297920000000001,
-    "process": 5.181152941176471,
-    "community": 3.6122847058823524,
-    "chaos": 6.083636470588235,
-    "rootedness": 5.747476470588235
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "A",
-    "nhl_q3": "B",
-    "nhl_q4": "A",
-    "nhl_q5": "B",
-    "nhl_q6": "C"
-   },
-   "winner": "PIT",
-   "winnerName": "Pittsburgh Penguins",
-   "spineAnswers": {
-    "S2": "C",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "sig_WSH",
-   "kind": "signature",
-   "forTeam": "WSH",
-   "coreProfile": {
-    "loyalty": 6.789218823529412,
-    "emotion": 7.062535294117647,
-    "ambition": 7.473214117647059,
-    "process": 4.075270588235294,
-    "community": 4.725225882352941,
-    "chaos": 6.083636470588235,
-    "rootedness": 4.721005882352941
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "B",
-    "nhl_q3": "A",
-    "nhl_q4": "B",
-    "nhl_q5": "B",
-    "nhl_q6": "C"
-   },
-   "winner": "WSH",
-   "winnerName": "Washington Capitals",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "sig_COL",
-   "kind": "signature",
-   "forTeam": "COL",
-   "coreProfile": {
-    "loyalty": 5.768042352941176,
-    "emotion": 5.756652941176471,
-    "ambition": 8.297920000000001,
-    "process": 6.287035294117647,
-    "community": 3.6122847058823524,
-    "chaos": 4.9406952941176465,
-    "rootedness": 4.721005882352941
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "C",
-    "nhl_q3": "B",
-    "nhl_q4": "A",
-    "nhl_q5": "B",
-    "nhl_q6": "C"
-   },
-   "winner": "COL",
-   "winnerName": "Colorado Avalanche",
-   "spineAnswers": {
-    "S2": "C",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "sig_LAK",
-   "kind": "signature",
-   "forTeam": "LAK",
-   "coreProfile": {
-    "loyalty": 5.768042352941176,
-    "emotion": 5.756652941176471,
-    "ambition": 7.473214117647059,
-    "process": 6.287035294117647,
-    "community": 3.6122847058823524,
-    "chaos": 4.9406952941176465,
-    "rootedness": 4.721005882352941
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "A",
-    "nhl_q3": "A",
-    "nhl_q4": "B",
-    "nhl_q5": "B",
-    "nhl_q6": "B"
-   },
-   "winner": "LAK",
-   "winnerName": "Los Angeles Kings",
-   "spineAnswers": {
-    "S2": "B",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "sig_TBL",
-   "kind": "signature",
-   "forTeam": "TBL",
-   "coreProfile": {
-    "loyalty": 5.768042352941176,
-    "emotion": 6.4095941176470586,
-    "ambition": 8.297920000000001,
-    "process": 6.287035294117647,
-    "community": 4.725225882352941,
-    "chaos": 4.9406952941176465,
-    "rootedness": 3.694535294117647
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "B",
-    "nhl_q3": "B",
-    "nhl_q4": "A",
-    "nhl_q5": "C",
-    "nhl_q6": "B"
-   },
-   "winner": "TBL",
-   "winnerName": "Tampa Bay Lightning",
-   "spineAnswers": {
-    "S2": "C",
-    "S4": "4"
-   }
-  },
-  {
-   "id": "sig_VGK",
-   "kind": "signature",
-   "forTeam": "VGK",
-   "coreProfile": {
-    "loyalty": 4.7468658823529415,
-    "emotion": 6.4095941176470586,
-    "ambition": 8.297920000000001,
-    "process": 5.181152941176471,
-    "community": 4.725225882352941,
-    "chaos": 7.226577647058823,
-    "rootedness": 1.6415941176470579
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "A",
-    "nhl_q3": "A",
-    "nhl_q4": "A",
-    "nhl_q5": "C",
-    "nhl_q6": "B"
-   },
-   "winner": "VGK",
-   "winnerName": "Vegas Golden Knights",
-   "spineAnswers": {
-    "S2": "B",
-    "S4": "4"
-   }
-  },
-  {
-   "id": "sig_FLA",
-   "kind": "signature",
-   "forTeam": "FLA",
-   "coreProfile": {
-    "loyalty": 5.768042352941176,
-    "emotion": 6.4095941176470586,
-    "ambition": 7.473214117647059,
-    "process": 6.287035294117647,
-    "community": 3.6122847058823524,
-    "chaos": 7.226577647058823,
-    "rootedness": 2.6680647058823523
-   },
-   "moduleAnswers": {
-    "nhl_q1": "E",
-    "nhl_q2": "B",
-    "nhl_q3": "A",
-    "nhl_q4": "A",
-    "nhl_q5": "C",
-    "nhl_q6": "B"
-   },
-   "winner": "FLA",
-   "winnerName": "Florida Panthers",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "4"
-   }
-  },
-  {
-   "id": "sig_SEA",
-   "kind": "signature",
-   "forTeam": "SEA",
-   "coreProfile": {
-    "loyalty": 4.7468658823529415,
-    "emotion": 6.4095941176470586,
-    "ambition": 4.999096470588236,
-    "process": 5.181152941176471,
-    "community": 6.951108235294117,
-    "chaos": 3.7977541176470586,
-    "rootedness": 1.6415941176470579
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "B",
-    "nhl_q3": "B",
-    "nhl_q4": "C",
-    "nhl_q5": "C",
-    "nhl_q6": "B"
-   },
-   "winner": "SEA",
-   "winnerName": "Seattle Kraken",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "4"
-   }
-  },
-  {
-   "id": "sig_UTA",
-   "kind": "signature",
-   "forTeam": "UTA",
-   "coreProfile": {
-    "loyalty": 4.7468658823529415,
-    "emotion": 5.103711764705882,
-    "ambition": 4.999096470588236,
-    "process": 5.181152941176471,
-    "community": 4.725225882352941,
-    "chaos": 4.9406952941176465,
-    "rootedness": 0.6151235294117647
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "C",
-    "nhl_q3": "B",
-    "nhl_q4": "C",
-    "nhl_q5": "C",
-    "nhl_q6": "C"
-   },
-   "winner": "UTA",
-   "winnerName": "Utah Mammoth",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "5"
-   }
-  },
-  {
-   "id": "sig_ANA",
-   "kind": "signature",
-   "forTeam": "ANA",
-   "coreProfile": {
-    "loyalty": 5.768042352941176,
-    "emotion": 5.756652941176471,
-    "ambition": 5.823802352941177,
-    "process": 5.181152941176471,
-    "community": 3.6122847058823524,
-    "chaos": 4.9406952941176465,
-    "rootedness": 2.6680647058823523
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "C",
-    "nhl_q3": "A",
-    "nhl_q4": "B",
-    "nhl_q5": "C",
-    "nhl_q6": "B"
-   },
-   "winner": "ANA",
-   "winnerName": "Anaheim Ducks",
-   "spineAnswers": {
-    "S2": "D",
-    "S4": "4"
-   }
-  },
-  {
-   "id": "sig_SJS",
-   "kind": "signature",
-   "forTeam": "SJS",
-   "coreProfile": {
-    "loyalty": 6.789218823529412,
-    "emotion": 6.4095941176470586,
-    "ambition": 6.648508235294118,
-    "process": 5.181152941176471,
-    "community": 4.725225882352941,
-    "chaos": 4.9406952941176465,
-    "rootedness": 3.694535294117647
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "C",
-    "nhl_q3": "B",
-    "nhl_q4": "C",
-    "nhl_q5": "C",
-    "nhl_q6": "C"
-   },
-   "winner": "SJS",
-   "winnerName": "San Jose Sharks",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "4"
-   }
-  },
-  {
-   "id": "rnd_001",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "C",
-    "q2": "left",
-    "q3": "B",
-    "q4": "4",
-    "q5": "A",
-    "q6": "E",
-    "q7": "A",
-    "q8": "2",
-    "q9": "B",
-    "q10": "D",
-    "q11": "D",
-    "q12": "2",
-    "q13": "C",
-    "q14": "left",
-    "q15": "E",
-    "q16": "5",
-    "q17": "A",
-    "q18": "right",
-    "q19": "E",
-    "q20": "3",
-    "q21": "B",
-    "q22": "A",
-    "q23": "C",
-    "q24": "4"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "B",
-    "nhl_q3": "A",
-    "nhl_q4": "B",
-    "nhl_q5": "C",
-    "nhl_q6": "B"
-   },
-   "winner": "NSH",
-   "winnerName": "Nashville Predators",
-   "spineAnswers": {
-    "S2": "C",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "rnd_002",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "C",
-    "q2": "right",
-    "q3": "C",
-    "q4": "2",
-    "q5": "C",
-    "q6": "C",
-    "q7": "D",
-    "q8": "5",
-    "q9": "C",
-    "q10": "E",
-    "q11": "A",
-    "q12": "4",
-    "q13": "E",
-    "q14": "left",
-    "q15": "A",
-    "q16": "5",
-    "q17": "C",
-    "q18": "right",
-    "q19": "E",
-    "q20": "2",
-    "q21": "D",
-    "q22": "E",
-    "q23": "B",
-    "q24": "5"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "B",
-    "nhl_q3": "A",
-    "nhl_q4": "B",
-    "nhl_q5": "C",
-    "nhl_q6": "A"
-   },
-   "winner": "WSH",
-   "winnerName": "Washington Capitals",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "1"
-   }
-  },
-  {
-   "id": "rnd_003",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "C",
-    "q2": "left",
-    "q3": "B",
-    "q4": "4",
-    "q5": "D",
-    "q6": "E",
-    "q7": "B",
-    "q8": "3",
-    "q9": "E",
-    "q10": "E",
-    "q11": "A",
-    "q12": "3",
-    "q13": "D",
-    "q14": "left",
-    "q15": "A",
-    "q16": "5",
-    "q17": "D",
-    "q18": "right",
-    "q19": "B",
-    "q20": "2",
-    "q21": "D",
-    "q22": "B",
-    "q23": "D",
-    "q24": "2"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "B",
-    "nhl_q3": "C",
-    "nhl_q4": "B",
-    "nhl_q5": "B",
-    "nhl_q6": "A"
-   },
-   "winner": "WSH",
-   "winnerName": "Washington Capitals",
-   "spineAnswers": {
-    "S2": "B",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "rnd_004",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "B",
-    "q2": "left",
-    "q3": "C",
-    "q4": "3",
-    "q5": "A",
-    "q6": "E",
-    "q7": "C",
-    "q8": "3",
-    "q9": "E",
-    "q10": "E",
-    "q11": "A",
-    "q12": "3",
-    "q13": "A",
-    "q14": "left",
-    "q15": "A",
-    "q16": "3",
-    "q17": "C",
-    "q18": "left",
-    "q19": "E",
-    "q20": "2",
-    "q21": "E",
-    "q22": "E",
-    "q23": "B",
-    "q24": "1"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "A",
-    "nhl_q3": "C",
-    "nhl_q4": "A",
-    "nhl_q5": "C",
-    "nhl_q6": "C"
-   },
-   "winner": "CHI",
-   "winnerName": "Chicago Blackhawks",
-   "spineAnswers": {
-    "S2": "D",
-    "S4": "5"
-   }
-  },
-  {
-   "id": "rnd_005",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "D",
-    "q2": "right",
-    "q3": "C",
-    "q4": "1",
-    "q5": "A",
-    "q6": "D",
-    "q7": "E",
-    "q8": "3",
-    "q9": "C",
-    "q10": "D",
-    "q11": "D",
-    "q12": "2",
-    "q13": "D",
-    "q14": "left",
-    "q15": "D",
-    "q16": "4",
-    "q17": "B",
-    "q18": "left",
-    "q19": "B",
-    "q20": "2",
-    "q21": "C",
-    "q22": "B",
-    "q23": "A",
-    "q24": "3"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "A",
-    "nhl_q3": "C",
-    "nhl_q4": "C",
-    "nhl_q5": "B",
-    "nhl_q6": "C"
-   },
-   "winner": "PIT",
-   "winnerName": "Pittsburgh Penguins",
-   "spineAnswers": {
-    "S2": "C",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "rnd_006",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "D",
-    "q2": "right",
-    "q3": "E",
-    "q4": "3",
-    "q5": "D",
-    "q6": "B",
-    "q7": "E",
-    "q8": "3",
-    "q9": "A",
-    "q10": "D",
-    "q11": "A",
-    "q12": "4",
-    "q13": "A",
-    "q14": "left",
-    "q15": "E",
-    "q16": "1",
-    "q17": "E",
-    "q18": "left",
-    "q19": "B",
-    "q20": "3",
-    "q21": "A",
-    "q22": "B",
-    "q23": "B",
-    "q24": "2"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "C",
-    "nhl_q3": "A",
-    "nhl_q4": "B",
-    "nhl_q5": "B",
-    "nhl_q6": "A"
-   },
-   "winner": "CGY",
-   "winnerName": "Calgary Flames",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "rnd_007",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "C",
-    "q2": "right",
-    "q3": "A",
-    "q4": "4",
-    "q5": "A",
-    "q6": "B",
-    "q7": "E",
-    "q8": "4",
-    "q9": "C",
-    "q10": "D",
-    "q11": "D",
-    "q12": "4",
-    "q13": "D",
-    "q14": "right",
-    "q15": "B",
-    "q16": "2",
-    "q17": "E",
-    "q18": "right",
-    "q19": "D",
-    "q20": "4",
-    "q21": "E",
-    "q22": "D",
-    "q23": "E",
-    "q24": "2"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "A",
-    "nhl_q2": "C",
-    "nhl_q3": "B",
-    "nhl_q4": "B",
-    "nhl_q5": "A",
-    "nhl_q6": "A"
-   },
-   "winner": "ANA",
-   "winnerName": "Anaheim Ducks",
-   "spineAnswers": {
-    "S2": "D",
-    "S4": "1"
-   }
-  },
-  {
-   "id": "rnd_008",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "B",
-    "q2": "right",
-    "q3": "D",
-    "q4": "5",
-    "q5": "A",
-    "q6": "C",
-    "q7": "A",
-    "q8": "3",
-    "q9": "E",
-    "q10": "D",
-    "q11": "E",
-    "q12": "4",
-    "q13": "B",
-    "q14": "left",
-    "q15": "A",
-    "q16": "4",
-    "q17": "C",
-    "q18": "right",
-    "q19": "E",
-    "q20": "4",
-    "q21": "C",
-    "q22": "A",
-    "q23": "C",
-    "q24": "1"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "A",
-    "nhl_q2": "B",
-    "nhl_q3": "C",
-    "nhl_q4": "A",
-    "nhl_q5": "C",
-    "nhl_q6": "A"
-   },
-   "winner": "OTT",
-   "winnerName": "Ottawa Senators",
-   "spineAnswers": {
-    "S2": "B",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "rnd_009",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "C",
-    "q2": "left",
-    "q3": "E",
-    "q4": "4",
-    "q5": "A",
-    "q6": "D",
-    "q7": "A",
-    "q8": "5",
-    "q9": "B",
-    "q10": "B",
-    "q11": "D",
-    "q12": "3",
-    "q13": "E",
-    "q14": "right",
-    "q15": "D",
-    "q16": "1",
-    "q17": "A",
-    "q18": "left",
-    "q19": "A",
-    "q20": "3",
-    "q21": "C",
-    "q22": "C",
-    "q23": "C",
-    "q24": "4"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "B",
-    "nhl_q3": "A",
-    "nhl_q4": "A",
-    "nhl_q5": "C",
-    "nhl_q6": "C"
-   },
-   "winner": "WSH",
-   "winnerName": "Washington Capitals",
-   "spineAnswers": {
-    "S2": "D",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "rnd_010",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "C",
-    "q2": "left",
-    "q3": "A",
-    "q4": "3",
-    "q5": "E",
-    "q6": "E",
-    "q7": "E",
-    "q8": "1",
-    "q9": "D",
-    "q10": "A",
-    "q11": "C",
-    "q12": "1",
-    "q13": "E",
-    "q14": "right",
-    "q15": "A",
-    "q16": "5",
-    "q17": "C",
-    "q18": "left",
-    "q19": "D",
-    "q20": "1",
-    "q21": "B",
-    "q22": "A",
-    "q23": "E",
-    "q24": "5"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "E",
-    "nhl_q2": "A",
-    "nhl_q3": "C",
-    "nhl_q4": "B",
-    "nhl_q5": "C",
-    "nhl_q6": "C"
-   },
-   "winner": "STL",
-   "winnerName": "St. Louis Blues",
-   "spineAnswers": {
-    "S2": "C",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "rnd_011",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "C",
-    "q2": "left",
-    "q3": "E",
-    "q4": "4",
-    "q5": "A",
-    "q6": "B",
-    "q7": "A",
-    "q8": "3",
-    "q9": "D",
-    "q10": "E",
-    "q11": "B",
-    "q12": "4",
-    "q13": "B",
-    "q14": "right",
-    "q15": "B",
-    "q16": "3",
-    "q17": "C",
-    "q18": "right",
-    "q19": "C",
-    "q20": "2",
-    "q21": "C",
-    "q22": "E",
-    "q23": "A",
-    "q24": "5"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "A",
-    "nhl_q3": "A",
-    "nhl_q4": "C",
-    "nhl_q5": "C",
-    "nhl_q6": "A"
-   },
-   "winner": "TOR",
-   "winnerName": "Toronto Maple Leafs",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "rnd_012",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "C",
-    "q2": "left",
-    "q3": "E",
-    "q4": "4",
-    "q5": "A",
-    "q6": "C",
-    "q7": "D",
-    "q8": "1",
-    "q9": "E",
-    "q10": "A",
-    "q11": "A",
-    "q12": "4",
-    "q13": "D",
-    "q14": "left",
-    "q15": "C",
-    "q16": "2",
-    "q17": "C",
-    "q18": "left",
-    "q19": "C",
-    "q20": "4",
-    "q21": "E",
-    "q22": "B",
-    "q23": "B",
-    "q24": "2"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "A",
-    "nhl_q2": "A",
-    "nhl_q3": "C",
-    "nhl_q4": "B",
-    "nhl_q5": "A",
-    "nhl_q6": "B"
-   },
-   "winner": "CHI",
-   "winnerName": "Chicago Blackhawks",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "1"
-   }
-  },
-  {
-   "id": "rnd_013",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "A",
-    "q2": "right",
-    "q3": "A",
-    "q4": "2",
-    "q5": "A",
-    "q6": "B",
-    "q7": "D",
-    "q8": "4",
-    "q9": "E",
-    "q10": "D",
-    "q11": "B",
-    "q12": "1",
-    "q13": "D",
-    "q14": "right",
-    "q15": "D",
-    "q16": "1",
-    "q17": "B",
-    "q18": "right",
-    "q19": "C",
-    "q20": "5",
-    "q21": "E",
-    "q22": "C",
-    "q23": "C",
-    "q24": "4"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "A",
-    "nhl_q3": "C",
-    "nhl_q4": "B",
-    "nhl_q5": "B",
-    "nhl_q6": "A"
-   },
-   "winner": "CGY",
-   "winnerName": "Calgary Flames",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "rnd_014",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "D",
-    "q2": "right",
-    "q3": "C",
-    "q4": "3",
-    "q5": "B",
-    "q6": "B",
-    "q7": "C",
-    "q8": "1",
-    "q9": "C",
-    "q10": "E",
-    "q11": "C",
-    "q12": "5",
-    "q13": "B",
-    "q14": "left",
-    "q15": "A",
-    "q16": "3",
-    "q17": "C",
-    "q18": "left",
-    "q19": "B",
-    "q20": "2",
-    "q21": "C",
-    "q22": "C",
-    "q23": "B",
-    "q24": "3"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "C",
-    "nhl_q3": "A",
-    "nhl_q4": "A",
-    "nhl_q5": "A",
-    "nhl_q6": "A"
-   },
-   "winner": "ANA",
-   "winnerName": "Anaheim Ducks",
-   "spineAnswers": {
-    "S2": "D",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "rnd_015",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "C",
-    "q2": "right",
-    "q3": "D",
-    "q4": "3",
-    "q5": "E",
-    "q6": "B",
-    "q7": "E",
-    "q8": "2",
-    "q9": "A",
-    "q10": "B",
-    "q11": "A",
-    "q12": "5",
-    "q13": "D",
-    "q14": "right",
-    "q15": "B",
-    "q16": "4",
-    "q17": "A",
-    "q18": "left",
-    "q19": "A",
-    "q20": "4",
-    "q21": "D",
-    "q22": "D",
-    "q23": "A",
-    "q24": "1"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "C",
-    "nhl_q3": "A",
-    "nhl_q4": "B",
-    "nhl_q5": "B",
-    "nhl_q6": "C"
-   },
-   "winner": "ANA",
-   "winnerName": "Anaheim Ducks",
-   "spineAnswers": {
-    "S2": "D",
-    "S4": "1"
-   }
-  },
-  {
-   "id": "rnd_016",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "A",
-    "q2": "right",
-    "q3": "C",
-    "q4": "3",
-    "q5": "A",
-    "q6": "D",
-    "q7": "E",
-    "q8": "5",
-    "q9": "D",
-    "q10": "E",
-    "q11": "A",
-    "q12": "3",
-    "q13": "A",
-    "q14": "left",
-    "q15": "B",
-    "q16": "2",
-    "q17": "B",
-    "q18": "left",
-    "q19": "A",
-    "q20": "1",
-    "q21": "B",
-    "q22": "C",
-    "q23": "B",
-    "q24": "5"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "C",
-    "nhl_q3": "B",
-    "nhl_q4": "C",
-    "nhl_q5": "B",
-    "nhl_q6": "C"
-   },
-   "winner": "COL",
-   "winnerName": "Colorado Avalanche",
-   "spineAnswers": {
-    "S2": "B",
-    "S4": "1"
-   }
-  },
-  {
-   "id": "rnd_017",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "E",
-    "q2": "right",
-    "q3": "B",
-    "q4": "1",
-    "q5": "C",
-    "q6": "C",
-    "q7": "E",
-    "q8": "1",
-    "q9": "A",
-    "q10": "C",
-    "q11": "D",
-    "q12": "2",
-    "q13": "B",
-    "q14": "right",
-    "q15": "E",
-    "q16": "5",
-    "q17": "D",
-    "q18": "right",
-    "q19": "E",
-    "q20": "5",
-    "q21": "B",
-    "q22": "A",
-    "q23": "E",
-    "q24": "5"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "D",
-    "nhl_q2": "B",
-    "nhl_q3": "A",
-    "nhl_q4": "C",
-    "nhl_q5": "B",
-    "nhl_q6": "C"
-   },
-   "winner": "CBJ",
-   "winnerName": "Columbus Blue Jackets",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "4"
-   }
-  },
-  {
-   "id": "rnd_018",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "A",
-    "q2": "right",
-    "q3": "C",
-    "q4": "5",
-    "q5": "E",
-    "q6": "C",
-    "q7": "C",
-    "q8": "5",
-    "q9": "A",
-    "q10": "C",
-    "q11": "C",
-    "q12": "5",
-    "q13": "C",
-    "q14": "left",
-    "q15": "D",
-    "q16": "1",
-    "q17": "B",
-    "q18": "right",
-    "q19": "E",
-    "q20": "1",
-    "q21": "C",
-    "q22": "C",
-    "q23": "C",
-    "q24": "5"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "E",
-    "nhl_q2": "C",
-    "nhl_q3": "A",
-    "nhl_q4": "C",
-    "nhl_q5": "A",
-    "nhl_q6": "A"
-   },
-   "winner": "BUF",
-   "winnerName": "Buffalo Sabres",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "4"
-   }
-  },
-  {
-   "id": "rnd_019",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "B",
-    "q2": "left",
-    "q3": "A",
-    "q4": "5",
-    "q5": "A",
-    "q6": "C",
-    "q7": "D",
-    "q8": "5",
-    "q9": "C",
-    "q10": "A",
-    "q11": "C",
-    "q12": "2",
-    "q13": "C",
-    "q14": "right",
-    "q15": "A",
-    "q16": "5",
-    "q17": "A",
-    "q18": "left",
-    "q19": "D",
-    "q20": "2",
-    "q21": "D",
-    "q22": "A",
-    "q23": "C",
-    "q24": "2"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "A",
-    "nhl_q3": "A",
-    "nhl_q4": "C",
-    "nhl_q5": "C",
-    "nhl_q6": "B"
-   },
-   "winner": "NSH",
-   "winnerName": "Nashville Predators",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "1"
-   }
-  },
-  {
-   "id": "rnd_020",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "E",
-    "q2": "left",
-    "q3": "B",
-    "q4": "2",
-    "q5": "E",
-    "q6": "E",
-    "q7": "A",
-    "q8": "5",
-    "q9": "C",
-    "q10": "C",
-    "q11": "A",
-    "q12": "2",
-    "q13": "B",
-    "q14": "left",
-    "q15": "E",
-    "q16": "2",
-    "q17": "D",
-    "q18": "right",
-    "q19": "D",
-    "q20": "2",
-    "q21": "A",
-    "q22": "E",
-    "q23": "D",
-    "q24": "4"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "A",
-    "nhl_q2": "C",
-    "nhl_q3": "B",
-    "nhl_q4": "B",
-    "nhl_q5": "B",
-    "nhl_q6": "C"
-   },
-   "winner": "STL",
-   "winnerName": "St. Louis Blues",
-   "spineAnswers": {
-    "S2": "B",
-    "S4": "4"
-   }
-  },
-  {
-   "id": "rnd_021",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "E",
-    "q2": "left",
-    "q3": "A",
-    "q4": "4",
-    "q5": "A",
-    "q6": "D",
-    "q7": "E",
-    "q8": "5",
-    "q9": "E",
-    "q10": "E",
-    "q11": "E",
-    "q12": "3",
-    "q13": "C",
-    "q14": "left",
-    "q15": "E",
-    "q16": "1",
-    "q17": "B",
-    "q18": "left",
-    "q19": "E",
-    "q20": "4",
-    "q21": "C",
-    "q22": "B",
-    "q23": "C",
-    "q24": "2"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "A",
-    "nhl_q2": "A",
-    "nhl_q3": "B",
-    "nhl_q4": "A",
-    "nhl_q5": "C",
-    "nhl_q6": "B"
-   },
-   "winner": "CAR",
-   "winnerName": "Carolina Hurricanes",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "4"
-   }
-  },
-  {
-   "id": "rnd_022",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "C",
-    "q2": "right",
-    "q3": "A",
-    "q4": "5",
-    "q5": "B",
-    "q6": "B",
-    "q7": "D",
-    "q8": "4",
-    "q9": "A",
-    "q10": "B",
-    "q11": "B",
-    "q12": "4",
-    "q13": "B",
-    "q14": "left",
-    "q15": "A",
-    "q16": "4",
-    "q17": "A",
-    "q18": "right",
-    "q19": "D",
-    "q20": "4",
-    "q21": "C",
-    "q22": "D",
-    "q23": "D",
-    "q24": "2"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "A",
-    "nhl_q2": "A",
-    "nhl_q3": "B",
-    "nhl_q4": "B",
-    "nhl_q5": "A",
-    "nhl_q6": "B"
-   },
-   "winner": "DAL",
-   "winnerName": "Dallas Stars",
-   "spineAnswers": {
-    "S2": "C",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "rnd_023",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "E",
-    "q2": "right",
-    "q3": "C",
-    "q4": "2",
-    "q5": "A",
-    "q6": "E",
-    "q7": "C",
-    "q8": "3",
-    "q9": "B",
-    "q10": "D",
-    "q11": "A",
-    "q12": "2",
-    "q13": "E",
-    "q14": "left",
-    "q15": "E",
-    "q16": "5",
-    "q17": "A",
-    "q18": "left",
-    "q19": "B",
-    "q20": "4",
-    "q21": "D",
-    "q22": "D",
-    "q23": "B",
-    "q24": "3"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "A",
-    "nhl_q2": "C",
-    "nhl_q3": "B",
-    "nhl_q4": "B",
-    "nhl_q5": "A",
-    "nhl_q6": "C"
-   },
-   "winner": "STL",
-   "winnerName": "St. Louis Blues",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "rnd_024",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "E",
-    "q2": "right",
-    "q3": "B",
-    "q4": "4",
-    "q5": "E",
-    "q6": "D",
-    "q7": "B",
-    "q8": "4",
-    "q9": "A",
-    "q10": "E",
-    "q11": "B",
-    "q12": "3",
-    "q13": "D",
-    "q14": "right",
-    "q15": "E",
-    "q16": "5",
-    "q17": "D",
-    "q18": "right",
-    "q19": "B",
-    "q20": "5",
-    "q21": "A",
-    "q22": "D",
-    "q23": "C",
-    "q24": "5"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "A",
-    "nhl_q2": "B",
-    "nhl_q3": "A",
-    "nhl_q4": "A",
-    "nhl_q5": "A",
-    "nhl_q6": "C"
-   },
-   "winner": "BOS",
-   "winnerName": "Boston Bruins",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "rnd_025",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "D",
-    "q2": "left",
-    "q3": "E",
-    "q4": "2",
-    "q5": "C",
-    "q6": "C",
-    "q7": "A",
-    "q8": "1",
-    "q9": "C",
-    "q10": "D",
-    "q11": "B",
-    "q12": "5",
-    "q13": "D",
-    "q14": "left",
-    "q15": "A",
-    "q16": "3",
-    "q17": "E",
-    "q18": "left",
-    "q19": "B",
-    "q20": "4",
-    "q21": "C",
-    "q22": "E",
-    "q23": "B",
-    "q24": "3"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "D",
-    "nhl_q2": "A",
-    "nhl_q3": "B",
-    "nhl_q4": "B",
-    "nhl_q5": "C",
-    "nhl_q6": "A"
-   },
-   "winner": "NYR",
-   "winnerName": "New York Rangers",
-   "spineAnswers": {
-    "S2": "B",
-    "S4": "4"
-   }
-  },
-  {
-   "id": "rnd_026",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "B",
-    "q2": "right",
-    "q3": "E",
-    "q4": "1",
-    "q5": "B",
-    "q6": "E",
-    "q7": "D",
-    "q8": "2",
-    "q9": "A",
-    "q10": "A",
-    "q11": "D",
-    "q12": "1",
-    "q13": "B",
-    "q14": "right",
-    "q15": "D",
-    "q16": "5",
-    "q17": "B",
-    "q18": "right",
-    "q19": "A",
-    "q20": "5",
-    "q21": "C",
-    "q22": "C",
-    "q23": "E",
-    "q24": "1"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "E",
-    "nhl_q2": "C",
-    "nhl_q3": "A",
-    "nhl_q4": "A",
-    "nhl_q5": "B",
-    "nhl_q6": "C"
-   },
-   "winner": "CBJ",
-   "winnerName": "Columbus Blue Jackets",
-   "spineAnswers": {
-    "S2": "B",
-    "S4": "4"
-   }
-  },
-  {
-   "id": "rnd_027",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "E",
-    "q2": "left",
-    "q3": "C",
-    "q4": "2",
-    "q5": "E",
-    "q6": "E",
-    "q7": "B",
-    "q8": "1",
-    "q9": "C",
-    "q10": "C",
-    "q11": "A",
-    "q12": "3",
-    "q13": "E",
-    "q14": "left",
-    "q15": "E",
-    "q16": "2",
-    "q17": "D",
-    "q18": "right",
-    "q19": "E",
-    "q20": "1",
-    "q21": "A",
-    "q22": "C",
-    "q23": "D",
-    "q24": "1"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "A",
-    "nhl_q2": "C",
-    "nhl_q3": "B",
-    "nhl_q4": "B",
-    "nhl_q5": "B",
-    "nhl_q6": "C"
-   },
-   "winner": "WSH",
-   "winnerName": "Washington Capitals",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "rnd_028",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "C",
-    "q2": "left",
-    "q3": "B",
-    "q4": "3",
-    "q5": "D",
-    "q6": "C",
-    "q7": "B",
-    "q8": "4",
-    "q9": "C",
-    "q10": "E",
-    "q11": "C",
-    "q12": "3",
-    "q13": "A",
-    "q14": "left",
-    "q15": "D",
-    "q16": "3",
-    "q17": "D",
-    "q18": "right",
-    "q19": "A",
-    "q20": "2",
-    "q21": "C",
-    "q22": "A",
-    "q23": "B",
-    "q24": "3"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "A",
-    "nhl_q2": "A",
-    "nhl_q3": "B",
-    "nhl_q4": "B",
-    "nhl_q5": "A",
-    "nhl_q6": "B"
-   },
-   "winner": "NYR",
-   "winnerName": "New York Rangers",
-   "spineAnswers": {
-    "S2": "D",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "rnd_029",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "E",
-    "q2": "left",
-    "q3": "B",
-    "q4": "4",
-    "q5": "B",
-    "q6": "A",
-    "q7": "C",
-    "q8": "5",
-    "q9": "B",
-    "q10": "B",
-    "q11": "A",
-    "q12": "1",
-    "q13": "E",
-    "q14": "left",
-    "q15": "B",
-    "q16": "4",
-    "q17": "E",
-    "q18": "left",
-    "q19": "A",
-    "q20": "5",
-    "q21": "D",
-    "q22": "B",
-    "q23": "B",
-    "q24": "1"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "A",
-    "nhl_q2": "B",
-    "nhl_q3": "C",
-    "nhl_q4": "A",
-    "nhl_q5": "C",
-    "nhl_q6": "B"
-   },
-   "winner": "DET",
-   "winnerName": "Detroit Red Wings",
-   "spineAnswers": {
-    "S2": "D",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "rnd_030",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "A",
-    "q2": "left",
-    "q3": "A",
-    "q4": "5",
-    "q5": "D",
-    "q6": "B",
-    "q7": "A",
-    "q8": "3",
-    "q9": "D",
-    "q10": "B",
-    "q11": "C",
-    "q12": "2",
-    "q13": "D",
-    "q14": "right",
-    "q15": "D",
-    "q16": "3",
-    "q17": "C",
-    "q18": "left",
-    "q19": "D",
-    "q20": "1",
-    "q21": "D",
-    "q22": "A",
-    "q23": "D",
-    "q24": "1"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "D",
-    "nhl_q2": "A",
-    "nhl_q3": "A",
-    "nhl_q4": "A",
-    "nhl_q5": "B",
-    "nhl_q6": "C"
-   },
-   "winner": "LAK",
-   "winnerName": "Los Angeles Kings",
-   "spineAnswers": {
-    "S2": "B",
-    "S4": "3"
-   }
-  },
-  {
-   "id": "rnd_031",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "C",
-    "q2": "left",
-    "q3": "A",
-    "q4": "1",
-    "q5": "E",
-    "q6": "D",
-    "q7": "B",
-    "q8": "2",
-    "q9": "A",
-    "q10": "D",
-    "q11": "B",
-    "q12": "5",
-    "q13": "A",
-    "q14": "left",
-    "q15": "D",
-    "q16": "5",
-    "q17": "D",
-    "q18": "right",
-    "q19": "A",
-    "q20": "3",
-    "q21": "D",
-    "q22": "D",
-    "q23": "A",
-    "q24": "4"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "A",
-    "nhl_q3": "C",
-    "nhl_q4": "C",
-    "nhl_q5": "C",
-    "nhl_q6": "B"
-   },
-   "winner": "NYR",
-   "winnerName": "New York Rangers",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "5"
-   }
-  },
-  {
-   "id": "rnd_032",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "B",
-    "q2": "left",
-    "q3": "A",
-    "q4": "4",
-    "q5": "B",
-    "q6": "E",
-    "q7": "D",
-    "q8": "1",
-    "q9": "C",
-    "q10": "D",
-    "q11": "E",
-    "q12": "4",
-    "q13": "E",
-    "q14": "left",
-    "q15": "E",
-    "q16": "4",
-    "q17": "B",
-    "q18": "right",
-    "q19": "A",
-    "q20": "4",
-    "q21": "D",
-    "q22": "D",
-    "q23": "B",
-    "q24": "2"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "C",
-    "nhl_q3": "B",
-    "nhl_q4": "A",
-    "nhl_q5": "C",
-    "nhl_q6": "C"
-   },
-   "winner": "SJS",
-   "winnerName": "San Jose Sharks",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "5"
-   }
-  },
-  {
-   "id": "rnd_033",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "E",
-    "q2": "left",
-    "q3": "E",
-    "q4": "3",
-    "q5": "B",
-    "q6": "A",
-    "q7": "B",
-    "q8": "2",
-    "q9": "C",
-    "q10": "D",
-    "q11": "C",
-    "q12": "5",
-    "q13": "B",
-    "q14": "right",
-    "q15": "D",
-    "q16": "5",
-    "q17": "E",
-    "q18": "left",
-    "q19": "B",
-    "q20": "1",
-    "q21": "D",
-    "q22": "E",
-    "q23": "D",
-    "q24": "1"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "C",
-    "nhl_q3": "B",
-    "nhl_q4": "A",
-    "nhl_q5": "C",
-    "nhl_q6": "C"
-   },
-   "winner": "SJS",
-   "winnerName": "San Jose Sharks",
-   "spineAnswers": {
-    "S2": "B",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "rnd_034",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "D",
-    "q2": "right",
-    "q3": "B",
-    "q4": "1",
-    "q5": "D",
-    "q6": "D",
-    "q7": "D",
-    "q8": "1",
-    "q9": "C",
-    "q10": "A",
-    "q11": "A",
-    "q12": "1",
-    "q13": "C",
-    "q14": "right",
-    "q15": "D",
-    "q16": "1",
-    "q17": "B",
-    "q18": "left",
-    "q19": "B",
-    "q20": "4",
-    "q21": "D",
-    "q22": "D",
-    "q23": "E",
-    "q24": "2"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "D",
-    "nhl_q2": "C",
-    "nhl_q3": "A",
-    "nhl_q4": "C",
-    "nhl_q5": "A",
-    "nhl_q6": "C"
-   },
-   "winner": "NJD",
-   "winnerName": "New Jersey Devils",
-   "spineAnswers": {
-    "S2": "B",
-    "S4": "5"
-   }
-  },
-  {
-   "id": "rnd_035",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "C",
-    "q2": "left",
-    "q3": "D",
-    "q4": "3",
-    "q5": "C",
-    "q6": "E",
-    "q7": "A",
-    "q8": "3",
-    "q9": "A",
-    "q10": "C",
-    "q11": "D",
-    "q12": "5",
-    "q13": "A",
-    "q14": "right",
-    "q15": "E",
-    "q16": "4",
-    "q17": "E",
-    "q18": "left",
-    "q19": "A",
-    "q20": "3",
-    "q21": "B",
-    "q22": "C",
-    "q23": "E",
-    "q24": "3"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "C",
-    "nhl_q2": "B",
-    "nhl_q3": "C",
-    "nhl_q4": "A",
-    "nhl_q5": "C",
-    "nhl_q6": "B"
-   },
-   "winner": "FLA",
-   "winnerName": "Florida Panthers",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "4"
-   }
-  },
-  {
-   "id": "rnd_036",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "A",
-    "q2": "right",
-    "q3": "E",
-    "q4": "2",
-    "q5": "B",
-    "q6": "C",
-    "q7": "D",
-    "q8": "5",
-    "q9": "B",
-    "q10": "E",
-    "q11": "A",
-    "q12": "2",
-    "q13": "B",
-    "q14": "right",
-    "q15": "E",
-    "q16": "5",
-    "q17": "E",
-    "q18": "right",
-    "q19": "D",
-    "q20": "4",
-    "q21": "D",
-    "q22": "A",
-    "q23": "B",
-    "q24": "3"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "A",
-    "nhl_q2": "A",
-    "nhl_q3": "C",
-    "nhl_q4": "B",
-    "nhl_q5": "A",
-    "nhl_q6": "C"
-   },
-   "winner": "STL",
-   "winnerName": "St. Louis Blues",
-   "spineAnswers": {
-    "S2": "C",
-    "S4": "5"
-   }
-  },
-  {
-   "id": "rnd_037",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "C",
-    "q2": "right",
-    "q3": "A",
-    "q4": "1",
-    "q5": "D",
-    "q6": "B",
-    "q7": "B",
-    "q8": "2",
-    "q9": "B",
-    "q10": "C",
-    "q11": "C",
-    "q12": "5",
-    "q13": "B",
-    "q14": "left",
-    "q15": "C",
-    "q16": "5",
-    "q17": "B",
-    "q18": "left",
-    "q19": "B",
-    "q20": "1",
-    "q21": "B",
-    "q22": "C",
-    "q23": "D",
-    "q24": "3"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "B",
-    "nhl_q3": "B",
-    "nhl_q4": "A",
-    "nhl_q5": "C",
-    "nhl_q6": "B"
-   },
-   "winner": "DET",
-   "winnerName": "Detroit Red Wings",
-   "spineAnswers": {
-    "S2": "D",
-    "S4": "4"
-   }
-  },
-  {
-   "id": "rnd_038",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "B",
-    "q2": "right",
-    "q3": "C",
-    "q4": "1",
-    "q5": "C",
-    "q6": "C",
-    "q7": "A",
-    "q8": "5",
-    "q9": "A",
-    "q10": "C",
-    "q11": "A",
-    "q12": "2",
-    "q13": "A",
-    "q14": "left",
-    "q15": "B",
-    "q16": "2",
-    "q17": "D",
-    "q18": "right",
-    "q19": "E",
-    "q20": "4",
-    "q21": "A",
-    "q22": "A",
-    "q23": "D",
-    "q24": "5"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "D",
-    "nhl_q2": "B",
-    "nhl_q3": "C",
-    "nhl_q4": "C",
-    "nhl_q5": "B",
-    "nhl_q6": "A"
-   },
-   "winner": "NYI",
-   "winnerName": "New York Islanders",
-   "spineAnswers": {
-    "S2": "B",
-    "S4": "1"
-   }
-  },
-  {
-   "id": "rnd_039",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "C",
-    "q2": "right",
-    "q3": "A",
-    "q4": "1",
-    "q5": "E",
-    "q6": "A",
-    "q7": "C",
-    "q8": "2",
-    "q9": "B",
-    "q10": "B",
-    "q11": "C",
-    "q12": "3",
-    "q13": "D",
-    "q14": "left",
-    "q15": "A",
-    "q16": "1",
-    "q17": "C",
-    "q18": "right",
-    "q19": "B",
-    "q20": "3",
-    "q21": "C",
-    "q22": "A",
-    "q23": "E",
-    "q24": "3"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "A",
-    "nhl_q2": "A",
-    "nhl_q3": "A",
-    "nhl_q4": "C",
-    "nhl_q5": "C",
-    "nhl_q6": "A"
-   },
-   "winner": "MIN",
-   "winnerName": "Minnesota Wild",
-   "spineAnswers": {
-    "S2": "A",
-    "S4": "2"
-   }
-  },
-  {
-   "id": "rnd_040",
-   "kind": "random",
-   "forTeam": null,
-   "coreAnswers": {
-    "q1": "A",
-    "q2": "right",
-    "q3": "E",
-    "q4": "5",
-    "q5": "D",
-    "q6": "C",
-    "q7": "A",
-    "q8": "1",
-    "q9": "C",
-    "q10": "B",
-    "q11": "D",
-    "q12": "4",
-    "q13": "A",
-    "q14": "right",
-    "q15": "E",
-    "q16": "2",
-    "q17": "B",
-    "q18": "right",
-    "q19": "D",
-    "q20": "4",
-    "q21": "C",
-    "q22": "E",
-    "q23": "C",
-    "q24": "5"
-   },
-   "moduleAnswers": {
-    "nhl_q1": "B",
-    "nhl_q2": "C",
-    "nhl_q3": "A",
-    "nhl_q4": "C",
-    "nhl_q5": "B",
-    "nhl_q6": "C"
-   },
-   "winner": "CBJ",
-   "winnerName": "Columbus Blue Jackets",
-   "spineAnswers": {
-    "S2": "C",
-    "S4": "2"
-   }
-  }
- ]
 }
