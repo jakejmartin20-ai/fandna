@@ -157,33 +157,29 @@ const teamTextColors = {
 // the ones that survived a full core+instincts de-duplication (s59 build): talent source, the circus
 // around a passion, belonging character, and reverence-vs-celebration. teamDims grid UNTOUCHED.
 const scoring = {
-  // Q1 talent source. A grow-your-own / B buy-the-best / C hunger-over-record / D your-own-eye.
   "top14_q1": {
-    "A": { "TLS": 2, "LAR": 2, "CAS": 2 },
-    "B": { "RCT": 2, "R92": 2, "MHR": 2 },
-    "C": { "ABR": 2, "USP": 2, "UBB": 2 },
-    "D": { "USM": 2, "PAU": 2, "LOU": 2 }
+    "A": { "CAS": 3, "LAR": 3, "TLS": 3, "MHR": 1, "PAU": 1 },
+    "B": { "MHR": 3, "R92": 3, "RCT": 3 },
+    "C": { "ABR": 3, "UBB": 3, "USP": 3, "LAR": 1 },
+    "D": { "LOU": 3, "PAU": 3, "USM": 3 }
   },
-  // Q2 the circus. A stir-it-up / B cut-it-out / C love-the-show / D tune-it-out.
   "top14_q2": {
-    "A": { "SFP": 2, "USP": 2, "R92": 2 },
-    "B": { "TLS": 2, "CAS": 2, "MHR": 2 },
-    "C": { "UBB": 2, "LOU": 2, "RCT": 2 },
-    "D": { "ABR": 2, "USM": 2, "LAR": 2, "ASM": 2 }
+    "A": { "R92": 3, "SFP": 3, "USP": 3 },
+    "B": { "CAS": 3, "MHR": 3, "TLS": 3 },
+    "C": { "LOU": 3, "RCT": 3, "UBB": 3, "R92": 1 },
+    "D": { "ABR": 3, "ASM": 3, "LAR": 3, "USM": 3 }
   },
-  // Q3 belonging character. A passionate / B unpretentious / C glamorous / D established.
   "top14_q3": {
-    "A": { "UBB": 2, "ABR": 2, "USP": 2 },
-    "B": { "CAS": 2, "USM": 2, "PAU": 2 },
-    "C": { "SFP": 2, "R92": 2, "MHR": 2 },
-    "D": { "TLS": 2, "RCT": 2, "LOU": 2 }
+    "A": { "ABR": 3, "UBB": 3, "USP": 3, "RCT": 1 },
+    "B": { "CAS": 3, "PAU": 3, "USM": 3 },
+    "C": { "MHR": 3, "R92": 3, "SFP": 3 },
+    "D": { "LOU": 3, "RCT": 3, "TLS": 3 }
   },
-  // Q4 reverence vs celebration. A calling / B celebration / C cause / D project.
   "top14_q4": {
-    "A": { "TLS": 2, "LAR": 2, "ASM": 2, "CAS": 2, "PAU": 2 },
-    "B": { "ABR": 2, "LOU": 2, "UBB": 2, "USM": 2 },
-    "C": { "USP": 2, "RCT": 2, "SFP": 2 },
-    "D": { "MHR": 2, "R92": 2 }
+    "A": { "ASM": 3, "CAS": 3, "LAR": 3, "PAU": 3, "TLS": 3, "USM": 1 },
+    "B": { "ABR": 3, "LOU": 3, "UBB": 3, "USM": 3 },
+    "C": { "RCT": 3, "SFP": 3, "USP": 3 },
+    "D": { "MHR": 3, "R92": 3 }
   }
 };
 
