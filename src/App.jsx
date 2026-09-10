@@ -452,6 +452,7 @@ function AppInner(){
     try{ code=decodeURIComponent(code); }catch(e){}
     setCompareFriend(decodeCode(code));
     setScreen("compare");
+    track("compare_opened");
   },[]);
 
   // On load, /how opens the explainer directly (so it can be linked to from anywhere).
@@ -519,7 +520,7 @@ function AppInner(){
   function handleSelect(val){
     const na={...answers,[q.id]:val};
     setAnswers(na);
-    if(Object.keys(answers).length===0) track("quiz_started");
+    if(Object.keys(answers).length===0) track("quiz_started",{sport:activeSport});
     if(cur+1<sequence.length){
       const nextPhase=sequence[cur+1].phase;
       // First full take only: at the seam where the about-you questions (core + instincts) give
@@ -1050,9 +1051,10 @@ function AppInner(){
   // ── Compare wiring ─────────────────────────────────────────────────────
   // A cross-invite / recruit CTA starts a sport but remembers we were mid-compare, so finishing
   // the quiz drops back into the compare (now filled in) rather than the normal result.
-  function startSportFromCompare(code){ setPendingCompare(compareFriend); startSport(code); }
+  function startSportFromCompare(code){ track("compare_recruit_started",{sport:code}); setPendingCompare(compareFriend); startSport(code); }
   function exitCompare(){ setCompareFriend(null); setScreen("home"); }
   async function shareCompareLink(){
+    track("compare_link_shared");
     const st=loadState();
     const code=encodeGenome({coreProfile:st.coreProfile, results:st.results||{}});
     const url=`https://playfandna.com/c/${code}`;
@@ -1062,6 +1064,7 @@ function AppInner(){
     navigator.clipboard?.writeText(caption).then(()=>alert("Link copied.")).catch(()=>alert(caption));
   }
   async function shareGenomeCompare(){
+    track("compare_link_shared");
     const st=loadState();
     const code=encodeGenome({coreProfile:st.coreProfile, results:st.results||{}});
     const url=`https://playfandna.com/c/${code}`;
