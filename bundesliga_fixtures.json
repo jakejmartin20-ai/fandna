@@ -1124,7 +1124,7 @@
         "bl_q9": "left",
         "bl_q10": "left"
       },
-      "expected": "ELV",
+      "expected": "FCU",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -1170,7 +1170,7 @@
         "bl_q9": "left",
         "bl_q10": "left"
       },
-      "expected": "SVW",
+      "expected": "SCF",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -1262,7 +1262,7 @@
         "bl_q9": "left",
         "bl_q10": "right"
       },
-      "expected": "FCA",
+      "expected": "HSV",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -1630,7 +1630,7 @@
         "bl_q9": "right",
         "bl_q10": "left"
       },
-      "expected": "VFB",
+      "expected": "FCU",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -1676,7 +1676,7 @@
         "bl_q9": "left",
         "bl_q10": "right"
       },
-      "expected": "S04",
+      "expected": "FCU",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -1814,7 +1814,7 @@
         "bl_q9": "right",
         "bl_q10": "right"
       },
-      "expected": "M05",
+      "expected": "FCA",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -1906,7 +1906,7 @@
         "bl_q9": "right",
         "bl_q10": "left"
       },
-      "expected": "VFB",
+      "expected": "B04",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -1952,7 +1952,7 @@
         "bl_q9": "left",
         "bl_q10": "left"
       },
-      "expected": "BMG",
+      "expected": "VFB",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -1998,7 +1998,7 @@
         "bl_q9": "left",
         "bl_q10": "left"
       },
-      "expected": "SVW",
+      "expected": "SCP",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -2090,7 +2090,7 @@
         "bl_q9": "left",
         "bl_q10": "left"
       },
-      "expected": "HSV",
+      "expected": "FCU",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -2182,7 +2182,7 @@
         "bl_q9": "right",
         "bl_q10": "left"
       },
-      "expected": "SCP",
+      "expected": "FCU",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -2550,7 +2550,7 @@
         "bl_q9": "right",
         "bl_q10": "right"
       },
-      "expected": "ELV",
+      "expected": "TSG",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -2596,7 +2596,7 @@
         "bl_q9": "right",
         "bl_q10": "left"
       },
-      "expected": "SGE",
+      "expected": "B04",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -2734,7 +2734,7 @@
         "bl_q9": "left",
         "bl_q10": "right"
       },
-      "expected": "ELV",
+      "expected": "HSV",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -2826,7 +2826,7 @@
         "bl_q9": "right",
         "bl_q10": "right"
       },
-      "expected": "VFB",
+      "expected": "SGE",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -2918,7 +2918,7 @@
         "bl_q9": "left",
         "bl_q10": "left"
       },
-      "expected": "BMG",
+      "expected": "SVW",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -3194,7 +3194,7 @@
         "bl_q9": "left",
         "bl_q10": "left"
       },
-      "expected": "ELV",
+      "expected": "FCU",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -3286,7 +3286,7 @@
         "bl_q9": "left",
         "bl_q10": "right"
       },
-      "expected": "ELV",
+      "expected": "RBL",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -3792,7 +3792,7 @@
         "bl_q9": "right",
         "bl_q10": "left"
       },
-      "expected": "BMG",
+      "expected": "M05",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -3884,7 +3884,7 @@
         "bl_q9": "right",
         "bl_q10": "right"
       },
-      "expected": "S04",
+      "expected": "FCU",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -4160,7 +4160,7 @@
         "bl_q9": "left",
         "bl_q10": "left"
       },
-      "expected": "BMG",
+      "expected": "M05",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -4298,7 +4298,7 @@
         "bl_q9": "right",
         "bl_q10": "left"
       },
-      "expected": "M05",
+      "expected": "FCA",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -4574,7 +4574,7 @@
         "bl_q9": "right",
         "bl_q10": "left"
       },
-      "expected": "M05",
+      "expected": "B04",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -4988,7 +4988,7 @@
         "bl_q9": "left",
         "bl_q10": "left"
       },
-      "expected": "ELV",
+      "expected": "FCU",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -5218,7 +5218,7 @@
         "bl_q9": "left",
         "bl_q10": "right"
       },
-      "expected": "ELV",
+      "expected": "KOE",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -5264,7 +5264,7 @@
         "bl_q9": "left",
         "bl_q10": "right"
       },
-      "expected": "BVB",
+      "expected": "HSV",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -5310,7 +5310,7 @@
         "bl_q9": "left",
         "bl_q10": "right"
       },
-      "expected": "KOE",
+      "expected": "HSV",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -5494,7 +5494,7 @@
         "bl_q9": "left",
         "bl_q10": "left"
       },
-      "expected": "BMG",
+      "expected": "FCU",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -5908,7 +5908,7 @@
         "bl_q9": "left",
         "bl_q10": "right"
       },
-      "expected": "BAY",
+      "expected": "M05",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -6230,7 +6230,7 @@
         "bl_q9": "right",
         "bl_q10": "right"
       },
-      "expected": "ELV",
+      "expected": "SGE",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -6460,7 +6460,7 @@
         "bl_q9": "right",
         "bl_q10": "left"
       },
-      "expected": "BMG",
+      "expected": "VFB",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -6874,7 +6874,7 @@
         "bl_q9": "left",
         "bl_q10": "left"
       },
-      "expected": "BMG",
+      "expected": "FCU",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -6966,7 +6966,7 @@
         "bl_q9": "right",
         "bl_q10": "left"
       },
-      "expected": "SCP",
+      "expected": "FCA",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -7150,7 +7150,7 @@
         "bl_q9": "left",
         "bl_q10": "right"
       },
-      "expected": "ELV",
+      "expected": "BVB",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -7288,7 +7288,7 @@
         "bl_q9": "right",
         "bl_q10": "left"
       },
-      "expected": "SVW",
+      "expected": "BAY",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -7702,7 +7702,7 @@
         "bl_q9": "left",
         "bl_q10": "right"
       },
-      "expected": "SVW",
+      "expected": "FCA",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -8070,7 +8070,7 @@
         "bl_q9": "left",
         "bl_q10": "right"
       },
-      "expected": "BMG",
+      "expected": "VFB",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -8116,7 +8116,7 @@
         "bl_q9": "left",
         "bl_q10": "right"
       },
-      "expected": "ELV",
+      "expected": "S04",
       "spineAnswers": {
         "S6": "C",
         "S7": "C"
@@ -8162,7 +8162,7 @@
         "bl_q9": "right",
         "bl_q10": "left"
       },
-      "expected": "M05",
+      "expected": "SCF",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -8208,7 +8208,7 @@
         "bl_q9": "left",
         "bl_q10": "right"
       },
-      "expected": "SCP",
+      "expected": "SVW",
       "spineAnswers": {
         "S6": "A",
         "S7": "A"
@@ -8254,7 +8254,7 @@
         "bl_q9": "right",
         "bl_q10": "left"
       },
-      "expected": "ELV",
+      "expected": "BMG",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -8530,7 +8530,7 @@
         "bl_q9": "right",
         "bl_q10": "left"
       },
-      "expected": "SGE",
+      "expected": "VFB",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -9082,7 +9082,7 @@
         "bl_q9": "right",
         "bl_q10": "left"
       },
-      "expected": "ELV",
+      "expected": "SGE",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -9266,7 +9266,7 @@
         "bl_q9": "right",
         "bl_q10": "right"
       },
-      "expected": "SGE",
+      "expected": "RBL",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -9634,7 +9634,7 @@
         "bl_q9": "right",
         "bl_q10": "left"
       },
-      "expected": "M05",
+      "expected": "SCF",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
@@ -9726,7 +9726,7 @@
         "bl_q9": "left",
         "bl_q10": "left"
       },
-      "expected": "M05",
+      "expected": "BVB",
       "spineAnswers": {
         "S6": "B",
         "S7": "D"
@@ -10002,7 +10002,7 @@
         "bl_q9": "right",
         "bl_q10": "right"
       },
-      "expected": "HSV",
+      "expected": "KOE",
       "spineAnswers": {
         "S6": "D",
         "S7": "B"
