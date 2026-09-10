@@ -2,9 +2,10 @@
   "meta": {
     "sport": "EL",
     "engine": "fingerprint-spine",
-    "generated": "2026-08-27",
+    "generated": "2026-09-10",
     "count": 64,
-    "note": "EuroLeague on the shared spine (all 7 slots, like F1/NBA/IPL), FP_W 0.8. 20 signatures (own-pole self-land) + 44 randoms (validated core sets). s62 build."
+    "note": "EuroLeague on the shared spine (all 7 slots, FP_W 0.8). Module RE-AUTHORED: el_q1 how-you-build 4-option (grow/buy/carry-tradition/build-from-nothing), el_q4 standing 3-option (settled/belong-restless/outsider), el_q2/el_q3 kept binary; graded {1,2,3}. 20 signatures re-recorded on new anchors (20/20 self-land), 44 randoms re-seeded on the new module. scoring.js + euroleague-spine.js byte-unchanged.",
+    "reauthored": "module question re-author; grounded in fandna-euroleague-souls.md"
   },
   "fixtures": [
     {
@@ -30,10 +31,10 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "A",
         "el_q2": "right",
         "el_q3": "right",
-        "el_q4": "left"
+        "el_q4": "A"
       },
       "winner": "RMA",
       "winnerName": "Real Madrid"
@@ -61,10 +62,10 @@
         "S7": "C"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "C",
         "el_q2": "left",
         "el_q3": "right",
-        "el_q4": "right"
+        "el_q4": "B"
       },
       "winner": "BAR",
       "winnerName": "FC Barcelona"
@@ -92,10 +93,10 @@
         "S7": "B"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "A",
         "el_q2": "right",
         "el_q3": "left",
-        "el_q4": "right"
+        "el_q4": "C"
       },
       "winner": "BAS",
       "winnerName": "Baskonia"
@@ -123,10 +124,10 @@
         "S7": "C"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "A",
         "el_q2": "right",
         "el_q3": "left",
-        "el_q4": "right"
+        "el_q4": "C"
       },
       "winner": "VAL",
       "winnerName": "Valencia Basket"
@@ -154,10 +155,10 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "C",
         "el_q2": "left",
         "el_q3": "left",
-        "el_q4": "right"
+        "el_q4": "B"
       },
       "winner": "OLY",
       "winnerName": "Olympiacos"
@@ -185,10 +186,10 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "C",
         "el_q2": "left",
         "el_q3": "left",
-        "el_q4": "left"
+        "el_q4": "B"
       },
       "winner": "PAN",
       "winnerName": "Panathinaikos"
@@ -216,10 +217,10 @@
         "S7": "C"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "B",
         "el_q2": "left",
         "el_q3": "right",
-        "el_q4": "left"
+        "el_q4": "B"
       },
       "winner": "FEN",
       "winnerName": "Fenerbahçe"
@@ -247,10 +248,10 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "B",
         "el_q2": "right",
         "el_q3": "left",
-        "el_q4": "left"
+        "el_q4": "A"
       },
       "winner": "EFS",
       "winnerName": "Anadolu Efes"
@@ -278,10 +279,10 @@
         "S7": "B"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "A",
         "el_q2": "left",
         "el_q3": "right",
-        "el_q4": "right"
+        "el_q4": "C"
       },
       "winner": "BES",
       "winnerName": "Beşiktaş"
@@ -309,10 +310,10 @@
         "S7": "C"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "A",
         "el_q2": "left",
         "el_q3": "right",
-        "el_q4": "right"
+        "el_q4": "C"
       },
       "winner": "PTZ",
       "winnerName": "Partizan"
@@ -340,10 +341,10 @@
         "S7": "C"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "C",
         "el_q2": "left",
         "el_q3": "right",
-        "el_q4": "left"
+        "el_q4": "B"
       },
       "winner": "RED",
       "winnerName": "Crvena zvezda"
@@ -371,10 +372,10 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "B",
         "el_q2": "right",
         "el_q3": "left",
-        "el_q4": "left"
+        "el_q4": "A"
       },
       "winner": "MIL",
       "winnerName": "Olimpia Milano"
@@ -402,10 +403,10 @@
         "S7": "B"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "C",
         "el_q2": "right",
         "el_q3": "left",
-        "el_q4": "right"
+        "el_q4": "B"
       },
       "winner": "VIR",
       "winnerName": "Virtus Bologna"
@@ -433,10 +434,10 @@
         "S7": "D"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "B",
         "el_q2": "right",
         "el_q3": "right",
-        "el_q4": "left"
+        "el_q4": "A"
       },
       "winner": "BAY",
       "winnerName": "Bayern Munich"
@@ -464,10 +465,10 @@
         "S7": "B"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "A",
         "el_q2": "right",
         "el_q3": "left",
-        "el_q4": "left"
+        "el_q4": "C"
       },
       "winner": "ASV",
       "winnerName": "LDLC ASVEL"
@@ -495,10 +496,10 @@
         "S7": "D"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "D",
         "el_q2": "left",
         "el_q3": "left",
-        "el_q4": "right"
+        "el_q4": "C"
       },
       "winner": "PRS",
       "winnerName": "Paris Basketball"
@@ -526,10 +527,10 @@
         "S7": "B"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "C",
         "el_q2": "left",
         "el_q3": "right",
-        "el_q4": "right"
+        "el_q4": "C"
       },
       "winner": "HAP",
       "winnerName": "Hapoel Tel Aviv"
@@ -557,10 +558,10 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "B",
         "el_q2": "right",
         "el_q3": "right",
-        "el_q4": "left"
+        "el_q4": "A"
       },
       "winner": "MAC",
       "winnerName": "Maccabi Tel Aviv"
@@ -588,10 +589,10 @@
         "S7": "B"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "A",
         "el_q2": "right",
         "el_q3": "right",
-        "el_q4": "right"
+        "el_q4": "C"
       },
       "winner": "ZAL",
       "winnerName": "Žalgiris"
@@ -619,10 +620,10 @@
         "S7": "D"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "D",
         "el_q2": "left",
         "el_q3": "left",
-        "el_q4": "right"
+        "el_q4": "C"
       },
       "winner": "DUB",
       "winnerName": "Dubai Basketball"
@@ -650,13 +651,13 @@
         "S7": "B"
       },
       "moduleAnswers": {
-        "el_q1": "left",
-        "el_q2": "right",
+        "el_q1": "B",
+        "el_q2": "left",
         "el_q3": "left",
-        "el_q4": "right"
+        "el_q4": "B"
       },
-      "winner": "ASV",
-      "winnerName": "LDLC ASVEL"
+      "winner": "PAN",
+      "winnerName": "Panathinaikos"
     },
     {
       "id": "rnd_02",
@@ -681,13 +682,13 @@
         "S7": "B"
       },
       "moduleAnswers": {
-        "el_q1": "right",
-        "el_q2": "left",
+        "el_q1": "D",
+        "el_q2": "right",
         "el_q3": "right",
-        "el_q4": "left"
+        "el_q4": "A"
       },
-      "winner": "BES",
-      "winnerName": "Beşiktaş"
+      "winner": "MAC",
+      "winnerName": "Maccabi Tel Aviv"
     },
     {
       "id": "rnd_03",
@@ -712,13 +713,13 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "left",
-        "el_q2": "left",
+        "el_q1": "D",
+        "el_q2": "right",
         "el_q3": "left",
-        "el_q4": "left"
+        "el_q4": "C"
       },
-      "winner": "PAN",
-      "winnerName": "Panathinaikos"
+      "winner": "PRS",
+      "winnerName": "Paris Basketball"
     },
     {
       "id": "rnd_04",
@@ -743,13 +744,13 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "B",
         "el_q2": "right",
         "el_q3": "left",
-        "el_q4": "right"
+        "el_q4": "B"
       },
-      "winner": "ASV",
-      "winnerName": "LDLC ASVEL"
+      "winner": "OLY",
+      "winnerName": "Olympiacos"
     },
     {
       "id": "rnd_05",
@@ -774,13 +775,13 @@
         "S7": "C"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "A",
         "el_q2": "left",
         "el_q3": "left",
-        "el_q4": "right"
+        "el_q4": "C"
       },
-      "winner": "VIR",
-      "winnerName": "Virtus Bologna"
+      "winner": "PTZ",
+      "winnerName": "Partizan"
     },
     {
       "id": "rnd_06",
@@ -805,13 +806,13 @@
         "S7": "D"
       },
       "moduleAnswers": {
-        "el_q1": "left",
-        "el_q2": "left",
+        "el_q1": "B",
+        "el_q2": "right",
         "el_q3": "right",
-        "el_q4": "right"
+        "el_q4": "A"
       },
-      "winner": "FEN",
-      "winnerName": "Fenerbahçe"
+      "winner": "BAY",
+      "winnerName": "Bayern Munich"
     },
     {
       "id": "rnd_07",
@@ -836,13 +837,13 @@
         "S7": "C"
       },
       "moduleAnswers": {
-        "el_q1": "left",
-        "el_q2": "right",
-        "el_q3": "left",
-        "el_q4": "left"
+        "el_q1": "B",
+        "el_q2": "left",
+        "el_q3": "right",
+        "el_q4": "C"
       },
-      "winner": "ASV",
-      "winnerName": "LDLC ASVEL"
+      "winner": "PTZ",
+      "winnerName": "Partizan"
     },
     {
       "id": "rnd_08",
@@ -867,13 +868,13 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "left",
-        "el_q2": "left",
+        "el_q1": "B",
+        "el_q2": "right",
         "el_q3": "left",
-        "el_q4": "left"
+        "el_q4": "B"
       },
-      "winner": "ASV",
-      "winnerName": "LDLC ASVEL"
+      "winner": "EFS",
+      "winnerName": "Anadolu Efes"
     },
     {
       "id": "rnd_09",
@@ -898,13 +899,13 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "right",
-        "el_q2": "right",
+        "el_q1": "C",
+        "el_q2": "left",
         "el_q3": "left",
-        "el_q4": "left"
+        "el_q4": "C"
       },
-      "winner": "PAN",
-      "winnerName": "Panathinaikos"
+      "winner": "OLY",
+      "winnerName": "Olympiacos"
     },
     {
       "id": "rnd_10",
@@ -929,10 +930,10 @@
         "S7": "C"
       },
       "moduleAnswers": {
-        "el_q1": "right",
-        "el_q2": "left",
+        "el_q1": "C",
+        "el_q2": "right",
         "el_q3": "right",
-        "el_q4": "left"
+        "el_q4": "C"
       },
       "winner": "FEN",
       "winnerName": "Fenerbahçe"
@@ -960,13 +961,13 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "left",
-        "el_q2": "left",
-        "el_q3": "left",
-        "el_q4": "right"
+        "el_q1": "C",
+        "el_q2": "right",
+        "el_q3": "right",
+        "el_q4": "C"
       },
-      "winner": "VAL",
-      "winnerName": "Valencia Basket"
+      "winner": "MAC",
+      "winnerName": "Maccabi Tel Aviv"
     },
     {
       "id": "rnd_12",
@@ -991,13 +992,13 @@
         "S7": "D"
       },
       "moduleAnswers": {
-        "el_q1": "left",
-        "el_q2": "left",
-        "el_q3": "right",
-        "el_q4": "left"
+        "el_q1": "A",
+        "el_q2": "right",
+        "el_q3": "left",
+        "el_q4": "A"
       },
-      "winner": "RED",
-      "winnerName": "Crvena zvezda"
+      "winner": "RMA",
+      "winnerName": "Real Madrid"
     },
     {
       "id": "rnd_13",
@@ -1022,13 +1023,13 @@
         "S7": "D"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "C",
         "el_q2": "left",
-        "el_q3": "left",
-        "el_q4": "left"
+        "el_q3": "right",
+        "el_q4": "A"
       },
-      "winner": "ASV",
-      "winnerName": "LDLC ASVEL"
+      "winner": "PTZ",
+      "winnerName": "Partizan"
     },
     {
       "id": "rnd_14",
@@ -1053,13 +1054,13 @@
         "S7": "D"
       },
       "moduleAnswers": {
-        "el_q1": "left",
-        "el_q2": "left",
+        "el_q1": "B",
+        "el_q2": "right",
         "el_q3": "right",
-        "el_q4": "right"
+        "el_q4": "A"
       },
-      "winner": "BAR",
-      "winnerName": "FC Barcelona"
+      "winner": "BAY",
+      "winnerName": "Bayern Munich"
     },
     {
       "id": "rnd_15",
@@ -1084,13 +1085,13 @@
         "S7": "B"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "D",
         "el_q2": "left",
         "el_q3": "right",
-        "el_q4": "right"
+        "el_q4": "B"
       },
-      "winner": "ZAL",
-      "winnerName": "Žalgiris"
+      "winner": "BAR",
+      "winnerName": "FC Barcelona"
     },
     {
       "id": "rnd_16",
@@ -1115,10 +1116,10 @@
         "S7": "D"
       },
       "moduleAnswers": {
-        "el_q1": "left",
-        "el_q2": "right",
+        "el_q1": "B",
+        "el_q2": "left",
         "el_q3": "right",
-        "el_q4": "right"
+        "el_q4": "A"
       },
       "winner": "PTZ",
       "winnerName": "Partizan"
@@ -1146,10 +1147,10 @@
         "S7": "D"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "A",
         "el_q2": "left",
         "el_q3": "right",
-        "el_q4": "right"
+        "el_q4": "A"
       },
       "winner": "ZAL",
       "winnerName": "Žalgiris"
@@ -1177,13 +1178,13 @@
         "S7": "B"
       },
       "moduleAnswers": {
-        "el_q1": "right",
-        "el_q2": "right",
+        "el_q1": "A",
+        "el_q2": "left",
         "el_q3": "right",
-        "el_q4": "left"
+        "el_q4": "C"
       },
-      "winner": "EFS",
-      "winnerName": "Anadolu Efes"
+      "winner": "BES",
+      "winnerName": "Beşiktaş"
     },
     {
       "id": "rnd_19",
@@ -1208,10 +1209,10 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "left",
-        "el_q2": "left",
+        "el_q1": "D",
+        "el_q2": "right",
         "el_q3": "left",
-        "el_q4": "left"
+        "el_q4": "B"
       },
       "winner": "VIR",
       "winnerName": "Virtus Bologna"
@@ -1239,13 +1240,13 @@
         "S7": "D"
       },
       "moduleAnswers": {
-        "el_q1": "right",
-        "el_q2": "left",
+        "el_q1": "B",
+        "el_q2": "right",
         "el_q3": "left",
-        "el_q4": "left"
+        "el_q4": "C"
       },
-      "winner": "EFS",
-      "winnerName": "Anadolu Efes"
+      "winner": "ASV",
+      "winnerName": "LDLC ASVEL"
     },
     {
       "id": "rnd_21",
@@ -1270,13 +1271,13 @@
         "S7": "C"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "D",
         "el_q2": "right",
         "el_q3": "left",
-        "el_q4": "right"
+        "el_q4": "C"
       },
-      "winner": "PTZ",
-      "winnerName": "Partizan"
+      "winner": "ASV",
+      "winnerName": "LDLC ASVEL"
     },
     {
       "id": "rnd_22",
@@ -1301,10 +1302,10 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "D",
         "el_q2": "right",
-        "el_q3": "left",
-        "el_q4": "right"
+        "el_q3": "right",
+        "el_q4": "B"
       },
       "winner": "MAC",
       "winnerName": "Maccabi Tel Aviv"
@@ -1332,13 +1333,13 @@
         "S7": "D"
       },
       "moduleAnswers": {
-        "el_q1": "left",
-        "el_q2": "left",
+        "el_q1": "D",
+        "el_q2": "right",
         "el_q3": "right",
-        "el_q4": "right"
+        "el_q4": "C"
       },
-      "winner": "BES",
-      "winnerName": "Beşiktaş"
+      "winner": "ZAL",
+      "winnerName": "Žalgiris"
     },
     {
       "id": "rnd_24",
@@ -1363,13 +1364,13 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "right",
-        "el_q2": "right",
+        "el_q1": "D",
+        "el_q2": "left",
         "el_q3": "left",
-        "el_q4": "right"
+        "el_q4": "C"
       },
-      "winner": "VIR",
-      "winnerName": "Virtus Bologna"
+      "winner": "PAN",
+      "winnerName": "Panathinaikos"
     },
     {
       "id": "rnd_25",
@@ -1394,13 +1395,13 @@
         "S7": "B"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "B",
         "el_q2": "right",
-        "el_q3": "left",
-        "el_q4": "left"
+        "el_q3": "right",
+        "el_q4": "C"
       },
-      "winner": "MIL",
-      "winnerName": "Olimpia Milano"
+      "winner": "FEN",
+      "winnerName": "Fenerbahçe"
     },
     {
       "id": "rnd_26",
@@ -1425,13 +1426,13 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "C",
         "el_q2": "left",
-        "el_q3": "left",
-        "el_q4": "right"
+        "el_q3": "right",
+        "el_q4": "A"
       },
-      "winner": "BES",
-      "winnerName": "Beşiktaş"
+      "winner": "RED",
+      "winnerName": "Crvena zvezda"
     },
     {
       "id": "rnd_27",
@@ -1456,13 +1457,13 @@
         "S7": "C"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "C",
         "el_q2": "left",
-        "el_q3": "right",
-        "el_q4": "left"
+        "el_q3": "left",
+        "el_q4": "A"
       },
-      "winner": "PTZ",
-      "winnerName": "Partizan"
+      "winner": "VIR",
+      "winnerName": "Virtus Bologna"
     },
     {
       "id": "rnd_28",
@@ -1487,13 +1488,13 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "right",
-        "el_q2": "right",
-        "el_q3": "left",
-        "el_q4": "right"
+        "el_q1": "A",
+        "el_q2": "left",
+        "el_q3": "right",
+        "el_q4": "C"
       },
-      "winner": "VIR",
-      "winnerName": "Virtus Bologna"
+      "winner": "PTZ",
+      "winnerName": "Partizan"
     },
     {
       "id": "rnd_29",
@@ -1518,13 +1519,13 @@
         "S7": "C"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "D",
         "el_q2": "left",
         "el_q3": "right",
-        "el_q4": "left"
+        "el_q4": "C"
       },
-      "winner": "FEN",
-      "winnerName": "Fenerbahçe"
+      "winner": "DUB",
+      "winnerName": "Dubai Basketball"
     },
     {
       "id": "rnd_30",
@@ -1549,13 +1550,13 @@
         "S7": "B"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "D",
         "el_q2": "left",
         "el_q3": "left",
-        "el_q4": "right"
+        "el_q4": "A"
       },
-      "winner": "BAS",
-      "winnerName": "Baskonia"
+      "winner": "DUB",
+      "winnerName": "Dubai Basketball"
     },
     {
       "id": "rnd_31",
@@ -1580,10 +1581,10 @@
         "S7": "D"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "D",
         "el_q2": "right",
         "el_q3": "right",
-        "el_q4": "right"
+        "el_q4": "C"
       },
       "winner": "ZAL",
       "winnerName": "Žalgiris"
@@ -1611,13 +1612,13 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "A",
         "el_q2": "left",
-        "el_q3": "left",
-        "el_q4": "right"
+        "el_q3": "right",
+        "el_q4": "B"
       },
-      "winner": "EFS",
-      "winnerName": "Anadolu Efes"
+      "winner": "RMA",
+      "winnerName": "Real Madrid"
     },
     {
       "id": "rnd_33",
@@ -1642,13 +1643,13 @@
         "S7": "D"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "A",
         "el_q2": "right",
-        "el_q3": "left",
-        "el_q4": "right"
+        "el_q3": "right",
+        "el_q4": "B"
       },
-      "winner": "VIR",
-      "winnerName": "Virtus Bologna"
+      "winner": "ZAL",
+      "winnerName": "Žalgiris"
     },
     {
       "id": "rnd_34",
@@ -1673,13 +1674,13 @@
         "S7": "D"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "D",
         "el_q2": "right",
-        "el_q3": "right",
-        "el_q4": "right"
+        "el_q3": "left",
+        "el_q4": "C"
       },
-      "winner": "VIR",
-      "winnerName": "Virtus Bologna"
+      "winner": "ASV",
+      "winnerName": "LDLC ASVEL"
     },
     {
       "id": "rnd_35",
@@ -1704,13 +1705,13 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "left",
-        "el_q2": "left",
-        "el_q3": "left",
-        "el_q4": "left"
+        "el_q1": "D",
+        "el_q2": "right",
+        "el_q3": "right",
+        "el_q4": "C"
       },
-      "winner": "EFS",
-      "winnerName": "Anadolu Efes"
+      "winner": "BAS",
+      "winnerName": "Baskonia"
     },
     {
       "id": "rnd_36",
@@ -1735,13 +1736,13 @@
         "S7": "B"
       },
       "moduleAnswers": {
-        "el_q1": "left",
-        "el_q2": "right",
+        "el_q1": "B",
+        "el_q2": "left",
         "el_q3": "left",
-        "el_q4": "right"
+        "el_q4": "B"
       },
-      "winner": "ASV",
-      "winnerName": "LDLC ASVEL"
+      "winner": "PAN",
+      "winnerName": "Panathinaikos"
     },
     {
       "id": "rnd_37",
@@ -1766,13 +1767,13 @@
         "S7": "C"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "C",
         "el_q2": "right",
         "el_q3": "right",
-        "el_q4": "left"
+        "el_q4": "B"
       },
-      "winner": "MAC",
-      "winnerName": "Maccabi Tel Aviv"
+      "winner": "RED",
+      "winnerName": "Crvena zvezda"
     },
     {
       "id": "rnd_38",
@@ -1797,13 +1798,13 @@
         "S7": "D"
       },
       "moduleAnswers": {
-        "el_q1": "left",
-        "el_q2": "right",
-        "el_q3": "right",
-        "el_q4": "right"
+        "el_q1": "B",
+        "el_q2": "left",
+        "el_q3": "left",
+        "el_q4": "A"
       },
-      "winner": "ZAL",
-      "winnerName": "Žalgiris"
+      "winner": "MAC",
+      "winnerName": "Maccabi Tel Aviv"
     },
     {
       "id": "rnd_39",
@@ -1828,13 +1829,13 @@
         "S7": "B"
       },
       "moduleAnswers": {
-        "el_q1": "right",
-        "el_q2": "right",
-        "el_q3": "left",
-        "el_q4": "right"
+        "el_q1": "C",
+        "el_q2": "left",
+        "el_q3": "right",
+        "el_q4": "B"
       },
-      "winner": "VIR",
-      "winnerName": "Virtus Bologna"
+      "winner": "RED",
+      "winnerName": "Crvena zvezda"
     },
     {
       "id": "rnd_40",
@@ -1859,10 +1860,10 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "right",
+        "el_q1": "D",
         "el_q2": "left",
         "el_q3": "left",
-        "el_q4": "right"
+        "el_q4": "A"
       },
       "winner": "OLY",
       "winnerName": "Olympiacos"
@@ -1890,13 +1891,13 @@
         "S7": "B"
       },
       "moduleAnswers": {
-        "el_q1": "left",
-        "el_q2": "right",
-        "el_q3": "left",
-        "el_q4": "left"
+        "el_q1": "A",
+        "el_q2": "left",
+        "el_q3": "right",
+        "el_q4": "A"
       },
-      "winner": "ASV",
-      "winnerName": "LDLC ASVEL"
+      "winner": "BES",
+      "winnerName": "Beşiktaş"
     },
     {
       "id": "rnd_42",
@@ -1921,13 +1922,13 @@
         "S7": "C"
       },
       "moduleAnswers": {
-        "el_q1": "right",
-        "el_q2": "right",
+        "el_q1": "A",
+        "el_q2": "left",
         "el_q3": "left",
-        "el_q4": "right"
+        "el_q4": "B"
       },
-      "winner": "VIR",
-      "winnerName": "Virtus Bologna"
+      "winner": "ASV",
+      "winnerName": "LDLC ASVEL"
     },
     {
       "id": "rnd_43",
@@ -1952,13 +1953,13 @@
         "S7": "A"
       },
       "moduleAnswers": {
-        "el_q1": "left",
+        "el_q1": "A",
         "el_q2": "right",
         "el_q3": "right",
-        "el_q4": "left"
+        "el_q4": "B"
       },
-      "winner": "MAC",
-      "winnerName": "Maccabi Tel Aviv"
+      "winner": "RMA",
+      "winnerName": "Real Madrid"
     },
     {
       "id": "rnd_44",
@@ -1983,10 +1984,10 @@
         "S7": "C"
       },
       "moduleAnswers": {
-        "el_q1": "left",
-        "el_q2": "left",
+        "el_q1": "C",
+        "el_q2": "right",
         "el_q3": "right",
-        "el_q4": "left"
+        "el_q4": "A"
       },
       "winner": "BAR",
       "winnerName": "FC Barcelona"
