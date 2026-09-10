@@ -647,8 +647,8 @@
         "top14_q3": "C",
         "top14_q4": "D"
       },
-      "winner": "SFP",
-      "winnerName": "Stade Français Paris",
+      "winner": "R92",
+      "winnerName": "Racing 92",
       "coreAnswers": {
         "q1": "E",
         "q2": "right",
@@ -1023,8 +1023,8 @@
         "top14_q3": "A",
         "top14_q4": "C"
       },
-      "winner": "MHR",
-      "winnerName": "Montpellier Hérault Rugby",
+      "winner": "RCT",
+      "winnerName": "RC Toulon",
       "coreAnswers": {
         "q1": "C",
         "q2": "right",
@@ -1446,8 +1446,8 @@
         "top14_q3": "B",
         "top14_q4": "B"
       },
-      "winner": "CAS",
-      "winnerName": "Castres Olympique",
+      "winner": "UBB",
+      "winnerName": "Union Bordeaux Bègles",
       "coreAnswers": {
         "q1": "B",
         "q2": "right",
@@ -1493,8 +1493,8 @@
         "top14_q3": "B",
         "top14_q4": "B"
       },
-      "winner": "ABR",
-      "winnerName": "Aviron Bayonnais",
+      "winner": "USM",
+      "winnerName": "US Montauban",
       "coreAnswers": {
         "q1": "B",
         "q2": "right",
@@ -1822,8 +1822,8 @@
         "top14_q3": "B",
         "top14_q4": "D"
       },
-      "winner": "USP",
-      "winnerName": "USA Perpignan",
+      "winner": "UBB",
+      "winnerName": "Union Bordeaux Bègles",
       "coreAnswers": {
         "q1": "A",
         "q2": "left",
@@ -1916,8 +1916,8 @@
         "top14_q3": "C",
         "top14_q4": "A"
       },
-      "winner": "UBB",
-      "winnerName": "Union Bordeaux Bègles",
+      "winner": "TLS",
+      "winnerName": "Stade Toulousain",
       "coreAnswers": {
         "q1": "D",
         "q2": "left",
@@ -2245,8 +2245,8 @@
         "top14_q3": "B",
         "top14_q4": "B"
       },
-      "winner": "LOU",
-      "winnerName": "Lyon OU",
+      "winner": "USM",
+      "winnerName": "US Montauban",
       "coreAnswers": {
         "q1": "C",
         "q2": "left",
@@ -2433,8 +2433,8 @@
         "top14_q3": "A",
         "top14_q4": "B"
       },
-      "winner": "LOU",
-      "winnerName": "Lyon OU",
+      "winner": "UBB",
+      "winnerName": "Union Bordeaux Bègles",
       "coreAnswers": {
         "q1": "A",
         "q2": "left",
@@ -2527,8 +2527,8 @@
         "top14_q3": "D",
         "top14_q4": "C"
       },
-      "winner": "ABR",
-      "winnerName": "Aviron Bayonnais",
+      "winner": "RCT",
+      "winnerName": "RC Toulon",
       "coreAnswers": {
         "q1": "B",
         "q2": "right",
@@ -2762,8 +2762,8 @@
         "top14_q3": "D",
         "top14_q4": "A"
       },
-      "winner": "USP",
-      "winnerName": "USA Perpignan",
+      "winner": "TLS",
+      "winnerName": "Stade Toulousain",
       "coreAnswers": {
         "q1": "A",
         "q2": "left",
