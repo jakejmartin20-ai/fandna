@@ -7,10 +7,14 @@
 // Virtus 2; Zalgiris 1; Partizan 1 (1992); Milano 3 European Cups (old era, none modern).
 
 const moduleQuestions = [
-  { "id": "el_q1", "type": "binary", "phase": "The fine print",
+  { "id": "el_q1", "type": "choice", "phase": "The fine print",
     "question": "When something you built finally comes good, the part that means the most to you is...",
-    "left": "You grew it yourself, from raw beginnings nobody else believed in. Nothing beats watching it become what it was meant to be.",
-    "right": "You saw exactly what was missing and went and got it. I'll take the finished article over a promising maybe." },
+    "options": [
+      { "label": "You grew it yourself, from rough beginnings nobody believed in, and watched it become what it was meant to be.", "value": "A" },
+      { "label": "You saw exactly what was missing and went and got it. Give me the finished article over a promising maybe.", "value": "B" },
+      { "label": "You didn't grow it or buy it. It was always there, handed down, and you kept it alive.", "value": "C" },
+      { "label": "There was nothing there before you. No past to lean on, so you built the whole thing from the ground up.", "value": "D" }
+    ] },
   { "id": "el_q2", "type": "binary", "phase": "The fine print",
     "question": "When the work is going well, you would rather...",
     "left": "Be seen doing it, out loud, in the middle of the noise.",
@@ -19,28 +23,34 @@ const moduleQuestions = [
     "question": "The places where you do your best work are the ones where...",
     "left": "One person with a clear vision drives the whole thing.",
     "right": "No single person is ever bigger than the thing itself." },
-  { "id": "el_q4", "type": "binary", "phase": "What it comes down to",
+  { "id": "el_q4", "type": "choice", "phase": "What it comes down to",
     "question": "Somewhere in you, you have always felt more like...",
-    "left": "One of the establishment, and settled being there.",
-    "right": "An outsider who still has something to prove." }
+    "options": [
+      { "label": "One of the establishment, and settled being there.", "value": "A" },
+      { "label": "Part of something big, but never quite at peace inside it.", "value": "B" },
+      { "label": "An outsider who still has something to prove.", "value": "C" }
+    ] }
 ];
 
 const scoring = {
   "el_q1": {
-    "left":  { "RMA": 2, "BAR": 2, "BAS": 2, "VAL": 2, "PTZ": 2, "ASV": 2, "MAC": 2, "ZAL": 2 },
-    "right": { "OLY": 2, "PAN": 2, "FEN": 2, "EFS": 2, "BES": 2, "RED": 2, "MIL": 2, "VIR": 2, "BAY": 2, "PRS": 2, "HAP": 2, "DUB": 2 }
+    "A": { "RMA": 3, "BAS": 3, "VAL": 3, "BES": 3, "PTZ": 3, "ASV": 3, "ZAL": 3, "EFS": 2, "BAR": 1 },
+    "B": { "FEN": 3, "EFS": 3, "MIL": 3, "BAY": 3, "MAC": 3, "RMA": 2, "OLY": 2, "HAP": 2 },
+    "C": { "BAR": 3, "OLY": 3, "PAN": 3, "RED": 3, "VIR": 3, "HAP": 3, "ZAL": 2 },
+    "D": { "PRS": 3, "DUB": 3 }
   },
   "el_q2": {
-    "left":  { "BAR": 2, "OLY": 2, "PAN": 2, "FEN": 2, "BES": 2, "PTZ": 2, "RED": 2, "PRS": 2, "HAP": 2, "DUB": 2 },
-    "right": { "RMA": 2, "BAS": 2, "VAL": 2, "EFS": 2, "MIL": 2, "VIR": 2, "BAY": 2, "ASV": 2, "MAC": 2, "ZAL": 2 }
+    "left":  { "BAR": 3, "OLY": 3, "PAN": 3, "FEN": 3, "BES": 3, "PTZ": 3, "RED": 3, "PRS": 3, "HAP": 3, "DUB": 3, "MAC": 2 },
+    "right": { "RMA": 3, "BAS": 3, "VAL": 3, "EFS": 3, "MIL": 3, "VIR": 3, "BAY": 3, "ASV": 3, "MAC": 3, "ZAL": 3, "FEN": 2, "OLY": 2 }
   },
   "el_q3": {
-    "left":  { "BAS": 2, "VAL": 2, "OLY": 2, "PAN": 2, "EFS": 2, "MIL": 2, "VIR": 2, "ASV": 2, "PRS": 2, "DUB": 2 },
-    "right": { "RMA": 2, "BAR": 2, "FEN": 2, "BES": 2, "PTZ": 2, "RED": 2, "BAY": 2, "HAP": 2, "MAC": 2, "ZAL": 2 }
+    "left":  { "BAS": 3, "VAL": 3, "OLY": 3, "PAN": 3, "EFS": 3, "MIL": 3, "VIR": 3, "ASV": 3, "PRS": 3, "DUB": 3, "RMA": 2 },
+    "right": { "RMA": 3, "BAR": 3, "FEN": 3, "BES": 3, "PTZ": 3, "RED": 3, "BAY": 3, "HAP": 3, "MAC": 3, "ZAL": 3, "DUB": 2 }
   },
   "el_q4": {
-    "left":  { "RMA": 2, "PAN": 2, "FEN": 2, "EFS": 2, "RED": 2, "MIL": 2, "BAY": 2, "ASV": 2, "MAC": 2 },
-    "right": { "BAR": 2, "BAS": 2, "VAL": 2, "OLY": 2, "BES": 2, "PTZ": 2, "VIR": 2, "PRS": 2, "HAP": 2, "ZAL": 2, "DUB": 2 }
+    "A": { "RMA": 3, "MAC": 3, "EFS": 3, "BAY": 3, "MIL": 3 },
+    "B": { "PAN": 3, "RED": 3, "FEN": 3, "BAR": 3, "VIR": 3, "OLY": 3, "ASV": 2 },
+    "C": { "BAS": 3, "VAL": 3, "BES": 3, "PTZ": 3, "PRS": 3, "HAP": 3, "ZAL": 3, "ASV": 3, "DUB": 3, "OLY": 2 }
   }
 };
 
