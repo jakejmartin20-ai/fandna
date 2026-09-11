@@ -1101,28 +1101,23 @@ function AppInner(){
   async function shareCrest(mode, extra){
     track("compare_link_shared");
     const st=loadState();
-    const results=st.results||{};
-    const code=encodeGenome({coreProfile:st.coreProfile, results});
+    const code=encodeGenome({coreProfile:st.coreProfile, results:st.results||{}});
     const url=`https://playfandna.com/c/${code}`;
-    let caption;
-    if(mode==="earn"){
-      const fam=extra.family;
-      caption=`Completed the ${fam.label} set on FanDNA. Compare yours: ${url}`;
-    }else{
-      caption=`Sequenced every league on FanDNA. Compare yours: ${url}`;
-    }
+    const caption = mode==="earn"
+      ? `Completed the ${extra.family.label} set on FanDNA. Compare yours: ${url}`
+      : `Sequenced every league on FanDNA. Compare yours: ${url}`;
+    try{ if(navigator.share){ await navigator.share({text:caption}); return; } }catch(e){ if(e&&e.name==="AbortError") return; }
+    navigator.clipboard?.writeText(caption).then(()=>alert("Link copied.")).catch(()=>alert(caption));
+  }
+  // Save the crest poster (the earned-moment image) to the user's device. The SHARE path is
+  // link-only now (the /c/ link previews as the genome card), so this is how the crest image is kept.
+  async function downloadCrest(mode, extra){
+    const st=loadState();
     let blob=null;
-    try{ blob=await generateCrestCard(mode,{genome:results, coreProfile:st.coreProfile, family:extra&&extra.family, typeName:extra&&extra.typeName}); }catch(e){ blob=null; }
+    try{ blob=await generateCrestCard(mode,{genome:st.results||{}, coreProfile:st.coreProfile, family:extra&&extra.family, typeName:extra&&extra.typeName}); }catch(e){ blob=null; }
     track("crest_card_generated",{mode});
-    if(blob&&navigator.canShare){
-      const file=new File([blob],`fandna-crest-${mode}.png`,{type:"image/png"});
-      if(navigator.canShare({files:[file]})){
-        try{await navigator.share({files:[file],text:caption});return;}
-        catch(e){if(e&&e.name==="AbortError")return;}
-      }
-    }
-    if(blob){ saveBlob(blob); navigator.clipboard?.writeText(caption).catch(()=>{}); return; }
-    navigator.clipboard?.writeText(caption).then(()=>alert("Caption copied.")).catch(()=>alert(caption));
+    if(blob){ saveBlob(blob); return; }
+    alert("Card couldn't render here.");
   }
 
   // The recipient's OWN genome, read fresh from storage for the compare route (refreshes after a
@@ -1151,6 +1146,7 @@ function AppInner(){
           clubColors={groupClubColors(genome, earnFamily.id)}
           reducedMotion={earnReduced}
           onShare={()=>{ const fam=earnFamily; setEarnFamily(null); try{ shareCrest("earn",{family:fam}); }catch(e){} }}
+          onSave={()=>{ try{ downloadCrest("earn",{family:earnFamily}); }catch(e){} }}
           onDone={()=>setEarnFamily(null)}
         />
       )}
@@ -1161,6 +1157,7 @@ function AppInner(){
           typeName={(coreProfile && generateRead(coreProfile, Object.keys(genome).length) || {}).headline}
           reducedMotion={finaleReduced}
           onShare={()=>{ const tn=(coreProfile&&generateRead(coreProfile,Object.keys(genome).length)||{}).headline; setFinaleOn(false); try{ shareCrest("finale",{typeName:tn}); }catch(e){} }}
+          onSave={()=>{ const tn=(coreProfile&&generateRead(coreProfile,Object.keys(genome).length)||{}).headline; try{ downloadCrest("finale",{typeName:tn}); }catch(e){} }}
           onDone={()=>setFinaleOn(false)}
         />
       )}
