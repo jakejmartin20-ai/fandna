@@ -19,7 +19,7 @@ const KEYFRAMES = `
 @keyframes cfFade{0%{opacity:0;}100%{opacity:1;}}
 `;
 
-export function CrestFinale({ groups, genomeProfile, typeName, reducedMotion=false, onShare, onDone }){
+export function CrestFinale({ groups, genomeProfile, typeName, reducedMotion=false, onShare, onSave, onDone }){
   if(!groups || !groups.length) return null;
   const rm = !!reducedMotion;
   const anim = (name, dur, delay) => rm ? "none" : `${name} ${dur}s ease ${delay}s both`;
@@ -87,6 +87,7 @@ export function CrestFinale({ groups, genomeProfile, typeName, reducedMotion=fal
 
       <div style={{marginTop:24, display:"flex", gap:10, opacity: rm ? 1 : 0, animation: anim("cfRise", 0.5, 1.55)}}>
         <button onClick={onShare} style={{...btn, background:"#e8c46e", color:"#2a220e", border:"none"}}>Share</button>
+        <button onClick={onSave}  style={{...btn, background:"none", color:"#c9c4bd", border:"0.5px solid #55506a"}}>Save image</button>
         <button onClick={onDone}  style={{...btn, background:"none", color:"#9898b8", border:"0.5px solid #3f3f55"}}>Done</button>
       </div>
     </div>
