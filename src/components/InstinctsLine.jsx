@@ -128,7 +128,7 @@ export function InstinctsLine({ spineAnswers, onRetake }){
         <div style={{marginTop:12,borderTop:"1px solid #262238",paddingTop:12,display:"flex",flexDirection:"column",gap:11}}>
           {calls.map(c=>(
             <div key={c.id}>
-              <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.1em",textTransform:"uppercase",color:"#7c7796",marginBottom: c.type==="slider"?5:4}}>{c.prompt}</div>
+              <div style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.1em",textTransform:"uppercase",color:"#85819e",marginBottom: c.type==="slider"?5:4}}>{c.prompt}</div>
               {c.type==="choice" ? (
                 <div style={{fontSize:12.5,lineHeight:1.4,color:"#ded8ee",borderLeft:`2px solid ${ACCENT}`,background:"rgba(146,128,198,0.09)",padding:"6px 9px",borderRadius:"0 6px 6px 0"}}>{c.answer}</div>
               ) : (

@@ -77,14 +77,14 @@ export function CoreResequenced({ result, onContinue }){
                   background:"rgba(120,120,160,0.045)",border:"1px solid #24243a",borderRadius:9,overflow:"hidden",
                 }}>
                 <span aria-hidden="true" style={{position:"absolute",top:0,right:0,bottom:0,width:4,background:col,opacity:0.85}}/>
-                <span style={{fontFamily:"'DM Mono',monospace",fontSize:9.5,letterSpacing:"0.24em",textTransform:"uppercase",color:"#7a7aa2"}}>
+                <span style={{fontFamily:"'DM Mono',monospace",fontSize:9.5,letterSpacing:"0.24em",textTransform:"uppercase",color:"#8181a7"}}>
                   {leagueName(m.sport)}
                 </span>
                 <span style={{display:"flex",alignItems:"baseline",gap:9,flexWrap:"wrap"}}>
-                  <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(15px,4vw,18px)",color:"#6a6a80",textDecoration:"line-through",textDecorationColor:"#4a4a5e"}}>
+                  <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(15px,4vw,18px)",color:"#838398",textDecoration:"line-through",textDecorationColor:"#4a4a5e"}}>
                     {teamName(m.sport,m.from)}
                   </span>
-                  <span aria-hidden="true" style={{fontFamily:"'DM Mono',monospace",fontSize:12,color:"#6a6a90"}}>→</span>
+                  <span aria-hidden="true" style={{fontFamily:"'DM Mono',monospace",fontSize:12,color:"#8282a3"}}>→</span>
                   <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(17px,4.6vw,21px)",fontWeight:500,color:col}}>
                     {teamName(m.sport,m.to)}
                   </span>

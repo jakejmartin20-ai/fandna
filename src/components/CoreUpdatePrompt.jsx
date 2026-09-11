@@ -49,7 +49,7 @@ export function CoreUpdatePrompt({ onRetake, onKeep }){
         </div>
         {PREVIEW.map((t,i)=>(
           <div key={i} style={{display:"flex",alignItems:"flex-start",gap:12,padding:i===0?"0 0 12px":"12px 0",borderTop:i===0?"none":"1px solid #22223400"}}>
-            <span style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#6a6a90",lineHeight:1.5,flexShrink:0,marginTop:1}}>{i+1}</span>
+            <span style={{fontFamily:"'DM Mono',monospace",fontSize:11,color:"#8282a3",lineHeight:1.5,flexShrink:0,marginTop:1}}>{i+1}</span>
             <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:"clamp(15px,4vw,18px)",color:"#cfcbe0",lineHeight:1.45}}>{t}</span>
           </div>
         ))}

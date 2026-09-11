@@ -79,7 +79,7 @@ export function CrestFinale({ groups, genomeProfile, typeName, reducedMotion=fal
         <div style={{marginTop:24, display:"flex", flexDirection:"column", alignItems:"center", gap:4,
           opacity: rm ? 0.72 : 0, animation: anim("cfThrough", 0.6, 1.35)}}>
           <HexBadge kind="genome" profile={genomeProfile} size={46} title="Your genome"/>
-          <div style={{fontFamily:"'DM Mono',monospace", fontSize:8, letterSpacing:"0.14em", textTransform:"uppercase", color:"#5a5a72"}}>
+          <div style={{fontFamily:"'DM Mono',monospace", fontSize:8, letterSpacing:"0.14em", textTransform:"uppercase", color:"#82829c"}}>
             Your genome &middot; yours since step one
           </div>
         </div>
