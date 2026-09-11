@@ -233,10 +233,10 @@ export function GenomeHome({
             <div style={{width:15,height:15,borderRadius:"50%",border:"1px solid #3f3f4d"}}/>
           </div>
           <div style={{flex:1,minWidth:0}}>
-            <div style={{fontSize:10,color:"#6f6f80",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:3}}>{s.name}{s.sport ? " · " + s.sport : ""}</div>
+            <div style={{fontSize:10,color:"#838393",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:3}}>{s.name}{s.sport ? " · " + s.sport : ""}</div>
             <div style={{fontSize:"clamp(15px,3.6vw,17px)",color:"#83837e",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic"}}>Not yet sequenced</div>
           </div>
-          <span style={{fontSize:9,color:"#6a6a78",letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",flexShrink:0}}>planned</span>
+          <span style={{fontSize:9,color:"#838391",letterSpacing:"0.15em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",flexShrink:0}}>planned</span>
         </div>
       );
     }
@@ -246,7 +246,7 @@ export function GenomeHome({
         display:"flex",alignItems:"center",gap:12,background:"transparent",marginBottom:mb,
         border:"1px solid #23232f",clipPath:"polygon(22px 0, 100% 0, 100% 100%, 0 100%, 0 22px)",padding:"12px 14px",
       }}>
-        <div style={{width:42,height:42,borderRadius:"50%",flexShrink:0,border:"1px solid #3a3a4a",display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,color:"#6f6f88",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>?</div>
+        <div style={{width:42,height:42,borderRadius:"50%",flexShrink:0,border:"1px solid #3a3a4a",display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,color:"#83839a",fontFamily:"'Cormorant Garamond',Georgia,serif"}}>?</div>
         <div style={{flex:1,minWidth:0}}>
           <div style={{fontSize:10,color:"#818181",letterSpacing:"0.2em",textTransform:"uppercase",fontFamily:"'DM Mono',monospace",marginBottom:3}}>{s.name}{s.sport ? " · " + s.sport : ""}</div>
           <div style={{fontSize:"clamp(15px,3.6vw,17px)",color:"#9a9a9a",fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic"}}>Coming soon</div>
@@ -482,7 +482,7 @@ export function GenomeHome({
               style={{display:"flex",alignItems:"center",gap:10,width:"100%",marginBottom:14,background:"rgba(183,166,255,0.07)",border:"1px solid rgba(183,166,255,0.35)",borderRadius:12,padding:"10px 14px",cursor:"pointer",textAlign:"left"}}>
               <HexBadge kind="genome" profile={coreProfile} size={26}/>
               <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.18em",textTransform:"uppercase",color:"#b7a6ff",flex:1}}>Collection complete</span>
-              <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.1em",textTransform:"uppercase",color:"#807a9c"}}>all three groups</span>
+              <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,letterSpacing:"0.1em",textTransform:"uppercase",color:"#8680a0"}}>all three groups</span>
             </button>
           ) : null; })()}
         {FAMILIES.map((fam,i)=>(
