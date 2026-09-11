@@ -1038,9 +1038,7 @@ function AppInner(){
   function genomeCode(){ return encodeGenome({coreProfile, results: genome}); }
   function cardCaption(){
     const noun=regOf(activeSport).noun;
-    const _toks=shareGroups.flatMap(g=>g.items).filter(t=>!/-\?$/.test(t));
-    const seqLine=_toks.length<=4 ? ("FanDNA: "+_toks.join(" · ")+".") : ("FanDNA: "+_toks.length+" teams sequenced.");
-    return [`Which ${noun} are you, really? Turns out I'm ${team.name}, ${archetypes[result]}.`, blk(coreProfile), seqLine, `Find yours: playfandna.com`].filter(Boolean).join("\n");
+    return `Which ${noun} are you, really? Turns out I'm ${team.name}, ${archetypes[result]}. Find yours: playfandna.com`;
   }
   function saveBlob(blob){
     const url=URL.createObjectURL(blob);
@@ -1059,7 +1057,7 @@ function AppInner(){
     const code=encodeGenome({coreProfile:st.coreProfile, results:st.results||{}});
     const url=`https://playfandna.com/c/${code}`;
     const noun=regOf(activeSport).noun;
-    const caption=[`Which ${noun} are you, really?`, blk(st.coreProfile), `Compare your FanDNA with mine: ${url}`].filter(Boolean).join("\n");
+    const caption=`Which ${noun} are you, really? Compare your FanDNA with mine: ${url}`;
     try{ if(navigator.share){ await navigator.share({text:caption}); return; } }catch(e){ if(e&&e.name==="AbortError") return; }
     navigator.clipboard?.writeText(caption).then(()=>alert("Link copied.")).catch(()=>alert(caption));
   }
@@ -1068,7 +1066,7 @@ function AppInner(){
     const st=loadState();
     const code=encodeGenome({coreProfile:st.coreProfile, results:st.results||{}});
     const url=`https://playfandna.com/c/${code}`;
-    const caption=[blk(st.coreProfile), `Compare your FanDNA with mine: ${url}`].filter(Boolean).join("\n");
+    const caption=`Compare your FanDNA with mine: ${url}`;
     try{ if(navigator.share){ await navigator.share({text:caption}); return; } }catch(e){ if(e&&e.name==="AbortError") return; }
     navigator.clipboard?.writeText(caption).then(()=>alert("Compare link copied.")).catch(()=>alert(caption));
   }
@@ -1109,10 +1107,9 @@ function AppInner(){
     let caption;
     if(mode==="earn"){
       const fam=extra.family;
-      const n=groupClubColors(results, fam.id).length;
-      caption=[`Completed the ${fam.label} set on FanDNA. ${n} teams sequenced.`, blk(st.coreProfile), `Compare your FanDNA with mine: ${url}`].filter(Boolean).join("\n");
+      caption=`Completed the ${fam.label} set on FanDNA. Compare yours: ${url}`;
     }else{
-      caption=[`Sequenced every league on FanDNA. The full genome.`, blk(st.coreProfile), `Compare your FanDNA with mine: ${url}`].filter(Boolean).join("\n");
+      caption=`Sequenced every league on FanDNA. Compare yours: ${url}`;
     }
     let blob=null;
     try{ blob=await generateCrestCard(mode,{genome:results, coreProfile:st.coreProfile, family:extra&&extra.family, typeName:extra&&extra.typeName}); }catch(e){ blob=null; }
