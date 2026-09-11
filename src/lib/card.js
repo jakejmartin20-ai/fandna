@@ -6,7 +6,7 @@ import { SPORT_DATA } from "../lib/sportData";
 import { SPORTS, FAMILIES } from "../lib/manifest";
 import { REGISTER } from "./register";
 import { standing } from "./genomeRead";
-import { completedGroups } from "./crest";
+import { completedGroups, groupSports } from "./crest";
 
 function hexToRgb(h){h=h.replace("#","");return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
 function relLum(rgb){const f=v=>{v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);};return 0.2126*f(rgb[0])+0.7152*f(rgb[1])+0.0722*f(rgb[2]);}
@@ -123,5 +123,97 @@ async function generateShareCard(sport, key, genome, coreProfile){
   return await new Promise(res=>cv.toBlob(res,"image/png"));
 }
 
+// Shared 7-lane core sequence (the standing() strip), reused by the crest cards so they carry the
+// SAME personalization as the team card. laneH is tunable so a denser card can shrink it.
+function drawCoreLanes(x, cx, laneTop, dims, laneH){
+  const LW=86, gap=(820-7*LW)/6, x0=cx-410, H=laneH||210;
+  DIM_ORDER.forEach((dk,i)=>{
+    const lx=x0+i*(LW+gap), dcol=DIM_COLORS[dk], score=dims[dk]||0;
+    drawTracked(x,DIM_CODES[dk],lx+LW/2,laneTop-26,"400 24px 'DM Mono',monospace",dcol,2);
+    roundRectPath(x,lx,laneTop,LW,H,10);x.fillStyle="#1e1e2a";x.fill();x.strokeStyle="#34344a";x.lineWidth=1;x.stroke();
+    const bandH=14, by=laneTop+8+(1-score/10)*(H-16-bandH);
+    x.save();x.shadowColor=dcol;x.shadowBlur=16;roundRectPath(x,lx+10,by,LW-20,bandH,6);x.fillStyle=dcol;x.fill();x.restore();
+    roundRectPath(x,lx+10,by,LW-20,4,3);x.fillStyle="rgba(255,255,255,0.35)";x.fill();
+  });
+}
 
-export { generateShareCard };
+// The crest share card (1080x1350). mode "earn" = one family set just completed; mode "finale"
+// = the whole collection is whole. Unlike the team card the HERO is the CREST (the collection),
+// not a single club, so sharing an earned crest posts the milestone, not the last team finished.
+async function generateCrestCard(mode, data){
+  const { genome, coreProfile } = data;
+  const W=1080,H=1350,cx=W/2,cv=document.createElement("canvas");cv.width=W;cv.height=H;
+  const x=cv.getContext("2d");
+  try{await Promise.all([
+    document.fonts.load("600 100px 'Cormorant Garamond'"),
+    document.fonts.load("italic 40px 'Cormorant Garamond'"),
+    document.fonts.load("400 30px 'DM Mono'"),
+  ]);}catch(e){}
+  x.fillStyle="#16161e";x.fillRect(0,0,W,H);
+  // FanDNA's own voice washes the crest moment (purple signal): the crest is the meta-layer above
+  // any one club. Team colours still carry every hex below.
+  const g=x.createLinearGradient(0,0,0,600);g.addColorStop(0,"#6a5ad03a");g.addColorStop(1,"#6a5ad000");
+  x.fillStyle=g;x.fillRect(0,0,W,600);
+  x.textAlign="center";x.textBaseline="alphabetic";
+  const dims = coreProfile?standing(coreProfile):{};
+
+  if(mode==="earn"){
+    const fam=data.family;                       // { id, label }
+    const gs=groupSports(fam.id).filter(s=>genome&&genome[s.code]&&genome[s.code].club);
+    const cols=gs.map(s=>{const _sd=SPORT_DATA[s.code],ck=genome[s.code].club;return (_sd&&_sd.teams&&_sd.teams[ck]&&_sd.teams[ck].color)||"#9898b8";});
+    drawTracked(x,"CREST EARNED",cx,116,"400 30px 'DM Mono',monospace","#9696b4",18);
+    x.save();x.shadowColor="#6a5ad0";x.shadowBlur=40;drawStrandHex(x,cx,300,150,cols);x.restore();
+    let nsz=96;x.fillStyle="#e8e4de";
+    do{x.font="600 "+nsz+"px 'Cormorant Garamond',serif";if(x.measureText(fam.label).width<=900)break;nsz-=2;}while(nsz>48);
+    x.fillText(fam.label,cx,536);
+    drawTracked(x,"SET COMPLETE  \u00b7  "+cols.length+(cols.length===1?" TEAM":" TEAMS"),cx,588,"400 26px 'DM Mono',monospace","#b7a6ff",6);
+    const n=gs.length,step=Math.min(150,(880/Math.max(1,n))),rowW=(n-1)*step,hx0=cx-rowW/2,hy=708,hR=46;
+    gs.forEach((s,i)=>{
+      const hcx=hx0+i*step,_sd=SPORT_DATA[s.code],ck=genome[s.code].club,tm=_sd&&_sd.teams&&_sd.teams[ck];
+      drawTeamHex(x,hcx,hy,hR,(tm&&tm.color)||"#9898b8",(tm&&tm.code3)||ck);
+      drawTracked(x,s.code,hcx,hy+hR+32,"400 20px 'DM Mono',monospace","#8a8ab0",2);
+    });
+    drawTracked(x,"CORE SEQUENCE",cx,862,"400 28px 'DM Mono',monospace","#9696b4",14);
+    drawCoreLanes(x,cx,930,dims,150);
+    x.font="italic 40px 'Cormorant Garamond',serif";x.fillStyle="#9898b8";x.textAlign="center";
+    x.fillText("Your fandom, sequenced.",cx,1174);
+    drawTracked(x,"playfandna.com",cx,1218,"400 24px 'DM Mono',monospace","#7878a0",3);
+  } else {
+    const groups=completedGroups(genome||{});
+    const typeName=data.typeName||"The Full Genome";
+    drawTracked(x,"COLLECTION COMPLETE",cx,112,"400 30px 'DM Mono',monospace","#9696b4",16);
+    let hsz=88;x.fillStyle="#e8e4de";
+    do{x.font="600 "+hsz+"px 'Cormorant Garamond',serif";if(x.measureText(typeName).width<=920)break;hsz-=2;}while(hsz>44);
+    x.fillText(typeName,cx,226);
+    const seqTotal=Object.values(genome||{}).filter(r=>r&&r.club).length;
+    drawTracked(x,"EVERY LEAGUE SEQUENCED  \u00b7  "+seqTotal+" TEAMS",cx,274,"400 26px 'DM Mono',monospace","#b7a6ff",5);
+    const n=groups.length,step=Math.min(300,(880/Math.max(1,n))),rowW=(n-1)*step,hx0=cx-rowW/2,hy=444,hR=90;
+    groups.forEach((gp,i)=>{
+      const hcx=hx0+i*step;
+      x.save();x.shadowColor="#6a5ad0";x.shadowBlur=26;drawStrandHex(x,hcx,hy,hR,gp.colors);x.restore();
+      drawTracked(x,gp.label.toUpperCase(),hcx,hy+hR+42,"400 22px 'DM Mono',monospace","#b7a6ff",3);
+    });
+    drawTracked(x,"CORE SEQUENCE",cx,662,"400 28px 'DM Mono',monospace","#9696b4",14);
+    drawCoreLanes(x,cx,726,dims,150);
+    const seqFams=FAMILIES.map(f=>({
+      items:SPORTS.filter(s=>s.group===f.id).filter(s=>genome&&genome[s.code]&&genome[s.code].club)
+        .map(s=>{const _sd=SPORT_DATA[s.code],ck=genome[s.code].club;return (_sd&&_sd.teams&&_sd.teams[ck]&&_sd.teams[ck].color)||"#9898b8";})
+    })).filter(gp=>gp.items.length>0);
+    const hR2=18,hGap=13,fGap=26,hA=hR2*0.866,rowY=958;
+    const famW=gp=>gp.items.length*(hA*2)+(gp.items.length-1)*hGap;
+    const stripW=seqFams.reduce((w,gp)=>w+famW(gp),0)+(seqFams.length-1)*fGap;
+    let sxp=cx-stripW/2+hA;
+    seqFams.forEach((gp,gi)=>{
+      gp.items.forEach((col,ii)=>{drawTeamHex(x,sxp,rowY,hR2,col,null);if(ii<gp.items.length-1)sxp+=hA*2+hGap;});
+      if(gi<seqFams.length-1){const sepx=sxp+hA+fGap/2;x.strokeStyle="#3c3c4e";x.lineWidth=2;x.beginPath();x.moveTo(sepx,rowY-20);x.lineTo(sepx,rowY+20);x.stroke();sxp+=hA*2+fGap;}
+    });
+    drawTracked(x,seqTotal+" teams sequenced",cx,1026,"400 26px 'DM Mono',monospace","#9696b4",3);
+    x.font="italic 40px 'Cormorant Garamond',serif";x.fillStyle="#9898b8";x.textAlign="center";
+    x.fillText("Your fandom, sequenced.",cx,1094);
+    drawTracked(x,"playfandna.com",cx,1138,"400 24px 'DM Mono',monospace","#7878a0",3);
+  }
+  return await new Promise(res=>cv.toBlob(res,"image/png"));
+}
+
+
+export { generateShareCard, generateCrestCard };
