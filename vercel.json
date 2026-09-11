@@ -1,12 +1,6 @@
 {
   "rewrites": [
-    {
-      "source": "/c/(.*)",
-      "destination": "/"
-    },
-    {
-      "source": "/how",
-      "destination": "/"
-    }
+    { "source": "/c/(.*)", "destination": "/api/c?code=$1" },
+    { "source": "/how", "destination": "/" }
   ]
 }
