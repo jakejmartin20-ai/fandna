@@ -106,7 +106,7 @@ class ErrorBoundary extends Component {
           </button>
 
           <a href="https://forms.gle/kAV9KGGUxdcA1dYv6" target="_blank" rel="noopener noreferrer"
-            style={{display:"block",marginTop:20,fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.12em",textTransform:"uppercase",color:"#5a5a78",textDecoration:"none"}}>
+            style={{display:"block",marginTop:20,fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.12em",textTransform:"uppercase",color:"#8282a1",textDecoration:"none"}}>
             Report it
           </a>
         </div>
@@ -1534,7 +1534,7 @@ function AppInner(){
               >Share card</button>
               <div style={{textAlign:"center",marginTop:10}}>
                 <button onClick={downloadCard}
-                  style={{background:"none",border:"none",color:"#74748e",fontFamily:"'DM Mono',monospace",fontSize:12,letterSpacing:"0.1em",cursor:"pointer",padding:"4px 8px"}}
+                  style={{background:"none",border:"none",color:"#83839a",fontFamily:"'DM Mono',monospace",fontSize:12,letterSpacing:"0.1em",cursor:"pointer",padding:"4px 8px"}}
                   onMouseEnter={e=>{e.currentTarget.style.color="#9a9ac0";}}
                   onMouseLeave={e=>{e.currentTarget.style.color="#74748e";}}
                 >Download image</button>
@@ -1621,7 +1621,7 @@ function AppInner(){
                 </div>
                 {readoutRows.length>0&&(<>
                   <div style={{fontFamily:"'DM Mono',monospace",fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:"#8484b0",marginBottom:5}}>{activeSport==="PL" ? "The closest readings" : "Nearest to your sequence"}</div>
-                  <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:13,color:"#77779c",marginBottom:16}}>share of your match's score</div>
+                  <div style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:13,color:"#8282a4",marginBottom:16}}>share of your match's score</div>
                   {readoutRows.map(([k,pts])=>{
                     const nt=teams[k];
                     const frac=maxScore>0?Math.max(0,Math.min(1,pts/maxScore)):0;
@@ -1630,7 +1630,7 @@ function AppInner(){
                         <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",marginBottom:8}}>
                           <div style={{display:"flex",alignItems:"baseline",gap:8,minWidth:0}}>
                             <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:17,color:"#ddd"}}>{nt.name}</span>
-                            <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:12.5,color:"#77779c",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{archetypes[k]||""}</span>
+                            <span style={{fontFamily:"'Cormorant Garamond',Georgia,serif",fontStyle:"italic",fontSize:12.5,color:"#8282a4",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{archetypes[k]||""}</span>
                           </div>
                           <span style={{fontFamily:"'DM Mono',monospace",fontSize:10,color:"#9696b4",whiteSpace:"nowrap",marginLeft:10}}>{Math.min(99, Math.round(frac*100))}%</span>
                         </div>
