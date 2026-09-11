@@ -9,7 +9,7 @@ import { loadState, saveResult, saveSpine, clearAll, appendPending, readPending,
 import { newlyCompletedGroup, groupClubColors, allBucketsComplete, completedGroups } from "./lib/crest";
 import { hasCompletedAll } from "./lib/beachGate";
 import { pingResult } from "./lib/telemetry";
-import { generateShareCard } from "./lib/card";
+import { generateShareCard, generateCrestCard } from "./lib/card";
 import { ChoiceQ, BinaryQ, SliderQ } from "./components/quiz";
 import { ClubMark } from "./components/ClubMark";
 import { DumpView } from "./components/DumpView";
@@ -1097,6 +1097,37 @@ function AppInner(){
     navigator.clipboard?.writeText(caption).then(()=>alert("Card couldn't render here. Caption copied.")).catch(()=>alert(caption));
   }
 
+  // Crest share: the COLLECTION milestone, not a single club. Builds the crest card (earn = one
+  // family set, finale = the whole genome), captions it at the collection level, attaches the /c/
+  // compare link, and fires the viral-loop event. Falls back to save + copy like the team card.
+  async function shareCrest(mode, extra){
+    track("compare_link_shared");
+    const st=loadState();
+    const results=st.results||{};
+    const code=encodeGenome({coreProfile:st.coreProfile, results});
+    const url=`https://playfandna.com/c/${code}`;
+    let caption;
+    if(mode==="earn"){
+      const fam=extra.family;
+      const n=groupClubColors(results, fam.id).length;
+      caption=[`Completed the ${fam.label} set on FanDNA. ${n} teams sequenced.`, blk(st.coreProfile), `Compare your FanDNA with mine: ${url}`].filter(Boolean).join("\n");
+    }else{
+      caption=[`Sequenced every league on FanDNA. The full genome.`, blk(st.coreProfile), `Compare your FanDNA with mine: ${url}`].filter(Boolean).join("\n");
+    }
+    let blob=null;
+    try{ blob=await generateCrestCard(mode,{genome:results, coreProfile:st.coreProfile, family:extra&&extra.family, typeName:extra&&extra.typeName}); }catch(e){ blob=null; }
+    track("crest_card_generated",{mode});
+    if(blob&&navigator.canShare){
+      const file=new File([blob],`fandna-crest-${mode}.png`,{type:"image/png"});
+      if(navigator.canShare({files:[file]})){
+        try{await navigator.share({files:[file],text:caption});return;}
+        catch(e){if(e&&e.name==="AbortError")return;}
+      }
+    }
+    if(blob){ saveBlob(blob); navigator.clipboard?.writeText(caption).catch(()=>{}); return; }
+    navigator.clipboard?.writeText(caption).then(()=>alert("Caption copied.")).catch(()=>alert(caption));
+  }
+
   // The recipient's OWN genome, read fresh from storage for the compare route (refreshes after a
   // recruit finishes the quiz). Kept out of JSX per the no-logic-in-JSX house rule.
   const compareMe = useMemo(()=>{ const st=loadState(); return {coreProfile:st.coreProfile, results:st.results||{}}; }, [screen, genome, coreProfile]);
@@ -1122,7 +1153,7 @@ function AppInner(){
           family={earnFamily}
           clubColors={groupClubColors(genome, earnFamily.id)}
           reducedMotion={earnReduced}
-          onShare={()=>{ setEarnFamily(null); try{ shareCard(); }catch(e){} }}
+          onShare={()=>{ const fam=earnFamily; setEarnFamily(null); try{ shareCrest("earn",{family:fam}); }catch(e){} }}
           onDone={()=>setEarnFamily(null)}
         />
       )}
@@ -1132,7 +1163,7 @@ function AppInner(){
           genomeProfile={coreProfile}
           typeName={(coreProfile && generateRead(coreProfile, Object.keys(genome).length) || {}).headline}
           reducedMotion={finaleReduced}
-          onShare={()=>{ setFinaleOn(false); try{ shareCard(); }catch(e){} }}
+          onShare={()=>{ const tn=(coreProfile&&generateRead(coreProfile,Object.keys(genome).length)||{}).headline; setFinaleOn(false); try{ shareCrest("finale",{typeName:tn}); }catch(e){} }}
           onDone={()=>setFinaleOn(false)}
         />
       )}
