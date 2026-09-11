@@ -278,9 +278,11 @@ export function GenomeHome({
             <span style={{fontFamily:"'DM Mono',monospace",fontSize:12,color:PLBL,letterSpacing:"0.32em",textTransform:"uppercase",fontWeight:500,flex:1,minWidth:0}}>{fam.label}</span>
             {complete ? (
               <button type="button" onClick={()=>onOpenCrest&&onOpenCrest(fam)} aria-label={`View your ${fam.label} crest`}
-                style={{display:"flex",alignItems:"center",gap:6,background:"rgba(183,166,255,0.12)",border:"1px solid rgba(183,166,255,0.5)",borderRadius:20,padding:"4px 11px 4px 9px",cursor:"pointer",flexShrink:0}}>
+                style={{display:"flex",alignItems:"center",justifyContent:"center",minHeight:44,marginTop:-11,marginBottom:-11,background:"none",border:"none",padding:0,cursor:"pointer",flexShrink:0}}>
+                <span style={{display:"flex",alignItems:"center",gap:6,background:"rgba(183,166,255,0.12)",border:"1px solid rgba(183,166,255,0.5)",borderRadius:20,padding:"4px 11px 4px 9px"}}>
                 <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2 L20.5 7.1 L20.5 16.9 L12 21.8 L3.5 16.9 L3.5 7.1 Z" fill="#b7a6ff33" stroke="#b7a6ff" strokeWidth="1.6"/><circle cx="12" cy="12" r="2.3" fill="#b7a6ff"/></svg>
                 <span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:"#b7a6ff",letterSpacing:"0.16em",textTransform:"uppercase"}}>View crest</span>
+                </span>
               </button>
             ) : (liveInFam.length>0&&(<span style={{fontFamily:"'DM Mono',monospace",fontSize:9,color:COUNT,letterSpacing:"0.12em",textTransform:"uppercase",flexShrink:0}}>{doneN} of {list.length} mapped</span>))}
           </div>
