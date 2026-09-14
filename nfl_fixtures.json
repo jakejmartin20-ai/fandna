@@ -7,8 +7,8 @@
     "teams": 32,
     "moduleQuestions": 15,
     "recorded": "2026-08-01",
-    "dataFile": "nfl.js 0df354ec",
-    "note": "Recorded on the shipped engine (scoring.js e566c7c8) against the 15-question module. 32 signature + 40 random. Signature sheets omit choice questions the team is indifferent to, matching the MLB convention. | s32: module-honesty pass. Carolina de-max (q2.A/q10.A/q12.C ->3) + q10.A broadened to TEN/CIN/CLE; NYG de-max q8.E ->2; Washington restore q2.B +2 & q11 loud +3. Kills CAR (10.1->3.5%) and NYG (7.9->6.6%) magnets, lifts WAS 3.1->9.0%. 6 fixtures re-recorded, 32/32 signatures self-land. | s32: module-honesty pass. Carolina de-max (q2.A/q10.A/q12.C ->3) + q10.A broadened to TEN/CIN/CLE; NYG de-max q8.E ->2; Washington restore q2.B +2 & q11 loud +3. Kills CAR (10.1->3.5%) and NYG (7.9->6.6%) magnets, lifts WAS 3.1->9.0%. 16 fixtures re-recorded, 32/32 signatures self-land. | s32b: q9 re-aimed slider (perfect-peak/endurance -> CHAOS, peak-by-trait footprints all 32, prompt 'Keep it under control, or let it get wild?'); 16 randoms re-recorded, 32/32 self-land, no twin, no magnet, NE now reachable. Plus a scoring-neutral copy sweep (3 slider prompts+poles, 5 stems, 9 option tightenings) - zero further fixture movement."
+    "dataFile": "nfl.js (s82 re-grade)",
+    "note": "Recorded on the shipped engine (scoring.js e566c7c8) against the 15-question module. 32 signature + 40 random. Signature sheets omit choice questions the team is indifferent to, matching the MLB convention. | s32: module-honesty pass. Carolina de-max (q2.A/q10.A/q12.C ->3) + q10.A broadened to TEN/CIN/CLE; NYG de-max q8.E ->2; Washington restore q2.B +2 & q11 loud +3. Kills CAR (10.1->3.5%) and NYG (7.9->6.6%) magnets, lifts WAS 3.1->9.0%. 6 fixtures re-recorded, 32/32 signatures self-land. | s32: module-honesty pass. Carolina de-max (q2.A/q10.A/q12.C ->3) + q10.A broadened to TEN/CIN/CLE; NYG de-max q8.E ->2; Washington restore q2.B +2 & q11 loud +3. Kills CAR (10.1->3.5%) and NYG (7.9->6.6%) magnets, lifts WAS 3.1->9.0%. 16 fixtures re-recorded, 32/32 signatures self-land. | s32b: q9 re-aimed slider (perfect-peak/endurance -> CHAOS, peak-by-trait footprints all 32, prompt 'Keep it under control, or let it get wild?'); 16 randoms re-recorded, 32/32 self-land, no twin, no magnet, NE now reachable. Plus a scoring-neutral copy sweep (3 slider prompts+poles, 5 stems, 9 option tightenings) - zero further fixture movement. | s82: NFL-C re-grade. Dissolved all 7 sole cells (q3.C/q5.C/q7.A/q7.B/q8.A/q8.B/q8.C); lifted under-carried anchors DET/GB/CLE/NE off the floor via souls-anchored cells; normalized outlier weights (q8.A HOU 4->3, q11.1 IND 4->3, q12.A DEN 5->3, the DEN cell also a mis-grade) and re-seated DEN on q1.A. 20 cells across 12 questions, stems/options/teamDims/FP_W unchanged. 7 randoms re-recorded, 32/32 signatures self-land, floor >1% (ARI 1.03), no magnet >7% (KC 6.84)."
   },
   "fixtures": [
     {
@@ -1091,8 +1091,8 @@
         "nfl_q11": "2",
         "nfl_q12": "D"
       },
-      "winner": "WAS",
-      "winnerName": "Washington Commanders"
+      "winner": "CLE",
+      "winnerName": "Cleveland Browns"
     },
     {
       "id": "nfl_rand_05",
@@ -1491,8 +1491,8 @@
         "nfl_q11": "2",
         "nfl_q12": "C"
       },
-      "winner": "ARI",
-      "winnerName": "Arizona Cardinals"
+      "winner": "DEN",
+      "winnerName": "Denver Broncos"
     },
     {
       "id": "nfl_rand_13",
@@ -1691,8 +1691,8 @@
         "nfl_q11": "1",
         "nfl_q12": "C"
       },
-      "winner": "TB",
-      "winnerName": "Tampa Bay Buccaneers"
+      "winner": "DET",
+      "winnerName": "Detroit Lions"
     },
     {
       "id": "nfl_rand_17",
@@ -1841,8 +1841,8 @@
         "nfl_q11": "2",
         "nfl_q12": "A"
       },
-      "winner": "DEN",
-      "winnerName": "Denver Broncos"
+      "winner": "LAR",
+      "winnerName": "Los Angeles Rams"
     },
     {
       "id": "nfl_rand_20",
@@ -2091,8 +2091,8 @@
         "nfl_q11": "5",
         "nfl_q12": "A"
       },
-      "winner": "MIN",
-      "winnerName": "Minnesota Vikings"
+      "winner": "NE",
+      "winnerName": "New England Patriots"
     },
     {
       "id": "nfl_rand_25",
@@ -2241,8 +2241,8 @@
         "nfl_q11": "3",
         "nfl_q12": "A"
       },
-      "winner": "MIN",
-      "winnerName": "Minnesota Vikings"
+      "winner": "CHI",
+      "winnerName": "Chicago Bears"
     },
     {
       "id": "nfl_rand_28",
@@ -2691,8 +2691,8 @@
         "nfl_q11": "1",
         "nfl_q12": "D"
       },
-      "winner": "PIT",
-      "winnerName": "Pittsburgh Steelers"
+      "winner": "CAR",
+      "winnerName": "Carolina Panthers"
     },
     {
       "id": "nfl_rand_37",
