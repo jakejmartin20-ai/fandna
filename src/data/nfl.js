@@ -2066,15 +2066,14 @@ const scoring = {
       "NE": 2,
       "KC": 2,
       "DEN": 2,
-      "LV": 2,
       "MIA": 2,
       "BUF": 2,
       "IND": 2,
       "ARI": 2,
-      "LAR": 2,
       "NYJ": 2,
       "CLE": 2,
-      "MIN": 2
+      "MIN": 2,
+      "PHI": 2
     },
     "B": {
       "CAR": 2,
@@ -2085,10 +2084,11 @@ const scoring = {
       "ATL": 2,
       "CIN": 2,
       "NO": 2,
-      "PHI": 2,
       "LAC": 2,
       "BAL": 2,
-      "TEN": 2
+      "TEN": 2,
+      "LV": 2,
+      "LAR": 2
     }
   },
   "nfl_q14": {
@@ -2172,7 +2172,8 @@ const scoring = {
       "CHI": 3,
       "WAS": 3,
       "MIA": 2,
-      "ARI": 2
+      "ARI": 2,
+      "DEN": 2
     },
     "B": {
       "KC": 2,
@@ -2200,7 +2201,8 @@ const scoring = {
     "A": {
       "NO": 2,
       "CAR": 3,
-      "BUF": 2
+      "BUF": 2,
+      "CLE": 3
     },
     "B": {
       "MIN": 2,
@@ -2214,7 +2216,7 @@ const scoring = {
     },
     "D": {
       "CLE": 2,
-      "DET": 2,
+      "DET": 3,
       "GB": 2
     },
     "E": {
@@ -2233,10 +2235,12 @@ const scoring = {
     "B": {
       "DEN": 2,
       "SF": 2,
-      "GB": 2
+      "GB": 2,
+      "NE": 3
     },
     "C": {
-      "MIA": 3
+      "MIA": 3,
+      "CHI": 2
     },
     "D": {
       "ARI": 3,
@@ -2254,7 +2258,8 @@ const scoring = {
       "PIT": 2,
       "WAS": 2,
       "CHI": 2,
-      "DEN": 3
+      "DEN": 3,
+      "CLE": 2
     },
     "B": {
       "LV": 2,
@@ -2270,7 +2275,8 @@ const scoring = {
     "D": {
       "BUF": 2,
       "SEA": 3,
-      "PHI": 2
+      "PHI": 2,
+      "GB": 3
     },
     "E": {
       "ATL": 2,
@@ -2279,7 +2285,7 @@ const scoring = {
   },
   "nfl_q5": {
     "A": {
-      "NE": 2,
+      "NE": 3,
       "DAL": 2,
       "KC": 2
     },
@@ -2288,7 +2294,9 @@ const scoring = {
       "CIN": 2
     },
     "C": {
-      "JAX": 3
+      "JAX": 3,
+      "CAR": 2,
+      "TEN": 2
     },
     "D": {
       "NYG": 3,
@@ -2298,7 +2306,9 @@ const scoring = {
       "NYJ": 2,
       "TB": 2,
       "ARI": 2,
-      "ATL": 2
+      "ATL": 2,
+      "DET": 3,
+      "CLE": 2
     }
   },
   "nfl_q6": {
@@ -2340,10 +2350,14 @@ const scoring = {
   },
   "nfl_q7": {
     "A": {
-      "TEN": 3
+      "TEN": 3,
+      "ATL": 2,
+      "CIN": 2
     },
     "B": {
-      "ATL": 3
+      "ATL": 3,
+      "SEA": 2,
+      "BUF": 1
     },
     "C": {
       "MIN": 3,
@@ -2362,13 +2376,19 @@ const scoring = {
   },
   "nfl_q8": {
     "A": {
-      "HOU": 4
+      "HOU": 3,
+      "IND": 2,
+      "LAR": 2
     },
     "B": {
-      "CLE": 3
+      "CLE": 3,
+      "GB": 2,
+      "DET": 2
     },
     "C": {
-      "BAL": 3
+      "BAL": 3,
+      "NE": 2,
+      "PIT": 2
     },
     "D": {
       "NO": 2,
@@ -2500,7 +2520,7 @@ const scoring = {
   "nfl_q11": {
     "1": {
       "NYG": 3,
-      "IND": 4,
+      "IND": 3,
       "MIA": 3,
       "NE": 3
     },
@@ -2535,8 +2555,9 @@ const scoring = {
   "nfl_q12": {
     "A": {
       "IND": 3,
-      "DEN": 5,
-      "SF": 3
+      "DEN": 3,
+      "SF": 3,
+      "NE": 3
     },
     "B": {
       "BAL": 3,
@@ -2555,7 +2576,8 @@ const scoring = {
       "NO": 3,
       "MIN": 3,
       "WAS": 3,
-      "BUF": 2
+      "BUF": 2,
+      "GB": 2
     },
     "E": {
       "DAL": 3,
