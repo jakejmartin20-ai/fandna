@@ -116,4 +116,24 @@ const TOP14 = { ...TOP14base, moduleQuestions: TOP14spine.moduleQuestions, spine
 const EL = { ...EUROLEAGUEbase, moduleQuestions: EUROLEAGUEspine.moduleQuestions, spineScoring: EUROLEAGUEspine.spineScoring, spinePhase: EUROLEAGUEspine.spinePhase };
 const SPORT_DATA = { PL, NFL, MLB, NBA, BL, LL, L1, SA, CFB, NHL, F1, AFL, IPL, TOP14, EL };
 
-export { SPORT_DATA };
+
+// --- s83 code-split A': lazy display halves. Engine + light display stay eager (above);
+// the heavy result-stage prose loads on demand and is merged onto SPORT_DATA[code], cached once.
+const _displayCache = {};
+const _displayLoaders = {
+  NFL: () => import("../data/nfl-display.js"),
+};
+async function loadSportDisplay(code){
+  if (_displayCache[code]) return _displayCache[code];
+  const loader = _displayLoaders[code];
+  const D = SPORT_DATA[code];
+  if (!loader || !D) { if (D) _displayCache[code] = D; return D || null; }
+  const mod = await loader();
+  for (const c in mod.teamsCopy) { if (D.teams && D.teams[c]) Object.assign(D.teams[c], mod.teamsCopy[c]); }
+  D.greats = mod.greats; D.vitalStats = mod.vitalStats; D.nearlyGot = mod.nearlyGot;
+  D.CARD_BADGES = mod.CARD_BADGES; D.milestones = mod.milestones;
+  _displayCache[code] = D;
+  return D;
+}
+
+export { SPORT_DATA, loadSportDisplay };
