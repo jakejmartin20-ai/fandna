@@ -724,6 +724,7 @@ function AppInner(){
     entries.forEach(([sport,r])=>{ saveResult(sport,{coreProfile:g.coreProfile,club:r.club}); });
     const st=loadState();
     setSavedCore(null);setGenome(st.results||{});setCoreProfile(st.coreProfile||null);
+    track("genome_restored",{sports:entries.length});
     return true;
   }
   // From the compare-recruit screen (opened your own link on a new device): adopt it and land home.
