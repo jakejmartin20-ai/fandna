@@ -3,7 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { track } from "@vercel/analytics";
 import { coreQuestions, DIM_ORDER, DIM_LABELS } from "./data/core";
 import { spineQuestions } from "./data/spine";
-import { SPORT_DATA } from "./lib/sportData";
+import { SPORT_DATA, loadSportDisplay } from "./lib/sportData";
 import { scoreCore, scoreModule, matchEvidence, decompressProfile } from "./lib/scoring";
 import { loadState, saveResult, saveSpine, clearAll, appendPending, readPending, clearPending, markGroupEarned, stampCoreCurrent, keepCurrentCore, markUpdatePending } from "./lib/storage";
 import { newlyCompletedGroup, groupClubColors, allBucketsComplete, completedGroups } from "./lib/crest";
@@ -282,6 +282,7 @@ function AppInner(){
   const [pendingAdvance,setPendingAdvance]=useState(null); // question index to resume at after the core reveal
   const [coreRevealSeen,setCoreRevealSeen]=useState(false); // the first-full-take type reveal fires once per run
   const [activeSport,setActiveSport]=useState("PL"); // which sport's quiz/result/card is in play
+  const [displayReady,setDisplayReady]=useState({}); // per-sport: has the lazy display half loaded/merged (s83 code-split)
   const [compareFriend,setCompareFriend]=useState(null);  // decoded friend genome for the /c/ compare route
   const [pendingCompare,setPendingCompare]=useState(null); // friend genome held while a recruit takes the quiz
   const containerRef=useRef(null);
@@ -343,6 +344,16 @@ function AppInner(){
     [mode,activeSport,needSpine]
   );
   const coreIds=useMemo(()=>new Set(coreQuestions.map(p=>p.id)),[]);
+
+  // s83 code-split A': load the active sport's lazy display half (heavy result-stage prose) and
+  // merge it onto SPORT_DATA[code], then flag ready so the result readout renders. Fires on every
+  // activeSport change, so a quiz start PREFETCHES the display during the quiz (long runway) and the
+  // result screen almost always has it already. Un-split leagues resolve instantly (still eager).
+  useEffect(()=>{
+    let alive=true;
+    loadSportDisplay(activeSport).then(()=>{ if(alive) setDisplayReady(r=> r[activeSport] ? r : {...r,[activeSport]:true}); });
+    return ()=>{ alive=false; };
+  },[activeSport]);
   const spineIds=useMemo(()=>new Set(spineQuestions.map(p=>p.id)),[]);
   // Which phases belong to the shared core (vs a league module). Data-derived, so the
   // progress bar can colour + group core-purple then league-gold in any mode.
@@ -1481,7 +1492,10 @@ function AppInner(){
         )}
 
         {/* ── RESULT ── */}
-        {screen==="result"&&result&&(
+        {screen==="result"&&result&&!displayReady[activeSport]&&(
+          <div style={{padding:"64px 20px",textAlign:"center",fontFamily:"'DM Mono',monospace",fontSize:12,color:"#83839a",letterSpacing:"0.12em",textTransform:"uppercase"}}>Loading your {regOf(activeSport).noun}...</div>
+        )}
+        {screen==="result"&&result&&displayReady[activeSport]&&(
           <div style={{animation:"popIn .45s cubic-bezier(.2,.8,.3,1) both",background:`linear-gradient(160deg,${team.color}06 0%,transparent 40%)`,borderRadius:12,padding:"4px"}}>
 
             {/* Back to the genome home + league indicator */}
