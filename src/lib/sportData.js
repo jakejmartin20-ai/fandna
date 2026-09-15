@@ -117,23 +117,32 @@ const EL = { ...EUROLEAGUEbase, moduleQuestions: EUROLEAGUEspine.moduleQuestions
 const SPORT_DATA = { PL, NFL, MLB, NBA, BL, LL, L1, SA, CFB, NHL, F1, AFL, IPL, TOP14, EL };
 
 
-// --- s83 code-split A': lazy display halves. Engine + light display stay eager (above);
-// the heavy result-stage prose loads on demand and is merged onto SPORT_DATA[code], cached once.
+// --- s83 code-split A': lazy display halves. Engine + light display stay eager (above); the heavy
+// result-stage prose loads on demand and is merged into a NEW object, then replaces SPORT_DATA[code].
+// We never mutate the source: for the bespoke sports (PL/NFL/CFB) SPORT_DATA[code] is a read-only ES
+// module namespace, so assigning onto it throws. Cached once; never rejects (degrades to the eager
+// base on any failure, so the readout still renders name/color/archetype and just omits missing prose).
 const _displayCache = {};
 const _displayLoaders = {
   NFL: () => import("../data/nfl-display.js"),
 };
 async function loadSportDisplay(code){
   if (_displayCache[code]) return _displayCache[code];
+  const base = SPORT_DATA[code];
   const loader = _displayLoaders[code];
-  const D = SPORT_DATA[code];
-  if (!loader || !D) { if (D) _displayCache[code] = D; return D || null; }
-  const mod = await loader();
-  for (const c in mod.teamsCopy) { if (D.teams && D.teams[c]) Object.assign(D.teams[c], mod.teamsCopy[c]); }
-  D.greats = mod.greats; D.vitalStats = mod.vitalStats; D.nearlyGot = mod.nearlyGot;
-  D.CARD_BADGES = mod.CARD_BADGES; D.milestones = mod.milestones;
-  _displayCache[code] = D;
-  return D;
+  if (!loader || !base) { if (base) _displayCache[code] = base; return base || null; }
+  try {
+    const mod = await loader();
+    const teams = {};
+    for (const c in base.teams) teams[c] = (mod.teamsCopy && mod.teamsCopy[c]) ? { ...base.teams[c], ...mod.teamsCopy[c] } : base.teams[c];
+    const merged = { ...base, teams, greats: mod.greats, vitalStats: mod.vitalStats, nearlyGot: mod.nearlyGot, CARD_BADGES: mod.CARD_BADGES, milestones: mod.milestones };
+    SPORT_DATA[code] = merged;
+    _displayCache[code] = merged;
+    return merged;
+  } catch (e) {
+    _displayCache[code] = base;
+    return base;
+  }
 }
 
 export { SPORT_DATA, loadSportDisplay };
