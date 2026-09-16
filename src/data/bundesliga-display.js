@@ -1,0 +1,818 @@
+// FanDNA - BUNDESLIGA display half (lazy-loaded, s83 code-split A'). Heavy result-stage prose
+// split from bundesliga.js; merged onto SPORT_DATA via loadSportDisplay(). The engine never reads these.
+
+const teamsCopy = {
+  "BAY": {
+    "tagline": "Thirty-four titles in, you treat the Meisterschale as property, not a prize.",
+    "desc": "You are the fact everyone else's season gets measured against, and there is no embarrassment in it. German football has a single permanent institution and you are it, the record champion, the club whose name goes on the trophy so often that the surprise is a year when it does not. Other clubs get to enjoy a good run. Yours gets audited. That is the trade you made a long time ago, because holding steady while everything around you turns over is its own kind of achievement, and it is harder than it looks from outside.",
+    "note": "Thirty-four Bundesliga titles and eleven in a row from 2013 to 2023, the longest championship streak in any of Europe's top five leagues. Making dominance look routine is the hardest thing in the sport. That is very Bayern.",
+    "edge": {
+      "ambition": "a club that measures a year by the trophy, not the journey, and makes no apology for it",
+      "process": "structure and preparation over sentiment, dominance engineered and then maintained",
+      "chaos": "the steady, expected outcome rather than the romantic underdog story"
+    }
+  },
+  "HSV": {
+    "tagline": "The last dinosaur, ever-present, until the clock stopped and you came back.",
+    "desc": "You built your sense of yourself on a record nobody else could claim, and when it finally broke it shook you to the foundation. But you did not disappear. You went down, you sat in the second tier longer than a club your size should ever have to, and you climbed back, because the alternative was unthinkable. There is a particular pride in having been permanent, and a particular stubbornness in refusing to let a fall be the end of the story. You carry both.",
+    "note": "A stadium clock once counted Hamburg's unbroken years in the top flight, the only club never relegated since the Bundesliga began. It stopped in 2018. They returned in 2025, and the clock is the most Hamburg thing there is.",
+    "edge": {
+      "rootedness": "an identity built on a long, unbroken record, a fall that genuinely rocks it for how much it meant",
+      "loyalty": "not flinching in the lean years, sat through the drop and never once thinking of anyone else",
+      "emotion": "highs and lows felt hard, real emotion rather than the cool detachment of a club that expects to win"
+    }
+  },
+  "VFB": {
+    "tagline": "You wear the Brustring like a blueprint and build like an engineer.",
+    "desc": "You trust the work. Not the lucky bounce or the sudden inspiration, but the slow, deliberate building of something that holds together under pressure. You come from a place that makes the best engines in the world and treats precision as a kind of morality, and it shows in how you support: you want it done properly, improved season on season, with a plan you can see. When it clicks, it is not a fluke. It is the design finally running the way you always believed it could.",
+    "note": "The red Brustring, the hooped band across the chest, has been Stuttgart's mark for a century. The club sits in the heart of Swabia, home to Mercedes and Porsche, where doing it right is close to a regional creed.",
+    "edge": {
+      "process": "the method, the steady build, the thing constructed to last rather than thrown together",
+      "ambition": "real and rising, not content to drift, trusting the work to take it there",
+      "chaos": "the well-built side rather than the unpredictable one"
+    }
+  },
+  "BMG": {
+    "tagline": "You were the Foals who ran Bayern close in the seventies, and you still live on it.",
+    "desc": "Your golden age is behind you, and you would not trade it for anyone else's present. There was a decade when you were the most thrilling team in Europe, young and fearless and beautiful to watch, and that memory is not a weight you carry but a light you steer by. You know exactly who you are because you know exactly who you were. The trophies stopped coming, but the identity never did, and you would rather be a club with a soul and a history than a club with a balance sheet.",
+    "note": "Die Fohlen, the Foals, named for the young, attacking side that won five titles in the 1970s and pushed the great Bayern teams to the limit. Allan Simonsen won the Ballon d'Or here in 1977. The name still fits.",
+    "edge": {
+      "rootedness": "what the club once was defining what it is, carried gladly",
+      "loyalty": "steady and unconditional, the glory years long gone and never once wavered",
+      "emotion": "the romance of it, about the idea of the club and what it once meant, not the table"
+    }
+  },
+  "SVW": {
+    "tagline": "Green and white for life, you never chased the spotlight and never left.",
+    "desc": "You are loyal in the quiet, undramatic way that does not make headlines. No reinvention, no chasing the fashion, no leaving when it got hard. Green and white, the same as it ever was, through the good years and the long stretches of mid-table that would have peeled away a less committed fan. You do not need the club to be glamorous. You need it to be yours, and it has been, every season, without you ever having to think twice about it.",
+    "note": "Werder won four German championships and the 2004 double under Thomas Schaaf, playing some of the most attacking football the league has seen. Lebenslang Gruen-Weiss, lifelong green and white, is the motto, and Bremen fans mean it literally.",
+    "edge": {
+      "loyalty": "bone-deep and lifelong, green and white a fact rather than a preference",
+      "rootedness": "the colors, the city and the continuity, all mattering more than any trophy",
+      "chaos": "steady and its own, exactly enough, with no need for the spotlight"
+    }
+  },
+  "RBL": {
+    "tagline": "You were built to win fast, and you let the whole country resent you for it.",
+    "desc": "You were not handed a hundred years of tradition, so you decided to build a winner from scratch and never apologized for the method. You judge things by whether they work, not by how long they have existed, and you have a thick skin about the people who hate you for it. Let them. While the purists write their columns, you keep qualifying for Europe and signing the next young talent before anyone else has noticed him. Results are the argument, and you are comfortable making it.",
+    "note": "Founded in 2009 and in the Champions League within a decade, with two German Cups already in the cabinet. No club in modern German football is more efficient, or more resented, and Leipzig wears both facts lightly.",
+    "edge": {
+      "ambition": "high and unsentimental, wanting to win now by the most effective route, history no prerequisite",
+      "process": "the model, the recruitment and the system, trusted over any nostalgia",
+      "rootedness": "low by choice, looking forward rather than back, and not minding who that annoys"
+    }
+  },
+  "TSG": {
+    "tagline": "You trust the model and the method, not the century of history you never had.",
+    "desc": "You trust what is built and measured. Not the lucky bounce or the inherited birthright, but the plan run properly, the model that holds up when you check it, the side put together by design rather than handed down. You came up the modern way, on method and conviction and a refusal to accept that a place with no history could not build one of its own. People want every good thing to be a hundred years old before it counts. You never needed it to be. What you trust is whether the thing works, and yours does.",
+    "note": "Powered from the village of Sinsheim by SAP co-founder Dietmar Hopp, Hoffenheim rose from amateur football to the Bundesliga and into Europe. Its solar-roofed stadium became Europe's first zero-waste arena in 2023.",
+    "edge": {
+      "process": "the plan, the model and the steady build, over the lucky result",
+      "chaos": "a calm, well-engineered season rather than a dramatic one",
+      "rootedness": "young and unburdened by history, a lightness it finds freeing rather than empty"
+    }
+  },
+  "B04": {
+    "tagline": "You were Neverkusen for thirty years, then went a whole season unbeaten.",
+    "desc": "You spent decades as the team that came second, the one that found a way to fall short with the finish line in sight, and the nickname stuck like a curse. You kept turning up anyway. Then it broke, all at once, in a season so complete that nobody could call you nearly-men ever again. You know what it is to do everything right and still not win, which is exactly why you understand that when it finally arrives, you do not let go of it.",
+    "note": "The Werkself, the works team of the Bayer pharmaceutical company. After decades as nearly-men they went the entire 2023-24 season unbeaten under Xabi Alonso to win a first ever Bundesliga, the league's only invincible champions.",
+    "edge": {
+      "process": "the structured, well-run project, believed in even through the years it did not pay off",
+      "ambition": "never dimmed through the near-misses, kept aiming at the top until it finally arrived"
+    }
+  },
+  "S04": {
+    "tagline": "You have not won since 1958, and still all of Gelsenkirchen pours into the stand.",
+    "desc": "Your people came up from the mines, and you support the way they worked: hard, together, no airs. You have no patience for glory-hunters, or for fans who only turn up when it is going well. Down here loyalty isn't a slogan, it's the whole inheritance. Gelsenkirchen is not a place anyone moves to for the weather or the prospects, and that is exactly why the club means what it means. Sixty-odd years without a championship would have emptied a lesser stand. Yours just sings louder.",
+    "note": "Seven German championships, every one before the Bundesliga existed. No league title since 1958, the longest wait of any old giant, and the Veltins-Arena still fills. That refusal to fade is very Schalke.",
+    "edge": {
+      "loyalty": "handed down rather than chosen, walking away never once dreamed of",
+      "community": "a collective rather than a brand, the people in the stand beside you, the we over the I",
+      "rootedness": "rooted to a place and its history, where it is from the reason any of it matters"
+    }
+  },
+  "BVB": {
+    "tagline": "You stand on the Yellow Wall, where the feeling matters more than the result.",
+    "desc": "You go to feel something, and you let it out. Eighty thousand people on one terrace, the biggest standing stand in Europe, all giving everything at once, is not a backdrop to the football for you; it is the football. You have had your heart broken on the biggest nights, more than once, with the prize in touching distance, and you went back the next week and roared just as loud. The trophy would be nice. The feeling is the reason you keep coming.",
+    "note": "The Suedtribuene, the Yellow Wall, holds nearly 25,000 standing fans, the largest terrace in European football. Dortmund have lost two Champions League finals in agonizing fashion, and the Wall sells out regardless.",
+    "edge": {
+      "emotion": "felt at full volume, a quiet matchday a wasted one",
+      "community": "the thousands around you, all feeling it together",
+      "chaos": "the heartbreak taken with the highs, the intensity the whole appeal"
+    }
+  },
+  "SCF": {
+    "tagline": "Your stadium runs on sunlight and your club on patience, and it keeps working.",
+    "desc": "You do it the right way and you do not make a fuss about it. A small budget, a clear plan, continuity where everyone else churns, and somehow the results keep coming. You are not interested in spending your way to anything or chasing a quick fix that betrays who you are. You would rather build something sustainable and sound and be quietly proud of it than buy a season of noise. In the Black Forest, doing it properly is not a strategy. It is the point.",
+    "note": "Freiburg's Europa-Park Stadion, opened in 2021, is roofed in solar panels. The club kept one head coach, Christian Streich, for thirteen years while bigger clubs sacked theirs by the handful. Doing it the steady way is the whole identity.",
+    "edge": {
+      "process": "the patient, principled build over the splashy shortcut",
+      "chaos": "stability, continuity and a plan that holds, not drama",
+      "loyalty": "a loyalty to a way of doing things, getting there honestly rather than winning ugly and losing itself"
+    }
+  },
+  "FCA": {
+    "tagline": "You have never won a thing, never truly feared the drop, and that suits you fine.",
+    "desc": "You made peace with what the club is a long time ago, and there is real freedom in it. No glory to chase, no relegation to dread most years, just steady, unbothered top-flight football in a city that was old and wealthy when most of these clubs did not exist. You do not need a trophy to make it worthwhile. You like your team, you like your Saturday, and you have stopped pretending you secretly want the rollercoaster. Content is not a failure setting. For you it is the right one.",
+    "note": "Augsburg is one of Germany's oldest cities, home of the Renaissance Fugger banking dynasty. The club reached the top flight for the first time in 2011 and has mostly stayed there without fuss, which is exactly how its fans like it.",
+    "edge": {
+      "ambition": "genuinely low and honest about it, belonging at this level being enough",
+      "chaos": "a calm mid-table season over a dramatic one, every time",
+      "rootedness": "quiet and real, the city and the routine mattering more than any silverware"
+    }
+  },
+  "KOE": {
+    "tagline": "Up, down, up again. Hennes the goat has watched every fall and never once looked away.",
+    "desc": "You love it precisely because it never stops putting you through it. Promoted, relegated, promoted again, a club that cannot sit still, and you would not swap the chaos for a stable mid-table existence if you could. This is a carnival city, and the football matches the temperament: feel everything, laugh through the worst of it, and turn up again next week regardless. Your loyalty does not depend on the league you are in. It is unconditional, and a little unhinged, and entirely the point.",
+    "note": "Köln have bounced between the divisions more than almost any big German club. Their mascot is a live billy goat named Hennes, and the city's carnival spirit runs straight through the terraces of the RheinEnergieStadion.",
+    "edge": {
+      "loyalty": "unconditional, the yo-yo years that would break others binding it tighter",
+      "chaos": "the yo-yo years lived completely, promotion and relegation felt and never traded away",
+      "emotion": "hot, every promotion and relegation felt completely and wanted no other way",
+      "community": "the city, the carnival and the singing, the collective and its mood"
+    }
+  },
+  "M05": {
+    "tagline": "Carnival raised you to laugh first, and you out-think richer clubs for the fun of it.",
+    "desc": "You have always been the smaller, smarter one in the room, and you turned that into a personality rather than a complaint. A carnival city's club, you take the football seriously and yourselves not at all, and you have made a habit of beating sides with three times the budget by being cleverer and harder-working and a little bit funnier about the whole thing. Lightness is not the same as not caring. For you it is how you survive at this level, and how you enjoy it.",
+    "note": "Mainz is a capital of German carnival, and the club's wit is part of its identity. Jürgen Klopp spent his entire playing career here and began his management here, building the gegenpressing style that later conquered Europe.",
+    "edge": {
+      "process": "out-thinking and out-working opponents rather than out-spending them, because it cannot out-spend them",
+      "ambition": "sensible, the ego small, overachieving its means the whole satisfaction"
+    }
+  },
+  "FCU": {
+    "tagline": "Your fans built the stand with their own hands and gave blood to save the club.",
+    "desc": "You believe a club belongs to the people who carry it, because yours literally would not exist without them. When there was no money, the supporters donated blood and sold it to fund the club. When the stadium needed rebuilding, they did the labor themselves, tens of thousands of volunteer hours, with their own tools. You do not see yourself as a customer of a football club. You see yourself as a part-owner of something you helped build, in a corner of the east that the rest of the game overlooked, and you are fiercely proud of every bit of it.",
+    "note": "In 2004 Union fans ran a Bleed for Union campaign, donating blood to raise money for the club. In 2008-09 they rebuilt the Stadion An der Alten Försterei themselves, contributing over 140,000 hours of volunteer labor.",
+    "edge": {
+      "community": "the club that is its people, its builders rather than its audience",
+      "loyalty": "absolute, time and labor and literal blood given, walking away never conceivable"
+    }
+  },
+  "ELV": {
+    "tagline": "You are a Saarland village of thirteen thousand that woke up sharing a league with Bayern.",
+    "desc": "You love being the team nobody saw coming. A village in the Saarland with a ground that still has terraces and a name borrowed from an old lime tree has no business in the same division as Bayern Munich, and that is exactly what makes it the best story in the league. You are not weighed down by expectation or history or anyone's idea of where you belong. You get to play with house money and prove the doubters wrong every single week, and there is nothing in football quite as fun as that.",
+    "note": "Spiesen-Elversberg, population around thirteen thousand, is the smallest municipality ever represented in the German top flight. The stadium is named for the Kaiserlinde, a near-century-old lime tree felled by a cyclone in 2015.",
+    "edge": {
+      "chaos": "the improbable ride, the wild swings and the fairytale, exactly what it signed up for",
+      "ambition": "nothing to lose and playing free, a lightness it would never trade"
+    }
+  },
+  "SCP": {
+    "tagline": "You yo-yo up from East Westphalia, and nobody outside it ever learns your name.",
+    "desc": "You are used to being overlooked, and you have stopped minding. A small club from a corner of East Westphalia that most of the country could not find on a map, you go up, you come down, you go up again, and you keep turning up unfashionable and unbothered. You do not have the history or the glamour or the famous names, and you have made your peace with all of it. What you have is a stubborn refusal to know your place, and that has carried you further than anyone outside Paderborn ever expected.",
+    "note": "Paderborn, a university and former computer-industry town in East Westphalia, has bounced between the top two divisions repeatedly. Once, in 2014, it briefly topped the Bundesliga, which remains one of the league's unlikeliest sights.",
+    "edge": {
+      "ambition": "modest and grounded, punching above its weight the whole achievement",
+      "chaos": "the yo-yo between divisions that does not shake it, just how its story goes"
+    }
+  },
+  "SGE": {
+    "tagline": "Your ultras travel like an army and answer to no one who runs the game.",
+    "desc": "You do not accept things just because that is how they are. When the people who run the game push too far, you push back, with banners and protest and a refusal to be treated as a customer, and you travel in numbers that turn other clubs' grounds into yours for a night. There is a current of defiance in everything you do. You are loud, political, fiercely independent, and you would rather make trouble for the powerful than quietly go along with whatever modern football decides you should want.",
+    "note": "Frankfurt's support is among the most fervent and politically active in Germany, a fixture of fan protests against modern football. Tens of thousands traveled to Seville for the 2022 Europa League final, which the club won.",
+    "edge": {
+      "community": "a traveling mass, the crowd it belongs to the whole point",
+      "emotion": "living for the big nights and feeling every one of them all the way down",
+      "chaos": "an appetite for the unpredictable, the volatility taken as part of the deal"
+    }
+  }
+};
+
+const greats = {
+  "BAY": [
+    {
+      "name": "Franz Beckenbauer",
+      "years": "1964-1977",
+      "note": "the libero who reinvented the position and won everything there was"
+    },
+    {
+      "name": "Gerd Müller",
+      "years": "1964-1979",
+      "note": "der Bomber, 365 Bundesliga goals"
+    },
+    {
+      "name": "Oliver Kahn",
+      "years": "1994-2008",
+      "note": "the relentless wall in goal"
+    },
+    {
+      "name": "Thomas Müller",
+      "years": "2008-2025",
+      "note": "the one-club Raumdeuter who won it all"
+    }
+  ],
+  "HSV": [
+    {
+      "name": "Uwe Seeler",
+      "years": "1953-1972",
+      "note": "the eternal one-club idol who refused every offer to leave"
+    },
+    {
+      "name": "Kevin Keegan",
+      "years": "1977-1980",
+      "note": "the European Footballer of the Year who chose Hamburg"
+    },
+    {
+      "name": "Manfred Kaltz",
+      "years": "1971-1991",
+      "note": "the overlapping full-back and the banana cross"
+    },
+    {
+      "name": "Rafael van der Vaart",
+      "years": "2005-2008, 2012-2015",
+      "note": "the playmaker the city adored"
+    }
+  ],
+  "VFB": [
+    {
+      "name": "Jürgen Klinsmann",
+      "years": "1984-1989",
+      "note": "the local striker who became a World Cup winner"
+    },
+    {
+      "name": "Krassimir Balakov",
+      "years": "1995-2003",
+      "note": "the playmaker of the magisches Dreieck"
+    },
+    {
+      "name": "Sami Khedira",
+      "years": "2006-2010",
+      "note": "the academy product who anchored a title"
+    },
+    {
+      "name": "Mario Gómez",
+      "years": "2003-2009",
+      "note": "the penalty-box finisher who came through the ranks"
+    }
+  ],
+  "BMG": [
+    {
+      "name": "Günter Netzer",
+      "years": "1963-1973",
+      "note": "the long-haired genius who ran the seventies"
+    },
+    {
+      "name": "Berti Vogts",
+      "years": "1965-1979",
+      "note": "der Terrier, a one-club World Cup winner"
+    },
+    {
+      "name": "Jupp Heynckes",
+      "years": "1964-1967, 1970-1978",
+      "note": "the goalscorer of the great side"
+    },
+    {
+      "name": "Allan Simonsen",
+      "years": "1972-1979",
+      "note": "the Ballon d'Or winner in green"
+    }
+  ],
+  "SVW": [
+    {
+      "name": "Marco Bode",
+      "years": "1989-2002",
+      "note": "the loyal one-club winger"
+    },
+    {
+      "name": "Claudio Pizarro",
+      "years": "2001-2007, 2008-2012, 2015-2020",
+      "note": "the beloved record foreign scorer"
+    },
+    {
+      "name": "Ailton",
+      "years": "1998-2004",
+      "note": "the striker who fired the 2004 double"
+    },
+    {
+      "name": "Mesut Özil",
+      "years": "2008-2010",
+      "note": "the playmaker who broke through on the Weser"
+    }
+  ],
+  "RBL": [
+    {
+      "name": "Emil Forsberg",
+      "years": "2015-2023",
+      "note": "the playmaker who became the club's first true icon"
+    },
+    {
+      "name": "Timo Werner",
+      "years": "2016-2020",
+      "note": "the pace and goals that announced them"
+    },
+    {
+      "name": "Yussuf Poulsen",
+      "years": "2013-2024",
+      "note": "the loyalist who rose with the club from the lower leagues"
+    }
+  ],
+  "TSG": [
+    {
+      "name": "Andrej Kramarić",
+      "years": "2016-2024",
+      "note": "the club's record scorer and long-serving talisman"
+    },
+    {
+      "name": "Roberto Firmino",
+      "years": "2011-2015",
+      "note": "the playmaker who broke out here before Liverpool"
+    },
+    {
+      "name": "Kevin Volland",
+      "years": "2014-2016",
+      "note": "the forward of the breakthrough years"
+    }
+  ],
+  "B04": [
+    {
+      "name": "Ulf Kirsten",
+      "years": "1990-2003",
+      "note": "the prolific finisher of the nearly-men era"
+    },
+    {
+      "name": "Michael Ballack",
+      "years": "1999-2002",
+      "note": "the midfielder of the treble-of-runners-up season"
+    },
+    {
+      "name": "Stefan Kießling",
+      "years": "2006-2018",
+      "note": "the loyal one-club striker"
+    },
+    {
+      "name": "Florian Wirtz",
+      "years": "2020-2025",
+      "note": "the academy jewel who drove the invincible title"
+    }
+  ],
+  "S04": [
+    {
+      "name": "Ernst Kuzorra",
+      "years": "1924-1950",
+      "note": "the inter-war talisman who made Schalke the first great German club"
+    },
+    {
+      "name": "Klaus Fischer",
+      "years": "1970-1984",
+      "note": "the overhead-kick king and Ruhr folk hero"
+    },
+    {
+      "name": "Olaf Thon",
+      "years": "1983-1988, 1994-2002",
+      "note": "the local boy who captained the 1997 UEFA Cup win"
+    },
+    {
+      "name": "Klaas-Jan Huntelaar",
+      "years": "2010-2017",
+      "note": "126 goals in royal blue"
+    }
+  ],
+  "BVB": [
+    {
+      "name": "Matthias Sammer",
+      "years": "1993-1998",
+      "note": "the sweeper who won a European Cup and a Ballon d'Or"
+    },
+    {
+      "name": "Marco Reus",
+      "years": "2012-2024",
+      "note": "the local hero who stayed through every near-miss"
+    },
+    {
+      "name": "Lars Ricken",
+      "years": "1995-2008",
+      "note": "the substitute whose chip won the 1997 Champions League"
+    },
+    {
+      "name": "Michael Zorc",
+      "years": "1981-1998",
+      "note": "der ewige Michael, a one-club captain"
+    }
+  ],
+  "SCF": [
+    {
+      "name": "Nils Petersen",
+      "years": "2015-2023",
+      "note": "the loyal club-record scorer and ultimate super-sub"
+    },
+    {
+      "name": "Vincenzo Grifo",
+      "years": "2015-2017, 2019-2024",
+      "note": "the set-piece artist and modern icon"
+    },
+    {
+      "name": "Papiss Cissé",
+      "years": "2010-2012",
+      "note": "the striker who lit up the Dreisamstadion"
+    }
+  ],
+  "FCA": [
+    {
+      "name": "Daniel Baier",
+      "years": "2010-2020",
+      "note": "the one-club midfield metronome"
+    },
+    {
+      "name": "Sascha Mölders",
+      "years": "2011-2015",
+      "note": "the cult striker of the early Bundesliga years"
+    },
+    {
+      "name": "André Hahn",
+      "years": "2013-2016, 2018-2023",
+      "note": "the loyal forward across two spells"
+    }
+  ],
+  "KOE": [
+    {
+      "name": "Wolfgang Overath",
+      "years": "1962-1977",
+      "note": "the one-club playmaker and 1964 champion"
+    },
+    {
+      "name": "Lukas Podolski",
+      "years": "2003-2006, 2009-2012",
+      "note": "the local hero who kept coming home"
+    },
+    {
+      "name": "Toni Schumacher",
+      "years": "1972-1987",
+      "note": "the formidable goalkeeper"
+    },
+    {
+      "name": "Anthony Modeste",
+      "years": "2015-2017, 2018-2022",
+      "note": "the cult goalscorer"
+    }
+  ],
+  "M05": [
+    {
+      "name": "Jürgen Klopp",
+      "years": "1990-2008",
+      "note": "player then coach, the defining figure of the modern club"
+    },
+    {
+      "name": "André Schürrle",
+      "years": "2009-2011",
+      "note": "the academy product who became a World Cup winner"
+    },
+    {
+      "name": "Shinji Okazaki",
+      "years": "2013-2015",
+      "note": "the tireless striker who charmed the city"
+    }
+  ],
+  "FCU": [
+    {
+      "name": "Torsten Mattuschka",
+      "years": "2005-2014, 2016-2017",
+      "note": "the swaggering free-kick icon of the rise"
+    },
+    {
+      "name": "Christopher Trimmel",
+      "years": "2014-2024",
+      "note": "the long-serving, tattoo-artist captain"
+    },
+    {
+      "name": "Sebastian Polter",
+      "years": "2014-2016, 2019-2021",
+      "note": "the bustling striker of the promotion years"
+    }
+  ],
+  "SGE": [
+    {
+      "name": "Alex Meier",
+      "years": "2004-2018",
+      "note": "Fußballgott, the cult one-club idol"
+    },
+    {
+      "name": "Anthony Yeboah",
+      "years": "1990-1995",
+      "note": "the thunderous striker"
+    },
+    {
+      "name": "Jürgen Grabowski",
+      "years": "1965-1980",
+      "note": "the one-club winger and 1974 World Cup winner"
+    },
+    {
+      "name": "Bernd Hölzenbein",
+      "years": "1967-1981",
+      "note": "the forward of the great seventies side"
+    }
+  ]
+};
+
+const vitalStats = {
+  "BAY": {
+    "nickname": "Der Rekordmeister",
+    "founded": "1900",
+    "stadium": "Allianz Arena",
+    "city": "Munich",
+    "capacity": "75,024",
+    "colors": "Red & white",
+    "titles": "34 Bundesliga titles",
+    "lastTitle": "2026"
+  },
+  "HSV": {
+    "nickname": "Der Dino",
+    "founded": "1887",
+    "stadium": "Volksparkstadion",
+    "city": "Hamburg",
+    "capacity": "57,000",
+    "colors": "Blue, white & black",
+    "titles": "6 German championships",
+    "lastTitle": "1983"
+  },
+  "VFB": {
+    "nickname": "Der Brustring",
+    "founded": "1893",
+    "stadium": "MHPArena",
+    "city": "Stuttgart",
+    "capacity": "60,058",
+    "colors": "White & red",
+    "titles": "5 German championships",
+    "lastTitle": "2007"
+  },
+  "BMG": {
+    "nickname": "Die Fohlen",
+    "founded": "1900",
+    "stadium": "Borussia-Park",
+    "city": "Mönchengladbach",
+    "capacity": "54,022",
+    "colors": "Black, white & green",
+    "titles": "5 German championships",
+    "lastTitle": "1977"
+  },
+  "SVW": {
+    "nickname": "Die Grün-Weißen",
+    "founded": "1899",
+    "stadium": "Weserstadion",
+    "city": "Bremen",
+    "capacity": "42,100",
+    "colors": "Green & white",
+    "titles": "4 German championships",
+    "lastTitle": "2004"
+  },
+  "RBL": {
+    "nickname": "Die Roten Bullen",
+    "founded": "2009",
+    "stadium": "Red Bull Arena",
+    "city": "Leipzig",
+    "capacity": "47,800",
+    "colors": "White & red",
+    "titles": "None (2 German Cups)",
+    "lastTitle": "DFB-Pokal 2023"
+  },
+  "TSG": {
+    "nickname": "Der Dorfklub",
+    "founded": "1899",
+    "stadium": "PreZero Arena",
+    "city": "Sinsheim",
+    "capacity": "30,150",
+    "colors": "Blue & white",
+    "titles": "None",
+    "lastTitle": "Never"
+  },
+  "B04": {
+    "nickname": "Die Werkself",
+    "founded": "1904",
+    "stadium": "BayArena",
+    "city": "Leverkusen",
+    "capacity": "30,210",
+    "colors": "Red & black",
+    "titles": "1 Bundesliga title",
+    "lastTitle": "2024"
+  },
+  "S04": {
+    "nickname": "Die Knappen",
+    "founded": "1904",
+    "stadium": "Veltins-Arena",
+    "city": "Gelsenkirchen",
+    "capacity": "62,271",
+    "colors": "Royal blue & white",
+    "titles": "7 German championships",
+    "lastTitle": "1958"
+  },
+  "BVB": {
+    "nickname": "Die Gelbe Wand",
+    "founded": "1909",
+    "stadium": "Signal Iduna Park",
+    "city": "Dortmund",
+    "capacity": "81,365",
+    "colors": "Yellow & black",
+    "titles": "8 German championships",
+    "lastTitle": "2012"
+  },
+  "SCF": {
+    "nickname": "Die Breisgauer",
+    "founded": "1904",
+    "stadium": "Europa-Park Stadion",
+    "city": "Freiburg",
+    "capacity": "34,700",
+    "colors": "Red & white",
+    "titles": "None",
+    "lastTitle": "Never"
+  },
+  "FCA": {
+    "nickname": "Die Fuggerstädter",
+    "founded": "1907",
+    "stadium": "WWK Arena",
+    "city": "Augsburg",
+    "capacity": "30,660",
+    "colors": "Red, green & white",
+    "titles": "None",
+    "lastTitle": "Never"
+  },
+  "KOE": {
+    "nickname": "Die Geißböcke",
+    "founded": "1948",
+    "stadium": "RheinEnergieStadion",
+    "city": "Cologne",
+    "capacity": "49,698",
+    "colors": "Red & white",
+    "titles": "3 German championships",
+    "lastTitle": "1978"
+  },
+  "M05": {
+    "nickname": "Die Nullfünfer",
+    "founded": "1905",
+    "stadium": "Mewa Arena",
+    "city": "Mainz",
+    "capacity": "34,034",
+    "colors": "Red & white",
+    "titles": "None",
+    "lastTitle": "Never"
+  },
+  "FCU": {
+    "nickname": "Die Eisernen",
+    "founded": "1966",
+    "stadium": "Stadion An der Alten Försterei",
+    "city": "Berlin",
+    "capacity": "22,012",
+    "colors": "Red & white",
+    "titles": "None",
+    "lastTitle": "Never"
+  },
+  "ELV": {
+    "nickname": "Die Kaiserlinde",
+    "founded": "1907",
+    "stadium": "Ursapharm-Arena an der Kaiserlinde",
+    "city": "Spiesen-Elversberg",
+    "capacity": "10,000",
+    "colors": "Black & white",
+    "titles": "None",
+    "lastTitle": "Never"
+  },
+  "SCP": {
+    "nickname": "Die Ostwestfalen",
+    "founded": "1907",
+    "stadium": "Home Deluxe Arena",
+    "city": "Paderborn",
+    "capacity": "15,000",
+    "colors": "Black & blue",
+    "titles": "None",
+    "lastTitle": "Never"
+  },
+  "SGE": {
+    "nickname": "Die Adler",
+    "founded": "1899",
+    "stadium": "Deutsche Bank Park",
+    "city": "Frankfurt",
+    "capacity": "59,500",
+    "colors": "Red, black & white",
+    "titles": "1 German championship",
+    "lastTitle": "1959"
+  }
+};
+
+const nearlyGot = {
+  "BAY": {
+    "VFB": "Stuttgart is still climbing, building the engine that might one day get there. You start every season expecting the title and treat anything less as a fault to fix. Both of you trust the well-built thing over the lucky one, the plan over the prayer; you are just standing at different heights while you do it. Stuttgart dreams of the view you wake up to.",
+    "BMG": "Start with the overlap. You carry a sense of being German football royalty, of belonging at the top of the game. The difference is the tense: you live in the present, reloading and winning, while Gladbach lives in a glorious past it would not trade for anyone's now. Gladbach's best season already happened. Yours is always the next one.",
+    "SVW": "Bremen made its peace long ago with steady, loyal, mid-table life. You treat every season as a verdict, and the verdict needs a trophy attached. Underneath sits the same thing, two old settled clubs with a deep and unbothered confidence about who they are. Same rootedness. One of you demands silverware, the other is content without it."
+  },
+  "HSV": {
+    "BMG": "There's real kinship here: you steer by a past that was grander than your present, and you wear that history with pride. The difference is the wound: Gladbach's golden age simply faded, while yours ended in a fall so public it stopped a famous clock. Gladbach's decline was a sunset. Yours was a clock.",
+    "S04": "Schalke's pride came out of the ground, coal and graft and the Ruhr. Yours came off a Hanseatic port and a record of permanence that finally broke. What you share is the shape of the fall: two fallen giants with vast supports who stayed through every lean year. Schalke's pride was dug out of the earth. Yours was counted in years, until the counting stopped.",
+    "KOE": "You have both ridden the drop and clawed your way back, and neither set of fans blinked once. Köln does it laughing, the whole thing folded into the carnival. You do it carrying the fall as a wound to a proud and once-unbroken record. Köln throws a party on the way down. You hold a wake."
+  },
+  "VFB": {
+    "BAY": "Here's the common ground: you trust the well-built thing and treat precision as close to a moral code. The difference is the altitude: Bayern starts from the title and defends the summit, while you are the ascending side, building the engine season on season. Bayern starts every August at the summit. You start at the bottom of the hill.",
+    "SCF": "Two south-west clubs who both believe the patient, properly-built project beats the splashy fix. For you the build is a route to somewhere, an ascent with a summit in mind and every intention of reaching it. Freiburg measures success by whether it was done sustainably and done right. You want the trophy at the end of the process. Freiburg is happy the process exists.",
+    "BMG": "Gladbach steers by the glory it already had. You are an engine coming back to life, building forward toward something that has not happened yet. Both of you are proud old clubs with a strong sense of your own pedigree, and both of you carry it everywhere. Same pedigree, one ascending and one remembering."
+  },
+  "BMG": {
+    "SVW": "Bremen's pride is quiet, a green-and-white continuity that never asked for more. Yours is the swagger of the fearless seventies side that ran Bayern close, and it has not dimmed. Two old, loyal clubs whose great days sit behind them, and neither carries a trace of bitterness about it. Bremen never needed a golden age. You have never quite stopped talking about yours.",
+    "M05": "Mainz runs on carnival wit and cleverness. You run on the memory of a genuinely golden era. Neither of you has ever punched with money, and neither of you takes itself too seriously about it. Mainz laughs its way through the season; you spend yours listening for an echo.",
+    "HSV": "The near-miss makes sense: you steer by a grander past and wear your history proudly. The difference is the wound: your golden age faded gently, while Hamburg's ended in a fall that stopped a famous clock. Your golden age went quiet. Hamburg's went public."
+  },
+  "SVW": {
+    "BMG": "Gladbach carries the swagger of its seventies side into every season, undimmed. Yours is quiet green-and-white continuity, the same as it ever was, and you have never wanted it louder. Two old, loyal clubs living gladly with a golden age that faded. Gladbach is still dressed for the seventies. You never changed out of your own clothes.",
+    "M05": "Mainz meets a season with carnival wit. You meet it with quiet, lifelong constancy. Both of you ask for very little and give back an endless amount of loyalty, which is why the two of you ended up this close. Mainz gets through a season on a joke. You get through it on a habit.",
+    "FCU": "Union Berlin and you are deeply loyal, community-minded clubs with no taste for glamour. The difference is the origin: Union's bond was forged by fans who literally built and bled for the club, while yours is the unbroken green-and-white habit of a lifetime. Same devotion, one self-built and one inherited."
+  },
+  "RBL": {
+    "B04": "You and Bayer Leverkusen are modern, well-run clubs that trust the system and the recruitment over nostalgia. The difference is the welcome: Leverkusen is the long-established works team that the league tolerates, while you are the disruptor it resents. Leverkusen was let in. You let yourself in.",
+    "TSG": "Hoffenheim is the benefactor's village project, a thing one man's money lifted out of nowhere. You are the corporate machine the whole country has decided to hate. Both of you were built fast, by money and conviction rather than slow tradition, and neither of you has ever apologized for it. Hoffenheim annoys a league. You annoy a country.",
+    "VFB": "Stuttgart is a century-old club ascending the proper way, with all the patience that implies. You built a winner from scratch and dare anyone to mind. What sits under both is the same faith in the structured side and the plan behind it. Same engineered ambition, one with roots and one without them by choice."
+  },
+  "TSG": {
+    "B04": "Leverkusen is the established works team, and it has a title now to point at. You are the village a single man's money lifted into the league. The purists eye both of you warily, and both of you go on trusting the investment and the plan anyway. Leverkusen outlasted the sneering and won something. You are still in the middle of it.",
+    "RBL": "It's a close call for a reason. You were built fast by belief and funding rather than slow tradition. The difference is the scale: you are the small Kraichgau project of one believer, while Leipzig is the corporate machine the country resents. One man built you. A company built them.",
+    "VFB": "Stuttgart carries a century of Swabian heritage and cannot put it down. You are young enough to be unburdened by any of it. You sit in the same corner of the country and hold the same faith in the plan and the structure behind a side. Same faith in the build, one rooted and one free of roots."
+  },
+  "B04": {
+    "RBL": "Leipzig is the disruptor the league resents. You are the works team it has long since accepted, which took decades rather than any change of heart. Two modern, well-run sides that trust the model over the myth, separated mostly by how long each has been standing there. Time made you respectable. Leipzig has not been given any yet.",
+    "TSG": "TSG Hoffenheim and you are company clubs the traditionalists keep at arm's length. The difference is the payoff: you carried the runner-up label for decades and finally won everything, while Hoffenheim is still the benefactor's project chasing its moment. You spent decades as the nearly men and then won the lot. Hoffenheim has not had its season yet.",
+    "VFB": "Stuttgart is simply ascending, with nothing behind it to flinch at. You spent decades as the nearly-men before the thing finally broke your way. Both of you believe in the structured, properly-built side and in the patience it takes to get one. Same engineered faith, one scarred by near-misses and one unscarred."
+  },
+  "S04": {
+    "KOE": "Köln rides the carnival, laughing its way through every promotion and every relegation. You carry yours like a shift underground, heavier and prouder and slower to smile. Two huge working-class followings, both giving a love that asks for nothing back. Köln sings on the way down. You go back to work.",
+    "FCU": "You and Union Berlin are proud, collective clubs where the people in the stand are the whole point. The difference is the inheritance: Union's bond was built by fans who gave blood and labor, while yours was handed down through generations of miners. Union's supporters built their club. Yours were born into theirs.",
+    "HSV": "Hamburg's pride ran through a port and through a record of permanence that finally broke. Yours runs through coal and through the Ruhr. Both of you are fallen giants whose vast supports never wavered once through the drop. Yours was dug from under the Ruhr. Hamburg's hung on a wall until it fell."
+  },
+  "BVB": {
+    "SGE": "Frankfurt takes its fire on the road, aiming it at the powers running the game and at every away end it invades. Yours has never needed to leave home; it falls straight down onto the pitch from the Wall. Underneath, though, the same thing is running, a matchday turned into something closer to a religion, all noise and color and feeling at full tilt.",
+    "S04": "The two of you are giant Ruhr clubs whose terraces are the whole point, bound by the Revierderby. The difference is the register: Schalke's pride is the miner's, hard and unglamorous, while yours is pure spectacle, the biggest wall of noise in Europe. Schalke's pride does not perform. Yours is eighty thousand people performing at once.",
+    "KOE": "Köln is a carnival city's loyal chaos, worn with a grin through every up and down. Yours is eighty thousand people on a single terrace. Neither of you reads the table before you read the room, and neither would trade the feeling in the stand for a better line in it. Same devotion, different building: one a party, one a cathedral."
+  },
+  "SCF": {
+    "VFB": "First, the kinship. You come from the south-west and trust the patient, properly-built project. The difference is the goal: Stuttgart wants to climb and win, while you measure success by doing it sustainably and right. Stuttgart is measuring the summit. You are measuring the road.",
+    "SVW": "Bremen is the proud traditionalist living on a peak that has faded. You are the well-run overachiever still on the way up. Both of you are unflashy and principled, loyal less to a trophy than to a way of doing things. Bremen's best years are behind it. Yours keep arriving quietly.",
+    "M05": "Mainz wraps its overachieving in carnival wit. You wrap yours in Black Forest patience and a solar-roofed sense of doing things properly. Both of you outrun your means by being smarter and steadier than clubs with far more to spend. Mainz survives on a punchline. You survive on a plan."
+  },
+  "FCA": {
+    "SCP": "You and SC Paderborn are small, modest clubs at peace with punching where you punch, no glory expected. The difference is the ride: Paderborn yo-yos between divisions as an underdog, while you simply stay up, calm and unbothered, year after year. Paderborn's season is a rollercoaster. Yours is a straight line, and you like it that way.",
+    "M05": "Mainz leans into the carnival wit and makes a personality out of it. You lean into quiet, undramatic survival and make no noise at all. Two unglamorous clubs that ask for very little and keep their feet flat on the ground. Mainz makes staying up entertaining. You make it look like nothing happened.",
+    "BMG": "Gladbach steers by a genuinely golden era and always will. You have no such peak to remember, and you settled that with yourself years back. Both of you sit some distance from glory and are honest about the distance. Same lack of present silverware, one nostalgic and one content."
+  },
+  "KOE": {
+    "S04": "There's real kinship here: you carry huge working-class followings and a love that asks nothing back. The difference is the mood: you ride the carnival, laughing through every promotion and relegation, while Schalke carries its loyalty like a shift underground, heavier and prouder. You laugh your way through the drop. Schalke clocks in.",
+    "SGE": "Frankfurt's energy is political and defiant, an away-day army with somewhere to be. Yours is carnival, a city throwing a party through every up and every down. Two loud, fervent clubs where the support is the whole spectacle and the football is almost the excuse. Frankfurt travels to make a point. You stay home and throw a party.",
+    "BVB": "Dortmund puts eighty thousand people on one vast terrace. You put a carnival city's loyal chaos into the same ninety minutes and wear the yo-yo with a grin. Both of you live for the feeling in the stand far more than the line in the table. Dortmund is a cathedral. You are a parade."
+  },
+  "M05": {
+    "ELV": "SV Elversberg and you are small clubs playing with house money and a smile, no weight of expectation. The difference is the source of the joy: Elversberg's is the fairytale of arriving at all, while yours is the carnival wit of staying and out-thinking richer sides. Elversberg cannot believe it is here. You stopped being surprised years ago.",
+    "SCP": "Paderborn yo-yos between divisions as a stubborn underdog and keeps coming back up. You survive by being cleverer and funnier than your budget has any right to be. Two modest clubs that overachieve and then refuse to take the achievement too seriously. Paderborn outlasts the league. You outwit it.",
+    "BMG": "Gladbach lives on a golden past and keeps it close. You live on carnival wit and gegenpressing cleverness, all of it happening now. Both of you carry a personality far bigger than the present trophy haul would suggest, and neither of you seems to mind the gap. Same outsized character, one nostalgic and one mischievous."
+  },
+  "FCU": {
+    "S04": "Schalke's bond was handed down through generations of miners, arriving with the surname. Yours was built recently and deliberately, by supporters who gave blood and labor to keep the club standing. Both of you are proud, collective clubs where the people in the stand are the entire point. Schalke's fans were born into it. Yours built it with their hands.",
+    "SVW": "The two of you are deeply loyal clubs with no taste for glamour. The difference is the origin: your bond was forged by supporters who literally built and bled for the club, while Bremen's is the unbroken green-and-white habit of a lifetime. Bremen's loyalty is a habit. Yours is a debt the club can never repay.",
+    "KOE": "Köln rides the lower divisions as a carnival, all party and no flinching. You rode them as a project your own supporters built by hand. Two fiercely loyal community clubs who treat a division as a detail rather than a verdict. Köln shows up for the party. Your people showed up with tools."
+  },
+  "ELV": {
+    "M05": "Mainz has long since mastered the art of the witty stay. Yours is the fairytale of having arrived at all, out of the smallest town in the league. Two small clubs playing without a shred of expectation on them, and enjoying every minute of that. Mainz knows how to stay. You are still amazed you got in.",
+    "SCP": "You and SC Paderborn alike are tiny, overlooked clubs that have no business sharing a league with giants. The difference is the story: Paderborn is the seasoned yo-yo underdog, back for another go, while you are the first-time fairytale with everything still ahead. Paderborn has done this before. You are doing it for the first time, and everyone can tell.",
+    "BMG": "Gladbach was European royalty once and has never stopped remembering it. You have never been here before and are simply thrilled to have arrived. You both sit a long way from the favorites, and you got there by opposite routes. Same outsider status, one a faded great and one a rising minnow."
+  },
+  "SCP": {
+    "M05": "Mainz survives on carnival wit and cleverness, season after season. You yo-yo between divisions as a stubborn underdog and simply refuse to stay down. Two modest clubs that overachieve their means and keep their feet on the ground while doing it. Mainz talks its way out of trouble. You climb out.",
+    "ELV": "SV Elversberg and you are tiny, overlooked clubs improbably sharing a league with giants. The difference is the mileage: you are the seasoned yo-yo side back for another crack, while Elversberg is the wide-eyed first-time fairytale. Elversberg is having the time of its life. You have been here often enough to pace yourself.",
+    "FCA": "Augsburg simply stays up, calm and content, year after year without much fuss. You ride the rollercoaster between divisions and treat that as normal. Two small, unfussy clubs with no glory to chase and no particular interest in chasing any. Same modest contentment, one a yo-yo and one a steady hum."
+  },
+  "SGE": {
+    "BVB": "The near-miss makes sense: you turn a matchday into something closer to a religion, all noise and color at full tilt. The difference is the direction it points: you aim your energy outward, at the powers running the game and at every away end you invade, while Dortmund pours its straight down from the Wall. Dortmund's noise falls on its own pitch. Yours is aimed at somebody.",
+    "KOE": "Köln's support is carnival, a city at a party with a football match somewhere inside it. Yours is political and defiant, a traveling army with an argument to make. Two loud, fervent crowds that are the whole spectacle rather than the backdrop to one. Köln's crowd came to enjoy itself. Yours came with a message.",
+    "S04": "Schalke's energy comes from the miner's pride and stays with the miner's people. Yours is aimed squarely at the powers running modern football. Both of you bring vast, passionate, working supports with a real streak of defiance running through them. Schalke's fervor looks inward, at its own people. Yours looks up, at whoever is in charge."
+  }
+};
+
+const milestones = {
+  "ELV": [
+    "First promotion to the Bundesliga (2026)",
+    "Climbed from the 3. Liga to the top flight in four years"
+  ],
+  "SCP": [
+    "Promoted to the Bundesliga via the play-off (2026)",
+    "Back in the top flight for a third time, with no major honors"
+  ]
+};
+
+const CARD_BADGES = {
+  "BAY": "🔴",
+  "HSV": "🦕",
+  "VFB": "⚙️",
+  "BMG": "🐎",
+  "SVW": "🟢",
+  "RBL": "🐂",
+  "TSG": "🔵",
+  "B04": "💊",
+  "S04": "⛏️",
+  "BVB": "🟡",
+  "SCF": "🌲",
+  "FCA": "🟢",
+  "KOE": "🐐",
+  "M05": "🎭",
+  "FCU": "⚒️",
+  "ELV": "🌳",
+  "SCP": "🔵",
+  "SGE": "🦅"
+};
+
+const badgeUrls = {};
+
+export { teamsCopy, greats, vitalStats, nearlyGot, milestones, CARD_BADGES, badgeUrls };
