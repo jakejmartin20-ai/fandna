@@ -1147,7 +1147,7 @@ function AppInner(){
     <div ref={containerRef} className="app-root" style={{
       background:"#16161e",
       display:"flex",alignItems:"flex-start",justifyContent:"center",
-      padding:"32px 20px",
+      padding: screen==="result" ? "14px 20px 32px" : "32px 20px", // s83: tighter top on results (was a uniform 32px)
       fontFamily:"'Georgia','Times New Roman',serif",
       position:"relative",
     }}>
