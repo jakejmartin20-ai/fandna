@@ -1,0 +1,722 @@
+// FanDNA - LIGUE1 display half (lazy-loaded, s83 code-split A'). Heavy result-stage prose
+// split from ligue1.js; merged onto SPORT_DATA via loadSportDisplay(). The engine never reads these.
+
+const teamsCopy = {
+  "PSG": {
+    "tagline": "You spent a fortune chasing one trophy, and in 2025 Europe finally gave in.",
+    "desc": "You were built to win, and for years the one prize you wanted most kept slipping away. Money was never the problem; you could buy anyone, sign anything, fill a squad with the best on earth. What you could not buy was the trophy that mattered, and the wait for it became the whole story of who you are. When it finally came in 2025, it did not feel like a beginning. It felt like the end of a very long argument you had been having with the rest of Europe, and with yourself.",
+    "note": "Fourteen league titles, the last five in a row, and in 2025 the Champions League at last, the trophy a decade of spending had been chasing. Bought to be feared, and finally, late, champions of Europe.",
+    "edge": {
+      "ambition": "a hunger where nothing but the very top would do, and a willingness to spend whatever that took",
+      "rootedness": "a modern project built fast for glamour, not a story handed down over generations",
+      "community": "a global brand before a neighborhood, where the local grit was never the point"
+    }
+  },
+  "MAR": {
+    "tagline": "You live and die by every minute at the Vélodrome. One European Cup, 1993, and nothing calm about you.",
+    "desc": "You feel this club in your body, every minute of every match, and you have never once apologized for it. There is a city in the south that does not so much support its team as live and die by it, and you are the loudest, most devoted, most volatile corner of it. The Vélodrome on a European night is the closest thing France has to a cauldron, and you helped make it that. You won Europe once, in 1993, the only French club ever to do it, and you have reminded the country every single day since.",
+    "note": "Nine league titles and, in 1993, the only Champions League ever won by a French club. The Vélodrome holds sixty-seven thousand, and on the big nights it sounds like twice that.",
+    "edge": {
+      "emotion": "a club that suffers and soars, where the intensity is the whole point",
+      "chaos": "drama, turmoil, protest and upheaval all lived through, and never once traded for calm",
+      "loyalty": "a devotion measured in decades of showing up regardless of what the club was doing",
+      "rootedness": "its city's club and its people's club, inseparable from where it is from"
+    }
+  },
+  "MON": {
+    "tagline": "You win like a beautifully run business: eight titles, a tax haven's fortune, a stadium that never fills.",
+    "desc": "You are a club of the rich and the few, and you run it like a craft. There is a tiny principality on the Mediterranean, forty thousand people and a tax rate that draws fortunes, and its football team operates like a beautifully run business: spot the best young talent in the world, sign it, polish it, and cash out at the top of the market. The stadium is half-empty and the noise is thin, but the trophies are real and the model works. You do not need a roaring crowd to know your worth.",
+    "note": "Eight league titles, the last in 2017, and one of the most productive talent factories in Europe, where Mbappé, Henry and Weah were made before the world took them away. Stade Louis II holds eighteen thousand and rarely fills.",
+    "edge": {
+      "process": "run like a smart machine, recruitment and development before romance, and it delivers",
+      "community": "no roaring terrace and no neighborhood behind it, a peace it has long since made",
+      "emotion": "the clever, measured way rather than the theatrical one, the calm a strength"
+    }
+  },
+  "LIL": {
+    "tagline": "You beat the money by being smarter: champions of France in 2021, the cool north's quiet revenge.",
+    "desc": "You win by being smarter than richer clubs, and you take a quiet northern pride in it. There is a way of doing this that does not need a fortune: scout better, build better, run the whole thing like it actually has to balance, and every so often turn that competence into something nobody saw coming. You did exactly that in 2021, taking the title off a Paris side spending many times what you could, and you did it without ever raising your voice. You are the cool head in a loud game, and it suits you.",
+    "note": "Four league titles, most recently a shock in 2021 won on a fraction of the money around them, the smart north's quiet revenge.",
+    "edge": {
+      "process": "the well-built, well-run version of things, with a title to prove it works",
+      "emotion": "the calm, clever side rather than the dramatic one, the restraint deliberate",
+      "ambition": "aimed high but reached by being sharp, not by spending its way up"
+    }
+  },
+  "LYO": {
+    "tagline": "You owned France for seven straight years, and you have ached to be that good ever since.",
+    "desc": "You remember being the best, and you cannot quite let it go. For seven straight years you owned French football, a dynasty nobody could touch, and then the titles stopped and the world moved on and you have spent every season since trying to be that again. The memory is a weight as much as a fuel: it sets a standard the present keeps failing to meet, and the recent years of turmoil and near-misses have only sharpened the ache. You are a fallen aristocrat who still believes, deep down, that the throne is rightfully yours.",
+    "note": "Seven league titles in a row from 2002 to 2008, a dynasty unmatched in modern French football, then a long fall from the summit. Groupama Stadium, fifty-nine thousand, was built at the height of the empire.",
+    "edge": {
+      "ambition": "measured against a golden age, where anything short of the top feels like falling",
+      "chaos": "ownership turmoil and brushes with the drop that made the last few years anything but calm",
+      "emotion": "the ache of the gap between what it was and what it is, which never quite settles"
+    }
+  },
+  "LEN": {
+    "tagline": "You fill a stadium bigger than your town, in blood and gold, for a coalfield the country forgot.",
+    "desc": "You belong to a place that the rest of the country mostly forgot, and you wear it like armor. This is coal country, a town built on the mines, and when the pits closed the football club became the thing that held the region's pride together. Bollaert holds more people than the town does, and on a matchday the whole of the coalfield seems to pour into it, blood and gold from one end to the other. You do not have money or glamour. You have something the rich clubs cannot buy, and you know it.",
+    "note": "One league title, in 1998, and a stadium, Bollaert-Delelis, that holds thirty-eight thousand in a town of barely thirty. Sang et or, blood and gold, the colors of the coalfield.",
+    "edge": {
+      "community": "a region's club before anything else, where the belonging is total",
+      "rootedness": "the coalfield the country forgot, and a stadium bigger than the town it stands in",
+      "emotion": "Bollaert on a big day, one of the great atmospheres in France",
+      "loyalty": "a bond that outlasted the bad decades without ever coming up for review"
+    }
+  },
+  "BRE": {
+    "tagline": "You are Brittany's far edge, sixteen thousand strong, and in 2024 you gatecrashed the Champions League.",
+    "desc": "You are small, you are out at the very edge of the country, and you have just done something that clubs ten times your size only dream about. Brittany's western tip is a long way from the money and the glamour, and your ground holds barely sixteen thousand, and none of that stopped you from gatecrashing the Champions League. You do not carry yourself like a club with pretensions. You carry yourself like a tight, happy, slightly improbable overachiever who knows exactly how far it has come, and enjoys every minute of it.",
+    "note": "A third-place finish in 2024 carried tiny Stade Brestois into the Champions League for the first time, the smallest club in the competition.",
+    "edge": {
+      "community": "a small Breton town's club, close-knit and unpretentious, the togetherness its edge",
+      "chaos": "well run and steady, a rise engineered rather than stumbled into",
+      "ambition": "hungry but unspoiled, still half-surprised to be here and enjoying every minute of it"
+    }
+  },
+  "REN": {
+    "tagline": "You backed Breton ambition with real money and beat Paris on penalties to lift the 2019 cup.",
+    "desc": "You are Brittany's capital club, wealthy in a way few French clubs are, and you have spent years trying to turn that into something that lasts. There is real ambition here, deep pockets, an academy that keeps producing players the giants come to buy, and a fierce Breton support that has never doubted who it is. The breakthrough was the 2019 cup, beating Paris on penalties, the long wait finally over, and ever since you have been chasing the next step up, wanting Europe, wanting more, never quite content to sit still.",
+    "note": "No league title yet, but the 2019 Coupe de France, won on penalties against Paris Saint-Germain, ended a long wait. Pinault-backed, with an academy that produced Dembélé and Camavinga. Roazhon Park holds thirty thousand.",
+    "edge": {
+      "ambition": "backed to push for Europe and the top, and restless whenever it is not there",
+      "process": "a famed academy and a serious project underneath, producing talent year after year",
+      "rootedness": "the Breton identity and the Roazhon support, the constant beneath the ambition"
+    }
+  },
+  "STR": {
+    "tagline": "Alsace built its club back from nothing, one division at a time.",
+    "desc": "You were bankrupt, dissolved, dumped to the bottom of the football pyramid, and your own supporters carried you all the way back. In 2011 the club died as a professional entity and started again in the fifth tier, and what happened next is the thing you are proudest of: the fans refused to let it disappear, filled a stadium meant for top-flight football to watch amateur games, and climbed, division by division, back to where you are now. Alsace is a border region with its own fierce identity, and you are its living proof that a club is its people, not its balance sheet.",
+    "note": "Bankrupt and refounded in the fifth tier in 2011, then carried back to Ligue 1 by its supporters across a remarkable climb. One league title, in 1979. Stade de la Meinau holds twenty-nine thousand.",
+    "edge": {
+      "community": "fans who rebuilt the club from nothing, a bond that will not break",
+      "loyalty": "a support that followed it down to the fifth tier and never treated that as a reason to stop",
+      "rootedness": "Alsace, the border and La Meinau, an identity the years of crisis only hardened",
+      "ambition": "returning under new ownership, though the comeback is still the story that defines it"
+    }
+  },
+  "TOU": {
+    "tagline": "You play football in a rugby city, run it smart, and stunned France with the 2023 cup.",
+    "desc": "You play football in a city that worships rugby, and you have learned to make a virtue of being the other game. Toulouse is the south's rugby capital, the oval ball comes first here, and that has freed you to do things your own way: run smart, recruit cleverly on a data-driven model, and every so often stun everyone, the way you did winning the 2023 cup. You do not have the noise of a football-mad town behind you, but you have a sharp operation and a violet shirt that nobody else wears, and you are quietly proud of both.",
+    "note": "No league title for the current club, but the 2023 Coupe de France stunned France. Owned by the American group behind a data-led model, playing in a rugby city.",
+    "edge": {
+      "process": "a smart, modern, recruitment-led model that gives it an edge above its means",
+      "emotion": "a rugby city where the football noise is muted, an identity that needs no roar",
+      "ambition": "measured, overachieving through cleverness rather than spending, as the 2023 cup proved"
+    }
+  },
+  "NIC": {
+    "tagline": "You are a Riviera name on four titles, the last in 1959, waiting on new money to matter again.",
+    "desc": "You are a Riviera club with a proud old name, waiting for the present to live up to the past. There were titles here once, a very long time ago now, and a glamour that comes with the coast, and now there is new money and the patient hope that it might finally mean something again. You are not the loudest or the most rooted club in France; the coast is a place people pass through as much as belong to. But the eagle on the crest still means something, and you have not given up on mattering.",
+    "note": "Four league titles, the last of them in 1959, and a recent relegation play-off survived the hard way. INEOS-backed, on the Côte d'Azur.",
+    "edge": {
+      "ambition": "new backing and the bearing of a club that feels it ought to be more than mid-table",
+      "rootedness": "the Riviera, glamorous but transient, a belonging real without being fierce",
+      "chaos": "a recent brush with the drop, a scare that nothing is ever guaranteed"
+    }
+  },
+  "AJA": {
+    "tagline": "You kept one manager for forty-four years, and a town of forty thousand won the 1996 double.",
+    "desc": "You are a small Burgundy town that, through sheer patience, once stood with the giants of French football. The whole story is built on the long view: one manager who simply never left, an academy that turned out internationals from nowhere, and a refusal to chase quick fixes when slow and steady had always been the way. The crowning moment, a league and cup double in 1996 from a town of forty thousand, should have been impossible, and it was not, because you trusted the process for as long as it took. You still believe in building things properly, however long it takes.",
+    "note": "One league title, the 1996 double, won under Guy Roux, who managed the club for more than forty years. An academy that produced Cantona and Cissé.",
+    "edge": {
+      "process": "the patient, academy-led way that is the whole identity, and once won everything",
+      "rootedness": "a small Burgundy town and decades of continuity at l'Abbe-Deschamps",
+      "chaos": "stability as the point, building slowly and refusing to panic"
+    }
+  },
+  "HAC": {
+    "tagline": "You are the oldest of them all, founded in 1872, the dean of the French game.",
+    "desc": "No club in France was here before you, and that history is the thing you carry above everything else. You began in a great port city more than a hundred and fifty years ago, and the academy has quietly produced some of the finest players the country has made. You are not chasing titles or glamour; survival in the top flight and the steady work of bringing through the next generation is enough. Nobody else can say they were here first, and you have never needed more than that.",
+    "note": "France's founding club, established in 1872, le doyen. No league title, but an academy that produced Pogba, Mahrez, Mandanda and Payet.",
+    "edge": {
+      "rootedness": "the oldest club in France, founded in 1872, a history nothing else can match",
+      "community": "a working port city's club, its academy feeding the game from its own backyard",
+      "ambition": "modest and content, measured by staying up and developing its own"
+    }
+  },
+  "ANG": {
+    "tagline": "You are Anjou's stubborn survivor, scrapping every single year for one more season up top.",
+    "desc": "You are Anjou's unfashionable battler, and you have made a quiet identity out of simply refusing to go away. There is no golden age to live up to here, no fortune behind you, just a black-and-white shirt and the yearly job of scrapping for one more season in the top flight. You yo-yo, you fight, you take your knocks and you come back, and you do it without much fuss or fanfare. Glamour was never on offer. Stubbornness was, and you have leaned on it for as long as anyone can remember.",
+    "note": "No league title, a club that yo-yos between the divisions and fights each year to stay up. Plays at Stade Raymond-Kopa, named for the France great.",
+    "edge": {
+      "ambition": "modest, with survival and one more year up as the honest measure",
+      "rootedness": "Anjou as home, an identity kept scrappy by the yo-yo years",
+      "chaos": "instability as its normal, lived in without ever losing its nerve"
+    }
+  },
+  "LOR": {
+    "tagline": "An orange shirt, an Atlantic port town, and no wish to be anything grander.",
+    "desc": "You are the Hakes of a Breton port, named for a fish, and you carry the salt-and-tide identity of the coast with real affection. Lorient is a submarine-base town on the Atlantic, modest and maritime, and your club bobs up and down between the divisions the way the boats ride the swell. You are not chasing greatness; you are a small, likeable, deeply local club that knows the sea and knows itself. The orange shirt and the Merlus nickname are unmistakably yours, and there is a quiet pride in being exactly that and nothing grander.",
+    "note": "No league title, though the 2002 Coupe de France sits in the cabinet. The Merlus, the Hakes, of a Breton submarine port.",
+    "edge": {
+      "community": "a small Breton port town's club, local to the bone, with a maritime identity of its own",
+      "rootedness": "the tide, the port, and a Breton corner it has never wanted to leave",
+      "ambition": "modest, aiming to stay up and stay itself rather than climb",
+      "emotion": "the even temper of a place that has always lived by the tide"
+    }
+  },
+  "PFC": {
+    "tagline": "Serious money, no history to answer to, and every intention of climbing.",
+    "desc": "You are the new ambition in a city that already has a giant, and you mean to give Paris a second club whether anyone asked for one or not. For decades you were the forgotten half of the capital, forty-six years out of the top flight, while the other Paris side became a global superpower. Now serious money has arrived, a project to build something real and fast, and you are back among the elite with a plan to climb much higher. You are not weighed down by history or sentiment. You are a clean, cold, well-funded bid to matter, and you are only getting started.",
+    "note": "Back in the top flight after a forty-six year absence, now backed by the Arnault family and Red Bull in a bid to give Paris a second major club.",
+    "edge": {
+      "ambition": "serious money and an explicit plan to rise, a project on the way up",
+      "process": "a well-resourced, well-built operation, a project before it is a movement",
+      "rootedness": "a club reborn, its history thin in this shape and its identity yet to harden",
+      "community": "a following still being assembled, gathering around a club rather than inherited with it"
+    }
+  },
+  "TRO": {
+    "tagline": "You never settle in one division for long: Champagne's yo-yo club in City's global machine.",
+    "desc": "You are Champagne's elevator club, forever between the divisions, and a small cog in a very large global machine. Part of the network that owns Manchester City, you are a development outpost as much as a club in your own right, a place talent passes through on the way somewhere bigger. The pattern of your life is the rise and the fall, up to the top flight and back down again, never quite settling in one place long enough to put down roots. You take the churn in stride, because the churn is simply what you are.",
+    "note": "No league title, but the 2001 Intertoto Cup and a famous win over Newcastle. Part of the City Football Group since 2020, a development club in Champagne.",
+    "edge": {
+      "chaos": "the constant up-and-down between divisions, long since stopped being unsettling",
+      "process": "a structured, development-led model inside a global ownership group",
+      "ambition": "promotion as the goal, though only ever one node in a bigger empire"
+    }
+  },
+  "LEM": {
+    "tagline": "You are the racing city's club, fallen to the amateurs and clawed all the way back.",
+    "desc": "You are a racing city's football club, fallen all the way to the amateurs and clawed back to the top, and the climb is the thing you are made of. Le Mans is famous the world over for a twenty-four-hour motor race, and the football team nearly disappeared beneath it: bankruptcy, collapse to the fifth tier, years in the wilderness. But the town stuck with you, and you came back, division by division, all the way to Ligue 1. You are fragile and you are fervent, a club that knows exactly how close it came to vanishing and treasures every season it survives.",
+    "note": "Back in Ligue 1 after falling to the fifth tier and climbing all the way back. The city of the twenty-four-hour race, and Didier Drogba's launchpad two decades ago.",
+    "edge": {
+      "community": "the town that stayed through the fall to the amateur tiers, a bond that carried it back",
+      "loyalty": "a support that did not thin out when the club dropped out of the professional game entirely",
+      "chaos": "earned the hard way, through bankruptcy, collapse and a long uncertain climb back up",
+      "rootedness": "the racing city as home, a history that survived even when the club very nearly did not"
+    }
+  }
+};
+
+const greats = {
+  "PSG": [
+    {
+      "name": "Marquinhos",
+      "years": "2013-present",
+      "note": "the long-serving Brazilian captain"
+    },
+    {
+      "name": "Zlatan Ibrahimović",
+      "years": "2012-2016",
+      "note": "the king who dominated France and never let anyone forget it"
+    },
+    {
+      "name": "Pauleta",
+      "years": "2003-2008",
+      "note": "the Portuguese striker, a club-record scorer before the new era"
+    },
+    {
+      "name": "Kylian Mbappé",
+      "years": "2017-2024",
+      "note": "the homegrown superstar and all-time top scorer"
+    }
+  ],
+  "MAR": [
+    {
+      "name": "Jean-Pierre Papin",
+      "years": "1986-1992",
+      "note": "JPP, the Ballon d'Or striker of the great OM side"
+    },
+    {
+      "name": "Basile Boli",
+      "years": "1990-1994",
+      "note": "the defender whose header won the 1993 European Cup"
+    },
+    {
+      "name": "Steve Mandanda",
+      "years": "2007-2016, 2017-2022",
+      "note": "the long-serving keeper and club icon"
+    },
+    {
+      "name": "Chris Waddle",
+      "years": "1989-1992",
+      "note": "the English winger adored at the Vélodrome"
+    }
+  ],
+  "MON": [
+    {
+      "name": "Thierry Henry",
+      "years": "1994-1999",
+      "note": "the academy product who first broke through here"
+    },
+    {
+      "name": "George Weah",
+      "years": "1988-1992",
+      "note": "the future Ballon d'Or winner's European launchpad"
+    },
+    {
+      "name": "Fabien Barthez",
+      "years": "1992-1995",
+      "note": "the keeper who won the title before a World Cup"
+    },
+    {
+      "name": "Emmanuel Petit",
+      "years": "1989-1997",
+      "note": "the midfielder who came through the ranks"
+    }
+  ],
+  "LIL": [
+    {
+      "name": "Eden Hazard",
+      "years": "2007-2012",
+      "note": "the academy jewel who lit up the 2011 Double"
+    },
+    {
+      "name": "Mike Maignan",
+      "years": "2015-2021",
+      "note": "the keeper of the shock 2021 title"
+    },
+    {
+      "name": "Rio Mavuba",
+      "years": "2008-2017",
+      "note": "the long-serving captain"
+    },
+    {
+      "name": "Burak Yılmaz",
+      "years": "2020-2022",
+      "note": "the Turkish striker who dragged Lille to the 2021 title"
+    }
+  ],
+  "LYO": [
+    {
+      "name": "Juninho Pernambucano",
+      "years": "2001-2009",
+      "note": "the free-kick king of the seven-title dynasty"
+    },
+    {
+      "name": "Karim Benzema",
+      "years": "2004-2009",
+      "note": "the academy striker before Madrid"
+    },
+    {
+      "name": "Sidney Govou",
+      "years": "1999-2010",
+      "note": "the homegrown winger of the dynasty"
+    },
+    {
+      "name": "Grégory Coupet",
+      "years": "1997-2008",
+      "note": "the goalkeeper of the title years"
+    }
+  ],
+  "LEN": [
+    {
+      "name": "Éric Sikora",
+      "years": "1985-2000",
+      "note": "Mr Lens, the one-club full-back"
+    },
+    {
+      "name": "Vladimír Šmicer",
+      "years": "1996-1999",
+      "note": "the Czech who shone before Liverpool"
+    },
+    {
+      "name": "Seydou Keïta",
+      "years": "2002-2007",
+      "note": "the Malian engine and captain before Sevilla and Barcelona"
+    },
+    {
+      "name": "Tony Vairelles",
+      "years": "1995-1999",
+      "note": "Tonygol, the striker of the 1998 title"
+    }
+  ],
+  "REN": [
+    {
+      "name": "Ousmane Dembélé",
+      "years": "2015-2016",
+      "note": "the academy breakout before Dortmund"
+    },
+    {
+      "name": "Eduardo Camavinga",
+      "years": "2019-2021",
+      "note": "the teenage prodigy before Madrid"
+    },
+    {
+      "name": "Sylvain Wiltord",
+      "years": "1997-1999",
+      "note": "the striker who left for Bordeaux and Arsenal"
+    },
+    {
+      "name": "Jérémy Doku",
+      "years": "2020-2023",
+      "note": "the explosive winger before Manchester City"
+    }
+  ],
+  "NIC": [
+    {
+      "name": "Hugo Lloris",
+      "years": "2005-2008",
+      "note": "the hometown keeper before Lyon, Spurs and a World Cup"
+    },
+    {
+      "name": "Just Fontaine",
+      "years": "1953-1956",
+      "note": "the prolific striker who made his name before Reims and 1958"
+    }
+  ],
+  "AJA": [
+    {
+      "name": "Éric Cantona",
+      "years": "1983-1988",
+      "note": "the mercurial talent who began here"
+    },
+    {
+      "name": "Djibril Cissé",
+      "years": "1998-2004",
+      "note": "the striker of the golden era before Liverpool"
+    },
+    {
+      "name": "Philippe Mexès",
+      "years": "2000-2004",
+      "note": "the defender who left for Roma"
+    }
+  ],
+  "HAC": [
+    {
+      "name": "Paul Pogba",
+      "years": "academy",
+      "note": "the World Cup winner who came through here before Manchester United"
+    },
+    {
+      "name": "Riyad Mahrez",
+      "years": "2009-2014",
+      "note": "the future Premier League champion who started here"
+    },
+    {
+      "name": "Lassana Diarra",
+      "years": "academy",
+      "note": "the France midfielder who came through the academy"
+    }
+  ]
+};
+
+const vitalStats = {
+  "PSG": {
+    "nickname": "Les Parisiens",
+    "founded": "1970",
+    "stadium": "Parc des Princes",
+    "city": "Paris",
+    "capacity": "47,926",
+    "colors": "Navy & red",
+    "titles": "14 league titles, 2 Champions Leagues",
+    "lastTitle": "League 2026"
+  },
+  "MAR": {
+    "nickname": "L'OM",
+    "founded": "1899",
+    "stadium": "Stade Vélodrome",
+    "city": "Marseille",
+    "capacity": "67,394",
+    "colors": "White & blue",
+    "titles": "9 league titles, 1 Champions League",
+    "lastTitle": "League 2010"
+  },
+  "MON": {
+    "nickname": "Les Monégasques",
+    "founded": "1924",
+    "stadium": "Stade Louis II",
+    "city": "Monaco",
+    "capacity": "18,523",
+    "colors": "Red & white",
+    "titles": "8 league titles",
+    "lastTitle": "2017"
+  },
+  "LIL": {
+    "nickname": "Les Dogues",
+    "founded": "1944",
+    "stadium": "Stade Pierre-Mauroy",
+    "city": "Lille",
+    "capacity": "50,186",
+    "colors": "Red & navy",
+    "titles": "4 league titles",
+    "lastTitle": "2021"
+  },
+  "LYO": {
+    "nickname": "Les Gones",
+    "founded": "1950",
+    "stadium": "Groupama Stadium",
+    "city": "Lyon",
+    "capacity": "59,186",
+    "colors": "White",
+    "titles": "7 league titles",
+    "lastTitle": "2008"
+  },
+  "LEN": {
+    "nickname": "Sang et Or",
+    "founded": "1906",
+    "stadium": "Stade Bollaert-Delelis",
+    "city": "Lens",
+    "capacity": "37,705",
+    "colors": "Blood & gold",
+    "titles": "1 league title",
+    "lastTitle": "1998"
+  },
+  "BRE": {
+    "nickname": "Ti-Zef",
+    "founded": "1950",
+    "stadium": "Stade Francis-Le Blé",
+    "city": "Brest",
+    "capacity": "15,931",
+    "colors": "Red & white",
+    "titles": "None",
+    "lastTitle": "Never"
+  },
+  "REN": {
+    "nickname": "Rouge et Noir",
+    "founded": "1901",
+    "stadium": "Roazhon Park",
+    "city": "Rennes",
+    "capacity": "29,778",
+    "colors": "Red & black",
+    "titles": "2 Coupes de France",
+    "lastTitle": "Coupe 2019"
+  },
+  "STR": {
+    "nickname": "Le Racing",
+    "founded": "1906",
+    "stadium": "Stade de la Meinau",
+    "city": "Strasbourg",
+    "capacity": "29,230",
+    "colors": "Blue & white",
+    "titles": "1 league title",
+    "lastTitle": "1979"
+  },
+  "TOU": {
+    "nickname": "Le Téfécé",
+    "founded": "1970",
+    "stadium": "Stadium de Toulouse",
+    "city": "Toulouse",
+    "capacity": "33,150",
+    "colors": "Violet",
+    "titles": "1 Coupe de France",
+    "lastTitle": "Coupe 2023"
+  },
+  "NIC": {
+    "nickname": "Le Gym",
+    "founded": "1904",
+    "stadium": "Allianz Riviera",
+    "city": "Nice",
+    "capacity": "35,624",
+    "colors": "Red & black",
+    "titles": "4 league titles",
+    "lastTitle": "1959"
+  },
+  "AJA": {
+    "nickname": "L'AJA",
+    "founded": "1905",
+    "stadium": "Stade de l'Abbé-Deschamps",
+    "city": "Auxerre",
+    "capacity": "18,541",
+    "colors": "Blue & white",
+    "titles": "1 league title",
+    "lastTitle": "1996"
+  },
+  "HAC": {
+    "nickname": "Le Doyen",
+    "founded": "1872",
+    "stadium": "Stade Océane",
+    "city": "Le Havre",
+    "capacity": "25,178",
+    "colors": "Sky & navy",
+    "titles": "None",
+    "lastTitle": "Never"
+  },
+  "ANG": {
+    "nickname": "Le SCO",
+    "founded": "1919",
+    "stadium": "Stade Raymond-Kopa",
+    "city": "Angers",
+    "capacity": "18,752",
+    "colors": "Black & white",
+    "titles": "None",
+    "lastTitle": "Never"
+  },
+  "LOR": {
+    "nickname": "Les Merlus",
+    "founded": "1926",
+    "stadium": "Stade du Moustoir",
+    "city": "Lorient",
+    "capacity": "18,890",
+    "colors": "Orange & black",
+    "titles": "1 Coupe de France",
+    "lastTitle": "Coupe 2002"
+  },
+  "PFC": {
+    "nickname": "Le PFC",
+    "founded": "1969",
+    "stadium": "Stade Jean-Bouin",
+    "city": "Paris",
+    "capacity": "20,000",
+    "colors": "Navy",
+    "titles": "None",
+    "lastTitle": "Never"
+  },
+  "TRO": {
+    "nickname": "L'ESTAC",
+    "founded": "1986",
+    "stadium": "Stade de l'Aube",
+    "city": "Troyes",
+    "capacity": "20,400",
+    "colors": "Blue & white",
+    "titles": "1 Intertoto Cup",
+    "lastTitle": "Intertoto 2001"
+  },
+  "LEM": {
+    "nickname": "Les Manceaux",
+    "founded": "1985",
+    "stadium": "MMArena",
+    "city": "Le Mans",
+    "capacity": "25,064",
+    "colors": "Yellow & red",
+    "titles": "None",
+    "lastTitle": "Never"
+  }
+};
+
+const nearlyGot = {
+  "PSG": {
+    "LYO": "You and Lyon carry yourselves like aristocracy and expect a seat at Europe's top table. The difference is the timeline: Lyon is haunted by a golden age it has lost and aches to reclaim, while your golden age is now, bought rather than remembered. Lyon aches for a throne it lost. You simply bought the one you sit on.",
+    "NIC": "Nice is still waiting for the investment to turn into something that counts. You have already spent your way to the summit of Europe. Both of you are backed by serious modern money and both believe you ought to matter on the biggest stage there is. The money worked for you. Nice is still waiting to find out whether it works at all.",
+    "PFC": "Paris FC is the upstart second club, just beginning the climb you already finished. You are the established global superpower with the trophies to settle the argument. Two Paris projects built fast on big money with thin history behind them. Same blueprint, one at the top and one at the start."
+  },
+  "MAR": {
+    "LEN": "Like Lens, you turn a whole region into a roar and feel the game in your chest, not your head. The difference is the stage: you are a giant who won Europe and never lets the country forget it, while Lens pours the same passion into a smaller, prouder, working-class story. Yours is a giant's roar on Europe's grand stage; Lens pours the same passion into the coalfield.",
+    "LYO": "Lyon broods over a lost dynasty with a colder and more wounded kind of pride. You live on raw Mediterranean emotion and the volatility that comes with it. Two big clubs who feel every result intensely and carry real history into every season. You wear the weight loud, on raw Mediterranean nerve, while Lyon wears it aching over a lost dynasty.",
+    "LEM": "Le Mans is a small club that simply refused to die and clawed its way back. You are a giant who conquered Europe and has the night to prove it. Both of you love this club with a fervor that survives the worst the game can throw at it. Same devotion, one on the summit and one grateful just to be here."
+  },
+  "MON": {
+    "PFC": "Paris FC is the same idea at the very beginning, still buying its way toward relevance. You are the established, beautifully run operation with eight titles behind you. Both of you run on serious money and a cool, businesslike plan rather than raw passion. Paris FC is buying what you already own.",
+    "TOU": "The resemblance is real. You do this the clever, measured way, trusting a smart operation over a roaring crowd. The difference is the ceiling: you are wealthy enough to win titles and sell stars for fortunes, while Toulouse runs its data-led model on a far tighter budget, aiming to overachieve rather than dominate. Toulouse runs your logic on a fraction of your money. You run it on a fortune, and it shows.",
+    "TRO": "Troyes is a modest development outpost inside a much larger empire. You are the rich principality that keeps the best young talent until the giants finally pay up. Both of you operate as smart, structured clubs more than emotional ones, comfortable being run like a business. Same clinical approach, one at the top and one feeding it."
+  },
+  "LIL": {
+    "REN": "You and Rennes are well-run clubs with smart academies and real ambition. The difference is the budget: you win titles by being sharper than richer clubs, the cool head spending nothing, while Rennes has serious money behind it and the restlessness that comes with it. Rennes has the money and cannot sit still. You have the wit and no need to.",
+    "TOU": "Toulouse aims more modestly, to punch above its means in a rugby city. You are champions of France, proof that the smart model can win the whole thing. Both of you are quiet, clever operations that consistently outperform the budgets you are given. Toulouse wants to be respected. You wanted the trophy, and you took it.",
+    "BRE": "Brest is the happy little overachiever, thrilled simply to be gatecrashing the big time. You are an actual champion of France, a serious club with a title in the cabinet. Two level-headed, well-run clubs that quietly do more than their resources should allow. You have the title that proves it. Brest is just thrilled to have gatecrashed the party."
+  },
+  "LYO": {
+    "NIC": "Nice and you are former champions waiting for the present to live up to a prouder past. The difference is the recency: your dynasty was this century and the ache is sharp and modern, while Nice's last title is so distant it has faded into legend. Nice's title is a story now. Yours is still an argument.",
+    "LEM": "Le Mans fell all the way to the amateurs and treasures mere survival now. You slipped from a dynasty into mid-table chaos, still a big club but a big club in crisis. Both of you have lived through turmoil and know exactly how fragile a club can turn out to be. Le Mans learned to be grateful for a season. You are still furious about one.",
+    "PSG": "Paris simply bought the present and has finally seized the trophy it was chasing. You ache for a golden age you have lost, and you measure every season against it. Both of you carry yourselves like aristocracy and expect Europe's top table as your due. Paris pays for its present. You are still paying for your past."
+  },
+  "LEN": {
+    "STR": "You and Strasbourg alike are fierce regional clubs whose supporters are the whole point, bound to a place that defines you. The difference is the story: you are the coalfield's roaring heart, blood and gold filling a stadium bigger than the town, while Strasbourg's identity was forged in the fans rebuilding a dead club. Yours was inherited from the pits. Strasbourg's had to be built again from nothing.",
+    "BRE": "Brest does its overachieving quietly and happily, at the calm edge of Brittany. You turn a whole mining region into one of France's great atmospheres. Two smaller clubs powered by a tight, devoted local community rather than by money. Brest overachieves in a whisper. You do it at a volume that carries for miles.",
+    "LEM": "Le Mans went all the way down to the amateurs before it climbed back. You stayed devoted through decline and through the lower divisions, which was long but never final. Two working towns whose people refused to let the club fade, loyalty carrying both of you through the hard years. Same faithful support, one through decline and one through near-death."
+  },
+  "BRE": {
+    "STR": "Strasbourg's bond was forged rebuilding a bankrupt club from the fifth tier. Yours is the happy overachiever gatecrashing the big time from the edge of Brittany. Both of you are unpretentious clubs whose real strength is a community that simply turns up, season after season. Yours is a joyful climb from the edge of Brittany; Strasbourg's was a hard resurrection from the fifth tier.",
+    "HAC": "You and Le Havre alike are modest, well-grounded clubs content to be exactly what you are, no airs. The difference is the weight of history: you are a young upstart thrilled by a sudden rise, while Le Havre carries the longest history in France and the quiet pride of being first. Le Havre has been here longer than anyone. You have barely unpacked, and you are loving it.",
+    "LIL": "Lille is an established champion of France, a serious club with a title in the cabinet. You are the little overachiever, just thrilled to be gatecrashing the party. Two calm, sensibly run clubs that quietly outperform the means they have. One of you is a proven champion, the other just glad to be gatecrashing."
+  },
+  "REN": {
+    "LIL": "Lille is the cooler operator, already holding the title and feeling no need to raise its voice about it. You are backed by real money and restless for the next step, never quite content with the last one. Two smartly run clubs with strong academies and an eye for a bargain. You are backed and restless for more. Lille has the trophy and the calm that comes with it.",
+    "BRE": "Brest is the smaller, happier neighbor, delighted simply to be punching above its weight. You are the backed capital club, hungry for Europe and impatient for more of it. Two Breton clubs with deep roots in the region and a loyal local heart. Brest is delighted with where it is. You are irritated not to be further along.",
+    "STR": "The near-miss makes sense: you draw real strength from a fierce regional identity and a devoted support. The difference is the project: you are an ambitious, well-funded club chasing the top half and Europe, while Strasbourg's whole story is the fans who rebuilt it from nothing and the comeback that still defines it. You spend your time looking up the table. Strasbourg spends its looking back at what it survived."
+  },
+  "STR": {
+    "BRE": "Brest is the happy overachiever enjoying a sudden and much gentler rise. Yours was forged rebuilding a dead club from the fifth tier, a hard resurrection with nothing easy in it. Both of you are grounded, unpretentious clubs carried by a community that keeps showing up. Brest's good fortune simply arrived. Yours had to be dragged back from the dead.",
+    "AJA": "The two of you are deeply rooted clubs that trust the slow, patient way over the quick fix. The difference is the source of the patience: yours was forged in a fan-led rebuild from bankruptcy, while Auxerre's is the calm continuity of one town and one manager across forty years. Auxerre's patience was never tested. Yours was the only thing left.",
+    "LEN": "Lens carries the inherited roar of the coalfield, blood and gold passed down for generations. Yours was forged rebuilding a dissolved club from the bottom. Two fierce regional clubs whose supporters are not part of the identity but the whole of it. Same unbreakable support, one through rescue and one through heritage."
+  },
+  "TOU": {
+    "LIL": "Lille proved the smart model can win the whole league. You aim more modestly, to punch above your means as the football club in a rugby city. Both of you are cool, data-smart operations that overachieve through good recruitment rather than spending. Lille took the model all the way to a title. You are still proving football belongs in your city.",
+    "LOR": "You and Lorient alike are clubs without a roaring football town behind you, doing things your own quiet way. The difference is the engine: you run a clever, data-led operation that stuns France for the odd cup, while Lorient leans on its maritime local roots and a steady, even temperament. Lorient trusts where it comes from. You trust the numbers.",
+    "BRE": "Brest is the small Breton club whose edge is simply a tight, happy community. You run a sharp, data-led model in a rugby city and engineer your edge on purpose. Two level-headed clubs that overachieve without making much noise about it. Same understated overachieving, one by design and one by togetherness."
+  },
+  "NIC": {
+    "ANG": "Angers is the unfashionable battler, scrapping for survival with nothing at all behind it. You are Riviera glamour with new money and the hope it buys relevance. Neither of you has a recent golden age to fall back on, so both of you work at mattering now. You are waiting for the money to mean something. Angers never had any to wait on.",
+    "TRO": "Troyes is a development cog in a global machine, riding up and down the divisions. You are backed by serious money and waiting for the moment to climb. Two mid-table clubs defined more by circumstance than by passion or a deep local roar. Troyes exists to feed something bigger. You intend to become something bigger.",
+    "LYO": "You and Lyon alike are former champions whose last title sits in the past, waiting on the present to measure up. The difference is the recency: Lyon's dynasty was this century and the ache is raw, while your last crown is from 1959, faded almost into myth. Lyon's wound is still open. Yours healed so long ago it left a legend instead of a scar."
+  },
+  "AJA": {
+    "STR": "Strasbourg's patience was forged in a fan-led rebuild from bankruptcy. Yours is the calm continuity of one town and one manager across forty years. Both of you are deeply rooted clubs that trust the patient road over the quick fix, whatever it cost to learn that. Strasbourg's patience was forged in a crisis. Yours was never interrupted by one.",
+    "HAC": "Le Havre and you are old, grounded clubs prouder of who you are than of any title race. The difference is the legacy: you are the patient Burgundy side whose academy and continuity once won the double, while Le Havre is the very oldest club in France, content simply to be first and to last. Le Havre is proud of lasting. You are proud of what the lasting produced.",
+    "BRE": "Brest does it through a tight community enjoying a sudden, happy rise. You do it through deep roots and a patient, academy-led way of building that took decades. Two small-town clubs that do more than their size should allow, and neither makes a fuss about it. Same overachieving, one slow and rooted and one joyful and new."
+  },
+  "HAC": {
+    "LOR": "Lorient is the smaller Breton port, simply riding the tide between the divisions. You are the oldest club in France, carrying a century and a half of having been first. Both of you are modest, grounded clubs content with a maritime local identity and in no hurry at all for glory. Lorient goes up and down with the tide. You have simply always been there.",
+    "BRE": "Brest is the young upstart, thrilled by a brand-new rise. You are le doyen, the oldest in France, anchored in the deepest history the game here has. Both of you are unfussy clubs entirely comfortable being exactly what you are. Brest is enjoying its first act. You have had a century and a half of them.",
+    "AJA": "Auxerre and you are old, well-rooted clubs that value patience and your own academy over the splashy fix. The difference is the trophy: Auxerre's long, patient build once won the double, while your pride is simpler, in being the very first club in France and in lasting. Auxerre has a double to point at. You have a date, and nobody can take it."
+  },
+  "ANG": {
+    "NIC": "You and Nice are mid-table clubs without a recent golden age, getting on with the present. The difference is the backing: Nice has new money and the hope of climbing, while you are the unfashionable battler with nothing behind you but stubbornness and a black-and-white shirt. Nice has money and hope. You have a shirt and a refusal to go away.",
+    "TRO": "Troyes churns as a development node inside a global empire. You yo-yo because you are an unfashionable battler scrapping every year to survive. Both of you live with instability and are long used to the divisions changing beneath your feet. Troyes churns because somebody planned it. You churn because nobody is coming to help.",
+    "LOR": "Lorient rides the tide with the even, unbothered calm of a port town. You are the stubborn battler, scrapping and defiant about surviving another one. Two modest clubs without grand ambition, content to take the good seasons and the bad in the same stride. Same realistic horizon, one fighting and one floating."
+  },
+  "LOR": {
+    "HAC": "Le Havre is the oldest club in France, weighed down with a century and a half of having been first. You are the easygoing Breton port, bobbing between the divisions without much concern. Both of you are modest maritime clubs content with a deep local identity and no great hunger for glory. Le Havre carries a century and a half of being first. You just bob between the divisions, untroubled.",
+    "LEM": "Le Mans climbed back from the amateurs and feels every survived season in its bones. You ride the divisions with the even calm of a port that has always lived by the tide. Two small clubs whose loyal towns are the whole point of the thing. Le Mans counts every season it survives. You have never thought to count.",
+    "ANG": "You and Angers alike are modest clubs without grand ambition, living realistically within your means. The difference is the temperament: you take the ups and downs with the unbothered calm of the tide, while Angers fights every season with stubborn, defiant energy. Angers treats every season as a fight. You treat it as weather."
+  },
+  "PFC": {
+    "MON": "You've got genuine overlap. You run on serious money and a cool, businesslike plan rather than a roaring crowd. The difference is the proof: Monaco is the established, beautifully run operation with eight titles, while you are the same idea at the very beginning, still buying your way toward relevance. Monaco already proved the idea works. You are the idea, before the proof.",
+    "TRO": "Troyes is a smaller development outpost, content to ride the divisions where it lands. You are a billionaire-backed bid to become the serious second club in Paris, climbing fast. Both of you were built on structure and backing rather than on a deep local story. Troyes is content to be a stop on somebody else's journey. You intend to be a destination.",
+    "NIC": "Nice has old titles and Riviera glamour to build on. You are starting almost from scratch, a reborn club with thin history and a brand-new plan. Both of you are powered by recent money and the hope of mattering rather than by inherited passion. Same bought ambition, one with a past and one without."
+  },
+  "TRO": {
+    "ANG": "Angers yo-yos because it is an unfashionable battler scrapping to survive. You churn as a development cog in a global empire, with talent passing through on its way elsewhere. Two clubs that live with the divisions shifting beneath them and are never settled for long. You churn because that is the plan. Angers churns because it has no choice.",
+    "NIC": "You and Nice alike are clubs defined more by structure and circumstance than by deep passion. The difference is the trajectory: Nice is backed and waiting to climb toward relevance, while you are a development outpost riding up and down as part of a much larger machine. Nice is trying to become something. You are already part of something, and it was never about you.",
+    "PFC": "Paris FC is a billionaire bid to climb fast toward the elite. You are a modest cog in a global group, content to ride the divisions and do the job. Both of you were built on backing and a structured model rather than on a deep local roar. Same businesslike soul, one reaching up and one feeding a bigger story."
+  },
+  "LEM": {
+    "LOR": "Lorient simply rides the tide with the even calm of a port. You fell all the way to the amateurs and clawed back, and you feel every survived season deeply. Both of you are small clubs whose loyal towns matter far more than any trophy ever could. Lorient has never had to fear the end. You have already seen it.",
+    "ANG": "You and Angers are modest clubs that have lived with hardship and refuse to fade. The difference is the depth of the fall: you collapsed to the fifth tier and climbed back from near-death, treasuring mere survival, while Angers fights its battles within the divisions, scrapping but never gone. Angers fights to stay up. You fought to still exist.",
+    "HAC": "Le Havre is the oldest club in France, anchored and continuous throughout. You very nearly vanished altogether and clawed your way back from the amateurs. Two deeply rooted clubs whose long history survived the lean years, by very different margins. Same deep roots, one unbroken and one almost lost and reclaimed."
+  }
+};
+
+const milestones = {
+  "BRE": [
+    "The 2024 Champions League qualification, the proudest night in the club's history, carrying tiny Brest onto Europe's biggest stage for the first time."
+  ],
+  "STR": [
+    "The 2011 resurrection: bankrupt and dissolved, refounded in the fifth tier, and carried back to Ligue 1 by its own supporters, division by division."
+  ],
+  "TOU": [
+    "The 2023 Coupe de France, a stunning trophy for the smart club in a rugby city, and a return to European football after years away."
+  ],
+  "ANG": [
+    "The 2017 Coupe de France final, the showpiece run that briefly put unfashionable Angers on the national stage, and the stubborn knack of surviving year after year."
+  ],
+  "LOR": [
+    "The 2002 Coupe de France, the finest hour for the Merlus, a small Breton port's club lifting a national trophy."
+  ],
+  "PFC": [
+    "The 2025 return to Ligue 1 after forty-six years away, and the arrival of serious backing to build Paris a genuine second club."
+  ],
+  "TRO": [
+    "The 2001 Intertoto Cup and a famous European run, including a 4-4 thriller against Newcastle, the high point of the Champagne club's story."
+  ],
+  "LEM": [
+    "Didier Drogba's breakout season here two decades ago, the launchpad for one of the game's great strikers, and the long climb back from the amateur tiers."
+  ]
+};
+
+const CARD_BADGES = {
+  "PSG": "🗼",
+  "MAR": "🌊",
+  "MON": "💎",
+  "LIL": "🐕",
+  "LYO": "🦁",
+  "LEN": "⛏️",
+  "BRE": "🏴‍☠️",
+  "REN": "⚫",
+  "STR": "🥨",
+  "TOU": "🟣",
+  "NIC": "🦅",
+  "AJA": "🍷",
+  "HAC": "⚓",
+  "ANG": "🏰",
+  "LOR": "🐟",
+  "PFC": "🌃",
+  "TRO": "🥂",
+  "LEM": "🏎️"
+};
+
+const badgeUrls = {};
+
+export { teamsCopy, greats, vitalStats, nearlyGot, milestones, CARD_BADGES, badgeUrls };
