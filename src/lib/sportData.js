@@ -124,10 +124,21 @@ const SPORT_DATA = { PL, NFL, MLB, NBA, BL, LL, L1, SA, CFB, NHL, F1, AFL, IPL, 
 // base on any failure, so the readout still renders name/color/archetype and just omits missing prose).
 const _displayCache = {};
 const _displayLoaders = {
-  NFL: () => import("../data/nfl-display.js"),
   PL:  () => import("../data/pl-display.js"),
+  NFL: () => import("../data/nfl-display.js"),
+  MLB: () => import("../data/mlb-display.js"),
   NBA: () => import("../data/nba-display.js"),
+  CFB: () => import("../data/cfb-display.js"),
+  NHL: () => import("../data/nhl-display.js"),
+  F1:  () => import("../data/f1-display.js"),
+  AFL: () => import("../data/afl-display.js"),
+  IPL: () => import("../data/ipl-display.js"),
+  TOP14: () => import("../data/top14-display.js"),
+  EL:  () => import("../data/euroleague-display.js"),
   BL:  () => import("../data/bundesliga-display.js"),
+  LL:  () => import("../data/laliga-display.js"),
+  L1:  () => import("../data/ligue1-display.js"),
+  SA:  () => import("../data/seriea-display.js"),
 };
 async function loadSportDisplay(code){
   if (_displayCache[code]) return _displayCache[code];
