@@ -125,6 +125,9 @@ const SPORT_DATA = { PL, NFL, MLB, NBA, BL, LL, L1, SA, CFB, NHL, F1, AFL, IPL, 
 const _displayCache = {};
 const _displayLoaders = {
   NFL: () => import("../data/nfl-display.js"),
+  PL:  () => import("../data/pl-display.js"),
+  NBA: () => import("../data/nba-display.js"),
+  BL:  () => import("../data/bundesliga-display.js"),
 };
 async function loadSportDisplay(code){
   if (_displayCache[code]) return _displayCache[code];
