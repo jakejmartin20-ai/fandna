@@ -22,7 +22,7 @@ const SPORTS = [
   { code: "F1",  name: "Formula 1",     live: true,  hook: "Which team are you?",      sport: "Motor Racing",       group: "world" },
   { code: "AFL", name: "AFL",           live: true,  hook: "Which club are you?",      sport: "Australian Rules",   group: "world" },
   { code: "IPL", name: "IPL",           live: true , hook: "Which franchise are you?", sport: "Cricket",            group: "world" },
-  { code: "TOP14", name: "Top 14",      live: false, hook: "Which club are you?",      sport: "Rugby",              group: "world" },
+  { code: "TOP14", name: "Top 14",      live: true,  hook: "Which club are you?",      sport: "Rugby",              group: "world" },
   { code: "EL",  name: "EuroLeague",    live: false, hook: "Which club are you?",      sport: "Basketball",         group: "world" },
 ];
 
