@@ -514,7 +514,7 @@ const teamDims = {
   },
   "CGY": {
     "loyalty": 9,
-    "emotion": 7,
+    "emotion": 8,
     "ambition": 7,
     "process": 5,
     "community": 8,
@@ -622,8 +622,8 @@ const teamDims = {
   },
   "CAR": {
     "loyalty": 7,
-    "emotion": 6,
-    "ambition": 7,
+    "emotion": 7,
+    "ambition": 8,
     "process": 9,
     "community": 6,
     "chaos": 6,
@@ -711,13 +711,13 @@ const teamDims = {
     "rootedness": 3
   },
   "UTA": {
-    "loyalty": 6,
-    "emotion": 5,
-    "ambition": 5,
+    "loyalty": 7,
+    "emotion": 7,
+    "ambition": 6,
     "process": 6,
-    "community": 6,
+    "community": 8,
     "chaos": 5,
-    "rootedness": 2
+    "rootedness": 3
   },
   "ANA": {
     "loyalty": 7,
