@@ -143,7 +143,7 @@ const greats = {
     },
     {
       "name": "LeBron James",
-      "years": "2018-present",
+      "years": "2018-2026",
       "note": "arrived a four-time champion, passed the all-time scoring record, delivered the 2020 ring"
     }
   ],
@@ -319,7 +319,7 @@ const greats = {
     },
     {
       "name": "Giannis Antetokounmpo",
-      "years": "2013-present",
+      "years": "2013-2026",
       "note": "the 15th pick who became a two-time MVP and 2021 Finals MVP"
     }
   ],
@@ -407,7 +407,7 @@ const greats = {
     },
     {
       "name": "Ja Morant",
-      "years": "2019-present",
+      "years": "2019-2026",
       "note": "the explosive star of the modern era"
     }
   ],
@@ -451,7 +451,7 @@ const greats = {
     },
     {
       "name": "Damian Lillard",
-      "years": "2012-2023",
+      "years": "2012-2023, 2025-present",
       "note": "Dame Time, the clutch-shot icon of the modern era"
     }
   ],
@@ -539,7 +539,7 @@ const greats = {
     },
     {
       "name": "Trae Young",
-      "years": "2018-present",
+      "years": "2018-2026",
       "note": "the deep-range scorer and playmaker of the current era"
     }
   ],
@@ -605,7 +605,7 @@ const greats = {
     },
     {
       "name": "Kawhi Leonard",
-      "years": "2019-present",
+      "years": "2019-2026",
       "note": "the star brought in to finally break through"
     }
   ],
@@ -781,7 +781,7 @@ const greats = {
     },
     {
       "name": "LaMelo Ball",
-      "years": "2020-present",
+      "years": "2020-2026",
       "note": "the flashy playmaking centerpiece"
     }
   ]

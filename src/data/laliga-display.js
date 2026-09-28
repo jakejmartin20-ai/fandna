@@ -274,7 +274,7 @@ const greats = {
     },
     {
       "name": "Antoine Griezmann",
-      "years": "2014-2018, 2019-present",
+      "years": "2014-2018, 2019-2026",
       "note": "the talisman of the Simeone era"
     }
   ],

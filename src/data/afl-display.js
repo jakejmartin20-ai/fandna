@@ -56,7 +56,7 @@ const teamsCopy = {
   },
   "FRE": {
     "tagline": "No men's flag in your history and the fervour never once dimmed, a purple tribe that turns up in full voice win or lose.",
-    "desc": "You come from Fremantle, the old port city south of Perth, purple through and through, the people's club set up as the warmer alternative to the establishment across town. You have never won a men's flag, coming closest in the grand final of 2013, and yet the fervour never dims, a loud and loyal tribe that turns up in full voice whatever the result. You are all passion and belonging, a club that feels every kick in its body. The trophy has stayed out of reach, but you have never once loved it any less for that. Being all-in, forever, was always the point for you."
+    "desc": "You come from Fremantle, the old port city south of Perth, purple through and through, the people's club set up as the warmer alternative to the establishment across town. You have never won a men's flag, coming closest in the grand finals of 2013 and 2026, and yet the fervour never dims, a loud and loyal tribe that turns up in full voice whatever the result. You are all passion and belonging, a club that feels every kick in its body. The trophy has stayed out of reach, but you have never once loved it any less for that. Being all-in, forever, was always the point for you."
   },
   "SYD": {
     "tagline": "Uprooted from Melbourne and rebuilt in the harbour, the selfless Bloods who made a home anywhere and won it twice over.",
@@ -67,8 +67,8 @@ const teamsCopy = {
     "desc": "You come from the western suburbs of Sydney, the Giants, a club conjured into being in 2012 to plant the game in rugby-league country. You were built aggressively and without a past to lean on, all ambition and orange, out to prove you belonged among names a century older. You announced yourself fast, a grand final run in 2019 and regular finals since, though the maiden flag is still to come. You travel light by nature: little history, few roots, and a hunger that makes a virtue of both. A blank page has never frightened you. You would rather build the story than inherit one."
   },
   "BRL": {
-    "tagline": "A three-peat two decades ago and back-to-back flags in 2024 and 2025, a club reborn from a merger into a genuine northern power.",
-    "desc": "You come from Brisbane, the maroon, blue and gold, a club reborn in 1996 from the merger of two proud names into a genuine northern powerhouse. You dominated once already, a three-in-a-row from 2001 to 2003, and after a long climb back through the wilderness you have done it again: back-to-back premierships in 2024 and 2025, the second sealed with a stunning final quarter. Your coach made history as the first to lead a club to consecutive flags without having played at the top level, and a new-look captaincy now carries the group. You are driven, well-built and relentless. You have known the bottom, climbed all the way back, and you believe, deeply, that you can keep doing it."
+    "tagline": "A three-peat two decades ago and another one now, three flags running through 2026 and six all told, a club reborn from a merger into a relentless northern power.",
+    "desc": "You come from Brisbane, the maroon, blue and gold, a club reborn in 1996 from the merger of two proud names into a genuine northern powerhouse. You dominated once already, a three-in-a-row from 2001 to 2003, and after a long climb back through the wilderness you have done it again and then some: three premierships in a row across 2024, 2025 and 2026, matching the three-in-a-row of two decades before and taking you to six flags all told. Your coach made history as the first to lead a club to consecutive flags without having played at the top level, and a new-look captaincy now carries the group. You are driven, well-built and relentless. You have known the bottom, climbed all the way back, and you believe, deeply, that you can keep doing it."
   },
   "GCS": {
     "tagline": "Built from nothing on a strip of coast that had never cared for the game, and in your fifteenth year you finally cracked September.",
@@ -311,7 +311,7 @@ const greats = {
     },
     {
       "name": "Nat Fyfe",
-      "years": "2010-",
+      "years": "2010-25",
       "note": "dual Brownlow medallist"
     }
   ],
@@ -357,7 +357,7 @@ const vitalStats = {
     "founded": "1864",
     "home": "Marvel Stadium & MCG",
     "colours": "Navy blue",
-    "coach": "Josh Fraser (caretaker)",
+    "coach": "Josh Fraser",
     "captain": "Patrick Cripps",
     "flags": "16 (last 1995)"
   },
@@ -375,7 +375,7 @@ const vitalStats = {
     "founded": "1872",
     "home": "Marvel Stadium & MCG",
     "colours": "Black and red",
-    "coach": "Brad Scott",
+    "coach": "Mark McVeigh",
     "captain": "Andrew McGrath",
     "flags": "16 (last 2000)"
   },
@@ -402,7 +402,7 @@ const vitalStats = {
     "founded": "1858 (oldest club)",
     "home": "MCG",
     "colours": "Navy and red",
-    "coach": "Simon Goodwin",
+    "coach": "Steven King",
     "captain": "Max Gawn",
     "flags": "13 (last 2021)"
   },
@@ -411,7 +411,7 @@ const vitalStats = {
     "founded": "1869 (VFL from 1925)",
     "home": "Marvel Stadium & Arden Street",
     "colours": "Royal blue and white",
-    "coach": "Alastair Clarkson",
+    "coach": "Vacant (appointment pending)",
     "captain": "Nick Larkey",
     "flags": "4 (last 1999)"
   },
@@ -503,7 +503,7 @@ const vitalStats = {
     "colours": "Maroon, blue and gold",
     "coach": "Chris Fagan",
     "captain": "Harris Andrews, Hugh McCluggage & Josh Dunkley",
-    "flags": "5 (last 2025)"
+    "flags": "6 (last 2026)"
   },
   "GCS": {
     "base": "Gold Coast, Queensland",
