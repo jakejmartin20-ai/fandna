@@ -117,7 +117,7 @@ const vitalStats = {
     "city": "València",
     "colours": "Orange and black",
     "titles": "None yet",
-    "domestic": "One Spanish title, four EuroCups"
+    "domestic": "Two Spanish titles, four EuroCups"
   },
   "OLY": {
     "founded": 1931,
@@ -186,7 +186,7 @@ const vitalStats = {
     "city": "Milan",
     "colours": "Red and white",
     "titles": "Three European Cups (1966-1988)",
-    "domestic": "Record thirty Italian titles",
+    "domestic": "Record thirty-two Italian titles",
     "lastTitle": "1988"
   },
   "VIR": {
@@ -195,12 +195,12 @@ const vitalStats = {
     "city": "Bologna",
     "colours": "Black and white",
     "titles": "Two (1998, 2001)",
-    "domestic": "Sixteen Italian titles",
+    "domestic": "Seventeen Italian titles",
     "lastTitle": "2001"
   },
   "BAY": {
     "founded": 1946,
-    "arena": "BMW Park",
+    "arena": "SAP Garden",
     "city": "Munich",
     "colours": "Red and white",
     "titles": "None yet",
@@ -235,7 +235,7 @@ const vitalStats = {
     "arena": "Menora Mivtachim Arena",
     "city": "Tel Aviv",
     "colours": "Yellow and blue",
-    "titles": "Five (1977-2014)",
+    "titles": "Six (1977-2014)",
     "domestic": "Record Israeli champions",
     "lastTitle": "2014"
   },
@@ -245,7 +245,7 @@ const vitalStats = {
     "city": "Kaunas",
     "colours": "Green and white",
     "titles": "One (1999)",
-    "domestic": "Twenty-five Lithuanian titles",
+    "domestic": "Twenty-six Lithuanian titles",
     "lastTitle": "1999"
   },
   "DUB": {
@@ -254,7 +254,7 @@ const vitalStats = {
     "city": "Dubai",
     "colours": "Brown, black and white",
     "titles": "None yet",
-    "domestic": "None (founded 2023)"
+    "domestic": "ABA League champions 2026"
   }
 };
 
@@ -262,7 +262,7 @@ const milestones = {
   "RMA": [
     "The most decorated club in European basketball history, with eleven titles between 1964 and 2023.",
     "Runners-up in 2026, beaten in the Athens final by Olympiacos.",
-    "The Pablo Laso era delivered three modern crowns on defensive grit.",
+    "The Pablo Laso era brought two modern crowns, in 2015 and 2018, with a third to follow in 2023.",
     "Los Blancos: the institution that expects to win as a baseline."
   ],
   "BAR": [
@@ -279,7 +279,7 @@ const milestones = {
   ],
   "VAL": [
     "The most decorated club in EuroCup history, with four titles.",
-    "A Spanish league in 2016-17 and the L'Alqueria academy behind it.",
+    "Spanish league titles in 2017 and 2026, and the L'Alqueria academy behind them.",
     "Family-owned and community-rooted, now backed by a new arena.",
     "Reached the club's first-ever EuroLeague Final Four in 2026."
   ],
@@ -297,7 +297,7 @@ const milestones = {
   ],
   "FEN": [
     "Two-time European champions (2017, the first for Turkey, and 2025).",
-    "Defending champions entering the 2025-26 season.",
+    "Reached the 2026 Final Four as defending champions.",
     "Transformed into a powerhouse on deep financial backing.",
     "A vast, loud following on Istanbul's Asian side."
   ],
@@ -327,19 +327,19 @@ const milestones = {
   ],
   "MIL": [
     "Three European Cups in the old era: 1966, 1987 and 1988.",
-    "The record thirty Italian championships.",
+    "The record thirty-two Italian championships, the latest in 2026.",
     "Owned by Giorgio Armani, cosmopolitan and star-driven.",
     "The financial capital's club, still chasing a modern EuroLeague."
   ],
   "VIR": [
-    "Two European crowns (1998 and 2001) and sixteen Italian titles.",
+    "Two European crowns (1998 and 2001) and seventeen Italian titles.",
     "The black V's of Bologna, Italy's Basket City, since 1929.",
     "Deep local identity and tactical tradition over spectacle.",
     "A genuine European champion by pedigree, romantic to the core."
   ],
   "BAY": [
     "Seven German championships and a 2010s reboot into a EuroLeague regular.",
-    "A first Final Four in 2024.",
+    "One win from a first Final Four in 2022.",
     "The football giant's basketball arm, backed by the institution.",
     "Ambitious and professionalised, a top-down project."
   ],
@@ -362,7 +362,7 @@ const milestones = {
     "A rising underdog carrying a cause."
   ],
   "MAC": [
-    "The most decorated non-European club, with five European crowns (1977-2014).",
+    "The most decorated non-European club, with six European crowns (1977-2014).",
     "Total domestic dominance, including twenty-three straight titles.",
     "The yellow national institution, a near-permanent EuroLeague fixture.",
     "A winning machine that a whole country claims."
@@ -370,14 +370,14 @@ const milestones = {
   "ZAL": [
     "European champions in 1999 and the pride of Lithuanian basketball.",
     "The 1980s stand against CSKA Moscow, Sabonis and all.",
-    "Twenty-five Lithuanian titles and a nation's devotion.",
+    "Twenty-six Lithuanian titles and a nation's devotion.",
     "The green heart of the Mecca of European basketball."
   ],
   "DUB": [
     "Founded in 2023, a five-year EuroLeague wildcard from 2025.",
     "Plays at the 17,000-seat Coca-Cola Arena.",
-    "Not European and playing no domestic league: a pure project.",
-    "A strong debut season, just outside the playoffs."
+    "Not European, and playing in the Adriatic ABA League rather than a home league: a pure project.",
+    "ABA League champions in 2026, only the club's second season."
   ]
 };
 
