@@ -2,9 +2,9 @@
   "meta": {
     "sport": "TOP14",
     "engine": "fingerprint-spine",
-    "generated": "2026-08-27",
-    "count": 64,
-    "note": "Top 14 on the shared spine (soccer standard, scores S6+S7), FP_W 0.75. 14 signatures (own-pole self-land) + 50 randoms (validated core sets). s60 build."
+    "generated": "2026-09-28",
+    "count": 65,
+    "note": "Top 14 on the shared spine (soccer standard, scores S6+S7), FP_W 0.75. 14 signatures (own-pole self-land) + 50 randoms (validated core sets). s60 build. s90: RC Vannes added (promoted 2026-27; 15 clubs, Montauban kept). +sig_VAN; re-baselined 8 randoms that now land VAN (rnd_018/022/027/030/031/036/041/042), all other winners unchanged."
   },
   "fixtures": [
     {
@@ -440,6 +440,37 @@
       },
       "winner": "USM",
       "winnerName": "US Montauban"
+    },
+    {
+      "id": "sig_VAN",
+      "kind": "signature",
+      "forTeam": "VAN",
+      "coreProfile": {
+        "loyalty": 5.768042352941176,
+        "emotion": 7.062535294117647,
+        "ambition": 6.648508235294118,
+        "process": 6.287035294117647,
+        "community": 8.064049411764705,
+        "chaos": 3.7977541176470586,
+        "rootedness": 4.721005882352941
+      },
+      "spineAnswers": {
+        "S1": "A",
+        "S2": "A",
+        "S3": "3",
+        "S4": "2",
+        "S5": "B",
+        "S6": "B",
+        "S7": "B"
+      },
+      "moduleAnswers": {
+        "top14_q1": "C",
+        "top14_q2": "C",
+        "top14_q3": "B",
+        "top14_q4": "D"
+      },
+      "winner": "VAN",
+      "winnerName": "RC Vannes"
     },
     {
       "id": "rnd_001",
@@ -1258,8 +1289,8 @@
         "top14_q3": "D",
         "top14_q4": "C"
       },
-      "winner": "USP",
-      "winnerName": "USA Perpignan",
+      "winner": "VAN",
+      "winnerName": "RC Vannes",
       "coreAnswers": {
         "q1": "C",
         "q2": "left",
@@ -1446,8 +1477,8 @@
         "top14_q3": "B",
         "top14_q4": "B"
       },
-      "winner": "UBB",
-      "winnerName": "Union Bordeaux Bègles",
+      "winner": "VAN",
+      "winnerName": "RC Vannes",
       "coreAnswers": {
         "q1": "B",
         "q2": "right",
@@ -1681,8 +1712,8 @@
         "top14_q3": "B",
         "top14_q4": "D"
       },
-      "winner": "CAS",
-      "winnerName": "Castres Olympique",
+      "winner": "VAN",
+      "winnerName": "RC Vannes",
       "coreAnswers": {
         "q1": "E",
         "q2": "right",
@@ -1822,8 +1853,8 @@
         "top14_q3": "B",
         "top14_q4": "D"
       },
-      "winner": "UBB",
-      "winnerName": "Union Bordeaux Bègles",
+      "winner": "VAN",
+      "winnerName": "RC Vannes",
       "coreAnswers": {
         "q1": "A",
         "q2": "left",
@@ -1869,8 +1900,8 @@
         "top14_q3": "D",
         "top14_q4": "D"
       },
-      "winner": "R92",
-      "winnerName": "Racing 92",
+      "winner": "VAN",
+      "winnerName": "RC Vannes",
       "coreAnswers": {
         "q1": "A",
         "q2": "left",
@@ -2104,8 +2135,8 @@
         "top14_q3": "B",
         "top14_q4": "D"
       },
-      "winner": "USM",
-      "winnerName": "US Montauban",
+      "winner": "VAN",
+      "winnerName": "RC Vannes",
       "coreAnswers": {
         "q1": "D",
         "q2": "left",
@@ -2339,8 +2370,8 @@
         "top14_q3": "B",
         "top14_q4": "D"
       },
-      "winner": "PAU",
-      "winnerName": "Section Paloise",
+      "winner": "VAN",
+      "winnerName": "RC Vannes",
       "coreAnswers": {
         "q1": "D",
         "q2": "left",
@@ -2386,8 +2417,8 @@
         "top14_q3": "B",
         "top14_q4": "D"
       },
-      "winner": "USM",
-      "winnerName": "US Montauban",
+      "winner": "VAN",
+      "winnerName": "RC Vannes",
       "coreAnswers": {
         "q1": "D",
         "q2": "right",
