@@ -24021,6 +24021,14 @@ var teams14 = {
     "secondaryColor": "#111111",
     "tagline": "The smallest ground in the league and the biggest heart, a former champion that went bust and clawed all the way back.",
     "desc": "You are the plucky survivor, the tiny town with the biggest heart. You play at the smallest ground in the league, and you've been to the brink and back, a former champion that went bankrupt, dropped down the divisions and clawed its way home. Your spirit is simplicity, consistency and fidelity to the group, promotion celebrated without frills, the same faithful squad kept together, every good day treated as a gift. You take heavy beatings from the big clubs and battle like mad at home anyway, because belonging matters more to you than the scoreline. You're folksy, rooted and grateful, and you wouldn't trade any of it."
+  },
+  "VAN": {
+    "name": "RC Vannes",
+    "emoji": "⛵",
+    "color": "#1C3F94",
+    "code3": "VAN",
+    "kitType": "duo",
+    "secondaryColor": "#FFFFFF"
   }
 };
 var archetypes14 = {
