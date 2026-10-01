@@ -5,7 +5,7 @@ import { coreQuestions, DIM_ORDER, DIM_LABELS } from "./data/core";
 import { spineQuestions } from "./data/spine";
 import { SPORT_DATA, loadSportDisplay } from "./lib/sportData";
 import { scoreCore, scoreModule, matchEvidence, decompressProfile } from "./lib/scoring";
-import { loadState, saveResult, saveSpine, clearAll, appendPending, readPending, clearPending, markGroupEarned, stampCoreCurrent, keepCurrentCore, markUpdatePending } from "./lib/storage";
+import { loadState, saveResult, saveSpine, clearModule, clearAll, appendPending, readPending, clearPending, markGroupEarned, stampCoreCurrent, keepCurrentCore, markUpdatePending } from "./lib/storage";
 import { newlyCompletedGroup, groupClubColors, allBucketsComplete, completedGroups } from "./lib/crest";
 import { hasCompletedAll } from "./lib/beachGate";
 import { pingResult } from "./lib/telemetry";
@@ -42,6 +42,39 @@ function recomputeAllFromCore(newCoreAnswers){
     saveResult(sport,{coreAnswers:newCoreAnswers,coreProfile:newCore,club:newClub,moduleAnswers:modAns,scores:ns,date:r.date});
   }
   return { newCore, moved, stale };
+}
+
+// Unknown-club guard (s90). A league's result can only render if its club key is in that league's
+// current team set. A key can fall outside it two ways: a club later removed from the set, or a
+// malformed / tampered share link restored into storage. knownClub is the single test; restore
+// filters on it, and healUnknownClubs runs on every load to repair anything already stored:
+// re-score from the saved answers when possible (the same live engine as the heal above), else drop
+// just that league so it can be retaken. Never touches a result whose club is known.
+function knownClub(sport, club){
+  const d = SPORT_DATA[sport];
+  return !!(d && d.teams && club && Object.prototype.hasOwnProperty.call(d.teams, club));
+}
+function healUnknownClubs(){
+  const st = loadState();
+  const moved = []; let dropped = 0;
+  for(const [sport,r] of Object.entries(st.results||{})){
+    if(!r || !r.club || !SPORT_DATA[sport] || knownClub(sport, r.club)) continue;
+    const modAns = r.answers||{};
+    const usesSpine = !!SPORT_DATA[sport].spineScoring;
+    const spine = st.spineAnswers||{};
+    if(Object.keys(modAns).length && st.coreProfile && !(usesSpine && Object.keys(spine).length===0)){
+      try{
+        const { club, scores } = scoreModule(sport,{coreProfile:st.coreProfile,coreAnswers:st.coreAnswers||{},moduleAnswers:modAns,spineAnswers:spine});
+        if(knownClub(sport, club)){
+          saveResult(sport,{club,moduleAnswers:modAns,scores,date:r.date});
+          moved.push({sport,from:r.club,to:club,scores});
+          continue;
+        }
+      }catch(e){}
+    }
+    clearModule(sport); dropped++;
+  }
+  return { moved, dropped };
 }
 import { CoreStrip } from "./components/CoreStrip";
 import { InstinctsLine } from "./components/InstinctsLine";
@@ -436,6 +469,13 @@ function AppInner(){
       }
       st=loadState();
     }
+    // Repair any stored result whose club is not in its league's current team set (see knownClub).
+    const unk = healUnknownClubs();
+    if(unk.moved.length || unk.dropped){
+      if(unk.moved.length) appendPending(unk.moved);
+      track("unknown_club_healed",{moved:unk.moved.length,dropped:unk.dropped});
+      st=loadState();
+    }
     if(preRegrade) markUpdatePending();
     const pend=readPending();
     if(pend.length && !preRegrade) setResequenceDelta({moved:pend,stale:[],reason:"heal"});
@@ -730,7 +770,7 @@ function AppInner(){
   // the genome, not the original answer sheet); openResult already reads scores null-safe.
   function restoreGenome(g){
     if(!g || g.future || !g.coreProfile) return false;
-    const entries=Object.entries(g.results||{}).filter(([,r])=>r&&r.club);
+    const entries=Object.entries(g.results||{}).filter(([sport,r])=>r&&r.club&&knownClub(sport,r.club));
     if(entries.length===0) return false;
     entries.forEach(([sport,r])=>{ saveResult(sport,{coreProfile:g.coreProfile,club:r.club}); });
     const st=loadState();
@@ -1495,7 +1535,7 @@ function AppInner(){
         {screen==="result"&&result&&!displayReady[activeSport]&&(
           <div style={{padding:"64px 20px",textAlign:"center",fontFamily:"'DM Mono',monospace",fontSize:12,color:"#83839a",letterSpacing:"0.12em",textTransform:"uppercase"}}>Loading your {regOf(activeSport).noun}...</div>
         )}
-        {screen==="result"&&result&&displayReady[activeSport]&&(
+        {screen==="result"&&result&&team&&displayReady[activeSport]&&(
           <div style={{animation:"popIn .45s cubic-bezier(.2,.8,.3,1) both",background:`linear-gradient(160deg,${team.color}06 0%,transparent 40%)`,borderRadius:12,padding:"4px"}}>
 
             {/* Back to the genome home + league indicator */}
