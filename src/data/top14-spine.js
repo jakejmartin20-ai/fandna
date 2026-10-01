@@ -13,14 +13,14 @@ export const spineScoring = {
   // S6 the way to the top. A tear-down-and-rebuild / B patient-plan / C everything-now / D proven-names.
   S6: {
     A: { UBB: 2, LOU: 2, USM: 2 },
-    B: { TLS: 2, LAR: 2, PAU: 2, CAS: 2, ABR: 2 },
+    B: { TLS: 2, LAR: 2, PAU: 2, CAS: 2, ABR: 2, VAN: 2 },
     C: { RCT: 2, R92: 2, SFP: 2 },
     D: { ASM: 2, USP: 2, MHR: 2 },
   },
   // S7 the position that suits you. A the-favourite / B the-underdog / C glad-to-be-in-it / D somewhere-new.
   S7: {
     A: { TLS: 2, UBB: 2, RCT: 2, R92: 2, LAR: 2 },
-    B: { ASM: 2, USP: 2, CAS: 2 },
+    B: { ASM: 2, USP: 2, CAS: 2, VAN: 2 },
     C: { ABR: 2, PAU: 2, USM: 2 },
     D: { SFP: 2, LOU: 2, MHR: 2 },
   },

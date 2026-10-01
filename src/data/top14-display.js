@@ -48,7 +48,7 @@ const teamsCopy = {
   },
   "MHR": {
     "tagline": "Billionaire money and one of France's best academies, symbolised by a flower that survives fire and drought.",
-    "desc": "You are the modern project, the young, ambitious build with money behind it and method underneath. You're the youngest club in the league, backed by a billionaire and stocked with world champions, but there's more to you than the chequebook, one of the best academies in France and a symbol that says everything, a rockrose that survives and even feeds on fire and drought. You chase the win with resources and clear thinking, and you'd rather build something new and ambitious than tend an old tradition. Your roots are genuinely thin, your form can swing hard, but you keep coming back. You treat it less as a religion and more as a project worth getting right."
+    "desc": "You are the modern project, the young, ambitious build with money behind it and method underneath. You're one of the youngest clubs in the league, backed by a billionaire and stocked with world champions, but there's more to you than the chequebook, one of the best academies in France and a symbol that says everything, a rockrose that survives and even feeds on fire and drought. You chase the win with resources and clear thinking, and you'd rather build something new and ambitious than tend an old tradition. Your roots are genuinely thin, your form can swing hard, but you keep coming back. You treat it less as a religion and more as a project worth getting right."
   },
   "LOU": {
     "tagline": "The wolf of a big football city, an outsider to rugby's heartland who built its own festive, student-packed crowd.",
@@ -57,6 +57,10 @@ const teamsCopy = {
   "USM": {
     "tagline": "One of the smallest grounds in the game and the biggest heart, a former champion that went bust and clawed all the way back.",
     "desc": "You are the plucky survivor, the tiny town with the biggest heart. You play at one of the smallest grounds in the pro game, and you've been to the brink and back, a former champion that went bankrupt, dropped down the divisions and clawed its way home. Your spirit is simplicity, consistency and fidelity to the group, promotion celebrated without frills, the same faithful squad kept together, every good day treated as a gift. You take heavy beatings from the big clubs and battle like mad at home anyway, because belonging matters more to you than the scoreline. You're folksy, rooted and grateful, and you wouldn't trade any of it."
+  },
+  "VAN": {
+    "tagline": "Brittany's first professional club, built one division at a time by the same coach, in a small ground that keeps selling out.",
+    "desc": "You are the believer at the edge of the map, the one who backed something nobody thought could grow here. Where you come from, rugby was an afterthought in a land of football and cycling, and you built it anyway, one level at a time over decades, with the same patient hands on the wheel. You're a project more than a tradition, a whole town and hundreds of local businesses pulling the same way, and you're proud of every step. You feel it loudly, the bagpipes, the drums, a ground that sells out, and you wear where you're from on your chest. You know you start behind the giants. You'd still rather be in the fight than watch it from the outside."
   }
 };
 
@@ -184,6 +188,14 @@ const vitalStats = {
     "titles": "1 (1967)",
     "european": "-",
     "lastTitle": "1967"
+  },
+  "VAN": {
+    "founded": 1950,
+    "ground": "Stade de la Rabine",
+    "city": "Vannes",
+    "colours": "Blue and white",
+    "titles": "None yet",
+    "european": "-"
   }
 };
 
@@ -257,7 +269,7 @@ const milestones = {
   "MHR": [
     "French champions in 2022, the club's first title.",
     "Runner-up in 2026, the same year it won the European Challenge Cup.",
-    "The youngest club in the league, formed by a merger in 1986.",
+    "Formed by a merger in 1986, one of the youngest clubs in the league.",
     "Runs one of the best academies in France alongside its imported stars."
   ],
   "LOU": [
@@ -270,7 +282,13 @@ const milestones = {
     "French champions in 1967, a title few outside the town remember.",
     "Went bankrupt in 2010 and dropped down the divisions.",
     "Won promotion back to the top flight in 2025 with a settled, faithful squad.",
-    "Plays at the smallest ground in the league, in a proud Occitan town."
+    "Relegated to Pro D2 in 2026 after one season back, still at Stade Sapiac in a proud Occitan town."
+  ],
+  "VAN": [
+    "Founded in 1950, and in 2016 the first Breton club to reach professional rugby.",
+    "Climbed from the fourth tier to the Top 14 under Jean-Noël Spitzer, its coach since 2005.",
+    "Pro D2 champions in 2024 and 2026, bouncing straight back after relegation on the final day of its first Top 14 season.",
+    "Named the best crowd in Pro D2 in 2018, with the Breton ermine on its crest."
   ]
 };
 
@@ -288,7 +306,8 @@ const CARD_BADGES = {
   "CAS": "⚙️",
   "MHR": "🌿",
   "LOU": "🐺",
-  "USM": "🌾"
+  "USM": "🌾",
+  "VAN": "⛵"
 };
 
 const badgeUrls = {};

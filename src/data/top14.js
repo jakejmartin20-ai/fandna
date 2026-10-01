@@ -16,7 +16,8 @@ const archetypes = {
   "CAS": "Le Modèle Castrais",
   "MHR": "Les Cistes",
   "LOU": "Les Loups",
-  "USM": "L'Esprit Sapiac"
+  "USM": "L'Esprit Sapiac",
+  "VAN": "L'Hermine Bleue"
 };
 
 const moduleQuestions = [
@@ -136,7 +137,8 @@ const scoring = {
       "ABR": 3,
       "UBB": 3,
       "USP": 3,
-      "LAR": 1
+      "LAR": 1,
+      "VAN": 3
     },
     "D": {
       "LOU": 3,
@@ -159,7 +161,8 @@ const scoring = {
       "LOU": 3,
       "RCT": 3,
       "UBB": 3,
-      "R92": 1
+      "R92": 1,
+      "VAN": 2
     },
     "D": {
       "ABR": 3,
@@ -178,7 +181,8 @@ const scoring = {
     "B": {
       "CAS": 3,
       "PAU": 3,
-      "USM": 3
+      "USM": 3,
+      "VAN": 2
     },
     "C": {
       "MHR": 3,
@@ -213,7 +217,8 @@ const scoring = {
     },
     "D": {
       "MHR": 3,
-      "R92": 3
+      "R92": 3,
+      "VAN": 3
     }
   }
 };
@@ -344,6 +349,15 @@ const teamDims = {
     "community": 9,
     "chaos": 4,
     "rootedness": 9
+  },
+  "VAN": {
+    "loyalty": 7,
+    "emotion": 8,
+    "ambition": 7,
+    "process": 7,
+    "community": 9,
+    "chaos": 4,
+    "rootedness": 6
   }
 };
 
@@ -361,7 +375,8 @@ const teamTextColors = {
   "CAS": "#8598D6",
   "MHR": "#7FA5D2",
   "LOU": "#F0838A",
-  "USM": "#6FAE90"
+  "USM": "#6FAE90",
+  "VAN": "#86A9EC"
 };
 
 const teams = {
@@ -476,6 +491,14 @@ const teams = {
     "code3": "USM",
     "kitType": "duo",
     "secondaryColor": "#111111"
+  },
+  "VAN": {
+    "name": "RC Vannes",
+    "emoji": "⛵",
+    "color": "#1C3F94",
+    "code3": "VAN",
+    "kitType": "duo",
+    "secondaryColor": "#FFFFFF"
   }
 };
 
